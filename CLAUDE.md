@@ -47,7 +47,8 @@ Full website requirements → `docs/PRD.md`
 ## File Structure
 
 ```
-/assets          → CSS, JS, images, liquid assets
+/assets          → CSS, JS, images, liquid assets (theme files + Tabblie brand assets)
+/blocks          → Theme block definitions
 /config          → settings_schema.json, settings_data.json (theme settings)
 /layout          → theme.liquid (global layout wrapper)
 /locales         → Translation files (en.default.json, nl.json etc.)
@@ -56,6 +57,8 @@ Full website requirements → `docs/PRD.md`
 /templates       → Page templates (JSON-based for OS2.0)
 /docs            → Brand document, PRD (not Shopify files — reference only)
 ```
+
+> Note: Theme files live at the **repo root** so Shopify's GitHub integration can detect them directly.
 
 ---
 
