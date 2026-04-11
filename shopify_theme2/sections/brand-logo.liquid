@@ -1,0 +1,145 @@
+{% comment %}
+  Logo strip with heading + 10 logos
+  - Dynamic heading (text, font size, font color)
+  - Upload image OR use external image link
+  - Background color picker
+  - Responsive grid: 10 in one row (desktop), 2 rows of 5 (<=760px)
+{% endcomment %}
+
+<section class="logo-strip-section section-{{ section.id }}" 
+  style="background: {{ section.settings.bg_color }};">
+  <div class="logo-strip__inner">
+    {% if section.settings.heading != blank %}
+      <h2 class="logo-strip__title"
+          style="color: {{ section.settings.heading_color }};
+                 font-size: {{ section.settings.heading_size }}px;">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    <div class="logo-strip__grid">
+      {% for block in section.blocks %}
+        {% if block.settings.logo_image != blank %}
+          <div class="logo-strip__item">
+            <img src="{{ block.settings.logo_image | img_url: '200x' }}" alt="logo" loading="lazy">
+          </div>
+        {% elsif block.settings.logo_url != blank %}
+          <div class="logo-strip__item">
+            <img src="{{ block.settings.logo_url }}" alt="logo" loading="lazy">
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .logo-strip__inner {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .logo-strip__title {
+    margin-bottom: 30px;
+    font-weight: normal;
+    
+  }
+  .logo-strip__grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 20px;
+    align-items: center;
+  }
+  .logo-strip__item img {
+        max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  /* Mobile layout: 2 rows, 5 per row */
+  @media (max-width: 760px) {
+    .logo-strip__grid {
+      grid-template-columns: repeat(5, 1fr);
+      row-gap: 50px;
+    }
+
+     .logo-strip__title {
+        font-size:30px !important;
+        margin-bottom:50px;
+     }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Logo Strip",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "bekend van"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "label": "Heading font size",
+      "min": 10,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#f7d1e1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo_image",
+          "label": "Upload logo image"
+        },
+        {
+          "type": "text",
+          "id": "logo_url",
+          "label": "Or external image URL",
+          "info": "Leave blank if using uploaded image"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "Logo Strip",
+      "blocks": [
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" },
+        { "type": "logo" }
+      ]
+    }
+  ]
+}
+{% endschema %}
