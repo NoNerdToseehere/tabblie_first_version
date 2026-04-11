@@ -1,15 +1,30 @@
 {%- comment -%}
   tabblie-logo.liquid
-  CSS-styled wordmark — "tabblie" in Fraunces serif, Tabblie Orange.
-  Inherits the loaded Fraunces font correctly (no SVG font-loading race).
-  Fills the header logo container width naturally.
+  Renders the Tabblie logo SVG from assets.
 
   Parameters:
-    color_scheme: 'light' (default) — orange — for light/cream/white backgrounds
-                  'dark'            — white  — for dark/orange/footer backgrounds
+    color_scheme: 'light' (default) — orange oval logo — for light/cream/white backgrounds
+                  'dark'            — white oval logo   — for dark/orange/footer backgrounds
+    width:        logo width in px (default: 180)
     class:        extra CSS classes
 {%- endcomment -%}
 
 {%- assign logo_color_scheme = color_scheme | default: 'light' -%}
+{%- assign logo_width = width | default: 180 -%}
+{%- assign logo_height = logo_width | divided_by: 2.9 | round -%}
 
-<span class="tabblie-wordmark tabblie-wordmark--{{ logo_color_scheme }}{% if class != blank %} {{ class }}{% endif %}" aria-label="Tabblie">Tabblie</span>
+{%- if logo_color_scheme == 'dark' -%}
+  {%- assign logo_file = 'tabblie-logo-dark.svg' -%}
+{%- else -%}
+  {%- assign logo_file = 'tabblie-logo.svg' -%}
+{%- endif -%}
+
+<img
+  src="{{ logo_file | asset_url }}"
+  alt="Tabblie"
+  width="{{ logo_width }}"
+  height="{{ logo_height }}"
+  loading="eager"
+  fetchpriority="high"
+  class="tabblie-logo tabblie-logo--{{ logo_color_scheme }}{% if class != blank %} {{ class }}{% endif %}"
+  style="display:block; width:{{ logo_width }}px; height:auto;">
