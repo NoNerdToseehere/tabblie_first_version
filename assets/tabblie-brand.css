@@ -13,6 +13,45 @@
  */
 
 /* ============================================================
+   WORDMARK — tabblie logo rendered as CSS text
+   Sized to fill the header logo container naturally.
+   ============================================================ */
+
+.tabblie-wordmark {
+  font-family: 'Fraunces', Georgia, 'Palatino Linotype', serif;
+  font-size: clamp(28px, 3vw, 38px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  display: block;
+  text-decoration: none;
+  font-style: normal;
+  /* Prevent the theme's uppercase/transform from overriding */
+  text-transform: none !important;
+}
+
+.tabblie-wordmark--light {
+  color: #E8622A !important;
+}
+
+.tabblie-wordmark--dark {
+  color: #FFFFFF !important;
+}
+
+/* Constrain max size inside the header logo area */
+.header__heading .tabblie-wordmark,
+.header__heading-link .tabblie-wordmark {
+  font-size: clamp(26px, 2.5vw, 36px);
+}
+
+/* Mobile: slightly smaller */
+@media (max-width: 749px) {
+  .tabblie-wordmark {
+    font-size: 28px;
+  }
+}
+
+/* ============================================================
    FONTS — Override theme font variables with Fraunces + DM Sans
    ============================================================ */
 

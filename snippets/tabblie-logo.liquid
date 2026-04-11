@@ -1,41 +1,15 @@
 {%- comment -%}
   tabblie-logo.liquid
-  Inline SVG wordmark — "tabblie" in Fraunces serif, Tabblie Orange.
-  No background, transparent — works on any surface.
-  Since this is inline SVG, the page's loaded Fraunces font applies via CSS.
+  CSS-styled wordmark — "tabblie" in Fraunces serif, Tabblie Orange.
+  Inherits the loaded Fraunces font correctly (no SVG font-loading race).
+  Fills the header logo container width naturally.
 
   Parameters:
-    color_scheme: 'light' (default) — orange text — for light/cream/white backgrounds
-                  'dark'            — white text  — for dark/orange/footer backgrounds
-    width:        logo width in px (default: 140)
+    color_scheme: 'light' (default) — orange — for light/cream/white backgrounds
+                  'dark'            — white  — for dark/orange/footer backgrounds
     class:        extra CSS classes
 {%- endcomment -%}
 
 {%- assign logo_color_scheme = color_scheme | default: 'light' -%}
-{%- assign logo_width = width | default: 140 -%}
-{%- assign logo_height = logo_width | divided_by: 4.5 | round -%}
 
-{%- if logo_color_scheme == 'dark' -%}
-  {%- assign logo_fill = '#FFFFFF' -%}
-{%- else -%}
-  {%- assign logo_fill = '#E8622A' -%}
-{%- endif -%}
-
-<svg xmlns="http://www.w3.org/2000/svg"
-     viewBox="0 0 280 62"
-     width="{{ logo_width }}"
-     height="{{ logo_height }}"
-     role="img"
-     aria-label="tabblie"
-     class="tabblie-logo tabblie-logo--{{ logo_color_scheme }}{% if class != blank %} {{ class }}{% endif %}"
-     style="display:block; overflow:visible;">
-  <title>tabblie</title>
-  <text
-    x="0"
-    y="50"
-    font-family="'Fraunces', Georgia, 'Palatino Linotype', serif"
-    font-size="52"
-    font-weight="600"
-    letter-spacing="-1"
-    fill="{{ logo_fill }}">tabblie</text>
-</svg>
+<span class="tabblie-wordmark tabblie-wordmark--{{ logo_color_scheme }}{% if class != blank %} {{ class }}{% endif %}" aria-label="tabblie">tabblie</span>
