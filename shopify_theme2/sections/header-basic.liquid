@@ -31,7 +31,7 @@
                                     <{% if request.page_type == 'index' %}h1{% else %}div{% endif %} class="header__heading">
                                         <a href="{{ routes.root_url }}" class="header__heading-link focus-inset">
                                             {%- if block.settings.logo != blank -%}
-                                                {%- liquid 
+                                                {%- liquid
                                                     assign logo = block.settings.logo
                                                     assign logo_width = block.settings.logo_width
                                                     assign logo_height = logo_width | divided_by: logo.aspect_ratio | round
@@ -45,7 +45,8 @@
                                                     alt: logo_alt
                                                 }}
                                             {%- else -%}
-                                                <span class="h2 {{ block.settings.logo_text_transform }}">{% if block.settings.logo_text != blank %}{{ block.settings.logo_text }}{% else %}{{ shop.name }}{% endif %}</span>
+                                                {%- comment -%} Tabblie inline SVG wordmark — no image upload required {%- endcomment -%}
+                                                {% render 'tabblie-logo', color_scheme: 'light', width: 140 %}
                                             {%- endif -%}
                                         </a>
                                         {%- if block.settings.enable_parallax -%}

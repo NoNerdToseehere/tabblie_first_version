@@ -1,5 +1,14 @@
 {{ 'base.css' | asset_url | stylesheet_tag }}
 
+{%- comment -%} Tabblie brand fonts — Fraunces (headings/logo) + DM Sans (body) {%- endcomment -%}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap"></noscript>
+
+{%- comment -%} Tabblie brand overrides — loaded after base.css so they take precedence {%- endcomment -%}
+{{ 'tabblie-brand.css' | asset_url | stylesheet_tag }}
+
 {%- if settings.use_custom_css -%}
 	{{ 'custom.css' | asset_url | stylesheet_tag }}
 {%- endif -%}

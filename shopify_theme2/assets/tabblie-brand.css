@@ -1,0 +1,354 @@
+/**
+ * tabblie-brand.css
+ * Brand-specific overrides for the Tabblie Shopify theme.
+ * Loaded after theme.css — safe to override any theme defaults here.
+ *
+ * Brand colors:
+ *   Primary orange:  #E8622A
+ *   Warm cream bg:   #FDF6EE
+ *   Deep earth text: #1F1209
+ *   Accent teal:     #5BB8A0
+ *   Accent yellow:   #F5C842
+ *   Blush pink:      #F2A0A0
+ */
+
+/* ============================================================
+   FONTS — Override theme font variables with Fraunces + DM Sans
+   ============================================================ */
+
+:root {
+  --heading-font-family: 'Fraunces', Georgia, serif;
+  --text-font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --heading-font-weight: 600;
+  --text-font-weight: 400;
+  --heading-text-transform: none;
+  --heading-letter-spacing: -0.02em;
+  --text-letter-spacing: 0em;
+
+  /* Tabblie brand color tokens */
+  --tabblie-orange: #E8622A;
+  --tabblie-cream: #FDF6EE;
+  --tabblie-earth: #1F1209;
+  --tabblie-teal: #5BB8A0;
+  --tabblie-yellow: #F5C842;
+  --tabblie-pink: #F2A0A0;
+  --tabblie-orange-hover: #D4531D;
+  --tabblie-orange-light: #F5A882;
+
+  /* Product identity colors */
+  --product-allpurpose: #E8622A;
+  --product-kitchen: #F5C842;
+  --product-bathroom: #5BB8A0;
+  --product-handsoap: #F2A0A0;
+}
+
+/* ============================================================
+   BODY & GLOBAL
+   ============================================================ */
+
+body {
+  font-family: var(--text-font-family);
+  color: #1F1209;
+  background-color: #FDF6EE;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: #1F1209;
+}
+
+/* ============================================================
+   BUTTONS — Always Tabblie Orange for primary
+   Covers all Impact theme button patterns + Shopify payment buttons
+   ============================================================ */
+
+/* Font on all buttons */
+.button, .btn,
+.button--primary,
+[type="submit"],
+.shopify-payment-button__button--unbranded,
+.shopify-payment-button__button {
+  font-family: var(--text-font-family) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* Primary: orange — override CSS variable AND direct properties */
+:root {
+  --button-background-primary: 232 98 42 !important;
+  --button-text-primary: 255 255 255 !important;
+}
+
+.button:not(.button--secondary):not(.button--subdued):not(.button--outline):not([style*="background"]),
+.button--primary {
+  background: #E8622A !important;
+  background-color: #E8622A !important;
+  color: #FFFFFF !important;
+  border-color: #E8622A !important;
+}
+
+/* Catch buttons with inline background styles (old Chomfy purple/pink) */
+[style*="e6d3f5"],
+[style*="c29cdf"],
+[style*="803cee"],
+[style*="E6D3F5"],
+[style*="C29CDF"],
+[style*="803CEE"] {
+  background: #E8622A !important;
+  background-color: #E8622A !important;
+  color: #FFFFFF !important;
+  border-color: #E8622A !important;
+}
+
+/* Slideshow / hero slide buttons — always orange */
+.slideshow__slide .button,
+.slideshow__slide a.button,
+[data-section-type="slideshow"] .button,
+.slide__button {
+  background: #E8622A !important;
+  background-color: #E8622A !important;
+  color: #FFFFFF !important;
+  border-color: #E8622A !important;
+}
+
+/* Hover state */
+.button:not(.button--secondary):not(.button--subdued):not(.button--outline):hover:not([disabled]) {
+  background: #D4531D !important;
+  background-color: #D4531D !important;
+  border-color: #D4531D !important;
+}
+
+/* Shopify payment button (Buy it now / Shop Pay) */
+.shopify-payment-button__button--unbranded,
+.shopify-payment-button__button--unbranded:hover {
+  background: #E8622A !important;
+  background-color: #E8622A !important;
+  color: #FFFFFF !important;
+}
+
+/* Secondary button: dark */
+.button--secondary,
+.button--outline {
+  border-color: #1F1209 !important;
+  color: #1F1209 !important;
+  background: transparent !important;
+}
+
+.button--secondary:hover,
+.button--outline:hover {
+  background: #1F1209 !important;
+  color: #FFFFFF !important;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.header,
+#shopify-section-header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid rgba(31, 18, 9, 0.08);
+}
+
+/* ============================================================
+   ANNOUNCEMENT BAR
+   ============================================================ */
+
+.announcement-bar {
+  background-color: #E8622A;
+  color: #FFFFFF;
+  font-family: var(--text-font-family);
+  font-weight: 500;
+}
+
+.announcement-bar a,
+.announcement-bar a:visited {
+  color: #FFFFFF;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.footer,
+#shopify-section-footer {
+  background-color: #1F1209;
+  color: #FDF6EE;
+}
+
+.footer a,
+.footer a:visited {
+  color: rgba(253, 246, 238, 0.75);
+}
+
+.footer a:hover {
+  color: #FDF6EE;
+}
+
+.footer h1, .footer h2, .footer h3,
+.footer h4, .footer h5, .footer h6 {
+  color: #FDF6EE;
+}
+
+/* ============================================================
+   LINKS
+   ============================================================ */
+
+a {
+  color: #E8622A;
+}
+
+a:hover {
+  color: #D4531D;
+}
+
+/* ============================================================
+   PRODUCT CARDS
+   ============================================================ */
+
+.product-card {
+  background-color: #FFFFFF;
+  border-radius: var(--rounded-lg);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 24px rgba(232, 98, 42, 0.12);
+  transform: translateY(-2px);
+}
+
+.product-card__title {
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+}
+
+/* Sale/badge colors → orange */
+.badge--on-sale,
+.on-sale-badge {
+  background-color: #E8622A !important;
+  color: #FFFFFF !important;
+}
+
+/* Star ratings → orange */
+.rating__star,
+.product-rating svg {
+  color: #E8622A;
+  fill: #E8622A;
+}
+
+/* ============================================================
+   FORMS & INPUTS
+   ============================================================ */
+
+.field__input:focus,
+.select__select:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #E8622A;
+  outline-color: rgba(232, 98, 42, 0.3);
+}
+
+/* ============================================================
+   PRICE
+   ============================================================ */
+
+.price--on-sale .price__sale {
+  color: #E8622A;
+}
+
+/* ============================================================
+   SCROLLING TEXT / MARQUEE BANNERS
+   ============================================================ */
+
+.scrolling-text,
+.marquee-text {
+  font-family: var(--heading-font-family);
+  font-weight: 600;
+}
+
+/* ============================================================
+   TAGS & BADGES (eco labels)
+   ============================================================ */
+
+.badge--custom,
+.tag {
+  background-color: #5BB8A0;
+  color: #FFFFFF;
+  font-family: var(--text-font-family);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--rounded-full);
+}
+
+/* ============================================================
+   SELECTION COLOR
+   ============================================================ */
+
+::selection {
+  background-color: rgba(232, 98, 42, 0.2);
+  color: #1F1209;
+}
+
+/* ============================================================
+   FOCUS RING — Accessibility with brand color
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid #E8622A;
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   PRODUCT IDENTITY COLORS — for future tablet range
+   Use via: style="--product-color: var(--product-kitchen)"
+   ============================================================ */
+
+.product-identity-color {
+  background-color: var(--product-color, var(--tabblie-cream));
+}
+
+/* ============================================================
+   CATCH-ALL — Neutralise any leftover Chomfy blue / purple
+   These selectors target inline style backgrounds the theme
+   injects from saved section settings.
+   ============================================================ */
+
+/* Blue/purple inline section backgrounds → cream */
+[style*="background-color: #3c6"],
+[style*="background-color: #4a9"],
+[style*="background-color: #29b"],
+[style*="background-color: #1a6"],
+[style*="background-color: rgb(60, 97"],
+[style*="background-color: rgb(42, 85"],
+[style*="background-color: rgb(26, 102"] {
+  background-color: #FDF6EE !important;
+  color: #1F1209 !important;
+}
+
+/* SS Collection Tabs — force Tabblie orange on buttons regardless of saved settings */
+.ab-slider-link {
+  background-color: #E8622A !important;
+  color: #FFFFFF !important;
+}
+.ab-slider-link:hover {
+  background-color: #D4531D !important;
+}
+.ab-slider-link--reverse-color {
+  background-color: #E8622A !important;
+  color: #FFFFFF !important;
+}
+.ab-slider-tab.ab-slider-tab--active {
+  border-bottom-color: #E8622A !important;
+}
+.ab-slider-tab-indicator {
+  background-color: #E8622A !important;
+}

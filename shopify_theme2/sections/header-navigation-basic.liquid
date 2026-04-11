@@ -43,10 +43,9 @@
                                 {%- assign logo_width_retina = logo_width | times: 2 | append: 'x'  -%}
                                 {%- assign logo_height = logo_width | divided_by: logo.aspect_ratio | round -%}
                                 <img srcset="{{ logo | img_url: logo_width_img }}, {{ logo | img_url: logo_width_retina }} 2x" src="{{ logo | img_url: logo_width_img }}"{% if settings.enable_lazyload %} loading="lazy"{% endif %} class="header__heading-logo logo__main w-100 h-auto ver-alg-mid d-inline-block" alt="{{ logo.alt | default: shop.name | escape }}" width="{{ logo_width }}" height="{{ logo_height }}">
-                            {%- elsif block.settings.logo_text != blank -%}
-                                <span class="header__heading-text {{ block.settings.logo_text_transform }} d-block">{{ block.settings.logo_text }}</span>
                             {%- else -%}
-                                <span class="header__heading-text {{ block.settings.logo_text_transform }} d-block">{{ shop.name }}</span>
+                                {%- comment -%} Tabblie inline SVG wordmark {%- endcomment -%}
+                                {% render 'tabblie-logo', color_scheme: 'light', width: 140 %}
                             {%- endif -%}
                         </a>
                     </{% if request.page_type == 'index' %}h1{% else %}div{% endif %}>
