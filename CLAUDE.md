@@ -35,6 +35,15 @@ Full website requirements → `docs/PRD.md`
 | Product: Bathroom | `#5BB8A0` | Soft Teal |
 | Product: Hand Soap | `#F2A0A0` | Blush Pink |
 
+**Extended palette — section backgrounds:**
+| Token | Hex | Use |
+|---|---|---|
+| Soft Lavender | `#C4BFDF` | Hero/section backgrounds, soft feminine sections |
+| Powder Blue | `#BAC8E8` | Feature sections, benefit strips, calm backgrounds |
+| Golden Yellow | `#F0D040` | Bold hero backgrounds, energetic sections |
+
+Use CSS classes: `.bg-tabblie-lavender`, `.bg-tabblie-powder-blue`, `.bg-tabblie-golden`, `.bg-tabblie-orange`, `.bg-tabblie-cream`, `.bg-tabblie-earth`
+
 **Color rule:** Orange is always the brand anchor on every product (logo, typography, icons). Each product additionally has its own identity color for label/accent — like the kraft packaging uses orange on a neutral base.
 
 ### Fonts
