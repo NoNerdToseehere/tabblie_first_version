@@ -227,6 +227,16 @@ h1, h2, h3, h4, h5, h6,
     font-size: 16px !important;
     letter-spacing: 0.01em !important;
   }
+
+  /* Match right-side nav (FAQs, Contact, Mijn rekening) font to main nav */
+  .header-nav-basic .header__icon--right-menu .text,
+  .header-nav-basic .header__icon--account .text,
+  .header-nav-basic .header__icon > .text {
+    font-family: var(--font-menu-lv1-family) !important;
+    font-size: 16px !important;
+    font-weight: var(--font-menu-lv1-weight) !important;
+    letter-spacing: 0.01em !important;
+  }
 }
 
 /* ============================================================
