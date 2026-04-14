@@ -19,9 +19,8 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="theme-color" content="">
         <link rel="canonical" href="{{ canonical_url }}" canonical-shop-url="{{ shop.url }}/">
-        {%- if settings.favicon != blank -%}
-            <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
-        {%- endif -%}
+        <link rel="icon" href="{{ 'tabblie-favicon.png' | asset_url }}" type="image/png">
+        <link rel="shortcut icon" href="{{ 'tabblie-favicon.png' | asset_url }}" type="image/png">
         <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
         <title>{{ page_title }} {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%} {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%} {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}</title>
 
@@ -160,8 +159,9 @@
         {% if settings.enable_currencies and settings.currency_type == 'auto_currencies' %}
             {% render 'halo-currency-js' %}
         {% endif %}
- 
-        
+
+        {% render 'tabblie-scroll-reveal' %}
+
     </body>
     <style>
         

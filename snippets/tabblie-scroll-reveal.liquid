@@ -1,0 +1,85 @@
+<script defer>
+(function () {
+  var selectors = [
+    '.tabblie-chero__heading',
+    '.tabblie-chero__sub',
+    '.tabblie-chero__badge',
+    '.tabblie-chero__card',
+    '.tabblie-pf__title',
+    '.tabblie-pf__desc',
+    '.tabblie-pf__grid',
+    '.tabblie-testi__header',
+    '.tabblie-testi__card',
+    '.halo-block-header',
+    '.product-block .product',
+    '.custom-service-block .halo-item',
+    '.footer-block__newsletter',
+    '.newsletter-section-banner-collapsible .newsletter-form__field-wrapper',
+    '.newsletter-section-banner-collapsible .title'
+  ];
+
+  var skipSections = ['tabblie-hiw', 'product-recommendations', 'halo-product-block-sections', 'halo-recommendations'];
+
+  function init() {
+    var els = document.querySelectorAll(selectors.join(','));
+    var toObserve = [];
+
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      var skip = false;
+      for (var s = 0; s < skipSections.length; s++) {
+        if (el.closest('[id*="' + skipSections[s] + '"]') || el.closest('[class*="' + skipSections[s] + '"]')) { skip = true; break; }
+      }
+      if (skip) continue;
+      el.classList.add('tabblie-reveal');
+      toObserve.push(el);
+    }
+
+    var groups = document.querySelectorAll(
+      '.tabblie-testi__grid, .tabblie-chero__cards, .products-grid, .custom-service-block .halo-row'
+    );
+    for (var g = 0; g < groups.length; g++) {
+      var skipGroup = false;
+      for (var s = 0; s < skipSections.length; s++) {
+        if (groups[g].closest('[id*="' + skipSections[s] + '"]') || groups[g].closest('[class*="' + skipSections[s] + '"]')) { skipGroup = true; break; }
+      }
+      if (!skipGroup) groups[g].classList.add('tabblie-reveal-group');
+    }
+
+    if (!toObserve.length) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      for (var j = 0; j < entries.length; j++) {
+        if (entries[j].isIntersecting) {
+          entries[j].target.classList.add('tabblie-reveal--visible');
+          observer.unobserve(entries[j].target);
+        }
+      }
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    for (var k = 0; k < toObserve.length; k++) {
+      var rect = toObserve[k].getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.85 && rect.bottom > 0) {
+        toObserve[k].classList.add('tabblie-reveal--visible');
+      } else {
+        observer.observe(toObserve[k]);
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { setTimeout(init, 100); });
+  } else {
+    setTimeout(init, 100);
+  }
+})();
+
+/* Sticky header: Halo built-in on_scroll handles hide/show via headerBounds.bottom */
+
+/* Hide nav items by text content */
+document.querySelectorAll('.menu-lv-1 .text').forEach(function(el) {
+  if (el.textContent.trim().toLowerCase() === 'retailers') {
+    el.closest('.menu-lv-1').style.display = 'none';
+  }
+});
+</script>

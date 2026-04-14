@@ -17,3 +17,10 @@ node_modules/
 
 # Shopify CLI
 .shopify/
+
+# API keys
+.secrets/
+
+# Working/dev-only folders — not part of the theme
+assets/files_tosave/
+PROMPTS/

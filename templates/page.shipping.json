@@ -1,0 +1,102 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "hero": {
+      "type": "tabblie-page-hero",
+      "settings": {
+        "bg_color": "#FDF6EE",
+        "eyebrow": "VERZENDING & RETOUR",
+        "heading": "Snel, gratis en",
+        "heading_accent": "zonder gedoe.",
+        "subtext": "Wij vinden dat bestellen net zo makkelijk moet zijn als onze strips gebruiken. Daarom verzenden we snel, gratis en met een niet-goed-geld-terug garantie."
+      }
+    },
+    "shipping_info": {
+      "type": "tabblie-faq",
+      "blocks": {
+        "s1": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoeveel kost verzending?",
+            "answer": "Verzending binnen Nederland en België is gratis. Geen minimumbedrag, geen verborgen kosten."
+          }
+        },
+        "s2": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe snel wordt mijn bestelling geleverd?",
+            "answer": "Bestellingen geplaatst voor 23:59 uur worden de volgende werkdag bezorgd. In het weekend geplaatste bestellingen worden op maandag verzonden."
+          }
+        },
+        "s3": {
+          "type": "faq",
+          "settings": {
+            "question": "Naar welke landen verzenden jullie?",
+            "answer": "Wij verzenden momenteel naar Nederland en België. Verzending naar andere EU-landen volgt binnenkort. Houd onze website in de gaten voor updates."
+          }
+        },
+        "s4": {
+          "type": "faq",
+          "settings": {
+            "question": "Kan ik mijn bestelling volgen?",
+            "answer": "Ja. Zodra je bestelling is verzonden ontvang je een e-mail met een track & trace code waarmee je je pakket live kunt volgen."
+          }
+        },
+        "s5": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat als ik niet tevreden ben?",
+            "answer": "Geen probleem. Je kunt je bestelling binnen 30 dagen retourneren voor een volledige terugbetaling. Neem contact met ons op via het contactformulier en we regelen het direct."
+          }
+        },
+        "s6": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe retourneer ik een product?",
+            "answer": "Stuur ons een bericht via de contactpagina met je bestelnummer. We sturen je een retourlabel en zodra we het pakket ontvangen, wordt je bedrag binnen 5 werkdagen teruggestort."
+          }
+        },
+        "s7": {
+          "type": "faq",
+          "settings": {
+            "question": "Welke betaalmethoden accepteren jullie?",
+            "answer": "We accepteren iDEAL, Visa, Mastercard, Apple Pay, Klarna (achteraf betalen) en PayPal."
+          }
+        },
+        "s8": {
+          "type": "faq",
+          "settings": {
+            "question": "Waarom is verzending gratis?",
+            "answer": "Onze strips zijn zo compact en licht dat de verzendkosten minimaal zijn. Bovendien is de CO2-uitstoot tot 90% lager dan bij traditionele schoonmaakmiddelen in zware plastic flessen."
+          }
+        }
+      },
+      "block_order": ["s1", "s2", "s3", "s4", "s5", "s6", "s7", "s8"],
+      "settings": {
+        "eyebrow": "",
+        "heading": "Alles over verzending & retour"
+      }
+    },
+    "guarantee": {
+      "type": "tabblie-guarantee",
+      "settings": {
+        "eyebrow": "ONZE GARANTIE",
+        "heading": "Probeer het 30 dagen.",
+        "heading_accent": "Risicovrij!",
+        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p>",
+        "button_text": "Bestel nu",
+        "badge_text": "30 dagen proef wassen"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero",
+    "shipping_info",
+    "guarantee"
+  ]
+}

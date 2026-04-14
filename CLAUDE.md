@@ -20,36 +20,37 @@ Full website requirements → `docs/PRD.md`
 ## Brand Identity (Quick Reference)
 
 **Positioning:** Affordable, aesthetic eco-friendly products for everyone — not preachy, not expensive, not ugly.
-**Tone:** Cheeky and direct (like Fussy deodorant). Never preachy. Never guilt-driven.
-**Tagline:** "Clean our world."
-**Language:** English (default) + Dutch (NL)
+**Tone:** Cheeky and direct. Never preachy. Never guilt-driven. Family-friendly.
+**Tagline:** "Schoonmaken, opnieuw uitgevonden."
+**Slogan:** "Tabblie, kind kan de was doen."
+**Language:** Dutch (NL) primary. English planned for future.
 
 ### Colors
 | Token | Hex | Use |
 |---|---|---|
-| Primary (Orange) | `#E8622A` | Logo, CTAs, brand elements — on every product and page |
-| Background | `#FDF6EE` | Page backgrounds, cards |
-| Text | `#1F1209` | Body text, headings |
-| Product: All-Purpose | `#E8622A` | Orange — same as primary |
-| Product: Kitchen | `#F5C842` | Sunny Yellow |
-| Product: Bathroom | `#5BB8A0` | Soft Teal |
-| Product: Hand Soap | `#F2A0A0` | Blush Pink |
+| Primary (Orange) | `#E8622A` | Logo, CTAs, brand anchor |
+| Background (Warm Cream) | `#FDF6EE` | Page body, cards |
+| Text (Dark Earth) | `#1F1209` | Body text, headings |
+| Hero Blue | `#E1ECFA` | Homepage hero (gradient to #C8D9F5) |
+| Section Pink | `#F8BFD6` | How-it-works, icon strips |
+| Wasstrips | `#E8622A` / `#FDEEE6` | Orange accent / card bg |
+| Vaatwasstrips | `#F5C842` / `#FDF5DD` | Yellow accent / card bg |
+| Toiletstrips | `#5BB8A0` / `#E2F2ED` | Teal accent / card bg |
+| Allesreiniger | `#F2A0A0` / `#FCE8E8` | Pink accent / card bg |
+| Green (checks) | `#38A169` | Comparison checkmarks, guarantee |
+| Blue (verified) | `#3B7DD8` | Verified badges, shipping |
+| Trustpilot Green | `#00B67A` | Review stars |
 
-**Extended palette — section backgrounds:**
-| Token | Hex | Use |
-|---|---|---|
-| Soft Lavender | `#C4BFDF` | Hero/section backgrounds, soft feminine sections |
-| Powder Blue | `#BAC8E8` | Feature sections, benefit strips, calm backgrounds |
-| Golden Yellow | `#F0D040` | Bold hero backgrounds, energetic sections |
-
-Use CSS classes: `.bg-tabblie-lavender`, `.bg-tabblie-powder-blue`, `.bg-tabblie-golden`, `.bg-tabblie-orange`, `.bg-tabblie-cream`, `.bg-tabblie-earth`
-
-**Color rule:** Orange is always the brand anchor on every product (logo, typography, icons). Each product additionally has its own identity color for label/accent — like the kraft packaging uses orange on a neutral base.
+**Color rules:** Orange is brand anchor. Each product has identity color. Sections alternate cream/white/blue/pink/orange. Never use emojis — always SVG icons with varied colors.
 
 ### Fonts
-- **Headings:** Fraunces (expressive serif)
-- **Body:** DM Sans (clean sans-serif)
-- **Logo:** Always lowercase — `tabblie` — never capitalised
+- **Headings:** Poppins (via Halo `--font-heading-family`)
+- **Body:** Plus Jakarta Sans (via `--text-font-family`)
+
+### Logo Assets
+- **Full wordmark:** Bold script "Tabblie" (`tabblie-logo.png` / `tabblie-logo.svg`)
+- **Small logo / Icon:** Just the "T" (`tabblie-logo-small.png`) — for compact spaces
+- **Favicon:** Square "T" browser icon (`tabblie-favicon.png` — 256x256)
 
 ---
 

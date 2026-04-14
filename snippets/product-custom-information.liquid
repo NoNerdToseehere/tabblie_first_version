@@ -8,7 +8,7 @@
     assign fontsize_text = block.settings.fontsize_text
     assign content_popup = block.settings.content_popup
 -%}
-<div class="product-customInformation text-left{%if content_popup == blank %} disabled{% endif %}" data-custom-information>
+<div class="product-customInformation text-left" data-custom-information>
     {%- if icon != blank -%}
         <div class="product-customInformation__icon"
             style="--color-icon: {{ color_icon }}"
@@ -16,7 +16,7 @@
             {{ icon }}
         </div>
     {%- endif -%}
-    {%- if text != blank or icon != blank -%}
+    {%- if text != blank or icon != blank or text_description != blank -%}
         <div class="product-customInformation__content">
             {%- if text != blank -%}
                 <div class="product__text title" {{ block.shopify_attributes }} 

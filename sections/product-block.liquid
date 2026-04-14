@@ -816,7 +816,7 @@
                              </div>
                             </div>
                         {%- endif -%}
-                        {%- if layout == 'slider' -%}
+                        {%- if layout == 'slider' or layout == 'grid' -%}
                             {%- if section.settings.button_text_slider != blank -%}
                                 <a {% if section.settings.button_link_slider == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.button_link_slider }}" target="_blank" {% endif %} title="{{ section.settings.button_text_slider }}" class="button button--secondary button-slider">
                                     {{ section.settings.button_text_slider }}

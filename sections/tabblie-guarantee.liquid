@@ -1,0 +1,294 @@
+{%- comment -%}
+  tabblie-guarantee.liquid
+  30-day risk-free guarantee section. Two-column: text left, image + badge right.
+{%- endcomment -%}
+
+<style>
+  .tabblie-guarantee {
+    background-color: #FDF6EE;
+    padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 40px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tabblie-guarantee__leaf {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .tabblie-guarantee__leaf--1 {
+    top: 40px;
+    left: 3%;
+    width: 110px;
+    height: 110px;
+    color: #5BB8A0;
+    opacity: 0.12;
+    transform: rotate(-30deg);
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-guarantee__leaf {
+      display: none;
+    }
+  }
+
+  .tabblie-guarantee__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 4vw, 64px);
+    align-items: center;
+  }
+
+  .tabblie-guarantee__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin-bottom: 14px;
+  }
+
+  .tabblie-guarantee__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: var(--font-heading-weight);
+    color: #1F1209;
+    line-height: 1.15;
+    margin: 0 0 20px;
+  }
+
+  .tabblie-guarantee__accent {
+    color: #E8622A;
+    font-style: italic;
+  }
+
+  .tabblie-guarantee__body {
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    color: rgba(31, 18, 9, 0.65);
+    line-height: 1.7;
+    margin: 0 0 28px;
+  }
+
+  .tabblie-guarantee__body strong {
+    color: #1F1209;
+    font-weight: 600;
+  }
+
+  .tabblie-guarantee__cta {
+    display: inline-block;
+    background: #E8622A;
+    color: #ffffff;
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 32px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .tabblie-guarantee__cta:hover {
+    background: #d4531d;
+    color: #ffffff;
+  }
+
+  .tabblie-guarantee__visual {
+    position: relative;
+  }
+
+  .tabblie-guarantee__image {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .tabblie-guarantee__image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .tabblie-guarantee__badge {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    width: 130px;
+    height: 130px;
+    background: #E8622A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+    box-shadow: 0 4px 20px rgba(232, 98, 42, 0.3);
+  }
+
+  .tabblie-guarantee__badge-text {
+    font-family: var(--font-heading-family);
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.25;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+
+  .tabblie-guarantee__placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: rgba(232, 98, 42, 0.1);
+    border-radius: 20px;
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-guarantee__inner {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    .tabblie-guarantee__visual {
+      order: -1;
+    }
+
+    .tabblie-guarantee__badge {
+      width: 100px;
+      height: 100px;
+      bottom: -10px;
+      right: -6px;
+      padding: 12px;
+    }
+
+    .tabblie-guarantee__badge-text {
+      font-size: 11px;
+    }
+
+    .tabblie-guarantee__body {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<section class="tabblie-guarantee" id="tabblie-guarantee-{{ section.id }}">
+  <svg class="tabblie-guarantee__leaf tabblie-guarantee__leaf--1" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+    <path d="M50 5 C 25 5, 10 30, 10 55 C 10 75, 25 90, 50 95 C 50 70, 35 50, 20 40 C 40 45, 55 60, 50 95 C 75 90, 90 75, 90 55 C 90 30, 75 5, 50 5 Z"/>
+  </svg>
+  <div class="tabblie-guarantee__inner">
+    <div class="tabblie-guarantee__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tabblie-guarantee__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="tabblie-guarantee__title">
+        {{- section.settings.heading -}}
+        {%- if section.settings.heading_accent != blank -%}
+          <span class="tabblie-guarantee__accent"> {{ section.settings.heading_accent }}</span>
+        {%- endif -%}
+      </h2>
+      {%- if section.settings.body != blank -%}
+        <div class="tabblie-guarantee__body">{{ section.settings.body }}</div>
+      {%- endif -%}
+      {%- if section.settings.button_text != blank -%}
+        <a class="tabblie-guarantee__cta" href="{{ section.settings.button_url | default: '#' }}">
+          {{ section.settings.button_text }}
+        </a>
+      {%- endif -%}
+    </div>
+    <div class="tabblie-guarantee__visual">
+      <div class="tabblie-guarantee__image">
+        {%- if section.settings.image != blank -%}
+          <img
+            src="{{ section.settings.image | image_url: width: 720 }}"
+            alt="{{ section.settings.image_alt | escape }}"
+            width="720"
+            height="540"
+            loading="lazy"
+          >
+        {%- else -%}
+          <img
+            src="{{ 'tabblie-30dagen.png' | asset_url }}"
+            alt="30 dagen uitproberen"
+            width="720"
+            height="540"
+            loading="lazy"
+          >
+        {%- endif -%}
+      </div>
+      <div class="tabblie-guarantee__badge">
+        <span class="tabblie-guarantee__badge-text">{{ section.settings.badge_text }}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Guarantee",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "ONZE GARANTIE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Probeer het 30 dagen."
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent (italic orange)",
+      "default": "Risicovrij!"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body text",
+      "default": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of op elk oppervlak. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Bestel nu & bespaar"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "30 dagen proefwassen"
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge text",
+      "default": "30 dagen proef wassen"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Guarantee"
+    }
+  ]
+}
+{% endschema %}

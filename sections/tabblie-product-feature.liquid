@@ -1,0 +1,351 @@
+{%- comment -%}
+  tabblie-product-feature.liquid
+  Colleins-style split image + text feature section.
+  Brand: Tabblie — cream background, Fraunces heading, orange accent.
+{%- endcomment -%}
+
+<style>
+  .tabblie-pf {
+    background-color: #FFFFFF;
+    padding: clamp(56px, 7vw, 96px) clamp(16px, 3vw, 40px);
+  }
+
+  .tabblie-pf__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(36px, 5vw, 72px);
+    align-items: center;
+  }
+
+  .tabblie-pf__inner--reversed {
+    direction: rtl;
+  }
+
+  .tabblie-pf__inner--reversed > * {
+    direction: ltr;
+  }
+
+  /* Image side */
+  .tabblie-pf__media {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background-color: rgba(232, 98, 42, 0.08);
+    position: relative;
+  }
+
+  .tabblie-pf__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .tabblie-pf__media-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(232,98,42,0.12) 0%, rgba(243,226,206,0.6) 100%);
+    min-height: 400px;
+  }
+
+  /* Text side */
+  .tabblie-pf__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .tabblie-pf__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin-bottom: 16px;
+  }
+
+  .tabblie-pf__title {
+    font-family: var(--heading-font-family);
+    font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+    font-weight: 600;
+    color: #1F1209;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0 0 20px;
+  }
+
+  .tabblie-pf__desc {
+    font-family: var(--text-font-family);
+    font-size: 16px;
+    color: rgba(31, 18, 9, 0.65);
+    line-height: 1.7;
+    margin: 0 0 36px;
+  }
+
+  /* Benefit bullets */
+  .tabblie-pf__benefits {
+    list-style: none;
+    margin: 0 0 44px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .tabblie-pf__benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    color: #1F1209;
+    line-height: 1.5;
+  }
+
+  .tabblie-pf__benefit-icon {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: rgba(232, 98, 42, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .tabblie-pf__benefit-icon svg {
+    color: #E8622A;
+  }
+
+  /* CTA */
+  .tabblie-pf__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    font-weight: 600;
+    color: #FDF6EE;
+    background-color: #E8622A;
+    border: none;
+    border-radius: 100px;
+    padding: 14px 28px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    align-self: flex-start;
+  }
+
+  .tabblie-pf__cta:hover {
+    background-color: #cf531e;
+    transform: translateY(-1px);
+  }
+
+  .tabblie-pf__cta svg {
+    transition: transform 0.2s ease;
+  }
+
+  .tabblie-pf__cta:hover svg {
+    transform: translateX(3px);
+  }
+
+  /* Mobile */
+  @media (max-width: 749px) {
+    .tabblie-pf {
+      padding: 64px 20px;
+    }
+
+    .tabblie-pf__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .tabblie-pf__inner--reversed {
+      direction: ltr;
+    }
+
+    .tabblie-pf__media {
+      aspect-ratio: 4 / 3;
+    }
+
+    .tabblie-pf__title {
+      font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+
+    .tabblie-pf__benefits {
+      margin-bottom: 32px;
+    }
+  }
+</style>
+
+<section class="tabblie-pf" id="tabblie-pf-{{ section.id }}">
+  <div class="tabblie-pf__inner{% if section.settings.image_side == 'right' %} tabblie-pf__inner--reversed{% endif %}">
+
+    <div class="tabblie-pf__media">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 900 }}"
+          alt="{{ section.settings.title | escape }}"
+          width="900"
+          height="1125"
+          loading="lazy"
+        >
+      {%- else -%}
+        <img
+          src="{{ 'tabblie-product-feature.png' | asset_url }}"
+          alt="{{ section.settings.title | escape }}"
+          width="900"
+          height="1125"
+          loading="lazy"
+        >
+      {%- endif -%}
+    </div>
+
+    <div class="tabblie-pf__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tabblie-pf__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.title != blank -%}
+        <h2 class="tabblie-pf__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <p class="tabblie-pf__desc">{{ section.settings.description }}</p>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="tabblie-pf__benefits">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.text != blank -%}
+              <li class="tabblie-pf__benefit" {{ block.shopify_attributes }}>
+                <span class="tabblie-pf__benefit-icon" aria-hidden="true">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M2 6L5 9L10 3" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                {{ block.settings.text }}
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      {%- if section.settings.button_text != blank -%}
+        <a class="tabblie-pf__cta" href="{{ section.settings.button_url | default: '#' }}">
+          {{ section.settings.button_text }}
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8H13M9.5 4.5L13 8L9.5 11.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Product Feature",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "image_side",
+      "label": "Image position",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Product image"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "Why it works"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "One strip. Zero bottles. Actually clean."
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Tabblie strips dissolve instantly in water — no measuring, no plastic, no mess. Just clean laundry, dishes, and surfaces every time."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Benefit text",
+          "default": "Dissolves in any water temperature"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Feature",
+      "settings": {
+        "eyebrow": "Why tabblie?",
+        "title": "One strip. Zero bottles. Actually clean.",
+        "description": "Tabblie strips dissolve instantly in water — no measuring, no plastic, no mess. Just clean laundry, dishes, and surfaces every time.",
+        "button_text": "Shop the strips",
+        "image_side": "left"
+      },
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": { "text": "Works in any washing machine or dishwasher" }
+        },
+        {
+          "type": "benefit",
+          "settings": { "text": "Dissolves in hot and cold water" }
+        },
+        {
+          "type": "benefit",
+          "settings": { "text": "No plastic bottles — ever" }
+        },
+        {
+          "type": "benefit",
+          "settings": { "text": "Vegan formula, cruelty-free certified" }
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6
+}
+{% endschema %}

@@ -1,0 +1,209 @@
+{%- comment -%}
+  tabblie-product-usps.liquid
+  Two bars: 1) Orange deal banner  2) Static USP strip with icons
+{%- endcomment -%}
+
+<style>
+  /* ── Deal bar ── */
+  .tabblie-deal-bar {
+    background-color: #E8622A;
+    padding: 10px 16px;
+    text-align: center;
+  }
+
+  .tabblie-deal-bar__text {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  /* ── USP strip ── */
+  .tabblie-usp-strip {
+    background-color: #ffffff;
+    border-bottom: 1px solid rgba(31, 18, 9, 0.08);
+    padding: 10px 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .tabblie-usp-strip__track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: max-content;
+    animation: tabblie-usp-scroll 40s linear infinite;
+  }
+
+  .tabblie-usp-strip:hover .tabblie-usp-strip__track {
+    animation-play-state: paused;
+  }
+
+  @keyframes tabblie-usp-scroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-25%); }
+  }
+
+  .tabblie-usp-strip__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--text-font-family);
+    font-size: 12px;
+    font-weight: 500;
+    color: #1F1209;
+    letter-spacing: 0.01em;
+    padding: 0 32px;
+    white-space: nowrap;
+  }
+
+  .tabblie-usp-strip__icon {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+  }
+
+  .tabblie-usp-strip__icon[data-icon="leaf"] { color: #5BB8A0; }
+  .tabblie-usp-strip__icon[data-icon="heart"] { color: #E85B7A; }
+  .tabblie-usp-strip__icon[data-icon="truck"] { color: #3B7DD8; }
+  .tabblie-usp-strip__icon[data-icon="shield"] { color: #5BB8A0; }
+  .tabblie-usp-strip__icon[data-icon="recycle"] { color: #5BB8A0; }
+  .tabblie-usp-strip__icon[data-icon="star"] { color: #F5C842; }
+  .tabblie-usp-strip__icon[data-icon="check"] { color: #3B7DD8; }
+
+  .tabblie-usp-strip__item--nl .tabblie-usp-strip__icon { display: none; }
+  .tabblie-usp-strip__item--nl::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 12px;
+    flex-shrink: 0;
+    border-radius: 2px;
+    background: linear-gradient(to bottom, #AE1C28 33%, #FFFFFF 33% 66%, #21468B 66%);
+  }
+
+  .tabblie-usp-strip__dot {
+    color: rgba(31, 18, 9, 0.2);
+    font-size: 5px;
+    line-height: 1;
+    padding: 0 12px;
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-usp-strip {
+      margin-bottom: 16px;
+    }
+
+    .tabblie-usp-strip__item {
+      font-size: 11px;
+    }
+
+    .tabblie-usp-strip__track {
+      animation-duration: 22s;
+    }
+  }
+</style>
+
+{%- if section.settings.deal_text != blank -%}
+  <div class="tabblie-deal-bar">
+    <span class="tabblie-deal-bar__text">{{ section.settings.deal_text }}</span>
+  </div>
+{%- endif -%}
+
+<div class="tabblie-usp-strip" aria-hidden="true">
+  <div class="tabblie-usp-strip__track">
+    {%- for _i in (1..4) -%}
+      {%- for block in section.blocks -%}
+        <span class="tabblie-usp-strip__item{% if block.settings.icon == 'check' %} tabblie-usp-strip__item--nl{% endif %}">
+          {%- assign icon_name = block.settings.icon -%}
+          {%- if icon_name == 'footprint' -%}
+            <img class="tabblie-usp-strip__icon-img" src="{{ 'tabblie-carbon-footprint.png' | asset_url }}" alt="" style="width:18px;height:18px;object-fit:contain;flex-shrink:0">
+          {%- elsif icon_name == 'plasticfree' -%}
+            <img class="tabblie-usp-strip__icon-img" src="{{ 'tabblie-plasticfree.png' | asset_url }}" alt="" style="width:22px;height:22px;object-fit:contain;flex-shrink:0">
+          {%- else -%}
+          <svg class="tabblie-usp-strip__icon" data-icon="{{ icon_name }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            {%- if icon_name == 'leaf' -%}
+              <path d="M2 22c1-6 5.5-12 15-13"/><path d="M17 9c-2 0-6 1-8.5 5.5"/><path d="M22 2L17 9"/>
+            {%- elsif icon_name == 'heart' -%}
+              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/>
+            {%- elsif icon_name == 'truck' -%}
+              <path d="M5 18H3a1 1 0 01-1-1V7a1 1 0 011-1h10v11m0-11h3l4 5v6a1 1 0 01-1 1h-1"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/>
+            {%- elsif icon_name == 'shield' -%}
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+            {%- elsif icon_name == 'recycle' -%}
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2"/><path d="M8 12s1.5-4 4-4 4 4 4 4-1.5 4-4 4-4-4-4-4"/>
+            {%- elsif icon_name == 'star' -%}
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            {%- else -%}
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+            {%- endif -%}
+          </svg>
+          {%- endif -%}
+          {{ block.settings.text }}
+        </span>
+        <span class="tabblie-usp-strip__dot">&#9679;</span>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product USP Bars",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "deal_text",
+      "label": "Deal bar text (leave blank to hide)",
+      "default": "LENTEKORTING: 2+1 GRATIS"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "USP item",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            { "value": "leaf", "label": "Leaf" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "truck", "label": "Truck" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "recycle", "label": "Recycle" },
+            { "value": "star", "label": "Star" },
+            { "value": "check", "label": "Check" },
+            { "value": "footprint", "label": "Carbon Footprint" },
+            { "value": "plasticfree", "label": "Plastic Free" }
+          ],
+          "default": "check"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "USP item"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product USP Bars",
+      "blocks": [
+        { "type": "usp", "settings": { "icon": "leaf", "text": "Plasticvrij" } },
+        { "type": "usp", "settings": { "icon": "heart", "text": "100% vegan" } },
+        { "type": "usp", "settings": { "icon": "truck", "text": "Gratis verzending NL & BE" } },
+        { "type": "usp", "settings": { "icon": "check", "text": "Gemaakt in Nederland" } },
+        { "type": "usp", "settings": { "icon": "star", "text": "Super effectief" } }
+      ]
+    }
+  ],
+  "max_blocks": 8
+}
+{% endschema %}

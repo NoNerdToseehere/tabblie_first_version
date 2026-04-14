@@ -1,0 +1,184 @@
+{%- comment -%}
+  tabblie-video-text.liquid
+  Split section: text on left, video on right (reversible).
+{%- endcomment -%}
+
+<style>
+  .tabblie-vt {
+    background-color: {{ section.settings.bg_color | default: '#FDF6EE' }};
+    padding: clamp(32px, 4vw, 56px) clamp(16px, 3vw, 40px);
+  }
+
+  .tabblie-vt__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 64px);
+    align-items: center;
+  }
+
+  .tabblie-vt__inner--reversed {
+    direction: rtl;
+  }
+
+  .tabblie-vt__inner--reversed > * {
+    direction: ltr;
+  }
+
+  .tabblie-vt__content {
+    max-width: 480px;
+  }
+
+  .tabblie-vt__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin-bottom: 14px;
+  }
+
+  .tabblie-vt__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: var(--font-heading-weight);
+    color: #1F1209;
+    line-height: 1.15;
+    margin: 0 0 18px;
+  }
+
+  .tabblie-vt__accent {
+    color: #E8622A;
+    font-style: italic;
+  }
+
+  .tabblie-vt__body {
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    color: rgba(31, 18, 9, 0.7);
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
+
+  .tabblie-vt__body p {
+    margin: 0 0 12px;
+  }
+
+  .tabblie-vt__body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .tabblie-vt__cta {
+    display: inline-block;
+    background: #E8622A;
+    color: #ffffff;
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 28px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .tabblie-vt__cta:hover {
+    background: #d4531d;
+    color: #ffffff;
+  }
+
+  .tabblie-vt__media {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: #1a1a1a;
+    max-width: 480px;
+  }
+
+  .tabblie-vt__media video,
+  .tabblie-vt__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-vt__inner {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .tabblie-vt__inner--reversed {
+      direction: ltr;
+    }
+
+    .tabblie-vt__media {
+      aspect-ratio: 1 / 1;
+      order: -1;
+    }
+  }
+</style>
+
+<section class="tabblie-vt">
+  <div class="tabblie-vt__inner{% if section.settings.video_side == 'left' %} tabblie-vt__inner--reversed{% endif %}">
+    <div class="tabblie-vt__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tabblie-vt__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="tabblie-vt__title">
+        {{ section.settings.title }}
+        {%- if section.settings.title_accent != blank -%}
+          <span class="tabblie-vt__accent">{{ section.settings.title_accent }}</span>
+        {%- endif -%}
+      </h2>
+      {%- if section.settings.body != blank -%}
+        <div class="tabblie-vt__body">{{ section.settings.body }}</div>
+      {%- endif -%}
+      {%- if section.settings.button_text != blank -%}
+        <a class="tabblie-vt__cta" href="{{ section.settings.button_url | default: '#' }}">
+          {{ section.settings.button_text }}
+        </a>
+      {%- endif -%}
+    </div>
+    <div class="tabblie-vt__media">
+      {%- if section.settings.video_url != blank -%}
+        <video src="{{ section.settings.video_url }}" autoplay muted loop playsinline></video>
+      {%- elsif section.settings.image != blank -%}
+        <img src="{{ section.settings.image | image_url: width: 800 }}" alt="{{ section.settings.title | escape }}" loading="lazy">
+      {%- else -%}
+        <video src="{{ 'tabblie-ugc-video.mp4' | asset_url }}" autoplay muted loop playsinline></video>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Video + Text",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#FDF6EE" },
+    {
+      "type": "select",
+      "id": "video_side",
+      "label": "Video position",
+      "default": "right",
+      "options": [
+        { "value": "right", "label": "Right" },
+        { "value": "left", "label": "Left" }
+      ]
+    },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "ZO WERKT HET" },
+    { "type": "text", "id": "title", "label": "Heading", "default": "Scheur, gooi," },
+    { "type": "text", "id": "title_accent", "label": "Heading accent", "default": "klaar." },
+    { "type": "richtext", "id": "body", "label": "Body text", "default": "<p>Eén strip vervangt één plastic fles. Scheur hem af, gooi hem in je wasmachine of vaatwasser, en je bent klaar. Geen afmeten, geen rommel, geen plastic afval.</p><p>Werkt in koud en warm water. Dermatologisch getest en veilig voor het hele gezin.</p>" },
+    { "type": "text", "id": "button_text", "label": "Button text", "default": "Bekijk onze producten" },
+    { "type": "url", "id": "button_url", "label": "Button link" },
+    { "type": "url", "id": "video_url", "label": "Video URL (MP4)" },
+    { "type": "image_picker", "id": "image", "label": "Image (fallback)" }
+  ],
+  "presets": [{ "name": "Video + Text" }]
+}
+{% endschema %}

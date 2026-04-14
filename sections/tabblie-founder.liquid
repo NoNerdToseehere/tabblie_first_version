@@ -1,0 +1,297 @@
+{%- comment -%}
+  tabblie-founder.liquid
+  Founder story section — two-column layout: image left, text right.
+  Brand: Tabblie — cream background, Fraunces heading, orange accent.
+{%- endcomment -%}
+
+<style>
+  .tabblie-founder {
+    background-color: #FDF6EE;
+    padding: clamp(56px, 7vw, 96px) clamp(16px, 3vw, 40px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tabblie-founder__leaf {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .tabblie-founder__leaf--1 {
+    top: -30px;
+    right: 8%;
+    width: 140px;
+    height: 140px;
+    color: #E8622A;
+    opacity: 0.1;
+    transform: rotate(160deg);
+  }
+
+  .tabblie-founder__leaf--2 {
+    bottom: 40px;
+    left: -30px;
+    width: 120px;
+    height: 120px;
+    color: #5BB8A0;
+    opacity: 0.15;
+    transform: rotate(-30deg);
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-founder__leaf--1,
+    .tabblie-founder__leaf--2 {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .tabblie-founder__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(36px, 5vw, 72px);
+    align-items: center;
+  }
+
+  /* Image side */
+  .tabblie-founder__media {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    background-color: rgba(232, 98, 42, 0.08);
+    position: relative;
+  }
+
+  .tabblie-founder__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .tabblie-founder__media-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(232, 98, 42, 0.12) 0%, rgba(243, 226, 206, 0.6) 100%);
+    min-height: 400px;
+  }
+
+  .tabblie-founder__media-placeholder svg {
+    width: 64px;
+    height: 64px;
+    color: rgba(232, 98, 42, 0.3);
+  }
+
+  /* Text side */
+  .tabblie-founder__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .tabblie-founder__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin-bottom: 16px;
+  }
+
+  .tabblie-founder__title {
+    font-family: var(--heading-font-family);
+    font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+    font-weight: 600;
+    color: #1F1209;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0 0 20px;
+  }
+
+  .tabblie-founder__body {
+    font-family: var(--text-font-family);
+    font-size: 16px;
+    color: rgba(31, 18, 9, 0.65);
+    line-height: 1.7;
+    margin: 0 0 36px;
+  }
+
+  /* CTA — outlined orange pill */
+  .tabblie-founder__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    font-weight: 600;
+    color: #E8622A;
+    background-color: transparent;
+    border: 1.5px solid #E8622A;
+    border-radius: 100px;
+    padding: 14px 28px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    align-self: flex-start;
+  }
+
+  .tabblie-founder__cta:hover {
+    background-color: #E8622A;
+    color: #FDF6EE;
+    transform: translateY(-1px);
+  }
+
+  .tabblie-founder__cta svg {
+    transition: transform 0.2s ease;
+  }
+
+  .tabblie-founder__cta:hover svg {
+    transform: translateX(3px);
+  }
+
+  /* Mobile */
+  @media (max-width: 749px) {
+    .tabblie-founder {
+      padding: 64px 20px;
+    }
+
+    .tabblie-founder__inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .tabblie-founder__media {
+      aspect-ratio: 4 / 3;
+    }
+
+    .tabblie-founder__title {
+      font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+
+    .tabblie-founder__body {
+      margin-bottom: 28px;
+    }
+  }
+</style>
+
+<section class="tabblie-founder" id="tabblie-founder-{{ section.id }}">
+  <svg class="tabblie-founder__leaf tabblie-founder__leaf--1" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+    <path d="M50 5 C 25 5, 10 30, 10 55 C 10 75, 25 90, 50 95 C 50 70, 35 50, 20 40 C 40 45, 55 60, 50 95 C 75 90, 90 75, 90 55 C 90 30, 75 5, 50 5 Z"/>
+  </svg>
+  <svg class="tabblie-founder__leaf tabblie-founder__leaf--2" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+    <path d="M50 5 C 25 5, 10 30, 10 55 C 10 75, 25 90, 50 95 C 50 70, 35 50, 20 40 C 40 45, 55 60, 50 95 C 75 90, 90 75, 90 55 C 90 30, 75 5, 50 5 Z"/>
+  </svg>
+  <div class="tabblie-founder__inner">
+
+    <div class="tabblie-founder__media">
+      {%- if section.settings.image != blank -%}
+        <img
+          src="{{ section.settings.image | image_url: width: 900 }}"
+          alt="{{ section.settings.image_alt | default: section.settings.title | escape }}"
+          width="900"
+          height="1125"
+          loading="lazy"
+        >
+      {%- else -%}
+        <div class="tabblie-founder__media-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="tabblie-founder__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tabblie-founder__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.title != blank -%}
+        <h2 class="tabblie-founder__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.body != blank -%}
+        <p class="tabblie-founder__body">{{ section.settings.body }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.button_text != blank -%}
+        <a class="tabblie-founder__cta" href="{{ section.settings.button_url | default: '/pages/about' }}">
+          {{ section.settings.button_text }}
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8H13M9.5 4.5L13 8L9.5 11.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Founder Story",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Founder photo"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Tabblie oprichter"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "ONS VERHAAL"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Een familiebedrijf met een missie"
+    },
+    {
+      "type": "textarea",
+      "id": "body",
+      "label": "Body text",
+      "default": "Tabblie begon met een simpel idee: waarom zitten schoonmaakmiddelen nog steeds in plastic flessen? Als familie die houdt van een schoon huis \u00e9n een schone planeet, wisten we dat het anders kon. Onze dochter nam het voortouw en ontwikkelde strips die net zo goed werken als traditionele middelen \u2014 maar dan zonder plastic, zonder rommel, en zonder schuldgevoel. Elke strip die je gebruikt is een kleine stap richting een schonere wereld. En dat begint gewoon thuis."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Meer over tabblie"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Founder Story",
+      "settings": {
+        "eyebrow": "ONS VERHAAL",
+        "title": "Een familiebedrijf met een missie",
+        "body": "Tabblie begon met een simpel idee: waarom zitten schoonmaakmiddelen nog steeds in plastic flessen? Als familie die houdt van een schoon huis \u00e9n een schone planeet, wisten we dat het anders kon. Onze dochter nam het voortouw en ontwikkelde strips die net zo goed werken als traditionele middelen \u2014 maar dan zonder plastic, zonder rommel, en zonder schuldgevoel. Elke strip die je gebruikt is een kleine stap richting een schonere wereld. En dat begint gewoon thuis.",
+        "button_text": "Meer over tabblie"
+      }
+    }
+  ]
+}
+{% endschema %}

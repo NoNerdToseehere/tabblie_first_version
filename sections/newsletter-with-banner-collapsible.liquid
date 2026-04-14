@@ -86,10 +86,6 @@
         {%- endif -%}
 
 
-        <p >
-    Apply to our newsletter and receive 15% off your first order!
-  
-  </p> 
        
         <div class="section-form-wrapper">
           <newsletter-form class="newsletter-section-banner-collapsible-form newsletter-section-banner-collapsible-block">
@@ -106,8 +102,11 @@
                   </span></div>
                 </div>
                 <button type="submit" class="button newsletter-form__button" name="commit" id="Subscribe-{{ section.id }}" aria-label="{{ 'newsletter.button_label' | t }}" style="--button-width: {{ button_width }};--button-font-size: {{ button_font_size }};--button-text-color: {% if button_text_color != blank %}{{ button_text_color }}{% endif %};--button-border-color: {% if button_border_color != blank %}{{ button_border_color }}{% endif %};--button-background: {% if button_gradient_color != blank %}{{ button_gradient_color }}{% elsif button_background_color != blank %}{{ button_background_color }}{% endif %};--button-text-color-hover: {% if button_text_color_hover != blank %}{{ button_text_color_hover }}{% endif %};--button-border-color-hover: {% if button_border_color_hover != blank %}{{ button_border_color_hover }}{% endif %};--button-background-hover: {% if button_gradient_color_hover != blank %}{{ button_gradient_color_hover }}{% elsif button_background_color_hover != blank %}{{ button_background_color_hover }}{% endif %};--button-text-transform: {{ button_text_transform }};--button-font-weight: {{ button_font_weight }}">
-                   <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 7.75 1.34375 L 6.25 2.65625 L 14.65625 12 L 6.25 21.34375 L 7.75 22.65625 L 16.75 12.65625 L 17.34375 12 L 16.75 11.34375 Z"></path></svg>
-                  
+                  {%- if button_text != blank -%}
+                    <span>{{ button_text }}</span>
+                  {%- else -%}
+                    <span>Subscribe</span>
+                  {%- endif -%}
                   </button>
               </div>
               {%- if form.errors -%}

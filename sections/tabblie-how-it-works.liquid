@@ -1,0 +1,363 @@
+{%- comment -%}
+  tabblie-how-it-works.liquid
+  3-step process. Mobile: scroll-snap slider. Number badge: orange oval
+  with an animated SVG white ring that draws in like a progress loader.
+{%- endcomment -%}
+
+<style>
+  .tabblie-hiw {
+    background-color: #F8BFD6;
+    padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 40px);
+  }
+
+  .tabblie-hiw__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .tabblie-hiw__header {
+    text-align: center;
+    margin-bottom: clamp(36px, 5vw, 64px);
+  }
+
+  .tabblie-hiw__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin-bottom: 14px;
+  }
+
+  .tabblie-hiw__title {
+    font-family: var(--font-heading-family);
+    font-size: 3.6rem !important;
+    font-weight: var(--font-heading-weight);
+    font-style: var(--font-heading-style);
+    letter-spacing: var(--heading-letter-spacing);
+    line-height: 1.1 !important;
+    color: var(--color-text);
+    margin: 0 auto;
+    max-width: 550px;
+    text-align: center;
+  }
+
+  /* ── Desktop grid ── */
+  .tabblie-hiw__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+  }
+
+  /* Connector line — animates in */
+  .tabblie-hiw__steps::before {
+    content: '';
+    position: absolute;
+    top: 26px;
+    left: calc(16.666% + 20px);
+    right: calc(16.666% + 20px);
+    height: 2px;
+    background: linear-gradient(to right, #E8622A, rgba(232,98,42,0.3));
+    pointer-events: none;
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+
+  /* ── Sequential load animations ── */
+
+  /* Badges start hidden */
+  .tabblie-hiw__step-num {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: none;
+  }
+
+  /* Step content starts hidden */
+  .tabblie-hiw__step-title,
+  .tabblie-hiw__step-desc {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  /* Triggered when section enters viewport */
+  .tabblie-hiw--in-view .tabblie-hiw__steps::before {
+    animation: hiw-line 2s ease forwards;
+  }
+
+  .tabblie-hiw--in-view .tabblie-hiw__step:nth-child(1) .tabblie-hiw__step-num { animation: hiw-badge 0.45s cubic-bezier(0.34,1.56,0.64,1) 0.1s forwards; }
+  .tabblie-hiw--in-view .tabblie-hiw__step:nth-child(2) .tabblie-hiw__step-num { animation: hiw-badge 0.45s cubic-bezier(0.34,1.56,0.64,1) 1.0s forwards; }
+  .tabblie-hiw--in-view .tabblie-hiw__step:nth-child(3) .tabblie-hiw__step-num { animation: hiw-badge 0.45s cubic-bezier(0.34,1.56,0.64,1) 1.9s forwards; }
+  .tabblie-hiw--in-view .tabblie-hiw__step:nth-child(4) .tabblie-hiw__step-num { animation: hiw-badge 0.45s cubic-bezier(0.34,1.56,0.64,1) 2.8s forwards; }
+
+  .tabblie-hiw--in-view .tabblie-hiw__step:nth-child(1) .tabblie-hiw__step-title,
+  .tabblie-hiw--in-view .tabblie-hiw__step:nth-child(1) .tabblie-hiw__step-desc { animation: hiw-content 0.4s ease 0.45s forwards; }
+  .tabblie-hiw--in-view .tabblie-hiw__step:nth-child(2) .tabblie-hiw__step-title,
+  .tabblie-hiw--in-view .tabblie-hiw__step:nth-child(2) .tabblie-hiw__step-desc { animation: hiw-content 0.4s ease 1.35s forwards; }
+  .tabblie-hiw--in-view .tabblie-hiw__step:nth-child(3) .tabblie-hiw__step-title,
+  .tabblie-hiw--in-view .tabblie-hiw__step:nth-child(3) .tabblie-hiw__step-desc { animation: hiw-content 0.4s ease 2.25s forwards; }
+  .tabblie-hiw--in-view .tabblie-hiw__step:nth-child(4) .tabblie-hiw__step-title,
+  .tabblie-hiw--in-view .tabblie-hiw__step:nth-child(4) .tabblie-hiw__step-desc { animation: hiw-content 0.4s ease 3.15s forwards; }
+
+  @keyframes hiw-line {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
+
+  @keyframes hiw-badge {
+    from { opacity: 0; transform: scale(0.5); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes hiw-content {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .tabblie-hiw__step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 clamp(12px, 2.5vw, 32px);
+  }
+
+  /* ── Badge: orange pill, white text, white ring outline ── */
+  .tabblie-hiw__step-num-wrap {
+    margin-bottom: 28px;
+    flex-shrink: 0;
+  }
+
+  .tabblie-hiw__step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 28px;
+    border-radius: 100px;
+    background-color: #E8622A;
+    box-shadow: 0 0 0 3px #ffffff; /* white ring around the orange pill */
+    font-family: var(--heading-font-family);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff !important;
+    line-height: 1;
+  }
+
+  /* Hide the SVG ring — replaced by CSS box-shadow */
+  .tabblie-hiw__ring {
+    display: none;
+  }
+
+  .tabblie-hiw__step-title {
+    font-family: var(--heading-font-family);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1F1209;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .tabblie-hiw__step-desc {
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    color: rgba(31, 18, 9, 0.65);
+    line-height: 1.6;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  /* ── Dot indicators (mobile only) ── */
+  .tabblie-hiw__dots {
+    display: none;
+  }
+
+  /* ── MOBILE: 2-column grid, all steps visible ── */
+  @media (max-width: 749px) {
+    .tabblie-hiw {
+      padding: clamp(40px, 6vw, 60px) clamp(16px, 4vw, 24px);
+    }
+
+    .tabblie-hiw__header {
+      margin-bottom: 36px;
+    }
+
+    .tabblie-hiw__steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px 16px;
+      overflow: visible;
+    }
+
+    .tabblie-hiw__title {
+      font-size: 30px;
+    }
+
+    .tabblie-hiw__steps::before {
+      display: none;
+    }
+
+    .tabblie-hiw__step {
+      padding: 0;
+    }
+
+    .tabblie-hiw__step-desc {
+      font-size: 14px;
+    }
+
+    /* Hide dots — no longer a slider */
+    .tabblie-hiw__dots {
+      display: none;
+    }
+
+    /* On mobile: skip animation delays, show everything immediately */
+    .tabblie-hiw__step-num,
+    .tabblie-hiw__step-title,
+    .tabblie-hiw__step-desc {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
+  }
+</style>
+
+<section class="tabblie-hiw" id="tabblie-hiw-{{ section.id }}">
+  <div class="tabblie-hiw__inner">
+
+    <div class="tabblie-hiw__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tabblie-hiw__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="tabblie-hiw__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+    </div>
+
+    <div class="tabblie-hiw__steps" id="hiw-slider-{{ section.id }}">
+      {%- for block in section.blocks -%}
+        <div class="tabblie-hiw__step{% if forloop.first %} tabblie-hiw__step--ring-active{% endif %}" {{ block.shopify_attributes }}>
+          <div class="tabblie-hiw__step-num-wrap">
+            <div class="tabblie-hiw__step-num">{{ forloop.index }}</div>
+            <svg class="tabblie-hiw__ring" viewBox="0 0 100 72" fill="none" aria-hidden="true">
+              <ellipse cx="50" cy="36" rx="48" ry="34" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          {%- if block.settings.title != blank -%}
+            <h3 class="tabblie-hiw__step-title">{{ block.settings.title }}</h3>
+          {%- endif -%}
+          {%- if block.settings.description != blank -%}
+            <p class="tabblie-hiw__step-desc">{{ block.settings.description }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <div class="tabblie-hiw__dots" id="hiw-dots-{{ section.id }}" aria-hidden="true">
+      {%- for block in section.blocks -%}
+        <span class="tabblie-hiw__dot{% if forloop.first %} tabblie-hiw__dot--active{% endif %}"></span>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+<script>
+  (function () {
+    var section = document.getElementById('tabblie-hiw-{{ section.id }}');
+    if (!section) return;
+
+    /* On mobile everything is immediately visible — skip observer */
+    if (window.matchMedia('(max-width: 749px)').matches) return;
+
+    function trigger() {
+      section.classList.add('tabblie-hiw--in-view');
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          trigger();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    /* If already in view on load, trigger immediately */
+    var rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      trigger();
+    } else {
+      observer.observe(section);
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "How It Works",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "How it works"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Three steps to a cleaner home."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step title",
+          "default": "Tear"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Peel one strip from the pack. No measuring, no mess."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "title": "Tear",
+            "description": "Peel one strip from the pack. No measuring, no mess, no plastic bottle."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Drop",
+            "description": "Drop the strip into water or directly into your machine. It dissolves completely."
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "title": "Done",
+            "description": "Clean clothes, dishes, or surfaces — and zero plastic left behind."
+          }
+        }
+      ]
+    }
+  ],
+  "max_blocks": 4
+}
+{% endschema %}

@@ -1,0 +1,388 @@
+{%- comment -%}
+  tabblie-how-it-works-v2.liquid
+  Bold 3-step process with gradient background and animated number badges.
+{%- endcomment -%}
+
+<style>
+  .tabblie-hiw2 {
+    background: linear-gradient(135deg, #F8BFD6 0%, #FADCE8 50%, #FDF0E8 100%);
+    padding: clamp(56px, 7vw, 96px) clamp(16px, 3vw, 40px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tabblie-hiw2::before {
+    content: '1 2 3';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-heading-family);
+    font-size: clamp(14rem, 22vw, 22rem);
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.12);
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .tabblie-hiw2__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tabblie-hiw2__header {
+    text-align: center;
+    margin-bottom: clamp(40px, 5vw, 64px);
+  }
+
+  .tabblie-hiw2__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin-bottom: 14px;
+  }
+
+  .tabblie-hiw2__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: var(--font-heading-weight);
+    color: #1F1209;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  .tabblie-hiw2__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2vw, 28px);
+  }
+
+  .tabblie-hiw2__step {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: clamp(28px, 3vw, 40px) clamp(20px, 2.5vw, 28px);
+    text-align: center;
+    position: relative;
+    box-shadow: 0 8px 32px rgba(31, 18, 9, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .tabblie-hiw2__step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(31, 18, 9, 0.1);
+  }
+
+  .tabblie-hiw2__num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: #E8622A;
+    color: #ffffff;
+    font-family: var(--font-heading-family);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: scale(0.5) rotate(-5deg);
+    position: relative;
+    border-radius: 42% 58% 63% 37% / 45% 55% 45% 55%;
+    box-shadow: 0 6px 20px rgba(232, 98, 42, 0.35);
+  }
+
+  .tabblie-hiw2__step:nth-child(2) .tabblie-hiw2__num {
+    border-radius: 55% 45% 38% 62% / 52% 40% 60% 48%;
+    transform: scale(0.5) rotate(5deg);
+  }
+
+  .tabblie-hiw2__step:nth-child(3) .tabblie-hiw2__num {
+    border-radius: 38% 62% 55% 45% / 60% 48% 52% 40%;
+    transform: scale(0.5) rotate(-8deg);
+  }
+
+  /* Drip drops */
+  .tabblie-hiw2__num::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 35%;
+    width: 8px;
+    height: 14px;
+    background: #E8622A;
+    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+    opacity: 0.7;
+  }
+
+  .tabblie-hiw2__num::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    right: 30%;
+    width: 6px;
+    height: 10px;
+    background: #E8622A;
+    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+    opacity: 0.5;
+  }
+
+  .tabblie-hiw2__step:nth-child(2) .tabblie-hiw2__num::before {
+    left: auto;
+    right: 25%;
+    bottom: -12px;
+  }
+
+  .tabblie-hiw2__step:nth-child(2) .tabblie-hiw2__num::after {
+    right: auto;
+    left: 28%;
+    bottom: -8px;
+    width: 5px;
+    height: 8px;
+  }
+
+  .tabblie-hiw2__step:nth-child(3) .tabblie-hiw2__num::before {
+    left: 40%;
+    bottom: -14px;
+    width: 7px;
+    height: 12px;
+  }
+
+  .tabblie-hiw2__step:nth-child(3) .tabblie-hiw2__num::after {
+    right: 22%;
+    bottom: -9px;
+    width: 5px;
+    height: 9px;
+    opacity: 0.4;
+  }
+
+  .tabblie-hiw2--in-view .tabblie-hiw2__step:nth-child(1) .tabblie-hiw2__num {
+    animation: hiw2-splash1 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s forwards;
+  }
+  .tabblie-hiw2--in-view .tabblie-hiw2__step:nth-child(2) .tabblie-hiw2__num {
+    animation: hiw2-splash2 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s forwards;
+  }
+  .tabblie-hiw2--in-view .tabblie-hiw2__step:nth-child(3) .tabblie-hiw2__num {
+    animation: hiw2-splash3 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.9s forwards;
+  }
+
+  @keyframes hiw2-splash1 {
+    0% { opacity: 0; transform: scale(0.3) rotate(15deg); }
+    60% { opacity: 1; transform: scale(1.15) rotate(-8deg); }
+    100% { opacity: 1; transform: scale(1) rotate(-5deg); }
+  }
+
+  @keyframes hiw2-splash2 {
+    0% { opacity: 0; transform: scale(0.3) rotate(-15deg); }
+    60% { opacity: 1; transform: scale(1.15) rotate(8deg); }
+    100% { opacity: 1; transform: scale(1) rotate(5deg); }
+  }
+
+  @keyframes hiw2-splash3 {
+    0% { opacity: 0; transform: scale(0.3) rotate(20deg); }
+    60% { opacity: 1; transform: scale(1.15) rotate(-12deg); }
+    100% { opacity: 1; transform: scale(1) rotate(-8deg); }
+  }
+
+  .tabblie-hiw2__step-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    color: #E8622A;
+  }
+
+  .tabblie-hiw2__step-title {
+    font-family: var(--font-heading-family);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1F1209;
+    margin-bottom: 10px;
+  }
+
+  .tabblie-hiw2__step-desc {
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    color: rgba(31, 18, 9, 0.6);
+    line-height: 1.6;
+    max-width: 240px;
+    margin: 0 auto;
+  }
+
+  /* Connector arrows between steps */
+  .tabblie-hiw2__connector {
+    display: none;
+  }
+
+  @media (min-width: 750px) {
+    .tabblie-hiw2__connector {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 36px;
+      right: -20px;
+      z-index: 2;
+      color: #E8622A;
+      opacity: 0.4;
+    }
+  }
+
+  /* Mobile */
+  @media (max-width: 749px) {
+    .tabblie-hiw2__steps {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .tabblie-hiw2__step {
+      display: flex;
+      align-items: center;
+      text-align: left;
+      padding: 20px;
+      gap: 16px;
+    }
+
+    .tabblie-hiw2__num {
+      width: 50px;
+      height: 50px;
+      font-size: 1.3rem;
+      margin-bottom: 0;
+      flex-shrink: 0;
+    }
+
+    .tabblie-hiw2__num::after {
+      display: none;
+    }
+
+    .tabblie-hiw2__step-content {
+      flex: 1;
+    }
+
+    .tabblie-hiw2__step-icon {
+      display: none;
+    }
+
+    .tabblie-hiw2__step-title {
+      margin-bottom: 4px;
+    }
+
+    .tabblie-hiw2__step-desc {
+      max-width: none;
+      font-size: 13px;
+    }
+
+    .tabblie-hiw2--in-view .tabblie-hiw2__num {
+      opacity: 1 !important;
+      transform: none !important;
+      animation: none !important;
+    }
+
+    .tabblie-hiw2::before {
+      font-size: 10rem;
+    }
+  }
+</style>
+
+<section class="tabblie-hiw2" id="tabblie-hiw2-{{ section.id }}">
+  <div class="tabblie-hiw2__inner">
+
+    <div class="tabblie-hiw2__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tabblie-hiw2__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="tabblie-hiw2__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+    </div>
+
+    <div class="tabblie-hiw2__steps">
+      {%- for block in section.blocks -%}
+        <div class="tabblie-hiw2__step" {{ block.shopify_attributes }}>
+          <div class="tabblie-hiw2__num">{{ forloop.index }}</div>
+          <div class="tabblie-hiw2__step-content">
+            <div class="tabblie-hiw2__step-icon">
+              {%- case forloop.index -%}
+                {%- when 1 -%}
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                {%- when 2 -%}
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6l3-3"/><path d="M12 8l-3-3"/><circle cx="12" cy="16" r="6"/></svg>
+                {%- when 3 -%}
+                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+              {%- endcase -%}
+            </div>
+            {%- if block.settings.title != blank -%}
+              <h3 class="tabblie-hiw2__step-title">{{ block.settings.title }}</h3>
+            {%- endif -%}
+            {%- if block.settings.description != blank -%}
+              <p class="tabblie-hiw2__step-desc">{{ block.settings.description }}</p>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function () {
+  var section = document.querySelector('.tabblie-hiw2');
+  if (!section) return;
+  if (window.matchMedia('(max-width: 749px)').matches) {
+    section.classList.add('tabblie-hiw2--in-view');
+    return;
+  }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        section.classList.add('tabblie-hiw2--in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  var rect = section.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    section.classList.add('tabblie-hiw2--in-view');
+  } else {
+    observer.observe(section);
+  }
+})();
+</script>
+
+{% schema %}
+{
+  "name": "How It Works v2",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Zo werkt het" },
+    { "type": "text", "id": "title", "label": "Heading", "default": "Drie stappen naar een schoner huis." }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Step title", "default": "Scheur" },
+        { "type": "textarea", "id": "description", "label": "Description", "default": "Scheur één strip van de verpakking." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "How It Works v2",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Scheur", "description": "Scheur één strip van de verpakking. Geen afmeten, geen rommel, geen plastic fles." } },
+        { "type": "step", "settings": { "title": "Gooi", "description": "Gooi de strip in de wasmachine, vaatwasser of los op in water. Het lost volledig op." } },
+        { "type": "step", "settings": { "title": "Klaar", "description": "Schone kleding, vaat of oppervlakken — en nul plastic achtergelaten." } }
+      ]
+    }
+  ],
+  "max_blocks": 4
+}
+{% endschema %}

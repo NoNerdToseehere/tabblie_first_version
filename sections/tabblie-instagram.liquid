@@ -1,0 +1,420 @@
+{%- comment -%}
+  tabblie-instagram.liquid
+  Instagram feed displayed inside a tablet/iPad frame for a realistic social media feel.
+{%- endcomment -%}
+
+<style>
+  .tabblie-insta {
+    background-color: #FDF6EE;
+    padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 40px);
+  }
+
+  .tabblie-insta__inner {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .tabblie-insta__header {
+    text-align: center;
+    margin-bottom: clamp(28px, 4vw, 44px);
+  }
+
+  .tabblie-insta__eyebrow {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #1F1209;
+    margin-bottom: 8px;
+  }
+
+  .tabblie-insta__title {
+    font-family: var(--text-font-family);
+    font-size: clamp(14px, 1.6vw, 17px);
+    font-weight: 500;
+    color: rgba(31, 18, 9, 0.5);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* Device frame */
+  .tabblie-insta__device {
+    background: #1a1a1a;
+    border-radius: 24px;
+    padding: 14px;
+    box-shadow: 0 20px 60px rgba(31, 18, 9, 0.15);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .tabblie-insta__screen {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  /* Instagram profile header — like real IG */
+  .tabblie-insta__profile {
+    padding: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .tabblie-insta__profile-top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 12px;
+  }
+
+  .tabblie-insta__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #E8622A, #F5C842);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: var(--font-heading-family);
+    font-size: 24px;
+    font-weight: 700;
+    flex-shrink: 0;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #E8622A;
+  }
+
+  .tabblie-insta__profile-stats {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+  }
+
+  .tabblie-insta__stat {
+    text-align: center;
+  }
+
+  .tabblie-insta__stat-num {
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    display: block;
+  }
+
+  .tabblie-insta__stat-label {
+    font-family: var(--text-font-family);
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.45);
+  }
+
+  .tabblie-insta__profile-info {
+    margin-bottom: 12px;
+  }
+
+  .tabblie-insta__username-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+
+  .tabblie-insta__username {
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+
+  .tabblie-insta__verified {
+    color: #3B7DD8;
+    flex-shrink: 0;
+  }
+
+  .tabblie-insta__bio {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    color: #1a1a1a;
+    line-height: 1.45;
+    margin: 0;
+  }
+
+  .tabblie-insta__bio-link {
+    color: #00376B;
+    font-weight: 600;
+  }
+
+  .tabblie-insta__follow-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #E8622A;
+    color: #fff;
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 7px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .tabblie-insta__follow-btn:hover {
+    background: #d4531d;
+    color: #fff;
+  }
+
+  /* Image grid */
+  .tabblie-insta__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .tabblie-insta__post {
+    aspect-ratio: 1;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .tabblie-insta__post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .tabblie-insta__post:hover img {
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
+
+  .tabblie-insta__post-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #fff;
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .tabblie-insta__post:hover .tabblie-insta__post-overlay {
+    opacity: 1;
+  }
+
+  .tabblie-insta__post-stat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .tabblie-insta__post-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #f0ebe5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Bottom stats bar */
+  .tabblie-insta__stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    padding: 14px 16px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+  }
+
+  .tabblie-insta__stat {
+    text-align: center;
+  }
+
+  .tabblie-insta__stat-num {
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    display: block;
+  }
+
+  .tabblie-insta__stat-label {
+    font-family: var(--text-font-family);
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.45);
+  }
+
+  /* CTA */
+  .tabblie-insta__cta {
+    text-align: center;
+    margin-top: 28px;
+  }
+
+  .tabblie-insta__cta a {
+    display: inline-block;
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    color: #E8622A;
+    text-decoration: none;
+    border: 1.5px solid #E8622A;
+    border-radius: 100px;
+    padding: 8px 28px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .tabblie-insta__cta a:hover {
+    background: #E8622A;
+    color: #fff;
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-insta__device {
+      border-radius: 18px;
+      padding: 8px;
+    }
+
+    .tabblie-insta__screen {
+      border-radius: 12px;
+    }
+
+    .tabblie-insta__stats {
+      gap: 20px;
+    }
+  }
+</style>
+
+<section class="tabblie-insta" id="tabblie-insta-{{ section.id }}">
+  <div class="tabblie-insta__inner">
+
+    <div class="tabblie-insta__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tabblie-insta__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="tabblie-insta__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+    </div>
+
+    <div class="tabblie-insta__device">
+      <div class="tabblie-insta__screen">
+
+        <div class="tabblie-insta__profile">
+          <div class="tabblie-insta__profile-top">
+            <div class="tabblie-insta__avatar">t</div>
+            <div class="tabblie-insta__profile-stats">
+              <div class="tabblie-insta__stat">
+                <span class="tabblie-insta__stat-num">{{ section.settings.posts_count | default: '42' }}</span>
+                <span class="tabblie-insta__stat-label">posts</span>
+              </div>
+              <div class="tabblie-insta__stat">
+                <span class="tabblie-insta__stat-num">{{ section.settings.followers_count | default: '1.2k' }}</span>
+                <span class="tabblie-insta__stat-label">volgers</span>
+              </div>
+              <div class="tabblie-insta__stat">
+                <span class="tabblie-insta__stat-num">{{ section.settings.following_count | default: '86' }}</span>
+                <span class="tabblie-insta__stat-label">volgend</span>
+              </div>
+            </div>
+          </div>
+          <div class="tabblie-insta__profile-info">
+            <div class="tabblie-insta__username-row">
+              <span class="tabblie-insta__username">{{ section.settings.username | default: 'tabblie' }}</span>
+              <svg class="tabblie-insta__verified" width="18" height="18" viewBox="0 0 24 24" fill="#3B7DD8"><path d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"/></svg>
+            </div>
+            <p class="tabblie-insta__bio">{{ section.settings.bio | default: 'Schoonmaken, opnieuw uitgevonden. 🧹➡️📄' }}</p>
+            <p class="tabblie-insta__bio" style="margin-top:2px"><span class="tabblie-insta__bio-link">{{ section.settings.bio_link_text | default: 'usetabbly.com' }}</span></p>
+          </div>
+          <a class="tabblie-insta__follow-btn" href="{{ section.settings.instagram_url | default: '#' }}" target="_blank" rel="noopener">Volgen</a>
+        </div>
+
+        <div class="tabblie-insta__grid">
+          {%- for block in section.blocks -%}
+            <div class="tabblie-insta__post" {{ block.shopify_attributes }}>
+              {%- if block.settings.image != blank -%}
+                <img src="{{ block.settings.image | image_url: width: 400 }}" alt="@tabblie post" width="400" height="400" loading="lazy">
+              {%- else -%}
+                <div class="tabblie-insta__post-placeholder">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="rgba(31,18,9,0.2)" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                </div>
+              {%- endif -%}
+              <div class="tabblie-insta__post-overlay">
+                <span class="tabblie-insta__post-stat">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
+                  {{ block.settings.likes | default: '124' }}
+                </span>
+                <span class="tabblie-insta__post-stat">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                  {{ block.settings.comments | default: '8' }}
+                </span>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+
+      </div>
+    </div>
+
+    {%- if section.settings.cta_text != blank -%}
+      <div class="tabblie-insta__cta">
+        <a href="{{ section.settings.instagram_url | default: '#' }}" target="_blank" rel="noopener">{{ section.settings.cta_text }}</a>
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Instagram Feed",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "VOLG ONS" },
+    { "type": "text", "id": "title", "label": "Heading", "default": "@tabblie op Instagram" },
+    { "type": "text", "id": "username", "label": "Username", "default": "tabblie" },
+    { "type": "url", "id": "instagram_url", "label": "Instagram URL" },
+    { "type": "text", "id": "posts_count", "label": "Posts count", "default": "42" },
+    { "type": "text", "id": "followers_count", "label": "Followers count", "default": "1.2k" },
+    { "type": "text", "id": "following_count", "label": "Following count", "default": "86" },
+    { "type": "text", "id": "bio", "label": "Bio text", "default": "Schoonmaken, opnieuw uitgevonden. Plasticvrij, plantaardig, voor het hele gezin." },
+    { "type": "text", "id": "bio_link_text", "label": "Bio link text", "default": "usetabbly.com" },
+    { "type": "text", "id": "cta_text", "label": "CTA button text", "default": "Volg ons op Instagram" }
+  ],
+  "blocks": [
+    {
+      "type": "post",
+      "name": "Post",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Post image" },
+        { "type": "text", "id": "likes", "label": "Likes", "default": "124" },
+        { "type": "text", "id": "comments", "label": "Comments", "default": "8" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram Feed",
+      "blocks": [
+        { "type": "post", "settings": { "likes": "234", "comments": "12" } },
+        { "type": "post", "settings": { "likes": "187", "comments": "9" } },
+        { "type": "post", "settings": { "likes": "312", "comments": "18" } },
+        { "type": "post", "settings": { "likes": "156", "comments": "7" } },
+        { "type": "post", "settings": { "likes": "278", "comments": "14" } },
+        { "type": "post", "settings": { "likes": "198", "comments": "11" } },
+        { "type": "post", "settings": { "likes": "245", "comments": "16" } },
+        { "type": "post", "settings": { "likes": "167", "comments": "6" } },
+        { "type": "post", "settings": { "likes": "289", "comments": "13" } }
+      ]
+    }
+  ],
+  "max_blocks": 12
+}
+{% endschema %}

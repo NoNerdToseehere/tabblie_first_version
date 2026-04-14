@@ -1,0 +1,433 @@
+{%- comment -%}
+  tabblie-testimonials.liquid
+  Customer testimonial cards — warm cream background.
+  Brand: Tabblie — dark earth text, orange star/accent.
+{%- endcomment -%}
+
+<style>
+  .tabblie-testi {
+    background-color: #FFFFFF;
+    padding: clamp(56px, 7vw, 96px) clamp(16px, 3vw, 40px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tabblie-testi__leaf {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .tabblie-testi__leaf--1 {
+    top: 10%;
+    left: -40px;
+    width: 130px;
+    height: 130px;
+    color: #F5C842;
+    opacity: 0.18;
+    transform: rotate(-40deg);
+  }
+
+  .tabblie-testi__leaf--2 {
+    bottom: 15%;
+    right: -50px;
+    width: 160px;
+    height: 160px;
+    color: #5BB8A0;
+    opacity: 0.15;
+    transform: rotate(150deg);
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-testi__leaf--1,
+    .tabblie-testi__leaf--2 {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .tabblie-testi__inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .tabblie-testi__header {
+    text-align: center;
+    margin-bottom: clamp(32px, 4vw, 56px);
+  }
+
+  .tabblie-testi__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin-bottom: 14px;
+  }
+
+  .tabblie-testi__title {
+    font-family: var(--heading-font-family);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 600;
+    color: #1F1209;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  /* Grid */
+  .tabblie-testi__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(12px, 1.5vw, 24px);
+  }
+
+  /* Card */
+  .tabblie-testi__card {
+    background-color: #F7F7F7;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: transform 0.2s ease;
+  }
+
+  .tabblie-testi__card:hover {
+    transform: translateY(-3px);
+  }
+
+  /* Card image */
+  .tabblie-testi__card-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: #ebe6e0;
+  }
+
+  .tabblie-testi__card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .tabblie-testi__card-image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(31, 18, 9, 0.15);
+    font-size: 32px;
+  }
+
+  .tabblie-testi__card-body {
+    padding: clamp(20px, 2.5vw, 28px) clamp(16px, 2vw, 24px);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  /* Stars */
+  .tabblie-testi__stars {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-bottom: 20px;
+  }
+
+  .tabblie-testi__star {
+    color: #E8622A;
+    font-size: 17px;
+    line-height: 1;
+  }
+
+  /* Quote */
+  .tabblie-testi__quote {
+    font-family: var(--heading-font-family);
+    font-size: 1.15rem;
+    font-weight: 400;
+    font-style: italic;
+    color: #1F1209;
+    line-height: 1.55;
+    margin: 0 0 24px;
+    flex: 1;
+  }
+
+  /* Author */
+  .tabblie-testi__author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(31, 18, 9, 0.1);
+    margin-top: auto;
+  }
+
+  .tabblie-testi__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(232, 98, 42, 0.15);
+    flex-shrink: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--heading-font-family);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #E8622A;
+  }
+
+  .tabblie-testi__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .tabblie-testi__author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .tabblie-testi__name {
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 700;
+    color: #1F1209;
+  }
+
+  .tabblie-testi__location {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    color: rgba(31, 18, 9, 0.5);
+  }
+
+  /* Verified badge */
+  .tabblie-testi__verified {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--text-font-family);
+    font-size: 11px;
+    font-weight: 600;
+    color: #E8622A;
+    letter-spacing: 0.03em;
+  }
+
+  /* Mobile */
+  @media (max-width: 749px) {
+    .tabblie-testi {
+      padding: 64px 20px;
+    }
+
+    .tabblie-testi__header {
+      margin-bottom: 40px;
+    }
+
+    .tabblie-testi__grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .tabblie-testi__card {
+      padding: 24px 20px;
+    }
+  }
+
+  /* Tablet */
+  @media (min-width: 750px) and (max-width: 1023px) {
+    .tabblie-testi__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>
+
+<section class="tabblie-testi" id="tabblie-testi-{{ section.id }}">
+  <svg class="tabblie-testi__leaf tabblie-testi__leaf--1" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+    <path d="M50 5 C 25 5, 10 30, 10 55 C 10 75, 25 90, 50 95 C 50 70, 35 50, 20 40 C 40 45, 55 60, 50 95 C 75 90, 90 75, 90 55 C 90 30, 75 5, 50 5 Z"/>
+  </svg>
+  <svg class="tabblie-testi__leaf tabblie-testi__leaf--2" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
+    <path d="M50 5 C 25 5, 10 30, 10 55 C 10 75, 25 90, 50 95 C 50 70, 35 50, 20 40 C 40 45, 55 60, 50 95 C 75 90, 90 75, 90 55 C 90 30, 75 5, 50 5 Z"/>
+  </svg>
+  <div class="tabblie-testi__inner">
+
+    <div class="tabblie-testi__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tabblie-testi__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="tabblie-testi__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+    </div>
+
+    <div class="tabblie-testi__grid">
+      {%- for block in section.blocks -%}
+        <div class="tabblie-testi__card" {{ block.shopify_attributes }}>
+
+          <div class="tabblie-testi__card-image">
+            {%- if block.settings.image != blank -%}
+              <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.name | escape }}" width="600" height="375" loading="lazy">
+            {%- else -%}
+              <div class="tabblie-testi__card-image-placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              </div>
+            {%- endif -%}
+          </div>
+
+          <div class="tabblie-testi__card-body">
+            <div class="tabblie-testi__stars" aria-label="{{ block.settings.rating }} out of 5 stars">
+              {%- for i in (1..block.settings.rating) -%}
+                <span class="tabblie-testi__star" aria-hidden="true">★</span>
+              {%- endfor -%}
+            </div>
+
+            {%- if block.settings.quote != blank -%}
+              <p class="tabblie-testi__quote">"{{ block.settings.quote }}"</p>
+            {%- endif -%}
+
+            <div class="tabblie-testi__author">
+            <div class="tabblie-testi__avatar">
+              {%- if block.settings.avatar != blank -%}
+                <img
+                  src="{{ block.settings.avatar | image_url: width: 80 }}"
+                  alt="{{ block.settings.name | escape }}"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                >
+              {%- else -%}
+                {{ block.settings.name | slice: 0 | upcase }}
+              {%- endif -%}
+            </div>
+            <div class="tabblie-testi__author-info">
+              {%- if block.settings.name != blank -%}
+                <span class="tabblie-testi__name">{{ block.settings.name }}</span>
+              {%- endif -%}
+              {%- if block.settings.location != blank -%}
+                <span class="tabblie-testi__location">{{ block.settings.location }}</span>
+              {%- endif -%}
+            </div>
+            <span class="tabblie-testi__verified" aria-label="Verified purchase">
+              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                <path d="M2 5.5L4.5 8L9 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Geverifieerd
+            </span>
+          </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "What customers say"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Real homes. Real results."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "range",
+          "id": "rating",
+          "label": "Star rating",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Review text",
+          "default": "Switched from liquid detergent six months ago. My laundry is just as clean and I've stopped buying plastic bottles entirely."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Customer name",
+          "default": "Lisa B."
+        },
+        {
+          "type": "text",
+          "id": "location",
+          "label": "Location",
+          "default": "Amsterdam, NL"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar photo (optional)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Review image (product in use)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Switched from liquid detergent six months ago. My laundry is just as clean and I've stopped buying plastic bottles entirely.",
+            "name": "Lisa B.",
+            "location": "Amsterdam, NL"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "The dishwasher strips work even better than my old pods. No residue, no plastic, and my glasses actually look clean.",
+            "name": "Thomas V.",
+            "location": "Rotterdam, NL"
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "I was skeptical — a strip that cleans toilets? But it genuinely works. Saved a ton of space under the sink too.",
+            "name": "Sophie M.",
+            "location": "Antwerp, BE"
+          }
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6
+}
+{% endschema %}

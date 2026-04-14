@@ -1,0 +1,146 @@
+{%- comment -%}
+  tabblie-stats.liquid
+  Big impact stat counters in a row. Orange numbers, dark text descriptions.
+{%- endcomment -%}
+
+<style>
+  .tabblie-stats {
+    background-color: {{ section.settings.bg_color }};
+    padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 40px);
+  }
+
+  .tabblie-stats__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .tabblie-stats__header {
+    text-align: center;
+    margin-bottom: clamp(36px, 4vw, 56px);
+  }
+
+  .tabblie-stats__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin-bottom: 14px;
+  }
+
+  .tabblie-stats__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: var(--font-heading-weight);
+    color: #1F1209;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .tabblie-stats__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(24px, 3vw, 48px);
+    text-align: center;
+  }
+
+  .tabblie-stats__item-num {
+    font-family: var(--font-heading-family);
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 600;
+    color: #E8622A;
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .tabblie-stats__item-label {
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    color: rgba(31, 18, 9, 0.6);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-stats__grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+</style>
+
+<section class="tabblie-stats">
+  <div class="tabblie-stats__inner">
+    {%- if section.settings.eyebrow != blank or section.settings.title != blank -%}
+      <div class="tabblie-stats__header">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="tabblie-stats__eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="tabblie-stats__title">{{ section.settings.title }}</h2>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    <div class="tabblie-stats__grid">
+      {%- for block in section.blocks -%}
+        <div class="tabblie-stats__item" {{ block.shopify_attributes }}>
+          <div class="tabblie-stats__item-num" data-count-target="{{ block.settings.number }}">0</div>
+          <div class="tabblie-stats__item-label">{{ block.settings.label }}</div>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var els = document.querySelectorAll('.tabblie-stats__item-num[data-count-target]');
+  if (!els.length) return;
+  function animate(el) {
+    var raw = el.getAttribute('data-count-target');
+    var suffix = raw.replace(/[\d.]/g, '');
+    var target = parseFloat(raw);
+    if (isNaN(target)) { el.textContent = raw; return; }
+    var duration = 1800;
+    var start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var t = Math.min((ts - start) / duration, 1);
+      var ease = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(ease * target) + suffix;
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { animate(entry.target); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.3 });
+  els.forEach(function (el) { observer.observe(el); });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Impact Stats",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#FFFFFF" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "title", "label": "Heading" }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Number", "default": "0" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Impact item" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Impact Stats" }],
+  "max_blocks": 6
+}
+{% endschema %}

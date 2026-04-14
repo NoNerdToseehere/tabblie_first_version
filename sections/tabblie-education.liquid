@@ -1,0 +1,276 @@
+{%- comment -%}
+  tabblie-education.liquid
+  Educational stat cards exposing the truth about traditional cleaning products.
+  4-column desktop, 2-column mobile. Big orange numbers + descriptions.
+{%- endcomment -%}
+
+<style>
+  .tabblie-edu {
+    background-color: #FFFFFF;
+    padding: clamp(56px, 7vw, 96px) clamp(16px, 3vw, 40px);
+  }
+
+  .tabblie-edu__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .tabblie-edu__header {
+    text-align: center;
+    margin-bottom: clamp(40px, 5vw, 64px);
+  }
+
+  .tabblie-edu__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin: 0 0 14px;
+  }
+
+  .tabblie-edu__title {
+    font-family: var(--heading-font-family);
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 600;
+    color: #1F1209;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+
+  .tabblie-edu__title-accent {
+    color: #E8622A;
+    font-style: italic;
+  }
+
+  /* ── Stat cards grid ── */
+  .tabblie-edu__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: clamp(16px, 2.5vw, 28px);
+  }
+
+  .tabblie-edu__card {
+    background-color: #FDF6EE;
+    border-radius: 16px;
+    padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 28px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tabblie-edu__card-number {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.8rem, 4.5vw, 4rem);
+    font-weight: 700;
+    color: #E8622A;
+    line-height: 1;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+  }
+
+  .tabblie-edu__card-desc {
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    color: rgba(31, 18, 9, 0.7);
+    line-height: 1.55;
+    margin: 0;
+    max-width: 220px;
+  }
+
+  /* ── Mobile: 2-column ── */
+  @media (max-width: 749px) {
+    .tabblie-edu {
+      padding: clamp(40px, 6vw, 60px) clamp(16px, 4vw, 24px);
+    }
+
+    .tabblie-edu__header {
+      margin-bottom: 32px;
+    }
+
+    .tabblie-edu__grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .tabblie-edu__card {
+      padding: 24px 16px;
+    }
+
+    .tabblie-edu__card-number {
+      font-size: 2.6rem;
+    }
+
+    .tabblie-edu__card-desc {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<section class="tabblie-edu" id="tabblie-edu-{{ section.id }}">
+  <div class="tabblie-edu__inner">
+
+    <div class="tabblie-edu__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tabblie-edu__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <h2 class="tabblie-edu__title">
+          {{ section.settings.heading | escape }}
+          {%- if section.settings.heading_accent != blank -%}
+            {{ ' ' }}<span class="tabblie-edu__title-accent">{{ section.settings.heading_accent | escape }}</span>
+          {%- endif -%}
+        </h2>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="tabblie-edu__grid">
+        {%- for block in section.blocks -%}
+          <div class="tabblie-edu__card" {{ block.shopify_attributes }}>
+            {%- if block.settings.number != blank -%}
+              <p class="tabblie-edu__card-number" data-count-target="{{ block.settings.number | escape }}">0</p>
+            {%- endif -%}
+            {%- if block.settings.description != blank -%}
+              <p class="tabblie-edu__card-desc">{{ block.settings.description | escape }}</p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+<script>
+(function () {
+  var els = document.querySelectorAll('[data-count-target]');
+  if (!els.length) return;
+
+  function animate(el) {
+    var raw = el.getAttribute('data-count-target');
+    var suffix = raw.replace(/[\d.]/g, '');
+    var target = parseFloat(raw);
+    if (isNaN(target)) { el.textContent = raw; return; }
+
+    var duration = 1800;
+    var start = null;
+
+    function step(ts) {
+      if (!start) start = ts;
+      var t = Math.min((ts - start) / duration, 1);
+      var ease = 1 - Math.pow(1 - t, 3);
+      var val = Math.round(ease * target);
+      el.textContent = val + suffix;
+      if (t < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        animate(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  els.forEach(function (el) {
+    observer.observe(el);
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Education Stats",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "WIST JE DIT?"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Wat grote merken"
+    },
+    {
+      "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent (italic orange)",
+      "default": "niet vertellen"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Stat number",
+          "default": "80%"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "van de schoonmaakmiddelen bevat onnodige chemicaliën"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Education Stats",
+      "settings": {
+        "eyebrow": "WIST JE DIT?",
+        "heading": "Wat grote merken",
+        "heading_accent": "niet vertellen"
+      },
+      "blocks": [
+        {
+          "type": "stat",
+          "settings": {
+            "number": "80%",
+            "description": "van de schoonmaakmiddelen bevat onnodige chemicaliën"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "12+",
+            "description": "plastic flessen per huishouden per jaar voor schoonmaak"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "91%",
+            "description": "van al het plastic wordt niet gerecycled"
+          }
+        },
+        {
+          "type": "stat",
+          "settings": {
+            "number": "100%",
+            "description": "van tabblie strips is biologisch afbreekbaar"
+          }
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8
+}
+{% endschema %}

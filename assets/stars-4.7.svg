@@ -1,0 +1,29 @@
+<svg xml:space="preserve" style="enable-background:new 0 0 512 96;" viewBox="0 0 512 96" y="0px" x="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" id="Layer_1" version="1.1">
+<style type="text/css">
+	.st0{fill:#00B67A;}
+	.st1{fill:#DCDCE6;}
+	.st2{fill:#FFFFFF;}
+</style>
+<g id="Trustpilot_ratings_4halfstar-RGB">
+	<g>
+		<rect height="96" width="96" class="st0" id="Rectangle-path"></rect>
+		<rect height="96" width="96" class="st0" x="104"></rect>
+		<rect height="96" width="96" class="st0" x="208"></rect>
+		<rect height="96" width="96" class="st0" x="312"></rect>
+		<g transform="translate(416.000000, 0.000000)" id="Half">
+			<rect height="96" width="48" class="st1" x="48"></rect>
+			<rect height="96" width="48" class="st0"></rect>
+		</g>
+		<path d="M48,64.7L62.6,61l6.1,18.8L48,64.7z M81.6,40.4H55.9L48,16.2l-7.9,24.2H14.4l20.8,15l-7.9,24.2
+			l20.8-15l12.8-9.2L81.6,40.4L81.6,40.4L81.6,40.4L81.6,40.4z" class="st2" id="Shape"></path>
+		<path d="M152,64.7l14.6-3.7l6.1,18.8L152,64.7z M185.6,40.4h-25.7L152,16.2l-7.9,24.2h-25.7l20.8,15l-7.9,24.2
+			l20.8-15l12.8-9.2L185.6,40.4L185.6,40.4L185.6,40.4L185.6,40.4z" class="st2"></path>
+		<path d="M256,64.7l14.6-3.7l6.1,18.8L256,64.7z M289.6,40.4h-25.7L256,16.2l-7.9,24.2h-25.7l20.8,15l-7.9,24.2
+			l20.8-15l12.8-9.2L289.6,40.4L289.6,40.4L289.6,40.4L289.6,40.4z" class="st2"></path>
+		<path d="M360,64.7l14.6-3.7l6.1,18.8L360,64.7z M393.6,40.4h-25.7L360,16.2l-7.9,24.2h-25.7l20.8,15l-7.9,24.2
+			l20.8-15l12.8-9.2L393.6,40.4L393.6,40.4L393.6,40.4L393.6,40.4z" class="st2"></path>
+		<path d="M464,64.7l14.6-3.7l6.1,18.8L464,64.7z M497.6,40.4h-25.7L464,16.2l-7.9,24.2h-25.7l20.8,15l-7.9,24.2
+			l20.8-15l12.8-9.2L497.6,40.4L497.6,40.4L497.6,40.4L497.6,40.4z" class="st2"></path>
+	</g>
+</g>
+</svg>

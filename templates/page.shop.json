@@ -1,0 +1,66 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "shop_grid": {
+      "type": "tabblie-shop-grid",
+      "blocks": {
+        "card_1": {
+          "type": "product_card",
+          "settings": {
+            "name": "Wasstrips",
+            "description": "Plantaardig wasmiddel, wasverzachter en vlekverwijderaar in één strip. Geschikt voor alle wasmachines en temperaturen.",
+            "bg_color": "#FDEEE6"
+          }
+        },
+        "card_2": {
+          "type": "product_card",
+          "settings": {
+            "name": "Vaatwasstrips",
+            "description": "Plantaardige vaatwasstrips zonder schadelijke chemicaliën. Laat je vaat stralend schoon achter, zonder plastic fles.",
+            "bg_color": "#FDF5DD"
+          }
+        },
+        "card_3": {
+          "type": "product_card",
+          "settings": {
+            "name": "Toiletstrips",
+            "description": "Krachtige reiniging voor je toilet, volledig biologisch afbreekbaar. Gooi een strip in de pot en laat het zijn werk doen.",
+            "bg_color": "#E2F2ED"
+          }
+        },
+        "card_4": {
+          "type": "product_card",
+          "settings": {
+            "name": "Allesreiniger",
+            "description": "Eén strip voor elk oppervlak. Los op in water, spray en klaar. Keuken, badkamer en alles daartussenin.",
+            "bg_color": "#FCE8E8"
+          }
+        }
+      },
+      "block_order": ["card_1", "card_2", "card_3", "card_4"],
+      "settings": {
+        "title": "Onze producten"
+      }
+    },
+    "guarantee": {
+      "type": "tabblie-guarantee",
+      "settings": {
+        "eyebrow": "ONZE GARANTIE",
+        "heading": "Probeer het 30 dagen.",
+        "heading_accent": "Risicovrij!",
+        "body": "<p>Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p>",
+        "button_text": "Bestel nu",
+        "badge_text": "30 dagen proef wassen"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "shop_grid",
+    "guarantee"
+  ]
+}

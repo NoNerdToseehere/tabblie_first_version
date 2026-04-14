@@ -1,0 +1,361 @@
+{%- comment -%}
+  tabblie-insta-stories.liquid
+  3 mini phone frames side-by-side showing Instagram stories — for product pages.
+{%- endcomment -%}
+
+<style>
+  .tabblie-stories {
+    background-color: {{ section.settings.bg_color | default: '#FDF6EE' }};
+    padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 40px);
+  }
+
+  .tabblie-stories__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .tabblie-stories__header {
+    text-align: center;
+    margin-bottom: clamp(32px, 4vw, 48px);
+  }
+
+  .tabblie-stories__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin-bottom: 12px;
+  }
+
+  .tabblie-stories__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: var(--font-heading-weight);
+    color: #1F1209;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  /* Phone grid */
+  .tabblie-stories__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2.5vw, 32px);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Phone frame */
+  .tabblie-stories__phone {
+    background: #1a1a1a;
+    border-radius: 28px;
+    padding: 8px;
+    box-shadow: 0 12px 40px rgba(31, 18, 9, 0.15);
+    position: relative;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+  }
+
+  .tabblie-stories__screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .tabblie-stories__screen img,
+  .tabblie-stories__screen video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Progress bar at top (fake Instagram story indicator) */
+  .tabblie-stories__progress {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    overflow: hidden;
+    z-index: 2;
+  }
+
+  .tabblie-stories__progress::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 70%;
+    background: #ffffff;
+    border-radius: 2px;
+  }
+
+  /* Profile pill at top */
+  .tabblie-stories__profile {
+    position: absolute;
+    top: 22px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 2;
+  }
+
+  .tabblie-stories__avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #E8622A, #F5C842);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: var(--font-heading-family);
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    border: 1.5px solid #fff;
+  }
+
+  .tabblie-stories__username {
+    font-family: var(--text-font-family);
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+
+  .tabblie-stories__time {
+    font-family: var(--text-font-family);
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.75);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+
+  /* Story caption at bottom */
+  .tabblie-stories__caption {
+    position: absolute;
+    bottom: 20px;
+    left: 12px;
+    right: 12px;
+    z-index: 2;
+  }
+
+  .tabblie-stories__caption p {
+    font-family: var(--text-font-family);
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.35;
+    margin: 0;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 10px;
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+  }
+
+  /* Gradient overlay for readability */
+  .tabblie-stories__screen::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.35), transparent);
+    z-index: 1;
+  }
+
+  .tabblie-stories__screen::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 140px;
+    background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+    z-index: 1;
+  }
+
+  .tabblie-stories__placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* CTA */
+  .tabblie-stories__cta-wrap {
+    text-align: center;
+    margin-top: clamp(24px, 3vw, 36px);
+  }
+
+  .tabblie-stories__cta {
+    display: inline-block;
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 600;
+    color: #E8622A;
+    text-decoration: none;
+    border: 1.5px solid #E8622A;
+    border-radius: 100px;
+    padding: 8px 24px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .tabblie-stories__cta:hover {
+    background: #E8622A;
+    color: #ffffff;
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-stories__grid {
+      gap: 8px;
+    }
+
+    .tabblie-stories__phone {
+      border-radius: 18px;
+      padding: 5px;
+    }
+
+    .tabblie-stories__screen {
+      border-radius: 14px;
+    }
+
+    .tabblie-stories__profile {
+      top: 16px;
+      left: 8px;
+      right: 8px;
+      gap: 6px;
+    }
+
+    .tabblie-stories__avatar {
+      width: 22px;
+      height: 22px;
+      font-size: 10px;
+    }
+
+    .tabblie-stories__username {
+      font-size: 10px;
+    }
+
+    .tabblie-stories__time {
+      font-size: 9px;
+    }
+
+    .tabblie-stories__caption {
+      bottom: 12px;
+      left: 8px;
+      right: 8px;
+    }
+
+    .tabblie-stories__caption p {
+      font-size: 10px;
+      padding: 6px 8px;
+    }
+  }
+</style>
+
+<section class="tabblie-stories">
+  <div class="tabblie-stories__inner">
+    {%- if section.settings.eyebrow != blank or section.settings.title != blank -%}
+      <div class="tabblie-stories__header">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="tabblie-stories__eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="tabblie-stories__title">{{ section.settings.title }}</h2>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <div class="tabblie-stories__grid">
+      {%- for block in section.blocks -%}
+        <div class="tabblie-stories__phone" {{ block.shopify_attributes }}>
+          <div class="tabblie-stories__screen">
+            {%- if block.settings.image != blank -%}
+              <img src="{{ block.settings.image | image_url: width: 500 }}" alt="@tabblie story" loading="lazy">
+            {%- elsif block.settings.video_url != blank -%}
+              <video src="{{ block.settings.video_url }}" autoplay muted loop playsinline></video>
+            {%- else -%}
+              <div class="tabblie-stories__placeholder">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+              </div>
+            {%- endif -%}
+
+            <div class="tabblie-stories__progress"></div>
+
+            <div class="tabblie-stories__profile">
+              <div class="tabblie-stories__avatar">{{ block.settings.username | default: 't' | slice: 0 | upcase }}</div>
+              <span class="tabblie-stories__username">{{ block.settings.username | default: '@tabblie' }}</span>
+              <span class="tabblie-stories__time">{{ block.settings.time_ago | default: '2u' }}</span>
+            </div>
+
+            {%- if block.settings.caption != blank -%}
+              <div class="tabblie-stories__caption">
+                <p>{{ block.settings.caption }}</p>
+              </div>
+            {%- endif -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.cta_text != blank -%}
+      <div class="tabblie-stories__cta-wrap">
+        <a class="tabblie-stories__cta" href="{{ section.settings.cta_url | default: '#' }}" target="_blank" rel="noopener">{{ section.settings.cta_text }}</a>
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Instagram Stories",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#FDF6EE" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "WAT KLANTEN DELEN" },
+    { "type": "text", "id": "title", "label": "Heading", "default": "Echte mensen, echte resultaten" },
+    { "type": "text", "id": "cta_text", "label": "CTA text", "default": "Volg @tabblie" },
+    { "type": "url", "id": "cta_url", "label": "CTA link" }
+  ],
+  "blocks": [
+    {
+      "type": "story",
+      "name": "Story",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Story image" },
+        { "type": "url", "id": "video_url", "label": "Story video URL (MP4)" },
+        { "type": "text", "id": "username", "label": "Username", "default": "@lisabeun" },
+        { "type": "text", "id": "time_ago", "label": "Time ago", "default": "2u" },
+        { "type": "textarea", "id": "caption", "label": "Caption", "default": "Sinds ik overgestapt ben op tabblie bespaar ik 12 plastic flessen per jaar ✨" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram Stories",
+      "blocks": [
+        { "type": "story", "settings": { "username": "@lisabeun", "time_ago": "2u", "caption": "Sinds ik tabblie gebruik bespaar ik maandelijks 3+ plastic flessen ✨" } },
+        { "type": "story", "settings": { "username": "@mariekevh", "time_ago": "5u", "caption": "Was eerst sceptisch maar deze strips werken echt 🙌" } },
+        { "type": "story", "settings": { "username": "@sophiedebeer", "time_ago": "1d", "caption": "Geen zware flessen meer sjouwen naar huis 🎉" } }
+      ]
+    }
+  ],
+  "max_blocks": 3
+}
+{% endschema %}

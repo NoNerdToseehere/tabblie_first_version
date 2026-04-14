@@ -1,0 +1,98 @@
+{%- comment -%}
+  tabblie-carbon-offset.liquid
+  Carbon-neutral shipping badge section with icon + explanation.
+{%- endcomment -%}
+
+<style>
+  .tabblie-co2 {
+    background-color: {{ section.settings.bg_color | default: '#F0F7EE' }};
+    padding: clamp(36px, 4vw, 56px) clamp(16px, 3vw, 40px);
+  }
+
+  .tabblie-co2__inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: clamp(20px, 3vw, 40px);
+  }
+
+  .tabblie-co2__icon {
+    flex-shrink: 0;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tabblie-co2__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .tabblie-co2__content {
+    flex: 1;
+  }
+
+  .tabblie-co2__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 600;
+    color: #1F1209;
+    line-height: 1.2;
+    margin: 0 0 8px;
+  }
+
+  .tabblie-co2__text {
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    color: rgba(31, 18, 9, 0.7);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-co2__inner {
+      flex-direction: column;
+      text-align: center;
+      gap: 16px;
+    }
+
+    .tabblie-co2__icon {
+      width: 64px;
+      height: 64px;
+    }
+
+    .tabblie-co2__icon svg {
+      width: 36px;
+      height: 36px;
+    }
+  }
+</style>
+
+<section class="tabblie-co2">
+  <div class="tabblie-co2__inner">
+    <div class="tabblie-co2__icon">
+      <img src="{{ 'tabblie-carbon-footprint.png' | asset_url }}" alt="Carbon footprint">
+    </div>
+    <div class="tabblie-co2__content">
+      <h3 class="tabblie-co2__title">{{ section.settings.title | default: 'Tabblie compenseert CO2' }}</h3>
+      <p class="tabblie-co2__text">{{ section.settings.text | default: 'Wij doneren aan gecertificeerde milieuprojecten om de CO2-uitstoot van onze volledige toeleveringsketen te compenseren. Dat betekent: jouw bestelling wordt klimaatneutraal verzonden. Omdat onze strips zo licht zijn, is de uitstoot sowieso tot 90% lager dan bij traditionele schoonmaakmiddelen.' }}</p>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Carbon Offset Badge",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#F0F7EE" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Tabblie compenseert CO2" },
+    { "type": "textarea", "id": "text", "label": "Description", "default": "Wij doneren aan gecertificeerde milieuprojecten om de CO2-uitstoot van onze volledige toeleveringsketen te compenseren. Dat betekent: jouw bestelling wordt klimaatneutraal verzonden. Omdat onze strips zo licht zijn, is de uitstoot sowieso tot 90% lager dan bij traditionele schoonmaakmiddelen." }
+  ],
+  "presets": [{ "name": "Carbon Offset Badge" }]
+}
+{% endschema %}

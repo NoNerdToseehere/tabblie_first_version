@@ -83,7 +83,7 @@
                             assign lookbook_pos_3 = block.settings.lookbook_pos_3
                         -%}
                     {%- endif -%}
-                <div class="item slide-block-{{block.id}}" id="block-{{block.id}}" data-index="{{forloop.index}}" data-style="{{ lookbook_style }}" data-show-lookbook-container{% if block.settings.image_for_dot != blank %} data-dot-img="{{ block.settings.image_for_dot | img_url: 'master' }}"{% endif %}>
+                <div class="item slide-block-{{block.id}}" id="block-{{block.id}}" data-index="{{forloop.index}}" data-style="{{ lookbook_style }}" data-show-lookbook-container{% if block.settings.image_for_dot != blank %} data-dot-img="{{ block.settings.image_for_dot | img_url: 'master' }}"{% endif %} style="--slide-bg-mb: {{ block.settings.bg_color_slide_mb | default: '#FDF6EE' }}">
                         {%- if block.type == 'image' -%}
                             {%- if check_lookbook -%}
                                 {%- if product_1 != blank or product_2 != blank or product_3 != blank -%}
@@ -1455,6 +1455,13 @@
                         "id": "image_slide_mb",
                         "label" : "t:sections.image-banner.blocks.image.settings.image.label__2",
                         "info": "t:sections.slide-show.blocks.image.info_image_slide_mb"
+                    },
+                    {
+                        "type": "color",
+                        "id": "bg_color_slide_mb",
+                        "label": "Mobile background color",
+                        "info": "Shown on mobile instead of the slide image. Leave blank for default cream.",
+                        "default": "#FDF6EE"
                     },
                     {
                         "type": "image_picker",

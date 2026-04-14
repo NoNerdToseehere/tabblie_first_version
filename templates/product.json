@@ -1,1 +1,1215 @@
-{"sections":{"main":{"type":"main-product","blocks":{"b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0":{"type":"title","settings":{"fontsize_text":30,"fontsize_text_mb":25,"color_title":"#232323","spacing_top":0,"spacing_bottom":10}},"judge_me_reviews_preview_badge_ayaigx":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/preview_badge\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{}},"4f95b592-8369-4ab0-b30d-24e463fb6890":{"type":"price","settings":{"fontsize_text":22,"spacing_top":13,"spacing_bottom":0}},"d98e243b-3682-495a-965a-1c7f7d460880":{"type":"variant_picker","settings":{"picker_type":"button","show_variant_image_group":false,"enable_border_top":false,"enable_border_bottom":false,"color_border":"#e6e6e6","spacing_top":0,"spacing_bottom":0}},"d97e417a-941b-4a5d-bef3-a651adb918d8":{"type":"variant_description","settings":{"spacing_top":0,"spacing_bottom":12}},"faa2b3e6-c0a1-4269-baa6-d2605efe4c05":{"type":"quantity_selector","settings":{"qty_style":"1","qty_layout":"1","spacing_top":0,"spacing_bottom":15}},"f1b31d90-1e43-4948-9fe3-97ba43f6fb34":{"type":"buy_buttons","settings":{"show_dynamic_checkout":false,"show_gift_card_recipient":false,"atc_animation":"horizontal-shaking","atc_color":"#ffffff","atc_border_color":"#f4633a","atc_bg_color":"#f4633a","atc_bg_color_gradient":"","atc_color_hover":"#ffffff","atc_border_color_hover":"#00a5bd","atc_bg_color_hover":"#00a5bd","atc_bg_color_gradient_hover":"","bin_color":"#232323","bin_border_color":"#acacac","bin_bg_color":"#ffffff","bin_bg_color_gradient":"","bin_color_hover":"#ffffff","bin_border_color_hover":"#232323","bin_bg_color_hover":"#232323","bin_bg_color_hover_gradient":"","spacing_top":0,"spacing_bottom":15}},"10093fcf-2053-47e9-bedb-841bb0d046fa":{"type":"trust_image","disabled":true,"settings":{"show_trust_image":true,"spacing_top":0,"spacing_bottom":0}},"short_description_eciCw3":{"type":"short_description","settings":{"show_short_description":true,"word_number":"17","fontsize_text":12,"color_text":"#3c3c3c","spacing_top":0,"spacing_bottom":13}},"custom_QK3rYR":{"type":"custom","settings":{"open_tab_mobile":false,"title":"Gebruik","type":"all","content":"STEP 1: RUB THE BAR BETWEEN YOUR HANDS TO CREATE FOAM.\nSTEP 2: APPLY THE FOAM EVENLY TO YOUR HANDS OR BODY, AVOIDING THE EYES.\nSTEP 3: THOROUGHLY RINSE YOUR HANDS OR BODY WITH WARM WATER TO REMOVE ALL SOAP RESIDUE AND DIRT.\nSTEP 4: AFTER USE, ALLOW THE BAR TO DRY IN A WELL-VENTILATED AREA OR HANG IT ON OUR MAGNETIC SOAP HOLDER TO PREVENT DISSOLVING.","product_custom_source":"dynamic","product_tab_key_metafield":"","enable_btn_show_more":false,"maximum_des_to_show":300}},"custom_cqfTAp":{"type":"custom","settings":{"open_tab_mobile":false,"title":"Ingrediënten","type":"all","content":"SODIUM COCO-SULFATE (COCONUT-BASED CLEANSER)\nSTEARYL ALCOHOL (FATTY ALCOHOL – NOT THE ALCOHOL YOU WANT TO AVOID!)\nHELIANTHUS ANNUUS SEED OIL (ORGANIC SUNFLOWER OIL)\nBEHENYL ALCOHOL (FATTY ALCOHOL – NOT THE ALCOHOL YOU WANT TO AVOID!)\nCAMELINA SATIVA SEED OIL (CAMELINA SEED OIL)\nKAOLIN (WHITE CLAY)\nPARFUM (NATURAL FRAGRANCE)\nLACTIC ACID (EXFOLIATION)\nAQUA (WATER)","product_custom_source":"dynamic","product_tab_key_metafield":"","enable_btn_show_more":false,"maximum_des_to_show":300}},"custom_NVDLg6":{"type":"custom","settings":{"open_tab_mobile":false,"title":"Ingrediënten uitgelegd","type":"all","content":"GENTLE CLEANSER TO REMOVE DIRT\n\nFATTY ALCOHOL AS A FOAM BOOSTER (NOT THE ALCOHOL THAT DRIES OUT)\n\nORGANIC SUNFLOWER OIL FOR HYDRATION\n\nFATTY ALCOHOL AS A STABILIZER (NOT THE ALCOHOL THAT DRIES OUT)\n\nCAMELINA SEED OIL FOR CARE\n\nWHITE CLAY FOR IMPURITIES\n\nFRAGRANCE FOR SCENT\n\nLACTIC ACID FOR LIGHT EXFOLIATION\n\nWATER AS A SOLVENT\n\nTHIS HAND & BODY BAR CONTAINS NO ALLERGENS.","product_custom_source":"dynamic","product_tab_key_metafield":"","enable_btn_show_more":false,"maximum_des_to_show":300}},"custom_information_CjR7YG":{"type":"custom_information","settings":{"icon":"","color_icon":"#232323","text":" Tip:","color_title":"#232323","text_description":"Always use a soap dish where water can drain away, as it will make the bar last much longer.  ","color_des":"#999999","fontsize_text":14,"content_popup":"","spacing_top":0,"spacing_bottom":0}}},"block_order":["b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0","judge_me_reviews_preview_badge_ayaigx","4f95b592-8369-4ab0-b30d-24e463fb6890","d98e243b-3682-495a-965a-1c7f7d460880","d97e417a-941b-4a5d-bef3-a651adb918d8","faa2b3e6-c0a1-4269-baa6-d2605efe4c05","f1b31d90-1e43-4948-9fe3-97ba43f6fb34","10093fcf-2053-47e9-bedb-841bb0d046fa","short_description_eciCw3","custom_QK3rYR","custom_cqfTAp","custom_NVDLg6","custom_information_CjR7YG"],"custom_css":["button#product-add-to-cart {width: 200px; display: inline; padding: 8px 0px;}"],"settings":{"container":"fullwidth","padding_full_width":50,"show_sticky_info":true,"media_fit":"unset","product_image_ratio":"adapt","portrait_aspect_ratio":148,"video_layout":"popup","zoomed_image":false,"product_image_popup":"fancybox","main_image_show_custom_cursor":false,"icon_color":"#000000","main_image_position":"left","main_image_layout":"1","main_image_arrows_desktop":true,"main_image_arrows_mobile":true,"main_image_counter_mobile":true,"main_image_enable_parallax_mb":false,"main_image_show_zoom_icon_mb":false,"show_thumbnail_mobile":false,"thumnail_layout":"4","thumbnail_to_show":4,"enable_sticky":false,"sidebar_layout":"layout_1","sidebar_collapse":"collapse","sidebar_collapse_default":"expand","sidebar_position":"left","sidebar_heading_font":"font_1","sidebar_heading_font_size":14,"sidebar_heading_font_weight":"700","sidebar_heading_text_transform":"uppercase","show_badge":true,"show_subtotal":false,"subtotal_style":"1","show_sticky_add_to_cart":false,"sticky_atc_layout":"1","enable_sticky_add_to_cart_always_mobile":false,"show_sticky_vendor":false,"show_quick_order_list":false,"show_image":false,"show_sku":false,"show_tab":true,"tab_layout":"vertical","tab_layout_mobile":"popup","icon_style_layout":"style_1","title_font_size":18,"title_font_size_mb":16,"font_weight_title":"500","title_text_transform":"none","title_padding_top_bottom":15,"tab_border_color":"#000000","tab_border_color_rgb":"","show_product_bundle":true,"background_color":"#f8f8f8","block_title":"Frequenly Bought Together","block_title_align":"left","product_style":"2","block_image_ratio":"adapt","bundle_discount":true,"bundle_discount_text":"Get a [discount]% discount buying these products together","bundle_discount_text_color":"#232323","total_btn_color":"#ffffff","total_btn_border":"#232323","total_btn_bg":"#232323","total_btn_bg_gradient":"","total_btn_color_hover":"#232323","total_btn_border_hover":"#232323","total_btn_bg_hover":"#ffffff","total_btn_bg_gradient_hover":"","block_dots":true,"block_arrows":true,"padding_top":30,"padding_top_tablet":30,"padding_top_mobile":30,"padding_bottom":70,"padding_bottom_tablet":40,"padding_bottom_mobile":30,"mg_top_desktop":0,"mg_top_tablet":0,"mg_top_mobile":0,"mg_bottom_desktop":0,"mg_bottom_tablet":0,"mg_bottom_mobile":0}},"custom_service_block_8Gzkxn":{"type":"custom-service-block","blocks":{"text_e3hFFf":{"type":"Text","settings":{"bg_color_block":"rgba(0,0,0,0)","border_block":"rgba(0,0,0,0)","icon_type":"image","image":"shopify:\/\/shop_images\/icon-usp-plant_200x_367c0d41-038f-426f-bd28-a86d2df83c35.png","icon":"","width_icon":100,"height_icon":100,"mg_bottom_icon":20,"color_icon":"#3c3c3c","text":"100% natural","type_tab_font":"font_1","fontsize_title_block":20,"fontsize_title_block_mb":20,"title_block_font_weight":"400","mg_bottom_title":14,"mg_bottom_title_mb":0,"color_block":"#ed3c2b","description":"","fontsize_des_block":16,"fontsize_des_block_mb":14,"lineheight_des_block":22,"mg_bottom_des":0,"color_des_block":"#3c3c3c","button":"","link":"","button_style":"style1","fontsize_button":14,"button_width":235,"fontweight_button":"500","enable_underline_button":false,"color_button":"#ba7a2d","button_border":"","button_background":"","button_background_gradient":"","button_color_hover":"#ba7a2d","button_border_hover":"","button_background_hover":"","button_background_gradient_hover":""}},"text_xGqxge":{"type":"Text","settings":{"bg_color_block":"rgba(0,0,0,0)","border_block":"rgba(0,0,0,0)","icon_type":"image","image":"shopify:\/\/shop_images\/icon-usp-sustainable_200x_351df314-87fc-4509-ae33-1cb02ea136d9.png","icon":"","width_icon":100,"height_icon":100,"mg_bottom_icon":20,"color_icon":"#3c3c3c","text":"vegan","type_tab_font":"font_1","fontsize_title_block":20,"fontsize_title_block_mb":20,"title_block_font_weight":"400","mg_bottom_title":15,"mg_bottom_title_mb":0,"color_block":"#ed3c2b","description":"","fontsize_des_block":16,"fontsize_des_block_mb":14,"lineheight_des_block":22,"mg_bottom_des":0,"color_des_block":"#3c3c3c","button":"","link":"","button_style":"style1","fontsize_button":14,"button_width":235,"fontweight_button":"500","enable_underline_button":false,"color_button":"#ba7a2d","button_border":"","button_background":"","button_background_gradient":"","button_color_hover":"#ba7a2d","button_border_hover":"","button_background_hover":"","button_background_gradient_hover":""}},"text_yAtGjQ":{"type":"Text","settings":{"bg_color_block":"rgba(0,0,0,0)","border_block":"rgba(0,0,0,0)","icon_type":"image","image":"shopify:\/\/shop_images\/icon-usp-effective_200x_0ec970a2-b8e4-4d4a-bdef-8443fa1d8526.png","icon":"","width_icon":100,"height_icon":100,"mg_bottom_icon":20,"color_icon":"#3c3c3c","text":"super effective","type_tab_font":"font_1","fontsize_title_block":20,"fontsize_title_block_mb":20,"title_block_font_weight":"400","mg_bottom_title":15,"mg_bottom_title_mb":0,"color_block":"#ed3c2b","description":"","fontsize_des_block":16,"fontsize_des_block_mb":14,"lineheight_des_block":22,"mg_bottom_des":0,"color_des_block":"#3c3c3c","button":"","link":"","button_style":"style1","fontsize_button":14,"button_width":235,"fontweight_button":"500","enable_underline_button":false,"color_button":"#ba7a2d","button_border":"","button_background":"","button_background_gradient":"","button_color_hover":"#ba7a2d","button_border_hover":"","button_background_hover":"","button_background_gradient_hover":""}},"text_DmtwAH":{"type":"Text","settings":{"bg_color_block":"rgba(0,0,0,0)","border_block":"rgba(0,0,0,0)","icon_type":"image","image":"shopify:\/\/shop_images\/icon-usp-sustainable_200x_3aee02bf-aad3-41e0-ba35-c258b0868ba8.png","icon":"","width_icon":100,"height_icon":100,"mg_bottom_icon":20,"color_icon":"#3c3c3c","text":"durable","type_tab_font":"font_1","fontsize_title_block":20,"fontsize_title_block_mb":20,"title_block_font_weight":"400","mg_bottom_title":15,"mg_bottom_title_mb":0,"color_block":"#ed3c2b","description":"","fontsize_des_block":16,"fontsize_des_block_mb":14,"lineheight_des_block":22,"mg_bottom_des":0,"color_des_block":"#3c3c3c","button":"","link":"","button_style":"style1","fontsize_button":14,"button_width":235,"fontweight_button":"500","enable_underline_button":false,"color_button":"#ba7a2d","button_border":"","button_background":"","button_background_gradient":"","button_color_hover":"#ba7a2d","button_border_hover":"","button_background_hover":"","button_background_gradient_hover":""}},"text_wVUEm7":{"type":"Text","settings":{"bg_color_block":"rgba(0,0,0,0)","border_block":"rgba(0,0,0,0)","icon_type":"image","image":"shopify:\/\/shop_images\/icon-usp-certified_200x_cc3346f8-da36-4c52-a8c6-e3f52909d020.png","icon":"","width_icon":100,"height_icon":100,"mg_bottom_icon":20,"color_icon":"#3c3c3c","text":"b corp certified","type_tab_font":"font_1","fontsize_title_block":20,"fontsize_title_block_mb":20,"title_block_font_weight":"400","mg_bottom_title":15,"mg_bottom_title_mb":0,"color_block":"#ed3c2b","description":"","fontsize_des_block":16,"fontsize_des_block_mb":14,"lineheight_des_block":22,"mg_bottom_des":0,"color_des_block":"#3c3c3c","button":"","link":"","button_style":"style1","fontsize_button":14,"button_width":235,"fontweight_button":"500","enable_underline_button":false,"color_button":"#ba7a2d","button_border":"","button_background":"","button_background_gradient":"","button_color_hover":"#ba7a2d","button_border_hover":"","button_background_hover":"","button_background_gradient_hover":""}}},"block_order":["text_e3hFFf","text_xGqxge","text_yAtGjQ","text_DmtwAH","text_wVUEm7"],"custom_css":[".policies-content {line-height: 34px; letter-spacing: -1px; font-weight: 500;}","@media (max-width: 768px) {.halo-row {display: grid; grid-template-columns: repeat(2, 1fr); }}"],"name":"t:sections.custom_service_block.name","settings":{"id_section":"","container":"container","padding_full_width":0,"display_border_top":false,"display_border_bottom":false,"border_color":"rgba(0,0,0,0)","service_block_swipe_on_mobile":"list","color_icon_slider":"#212121","service_block_style":"style_1","policies_bg":"#f9f5f1","policies_bg_gradient":"","service_block_title":"","enable_border_title":false,"color_title":"#ffffff","fontsize_title":40,"fontsize_title_mb":40,"mg_bottom_title_service_block":45,"mg_bottom_title_service_block_mb":45,"service_block_des":"","service_block_des_pos":"bottom","color_des":"#000000","fontsize_des":16,"mg_top_service_block_des":50,"mg_bottom_service_block_des":50,"view_all":"","view_all_align":"center","font_weight_view_all":"400","mg_top_view":0,"mg_bottom_view":30,"enable_border_view_all":true,"link_view_all":"","color_view_all":"#3c3c3c","icon_view_all":"","color_view_all_icon":"#eb492f","title_align":"center","item_width":"full_width","border_item":"none","enable_item_distance":true,"enable_hover_box_shadow":false,"enable_hover_effects_top":false,"item_padding_top":13,"item_padding_bottom":13,"item_padding_left_right":40,"item_radius":4,"grid_gap":30,"item_align":"center","enable_block_bottom":false,"bg_block_bottom":"#000000","btn_text_block_bottom":"Shop Now","button_link_block_bottom":"","button_1_width_block_bottom":235,"button_color_block_bottom":"#ffffff","button_border_block_bottom":"#232323","button_background_block_bottom":"#232323","button_background_gradient_block_bottom":"","button_color_hover_block_bottom":"#ffffff","button_border_hover_block_bottom":"#232323","button_background_hover_block_bottom":"#232323","button_background_gradient_hover_block_bottom":"","btn_2_text_block_bottom":"Shop Now","button_link_2_block_bottom":"","button_2_width_block_bottom":235,"button_2_color_block_bottom":"#ffffff","button_2_border_block_bottom":"#232323","button_2_background_block_bottom":"#232323","button_2_background_gradient_block_bottom":"","button_2_color_hover_block_bottom":"#ffffff","button_2_border_hover_block_bottom":"#232323","button_2_background_hover_block_bottom":"#232323","button_2_background_gradient_hover_block_bottom":"","mg_top_desktop":50,"mg_top_tablet":50,"mg_top_mobile":50,"mg_bottom_desktop":50,"mg_bottom_tablet":50,"mg_bottom_mobile":50}},"faqs_6mziiU":{"type":"faqs","blocks":{"paragraph_aMkfUp":{"type":"paragraph","settings":{"title":"","question_1":"Hoe is The Lekker Company begunten?","answer_1":"<p>Devi's hand-opened hobby began with frustration over the confusing terminology of a cosmetic label. It is best to read it carefully on our page.<\/p>","question_2":"Waar kan ik Lekker producten kopen?","answer_2":"<p>Our products are available at many large (online) supermarket chains, drugstores and health food stores. They are available through our own webshop and at:\n\nSunscreen:\nNL: including Dille Kamille, Holland &amp; Barrett, Pieter Pot, WAAR stores and some DA stores\nBE: including Dille Kamille &amp; Holland &amp; Barrett\n\nLip balm\nNL: including Kruidvat (from 17\/04\/2023) and WAAR stores\nBE: including Kruidvat (not all stores)\n\nSoft bamboo sensitive deodorant\nNL: Etos, Albert Heijn, Holland &amp; Barrett\nBE: Holland &amp; Barrett\n\nNeutral deodorant\nNL &amp; ​​BE: Holland &amp; Barrett\n\nMandarin &amp; Lemon deodorant\nNL: Etos, Albert Heijn, Jumbo, DA, WAAR and Dille Kamille\nBE: Kruidvat, Albert Heijn &amp; Dille Kamille\n\nPeppermint &amp; Rosemary deodorant\nNL: Etos, Albert Heijn, Jumbo, DA, WAAR, Picnic and Dille Chamomile\n\nLavender deodorant\nNL: Etos, Albert Heijn, DA, WAAR, Holland &amp; Barrett, and Dille Chamomile\n\nWoodland deodorant\nNL: Holland &amp; Barrett, WAAR, Dille Chamomile\nBE: Holland &amp; Barrett, Dille Chamomile<\/p>","question_3":"Which countries do you ship to?","answer_3":"<p>We ship to all EU countries (and some non-EU countries). By clicking \"Checkout\" in your shopping cart, you can then select your country. If your country isn't listed, please let us know. We ship your package free of charge within the Netherlands for orders over €35.<\/p>","question_4":"What payment methods can I use?","answer_4":"<p>You can pay with iDeal, PayPal, GPay, ShopPay and your credit card.\/p&gt;<\/p>","question_5":"","answer_5":"","question_6":"","answer_6":"","question_7":"","answer_7":"","question_8":"","answer_8":"","question_9":"","answer_9":"","question_10":"","answer_10":""}}},"block_order":["paragraph_aMkfUp"],"custom_css":[".faqs .faqs-item .card-header .title {color: #2b2b2b; font-size: 16px; letter-spacing: 0px; font-weight: 500; background: #f8f4f0; padding: 5px 0px; border-top: none; border-bottom: 1px solid #f84d27;}","faqs-item#FaqsSection-template--26621760274781__faqs_6mziiU {background-color: #f9f5f1;}",".faqs-item .collapse {background: #f8f4f0; color: #000; font-size: 16px; line-height: 22px; border: none;}",".faqs .faqs-item .card-header:not(.collapsed) .title:after {transform: scale(0); transform-origin: left;}"],"name":"t:sections.faqs.presets.name","settings":{"container":"1170","padding_full_width":0,"title":"","color_title":"#f4633a","fontsize_title":15,"fontsize_title_mb":16,"mg_bottom_title":12,"mg_bottom_title_mb":12,"enable_border_title":false,"border_color_title":"rgba(0,0,0,0)","description":"","color_des":"#f4633a","fontsize_des":16,"contact_text":"","contact_link":"","contact_color":"#ffffff","contact_color_border":"#ef6454","contact_color_bg":"#ef6454","contact_color_bg_gradient":"","contact_color_hover":"#ffffff","contact_color_border_hover":"#ef6454","contact_color_bg_hover":"#ef6454","contact_color_bg_gradient_hover":"","title_alignment":"left","show_faqs_filter":false,"mg_top_desktop":0,"mg_top_tablet":0,"mg_top_mobile":0,"mg_bottom_desktop":50,"mg_bottom_tablet":50,"mg_bottom_mobile":50}},"product-recommendations":{"type":"product-recommendations","custom_css":[".slick-slide img {border-radius: 10px;}",".slick-slide img:hover {border-radius: 10px;}",".card-media {border-radius: 10px;}"],"settings":{"display_product_block":true,"product_block_container":"fullwidth","padding_full_width":50,"enable_border_top":false,"enable_border_bottom":false,"color_border_bottom":"#e8e8e8","border_style":"container","mg_top_desktop":0,"mg_top_tablet":0,"mg_top_mobile":20,"mg_bottom_desktop":50,"mg_bottom_tablet":25,"mg_bottom_mobile":25,"product_block_layout":"slider","product_bg":"#f8bed6","style_block_header":"style1","product_block_title":"iets voor jou?","enable_border_title":false,"mg_top_title":50,"mg_bottom_title":50,"fontsize_title":50,"fontsize_title_mb":30,"color_title":"#f4633a","border_color_title":"rgba(0,0,0,0)","product_block_title_align":"center","product_block_limit":10,"grid_gap":30,"product_block_per_row":"4","product_block_swipe_on_mobile":false,"product_block_dots":false,"product_block_dots_mb":true,"product_block_arrows":true,"product_block_arrows_mb":false,"product_block_show":"4","product_block_per_view":"4","show_half":true,"scroll_height":4,"scroll_track_bg":"#f1f1f1","scroll_thumb_color":"#000000","scroll_thumb_hover_color":"#444444","enable_layout_special":false,"bg_card":"#ffffff","padding_card":15,"border_radius_card":5,"border_layout_card":"full","border_width_card":5,"border_color_card":"#f0f1f4"}},"1758362424bdd6576e":{"type":"apps","blocks":{"judge_me_reviews_review_widget_CL9X6g":{"type":"shopify:\/\/apps\/judge-me-reviews\/blocks\/review_widget\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8","settings":{"review_data":"real_data","max_width":1200}}},"block_order":["judge_me_reviews_review_widget_CL9X6g"],"custom_css":["div#shopify-block-ARk9sVEhQVnpwSXFRa__judge_me_reviews_review_widget_CL9X6g {background: #f7f7f7; padding: 50px 0;}",".jdgm-row-actions,.jdgm-rev-widg__body {padding: 0px 20px;}"],"settings":{"include_margins":false}},"product-recently-viewed":{"type":"product-recently-viewed","disabled":true,"settings":{"display_product_recently_viewed":true,"product_recently_viewed_container":"container","padding_full_width":0,"enable_border_top":true,"enable_border_bottom":false,"color_border_bottom":"#e8e8e8","border_style":"container","mg_top_desktop":80,"mg_top_tablet":50,"mg_top_mobile":30,"mg_bottom_desktop":0,"mg_bottom_tablet":0,"mg_bottom_mobile":0,"product_recently_viewed_layout":"slider","product_bg":"#ffffff","product_bg_gradient":"","style_block_header":"style1","product_recently_viewed_title":"Recently Viewed Products","enable_border_title":false,"mg_top_title":50,"mg_bottom_title":50,"fontsize_title":45,"fontsize_title_mb":40,"border_color_title":"#232323","color_title":"#232323","product_recently_viewed_title_align":"center","product_recently_viewed_limit":10,"product_recently_viewed_image_ratio":"adapt","grid_gap":30,"product_recently_viewed_per_row":"4","product_recently_viewed_swipe_on_mobile":true,"product_recently_viewed_dots":false,"product_recently_viewed_dots_mb":true,"product_recently_viewed_arrows":true,"product_recently_viewed_arrows_mb":false,"product_recently_viewed_show":"4","product_block_per_view":"4","show_half":true,"scroll_height":4,"scroll_track_bg":"#f1f1f1","scroll_thumb_color":"#000000","scroll_thumb_hover_color":"#444444","enable_layout_special":false,"bg_card":"#ffffff","padding_card":15,"border_radius_card":5,"border_layout_card":"full","border_width_card":5,"border_color_card":"#f0f1f4"}},"slide_show_d6hF4Y":{"type":"slide-show","blocks":{"image_J3TEkJ":{"type":"image","settings":{"image_slide":"shopify:\/\/shop_images\/TheLekkerCompany_NaturalDeodorant_Model_243_2000x_9e2839f6-4f41-4a83-8f23-94596d3f432e.jpg","image_slide_mb":"shopify:\/\/shop_images\/TheLekkerCompany_NaturalDeodorant_Model_243_826950e9-0121-429e-ab94-116ff7cb9b2b_2000x_copy.jpg","alignment":"right","enable_custom_position":false,"custom_horizontal":"","custom_vertical":"","custom_vertical_mb":"","enable_position_outside_image":true,"enable_border_line":false,"padding_vertical":30,"content_width":600,"text_alignment":"left","text_alignment_mb":"left","enable_content_fullwidth":false,"border_color_content":"","bg_color_content":"","profile_spacing_bottom":50,"profile_name":"","profile_name_color":"","profile_name_fs":20,"profile_name_fs_mb":20,"profile_name_fw":"normal","profile_title":"","profile_title_color":"","profile_title_fs":20,"profile_title_fs_mb":20,"profile_title_fw":"normal","sub_heading":"","letter_spacing_sub_title":"","font_size_sub_heading":30,"sub_heading_spacing_bottom":20,"sub_heading_font":"font_2","font_weight_sub_heading":"400","border_sub_heading":"none","sub_title_position":"sub_title_above","color_sub_heading":"#ffffff","heading":"NATURAL CARE","letter_spacing_heading":"-1px","enable_border_heading":false,"font_style_heading":"normal","font_size_heading":80,"line_height_heading":75,"heading_spacing_bottom":20,"color_heading":"#215732","slide-des":"Finally. Personal care products that are as good for you as they are for the world. All-natural, vegan, and sustainable. Do yourself a favor and switch to delicious today.","font_size_des":16,"line_height_des":22,"des_spacing_bottom":20,"color_des":"#232323","sub_heading_mb":"","font_size_sub_heading_mb":20,"sub_heading_spacing_bottom_mb":20,"font_weight_sub_heading_mb":"400","border_sub_heading_mb":"none","color_sub_heading_mb":"#ffffff","heading_mb":"100% NATURAL DEODORANT","font_style_heading_mb":"normal","font_size_heading_mb":50,"line_height_heading_mb":45,"heading_spacing_bottom_mb":20,"color_heading_mb":"#215732","slide-des-mb":"Top notch in every way. Fantastic products and fantastic customer service. Very fast delivery too!","font_size_des_mb":15,"des_spacing_bottom_mb":0,"color_des_mb":"#215732","enable_icon_button":false,"enable_button_link":false,"enable_underline":true,"font_size_link":36,"button_slide":"","link":"shopify:\/\/collections\/all","button_style":"button_1","button_slide_2":"","link_2":"","min_width_banner_button":270,"color_button":"#ffffff","border_button":"rgba(0,0,0,0)","bg_button":"#215732","bg_button_gradient":"","color_button_hover":"#215732","border_button_hover":"#215732","bg_button_hover":"rgba(0,0,0,0)","bg_button_gradient_hover":"","use_contrasting_colors":false,"lb_product_1":"","horizontal_pos_1":0,"vertical_pos_1":0,"lookbook_pos_1":"right","lb_product_2":"","horizontal_pos_2":0,"vertical_pos_2":0,"lookbook_pos_2":"right","lb_product_3":"","horizontal_pos_3":0,"vertical_pos_3":0,"lookbook_pos_3":"right"}}},"block_order":["image_J3TEkJ"],"custom_css":[".slideshow .adaptive_height img {border-radius: 30px !important;}"],"name":"t:sections.slide-show.presets.name","settings":{"container":"1170","padding_full_width":0,"slideshow_background":"","slideshow_background_gradient":"","border_radius":0,"autoplay":true,"slideshow_speed":"5000","slideshow_transition":"true","dots":"shape","dots_color":"#707979","dots_border_color":"#707979","dots_active_color":"rgba(0,0,0,0)","dots_active_border_color":"#505656","dots_direction":"left","dots_shape":"disc","position_slick_dots":"34px","dots_opacity":false,"dot_with_image":false,"dot_width":66,"dot_width_active":130,"dot_width_mb":38,"dot_width_active_mb":65,"arrow_active":true,"enable_custom_arrow":false,"arrow_width":35,"arrow_height":35,"arrow_size_icon":17,"arrow_color":"#666d6d","arrow_border_color":"#666d6d","arrow_bg_color":"#ffffff","arrow_color_hover":"","arrow_border_color_hover":"","arrow_bg_color_hover":"","position_slick_arrow":"10%","position_vertical_slick_arrow":"50%","image_behavior":"none","video_height":"41.7%","video_height_mb":"41.7%","auto_playvideo":true,"enable_categories":false,"text_categories":"Shop by categories","title_color":"#ffffff","bg_title":"#fd6506","text_icon_color":"#202020","menu_category":"","enable_banner":false,"lookbook_style":"1","enable_lookbook_width":false,"lookbook_width":250,"dot_desktop_size":24,"dot_mobile_size":16,"dot_inner_color":"#000000","dot_shadow_color":"#ffffff","dot_outer_color":"#ffffff","show_dot_number":false,"show_dot_number_mobile":false,"show_plus_icon":false,"number_desktop_size":24,"number_mobile_size":16,"lookbook_truncate":"1","mg_top_desktop":50,"mg_top_tablet":50,"mg_top_mobile":50,"mg_bottom_desktop":0,"mg_bottom_tablet":0,"mg_bottom_mobile":0}}},"order":["main","custom_service_block_8Gzkxn","faqs_6mziiU","product-recommendations","1758362424bdd6576e","product-recently-viewed","slide_show_d6hF4Y"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0": {
+          "type": "title",
+          "settings": {
+            "fontsize_text": 18,
+            "fontsize_text_mb": 16,
+            "color_title": "#232323",
+            "spacing_top": 0,
+            "spacing_bottom": 10
+          }
+        },
+        "judge_me_reviews_preview_badge_ayaigx": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "4f95b592-8369-4ab0-b30d-24e463fb6890": {
+          "type": "price",
+          "settings": {
+            "fontsize_text": 22,
+            "spacing_top": 13,
+            "spacing_bottom": 0
+          }
+        },
+        "d98e243b-3682-495a-965a-1c7f7d460880": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_variant_image_group": false,
+            "enable_border_top": false,
+            "enable_border_bottom": false,
+            "color_border": "#e6e6e6",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "d97e417a-941b-4a5d-bef3-a651adb918d8": {
+          "type": "variant_description",
+          "settings": {
+            "spacing_top": 0,
+            "spacing_bottom": 12
+          }
+        },
+        "faa2b3e6-c0a1-4269-baa6-d2605efe4c05": {
+          "type": "quantity_selector",
+          "settings": {
+            "qty_style": "1",
+            "qty_layout": "1",
+            "spacing_top": 0,
+            "spacing_bottom": 15
+          }
+        },
+        "f1b31d90-1e43-4948-9fe3-97ba43f6fb34": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "atc_animation": "horizontal-shaking",
+            "atc_color": "#ffffff",
+            "atc_border_color": "#f4633a",
+            "atc_bg_color": "#f4633a",
+            "atc_bg_color_gradient": "",
+            "atc_color_hover": "#ffffff",
+            "atc_border_color_hover": "#00a5bd",
+            "atc_bg_color_hover": "#00a5bd",
+            "atc_bg_color_gradient_hover": "",
+            "bin_color": "#232323",
+            "bin_border_color": "#acacac",
+            "bin_bg_color": "#ffffff",
+            "bin_bg_color_gradient": "",
+            "bin_color_hover": "#ffffff",
+            "bin_border_color_hover": "#232323",
+            "bin_bg_color_hover": "#232323",
+            "bin_bg_color_hover_gradient": "",
+            "spacing_top": 0,
+            "spacing_bottom": 15
+          }
+        },
+        "10093fcf-2053-47e9-bedb-841bb0d046fa": {
+          "type": "trust_image",
+          "disabled": true,
+          "settings": {
+            "show_trust_image": true,
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "short_description_eciCw3": {
+          "type": "short_description",
+          "settings": {
+            "show_short_description": true,
+            "word_number": "17",
+            "fontsize_text": 12,
+            "color_text": "#3c3c3c",
+            "spacing_top": 0,
+            "spacing_bottom": 13
+          }
+        },
+        "custom_QK3rYR": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Gebruik",
+            "type": "all",
+            "content": "Stap 1: Scheur een strip van de verpakking.<br><br>Stap 2: Gooi de strip in de wasmachine, vaatwasser of los op in water.<br><br>Stap 3: Start je machine of gebruik de oplossing om oppervlakken te reinigen.<br><br>Stap 4: Geniet van een schoon resultaat zonder plastic afval.",
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        },
+        "custom_cqfTAp": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Ingrediënten",
+            "type": "all",
+            "content": "• Plantaardige surfactanten — reinigingsmiddelen op plantbasis<br><br>• Natuurlijke enzymen — voor vlekverwijdering<br><br>• Essentiële oliën — natuurlijke geur<br><br>• Natriumcarbonaat — waterontharder<br><br>• Citroenzuur — pH-balans",
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        },
+        "custom_NVDLg6": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Ingrediënten uitgelegd",
+            "type": "all",
+            "content": "<strong>Plantaardige surfactanten</strong><br>Krachtige reinigers op basis van kokosolie en palmolie. Biologisch afbreekbaar en net zo effectief als synthetische alternatieven.<br><br><strong>Natuurlijke enzymen</strong><br>Breken eiwitten en vetten af voor een grondige vlekverwijdering. Werken al bij lage temperaturen.<br><br><strong>Essentiële oliën</strong><br>Een subtiele, frisse geur zonder kunstmatige geurstoffen of allergenen.<br><br><strong>Natriumcarbonaat</strong><br>Maakt hard water zachter voor een betere waswerking.<br><br><strong>Citroenzuur</strong><br>Houdt de pH-waarde in balans voor optimale reiniging.<br><br>Deze strips bevatten geen parabenen, fosfaten, kleurstoffen of microplastics.",
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        },
+        "review_score_custom": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#E8622A",
+            "text": "",
+            "color_title": "#E8622A",
+            "text_description": "<div style=\"display:flex;align-items:center;gap:10px;margin-bottom:8px\"><img src=\"/cdn/shop/t/22/assets/stars-4.7.svg\" alt=\"4.7 sterren\" style=\"height:28px;flex-shrink:0\"><span style=\"font-size:15px;color:#1F1209\">4.7 score na <strong>1.000+</strong> bestellingen</span></div>",
+            "color_des": "#1F1209",
+            "fontsize_text": 14,
+            "content_popup": " ",
+            "spacing_top": 0,
+            "spacing_bottom": 5
+          }
+        },
+        "benefit_checks": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#E8622A",
+            "text": "",
+            "color_title": "#1F1209",
+            "text_description": "<div style=\"font-size:14px;line-height:2.2;color:#1F1209\"><span style=\"display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#38A169;color:#fff;font-size:13px;font-weight:700;margin-right:10px;flex-shrink:0;vertical-align:middle;line-height:1\">✓</span>Vervangt tot 60 plastic flessen per jaar<br><span style=\"display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#38A169;color:#fff;font-size:13px;font-weight:700;margin-right:10px;flex-shrink:0;vertical-align:middle;line-height:1\">✓</span>100% biologisch afbreekbaar<br><span style=\"display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#38A169;color:#fff;font-size:13px;font-weight:700;margin-right:10px;flex-shrink:0;vertical-align:middle;line-height:1\">✓</span>Geschikt voor alle wasmachines & temperaturen<br><span style=\"display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#38A169;color:#fff;font-size:13px;font-weight:700;margin-right:10px;flex-shrink:0;vertical-align:middle;line-height:1\">✓</span>Dermatologisch getest, veilig voor het hele gezin</div>",
+            "color_des": "#1F1209",
+            "fontsize_text": 14,
+            "content_popup": " ",
+            "spacing_top": 5,
+            "spacing_bottom": 10
+          }
+        },
+        "trust_badges": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#E8622A",
+            "text": "",
+            "color_title": "#E8622A",
+            "text_description": "<style>@keyframes pulse-green{0%{box-shadow:0 0 0 0 rgba(74,222,128,0.6)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}</style><div style=\"display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px\"><div style=\"background:#ffffff;border-radius:10px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center\"><img src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Klarna_Payment_Badge.svg/1920px-Klarna_Payment_Badge.svg.png\" alt=\"Klarna\" style=\"height:22px\"><span style=\"font-size:11px;font-weight:600;color:#1F1209;line-height:1.4\">Eerst proberen,<br>dan betalen</span></div><div style=\"background:#ffffff;border-radius:10px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center\"><span style=\"display:inline-block;width:10px;height:10px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,0.6);animation:pulse-green 2s infinite;margin-top:4px\"></span><span style=\"font-size:11px;font-weight:600;color:#1F1209;line-height:1.4\"><span id=\"tabblie-scarcity\">12</span> anderen<br>kijken nu ook</span></div><div style=\"background:#ffffff;border-radius:10px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center\"><img src=\"/cdn/shop/t/22/assets/tabblie-carbon-footprint.png\" alt=\"CO2 footprint\" style=\"height:30px;width:30px;object-fit:contain\"><span style=\"font-size:11px;font-weight:600;color:#1F1209;line-height:1.4\">CO2-voetafdruk<br>gecompenseerd</span></div></div><script id=\"tabblie-scarcity-script\">\n(function(){var el=document.getElementById('tabblie-scarcity');if(!el)return;function calc(){var d=new Date();var seed=d.getFullYear()*10000+d.getMonth()*100+d.getDate();var mins=d.getHours()*60+d.getMinutes();var cycle=Math.floor(mins/3);var r=((seed*31+cycle*7)%17);var v=4+r;el.textContent=v}calc();setInterval(calc,180000)})();\n</script>",
+            "color_des": "#1F1209",
+            "fontsize_text": 12,
+            "content_popup": " ",
+            "spacing_top": 0,
+            "spacing_bottom": 10
+          }
+        },
+        "social_delivery": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#E8622A",
+            "text": "",
+            "color_title": "#1F1209",
+            "text_description": "<div style=\"margin-top:12px\">\n<div style=\"background:#ffffff;border-radius:14px;padding:16px 18px;margin-bottom:14px;display:flex;gap:14px;align-items:flex-start\">\n<div style=\"width:40px;height:40px;border-radius:50%;background:#E8622A;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:700\">S</div>\n<div>\n<p style=\"font-size:13px;color:#1F1209;line-height:1.55;margin:0 0 8px;font-style:italic\">\"Ik was sceptisch, maar deze strips werken echt net zo goed als mijn oude wasmiddel. En geen plastic meer!\"</p>\n<div style=\"display:flex;align-items:center;gap:6px\">\n<svg width=\"16\" height=\"16\" viewBox=\"0 0 256 256\" fill=\"#3B7DD8\"><path d=\"M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z\"/></svg>\n<span style=\"font-size:13px;font-weight:700;color:#1F1209\">Sanne</span>\n</div>\n</div>\n</div>\n<div style=\"display:flex;align-items:center;justify-content:center;gap:8px;margin:14px 0\">\n<img src=\"/cdn/shop/t/22/assets/pay-ideal.svg\" alt=\"iDEAL\" style=\"height:24px\">\n<img src=\"/cdn/shop/t/22/assets/pay-visa.svg\" alt=\"Visa\" style=\"height:24px\">\n<img src=\"/cdn/shop/t/22/assets/pay-master.svg\" alt=\"Mastercard\" style=\"height:24px\">\n<img src=\"/cdn/shop/t/22/assets/pay-applepay.svg\" alt=\"Apple Pay\" style=\"height:24px\">\n<img src=\"/cdn/shop/t/22/assets/pay-klarna.png\" alt=\"Klarna\" style=\"height:24px\">\n<img src=\"/cdn/shop/t/22/assets/pay-paypal.svg\" alt=\"PayPal\" style=\"height:24px\">\n</div>\n<div style=\"font-size:13px;font-weight:600;text-align:center;color:#1F1209;margin:14px 0\">Bestel voor 23:59 uur, <strong>morgen</strong> in huis!</div>\n<div style=\"font-size:12px;text-align:center;color:rgba(31,18,9,0.45);margin:0 0 14px\">Support team, reageert binnen een paar uur.</div>\n<div style=\"border:2px dashed #5BB8A0;border-radius:50px;padding:10px 20px;display:flex;align-items:center;justify-content:center;background:#f0f7ee\">\n<span style=\"font-size:13px;font-weight:700;color:#3d7a32\">100% geld-terug-garantie voor 30 dagen</span>\n</div>\n</div>",
+            "color_des": "#1F1209",
+            "fontsize_text": 12,
+            "content_popup": " ",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "ugc_videos": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#1F1209",
+            "text": "",
+            "color_title": "#1F1209",
+            "text_description": "<div style=\"margin:20px 0\">\n<h3 style=\"text-align:center;font-size:18px;font-weight:700;color:#1F1209;margin:0 0 14px\">Geliefd door 1.000+ klanten</h3>\n<div style=\"display:grid;grid-template-columns:repeat(3,1fr);gap:10px\">\n<div class=\"ugc-item\" style=\"position:relative;border-radius:14px;overflow:hidden;cursor:pointer;background:#1a1a1a;aspect-ratio:9/16\" onclick=\"playVideo(this)\">\n<video src=\"/cdn/shop/t/22/assets/tabblie-ugc-video.mp4#t=0.001\" style=\"width:100%;height:100%;object-fit:cover;display:block\" playsinline preload=\"auto\" loop muted></video>\n<div class=\"play-overlay\" style=\"position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.15);transition:opacity 0.2s\">\n<div style=\"width:48px;height:48px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"#1a1a1a\"><polygon points=\"5 3 19 12 5 21 5 3\"/></svg></div>\n<span style=\"color:#fff;font-size:12px;font-weight:600;margin-top:8px;text-shadow:0 1px 3px rgba(0,0,0,0.4)\">Lisa</span>\n</div></div>\n<div class=\"ugc-item\" style=\"position:relative;border-radius:14px;overflow:hidden;cursor:pointer;background:#1a1a1a;aspect-ratio:9/16\" onclick=\"playVideo(this)\">\n<video src=\"/cdn/shop/t/22/assets/tabblie-ugc-video.mp4#t=0.001\" style=\"width:100%;height:100%;object-fit:cover;display:block\" playsinline preload=\"auto\" loop muted></video>\n<div class=\"play-overlay\" style=\"position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.15);transition:opacity 0.2s\">\n<div style=\"width:48px;height:48px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"#1a1a1a\"><polygon points=\"5 3 19 12 5 21 5 3\"/></svg></div>\n<span style=\"color:#fff;font-size:12px;font-weight:600;margin-top:8px;text-shadow:0 1px 3px rgba(0,0,0,0.4)\">Marieke</span>\n</div></div>\n<div class=\"ugc-item\" style=\"position:relative;border-radius:14px;overflow:hidden;cursor:pointer;background:#1a1a1a;aspect-ratio:9/16\" onclick=\"playVideo(this)\">\n<video src=\"/cdn/shop/t/22/assets/tabblie-ugc-video.mp4#t=0.001\" style=\"width:100%;height:100%;object-fit:cover;display:block\" playsinline preload=\"auto\" loop muted></video>\n<div class=\"play-overlay\" style=\"position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.15);transition:opacity 0.2s\">\n<div style=\"width:48px;height:48px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"#1a1a1a\"><polygon points=\"5 3 19 12 5 21 5 3\"/></svg></div>\n<span style=\"color:#fff;font-size:12px;font-weight:600;margin-top:8px;text-shadow:0 1px 3px rgba(0,0,0,0.4)\">Sophie</span>\n</div></div>\n</div>\n<style>.ugc-item video::-webkit-media-controls{display:none!important}</style>\n<script>\nfunction playVideo(item){var v=item.querySelector(\"video\"),o=item.querySelector(\".play-overlay\");document.querySelectorAll(\".ugc-item video\").forEach(function(x){if(x!==v){x.pause();x.muted=true;x.closest(\".ugc-item\").querySelector(\".play-overlay\").style.opacity=\"1\";x.closest(\".ugc-item\").querySelector(\".play-overlay\").style.pointerEvents=\"auto\"}});if(v.paused){v.muted=false;v.play();o.style.opacity=\"0\";o.style.pointerEvents=\"none\"}else{v.pause();v.muted=true;o.style.opacity=\"1\";o.style.pointerEvents=\"auto\"}}\n</script>\n</div>",
+            "color_des": "#1F1209",
+            "fontsize_text": 13,
+            "content_popup": "",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "slogan": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#E8622A",
+            "text": "",
+            "color_title": "#1F1209",
+            "text_description": "<p style='font-size:13px;color:rgba(31,18,9,0.45);font-style:italic;margin:0;font-family:var(--text-font-family)'>Tabblie, kind kan de was doen.</p>",
+            "color_des": "#1F1209",
+            "fontsize_text": 13,
+            "content_popup": "",
+            "spacing_top": 0,
+            "spacing_bottom": 4
+          }
+        },
+        "custom_shipping": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Verzending & retour",
+            "type": "all",
+            "content": "Gratis verzending in Nederland en België.<br><br>Bestel voor 23:59 uur, morgen in huis.<br><br>30 dagen niet-goed-geld-terug garantie. Ongeopende producten kun je binnen 30 dagen retourneren voor een volledige terugbetaling.<br><br>Alle bestellingen worden klimaatneutraal verzonden — wij compenseren onze volledige CO2-voetafdruk.",
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        },
+        "custom_sustain": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Duurzaamheid",
+            "type": "all",
+            "content": "Onze CO2-voetafdruk wordt volledig gecompenseerd door donaties aan gecertificeerde milieuprojecten.<br><br>10% van onze winst gaat naar milieuorganisaties die plastic opruimen uit oceanen en bomen planten.<br><br>Onze strips zijn 100% biologisch afbreekbaar, verpakt in recyclebaar papier. Geen plastic, geen microplastics, geen compromis.<br><br>Omdat onze strips zo compact en licht zijn, is de CO2-uitstoot bij verzending tot 90% lager dan bij traditionele schoonmaakmiddelen in plastic flessen.",
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        }
+      },
+      "block_order": [
+        "review_score_custom",
+        "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0",
+        "slogan",
+        "judge_me_reviews_preview_badge_ayaigx",
+        "4f95b592-8369-4ab0-b30d-24e463fb6890",
+        "benefit_checks",
+        "d98e243b-3682-495a-965a-1c7f7d460880",
+        "d97e417a-941b-4a5d-bef3-a651adb918d8",
+        "faa2b3e6-c0a1-4269-baa6-d2605efe4c05",
+        "trust_badges",
+        "f1b31d90-1e43-4948-9fe3-97ba43f6fb34",
+        "social_delivery",
+        "ugc_videos",
+        "short_description_eciCw3",
+        "custom_QK3rYR",
+        "custom_cqfTAp",
+        "custom_NVDLg6",
+        "custom_shipping",
+        "custom_sustain"
+      ],
+      "custom_css": [
+        "button#product-add-to-cart {width: 200px; display: inline; padding: 8px 0px;}"
+      ],
+      "settings": {
+        "container": "1170",
+        "padding_full_width": 0,
+        "show_sticky_info": true,
+        "media_fit": "unset",
+        "product_image_ratio": "adapt",
+        "portrait_aspect_ratio": 148,
+        "video_layout": "popup",
+        "zoomed_image": false,
+        "product_image_popup": "none",
+        "main_image_show_custom_cursor": false,
+        "icon_color": "#000000",
+        "main_image_position": "left",
+        "main_image_layout": "1",
+        "main_image_arrows_desktop": false,
+        "main_image_arrows_mobile": false,
+        "main_image_counter_mobile": true,
+        "main_image_enable_parallax_mb": false,
+        "main_image_show_zoom_icon_mb": false,
+        "show_thumbnail_mobile": true,
+        "thumnail_layout": "3",
+        "thumbnail_to_show": 5,
+        "enable_sticky": false,
+        "sidebar_layout": "layout_1",
+        "sidebar_collapse": "collapse",
+        "sidebar_collapse_default": "expand",
+        "sidebar_position": "left",
+        "sidebar_heading_font": "font_1",
+        "sidebar_heading_font_size": 14,
+        "sidebar_heading_font_weight": "700",
+        "sidebar_heading_text_transform": "uppercase",
+        "show_badge": true,
+        "show_subtotal": false,
+        "subtotal_style": "1",
+        "show_sticky_add_to_cart": false,
+        "sticky_atc_layout": "1",
+        "enable_sticky_add_to_cart_always_mobile": false,
+        "show_sticky_vendor": false,
+        "show_quick_order_list": false,
+        "show_image": false,
+        "show_sku": false,
+        "show_tab": true,
+        "tab_layout": "vertical",
+        "tab_layout_mobile": "popup",
+        "icon_style_layout": "style_1",
+        "title_font_size": 18,
+        "title_font_size_mb": 16,
+        "font_weight_title": "500",
+        "title_text_transform": "none",
+        "title_padding_top_bottom": 15,
+        "tab_border_color": "#000000",
+        "tab_border_color_rgb": "",
+        "show_product_bundle": true,
+        "background_color": "#f8f8f8",
+        "block_title": "Frequenly Bought Together",
+        "block_title_align": "left",
+        "product_style": "2",
+        "block_image_ratio": "adapt",
+        "bundle_discount": true,
+        "bundle_discount_text": "Get a [discount]% discount buying these products together",
+        "bundle_discount_text_color": "#232323",
+        "total_btn_color": "#ffffff",
+        "total_btn_border": "#232323",
+        "total_btn_bg": "#232323",
+        "total_btn_bg_gradient": "",
+        "total_btn_color_hover": "#232323",
+        "total_btn_border_hover": "#232323",
+        "total_btn_bg_hover": "#ffffff",
+        "total_btn_bg_gradient_hover": "",
+        "block_dots": true,
+        "block_arrows": true,
+        "padding_top": 30,
+        "padding_top_tablet": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom": 70,
+        "padding_bottom_tablet": 40,
+        "padding_bottom_mobile": 30,
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0
+      }
+    },
+    "custom_service_block_8Gzkxn": {
+      "type": "custom-service-block",
+      "blocks": {
+        "text_e3hFFf": {
+          "type": "Text",
+          "settings": {
+            "bg_color_block": "rgba(0,0,0,0)",
+            "border_block": "rgba(0,0,0,0)",
+            "icon_type": "image",
+            "image": "shopify://shop_images/icon-usp-plant_200x_367c0d41-038f-426f-bd28-a86d2df83c35.png",
+            "icon": "",
+            "width_icon": 100,
+            "height_icon": 100,
+            "mg_bottom_icon": 20,
+            "color_icon": "#3c3c3c",
+            "text": "100% natuurlijk",
+            "type_tab_font": "font_1",
+            "fontsize_title_block": 20,
+            "fontsize_title_block_mb": 20,
+            "title_block_font_weight": "400",
+            "mg_bottom_title": 14,
+            "mg_bottom_title_mb": 0,
+            "color_block": "#5BB8A0",
+            "description": "",
+            "fontsize_des_block": 16,
+            "fontsize_des_block_mb": 14,
+            "lineheight_des_block": 22,
+            "mg_bottom_des": 0,
+            "color_des_block": "#3c3c3c",
+            "button": "",
+            "link": "",
+            "button_style": "style1",
+            "fontsize_button": 14,
+            "button_width": 235,
+            "fontweight_button": "500",
+            "enable_underline_button": false,
+            "color_button": "#ba7a2d",
+            "button_border": "",
+            "button_background": "",
+            "button_background_gradient": "",
+            "button_color_hover": "#ba7a2d",
+            "button_border_hover": "",
+            "button_background_hover": "",
+            "button_background_gradient_hover": ""
+          }
+        },
+        "text_xGqxge": {
+          "type": "Text",
+          "settings": {
+            "bg_color_block": "rgba(0,0,0,0)",
+            "border_block": "rgba(0,0,0,0)",
+            "icon_type": "image",
+            "image": "shopify://shop_images/icon-usp-sustainable_200x_351df314-87fc-4509-ae33-1cb02ea136d9.png",
+            "icon": "",
+            "width_icon": 100,
+            "height_icon": 100,
+            "mg_bottom_icon": 20,
+            "color_icon": "#3c3c3c",
+            "text": "vegan",
+            "type_tab_font": "font_1",
+            "fontsize_title_block": 20,
+            "fontsize_title_block_mb": 20,
+            "title_block_font_weight": "400",
+            "mg_bottom_title": 15,
+            "mg_bottom_title_mb": 0,
+            "color_block": "#E85B7A",
+            "description": "",
+            "fontsize_des_block": 16,
+            "fontsize_des_block_mb": 14,
+            "lineheight_des_block": 22,
+            "mg_bottom_des": 0,
+            "color_des_block": "#3c3c3c",
+            "button": "",
+            "link": "",
+            "button_style": "style1",
+            "fontsize_button": 14,
+            "button_width": 235,
+            "fontweight_button": "500",
+            "enable_underline_button": false,
+            "color_button": "#ba7a2d",
+            "button_border": "",
+            "button_background": "",
+            "button_background_gradient": "",
+            "button_color_hover": "#ba7a2d",
+            "button_border_hover": "",
+            "button_background_hover": "",
+            "button_background_gradient_hover": ""
+          }
+        },
+        "text_yAtGjQ": {
+          "type": "Text",
+          "settings": {
+            "bg_color_block": "rgba(0,0,0,0)",
+            "border_block": "rgba(0,0,0,0)",
+            "icon_type": "image",
+            "image": "shopify://shop_images/icon-usp-effective_200x_0ec970a2-b8e4-4d4a-bdef-8443fa1d8526.png",
+            "icon": "",
+            "width_icon": 100,
+            "height_icon": 100,
+            "mg_bottom_icon": 20,
+            "color_icon": "#3c3c3c",
+            "text": "super effectief",
+            "type_tab_font": "font_1",
+            "fontsize_title_block": 20,
+            "fontsize_title_block_mb": 20,
+            "title_block_font_weight": "400",
+            "mg_bottom_title": 15,
+            "mg_bottom_title_mb": 0,
+            "color_block": "#F5C842",
+            "description": "",
+            "fontsize_des_block": 16,
+            "fontsize_des_block_mb": 14,
+            "lineheight_des_block": 22,
+            "mg_bottom_des": 0,
+            "color_des_block": "#3c3c3c",
+            "button": "",
+            "link": "",
+            "button_style": "style1",
+            "fontsize_button": 14,
+            "button_width": 235,
+            "fontweight_button": "500",
+            "enable_underline_button": false,
+            "color_button": "#ba7a2d",
+            "button_border": "",
+            "button_background": "",
+            "button_background_gradient": "",
+            "button_color_hover": "#ba7a2d",
+            "button_border_hover": "",
+            "button_background_hover": "",
+            "button_background_gradient_hover": ""
+          }
+        },
+        "text_DmtwAH": {
+          "type": "Text",
+          "settings": {
+            "bg_color_block": "rgba(0,0,0,0)",
+            "border_block": "rgba(0,0,0,0)",
+            "icon_type": "image",
+            "image": "shopify://shop_images/icon-usp-sustainable_200x_3aee02bf-aad3-41e0-ba35-c258b0868ba8.png",
+            "icon": "",
+            "width_icon": 100,
+            "height_icon": 100,
+            "mg_bottom_icon": 20,
+            "color_icon": "#3c3c3c",
+            "text": "duurzaam",
+            "type_tab_font": "font_1",
+            "fontsize_title_block": 20,
+            "fontsize_title_block_mb": 20,
+            "title_block_font_weight": "400",
+            "mg_bottom_title": 15,
+            "mg_bottom_title_mb": 0,
+            "color_block": "#3B7DD8",
+            "description": "",
+            "fontsize_des_block": 16,
+            "fontsize_des_block_mb": 14,
+            "lineheight_des_block": 22,
+            "mg_bottom_des": 0,
+            "color_des_block": "#3c3c3c",
+            "button": "",
+            "link": "",
+            "button_style": "style1",
+            "fontsize_button": 14,
+            "button_width": 235,
+            "fontweight_button": "500",
+            "enable_underline_button": false,
+            "color_button": "#ba7a2d",
+            "button_border": "",
+            "button_background": "",
+            "button_background_gradient": "",
+            "button_color_hover": "#ba7a2d",
+            "button_border_hover": "",
+            "button_background_hover": "",
+            "button_background_gradient_hover": ""
+          }
+        },
+        "text_wVUEm7": {
+          "type": "Text",
+          "settings": {
+            "bg_color_block": "rgba(0,0,0,0)",
+            "border_block": "rgba(0,0,0,0)",
+            "icon_type": "image",
+            "image": "shopify://shop_images/icon-usp-certified_200x_cc3346f8-da36-4c52-a8c6-e3f52909d020.png",
+            "icon": "",
+            "width_icon": 100,
+            "height_icon": 100,
+            "mg_bottom_icon": 20,
+            "color_icon": "#3c3c3c",
+            "text": "plasticvrij",
+            "type_tab_font": "font_1",
+            "fontsize_title_block": 20,
+            "fontsize_title_block_mb": 20,
+            "title_block_font_weight": "400",
+            "mg_bottom_title": 15,
+            "mg_bottom_title_mb": 0,
+            "color_block": "#5BB8A0",
+            "description": "",
+            "fontsize_des_block": 16,
+            "fontsize_des_block_mb": 14,
+            "lineheight_des_block": 22,
+            "mg_bottom_des": 0,
+            "color_des_block": "#3c3c3c",
+            "button": "",
+            "link": "",
+            "button_style": "style1",
+            "fontsize_button": 14,
+            "button_width": 235,
+            "fontweight_button": "500",
+            "enable_underline_button": false,
+            "color_button": "#ba7a2d",
+            "button_border": "",
+            "button_background": "",
+            "button_background_gradient": "",
+            "button_color_hover": "#ba7a2d",
+            "button_border_hover": "",
+            "button_background_hover": "",
+            "button_background_gradient_hover": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_e3hFFf",
+        "text_xGqxge",
+        "text_yAtGjQ",
+        "text_DmtwAH",
+        "text_wVUEm7"
+      ],
+      "custom_css": [
+        ".policies-content {line-height: 34px; letter-spacing: -1px; font-weight: 500;}",
+        "@media (max-width: 768px) {.halo-row {display: grid; grid-template-columns: repeat(2, 1fr); }}"
+      ],
+      "name": "t:sections.custom_service_block.name",
+      "settings": {
+        "id_section": "",
+        "container": "container",
+        "padding_full_width": 0,
+        "display_border_top": false,
+        "display_border_bottom": false,
+        "border_color": "rgba(0,0,0,0)",
+        "service_block_swipe_on_mobile": "list",
+        "color_icon_slider": "#212121",
+        "service_block_style": "style_1",
+        "policies_bg": "#f9f5f1",
+        "policies_bg_gradient": "",
+        "service_block_title": "",
+        "enable_border_title": false,
+        "color_title": "#ffffff",
+        "fontsize_title": 40,
+        "fontsize_title_mb": 40,
+        "mg_bottom_title_service_block": 45,
+        "mg_bottom_title_service_block_mb": 45,
+        "service_block_des": "",
+        "service_block_des_pos": "bottom",
+        "color_des": "#000000",
+        "fontsize_des": 16,
+        "mg_top_service_block_des": 50,
+        "mg_bottom_service_block_des": 50,
+        "view_all": "",
+        "view_all_align": "center",
+        "font_weight_view_all": "400",
+        "mg_top_view": 0,
+        "mg_bottom_view": 30,
+        "enable_border_view_all": true,
+        "link_view_all": "",
+        "color_view_all": "#3c3c3c",
+        "icon_view_all": "",
+        "color_view_all_icon": "#eb492f",
+        "title_align": "center",
+        "item_width": "full_width",
+        "border_item": "none",
+        "enable_item_distance": true,
+        "enable_hover_box_shadow": false,
+        "enable_hover_effects_top": false,
+        "item_padding_top": 13,
+        "item_padding_bottom": 13,
+        "item_padding_left_right": 40,
+        "item_radius": 4,
+        "grid_gap": 30,
+        "item_align": "center",
+        "enable_block_bottom": false,
+        "bg_block_bottom": "#000000",
+        "btn_text_block_bottom": "Shop Now",
+        "button_link_block_bottom": "",
+        "button_1_width_block_bottom": 235,
+        "button_color_block_bottom": "#ffffff",
+        "button_border_block_bottom": "#232323",
+        "button_background_block_bottom": "#232323",
+        "button_background_gradient_block_bottom": "",
+        "button_color_hover_block_bottom": "#ffffff",
+        "button_border_hover_block_bottom": "#232323",
+        "button_background_hover_block_bottom": "#232323",
+        "button_background_gradient_hover_block_bottom": "",
+        "btn_2_text_block_bottom": "Shop Now",
+        "button_link_2_block_bottom": "",
+        "button_2_width_block_bottom": 235,
+        "button_2_color_block_bottom": "#ffffff",
+        "button_2_border_block_bottom": "#232323",
+        "button_2_background_block_bottom": "#232323",
+        "button_2_background_gradient_block_bottom": "",
+        "button_2_color_hover_block_bottom": "#ffffff",
+        "button_2_border_hover_block_bottom": "#232323",
+        "button_2_background_hover_block_bottom": "#232323",
+        "button_2_background_gradient_hover_block_bottom": "",
+        "mg_top_desktop": 50,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 50,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 50
+      }
+    },
+    "faqs_6mziiU": {
+      "type": "faqs",
+      "blocks": {
+        "paragraph_aMkfUp": {
+          "type": "paragraph",
+          "settings": {
+            "title": "",
+            "question_1": "Hoe gebruik ik de tabblie strips?",
+            "answer_1": "<p>Scheur een strip af, gooi hem in de wasmachine, vaatwasser of los hem op in water. Klaar! Geen afmeten, geen rommel.</p>",
+            "question_2": "Werken de strips in koud water?",
+            "answer_2": "<p>Ja! Onze strips lossen volledig op in zowel warm als koud water. Perfect voor elke wastemperatuur.</p>",
+            "question_3": "Zijn de strips veilig voor gevoelige huid?",
+            "answer_3": "<p>Absoluut. Onze formule is vrij van parabenen, fosfaten, kleurstoffen en kunstmatige geurstoffen. Dermatologisch getest en geschikt voor het hele gezin.</p>",
+            "question_4": "Hoe zit het met verzending en retourneren?",
+            "answer_4": "<p>We verzenden gratis naar Nederland en België. Niet tevreden? Je kunt binnen 30 dagen retourneren voor volledige terugbetaling.</p>",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        }
+      },
+      "block_order": [
+        "paragraph_aMkfUp"
+      ],
+      "custom_css": [
+        ".faqs .faqs-item .card-header .title {color: #2b2b2b; font-size: 16px; letter-spacing: 0px; font-weight: 500; background: #f8f4f0; padding: 5px 0px; border-top: none; border-bottom: 1px solid #f84d27;}",
+        "faqs-item#FaqsSection-template--26621760274781__faqs_6mziiU {background-color: #f9f5f1;}",
+        ".faqs-item .collapse {background: #f8f4f0; color: #000; font-size: 16px; line-height: 22px; border: none;}",
+        ".faqs .faqs-item .card-header:not(.collapsed) .title:after {transform: scale(0); transform-origin: left;}"
+      ],
+      "name": "t:sections.faqs.presets.name",
+      "settings": {
+        "container": "1170",
+        "padding_full_width": 0,
+        "title": "",
+        "color_title": "#f4633a",
+        "fontsize_title": 15,
+        "fontsize_title_mb": 16,
+        "mg_bottom_title": 12,
+        "mg_bottom_title_mb": 12,
+        "enable_border_title": false,
+        "border_color_title": "rgba(0,0,0,0)",
+        "description": "",
+        "color_des": "#f4633a",
+        "fontsize_des": 16,
+        "contact_text": "",
+        "contact_link": "",
+        "contact_color": "#ffffff",
+        "contact_color_border": "#ef6454",
+        "contact_color_bg": "#ef6454",
+        "contact_color_bg_gradient": "",
+        "contact_color_hover": "#ffffff",
+        "contact_color_border_hover": "#ef6454",
+        "contact_color_bg_hover": "#ef6454",
+        "contact_color_bg_gradient_hover": "",
+        "title_alignment": "left",
+        "show_faqs_filter": false,
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 50,
+        "icon": "product"
+      },
+      "disabled": true
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "custom_css": [
+        ".slick-slide img {border-radius: 10px;}",
+        ".slick-slide img:hover {border-radius: 10px;}",
+        ".card-media {border-radius: 10px;}"
+      ],
+      "settings": {
+        "display_product_block": true,
+        "product_block_container": "fullwidth",
+        "padding_full_width": 50,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "border_style": "container",
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 20,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 25,
+        "mg_bottom_mobile": 25,
+        "product_block_layout": "slider",
+        "product_bg": "#f8bed6",
+        "style_block_header": "style1",
+        "product_block_title": "Misschien ook iets voor jou?",
+        "enable_border_title": false,
+        "mg_top_title": 50,
+        "mg_bottom_title": 50,
+        "fontsize_title": 50,
+        "fontsize_title_mb": 30,
+        "color_title": "#f4633a",
+        "border_color_title": "rgba(0,0,0,0)",
+        "product_block_title_align": "center",
+        "product_block_limit": 10,
+        "grid_gap": 30,
+        "product_block_per_row": "4",
+        "product_block_swipe_on_mobile": false,
+        "product_block_dots": false,
+        "product_block_dots_mb": true,
+        "product_block_arrows": true,
+        "product_block_arrows_mb": false,
+        "product_block_show": "4",
+        "product_block_per_view": "4",
+        "show_half": true,
+        "scroll_height": 4,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#000000",
+        "scroll_thumb_hover_color": "#444444",
+        "enable_layout_special": false,
+        "bg_card": "#ffffff",
+        "padding_card": 15,
+        "border_radius_card": 5,
+        "border_layout_card": "full",
+        "border_width_card": 5,
+        "border_color_card": "#f0f1f4"
+      }
+    },
+    "1758362424bdd6576e": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_CL9X6g": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_CL9X6g"
+      ],
+      "custom_css": [
+        "div#shopify-block-ARk9sVEhQVnpwSXFRa__judge_me_reviews_review_widget_CL9X6g {background: #f7f7f7; padding: 50px 0;}",
+        ".jdgm-row-actions,.jdgm-rev-widg__body {padding: 0px 20px;}"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "product-recently-viewed": {
+      "type": "product-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "display_product_recently_viewed": true,
+        "product_recently_viewed_container": "container",
+        "padding_full_width": 0,
+        "enable_border_top": true,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "border_style": "container",
+        "mg_top_desktop": 80,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 30,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "product_recently_viewed_layout": "slider",
+        "product_bg": "#ffffff",
+        "product_bg_gradient": "",
+        "style_block_header": "style1",
+        "product_recently_viewed_title": "Recently Viewed Products",
+        "enable_border_title": false,
+        "mg_top_title": 50,
+        "mg_bottom_title": 50,
+        "fontsize_title": 45,
+        "fontsize_title_mb": 40,
+        "border_color_title": "#232323",
+        "color_title": "#232323",
+        "product_recently_viewed_title_align": "center",
+        "product_recently_viewed_limit": 10,
+        "product_recently_viewed_image_ratio": "adapt",
+        "grid_gap": 30,
+        "product_recently_viewed_per_row": "4",
+        "product_recently_viewed_swipe_on_mobile": true,
+        "product_recently_viewed_dots": false,
+        "product_recently_viewed_dots_mb": true,
+        "product_recently_viewed_arrows": true,
+        "product_recently_viewed_arrows_mb": false,
+        "product_recently_viewed_show": "4",
+        "product_block_per_view": "4",
+        "show_half": true,
+        "scroll_height": 4,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#000000",
+        "scroll_thumb_hover_color": "#444444",
+        "enable_layout_special": false,
+        "bg_card": "#ffffff",
+        "padding_card": 15,
+        "border_radius_card": 5,
+        "border_layout_card": "full",
+        "border_width_card": 5,
+        "border_color_card": "#f0f1f4"
+      }
+    },
+    "tabblie_product_usps": {
+      "type": "tabblie-product-usps",
+      "blocks": {
+        "usp_1": {
+          "type": "usp",
+          "settings": {
+            "icon": "plasticfree",
+            "text": "Plasticvrij"
+          }
+        },
+        "usp_2": {
+          "type": "usp",
+          "settings": {
+            "icon": "heart",
+            "text": "100% vegan"
+          }
+        },
+        "usp_3": {
+          "type": "usp",
+          "settings": {
+            "icon": "truck",
+            "text": "Gratis verzending NL & BE"
+          }
+        },
+        "usp_4": {
+          "type": "usp",
+          "settings": {
+            "icon": "check",
+            "text": "Nederlands familiebedrijf"
+          }
+        },
+        "usp_5": {
+          "type": "usp",
+          "settings": {
+            "icon": "star",
+            "text": "Super effectief"
+          }
+        },
+        "usp_6": {
+          "type": "usp",
+          "settings": {
+            "icon": "footprint",
+            "text": "Klimaatneutraal verzonden"
+          }
+        }
+      },
+      "block_order": [
+        "usp_1",
+        "usp_2",
+        "usp_3",
+        "usp_4",
+        "usp_5",
+        "usp_6"
+      ],
+      "settings": {
+        "deal_text": "LENTEKORTING: 2+1 GRATIS"
+      }
+    },
+    "tabblie_ingredients": {
+      "type": "tabblie-ingredients",
+      "blocks": {
+        "ing_1": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Plantaardige surfactanten",
+            "description": "Krachtige, biologisch afbreekbare reinigingsmiddelen op plantbasis. Net zo effectief als chemische alternatieven, maar volledig veilig voor het milieu."
+          }
+        },
+        "ing_2": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Natuurlijke enzymen",
+            "description": "Breken hardnekkig vuil en vlekken af op natuurlijke wijze. Werken bij lage en hoge temperaturen voor een grondige reiniging."
+          }
+        },
+        "ing_3": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Essentiele olien",
+            "description": "Een subtiele, frisse geur zonder kunstmatige geurstoffen. Volledig natuurlijk en vrij van allergenen."
+          }
+        }
+      },
+      "block_order": [
+        "ing_1",
+        "ing_2",
+        "ing_3"
+      ],
+      "settings": {
+        "eyebrow": "WAT ZIT ERIN?",
+        "heading": "De kracht van elke strip"
+      }
+    },
+    "tabblie_comparison": {
+      "type": "tabblie-comparison",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "tabblie_text": "100% plasticvrij",
+            "traditional_text": "Plastic flessen & verpakkingen"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "tabblie_text": "Biologisch afbreekbaar",
+            "traditional_text": "Schadelijke chemicalien"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "tabblie_text": "Compact & lichtgewicht",
+            "traditional_text": "Zwaar & omvangrijk"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "tabblie_text": "Geen schadelijke stoffen",
+            "traditional_text": "Parabenen, fosfaten & kleurstoffen"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "tabblie_text": "Verpakt in recyclebaar papier",
+            "traditional_text": "Niet-recyclebaar plastic"
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "tabblie_text": "Gratis verzending NL & BE",
+            "traditional_text": "Hoge verzendkosten door gewicht"
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6"
+      ],
+      "settings": {}
+    },
+    "tabblie_guarantee_pdp": {
+      "type": "tabblie-guarantee",
+      "settings": {
+        "eyebrow": "ONZE GARANTIE",
+        "heading": "Probeer het 30 dagen.",
+        "heading_accent": "Risicovrij!",
+        "body": "<p>Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p>",
+        "button_text": "Bestel nu",
+        "badge_text": "30 dagen proef wassen"
+      }
+    },
+    "tabblie_vt_pdp": {
+      "type": "tabblie-video-text",
+      "settings": {
+        "bg_color": "#FDF6EE",
+        "video_side": "right",
+        "eyebrow": "ZO WERKT HET",
+        "title": "Scheur, gooi,",
+        "title_accent": "klaar.",
+        "body": "<p>Eén strip vervangt één plastic fles. Scheur hem af, gooi hem in je wasmachine of vaatwasser, en je bent klaar. Geen afmeten, geen rommel, geen plastic afval.</p><p>Werkt in koud en warm water. Dermatologisch getest en veilig voor het hele gezin.</p>",
+        "button_text": "Bestel nu"
+      }
+    },
+    "tabblie_insta_pdp": {
+      "type": "tabblie-instagram",
+      "blocks": {
+        "post_1": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/10_125e9cc1-743d-41c2-aa28-618e06100d36.png",
+            "likes": "234",
+            "comments": "12"
+          }
+        },
+        "post_2": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/17.png",
+            "likes": "187",
+            "comments": "9"
+          }
+        },
+        "post_3": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/8.png",
+            "likes": "312",
+            "comments": "18"
+          }
+        },
+        "post_4": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/12.png",
+            "likes": "156",
+            "comments": "7"
+          }
+        },
+        "post_5": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/13.png",
+            "likes": "278",
+            "comments": "14"
+          }
+        },
+        "post_6": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/11.png",
+            "likes": "198",
+            "comments": "11"
+          }
+        },
+        "post_7": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/14.png",
+            "likes": "245",
+            "comments": "16"
+          }
+        },
+        "post_8": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/9.png",
+            "likes": "167",
+            "comments": "6"
+          }
+        },
+        "post_9": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/19.png",
+            "likes": "289",
+            "comments": "13"
+          }
+        }
+      },
+      "block_order": [
+        "post_1",
+        "post_2",
+        "post_3",
+        "post_4",
+        "post_5",
+        "post_6",
+        "post_7",
+        "post_8",
+        "post_9"
+      ],
+      "settings": {
+        "eyebrow": "WAT KLANTEN DELEN",
+        "title": "@tabblie op Instagram",
+        "username": "tabblie",
+        "bio": "Schoonmaken, opnieuw uitgevonden. Plasticvrij, plantaardig, voor het hele gezin.",
+        "bio_link_text": "usetabbly.com",
+        "posts_count": "42",
+        "followers_count": "1.2k",
+        "following_count": "86",
+        "cta_text": "Volg @tabblie"
+      },
+      "disabled": true
+    },
+    "tabblie_stories_pdp": {
+      "type": "tabblie-insta-stories",
+      "blocks": {
+        "s1": {
+          "type": "story",
+          "settings": {
+            "username": "@lisabeun",
+            "time_ago": "2u",
+            "caption": "Sinds ik tabblie gebruik bespaar ik maandelijks 3+ plastic flessen ✨"
+          }
+        },
+        "s2": {
+          "type": "story",
+          "settings": {
+            "username": "@mariekevh",
+            "time_ago": "5u",
+            "caption": "Was eerst sceptisch maar deze strips werken echt 🙌"
+          }
+        },
+        "s3": {
+          "type": "story",
+          "settings": {
+            "username": "@sophiedebeer",
+            "time_ago": "1d",
+            "caption": "Geen zware flessen meer sjouwen naar huis 🎉"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "bg_color": "#FDF6EE",
+        "eyebrow": "NIET VAN ONS",
+        "title": "Geloof onze klanten.",
+        "cta_text": "Volg @tabblie"
+      }
+    }
+  },
+  "order": [
+    "tabblie_product_usps",
+    "main",
+    "custom_service_block_8Gzkxn",
+    "tabblie_ingredients",
+    "tabblie_comparison",
+    "tabblie_vt_pdp",
+    "tabblie_stories_pdp",
+    "tabblie_guarantee_pdp",
+    "product-recommendations",
+    "1758362424bdd6576e",
+    "product-recently-viewed",
+    "faqs_6mziiU",
+    "tabblie_insta_pdp"
+  ]
+}

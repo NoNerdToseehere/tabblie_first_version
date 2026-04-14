@@ -1,0 +1,152 @@
+{%- comment -%}
+  tabblie-impact.liquid
+  Social impact section — 10% of profits to environmental initiatives.
+  Full-width orange background, white text, centered CTA.
+{%- endcomment -%}
+
+<style>
+  .tabblie-impact {
+    background-color: #E8622A;
+    padding: clamp(36px, 4vw, 56px) clamp(16px, 3vw, 40px);
+  }
+
+  .tabblie-impact__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .tabblie-impact__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 18px;
+  }
+
+  .tabblie-impact__title {
+    font-family: var(--heading-font-family);
+    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    font-weight: 600;
+    color: #FFFFFF;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0 0 20px;
+  }
+
+  .tabblie-impact__desc {
+    font-family: var(--text-font-family);
+    font-size: clamp(1rem, 1.1vw, 1.15rem);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.65;
+    margin: 0 auto 36px;
+    max-width: 560px;
+  }
+
+  .tabblie-impact__btn {
+    display: inline-block;
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    border: 2px solid #FFFFFF;
+    border-radius: 100px;
+    padding: 14px 36px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .tabblie-impact__btn:hover {
+    background-color: #FFFFFF;
+    color: #E8622A;
+  }
+
+  /* Mobile */
+  @media (max-width: 749px) {
+    .tabblie-impact {
+      padding: 56px 20px;
+    }
+
+    .tabblie-impact__desc {
+      font-size: 1rem;
+    }
+
+    .tabblie-impact__btn {
+      padding: 12px 28px;
+      font-size: 14px;
+    }
+  }
+</style>
+
+<section class="tabblie-impact" id="tabblie-impact-{{ section.id }}">
+  <div class="tabblie-impact__inner">
+
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="tabblie-impact__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.heading != blank -%}
+      <h2 class="tabblie-impact__title">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.description != blank -%}
+      <p class="tabblie-impact__desc">{{ section.settings.description }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.button_text != blank -%}
+      <a
+        class="tabblie-impact__btn"
+        href="{{ section.settings.button_url | default: '#' }}"
+      >
+        {{ section.settings.button_text }}
+      </a>
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Impact / Promise",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "ONZE BELOFTE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "10% van onze winst gaat naar een groenere planeet"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Bij elke bestelling draag je bij aan milieuprojecten. Samen maken we het verschil — strip voor strip."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Meer over onze missie"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Impact / Promise"
+    }
+  ]
+}
+{% endschema %}

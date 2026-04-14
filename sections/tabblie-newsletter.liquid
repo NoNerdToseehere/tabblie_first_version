@@ -1,0 +1,231 @@
+{%- comment -%}
+  tabblie-newsletter.liquid
+  Discount splash newsletter signup — 15% korting with playful clean-it theme.
+{%- endcomment -%}
+
+<style>
+  .tabblie-nl {
+    background: linear-gradient(135deg, #E8622A 0%, #F5934A 100%);
+    padding: clamp(48px, 7vw, 80px) clamp(16px, 3vw, 40px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tabblie-nl::before {
+    content: '15%';
+    position: absolute;
+    top: 50%;
+    right: -5%;
+    transform: translateY(-50%) rotate(-12deg);
+    font-family: var(--font-heading-family);
+    font-size: clamp(14rem, 25vw, 24rem);
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.08);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .tabblie-nl__inner {
+    max-width: 620px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  .tabblie-nl__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 100px;
+    padding: 6px 18px;
+    margin-bottom: 20px;
+  }
+
+  .tabblie-nl__badge-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .tabblie-nl__badge-text {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+  }
+
+  .tabblie-nl__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.6rem, 5vw, 4rem);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    margin: 0 0 8px;
+  }
+
+  .tabblie-nl__discount {
+    font-family: var(--font-heading-family);
+    font-size: clamp(4rem, 8vw, 6.5rem);
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1;
+    margin: 0 0 12px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .tabblie-nl__sub {
+    font-family: var(--text-font-family);
+    font-size: clamp(15px, 1.8vw, 17px);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    margin: 0 0 28px;
+  }
+
+  .tabblie-nl__form {
+    display: flex;
+    gap: 0;
+    max-width: 460px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    border-radius: 100px;
+    padding: 5px 5px 5px 22px;
+    backdrop-filter: blur(4px);
+  }
+
+  .tabblie-nl__input {
+    flex: 1;
+    min-width: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    padding: 10px 0;
+  }
+
+  .tabblie-nl__input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  .tabblie-nl__btn {
+    flex-shrink: 0;
+    background: #ffffff;
+    color: #E8622A;
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: 100px;
+    padding: 10px 24px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    white-space: nowrap;
+  }
+
+  .tabblie-nl__btn:hover {
+    background: #FDF6EE;
+    transform: scale(1.03);
+  }
+
+  .tabblie-nl__terms {
+    font-family: var(--text-font-family);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.45);
+    margin-top: 14px;
+  }
+
+  /* Splash drops decoration */
+  .tabblie-nl__splash {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+  }
+
+  .tabblie-nl__splash--1 { width: 120px; height: 120px; top: -20px; left: 8%; }
+  .tabblie-nl__splash--2 { width: 80px; height: 80px; bottom: -10px; left: 25%; }
+  .tabblie-nl__splash--3 { width: 60px; height: 60px; top: 20%; right: 15%; }
+  .tabblie-nl__splash--4 { width: 150px; height: 150px; bottom: -40px; right: 5%; }
+
+  @media (max-width: 749px) {
+    .tabblie-nl__form {
+      flex-direction: column;
+      border-radius: 16px;
+      padding: 12px;
+      gap: 8px;
+    }
+
+    .tabblie-nl__input {
+      text-align: center;
+      padding: 8px 0;
+    }
+
+    .tabblie-nl__btn {
+      width: 100%;
+      padding: 12px;
+    }
+
+    .tabblie-nl::before {
+      font-size: 10rem;
+      right: -10%;
+    }
+  }
+</style>
+
+<section class="tabblie-nl" id="tabblie-nl-{{ section.id }}">
+  <div class="tabblie-nl__splash tabblie-nl__splash--1"></div>
+  <div class="tabblie-nl__splash tabblie-nl__splash--2"></div>
+  <div class="tabblie-nl__splash tabblie-nl__splash--3"></div>
+  <div class="tabblie-nl__splash tabblie-nl__splash--4"></div>
+
+  <div class="tabblie-nl__inner">
+    <div class="tabblie-nl__badge">
+      <svg class="tabblie-nl__badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:#fff">
+        <path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/>
+      </svg>
+      <span class="tabblie-nl__badge-text">{{ section.settings.badge_text | default: 'Exclusieve aanbieding' }}</span>
+    </div>
+
+    <h2 class="tabblie-nl__title">{{ section.settings.title | default: 'Krijg' }}</h2>
+    <p class="tabblie-nl__discount">{{ section.settings.discount | default: '15% korting' }}</p>
+    <p class="tabblie-nl__sub">{{ section.settings.subtitle | default: 'op je eerste bestelling. Schrijf je in en maak kennis met plasticvrij schoonmaken.' }}</p>
+
+    <form method="post" action="/contact#newsletter-{{ section.id }}" id="newsletter-{{ section.id }}" accept-charset="UTF-8" class="tabblie-nl__form">
+      <input type="hidden" name="form_type" value="customer">
+      <input type="hidden" name="utf8" value="✓">
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <input
+        type="email"
+        name="contact[email]"
+        class="tabblie-nl__input"
+        placeholder="{{ section.settings.placeholder | default: 'Je e-mailadres' }}"
+        required
+        autocomplete="email"
+      >
+      <button type="submit" class="tabblie-nl__btn">{{ section.settings.button_text | default: 'Ik wil 15% korting' }}</button>
+    </form>
+
+    <p class="tabblie-nl__terms">{{ section.settings.terms | default: 'Geen spam, alleen schone deals. Je kunt je altijd uitschrijven.' }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Newsletter Discount",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "badge_text", "label": "Badge text", "default": "Exclusieve aanbieding" },
+    { "type": "text", "id": "title", "label": "Title", "default": "Krijg" },
+    { "type": "text", "id": "discount", "label": "Discount text (big)", "default": "15% korting" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "op je eerste bestelling. Schrijf je in en maak kennis met plasticvrij schoonmaken." },
+    { "type": "text", "id": "placeholder", "label": "Input placeholder", "default": "Je e-mailadres" },
+    { "type": "text", "id": "button_text", "label": "Button text", "default": "Ik wil 15% korting" },
+    { "type": "text", "id": "terms", "label": "Terms text", "default": "Geen spam, alleen schone deals. Je kunt je altijd uitschrijven." }
+  ],
+  "presets": [{ "name": "Newsletter Discount" }]
+}
+{% endschema %}

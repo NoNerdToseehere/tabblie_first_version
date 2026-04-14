@@ -1,0 +1,180 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "hero": {
+      "type": "tabblie-page-hero",
+      "settings": {
+        "bg_color": "#FDF6EE",
+        "eyebrow": "ONZE MISSIE",
+        "heading": "Wij maken schoonmaken",
+        "heading_accent": "beter voor de planeet.",
+        "subtext": "Tabblie bestaat omdat wij geloven dat schoonmaken niet ten koste hoeft te gaan van het milieu. Geen plastic flessen, geen schadelijke chemicaliën, geen compromissen."
+      }
+    },
+    "founder": {
+      "type": "tabblie-founder",
+      "settings": {
+        "eyebrow": "ONS VERHAAL",
+        "title": "Een familiebedrijf met een missie",
+        "body": "Tabblie begon aan de keukentafel. Als familie zagen we elke week dezelfde plastic flessen in het winkelmandje liggen — wasmiddel, afwasmiddel, allesreiniger. Altijd zwaar, altijd plastic, altijd hetzelfde verhaal.\n\nOnze dochter stelde de vraag die alles veranderde: waarom kan dit niet anders? Ze begon te experimenteren met geconcentreerde strips op plantbasis. Het resultaat? Een product dat net zo goed werkt, maar dan zonder de plastic rommel.\n\nVandaag werken we als familie aan een schonere wereld. Elke strip die je gebruikt, is een klein stukje van die missie.",
+        "button_text": "Bekijk onze producten"
+      }
+    },
+    "stats": {
+      "type": "tabblie-stats",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "0",
+            "label": "plastic flessen in onze producten"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "100%",
+            "label": "biologisch afbreekbare formule"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "10%",
+            "label": "van de winst naar milieuprojecten"
+          }
+        }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3"],
+      "settings": {
+        "bg_color": "#FFFFFF",
+        "eyebrow": "ONZE IMPACT",
+        "title": "Waar we voor staan"
+      }
+    },
+    "education": {
+      "type": "tabblie-education",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "80%",
+            "description": "van de schoonmaakmiddelen bevat onnodige chemicaliën"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "12+",
+            "description": "plastic flessen per huishouden per jaar voor schoonmaak"
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "91%",
+            "description": "van al het plastic wordt niet gerecycled"
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "number": "100%",
+            "description": "van tabblie strips is biologisch afbreekbaar"
+          }
+        }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3", "stat_4"],
+      "settings": {
+        "eyebrow": "WIST JE DIT?",
+        "heading": "Wat grote merken",
+        "heading_accent": "niet vertellen"
+      }
+    },
+    "impact": {
+      "type": "tabblie-impact",
+      "settings": {
+        "eyebrow": "ONZE BELOFTE",
+        "heading": "10% van onze winst gaat naar een groenere planeet",
+        "description": "We werken samen met milieuorganisaties die zich inzetten voor het opruimen van plastic uit oceanen, het planten van bomen en het beschermen van biodiversiteit. Bij elke bestelling draag jij hier direct aan bij.",
+        "button_text": "Bekijk onze foundation"
+      }
+    },
+    "values": {
+      "type": "tabblie-ingredients",
+      "blocks": {
+        "val_1": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Geen plastic, ooit",
+            "description": "Van formule tot verpakking: alles is plasticvrij. Onze strips worden verpakt in recyclebaar papier en zijn 100% biologisch afbreekbaar."
+          }
+        },
+        "val_2": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Eerlijk & transparant",
+            "description": "We vertellen je precies wat erin zit en waarom. Geen kleine lettertjes, geen groene claims zonder bewijs."
+          }
+        },
+        "val_3": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Voor het hele gezin",
+            "description": "Onze formules zijn dermatologisch getest, vrij van parabenen en fosfaten, en geschikt voor gevoelige huid. Veilig voor iedereen."
+          }
+        }
+      },
+      "block_order": ["val_1", "val_2", "val_3"],
+      "settings": {
+        "eyebrow": "ONZE WAARDEN",
+        "heading": "Waar we in geloven"
+      }
+    },
+    "faq": {
+      "type": "tabblie-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Waarom strips in plaats van flessen?",
+            "answer": "Strips zijn geconcentreerd, licht en plasticvrij. Ze werken net zo goed als vloeibaar wasmiddel maar zonder de plastic fles, het zware gewicht en de onnodige toevoegingen."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Naar welke organisaties gaat de 10%?",
+            "answer": "We werken samen met gecertificeerde milieuorganisaties die zich richten op plastic opruimen uit oceanen en het planten van bomen. We publiceren elk kwartaal een transparant impactrapport."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Is tabblie echt 100% vegan?",
+            "answer": "Ja. Geen dierlijke ingrediënten, geen dierproeven. Alle producten zijn vegan en dierproefvrij gecertificeerd."
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3"],
+      "settings": {
+        "eyebrow": "VEELGESTELDE VRAGEN",
+        "heading": "Over onze missie"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero",
+    "founder",
+    "stats",
+    "education",
+    "impact",
+    "values",
+    "faq"
+  ]
+}
