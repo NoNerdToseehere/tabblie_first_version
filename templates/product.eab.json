@@ -1,0 +1,340 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "eab_usps": {
+      "type": "tabblie-product-usps",
+      "blocks": {
+        "u1": { "type": "usp", "settings": { "icon": "leaf", "text": "Geen plasticafval" } },
+        "u2": { "type": "usp", "settings": { "icon": "heart", "text": "100% vegan" } },
+        "u3": { "type": "usp", "settings": { "icon": "truck", "text": "Gratis verzending NL & BE" } },
+        "u4": { "type": "usp", "settings": { "icon": "star", "text": "Super effectief" } },
+        "u5": { "type": "usp", "settings": { "icon": "footprint", "text": "Klimaatneutraal verzonden" } }
+      },
+      "block_order": ["u1", "u2", "u3", "u4", "u5"],
+      "settings": {
+        "deal_text": "LENTEKORTING: 2+1 GRATIS"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "fontsize_text": 24,
+            "fontsize_text_mb": 18,
+            "color_title": "#1F1209",
+            "spacing_top": 0,
+            "spacing_bottom": 10
+          }
+        },
+        "review_badge": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#E8622A",
+            "text": "",
+            "color_title": "#E8622A",
+            "text_description": "<div style=\"display:flex;align-items:center;gap:10px;margin-bottom:6px\"><img src=\"/cdn/shop/t/22/assets/stars-4.7.svg\" alt=\"4.7 sterren\" style=\"height:24px;flex-shrink:0\"><span style=\"font-size:14px;color:#1F1209\">4.7 score — <strong>1.000+</strong> tevreden klanten</span></div>",
+            "color_des": "#1F1209",
+            "fontsize_text": 14,
+            "content_popup": " ",
+            "spacing_top": 0,
+            "spacing_bottom": 5
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "fontsize_text": 24,
+            "spacing_top": 8,
+            "spacing_bottom": 5
+          }
+        },
+        "benefits": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#38A169",
+            "text": "",
+            "color_title": "#1F1209",
+            "text_description": "<div style=\"font-size:14px;line-height:2.2;color:#1F1209\"><span style=\"display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#38A169;color:#fff;font-size:12px;font-weight:700;margin-right:8px;flex-shrink:0;vertical-align:middle\">✓</span>32 wasbeurten per pak<br><span style=\"display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#38A169;color:#fff;font-size:12px;font-weight:700;margin-right:8px;flex-shrink:0;vertical-align:middle\">✓</span>Vervangt tot 60 plastic flessen per jaar<br><span style=\"display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#38A169;color:#fff;font-size:12px;font-weight:700;margin-right:8px;flex-shrink:0;vertical-align:middle\">✓</span>100% biologisch afbreekbaar<br><span style=\"display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#38A169;color:#fff;font-size:12px;font-weight:700;margin-right:8px;flex-shrink:0;vertical-align:middle\">✓</span>Geschikt voor alle wasmachines & temperaturen<br><span style=\"display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:#38A169;color:#fff;font-size:12px;font-weight:700;margin-right:8px;flex-shrink:0;vertical-align:middle\">✓</span>Dermatologisch getest, veilig voor het hele gezin</div>",
+            "color_des": "#1F1209",
+            "fontsize_text": 14,
+            "content_popup": " ",
+            "spacing_top": 0,
+            "spacing_bottom": 10
+          }
+        },
+        "variants": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_variant_image_group": false,
+            "enable_border_top": true,
+            "enable_border_bottom": false,
+            "color_border": "#e6e6e6",
+            "spacing_top": 10,
+            "spacing_bottom": 10
+          }
+        },
+        "bundle_tiers": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#E8622A",
+            "text": "",
+            "color_title": "#1F1209",
+            "text_description": "<style>.eab-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:4px 0}.eab-tier{border:2px solid rgba(31,18,9,0.12);border-radius:12px;padding:14px 10px;text-align:center;cursor:pointer;transition:border-color 0.2s,transform 0.2s;position:relative}.eab-tier:hover{border-color:#E8622A;transform:translateY(-2px)}.eab-tier--active{border-color:#E8622A;background:rgba(232,98,42,0.04)}.eab-tier__badge{position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:#E8622A;color:#fff;font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:2px 10px;border-radius:100px;white-space:nowrap}.eab-tier__qty{font-size:20px;font-weight:700;color:#1F1209;margin:0 0 2px}.eab-tier__price{font-size:13px;font-weight:600;color:#E8622A;margin:0 0 2px}.eab-tier__save{font-size:10px;color:rgba(31,18,9,0.5);margin:0}@media(max-width:480px){.eab-tiers{gap:6px}.eab-tier{padding:10px 6px}}</style><div class=\"eab-tiers\"><div class=\"eab-tier\" data-qty=\"1\"><p class=\"eab-tier__qty\">1 pak</p><p class=\"eab-tier__price\">€14,95</p><p class=\"eab-tier__save\">€0,47 per was</p></div><div class=\"eab-tier\" data-qty=\"2\"><p class=\"eab-tier__qty\">2 pak</p><p class=\"eab-tier__price\">€12,95/stuk</p><p class=\"eab-tier__save\">Bespaar 13%</p></div><div class=\"eab-tier eab-tier--active\" data-qty=\"4\"><span class=\"eab-tier__badge\">Beste deal</span><p class=\"eab-tier__qty\">4 pak</p><p class=\"eab-tier__price\">€10,95/stuk</p><p class=\"eab-tier__save\">Bespaar 27%</p></div></div>",
+            "color_des": "#1F1209",
+            "fontsize_text": 13,
+            "content_popup": " ",
+            "spacing_top": 0,
+            "spacing_bottom": 10
+          }
+        },
+        "subscribe_placeholder": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#E8622A",
+            "text": "",
+            "color_title": "#1F1209",
+            "text_description": "<style>.eab-sub{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:10px;overflow:hidden;border:2px solid rgba(31,18,9,0.12);margin:4px 0}.eab-sub__opt{padding:12px 14px;text-align:center;cursor:pointer;transition:background 0.2s;font-size:13px;font-weight:600;color:#1F1209}.eab-sub__opt--active{background:#E8622A;color:#fff}.eab-sub__opt span{display:block;font-size:10px;font-weight:400;margin-top:2px;opacity:0.8}.eab-sub__note{font-size:11px;color:rgba(31,18,9,0.55);text-align:center;margin:8px 0 0;line-height:1.4}</style><div class=\"eab-sub\"><div class=\"eab-sub__opt\">Eenmalig<span>Volledige prijs</span></div><div class=\"eab-sub__opt eab-sub__opt--active\">Abonneer & bespaar<span>15% korting</span></div></div><p class=\"eab-sub__note\">Binnenkort beschikbaar — geen contract, pauzeer of stop wanneer je wilt.</p>",
+            "color_des": "#1F1209",
+            "fontsize_text": 12,
+            "content_popup": " ",
+            "spacing_top": 0,
+            "spacing_bottom": 10
+          }
+        },
+        "quantity": {
+          "type": "quantity_selector",
+          "settings": {
+            "qty_style": "1",
+            "qty_layout": "1",
+            "spacing_top": 0,
+            "spacing_bottom": 10
+          }
+        },
+        "buy_btn": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "atc_animation": "horizontal-shaking",
+            "atc_color": "#ffffff",
+            "atc_border_color": "#E8622A",
+            "atc_bg_color": "#E8622A",
+            "atc_bg_color_gradient": "",
+            "atc_color_hover": "#ffffff",
+            "atc_border_color_hover": "#D4531D",
+            "atc_bg_color_hover": "#D4531D",
+            "atc_bg_color_gradient_hover": "",
+            "bin_color": "#232323",
+            "bin_border_color": "#acacac",
+            "bin_bg_color": "#ffffff",
+            "bin_bg_color_gradient": "",
+            "bin_color_hover": "#ffffff",
+            "bin_border_color_hover": "#232323",
+            "bin_bg_color_hover": "#232323",
+            "bin_bg_color_hover_gradient": "",
+            "spacing_top": 0,
+            "spacing_bottom": 10
+          }
+        },
+        "payment_row": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#1F1209",
+            "text": "",
+            "color_title": "#1F1209",
+            "text_description": "<div style=\"display:flex;align-items:center;justify-content:center;gap:8px;margin:8px 0\"><img src=\"/cdn/shop/t/22/assets/pay-ideal.svg\" alt=\"iDEAL\" style=\"height:22px\"><img src=\"/cdn/shop/t/22/assets/pay-visa.svg\" alt=\"Visa\" style=\"height:22px\"><img src=\"/cdn/shop/t/22/assets/pay-master.svg\" alt=\"Mastercard\" style=\"height:22px\"><img src=\"/cdn/shop/t/22/assets/pay-applepay.svg\" alt=\"Apple Pay\" style=\"height:22px\"><img src=\"/cdn/shop/t/22/assets/pay-klarna.png\" alt=\"Klarna\" style=\"height:22px\"><img src=\"/cdn/shop/t/22/assets/pay-paypal.svg\" alt=\"PayPal\" style=\"height:22px\"></div><div style=\"font-size:12px;font-weight:600;text-align:center;color:#1F1209;margin:10px 0\">Bestel voor 23:59 uur, <strong>morgen</strong> in huis!</div>",
+            "color_des": "#1F1209",
+            "fontsize_text": 12,
+            "content_popup": " ",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        }
+      },
+      "block_order": ["title", "review_badge", "price", "benefits", "variants", "bundle_tiers", "subscribe_placeholder", "quantity", "buy_btn", "payment_row"],
+      "settings": {
+        "container": "container",
+        "main_image_position": "left",
+        "main_image_layout": "1",
+        "product_image_ratio": "adapt",
+        "product_image_popup": "true",
+        "main_image_arrows_desktop": true,
+        "main_image_arrows_mobile": true,
+        "main_image_counter_mobile": true,
+        "show_thumbnail_mobile": true,
+        "thumbnail_to_show": 4,
+        "show_tab": true,
+        "tab_layout": "1",
+        "show_sticky_add_to_cart": true,
+        "sticky_atc_layout": "1"
+      }
+    },
+    "eab_trust": {
+      "type": "tabblie-trust-row",
+      "blocks": {
+        "b1": { "type": "badge", "settings": { "icon": "lock", "text": "Veilig betalen" } },
+        "b2": { "type": "badge", "settings": { "icon": "truck", "text": "Gratis verzending NL & BE" } },
+        "b3": { "type": "badge", "settings": { "icon": "clock", "text": "1-2 dagen geleverd" } },
+        "b4": { "type": "badge", "settings": { "icon": "shield", "text": "60 dagen garantie" } },
+        "b5": { "type": "badge", "settings": { "icon": "leaf", "text": "Klimaatneutraal" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4", "b5"],
+      "settings": { "bg_color": "#FDF6EE" }
+    },
+    "eab_certs": {
+      "type": "tabblie-certification-logos",
+      "blocks": {
+        "c1": { "type": "logo", "settings": { "icon": "vegan", "caption": "100% Vegan" } },
+        "c2": { "type": "logo", "settings": { "icon": "derma", "caption": "Dermatologisch getest" } },
+        "c3": { "type": "logo", "settings": { "icon": "co2", "caption": "CO2-neutraal" } },
+        "c4": { "type": "logo", "settings": { "icon": "recycle", "caption": "Biologisch afbreekbaar" } },
+        "c5": { "type": "logo", "settings": { "icon": "check", "caption": "Gemaakt in NL" } }
+      },
+      "block_order": ["c1", "c2", "c3", "c4", "c5"],
+      "settings": { "bg_color": "#ffffff", "eyebrow": "GECERTIFICEERD & GETEST" }
+    },
+    "eab_narrative": {
+      "type": "tabblie-narrative-split",
+      "blocks": {
+        "s1": {
+          "type": "story",
+          "settings": {
+            "label": "GEEN PLASTICAFVAL",
+            "title": "Eén strip vervangt één plastic fles",
+            "body": "<p>Elke wasstrip die je gebruikt is een plastic fles minder in de vuilnisbelt. Onze strips worden verpakt in recyclebaar papier en zijn volledig biologisch afbreekbaar.</p>"
+          }
+        },
+        "s2": {
+          "type": "story",
+          "settings": {
+            "label": "KRACHTIG SCHOON",
+            "title": "Dezelfde werkzame stoffen, nul rommel",
+            "body": "<p>Plantaardige surfactanten en natuurlijke enzymen zorgen voor een diepe reiniging. Werkt in koud én warm water, op alle stoffen en in elke machine.</p>"
+          }
+        },
+        "s3": {
+          "type": "story",
+          "settings": {
+            "label": "VEILIG VOOR IEDEREEN",
+            "title": "Los op in seconden, zonder residu",
+            "body": "<p>De strips lossen volledig op in water — geen residu op je kleding, geen chemische vlekken, geen irritatie. Dermatologisch getest en veilig voor baby's, kinderen en gevoelige huid.</p>"
+          }
+        },
+        "s4": {
+          "type": "story",
+          "settings": {
+            "label": "EERLIJKE PRIJS",
+            "title": "Beter hoeft niet duurder te zijn",
+            "body": "<p>Tabblie kost minder per wasbeurt dan de meeste vloeibare wasmiddelen — en je bespaart op plastic, gewicht en transport. Win-win-win.</p>"
+          }
+        }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"],
+      "settings": {
+        "bg_color": "#ffffff",
+        "eyebrow": "WAAROM TABBLIE",
+        "heading": "Wat schoon écht betekent"
+      }
+    },
+    "eab_ingredients": {
+      "type": "tabblie-ingredients",
+      "settings": {
+        "eyebrow": "FORMULE",
+        "heading": "Wat zit erin?"
+      }
+    },
+    "eab_guarantee": {
+      "type": "tabblie-guarantee",
+      "settings": {
+        "eyebrow": "ONZE GARANTIE",
+        "heading": "Probeer het 60 dagen.",
+        "heading_accent": "Risicovrij!",
+        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 60 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Geen enkel risico voor jou.</strong></p>",
+        "button_text": "Bestel nu & bespaar",
+        "badge_text": "60 dagen proef wassen"
+      }
+    },
+    "eab_dosage": {
+      "type": "tabblie-dosage-guide",
+      "blocks": {
+        "d1": { "type": "dose", "settings": { "icon": "strip-1", "amount": "1 strip", "title": "Normale was", "description": "Eén strip per wasbeurt. Gooi in de trommel vóór het wasgoed. Werkt op alle temperaturen." } },
+        "d2": { "type": "dose", "settings": { "icon": "strip-half", "amount": "½ strip", "title": "Kleine was of opfrisbeurt", "description": "Half lading of licht vervuilde kleding? Een halve strip is genoeg." } },
+        "d3": { "type": "dose", "settings": { "icon": "strip-extra", "amount": "1½ strip", "title": "Extra vuile was", "description": "Sportkleding, werkkleding of hardnekkige vlekken? Gebruik anderhalve strip voor maximale reiniging." } }
+      },
+      "block_order": ["d1", "d2", "d3"],
+      "settings": {
+        "bg_color": "#FDF6EE",
+        "eyebrow": "DOSERING",
+        "heading": "Hoeveel moet je gebruiken?"
+      }
+    },
+    "eab_comparison": {
+      "type": "tabblie-comparison",
+      "blocks": {
+        "r1": { "type": "row", "settings": { "tabblie_text": "Geen plasticafval", "traditional_text": "Plastic flessen & verpakkingen" } },
+        "r2": { "type": "row", "settings": { "tabblie_text": "Biologisch afbreekbaar", "traditional_text": "Schadelijke chemicaliën" } },
+        "r3": { "type": "row", "settings": { "tabblie_text": "Compact & licht", "traditional_text": "Zwaar & onhandig" } },
+        "r4": { "type": "row", "settings": { "tabblie_text": "Eerlijke prijs per wasbeurt", "traditional_text": "Verborgen kosten" } },
+        "r5": { "type": "row", "settings": { "tabblie_text": "Veilig voor het hele gezin", "traditional_text": "Synthetische toevoegingen" } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5"],
+      "settings": { "heading": "vs. traditioneel" }
+    },
+    "eab_faq": {
+      "type": "tabblie-faq",
+      "blocks": {
+        "q1": { "type": "faq", "settings": { "question": "Werken de strips echt zo goed als vloeibaar wasmiddel?", "answer": "Ja. Onze strips bevatten dezelfde werkzame stoffen als premium wasmiddelen, maar dan in geconcentreerde vorm. Ze lossen volledig op in koud én warm water." } },
+        "q2": { "type": "faq", "settings": { "question": "Hoeveel wasbeurten zitten er in één pak?", "answer": "32 wasbeurten per pak. Eén strip = één was. Bij normaal gebruik (2-3 wasjes per week) doe je zo'n 3 maanden met één pak." } },
+        "q3": { "type": "faq", "settings": { "question": "Zijn de strips veilig voor gevoelige huid?", "answer": "Volledig. Onze formule is dermatologisch getest, hypoallergeen, en vrij van parabenen, fosfaten en kunstmatige geurstoffen." } },
+        "q4": { "type": "faq", "settings": { "question": "Wat als ze niet bevallen?", "answer": "Geen probleem. Je hebt 60 dagen om ze risicovrij te proberen. Niet tevreden? Geld volledig terug — geen vragen, geen gedoe." } },
+        "q5": { "type": "faq", "settings": { "question": "Wanneer wordt mijn bestelling geleverd?", "answer": "Bestellingen vóór 23:59 versturen we dezelfde werkdag. Levering in NL: 1-2 werkdagen, BE: 2-3 werkdagen. Altijd gratis." } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5"],
+      "settings": {
+        "icon": "none",
+        "eyebrow": "VEELGESTELDE VRAGEN",
+        "title": "Nog vragen? We hebben antwoorden."
+      }
+    },
+    "eab_reviews": {
+      "type": "apps",
+      "blocks": {
+        "judge_me": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": ["judge_me"],
+      "settings": {}
+    }
+  },
+  "order": [
+    "eab_usps",
+    "main",
+    "eab_trust",
+    "eab_certs",
+    "eab_narrative",
+    "eab_ingredients",
+    "eab_guarantee",
+    "eab_dosage",
+    "eab_comparison",
+    "eab_faq",
+    "eab_reviews"
+  ]
+}

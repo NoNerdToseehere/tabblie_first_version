@@ -1,0 +1,251 @@
+{%- comment -%}
+  tabblie-narrative-split.liquid
+  Alternating image+text storytelling rows (Earth Breeze "What Clean Should Mean" style).
+  Odd blocks: image left / text right.  Even blocks: text left / image right.
+{%- endcomment -%}
+
+<style>
+  .tns {
+    background: {{ section.settings.bg_color | default: '#ffffff' }};
+    padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 40px);
+  }
+
+  .tns__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .tns__header {
+    text-align: center;
+    margin-bottom: clamp(36px, 5vw, 64px);
+  }
+
+  .tns__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin: 0 0 10px;
+  }
+
+  .tns__heading {
+    font-family: var(--heading-font-family);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 600;
+    color: #1F1209;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0;
+  }
+
+  /* Row */
+  .tns__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(28px, 4vw, 56px);
+    align-items: center;
+  }
+
+  .tns__row + .tns__row {
+    margin-top: clamp(36px, 5vw, 64px);
+  }
+
+  /* Flip even rows */
+  .tns__row--even .tns__media { order: 2; }
+  .tns__row--even .tns__text  { order: 1; }
+
+  /* Image */
+  .tns__media {
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .tns__media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4 / 3;
+  }
+
+  .tns__placeholder {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--heading-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(31, 18, 9, 0.3);
+  }
+
+  .tns__row:nth-child(odd) .tns__placeholder {
+    background: linear-gradient(135deg, rgba(232,98,42,0.1) 0%, rgba(245,200,66,0.12) 100%);
+  }
+  .tns__row:nth-child(even) .tns__placeholder {
+    background: linear-gradient(135deg, rgba(91,184,160,0.12) 0%, rgba(225,236,250,0.4) 100%);
+  }
+
+  /* Text */
+  .tns__label {
+    font-family: var(--text-font-family);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin: 0 0 10px;
+  }
+
+  .tns__title {
+    font-family: var(--heading-font-family);
+    font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+    font-weight: 600;
+    color: #1F1209;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin: 0 0 16px;
+  }
+
+  .tns__body {
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    color: rgba(31, 18, 9, 0.7);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .tns__body p { margin: 0 0 12px; }
+  .tns__body p:last-child { margin-bottom: 0; }
+
+  .tns__body strong {
+    color: #1F1209;
+    font-weight: 600;
+  }
+
+  /* Mobile — stack */
+  @media (max-width: 749px) {
+    .tns__row {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .tns__row--even .tns__media { order: 0; }
+    .tns__row--even .tns__text  { order: 0; }
+
+    .tns__title {
+      font-size: 1.3rem;
+    }
+
+    .tns__body {
+      font-size: 14px;
+    }
+  }
+</style>
+
+<section class="tns" id="tns-{{ section.id }}">
+  <div class="tns__inner">
+    {%- if section.settings.eyebrow != blank or section.settings.heading != blank -%}
+      <div class="tns__header">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="tns__eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="tns__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- for block in section.blocks -%}
+      {%- assign is_even = forloop.index | modulo: 2 -%}
+      <div class="tns__row{% if is_even == 0 %} tns__row--even{% endif %}" {{ block.shopify_attributes }}>
+        <div class="tns__media">
+          {%- if block.settings.image != blank -%}
+            <img src="{{ block.settings.image | image_url: width: 720 }}"
+                 srcset="{{ block.settings.image | image_url: width: 360 }} 360w,
+                         {{ block.settings.image | image_url: width: 540 }} 540w,
+                         {{ block.settings.image | image_url: width: 720 }} 720w"
+                 sizes="(max-width: 749px) 100vw, 50vw"
+                 alt="{{ block.settings.title | escape }}"
+                 width="720" height="540" loading="lazy">
+          {%- else -%}
+            <div class="tns__placeholder">Tabblie</div>
+          {%- endif -%}
+        </div>
+        <div class="tns__text">
+          {%- if block.settings.label != blank -%}
+            <p class="tns__label">{{ block.settings.label }}</p>
+          {%- endif -%}
+          {%- if block.settings.title != blank -%}
+            <h3 class="tns__title">{{ block.settings.title }}</h3>
+          {%- endif -%}
+          {%- if block.settings.body != blank -%}
+            <div class="tns__body">{{ block.settings.body }}</div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Narrative Split",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#ffffff" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "WAAROM TABBLIE" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Wat schoon écht betekent" }
+  ],
+  "blocks": [
+    {
+      "type": "story",
+      "name": "Story row",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "label", "label": "Label (small caps)", "default": "STAP 1" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Geen plastic, geen rommel" },
+        { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Onze strips worden verpakt in recyclebaar papier. Geen plastic fles, geen plastic verpakking — maar dezelfde krachtige reiniging die je van premium merken verwacht.</p>" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Narrative Split",
+      "blocks": [
+        {
+          "type": "story",
+          "settings": {
+            "label": "GEEN PLASTICAFVAL",
+            "title": "Eén strip vervangt één plastic fles",
+            "body": "<p>Elke wasstrip die je gebruikt is een plastic fles minder in de vuilnisbelt. Onze strips zijn verpakt in recyclebaar papier en 100% biologisch afbreekbaar.</p>"
+          }
+        },
+        {
+          "type": "story",
+          "settings": {
+            "label": "KRACHTIG SCHOON",
+            "title": "Dezelfde werkzame stoffen, nul rommel",
+            "body": "<p>Plantaardige surfactanten en natuurlijke enzymen zorgen voor een diepe reiniging. Werkt in koud én warm water, op alle stoffen en in elke machine.</p>"
+          }
+        },
+        {
+          "type": "story",
+          "settings": {
+            "label": "EERLIJKE PRIJS",
+            "title": "Beter hoeft niet duurder te zijn",
+            "body": "<p>Tabblie kost minder per wasbeurt dan de meeste vloeibare wasmiddelen — en je bespaart tegelijkertijd op plastic, gewicht en transport.</p>"
+          }
+        }
+      ]
+    }
+  ],
+  "max_blocks": 8
+}
+{% endschema %}

@@ -1,0 +1,204 @@
+{%- comment -%}
+  tabblie-certification-logos.liquid
+  Row of certification/badge logos (vegan, dermatologisch getest, CO2, etc.)
+{%- endcomment -%}
+
+<style>
+  .tcl {
+    background: {{ section.settings.bg_color | default: '#ffffff' }};
+    padding: clamp(28px, 3vw, 48px) clamp(16px, 3vw, 40px);
+  }
+
+  .tcl__inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .tcl__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(31, 18, 9, 0.5);
+    margin: 0 0 20px;
+  }
+
+  .tcl__row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(24px, 4vw, 56px);
+    flex-wrap: wrap;
+  }
+
+  .tcl__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #1F1209;
+    transition: transform 0.2s ease;
+  }
+
+  .tcl__logo:hover {
+    transform: scale(1.05);
+  }
+
+  .tcl__logo-img {
+    height: 48px;
+    width: auto;
+    max-width: 100px;
+    object-fit: contain;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+  }
+
+  .tcl__logo:hover .tcl__logo-img {
+    opacity: 1;
+  }
+
+  /* SVG placeholder badge when no image uploaded */
+  .tcl__placeholder {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(232, 98, 42, 0.1);
+    color: #E8622A;
+    flex-shrink: 0;
+  }
+
+  .tcl__placeholder svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .tcl__caption {
+    font-family: var(--text-font-family);
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(31, 18, 9, 0.6);
+    letter-spacing: 0.02em;
+    text-align: center;
+    max-width: 90px;
+    line-height: 1.3;
+  }
+
+  @media (max-width: 749px) {
+    .tcl__row {
+      gap: 20px;
+    }
+
+    .tcl__logo-img {
+      height: 36px;
+    }
+
+    .tcl__placeholder {
+      width: 36px;
+      height: 36px;
+    }
+
+    .tcl__caption {
+      font-size: 10px;
+    }
+  }
+</style>
+
+<section class="tcl" id="tcl-{{ section.id }}">
+  <div class="tcl__inner">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="tcl__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="tcl__row">
+        {%- for block in section.blocks -%}
+          <div class="tcl__logo" {{ block.shopify_attributes }}>
+            {%- if block.settings.image != blank -%}
+              <img class="tcl__logo-img"
+                   src="{{ block.settings.image | image_url: height: 96 }}"
+                   alt="{{ block.settings.caption | escape }}"
+                   loading="lazy"
+                   height="48">
+            {%- else -%}
+              <div class="tcl__placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  {%- case block.settings.icon -%}
+                    {%- when 'vegan' -%}
+                      <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/>
+                    {%- when 'derma' -%}
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
+                    {%- when 'co2' -%}
+                      <circle cx="12" cy="12" r="10"/><path d="M8 12a4 4 0 018 0"/>
+                    {%- when 'recycle' -%}
+                      <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2"/><path d="M8 12s1.5-4 4-4 4 4 4 4-1.5 4-4 4-4-4-4-4"/>
+                    {%- when 'check' -%}
+                      <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/>
+                    {%- else -%}
+                      <path d="M2 22c1-6 5.5-12 15-13"/><path d="M17 9c-2 0-6 1-8.5 5.5"/><path d="M22 2L17 9"/>
+                  {%- endcase -%}
+                </svg>
+              </div>
+            {%- endif -%}
+            {%- if block.settings.caption != blank -%}
+              <span class="tcl__caption">{{ block.settings.caption }}</span>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Certification Logos",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Background", "default": "#ffffff" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "GECERTIFICEERD & GETEST" }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Certification",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Logo image" },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Placeholder icon (when no image)",
+          "default": "check",
+          "options": [
+            { "value": "vegan", "label": "Vegan (heart)" },
+            { "value": "derma", "label": "Derma (shield)" },
+            { "value": "co2", "label": "CO2 (circle)" },
+            { "value": "recycle", "label": "Recycle" },
+            { "value": "check", "label": "Checkmark" },
+            { "value": "leaf", "label": "Leaf" }
+          ]
+        },
+        { "type": "text", "id": "caption", "label": "Caption", "default": "Certificering" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Certification Logos",
+      "blocks": [
+        { "type": "logo", "settings": { "icon": "vegan", "caption": "100% Vegan" } },
+        { "type": "logo", "settings": { "icon": "derma", "caption": "Dermatologisch getest" } },
+        { "type": "logo", "settings": { "icon": "co2", "caption": "CO2-neutraal" } },
+        { "type": "logo", "settings": { "icon": "recycle", "caption": "Biologisch afbreekbaar" } },
+        { "type": "logo", "settings": { "icon": "check", "caption": "Gemaakt in NL" } }
+      ]
+    }
+  ],
+  "max_blocks": 10
+}
+{% endschema %}
