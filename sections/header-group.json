@@ -9,7 +9,7 @@
           "type": "announcement",
           "settings": {
             "type": "html",
-            "text": "<span class='tabblie-announce-desktop'><span>Gratis verzending in NL & BE</span><span>Probeer 30 dagen risicovrij</span><span>100% vegan & plasticvrij</span></span><span class='tabblie-announce-mobile'><span>Probeer 30 dagen risicovrij</span></span>",
+            "text": "<span class='tabblie-announce-desktop'><span>Gratis verzending in NL & BE</span><span>Probeer 30 dagen risicovrij</span><span>100% vegan, geen plasticafval</span></span><span class='tabblie-announce-mobile'><span>Probeer 30 dagen risicovrij</span></span>",
             "text_rich": "<p>Gratis verzending in NL & BE</p>",
             "btn_color": "#f84248",
             "btn_border_color": "#ffffff",

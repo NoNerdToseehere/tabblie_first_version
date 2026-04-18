@@ -551,7 +551,7 @@
             "height_icon": 100,
             "mg_bottom_icon": 20,
             "color_icon": "#3c3c3c",
-            "text": "plasticvrij",
+            "text": "Geen plasticafval",
             "type_tab_font": "font_1",
             "fontsize_title_block": 20,
             "fontsize_title_block_mb": 20,
@@ -805,7 +805,8 @@
         "border_layout_card": "full",
         "border_width_card": 5,
         "border_color_card": "#f0f1f4"
-      }
+      },
+      "disabled": true
     },
     "1758362424bdd6576e": {
       "type": "apps",
@@ -891,7 +892,7 @@
           "type": "usp",
           "settings": {
             "icon": "plasticfree",
-            "text": "Plasticvrij"
+            "text": "Geen plasticafval"
           }
         },
         "usp_2": {
@@ -983,7 +984,7 @@
         "row_1": {
           "type": "row",
           "settings": {
-            "tabblie_text": "100% plasticvrij",
+            "tabblie_text": "Geen plasticafval",
             "traditional_text": "Plastic flessen & verpakkingen"
           }
         },
@@ -1147,7 +1148,7 @@
         "eyebrow": "WAT KLANTEN DELEN",
         "title": "@tabblie op Instagram",
         "username": "tabblie",
-        "bio": "Schoonmaken, opnieuw uitgevonden. Plasticvrij, plantaardig, voor het hele gezin.",
+        "bio": "Schoonmaken, opnieuw uitgevonden. Zonder plasticafval, plantaardig, voor het hele gezin.",
         "bio_link_text": "usetabbly.com",
         "posts_count": "42",
         "followers_count": "1.2k",
@@ -1195,6 +1196,114 @@
         "title": "Geloof onze klanten.",
         "cta_text": "Volg @tabblie"
       }
+    },
+    "tabblie_faq_pdp": {
+      "type": "tabblie-faq",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "Werken de strips echt zo goed als vloeibaar wasmiddel?",
+            "answer": "Ja. Onze strips bevatten dezelfde werkzame stoffen als premium wasmiddelen, alleen dan in geconcentreerde, vaste vorm. Ze lossen volledig op in koud én warm water (vanaf 30°C). Geen residu, geen restjes, geen verschil in resultaat — wel een groot verschil in plasticafval."
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoeveel wasbeurten zitten er in één pak?",
+            "answer": "32 wasbeurten per pak. Eén strip = één was. Voor extra vuile was kun je een halve strip extra gebruiken. Bij normaal gebruik (2-3 wasjes per week) doe je dus zo’n 3 maanden met één pak."
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "Zijn de strips veilig voor gevoelige huid en kinderkleding?",
+            "answer": "Volledig. Onze formule is dermatologisch getest, hypoallergeen, en vrij van parabenen, fosfaten, kleurstoffen en kunstmatige geurstoffen. Veilig voor babykleding, huidvriendelijk voor de hele familie."
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "Werken ze ook op koude wasprogrammas?",
+            "answer": "Ja, ze lossen perfect op vanaf 20°C. Dat scheelt je flink op de energierekening én is beter voor je kleding én de planeet."
+          }
+        },
+        "q5": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat zit er precies in?",
+            "answer": "Plantaardige zepen (kokosolie, palmolievrij), biologisch afbreekbare enzymen die vlekken aanpakken, plantaardige weekmakers en een lichte, natuurlijke geur. Geen microplastics, geen optische witmakers, geen zooi. De volledige ingrediëntenlijst staat op de verpakking en op de productpagina."
+          }
+        },
+        "q6": {
+          "type": "faq",
+          "settings": {
+            "question": "Geschikt voor alle wasmachines?",
+            "answer": "Ja, voor alle types: voorlader, bovenlader, condensdroger combo. Stop de strip in de trommel (niet in het zeepbakje) voordat je je was erin doet. Dat’s it."
+          }
+        },
+        "q7": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe zit het met sterke vlekken zoals rode wijn of gras?",
+            "answer": "Voor hardnekkige vlekken: voorbehandel de plek door een stukje strip met wat water tot een pasta te maken en kort te laten intrekken. Dan gewoon meewassen. Werkt op de meeste vlekken even goed als gespecialiseerde voorbehandelaars."
+          }
+        },
+        "q8": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe bewaar ik de strips?",
+            "answer": "Op een droge plek, kamertemperatuur. De papieren verpakking houdt ze maximaal 18 maanden goed. Niet in de badkamer bewaren — vocht laat de strips voortijdig oplossen."
+          }
+        },
+        "q9": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat als ze niet bevallen?",
+            "answer": "Geen probleem. Je hebt 30 dagen om ze risicovrij te proberen. Niet tevreden? Stuur ze terug en we storten je geld terug — geen vragen, geen gedoe."
+          }
+        },
+        "q10": {
+          "type": "faq",
+          "settings": {
+            "question": "Wanneer wordt mijn bestelling geleverd?",
+            "answer": "Bestellingen vóór 15:00 uur versturen we dezelfde werkdag. Levering in Nederland duurt 1-2 werkdagen, in België 2-3 werkdagen. Verzending is altijd gratis."
+          }
+        },
+        "q11": {
+          "type": "faq",
+          "settings": {
+            "question": "Bieden jullie abonnementen aan?",
+            "answer": "Binnenkort. We werken aan een abonnementsmodel waarmee je 15% korting krijgt op elke bestelling, met automatische levering op jouw ritme (elke 4, 8 of 12 weken). Pauzeren of stoppen kan altijd. Schrijf je in voor onze nieuwsbrief om als eerste te horen wanneer het live gaat."
+          }
+        },
+        "q12": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat doen jullie met de winst?",
+            "answer": "10% van onze winst gaat naar gecertificeerde milieuprojecten — denk aan plastic uit oceanen vissen, herbebossing, en onderzoek naar plastic-alternatieven. Volledig transparant: op onze stichting-pagina laten we precies zien waar het geld naartoe gaat."
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8",
+        "q9",
+        "q10",
+        "q11",
+        "q12"
+      ],
+      "settings": {
+        "icon": "none",
+        "eyebrow": "",
+        "title": ""
+      }
     }
   },
   "order": [
@@ -1210,6 +1319,7 @@
     "1758362424bdd6576e",
     "product-recently-viewed",
     "faqs_6mziiU",
-    "tabblie_insta_pdp"
+    "tabblie_insta_pdp",
+    "tabblie_faq_pdp"
   ]
 }

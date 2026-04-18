@@ -172,6 +172,92 @@
   }
 
   /* ── MOBILE: stack as cards ── */
+  /* === Visual scenes flanking the table === */
+  .tabblie-compare__layout {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, 720px) 1fr;
+    align-items: center;
+    gap: clamp(20px, 3vw, 40px);
+    margin-top: 24px;
+  }
+
+  .tabblie-compare__layout > .tabblie-compare__table {
+    grid-column: 2;
+  }
+
+  .tabblie-compare__scene {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: 18px;
+    box-shadow: 0 6px 22px rgba(31, 18, 9, 0.08);
+  }
+
+  .tabblie-compare__scene--good { grid-column: 1; }
+  .tabblie-compare__scene--bad  { grid-column: 3; }
+
+  .tabblie-compare__scene-label {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 3;
+    font-family: var(--text-font-family);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+
+  .tabblie-compare__scene-label--good {
+    background: #ffffff;
+    color: #38A169;
+  }
+
+  .tabblie-compare__scene-label--bad {
+    background: rgba(31, 18, 9, 0.85);
+    color: #ffffff;
+  }
+
+  /* Tabblie scene — green hill, sun, washline */
+  .tabblie-compare__scene--good {
+    background: linear-gradient(180deg, #E1ECFA 0%, #C8DFF0 55%, #B5E0C9 55%, #8FCFA8 100%);
+  }
+
+  .tabblie-compare__scene--good svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  /* Traditional scene — grey backdrop with plastic pile */
+  .tabblie-compare__scene--bad {
+    background: linear-gradient(180deg, #4a5159 0%, #2c3036 100%);
+  }
+
+  .tabblie-compare__scene--bad svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  @media (max-width: 1024px) {
+    .tabblie-compare__layout {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .tabblie-compare__layout > .tabblie-compare__table { grid-column: 1; }
+    .tabblie-compare__scene { aspect-ratio: 16 / 9; }
+    .tabblie-compare__scene--good { grid-column: 1; grid-row: 1; }
+    .tabblie-compare__layout > .tabblie-compare__table { grid-row: 2; }
+    .tabblie-compare__scene--bad { grid-column: 1; grid-row: 3; }
+  }
+
   @media (max-width: 749px) {
     .tabblie-compare {
       padding: clamp(36px, 8vw, 56px) 20px;
@@ -240,6 +326,31 @@
     {%- endif -%}
 
     {%- if section.blocks.size > 0 -%}
+    <div class="tabblie-compare__layout">
+      <div class="tabblie-compare__scene tabblie-compare__scene--good" aria-hidden="true">
+        <span class="tabblie-compare__scene-label tabblie-compare__scene-label--good">Met tabblie</span>
+        <svg viewBox="0 0 400 533" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="tcSkyV" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E1ECFA"/><stop offset="100%" stop-color="#C8DFF0"/></linearGradient>
+            <linearGradient id="tcHillV" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A6D8B6"/><stop offset="100%" stop-color="#7FBE94"/></linearGradient>
+          </defs>
+          <rect x="0" y="0" width="400" height="340" fill="url(#tcSkyV)"/>
+          <circle cx="310" cy="90" r="34" fill="#F5C842"/>
+          <path d="M0 360 Q 100 320 200 345 T 400 340 L 400 533 L 0 533 Z" fill="url(#tcHillV)"/>
+          <path d="M0 400 Q 120 370 220 388 T 400 380 L 400 533 L 0 533 Z" fill="#5BB8A0" opacity="0.55"/>
+          <line x1="50" y1="240" x2="350" y2="232" stroke="#1F1209" stroke-width="2" stroke-linecap="round"/>
+          <line x1="52" y1="240" x2="52" y2="380" stroke="#1F1209" stroke-width="2"/>
+          <line x1="348" y1="232" x2="348" y2="370" stroke="#1F1209" stroke-width="2"/>
+          <g transform="translate(95,240)"><rect x="-16" y="0" width="32" height="42" rx="4" fill="#ffffff"/></g>
+          <g transform="translate(160,239)"><rect x="-18" y="0" width="36" height="48" rx="4" fill="#FDEEE6"/></g>
+          <g transform="translate(225,237)"><rect x="-18" y="0" width="36" height="40" rx="4" fill="#5BB8A0"/></g>
+          <g transform="translate(290,235)"><rect x="-16" y="0" width="32" height="50" rx="4" fill="#E8622A"/></g>
+          <path d="M70 100 q 12 -8 22 0 q 12 -8 22 0" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+          <path d="M210 60 q 9 -7 18 0 q 9 -7 18 0" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+          <path d="M40 160 q 8 -6 16 0 q 8 -6 16 0" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+        </svg>
+      </div>
+
       <div class="tabblie-compare__table" role="table" aria-label="Vergelijking tabblie versus traditioneel">
 
         {%- comment -%} Column headers (desktop) {%- endcomment -%}
@@ -275,6 +386,30 @@
         {%- endfor -%}
 
       </div>
+
+      <div class="tabblie-compare__scene tabblie-compare__scene--bad" aria-hidden="true">
+        <span class="tabblie-compare__scene-label tabblie-compare__scene-label--bad">Traditioneel</span>
+        <svg viewBox="0 0 400 533" preserveAspectRatio="xMidYMid slice">
+          <defs>
+            <linearGradient id="tcMurkV" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5a6068"/><stop offset="100%" stop-color="#2c3036"/></linearGradient>
+          </defs>
+          <rect x="0" y="0" width="400" height="533" fill="url(#tcMurkV)"/>
+          <ellipse cx="200" cy="525" rx="280" ry="36" fill="#1c1f24" opacity="0.6"/>
+          <g opacity="0.18" fill="#ffffff"><circle cx="60" cy="60" r="3"/><circle cx="120" cy="100" r="2"/><circle cx="240" cy="55" r="2.5"/><circle cx="330" cy="90" r="2"/><circle cx="180" cy="140" r="2"/></g>
+          <g transform="translate(80,360)"><path d="M0 0 q -6 -28 0 -50 l 16 0 q 6 22 0 50 l -16 0 z" fill="#5b8aa9"/><rect x="-2" y="-66" width="20" height="10" fill="#3a5d75"/><circle cx="6" cy="-30" r="3" fill="#ffffff" opacity="0.4"/></g>
+          <g transform="translate(150,400)"><path d="M0 0 q -8 -32 0 -60 l 18 0 q 8 28 0 60 l -18 0 z" fill="#86736a"/><rect x="0" y="-78" width="18" height="12" fill="#5d4f48"/><rect x="-4" y="-22" width="24" height="10" fill="#a8927f" opacity="0.6"/></g>
+          <g transform="translate(220,340)"><path d="M-18 0 q -3 -38 6 -62 l 24 0 q 9 24 6 62 l -36 0 z" fill="#c0c5cb"/><rect x="-9" y="-78" width="22" height="10" fill="#7a7e84"/><rect x="-18" y="-26" width="36" height="10" fill="#ffffff" opacity="0.55"/></g>
+          <g transform="translate(290,400)"><path d="M-12 0 q -4 -22 4 -38 l 16 0 q 8 16 4 38 l -24 0 z" fill="#e8a05c"/><rect x="-5" y="-52" width="14" height="10" fill="#9e6c3c"/></g>
+          <g transform="translate(330,355)"><path d="M-15 0 q -4 -32 5 -54 l 22 0 q 9 22 5 54 l -32 0 z" fill="#7da692"/><rect x="-7" y="-68" width="20" height="10" fill="#4f6f60"/><rect x="-15" y="-32" width="32" height="10" fill="#ffffff" opacity="0.5"/></g>
+          <g transform="translate(120,470)"><path d="M-13 0 q -3 -22 5 -36 l 16 0 q 8 14 5 36 l -26 0 z" fill="#bcbfc4"/><rect x="-5" y="-46" width="14" height="10" fill="#7d8086"/></g>
+          <g transform="translate(290,475)"><path d="M-12 0 q -4 -18 4 -28 l 16 0 q 6 12 4 28 l -24 0 z" fill="#c75c5c"/><rect x="-5" y="-38" width="14" height="10" fill="#7a3939"/></g>
+          <g transform="translate(60,460)"><rect x="-30" y="-12" width="60" height="20" rx="3" fill="#3a3f47"/><rect x="-30" y="-22" width="60" height="10" rx="3" fill="#2a2e34"/></g>
+          <g transform="translate(360,470)"><path d="M-14 0 q -4 -10 0 -18 l 14 0 q 6 8 0 18 l -14 0 z" fill="#aeb1b5"/></g>
+          <g transform="translate(200,495)"><path d="M-10 0 q -2 -14 4 -22 l 12 0 q 4 8 4 22 l -20 0 z" fill="#9eb8a8"/></g>
+          <path d="M70 200 Q 130 170 200 185 T 340 200" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.18" stroke-dasharray="3 6"/>
+        </svg>
+      </div>
+    </div>
     {%- endif -%}
 
   </div>
@@ -321,7 +456,7 @@
         {
           "type": "row",
           "settings": {
-            "tabblie_text": "100% plasticvrij",
+            "tabblie_text": "Geen plasticafval",
             "traditional_text": "Plastic flessen & verpakkingen"
           }
         },

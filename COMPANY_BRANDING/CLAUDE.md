@@ -12,8 +12,10 @@ This file provides context and working instructions for Claude Code when working
 **Base theme:** Halo (exported from usetabbly.com)
 **Purpose:** DTC e-commerce store for eco-friendly household strips (laundry, dishwasher, toilet)
 
-Full brand details → `docs/brand-document.md`
-Full website requirements → `docs/PRD.md`
+Full brand details → `brand-document.md`
+Full website requirements → `PRD.md`
+Market positioning → `market-positioning.md`
+**Live style guide (colors, gradients, icons, type scale, spacing) → `styling-system.md`**
 
 ---
 
@@ -54,15 +56,22 @@ Full website requirements → `docs/PRD.md`
 - Never use emojis — always SVG icons with varied colors from the accent palette
 
 ### Fonts
-- **Headings:** Poppins (via Halo `--font-heading-family`)
-- **Body:** Plus Jakarta Sans (via `--text-font-family`)
+**Single typeface across the whole site:** Plus Jakarta Sans (Google Fonts, weights 400/500/600/700 + italic 400/600). Used for both `--heading-font-family` and `--text-font-family`. Do not introduce a second display face.
+
+- Headings: 600 weight, letter-spacing `-0.02em`, line-height `1.1`–`1.15`
+- Body: 400 weight, line-height `1.6`–`1.7`
+- Eyebrows: 600–700, uppercase, letter-spacing `0.1em`, always orange `#E8622A`
 
 ### Logo Assets
-- **Full wordmark:** Bold script "Tabblie" — capital T, rest lowercase (`tabblie-logo.png`)
-- **Small logo / Icon:** Just the "T" in brand orange (`tabblie-logo-small.png`) — use for compact spaces, app icons
-- **Favicon:** Square "T" for browser tab (`tabblie-favicon.png` — 256x256)
+- **Full wordmark:** Bold orange grotesk "Tabblie" — capital T, rest lowercase (`tabblie-logo.svg` / `tabblie-logo.png`). The wordmark stands alone — **no circle, badge, or container**.
+- **Small logo / Icon:** Just the "T" in brand orange (`tabblie-logo-small.png`) — use for compact spaces, app icons, mobile sticky nav
+- **Favicon:** Square orange "T" for browser tab (`tabblie-favicon.png` — 256×256)
 
-Use the small "T" logo anywhere you need a compact brand mark: favicon, mobile navbar sticky state, social avatars, app icons, packaging stickers.
+**Logo rules:**
+- Always written "Tabblie" (capital T, rest lowercase) — never "tabblie" all-lowercase, never "TABBLIE" in caps
+- No circular background behind the wordmark — that treatment is retired
+- On light/cream: orange `#E8622A`. On dark/photographic: white.
+- Never stretch, rotate, recolour, or add effects
 
 ---
 
@@ -77,7 +86,7 @@ Use the small "T" logo anywhere you need a compact brand mark: favicon, mobile n
 /sections        → Page sections (.liquid) — main building blocks
 /snippets        → Reusable partials called via {% render %}
 /templates       → Page templates (JSON-based for OS2.0)
-/docs            → Brand document, PRD (not Shopify files — reference only)
+/COMPANY_BRANDING → Brand document, PRD, styling system, market positioning (not Shopify files — reference only)
 ```
 
 > Note: Theme files live at the **repo root** so Shopify's GitHub integration can detect them directly.
@@ -91,6 +100,7 @@ Use the small "T" logo anywhere you need a compact brand mark: favicon, mobile n
 - Background color for most sections: `#FDF6EE` (warm cream), not pure `#FFFFFF`
 - Copy tone must be cheeky and direct — avoid corporate/generic language
 - Never use dark green as a brand color — it reads as "typical eco brand"
+- **Honest claim language:** never say *"plasticvrij"* / *"plastic-free"* / *"100% plastic free"*. The products are not literally plastic-free. Always use **"geen plasticafval"** (NL) or **"no plastic waste"** (EN). We eliminate plastic *waste* — not every plastic molecule.
 
 ### Shopify-specific rules
 - This is an **Online Store 2.0** theme — sections are JSON-defined in `/templates`
@@ -169,7 +179,7 @@ Every change must protect or improve page speed. Target: Core Web Vitals green o
 
 ## What We're Building
 
-Refer to `docs/PRD.md` for full scope.
+Refer to `PRD.md` (same folder) for full scope.
 
 ### Phase 1 — Strips (Launch)
 1. Apply Tabblie brand colors and fonts throughout the theme

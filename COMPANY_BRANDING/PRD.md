@@ -1,15 +1,18 @@
 # Tabblie — Product Requirements Document (PRD)
-*Shopify Website | Version 1.1 | April 2026*
+*Shopify Website | Version 2.0 | April 2026*
+
+> **Status:** Living document. The root `/CLAUDE.md` and `COMPANY_BRANDING/styling-system.md` are the operational sources of truth for day-to-day theme work. This PRD captures the original scope and remaining roadmap.
 
 ---
 
 ## 1. Project Overview
 
 **Project:** Tabblie Shopify Webstore
-**Base Theme:** Impact (Shopify theme — exported from usetabbly.com)
-**Tagline:** "Clean our world."
+**Base Theme:** Halo (Shopify theme — exported from usetabbly.com)
+**Tagline (NL):** "Schoonmaken, opnieuw uitgevonden."
+**Slogan (NL):** "Tabblie, kind kan de was doen."
 **Goal:** Build a brand-first DTC e-commerce website that makes Tabblie the most recognisable, loveable eco-friendly household brand — for everyone.
-**Languages:** English (default) + Dutch (NL)
+**Languages:** Dutch (NL, primary — NL + BE markets). English planned for later international expansion.
 **Platforms:** Desktop + Mobile (mobile-first approach)
 
 ---
@@ -62,13 +65,13 @@
 
 ## 4. Homepage Requirements
 
-### Hero Section
-- Full-width hero with bold headline (proposed: *"Strip the plastic."*)
-- Subheadline: short brand proposition (1–2 lines)
-- Primary CTA: *"Shop now"* → links to collection
-- Secondary CTA: *"How it works"* → links to How It Works page
-- Background: warm cream `#FDF6EE` or full-bleed lifestyle image
-- Mobile: stacked layout, CTA buttons full-width
+### Hero Section (implemented)
+- Full-width hero with headline *"Schoonmaken,"* + italic orange accent *"opnieuw uitgevonden."*
+- Subheadline: *"Geen plastic, geen onnodig afval, hetzelfde gemak — Tabblie, kind kan de was doen."*
+- Primary CTA: *"Shop nu"* → links to collection
+- Secondary CTA: *"Hoe het werkt"* → links to How It Works
+- Background: blue gradient `linear-gradient(160deg, #E1ECFA 0%, #C8D9F5 40%, #D5E3F8 70%, #E8EFF9 100%)` with "tabblie" watermark
+- Mobile: stacked layout, CTA buttons full-width, watermark repositioned at `top: 45.5%`
 
 ### Product Highlight Section
 - Show all launch products in a grid/row — strips first, then tablets when available
@@ -233,7 +236,7 @@
 
 | Requirement | Detail |
 |---|---|
-| Base theme | Impact (Shopify) |
+| Base theme | Halo (Shopify) |
 | Shopify version | Online Store 2.0 |
 | Subscriptions | Shopify native or Recharge |
 | Translation | Shopify Translate & Adapt |
@@ -246,27 +249,28 @@
 
 ---
 
-## 12. Design Requirements (Theme Customisation)
+## 12. Design System
 
-### Colors (to be applied in theme settings)
-- Primary / Brand: `#E8622A` (Tabblie Orange) — always used for logo, CTAs, brand elements
-- Background: `#FDF6EE` (Warm Cream)
+See **`styling-system.md`** in this folder for the full live style guide (exact hex codes, gradients, type scale, button specs, icon inventory, shadows, spacing, animations). Quick reference only below:
+
+### Colors — anchor set
+- Primary / Brand: `#E8622A` (Tabblie Orange) — logo, CTAs, brand elements
+- Background: `#FDF6EE` (Warm Cream) and `#FFFFFF` — alternate rhythm
 - Text: `#1F1209` (Deep Earth)
-- Product: All-Purpose — `#E8622A` (Orange)
-- Product: Kitchen Cleaner — `#F5C842` (Sunny Yellow)
-- Product: Bathroom Cleaner — `#5BB8A0` (Soft Teal)
-- Product: Hand Soap — `#F2A0A0` (Blush Pink)
+- Product identities: Wasstrips `#E8622A` / Vaatwas `#F5C842` / Toilet `#5BB8A0` / Allesreiniger `#F2A0A0`
 
-### Fonts (to be loaded via theme)
-- Display / Headings: Fraunces (Google Fonts)
-- Body: DM Sans (Google Fonts)
+### Fonts
+- **One typeface:** Plus Jakarta Sans (Google Fonts, weights 400/500/600/700)
+- Powers both `--heading-font-family` and `--text-font-family`
+- No secondary display face — do not introduce Fraunces, DM Sans, Cormorant, or any other
 
 ### UI Style
-- Rounded corners on buttons (8–12px radius)
-- Soft, warm box shadows (not harsh black shadows)
-- Generous padding/white space
+- Buttons: pill shape, `border-radius: 100px`, solid orange fill
+- Cards: `border-radius: 16px`, images `20px`
+- Soft, warm, orange-tinted shadows (`rgba(232, 98, 42, 0.12)` etc.) — never harsh black
+- Generous padding: `clamp(48px, 6vw, 80px)` vertical on most sections
 - Orange CTAs always — no grey or muted primary buttons
-- Playful illustrated elements where possible (section dividers, icons)
+- SVG-only icons — no emojis, no raster icon fonts
 
 ---
 

@@ -1,0 +1,597 @@
+{%- comment -%}
+  tabblie-side-nav.liquid
+  Desktop "Menu" hover flyout — trigger button top-left under the header,
+  reveals a full-content panel on hover/click. Mobile (<1025px) hides it;
+  mobile uses the existing Halo hamburger.
+{%- endcomment -%}
+
+<style>
+  /* Panel anchors to a real Shopify nav link (the "Menu" item in main-menu).
+     The wrapper is invisible; only the panel is rendered here. JS finds the
+     "Menu" link in the header and positions the panel below it on hover. */
+  .tmf-wrap {
+    display: none;
+  }
+
+  @media (min-width: 1025px) {
+    .tmf-wrap {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      pointer-events: none;
+      z-index: 998;
+    }
+  }
+
+  /* Highlight the "Menu" nav link when active */
+  .tmf-nav-link--active {
+    color: #E8622A !important;
+  }
+
+  .tmf-trigger__bars {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 14px;
+  }
+
+  .tmf-trigger__bars span {
+    display: block;
+    height: 2px;
+    background: #E8622A;
+    border-radius: 1px;
+    transition: transform 0.25s ease;
+  }
+
+  .tmf-wrap:hover .tmf-trigger__bars span:nth-child(1),
+  .tmf-wrap.is-open .tmf-trigger__bars span:nth-child(1) { transform: translateY(2px) rotate(0deg); }
+  .tmf-wrap:hover .tmf-trigger__bars span:nth-child(3),
+  .tmf-wrap.is-open .tmf-trigger__bars span:nth-child(3) { transform: translateY(-2px) rotate(0deg); }
+
+  /* Panel — positioned by JS under the "Menu" nav link */
+  .tmf-panel {
+    position: fixed;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%, -8px);
+    width: 920px;
+    max-width: 94vw;
+    pointer-events: auto;
+    background: #FDF6EE;
+    border-radius: 20px;
+    box-shadow: 0 16px 48px rgba(31, 18, 9, 0.15), 0 0 0 1px rgba(31, 18, 9, 0.04);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    overflow: hidden;
+  }
+
+  .tmf-wrap.is-open .tmf-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+
+  /* Panel header strip */
+  .tmf-panel__header {
+    background: linear-gradient(160deg, #E1ECFA 0%, #C8D9F5 60%, #D5E3F8 100%);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .tmf-panel__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin: 0 0 4px;
+  }
+
+  .tmf-panel__title {
+    font-family: var(--heading-font-family);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1F1209;
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+    margin: 0;
+    max-width: 560px;
+  }
+
+  /* Panel body — 3-column grid */
+  .tmf-panel__body {
+    padding: 20px 24px 24px;
+    display: grid;
+    grid-template-columns: 1.25fr 0.95fr 0.85fr;
+    gap: 22px;
+  }
+
+  /* Blog column tiles (Lekker-style: square image + title stacked) */
+  .tmf-blog {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tmf-article {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-decoration: none;
+    color: #1F1209;
+    padding: 4px;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+  }
+
+  .tmf-article:hover {
+    background: rgba(255, 255, 255, 0.6);
+  }
+
+  .tmf-article__img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(232,98,42,0.12) 0%, rgba(91,184,160,0.18) 100%);
+  }
+
+  .tmf-article__title {
+    font-family: var(--heading-font-family);
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 0 0 3px;
+    color: #1F1209;
+  }
+
+  .tmf-article__meta {
+    font-family: var(--text-font-family);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin: 0;
+  }
+
+  .tmf-blog__all {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--text-font-family);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #E8622A;
+    text-decoration: none;
+    margin-top: 4px;
+  }
+
+  .tmf-blog__all:hover {
+    color: #D4531D;
+  }
+
+  .tmf-blog__all svg {
+    width: 11px;
+    height: 11px;
+    transition: transform 0.2s ease;
+  }
+
+  .tmf-blog__all:hover svg {
+    transform: translateX(3px);
+  }
+
+  .tmf-col-label {
+    font-family: var(--text-font-family);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(31, 18, 9, 0.5);
+    margin: 0 0 10px;
+  }
+
+  /* Products grid */
+  .tmf-products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .tmf-tile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 12px 12px 10px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #1F1209;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .tmf-tile:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(31, 18, 9, 0.08);
+  }
+
+  .tmf-tile__img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .tmf-tile__name {
+    font-family: var(--heading-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin: 0 0 2px;
+  }
+
+  .tmf-tile__sub {
+    font-family: var(--text-font-family);
+    font-size: 10.5px;
+    color: rgba(31, 18, 9, 0.6);
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  /* Promo + info side column */
+  .tmf-side {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tmf-promo {
+    display: block;
+    padding: 14px 16px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #E8622A 0%, #F5934A 100%);
+    color: #ffffff;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .tmf-promo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(232, 98, 42, 0.25);
+    color: #ffffff;
+  }
+
+  .tmf-promo__eyebrow {
+    font-family: var(--text-font-family);
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 4px;
+  }
+
+  .tmf-promo__title {
+    font-family: var(--heading-font-family);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin: 0 0 4px;
+  }
+
+  .tmf-promo__text {
+    font-family: var(--text-font-family);
+    font-size: 11px;
+    line-height: 1.35;
+    margin: 0;
+    opacity: 0.95;
+  }
+
+  .tmf-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tmf-links li + li {
+    border-top: 1px solid rgba(31, 18, 9, 0.08);
+  }
+
+  .tmf-links a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 4px;
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 500;
+    color: #1F1209;
+    text-decoration: none;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+  }
+
+  .tmf-links a:hover {
+    color: #E8622A;
+    padding-left: 8px;
+  }
+
+  .tmf-links svg {
+    width: 12px;
+    height: 12px;
+    opacity: 0.35;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .tmf-links a:hover svg {
+    transform: translateX(3px);
+    opacity: 1;
+  }
+
+  /* Footer CTA inside panel */
+  .tmf-panel__footer {
+    padding: 14px 24px 18px;
+    border-top: 1px solid rgba(31, 18, 9, 0.08);
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .tmf-shop-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #E8622A;
+    color: #ffffff;
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background 0.2s ease;
+  }
+
+  .tmf-shop-all:hover {
+    background: #D4531D;
+    color: #ffffff;
+  }
+</style>
+
+<div class="tmf-wrap" data-tmf aria-hidden="true">
+  <div class="tmf-panel" id="tmf-panel" role="menu">
+    <div class="tmf-panel__header">
+      <div>
+        <p class="tmf-panel__eyebrow">{{ section.settings.eyebrow }}</p>
+        <h2 class="tmf-panel__title">{{ section.settings.title }}</h2>
+      </div>
+    </div>
+
+    <div class="tmf-panel__body">
+      <div>
+        <p class="tmf-col-label">Producten</p>
+        <div class="tmf-products">
+          <a class="tmf-tile" href="/pages/shop" style="background: #FDEEE6;">
+            <img class="tmf-tile__img" src="{{ 'tabblie-wasstrips.png' | asset_url }}" alt="Wasstrips" loading="lazy" width="44" height="44">
+            <div>
+              <p class="tmf-tile__name">Wasstrips</p>
+              <p class="tmf-tile__sub">32 wasbeurten</p>
+            </div>
+          </a>
+          <a class="tmf-tile" href="/pages/shop" style="background: #FDF5DD;">
+            <img class="tmf-tile__img" src="{{ 'tabblie-vaatwasstrips.png' | asset_url }}" alt="Vaatwasstrips" loading="lazy" width="44" height="44">
+            <div>
+              <p class="tmf-tile__name">Vaatwasstrips</p>
+              <p class="tmf-tile__sub">32 afwasbeurten</p>
+            </div>
+          </a>
+          <a class="tmf-tile" href="/pages/shop" style="background: #E2F2ED;">
+            <img class="tmf-tile__img" src="{{ 'tabblie-toiletstrips.png' | asset_url }}" alt="Toiletstrips" loading="lazy" width="44" height="44">
+            <div>
+              <p class="tmf-tile__name">Toiletstrips</p>
+              <p class="tmf-tile__sub">32 toiletbeurten</p>
+            </div>
+          </a>
+          <a class="tmf-tile" href="/pages/shop" style="background: #FCE8E8;">
+            <img class="tmf-tile__img" src="{{ 'tabblie-allesreiniger.png' | asset_url }}" alt="Allesreiniger" loading="lazy" width="44" height="44">
+            <div>
+              <p class="tmf-tile__name">Allesreiniger</p>
+              <p class="tmf-tile__sub">Voor elk oppervlak</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="tmf-side">
+        <a class="tmf-promo" href="/pages/shop#abonnement">
+          <p class="tmf-promo__eyebrow">Binnenkort</p>
+          <p class="tmf-promo__title">Abonneer & bespaar 15%</p>
+          <p class="tmf-promo__text">Automatische bezorging op jouw ritme. Pauzeer of stop wanneer je wilt.</p>
+        </a>
+
+        <ul class="tmf-links">
+          <li><a href="/pages/missie">Onze missie<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
+          <li><a href="/pages/foundation">Stichting<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
+          <li><a href="/pages/verzending-retour">Verzending & retour<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
+          <li><a href="/pages/faqs">FAQs<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
+          <li><a href="/pages/contact">Contact<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="tmf-col-label">Inspiratie</p>
+        <div class="tmf-blog">
+          {%- assign blog_handle = section.settings.blog_handle | default: 'news' -%}
+          {%- assign b = blogs[blog_handle] -%}
+          {%- if b.articles.size > 0 -%}
+            {%- for article in b.articles limit: 3 -%}
+              <a class="tmf-article" href="{{ article.url }}">
+                {%- if article.image -%}
+                  <img class="tmf-article__img" src="{{ article.image | image_url: width: 128 }}" alt="{{ article.title | escape }}" loading="lazy" width="64" height="64">
+                {%- else -%}
+                  <span class="tmf-article__img" aria-hidden="true"></span>
+                {%- endif -%}
+                <div>
+                  <p class="tmf-article__title">{{ article.title | truncate: 48 }}</p>
+                  <p class="tmf-article__meta">Lees meer</p>
+                </div>
+              </a>
+            {%- endfor -%}
+          {%- else -%}
+            <a class="tmf-article" href="/blogs/{{ blog_handle }}">
+              <span class="tmf-article__img" aria-hidden="true"></span>
+              <div>
+                <p class="tmf-article__title">Zo werken wasstrips (echt)</p>
+                <p class="tmf-article__meta">Binnenkort</p>
+              </div>
+            </a>
+            <a class="tmf-article" href="/blogs/{{ blog_handle }}">
+              <span class="tmf-article__img" aria-hidden="true"></span>
+              <div>
+                <p class="tmf-article__title">Geen plasticafval: wat betekent dat?</p>
+                <p class="tmf-article__meta">Binnenkort</p>
+              </div>
+            </a>
+            <a class="tmf-article" href="/blogs/{{ blog_handle }}">
+              <span class="tmf-article__img" aria-hidden="true"></span>
+              <div>
+                <p class="tmf-article__title">De cijfers achter onze stichting</p>
+                <p class="tmf-article__meta">Binnenkort</p>
+              </div>
+            </a>
+          {%- endif -%}
+          <a class="tmf-blog__all" href="/blogs/{{ blog_handle }}">
+            Alle artikelen
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tmf-panel__footer">
+      <a class="tmf-shop-all" href="/pages/shop">
+        Shop alle producten
+        <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    var wrap = document.querySelector('[data-tmf]');
+    var panel = document.getElementById('tmf-panel');
+    if (!wrap || !panel) return;
+
+    var navLink = null;
+    var hoverTimer = null;
+
+    function findNavLink() {
+      // Look for a top-level nav link whose text is exactly "Menu"
+      var candidates = document.querySelectorAll('.list-menu--inline .menu-lv-1 > a, nav a.menu-lv-1__action, header nav a');
+      for (var i = 0; i < candidates.length; i++) {
+        var a = candidates[i];
+        var txt = (a.textContent || '').trim().toLowerCase();
+        if (txt === 'menu') return a;
+      }
+      return null;
+    }
+
+    function positionPanel() {
+      if (!navLink) return;
+      var rect = navLink.getBoundingClientRect();
+      panel.style.top = (rect.bottom + 14) + 'px';
+      // Center panel horizontally on the viewport but bias toward the link
+      var panelWidth = panel.offsetWidth;
+      var viewportW = document.documentElement.clientWidth;
+      var preferredLeft = rect.left + (rect.width / 2) - (panelWidth / 2);
+      // Clamp to viewport (20px gutter)
+      preferredLeft = Math.max(20, Math.min(preferredLeft, viewportW - panelWidth - 20));
+      panel.style.left = preferredLeft + 'px';
+      panel.style.transform = wrap.classList.contains('is-open') ? 'translateY(0)' : 'translateY(-8px)';
+    }
+
+    function open() {
+      clearTimeout(hoverTimer);
+      positionPanel();
+      wrap.classList.add('is-open');
+      if (navLink) navLink.classList.add('tmf-nav-link--active');
+    }
+    function scheduleClose() {
+      clearTimeout(hoverTimer);
+      hoverTimer = setTimeout(close, 180);
+    }
+    function close() {
+      wrap.classList.remove('is-open');
+      if (navLink) navLink.classList.remove('tmf-nav-link--active');
+    }
+
+    function init() {
+      navLink = findNavLink();
+      if (!navLink) {
+        // Retry shortly in case header renders after DOMContentLoaded
+        return setTimeout(init, 400);
+      }
+
+      // Intercept click (capture phase so Halo's navigation handlers don't fire)
+      navLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (wrap.classList.contains('is-open')) close();
+        else open();
+      }, true);
+
+      // Hover to open, with small delay to prevent flicker
+      navLink.addEventListener('mouseenter', function() {
+        clearTimeout(hoverTimer);
+        hoverTimer = setTimeout(open, 80);
+      });
+      navLink.addEventListener('mouseleave', scheduleClose);
+      panel.addEventListener('mouseenter', function() { clearTimeout(hoverTimer); });
+      panel.addEventListener('mouseleave', scheduleClose);
+
+      // Close on escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+
+      // Reposition on scroll/resize
+      window.addEventListener('scroll', function() {
+        if (wrap.classList.contains('is-open')) positionPanel();
+      }, { passive: true });
+      window.addEventListener('resize', function() {
+        if (wrap.classList.contains('is-open')) positionPanel();
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Tabblie Side Nav",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Panel eyebrow", "default": "TABBLIE" },
+    { "type": "text", "id": "title", "label": "Panel title", "default": "Eindelijk milieuvriendelijk schoonmaken — zonder in te leveren op kwaliteit, looks of prijs." },
+    { "type": "text", "id": "blog_handle", "label": "Blog handle", "default": "news" }
+  ],
+  "presets": [{ "name": "Tabblie Side Nav" }]
+}
+{% endschema %}

@@ -45,7 +45,7 @@ Works full-time, two kids, shops online. Wants to make better choices but doesn'
 
 | Competitor | Positioning | Our Advantage |
 |---|---|---|
-| Traditional brands (Robijn, Dreft, etc.) | Mass market, heavy plastic, chemicals | We're plastic-free, plant-based, same effectiveness |
+| Traditional brands (Robijn, Dreft, etc.) | Mass market, heavy plastic, chemicals | No plastic waste, plant-based, same effectiveness |
 | Mother's Earth | Eco sheets, similar product | We're more affordable, better design, Dutch family story |
 | Seepje | Natural cleaning, nuts-based | We're more convenient (pre-dosed strips), modern branding |
 | The Lekker Company | Natural personal care | Different category but similar audience — we complement them |

@@ -49,8 +49,8 @@
         "q5": {
           "type": "faq",
           "settings": {
-            "question": "Zijn jullie strips echt plasticvrij?",
-            "answer": "Ja! Van de formule tot de verpakking: alles is 100% plasticvrij. Onze strips zijn biologisch afbreekbaar en verpakt in recyclebaar papier."
+            "question": "Zijn jullie strips echt zonder plasticafval?",
+            "answer": "Ja! Van de formule tot de verpakking: geen plasticafval. Onze strips zijn biologisch afbreekbaar en verpakt in recyclebaar papier."
           }
         },
         "q6": {
@@ -224,7 +224,7 @@
           "type": "faq",
           "settings": {
             "question": "Waarom strips in plaats van flessen?",
-            "answer": "Strips zijn geconcentreerd, licht en plasticvrij. Ze werken net zo goed maar zonder de plastic fles en onnodige toevoegingen. De CO2-uitstoot bij verzending is tot 90% lager."
+            "answer": "Strips zijn geconcentreerd, licht en zonder plasticafval. Ze werken net zo goed maar zonder de plastic fles en onnodige toevoegingen. De CO2-uitstoot bij verzending is tot 90% lager."
           }
         }
       },

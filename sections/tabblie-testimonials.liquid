@@ -70,13 +70,32 @@
 
   .tabblie-testi__title {
     font-family: var(--heading-font-family);
-    font-size: clamp(2.2rem, 4vw, 3.4rem);
-    font-weight: 600;
+    font-size: clamp(1.2rem, 1.8vw, 1.7rem);
+    font-weight: 500;
+    font-style: italic;
     color: #1F1209;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    margin: 0;
+    letter-spacing: -0.01em;
+    line-height: 1.4;
+    margin: 0 auto;
+    max-width: 960px;
+    position: relative;
+    padding: 0 36px;
   }
+
+  .tabblie-testi__title::before,
+  .tabblie-testi__title::after {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-style: normal;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #E8622A;
+    line-height: 1;
+    position: absolute;
+    top: -10px;
+  }
+
+  .tabblie-testi__title::before { content: '\201C'; left: 0; }
+  .tabblie-testi__title::after  { content: '\201D'; right: 0; }
 
   /* Grid */
   .tabblie-testi__grid {
@@ -265,7 +284,7 @@
         <p class="tabblie-testi__eyebrow">{{ section.settings.eyebrow }}</p>
       {%- endif -%}
       {%- if section.settings.title != blank -%}
-        <h2 class="tabblie-testi__title">{{ section.settings.title }}</h2>
+        <p class="tabblie-testi__title">{{ section.settings.title }}</p>
       {%- endif -%}
     </div>
 

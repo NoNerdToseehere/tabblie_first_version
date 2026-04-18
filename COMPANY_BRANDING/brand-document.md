@@ -1,15 +1,16 @@
 # Tabblie — Brand Document
-*Version 1.1 | April 2026*
+*Version 2.0 | April 2026*
 
 ---
 
 ## 1. Brand Overview
 
-**Brand Name:** Tabblie
+**Brand Name:** Tabblie (capital T, rest lowercase — always written "Tabblie", never "tabblie" or "TABBLIE")
 **Category:** Eco-friendly household cleaning products
 **Format:** Dissolvable strips (launch range) + cleaning tablets with reusable glass bottles (Phase 2)
-**Tagline:** "Clean our world."
-**Markets:** Netherlands (primary), worldwide (English)
+**Tagline (NL, primary):** "Schoonmaken, opnieuw uitgevonden."
+**Slogan (NL):** "Tabblie, kind kan de was doen."
+**Markets:** Netherlands & Belgium (primary), English planned later
 **Positioning:** Affordable, aesthetic, eco-friendly household products for everyone — not just the committed environmentalist.
 
 ---
@@ -70,7 +71,7 @@ Most eco-friendly products fall into one of two traps: they look like they belon
 | Eco Friendly Toilet Strips | 32 loads per pack | Kraft paper pouch |
 
 **Pricing:** ~€15–20 per pack (single), with subscription discount.
-**Packaging:** Kraft paper pouches — plastic-free, fully biodegradable.
+**Packaging:** Kraft paper pouches — no plastic waste, fully biodegradable.
 
 ### Phase 2 — Cleaning Tablets + Reusable Glass Bottles
 
@@ -90,7 +91,7 @@ Dissolvable cleaning tablets paired with a reusable glass spray bottle. Buy the 
 
 **Pricing:** Tablets cheaper than conventional (non-eco) cleaning products.
 **Purchase models:** One-time purchase + subscription (monthly/bi-monthly).
-**Packaging:** Cardboard tablet refill pack (plastic-free). Glass bottle sold separately as a starter kit.
+**Packaging:** Cardboard tablet refill pack — no plastic waste. Glass bottle sold separately as a starter kit.
 
 ---
 
@@ -137,18 +138,38 @@ Dissolvable cleaning tablets paired with a reusable glass spray bottle. Buy the 
 
 ### Fonts
 
-| Role | Font | Style |
-|---|---|---|
-| Brand Logo | Custom / Cormorant Garamond | Lowercase, serif, soft — as seen on packaging |
-| Display / Hero Headlines | Fraunces or Playfair Display | Expressive serif, creates warmth and character |
-| Body / UI Text | DM Sans or Plus Jakarta Sans | Clean, modern, highly legible |
-| Accent / Labels | DM Sans Medium | Uppercase tracking for badges, labels |
+Tabblie uses **one font across the entire site**: Plus Jakarta Sans (Google Fonts, weights 400/500/600/700 including italic 400/600). It powers both the `--heading-font-family` and `--text-font-family` CSS variables — no serif mix, no secondary display face.
+
+| Role | Font | Weight | Letter-spacing |
+|---|---|---|---|
+| Brand wordmark | Custom (bold grotesk) — PNG/SVG asset, not web font | — | — |
+| Display / Hero headlines | Plus Jakarta Sans | 600 | −0.02em |
+| Section H2 | Plus Jakarta Sans | 600 | −0.02em |
+| Body / UI text | Plus Jakarta Sans | 400 | 0em |
+| Eyebrow / uppercase labels | Plus Jakarta Sans | 600–700 | 0.1em, uppercase |
+| Small / caption | Plus Jakarta Sans | 400–500 | 0.03em |
+
+### Type Scale (live values — fluid with `clamp()`)
+
+| Element | CSS |
+|---|---|
+| Page hero heading | `clamp(2.8rem, 6vw, 5.2rem)` |
+| Section H2 | `clamp(2.2rem, 4vw, 3.4rem)` |
+| Newsletter heading | `clamp(2.6rem, 5vw, 4rem)` |
+| Card H3 | `clamp(1.25rem, 2vw, 1.5rem)` |
+| Body | 14–16px (16px on mobile to avoid iOS zoom) |
+| Eyebrow | 13px fixed |
+
+### Line Heights
+- Headings: `1.1`–`1.15` (tight, punchy)
+- Body: `1.6`–`1.7` (generous, readable)
 
 ### Typography Rules
-- Tabblie logo is always **lowercase** — never "TABBLIE" or "Tabblie" in caps
-- Headlines can mix serif (emotional, brand) with sans (informational, functional)
-- Body text: 16px minimum, generous line height (1.6–1.7)
-- Avoid thin/light weights for body copy — accessibility matters
+- Brand name is always written **"Tabblie"** — capital T, rest lowercase. Never "tabblie" all-lowercase, never "TABBLIE" in caps.
+- One typeface only (Plus Jakarta Sans) — do not introduce a second display face
+- Body text: 16px minimum on mobile (prevents iOS zoom on input focus)
+- Avoid weights below 400 — keeps accessibility strong
+- Eyebrows are always uppercase with `0.1em` letter-spacing and orange fill
 
 ---
 
@@ -181,17 +202,18 @@ Dissolvable cleaning tablets paired with a reusable glass spray bottle. Buy the 
 
 ---
 
-## 9. Tagline
+## 9. Tagline & Slogans
 
-> **"Clean our world."**
+> **Tagline (primary, NL):** "Schoonmaken, opnieuw uitgevonden."
+> **Slogan (NL):** "Tabblie, kind kan de was doen."
 
-Simple, inclusive, mission-first. "Our" makes it collective — not Tabblie preaching at you, but everyone doing it together. Scales beyond strips and tablets into whatever the brand becomes. Works in English and translates naturally to Dutch (*"Onze wereld schoonmaken."*).
+The tagline lives on the homepage hero; the slogan appears in packaging copy, the footer, and storytelling sections. Both are Dutch by default — English equivalents are only used if/when we localise.
 
-**Supporting copy lines** (for use in campaigns, hero sections, ads):
-- *"Small tab. Big difference."*
-- *"Eco without the ego."*
-- *"Your home. Our planet. Let's clean both."*
-- *"32 loads. Zero plastic. You're kind of a big deal."*
+**Supporting copy lines** (campaigns, hero sections, ads):
+- *"Scheur, gooi, klaar."* (3-step mantra)
+- *"Eén strip vervangt één plastic fles."*
+- *"Geen plastic, geen rommel, geen excuses."*
+- *"32 wasbeurten. Nul plastic."*
 
 ---
 
@@ -229,21 +251,37 @@ Simple, inclusive, mission-first. "Our" makes it collective — not Tabblie prea
 - Subtle textures allowed (e.g. paper grain on backgrounds) — nods to kraft packaging
 - Avoid harsh shadows — use soft, warm shadows with slight orange tint
 
-### Logo Usage
-- Always lowercase: `tabblie`
-- Minimum clear space: equal to the height of the "t"
-- On dark backgrounds: white logo
-- On light/white backgrounds: Tabblie Orange `#E8622A`
-- Never stretch, rotate, or recolor outside the defined palette
+### Logo System
+
+The brand mark is a **bold orange wordmark**: the word "Tabblie" (capital T, rest lowercase) rendered as a chunky, rounded grotesk in Tabblie Orange `#E8622A` on light backgrounds. It reads as confident and modern — not script, not serif, not soft.
+
+| Asset | File | Usage |
+|---|---|---|
+| Full wordmark | `tabblie-logo.svg` / `tabblie-logo.png` | Site header, footer, marketing — anywhere there's room for the full name |
+| Small mark (orange "T") | `tabblie-logo-small.png` | Sticky mobile navbar, compact UI, social avatars, app icons, packaging stickers |
+| Favicon | `tabblie-favicon.png` (256×256, orange "T" square) | Browser tab |
+
+**Logo rules:**
+- The wordmark sits on its own — **no circle, badge, or container around it**. (Previous circular-background treatments are retired.)
+- Always written "Tabblie" — capital T, rest lowercase. Never "tabblie", never "TABBLIE".
+- Minimum clear space: equal to the height of the capital "T"
+- On light/cream backgrounds: orange `#E8622A`
+- On dark or photographic backgrounds: white
+- Never stretch, rotate, recolour, or add effects (drop shadows, outlines, bevels)
+- Never swap the wordmark for all-lowercase or the old lowercase serif mark
 
 ---
 
 ## 12. Brand Don'ts
 
+- Don't render the logo inside a circle, pill, or badge — the wordmark stands alone
+- Don't write the brand name as "tabblie" (all-lowercase) or "TABBLIE" (all-caps) — it's always "Tabblie"
+- Don't introduce a second typeface — Plus Jakarta Sans does everything
 - Don't use dark green as a primary color
 - Don't use guilt or fear messaging around climate
 - Don't make the product seem like a sacrifice
 - Don't use overly technical eco-language without explanation
 - Don't show the brand as exclusive, niche, or "for eco people"
-- Don't use all-caps for the brand name
 - Don't use cold blues or grays as dominant colors
+- Don't use emojis anywhere — always SVG icons (see `styling-system.md`)
+- **Don't claim "plasticvrij" / "plastic-free" / "100% plastic free"** — the products are not 100% plastic-free. The correct, honest claim is **"geen plasticafval"** (NL) / **"no plastic waste"** (EN). The difference matters: we eliminate plastic *waste* (no plastic bottles, packaging, or microplastics ending up in landfill), not every plastic molecule in the formula. Greenwashing-adjacent claims damage trust.

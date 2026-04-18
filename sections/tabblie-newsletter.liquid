@@ -192,7 +192,7 @@
 
     <h2 class="tabblie-nl__title">{{ section.settings.title | default: 'Krijg' }}</h2>
     <p class="tabblie-nl__discount">{{ section.settings.discount | default: '15% korting' }}</p>
-    <p class="tabblie-nl__sub">{{ section.settings.subtitle | default: 'op je eerste bestelling. Schrijf je in en maak kennis met plasticvrij schoonmaken.' }}</p>
+    <p class="tabblie-nl__sub">{{ section.settings.subtitle | default: 'op je eerste bestelling. Schrijf je in en maak kennis met schoonmaken zonder plasticafval.' }}</p>
 
     <form method="post" action="/contact#newsletter-{{ section.id }}" id="newsletter-{{ section.id }}" accept-charset="UTF-8" class="tabblie-nl__form">
       <input type="hidden" name="form_type" value="customer">
@@ -221,7 +221,7 @@
     { "type": "text", "id": "badge_text", "label": "Badge text", "default": "Exclusieve aanbieding" },
     { "type": "text", "id": "title", "label": "Title", "default": "Krijg" },
     { "type": "text", "id": "discount", "label": "Discount text (big)", "default": "15% korting" },
-    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "op je eerste bestelling. Schrijf je in en maak kennis met plasticvrij schoonmaken." },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "op je eerste bestelling. Schrijf je in en maak kennis met schoonmaken zonder plasticafval." },
     { "type": "text", "id": "placeholder", "label": "Input placeholder", "default": "Je e-mailadres" },
     { "type": "text", "id": "button_text", "label": "Button text", "default": "Ik wil 15% korting" },
     { "type": "text", "id": "terms", "label": "Terms text", "default": "Geen spam, alleen schone deals. Je kunt je altijd uitschrijven." }

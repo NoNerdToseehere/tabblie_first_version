@@ -20,7 +20,7 @@
       "settings": {
         "eyebrow": "ONS VERHAAL",
         "title": "Een familiebedrijf met een missie",
-        "body": "Tabblie begon aan de keukentafel. Als familie zagen we elke week dezelfde plastic flessen in het winkelmandje liggen — wasmiddel, afwasmiddel, allesreiniger. Altijd zwaar, altijd plastic, altijd hetzelfde verhaal.\n\nOnze dochter stelde de vraag die alles veranderde: waarom kan dit niet anders? Ze begon te experimenteren met geconcentreerde strips op plantbasis. Het resultaat? Een product dat net zo goed werkt, maar dan zonder de plastic rommel.\n\nVandaag werken we als familie aan een schonere wereld. Elke strip die je gebruikt, is een klein stukje van die missie.",
+        "body": "Onze dochter keek op een dag naar onze schoonmaakkast en vroeg: \"Waarom zit dit allemaal in plastic?\" Eerlijk gezegd hadden we geen goed antwoord. Dus stopten we met uitleggen en begonnen we met bouwen.\n\nWant wees eerlijk — de meeste duurzame merken zijn om van in slaap te vallen. Saai groen design, fletse kleuren, belachelijke prijzen, en producten die het net niet redden. Alsof je straf krijgt voor het maken van een betere keuze.\n\nTabblie is anders. Wij geloven dat schoonmaken gewoon leuk mag zijn. Felle kleuren, producten die écht werken, en een prijs die niet voelt als een donatie. Nul plastic, nul rommel, nul excuses — maar wel honderd procent karakter.\n\nWij zijn niet de zoveelste groene club die je een slecht gevoel geeft. Wij bewijzen dat beter ook beter kan voelen.",
         "button_text": "Bekijk onze producten"
       }
     },
@@ -111,7 +111,7 @@
           "type": "ingredient",
           "settings": {
             "title": "Geen plastic, ooit",
-            "description": "Van formule tot verpakking: alles is plasticvrij. Onze strips worden verpakt in recyclebaar papier en zijn 100% biologisch afbreekbaar."
+            "description": "Van formule tot verpakking: geen plasticafval. Onze strips worden verpakt in recyclebaar papier en zijn 100% biologisch afbreekbaar."
           }
         },
         "val_2": {
@@ -142,7 +142,7 @@
           "type": "faq",
           "settings": {
             "question": "Waarom strips in plaats van flessen?",
-            "answer": "Strips zijn geconcentreerd, licht en plasticvrij. Ze werken net zo goed als vloeibaar wasmiddel maar zonder de plastic fles, het zware gewicht en de onnodige toevoegingen."
+            "answer": "Strips zijn geconcentreerd, licht en zonder plasticafval. Ze werken net zo goed als vloeibaar wasmiddel maar zonder de plastic fles, het zware gewicht en de onnodige toevoegingen."
           }
         },
         "faq_2": {

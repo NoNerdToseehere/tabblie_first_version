@@ -76,7 +76,7 @@
           "type": "step",
           "settings": {
             "title": "Jij bestelt",
-            "description": "Kies je favoriete tabblie strips en bestel online. Geleverd in een compacte, plasticvrije verpakking."
+            "description": "Kies je favoriete tabblie strips en bestel online. Geleverd in een compacte verpakking zonder plasticafval."
           }
         },
         "step_2": {
@@ -141,8 +141,8 @@
         "faq_4": {
           "type": "faq",
           "settings": {
-            "question": "Zijn jullie producten echt 100% plasticvrij?",
-            "answer": "Ja. Van de formule tot de verpakking: geen enkel tabblie product bevat plastic. Onze strips zijn biologisch afbreekbaar en verpakt in recyclebaar papier."
+            "question": "Veroorzaken jullie producten echt geen plasticafval?",
+            "answer": "Klopt. Van de formule tot de verpakking: geen plasticafval. Onze strips zijn biologisch afbreekbaar en verpakt in recyclebaar papier — dus geen plastic flessen of verpakkingen die in de afvalberg belanden."
           }
         }
       },
@@ -164,7 +164,7 @@
           "type": "step",
           "settings": {
             "title": "Jij bestelt",
-            "description": "Kies je favoriete tabblie strips en bestel online. Geleverd in een compacte, plasticvrije verpakking."
+            "description": "Kies je favoriete tabblie strips en bestel online. Geleverd in een compacte verpakking zonder plasticafval."
           }
         },
         "step_2": {
