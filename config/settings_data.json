@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "layout_body": "default",
@@ -883,6 +892,44 @@
           "footer_top_title_color": "#ffffff",
           "footer_top_color_link": "#ffffff",
           "footer_top_color_link_hover": "#ffffff"
+        }
+      },
+      "tabblie-side-nav": {
+        "type": "tabblie-side-nav",
+        "settings": {
+          "eyebrow": "TABBLIE",
+          "title": "Eindelijk milieuvriendelijk schoonmaken — zonder in te leveren op kwaliteit, looks of prijs.",
+          "blog_handle": "news"
+        }
+      },
+      "password-page-1": {
+        "type": "password-page-1",
+        "settings": {
+          "background_color": "",
+          "brand_type": "image",
+          "brand_text": "",
+          "brand_logo_font_size": 30,
+          "logo_color": "#232323",
+          "brand_logo_width": 65,
+          "banner": "shopify://shop_images/coming_soon.jpg",
+          "banner_color": "#ffffff",
+          "show_newsletter": true,
+          "title": "COMING SOON",
+          "title_font_size": 24,
+          "title_font_size_mb": 24,
+          "title_color": "#ffffff",
+          "subtitle": "Phasellus lorem de pulvinar maecenas.",
+          "subtitle_font_size": 12,
+          "subtitle_color": "#ffffff",
+          "input_color": "#323232",
+          "terms_text_color": "#848484",
+          "terms_link_color": "#3c3c3c",
+          "btn": "1",
+          "show_social_media": true,
+          "social_media_color": "#ffffff",
+          "show_copyright": true,
+          "copyright_content": "",
+          "copyright_color": "#7e7e7e"
         }
       }
     },
