@@ -7,9 +7,9 @@ This file provides context and working instructions for Claude Code when working
 ## Project Overview
 
 **Brand:** Tabblie
-**Store:** usetabbly.com
+**Store:** tabblie.com
 **Platform:** Shopify (Online Store 2.0)
-**Base theme:** Halo (exported from usetabbly.com)
+**Base theme:** Halo (exported from tabblie.com)
 **Purpose:** DTC e-commerce store for eco-friendly household strips (laundry, dishwasher, toilet)
 
 Full brand details → `COMPANY_BRANDING/brand-document.md`

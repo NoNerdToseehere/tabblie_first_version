@@ -150,7 +150,7 @@
           "type": "faq",
           "settings": {
             "question": "Wat als ik niet tevreden ben?",
-            "answer": "Je kunt je bestelling binnen 30 dagen retourneren voor een volledige terugbetaling. Neem contact met ons op via hello@usetabbly.com met je bestelnummer."
+            "answer": "Je kunt je bestelling binnen 30 dagen retourneren voor een volledige terugbetaling. Neem contact met ons op via hello@tabblie.com met je bestelnummer."
           }
         },
         "q2": {
@@ -164,7 +164,7 @@
           "type": "faq",
           "settings": {
             "question": "Hoe start ik een retour?",
-            "answer": "Stuur een e-mail naar hello@usetabbly.com met je bestelnummer, reden van retour en bevestiging dat het product ongeopend is. Je ontvangt binnen 2 werkdagen retourinstructies."
+            "answer": "Stuur een e-mail naar hello@tabblie.com met je bestelnummer, reden van retour en bevestiging dat het product ongeopend is. Je ontvangt binnen 2 werkdagen retourinstructies."
           }
         },
         "q4": {
@@ -178,7 +178,7 @@
           "type": "faq",
           "settings": {
             "question": "Wat als mijn product beschadigd aankomt?",
-            "answer": "Neem binnen 48 uur contact met ons op via hello@usetabbly.com met foto's van de beschadiging. We sturen gratis een vervanging of geven volledige terugbetaling — zonder dat je het product hoeft terug te sturen."
+            "answer": "Neem binnen 48 uur contact met ons op via hello@tabblie.com met foto's van de beschadiging. We sturen gratis een vervanging of geven volledige terugbetaling — zonder dat je het product hoeft terug te sturen."
           }
         },
         "q6": {
@@ -244,7 +244,7 @@
       "settings": {
         "eyebrow": "",
         "heading": "Staat je vraag er niet tussen?",
-        "description": "Mail ons op hello@usetabbly.com — we helpen je binnen 24 uur op werkdagen!",
+        "description": "Mail ons op hello@tabblie.com — we helpen je binnen 24 uur op werkdagen!",
         "button_text": "Neem contact op"
       }
     }

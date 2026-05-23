@@ -8,7 +8,7 @@
 ## 1. Project Overview
 
 **Project:** Tabblie Shopify Webstore
-**Base Theme:** Halo (Shopify theme — exported from usetabbly.com)
+**Base Theme:** Halo (Shopify theme — exported from tabblie.com)
 **Tagline (NL):** "Schoonmaken, opnieuw uitgevonden."
 **Slogan (NL):** "Tabblie, kind kan de was doen."
 **Goal:** Build a brand-first DTC e-commerce website that makes Tabblie the most recognisable, loveable eco-friendly household brand — for everyone.

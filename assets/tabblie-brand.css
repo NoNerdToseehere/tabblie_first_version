@@ -188,17 +188,56 @@ h1, h2, h3, h4, h5, h6,
   color: #FFFFFF !important;
 }
 
-/* Secondary button: dark */
+/* Secondary button: orange outline → fills orange on hover */
 .button--secondary,
 .button--outline {
-  border-color: #1F1209 !important;
-  color: #1F1209 !important;
+  border-color: #E8622A !important;
+  color: #E8622A !important;
   background: transparent !important;
 }
 
 .button--secondary:hover,
 .button--outline:hover {
-  background: #1F1209 !important;
+  background: #E8622A !important;
+  border-color: #E8622A !important;
+  color: #FFFFFF !important;
+}
+
+/* "View all" slider button — orange outline pill */
+.button-slider.button--secondary {
+  border-radius: 100px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  padding: 12px 32px !important;
+  min-width: unset !important;
+  margin-top: 20px !important;
+}
+
+/* Product card ATC buttons — always orange, consistent placement */
+.button-ATC,
+.button-ATC.button--secondary,
+.button.button-ATC,
+.card-product .button,
+.card-product__button2 .button {
+  background: #E8622A !important;
+  border-color: #E8622A !important;
+  color: #FFFFFF !important;
+  font-family: var(--text-font-family) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border-radius: 100px !important;
+  padding: 10px 20px !important;
+  min-width: unset !important;
+  text-transform: none !important;
+}
+
+.button-ATC:hover,
+.button-ATC.button--secondary:hover,
+.button.button-ATC:hover,
+.card-product .button:hover,
+.card-product__button2 .button:hover {
+  background: #D4531D !important;
+  border-color: #D4531D !important;
   color: #FFFFFF !important;
 }
 
@@ -359,27 +398,22 @@ body.menu_open .section-header-mobile {
 }
 
 /* ============================================================
-   DESKTOP CONTENT — larger h2 and buttons in page sections
-   Scoped to <main> so it never affects the header nav bar
+   DESKTOP CONTENT — larger headings/buttons for HALO-native sections only.
+   Tabblie custom sections (tabblie-*) handle their own sizing via clamp().
    ============================================================ */
 
 @media (min-width: 750px) {
-  main h1, main .h1 { font-size: 7rem !important;  line-height: 1.05 !important; }
-  main h2, main .h2 { font-size: 6rem !important;  line-height: 1.08 !important; }
-  main h3, main .h3 { font-size: 3.6rem !important; line-height: 1.1 !important; }
+  /* Only scale headings in Halo sections — skip tabblie sections which use clamp() */
+  .shopify-section:not([class*="tabblie"]):not([id*="tabblie"]) main h1,
+  .shopify-section:not([class*="tabblie"]):not([id*="tabblie"]) main h2 {
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1.08;
+  }
 
-  main .button,
-  main .btn,
-  main .button--primary,
-  main [type="submit"],
-  .shopify-section:not([id*="header"]) .button,
-  .shopify-section:not([id*="header"]) .button--primary {
-    font-size: 20px !important;
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
-    padding-left: 48px !important;
-    padding-right: 48px !important;
-    min-width: 220px !important;
+  /* Only scale Halo-native .button elements — not tabblie CTAs */
+  .shopify-section:not([class*="tabblie"]):not([id*="tabblie"]):not([id*="header"]):not([id*="footer"]) .button:not([class*="tabblie"]):not(.newsletter-form__button) {
+    font-size: 16px !important;
+    padding: 14px 36px !important;
   }
 }
 
@@ -444,7 +478,7 @@ body.menu_open .section-header-mobile {
 }
 
 .tabblie-announce-desktop > span:nth-child(3)::before {
-  background: url("/cdn/shop/t/22/assets/tabblie-plasticfree.png") center / contain no-repeat !important;
+  background: url("/cdn/shop/t/25/assets/tabblie-plasticfree.png") center / contain no-repeat !important;
   -webkit-mask-image: none !important;
   mask-image: none !important;
   width: 16px !important;
@@ -552,21 +586,63 @@ a:hover {
   transform: translateY(-2px);
 }
 
-/* Rounded top corners matching the collection hero cards */
+/* Product cards — consistent square images + rounded corners */
 .card-product,
 .card--product {
-  border-radius: 16px 16px 0 0 !important;
+  border-radius: 16px !important;
   overflow: hidden;
 }
 
 .card-product__wrapper {
-  border-radius: 16px 16px 0 0 !important;
+  border-radius: 16px !important;
   overflow: hidden;
 }
 
 .card-product__wrapper img,
 .card-product__wrapper .card-product__image {
   border-radius: 16px 16px 0 0 !important;
+  aspect-ratio: 1 / 1 !important;
+  object-fit: cover !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Force square image container */
+.card-product__wrapper .card-product__image-wrapper,
+.card-product__wrapper .card-media,
+.card-product .image-product__wrapper {
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden;
+}
+
+/* Consistent card body spacing */
+.card-product .card-information {
+  padding: 12px 14px 16px !important;
+}
+
+/* Space between price and ATC button */
+.product-item .card-price,
+.product-item .price {
+  margin-bottom: 12px !important;
+}
+
+/* card-action is a sibling of card-product, not a child */
+.product-item .card-action {
+  margin-top: 10px !important;
+  padding: 0 14px 14px !important;
+}
+
+.product-item .card-product__button2 {
+  margin-top: 8px !important;
+  padding: 0 14px 14px !important;
+}
+
+/* Full-width orange pill button inside card */
+.product-item .card-action .button-ATC,
+.product-item .card-action .button {
+  width: 100% !important;
+  display: block !important;
+  text-align: center !important;
 }
 
 .product-card__title {
