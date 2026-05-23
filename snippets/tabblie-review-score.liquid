@@ -1,0 +1,12 @@
+{% doc %}
+  Renders the review score badge (stars + count).
+  Uses asset_url so CDN paths never break.
+
+  @example
+  {% render 'tabblie-review-score' %}
+{% enddoc %}
+
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+  <img src="{{ 'stars-4.7.svg' | asset_url }}" alt="4.7 sterren" style="height:24px;flex-shrink:0" loading="lazy">
+  <span style="font-size:14px;color:#1F1209">4.7 score — <strong>1.000+</strong> tevreden klanten</span>
+</div>

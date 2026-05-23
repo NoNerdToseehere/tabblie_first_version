@@ -1,0 +1,27 @@
+{% doc %}
+  Renders testimonial quote + payment icons + delivery promise + guarantee badge.
+
+  @example
+  {% render 'tabblie-social-delivery' %}
+{% enddoc %}
+
+<div style="margin-top:12px">
+  <div style="background:#ffffff;border-radius:14px;padding:16px 18px;margin-bottom:14px;display:flex;gap:14px;align-items:flex-start">
+    <div style="width:40px;height:40px;border-radius:50%;background:#E8622A;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;font-weight:700">S</div>
+    <div>
+      <p style="font-size:13px;color:#1F1209;line-height:1.55;margin:0 0 8px;font-style:italic">"Ik was sceptisch, maar deze strips werken echt net zo goed als mijn oude wasmiddel. En geen plastic meer!"</p>
+      <div style="display:flex;align-items:center;gap:6px">
+        <svg width="16" height="16" viewBox="0 0 256 256" fill="#3B7DD8"><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm45.66,85.66-56,56a8,8,0,0,1-11.32,0l-24-24a8,8,0,0,1,11.32-11.32L112,148.69l50.34-50.35a8,8,0,0,1,11.32,11.32Z"/></svg>
+        <span style="font-size:13px;font-weight:700;color:#1F1209">Sanne</span>
+      </div>
+    </div>
+  </div>
+
+  {% render 'tabblie-payment-icons' %}
+
+  <div style="font-size:13px;font-weight:600;text-align:center;color:#1F1209;margin:14px 0">Bestel voor 23:59 uur, <strong>morgen</strong> in huis!</div>
+  <div style="font-size:12px;text-align:center;color:rgba(31,18,9,0.45);margin:0 0 14px">Support team, reageert binnen een paar uur.</div>
+  <div style="border:2px dashed #5BB8A0;border-radius:50px;padding:10px 20px;display:flex;align-items:center;justify-content:center;background:#f0f7ee">
+    <span style="font-size:13px;font-weight:700;color:#3d7a32">100% geld-terug-garantie voor 30 dagen</span>
+  </div>
+</div>

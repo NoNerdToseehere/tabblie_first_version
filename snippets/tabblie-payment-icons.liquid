@@ -1,0 +1,15 @@
+{% doc %}
+  Renders the payment method icon row.
+
+  @example
+  {% render 'tabblie-payment-icons' %}
+{% enddoc %}
+
+<div style="display:flex;align-items:center;justify-content:center;gap:8px;margin:8px 0">
+  <img src="{{ 'pay-ideal.svg' | asset_url }}" alt="iDEAL" style="height:22px" loading="lazy">
+  <img src="{{ 'pay-visa.svg' | asset_url }}" alt="Visa" style="height:22px" loading="lazy">
+  <img src="{{ 'pay-master.svg' | asset_url }}" alt="Mastercard" style="height:22px" loading="lazy">
+  <img src="{{ 'pay-applepay.svg' | asset_url }}" alt="Apple Pay" style="height:22px" loading="lazy">
+  <img src="{{ 'pay-klarna.png' | asset_url }}" alt="Klarna" style="height:22px" loading="lazy">
+  <img src="{{ 'pay-paypal.svg' | asset_url }}" alt="PayPal" style="height:22px" loading="lazy">
+</div>

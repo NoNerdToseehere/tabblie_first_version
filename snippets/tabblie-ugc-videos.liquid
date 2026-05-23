@@ -1,0 +1,30 @@
+{% doc %}
+  Renders the 3 UGC video cards with play/pause toggle.
+
+  @example
+  {% render 'tabblie-ugc-videos' %}
+{% enddoc %}
+
+{%- assign video_src = 'tabblie-ugc-video.mp4' | asset_url -%}
+
+<div style="margin:20px 0">
+  <h3 style="text-align:center;font-size:18px;font-weight:700;color:#1F1209;margin:0 0 14px">Geliefd door 1.000+ klanten</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    {%- assign names = 'Lisa,Marieke,Sophie' | split: ',' -%}
+    {%- for name in names -%}
+      <div class="ugc-item" style="position:relative;border-radius:14px;overflow:hidden;cursor:pointer;background:#1a1a1a;aspect-ratio:9/16" onclick="playVideo(this)">
+        <video src="{{ video_src }}#t=0.001" style="width:100%;height:100%;object-fit:cover;display:block" playsinline preload="auto" loop muted></video>
+        <div class="play-overlay" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.15);transition:opacity 0.2s">
+          <div style="width:48px;height:48px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#1a1a1a"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <span style="color:#fff;font-size:12px;font-weight:600;margin-top:8px;text-shadow:0 1px 3px rgba(0,0,0,0.4)">{{ name }}</span>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+  <style>.ugc-item video::-webkit-media-controls{display:none!important}</style>
+  <script>
+    function playVideo(item){var v=item.querySelector("video"),o=item.querySelector(".play-overlay");document.querySelectorAll(".ugc-item video").forEach(function(x){if(x!==v){x.pause();x.muted=true;x.closest(".ugc-item").querySelector(".play-overlay").style.opacity="1";x.closest(".ugc-item").querySelector(".play-overlay").style.pointerEvents="auto"}});if(v.paused){v.muted=false;v.play();o.style.opacity="0";o.style.pointerEvents="none"}else{v.pause();v.muted=true;o.style.opacity="1";o.style.pointerEvents="auto"}}
+  </script>
+</div>

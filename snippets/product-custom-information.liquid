@@ -30,11 +30,31 @@
                 </div>
             {%- endif -%}
             {%- if text_description != blank -%}
-                <div class="product__text des" {{ block.shopify_attributes }} 
+                <div class="product__text des" {{ block.shopify_attributes }}
                     style="--fontsize-text:{{ fontsize_text | append: 'px' }};
                     --color-des: {{ color_des }}"
                 >
-                    {{ text_description }}
+                    {%- comment -%} Tabblie snippets: render Liquid snippet instead of raw HTML when text matches {%- endcomment -%}
+                    {%- case text -%}
+                        {%- when 'tabblie-review-score' -%}
+                            {% render 'tabblie-review-score' %}
+                        {%- when 'tabblie-payment-icons' -%}
+                            {% render 'tabblie-payment-icons' %}
+                        {%- when 'tabblie-trust-badges-pdp' -%}
+                            {% render 'tabblie-trust-badges-pdp' %}
+                        {%- when 'tabblie-social-delivery' -%}
+                            {% render 'tabblie-social-delivery' %}
+                        {%- when 'tabblie-ugc-videos' -%}
+                            {% render 'tabblie-ugc-videos' %}
+                        {%- when 'tabblie-benefit-checks' -%}
+                            {% render 'tabblie-benefit-checks' %}
+                        {%- when 'tabblie-benefit-checks-eab' -%}
+                            {% render 'tabblie-benefit-checks', style: 'eab' %}
+                        {%- when 'tabblie-benefit-checks-mea' -%}
+                            {% render 'tabblie-benefit-checks', style: 'mea' %}
+                        {%- else -%}
+                            {{ text_description }}
+                    {%- endcase -%}
                 </div>
             {%- endif -%}
         </div>

@@ -166,6 +166,16 @@
 
     </body>
     <style>
+        /* Plasticfree announcement icon — uses asset_url so CDN path never breaks */
+        .tabblie-announce-desktop > span:nth-child(3)::before {
+            background: url("{{ 'tabblie-plasticfree.png' | asset_url }}") center / contain no-repeat !important;
+            -webkit-mask-image: none !important;
+            mask-image: none !important;
+            width: 16px !important;
+            height: 16px !important;
+        }
+    </style>
+    <style>
         
 h3.title.w-100 {
                  line-height: 36px;

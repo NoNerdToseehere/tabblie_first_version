@@ -1,0 +1,27 @@
+{% doc %}
+  Renders the 3-column trust badge grid (Klarna, live viewers, CO2).
+
+  @example
+  {% render 'tabblie-trust-badges-pdp' %}
+{% enddoc %}
+
+<style>
+  @keyframes pulse-green{0%{box-shadow:0 0 0 0 rgba(74,222,128,0.6)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+</style>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px">
+  <div style="background:#ffffff;border-radius:10px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Klarna_Payment_Badge.svg/1920px-Klarna_Payment_Badge.svg.png" alt="Klarna" style="height:22px" loading="lazy">
+    <span style="font-size:11px;font-weight:600;color:#1F1209;line-height:1.4">Eerst proberen,<br>dan betalen</span>
+  </div>
+  <div style="background:#ffffff;border-radius:10px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
+    <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,0.6);animation:pulse-green 2s infinite;margin-top:4px"></span>
+    <span style="font-size:11px;font-weight:600;color:#1F1209;line-height:1.4"><span id="tabblie-scarcity">12</span> anderen<br>kijken nu ook</span>
+  </div>
+  <div style="background:#ffffff;border-radius:10px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
+    <img src="{{ 'tabblie-carbon-footprint.png' | asset_url }}" alt="CO2 footprint" style="height:30px;width:30px;object-fit:contain" loading="lazy">
+    <span style="font-size:11px;font-weight:600;color:#1F1209;line-height:1.4">CO2-voetafdruk<br>gecompenseerd</span>
+  </div>
+</div>
+<script id="tabblie-scarcity-script">
+(function(){var el=document.getElementById('tabblie-scarcity');if(!el)return;function calc(){var d=new Date();var seed=d.getFullYear()*10000+d.getMonth()*100+d.getDate();var mins=d.getHours()*60+d.getMinutes();var cycle=Math.floor(mins/3);var r=((seed*31+cycle*7)%17);var v=4+r;el.textContent=v}calc();setInterval(calc,180000)})();
+</script>
