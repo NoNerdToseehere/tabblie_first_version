@@ -992,8 +992,8 @@
       "type": "tabblie-impact",
       "settings": {
         "eyebrow": "ONZE BELOFTE",
-        "heading": "10% van onze winst gaat naar een groenere planeet",
-        "description": "Bij elke bestelling draag je bij aan milieuprojecten. Samen maken we het verschil — strip voor strip.",
+        "heading": "Klimaatneutraal — van productie tot bezorging",
+        "description": "We compenseren onze volledige CO2-voetafdruk. Elke bestelling is klimaatneutraal — zonder dat jij er iets extra voor hoeft te doen.",
         "button_text": "Meer over onze missie"
       }
     },
@@ -1201,7 +1201,7 @@
       "settings": {
         "bg_color": "#F0F7EE",
         "title": "Tabblie compenseert haar CO2-voetafdruk",
-        "text": "Wij doneren aan gecertificeerde milieuprojecten om de CO2-voetafdruk van onze volledige toeleveringsketen te compenseren."
+        "text": "Wij compenseren de CO2-voetafdruk van onze volledige toeleveringsketen — van grondstof tot bezorging bij jou thuis."
       }
     }
   },

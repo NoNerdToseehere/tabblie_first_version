@@ -44,12 +44,16 @@
         "stat_3": {
           "type": "stat",
           "settings": {
-            "number": "10%",
-            "label": "van de winst naar milieuprojecten"
+            "number": "100%",
+            "label": "CO2-voetafdruk gecompenseerd"
           }
         }
       },
-      "block_order": ["stat_1", "stat_2", "stat_3"],
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
       "settings": {
         "bg_color": "#FFFFFF",
         "eyebrow": "ONZE IMPACT",
@@ -88,7 +92,12 @@
           }
         }
       },
-      "block_order": ["stat_1", "stat_2", "stat_3", "stat_4"],
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
+      ],
       "settings": {
         "eyebrow": "WIST JE DIT?",
         "heading": "Wat grote merken",
@@ -99,8 +108,8 @@
       "type": "tabblie-impact",
       "settings": {
         "eyebrow": "ONZE BELOFTE",
-        "heading": "10% van onze winst gaat naar een groenere planeet",
-        "description": "We werken samen met milieuorganisaties die zich inzetten voor het opruimen van plastic uit oceanen, het planten van bomen en het beschermen van biodiversiteit. Bij elke bestelling draag jij hier direct aan bij.",
+        "heading": "Klimaatneutraal — van productie tot bezorging",
+        "description": "We compenseren onze volledige CO2-voetafdruk via gecertificeerde klimaatprojecten. Elke bestelling draagt bij aan een schonere planeet.",
         "button_text": "Bekijk onze foundation"
       }
     },
@@ -129,7 +138,11 @@
           }
         }
       },
-      "block_order": ["val_1", "val_2", "val_3"],
+      "block_order": [
+        "val_1",
+        "val_2",
+        "val_3"
+      ],
       "settings": {
         "eyebrow": "ONZE WAARDEN",
         "heading": "Waar we in geloven"
@@ -148,8 +161,8 @@
         "faq_2": {
           "type": "faq",
           "settings": {
-            "question": "Naar welke organisaties gaat de 10%?",
-            "answer": "We werken samen met gecertificeerde milieuorganisaties die zich richten op plastic opruimen uit oceanen en het planten van bomen. We publiceren elk kwartaal een transparant impactrapport."
+            "question": "Hoe compenseren jullie de CO2-voetafdruk?",
+            "answer": "We berekenen de totale CO2-uitstoot van onze producten — van grondstof tot bezorging — en compenseren deze volledig via gecertificeerde klimaatprojecten zoals herbebossing en schone energie."
           }
         },
         "faq_3": {
@@ -160,7 +173,11 @@
           }
         }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3"],
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3"
+      ],
       "settings": {
         "eyebrow": "VEELGESTELDE VRAGEN",
         "heading": "Over onze missie"
