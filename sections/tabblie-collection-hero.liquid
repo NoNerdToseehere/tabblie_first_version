@@ -248,6 +248,65 @@
     transform: translateX(3px);
   }
 
+  /* coming soon card */
+  .tabblie-chero__card--soon {
+    cursor: default;
+  }
+
+  .tabblie-chero__card--soon:hover {
+    transform: none;
+  }
+
+  .tabblie-chero__card--soon .tabblie-chero__card-img {
+    position: relative;
+  }
+
+  .tabblie-chero__card--soon .tabblie-chero__card-img img {
+    opacity: 0.55;
+    filter: saturate(0.6);
+  }
+
+  .tabblie-chero__card--soon:hover .tabblie-chero__card-img img {
+    transform: none;
+  }
+
+  .tabblie-chero__card--soon .tabblie-chero__card-label {
+    color: rgba(31, 18, 9, 0.55);
+  }
+
+  .tabblie-chero__card-soon {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    z-index: 1;
+    background: #E8622A;
+    color: #FDF6EE;
+    font-family: var(--text-font-family);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 100px;
+    transform: rotate(-4deg);
+    box-shadow: 0 4px 12px rgba(232, 98, 42, 0.35);
+  }
+
+  .tabblie-chero__card-soon-mark {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading-family);
+    font-size: clamp(3.5rem, 6vw, 5rem);
+    font-weight: 700;
+    color: #E8622A;
+    opacity: 0.5;
+    transform: rotate(8deg);
+    pointer-events: none;
+  }
+
   /* per-card accent colours */
   .tabblie-chero__card:nth-child(1) .tabblie-chero__card-img { background-color: rgba(232,98,42,0.15); }
   .tabblie-chero__card:nth-child(2) .tabblie-chero__card-img { background-color: rgba(245,200,66,0.15); }
@@ -455,8 +514,16 @@
         {%- assign card_url = block.settings.url | default: col.url | default: '#' -%}
         {%- assign card_label = block.settings.label | default: col.title | default: 'Shop now' -%}
 
-        <a class="tabblie-chero__card" href="{{ card_url }}" {{ block.shopify_attributes }}>
+        {%- if block.settings.coming_soon -%}
+          <div class="tabblie-chero__card tabblie-chero__card--soon" {{ block.shopify_attributes }}>
+        {%- else -%}
+          <a class="tabblie-chero__card" href="{{ card_url }}" {{ block.shopify_attributes }}>
+        {%- endif -%}
           <div class="tabblie-chero__card-img">
+            {%- if block.settings.coming_soon -%}
+              <span class="tabblie-chero__card-soon">Binnenkort</span>
+              <span class="tabblie-chero__card-soon-mark" aria-hidden="true">?</span>
+            {%- endif -%}
             {%- if block.settings.image != blank -%}
               <img
                 src="{{ block.settings.image | image_url: width: 480 }}"
@@ -491,13 +558,15 @@
 
           <div class="tabblie-chero__card-foot">
             <span class="tabblie-chero__card-label">{{ card_label }}</span>
-            <span class="tabblie-chero__card-arrow" aria-hidden="true">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.75 9H14.25M10.5 5.25L14.25 9L10.5 12.75" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
+            {%- unless block.settings.coming_soon -%}
+              <span class="tabblie-chero__card-arrow" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.75 9H14.25M10.5 5.25L14.25 9L10.5 12.75" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            {%- endunless -%}
           </div>
-        </a>
+        {%- if block.settings.coming_soon -%}</div>{%- else -%}</a>{%- endif -%}
       {%- endfor -%}
     </div>
   </div>
@@ -512,19 +581,19 @@
             <span class="tabblie-chero__marquee-item">
               <svg class="tabblie-chero__marquee-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 {%- if item_lower contains 'plastic' or item_lower contains 'formula' -%}
-                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2"/><path d="M8 12s1.5-4 4-4 4 4 4 4-1.5 4-4 4-4-4-4-4"/>
-                {%- elsif item_lower contains 'ship' or item_lower contains 'nl' -%}
-                  <path d="M5 18H3a1 1 0 01-1-1V7a1 1 0 011-1h10v11m0-11h3l4 5v6a1 1 0 01-1 1h-1"/><circle cx="7.5" cy="18.5" r="1.5"/><circle cx="17.5" cy="18.5" r="1.5"/>
+                  <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/>
+                {%- elsif item_lower contains 'ship' or item_lower contains 'verzend' or item_lower contains 'nl &' -%}
+                  <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>
                 {%- elsif item_lower contains 'vegan' -%}
-                  <path d="M2 22c1-6 5.5-12 15-13"/><path d="M17 9c-2 0-6 1-8.5 5.5"/><path d="M22 2L17 9"/>
+                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
                 {%- elsif item_lower contains 'chemical' or item_lower contains 'harsh' -%}
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/>
-                {%- elsif item_lower contains 'effective' or item_lower contains 'super' -%}
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                {%- elsif item_lower contains 'money' or item_lower contains 'guarantee' -%}
-                  <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>
+                {%- elsif item_lower contains 'effective' or item_lower contains 'effectief' or item_lower contains 'super' -%}
+                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                {%- elsif item_lower contains 'money' or item_lower contains 'guarantee' or item_lower contains 'geld' or item_lower contains 'terug' -%}
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/>
                 {%- else -%}
-                  <circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/>
+                  <path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/>
                 {%- endif -%}
               </svg>
               {{ item | strip }}
@@ -601,6 +670,13 @@
           "id": "image",
           "label": "Card image",
           "info": "Leave blank to use collection image"
+        },
+        {
+          "type": "checkbox",
+          "id": "coming_soon",
+          "label": "Coming soon",
+          "info": "Shows a 'Binnenkort' badge and disables the link",
+          "default": false
         }
       ]
     }

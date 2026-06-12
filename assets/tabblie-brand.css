@@ -141,7 +141,7 @@ h1, h2, h3, h4, h5, h6,
   --button-text-primary: 255 255 255 !important;
 }
 
-.button:not(.button--secondary):not(.button--subdued):not(.button--outline):not([style*="background"]),
+.button:not(.button--secondary):not(.button--subdued):not(.button--outline):not(.button-ATC):not([style*="background"]),
 .button--primary {
   background: #E8622A !important;
   background-color: #E8622A !important;
@@ -174,7 +174,7 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* Hover state */
-.button:not(.button--secondary):not(.button--subdued):not(.button--outline):hover:not([disabled]) {
+.button:not(.button--secondary):not(.button--subdued):not(.button--outline):not(.button-ATC):hover:not([disabled]) {
   background: #D4531D !important;
   background-color: #D4531D !important;
   border-color: #D4531D !important;
@@ -203,25 +203,29 @@ h1, h2, h3, h4, h5, h6,
   color: #FFFFFF !important;
 }
 
-/* "View all" slider button — orange outline pill */
+/* "View all" slider button — compact orange outline pill, centered */
 .button-slider.button--secondary {
   border-radius: 100px !important;
   font-size: 14px !important;
   font-weight: 600 !important;
   padding: 12px 32px !important;
   min-width: unset !important;
-  margin-top: 20px !important;
+  width: fit-content !important;
+  max-width: none !important;
+  display: block !important;
+  margin: 20px auto 0 !important;
 }
 
-/* Product card ATC buttons — always orange, consistent placement */
+/* Product card ATC buttons — outline pill that fills orange on hover
+   (same style as the "Bekijk alle producten" CTA) */
 .button-ATC,
 .button-ATC.button--secondary,
 .button.button-ATC,
 .card-product .button,
 .card-product__button2 .button {
-  background: #E8622A !important;
-  border-color: #E8622A !important;
-  color: #FFFFFF !important;
+  background: transparent !important;
+  border: 1.5px solid #E8622A !important;
+  color: #E8622A !important;
   font-family: var(--text-font-family) !important;
   font-size: 13px !important;
   font-weight: 600 !important;
@@ -229,6 +233,7 @@ h1, h2, h3, h4, h5, h6,
   padding: 10px 20px !important;
   min-width: unset !important;
   text-transform: none !important;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
 }
 
 .button-ATC:hover,
@@ -236,8 +241,8 @@ h1, h2, h3, h4, h5, h6,
 .button.button-ATC:hover,
 .card-product .button:hover,
 .card-product__button2 .button:hover {
-  background: #D4531D !important;
-  border-color: #D4531D !important;
+  background: #E8622A !important;
+  border-color: #E8622A !important;
   color: #FFFFFF !important;
 }
 
@@ -249,6 +254,24 @@ h1, h2, h3, h4, h5, h6,
 #shopify-section-header {
   background-color: #FFFFFF;
   border-bottom: 1px solid rgba(31, 18, 9, 0.08);
+}
+
+/* Top-level nav links: clean hover/click — text turns orange, nothing else.
+   Kills Halo's animated underline bar (link-effect) and the boxy focus ring. */
+.menu-lv-1__action .text::after,
+.menu-lv-1__action .text::before {
+  display: none !important;
+}
+
+.menu-lv-1__action:hover,
+.menu-lv-1__action:focus,
+.menu-lv-1__action:focus-visible,
+.menu-lv-1__action:active {
+  color: #E8622A !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+  text-decoration: none !important;
 }
 
 /* ── Sticky header: Halo on_scroll (native position: sticky) ── */
@@ -1091,8 +1114,9 @@ select:focus {
 /* ============================================================
    SERVICE BLOCK — 2-column grid on mobile (icon section)
    ============================================================ */
+/* Match on the stable section handle — the template-ID prefix changes per theme instance */
 @media (max-width: 767px) {
-  .section-block-template--30270592057693__custom_service_block_4Nnayh .halo-row {
+  [class*="__custom_service_block_4Nnayh"] .halo-row {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     gap: 16px !important;
@@ -1100,14 +1124,14 @@ select:focus {
     margin-right: 0 !important;
   }
 
-  .section-block-template--30270592057693__custom_service_block_4Nnayh .halo-row .halo-item {
+  [class*="__custom_service_block_4Nnayh"] .halo-row .halo-item {
     width: auto !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
     margin-top: 0 !important;
   }
 
-  .section-block-template--30270592057693__custom_service_block_4Nnayh .halo-row .halo-item + .halo-item {
+  [class*="__custom_service_block_4Nnayh"] .halo-row .halo-item + .halo-item {
     margin-top: 0 !important;
   }
 }
@@ -1460,4 +1484,144 @@ select:focus {
 /* Pink recommendation section title */
 .template-product .product-recommendations .title .text {
   font-family: var(--font-heading-family) !important;
+}
+
+/* ============================================================
+   COOKIE BANNER — Shopify Customer Privacy, restyled Tabblie-funky
+   (HTML comes from Shopify; we can only restyle it)
+   ============================================================ */
+
+.shopify-pc__banner__dialog {
+  background: #FDF6EE !important;
+  border: 2px solid #E8622A !important;
+  border-radius: 24px !important;
+  box-shadow: 0 20px 60px rgba(31, 18, 9, 0.2) !important;
+  padding: 26px 28px 26px 124px !important;
+  left: 16px !important;
+  right: 16px !important;
+  bottom: 16px !important;
+  width: auto !important;
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  font-family: var(--text-font-family) !important;
+  overflow: visible !important;
+}
+
+/* Big bitten cookie, slightly tilted */
+.shopify-pc__banner__dialog::before {
+  content: '';
+  position: absolute;
+  left: 26px;
+  top: 50%;
+  width: 76px;
+  height: 76px;
+  transform: translateY(-50%) rotate(-12deg);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='27' fill='%23E8A05C' stroke='%23B96F35' stroke-width='3'/%3E%3Ccircle cx='52' cy='14' r='11' fill='%23FDF6EE'/%3E%3Ccircle cx='22' cy='24' r='4' fill='%235C3A21'/%3E%3Ccircle cx='38' cy='20' r='3' fill='%235C3A21'/%3E%3Ccircle cx='44' cy='36' r='4' fill='%235C3A21'/%3E%3Ccircle cx='28' cy='40' r='3.4' fill='%235C3A21'/%3E%3Ccircle cx='38' cy='48' r='3' fill='%235C3A21'/%3E%3Ccircle cx='16' cy='37' r='2.6' fill='%235C3A21'/%3E%3Ccircle cx='58' cy='26' r='2' fill='%23B96F35'/%3E%3Ccircle cx='55' cy='31' r='1.4' fill='%23B96F35'/%3E%3C/svg%3E") center / contain no-repeat;
+  pointer-events: none;
+}
+
+/* Cheeky title — visually swap the text, screen readers keep the original */
+.shopify-pc__banner__dialog h2 {
+  font-size: 0 !important;
+  margin: 0 0 6px !important;
+}
+
+.shopify-pc__banner__dialog h2::after {
+  content: 'Koekje erbij?';
+  display: block;
+  font-family: var(--font-heading-family);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1F1209;
+  letter-spacing: -0.02em;
+}
+
+.shopify-pc__banner__dialog p {
+  color: rgba(31, 18, 9, 0.65) !important;
+  font-size: 13px !important;
+  line-height: 1.55 !important;
+}
+
+.shopify-pc__banner__dialog a {
+  color: #E8622A !important;
+}
+
+/* Buttons: pills in brand style */
+.shopify-pc__banner__dialog button {
+  font-family: var(--text-font-family) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  border-radius: 100px !important;
+  padding: 10px 22px !important;
+  cursor: pointer !important;
+  transition: background 0.2s ease, color 0.2s ease !important;
+}
+
+#shopify-pc__banner__btn-accept {
+  background: #E8622A !important;
+  color: #FFFFFF !important;
+  border: 2px solid #E8622A !important;
+}
+
+#shopify-pc__banner__btn-accept:hover {
+  background: #D4531D !important;
+  border-color: #D4531D !important;
+}
+
+#shopify-pc__banner__btn-decline {
+  background: transparent !important;
+  color: #E8622A !important;
+  border: 2px solid #E8622A !important;
+}
+
+#shopify-pc__banner__btn-decline:hover {
+  background: #E8622A !important;
+  color: #FFFFFF !important;
+}
+
+#shopify-pc__banner__btn-manage-prefs {
+  background: transparent !important;
+  border: none !important;
+  color: rgba(31, 18, 9, 0.55) !important;
+  text-decoration: underline !important;
+  padding: 10px 8px !important;
+}
+
+#shopify-pc__banner__btn-manage-prefs:hover {
+  color: #E8622A !important;
+}
+
+/* Preferences modal: match the brand */
+.shopify-pc__prefs__dialog {
+  border-radius: 20px !important;
+  font-family: var(--text-font-family) !important;
+}
+
+.shopify-pc__prefs__dialog button[type='submit'],
+.shopify-pc__prefs__dialog .shopify-pc__prefs__header-actions button {
+  background: #E8622A !important;
+  color: #fff !important;
+  border-radius: 100px !important;
+  border-color: #E8622A !important;
+}
+
+/* Mobile: smaller cookie above smaller padding */
+@media (max-width: 749px) {
+  .shopify-pc__banner__dialog {
+    padding: 22px 20px 20px 96px !important;
+    left: 10px !important;
+    right: 10px !important;
+    bottom: 10px !important;
+  }
+
+  .shopify-pc__banner__dialog::before {
+    width: 58px;
+    height: 58px;
+    left: 18px;
+  }
+
+  .shopify-pc__banner__dialog button {
+    width: 100%;
+    margin-top: 6px;
+  }
 }

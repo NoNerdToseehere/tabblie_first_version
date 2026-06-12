@@ -51,29 +51,36 @@
   .tmf-wrap:hover .tmf-trigger__bars span:nth-child(3),
   .tmf-wrap.is-open .tmf-trigger__bars span:nth-child(3) { transform: translateY(-2px) rotate(0deg); }
 
-  /* Panel — positioned by JS under the "Menu" nav link */
+  /* Panel — full-width drop-down attached to the header, like the header expanding */
   .tmf-panel {
     position: fixed;
     top: 120px;
-    left: 50%;
-    transform: translate(-50%, -8px);
-    width: 920px;
-    max-width: 94vw;
+    left: 0;
+    right: 0;
+    width: 100%;
     pointer-events: auto;
     background: #FDF6EE;
-    border-radius: 20px;
-    box-shadow: 0 16px 48px rgba(31, 18, 9, 0.15), 0 0 0 1px rgba(31, 18, 9, 0.04);
+    border-top: 1px solid rgba(31, 18, 9, 0.06);
+    box-shadow: 0 24px 48px rgba(31, 18, 9, 0.12);
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-8px);
-    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.25s ease;
     overflow: hidden;
   }
 
   .tmf-wrap.is-open .tmf-panel {
     opacity: 1;
     visibility: visible;
-    transform: translate(-50%, 0);
+    transform: translateY(0);
+  }
+
+  /* Centre the panel content on wide screens while the band spans full width */
+  .tmf-panel__header,
+  .tmf-panel__body,
+  .tmf-panel__footer {
+    padding-left: max(24px, calc((100vw - 1140px) / 2)) !important;
+    padding-right: max(24px, calc((100vw - 1140px) / 2)) !important;
   }
 
   /* Panel header strip */
@@ -224,6 +231,35 @@
   .tmf-tile:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 18px rgba(31, 18, 9, 0.08);
+  }
+
+  .tmf-tile--soon {
+    cursor: default;
+  }
+
+  .tmf-tile--soon:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .tmf-tile__q {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading-family);
+    font-size: 24px;
+    font-weight: 700;
+    color: #E8622A;
+    opacity: 0.6;
+    transform: rotate(8deg);
+  }
+
+  .tmf-tile--soon .tmf-tile__sub {
+    color: #E8622A;
+    font-weight: 600;
   }
 
   .tmf-tile__img {
@@ -403,13 +439,13 @@
               <p class="tmf-tile__sub">32 toiletbeurten</p>
             </div>
           </a>
-          <a class="tmf-tile" href="/pages/shop" style="background: #FCE8E8;">
-            <img class="tmf-tile__img" src="{{ 'tabblie-allesreiniger.png' | asset_url }}" alt="Allesreiniger" loading="lazy" width="44" height="44">
+          <div class="tmf-tile tmf-tile--soon" style="background: #FCE8E8;">
+            <span class="tmf-tile__q" aria-hidden="true">?</span>
             <div>
-              <p class="tmf-tile__name">Allesreiniger</p>
-              <p class="tmf-tile__sub">Voor elk oppervlak</p>
+              <p class="tmf-tile__name">Nog even geheim...</p>
+              <p class="tmf-tile__sub">Binnenkort beschikbaar</p>
             </div>
-          </a>
+          </div>
         </div>
       </div>
 
@@ -422,7 +458,7 @@
 
         <ul class="tmf-links">
           <li><a href="/pages/missie">Onze missie<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
-          <li><a href="/pages/foundation">Stichting<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
+          <li><a href="/pages/foundation">Duurzaamheid<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
           <li><a href="/pages/verzending-retour">Verzending & retour<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
           <li><a href="/pages/faqs">FAQs<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
           <li><a href="/pages/contact">Contact<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
@@ -466,7 +502,7 @@
             <a class="tmf-article" href="/blogs/{{ blog_handle }}">
               <span class="tmf-article__img" aria-hidden="true"></span>
               <div>
-                <p class="tmf-article__title">De cijfers achter onze stichting</p>
+                <p class="tmf-article__title">Zo compenseren we onze CO2-voetafdruk</p>
                 <p class="tmf-article__meta">Binnenkort</p>
               </div>
             </a>
@@ -509,18 +545,23 @@
     }
 
     function positionPanel() {
-      if (!navLink) return;
-      var rect = navLink.getBoundingClientRect();
-      panel.style.top = (rect.bottom + 14) + 'px';
-      // Center panel horizontally on the viewport but bias toward the link
-      var panelWidth = panel.offsetWidth;
-      var viewportW = document.documentElement.clientWidth;
-      var preferredLeft = rect.left + (rect.width / 2) - (panelWidth / 2);
-      // Clamp to viewport (20px gutter)
-      preferredLeft = Math.max(20, Math.min(preferredLeft, viewportW - panelWidth - 20));
-      panel.style.left = preferredLeft + 'px';
-      panel.style.transform = wrap.classList.contains('is-open') ? 'translateY(0)' : 'translateY(-8px)';
+      // Attach the panel to the bottom edge of the header section so it reads
+      // as the header expanding, not a floating box. Halo has no <header>
+      // element — the white bar is the .shopify-section wrapper around the nav.
+      var header = (navLink && navLink.closest('.shopify-section')) ||
+                   document.querySelector('.section-header-navigation, #shopify-section-header');
+      var top = 0;
+      if (header) {
+        top = header.getBoundingClientRect().bottom;
+      } else if (navLink) {
+        top = navLink.getBoundingClientRect().bottom;
+      }
+      panel.style.top = Math.max(0, top) + 'px';
+      // transform is handled by CSS (.is-open) — never set it inline,
+      // an inline value overrides the class and leaves the panel 10px high
     }
+
+    var pinned = false;
 
     function open() {
       clearTimeout(hoverTimer);
@@ -529,10 +570,12 @@
       if (navLink) navLink.classList.add('tmf-nav-link--active');
     }
     function scheduleClose() {
+      if (pinned) return;
       clearTimeout(hoverTimer);
       hoverTimer = setTimeout(close, 180);
     }
     function close() {
+      pinned = false;
       wrap.classList.remove('is-open');
       if (navLink) navLink.classList.remove('tmf-nav-link--active');
     }
@@ -544,12 +587,18 @@
         return setTimeout(init, 400);
       }
 
-      // Intercept click (capture phase so Halo's navigation handlers don't fire)
+      // Intercept click (capture phase so Halo's navigation handlers don't fire).
+      // A click PINS the panel open: it stays visible until a second click,
+      // a click outside, or Escape — hovering away no longer closes it.
       navLink.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        if (wrap.classList.contains('is-open')) close();
-        else open();
+        if (pinned) {
+          close();
+        } else {
+          pinned = true;
+          open();
+        }
       }, true);
 
       // Hover to open, with small delay to prevent flicker
@@ -560,6 +609,13 @@
       navLink.addEventListener('mouseleave', scheduleClose);
       panel.addEventListener('mouseenter', function() { clearTimeout(hoverTimer); });
       panel.addEventListener('mouseleave', scheduleClose);
+
+      // Click outside closes a pinned panel
+      document.addEventListener('click', function(e) {
+        if (!wrap.classList.contains('is-open')) return;
+        if (panel.contains(e.target) || navLink.contains(e.target)) return;
+        close();
+      });
 
       // Close on escape
       document.addEventListener('keydown', function(e) {

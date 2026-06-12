@@ -63,11 +63,29 @@
     align-items: center;
   }
 
+  .tabblie-edu__card-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(31, 18, 9, 0.2);
+    color: rgba(31, 18, 9, 0.4);
+    margin-bottom: 14px;
+    flex-shrink: 0;
+  }
+
+  .tabblie-edu__card-mark svg {
+    width: 13px;
+    height: 13px;
+  }
+
   .tabblie-edu__card-number {
     font-family: var(--font-heading-family);
     font-size: clamp(2.8rem, 4.5vw, 4rem);
     font-weight: 700;
-    color: #E8622A;
+    color: #1F1209;
     line-height: 1;
     margin: 0 0 12px;
     letter-spacing: -0.02em;
@@ -82,6 +100,28 @@
     max-width: 220px;
   }
 
+  /* Positive (Tabblie) card */
+  .tabblie-edu__card--positive {
+    background-color: #E9F5EE;
+  }
+
+  .tedu-block-logo {
+    display: block;
+    height: 18px;
+    width: auto;
+    margin: 0 auto 10px;
+  }
+
+  .tabblie-edu__card--positive .tabblie-edu__card-mark {
+    background-color: #38A169;
+    border-color: #38A169;
+    color: #FFFFFF;
+  }
+
+  .tabblie-edu__card--positive .tabblie-edu__card-number {
+    color: #38A169;
+  }
+
   /* ── Mobile: 2-column ── */
   @media (max-width: 749px) {
     .tabblie-edu {
@@ -94,11 +134,13 @@
 
     .tabblie-edu__grid {
       grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 1fr;
       gap: 16px;
     }
 
     .tabblie-edu__card {
       padding: 24px 16px;
+      justify-content: center;
     }
 
     .tabblie-edu__card-number {
@@ -131,9 +173,19 @@
     {%- if section.blocks.size > 0 -%}
       <div class="tabblie-edu__grid">
         {%- for block in section.blocks -%}
-          <div class="tabblie-edu__card" {{ block.shopify_attributes }}>
+          <div class="tabblie-edu__card{% if block.settings.is_positive %} tabblie-edu__card--positive{% endif %}" {{ block.shopify_attributes }}>
+            <span class="tabblie-edu__card-mark" aria-hidden="true">
+              {%- if block.settings.is_positive -%}
+                <svg viewBox="0 0 256 256" fill="currentColor"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"/></svg>
+              {%- else -%}
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+              {%- endif -%}
+            </span>
             {%- if block.settings.number != blank -%}
               <p class="tabblie-edu__card-number" data-count-target="{{ block.settings.number | escape }}">0</p>
+            {%- endif -%}
+            {%- if block.settings.is_positive -%}
+              <img class="tedu-block-logo" src="{{ 'tabblie-logo.svg' | asset_url }}" alt="Tabblie" loading="lazy">
             {%- endif -%}
             {%- if block.settings.description != blank -%}
               <p class="tabblie-edu__card-desc">{{ block.settings.description | escape }}</p>
@@ -227,6 +279,13 @@
           "id": "description",
           "label": "Description",
           "default": "van de schoonmaakmiddelen bevat onnodige chemicaliën"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_positive",
+          "label": "Positive stat (Tabblie)",
+          "info": "Green card with a checkmark instead of a cross",
+          "default": false
         }
       ]
     }
@@ -265,7 +324,8 @@
           "type": "stat",
           "settings": {
             "number": "100%",
-            "description": "van tabblie strips is biologisch afbreekbaar"
+            "description": "Biologisch afbreekbaar. Geen plasticafval.",
+            "is_positive": true
           }
         }
       ]

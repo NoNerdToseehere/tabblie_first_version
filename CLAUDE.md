@@ -19,6 +19,27 @@ Market positioning → `COMPANY_BRANDING/market-positioning.md`
 
 ---
 
+## Core Mandate — In Priority Order
+
+Every change to this theme must serve these four goals. When a request conflicts with one of them, **say so explicitly — give a recommendation or warning before (or instead of) implementing it as asked.**
+
+1. **Optimized for sales (conversion-first).** This is a DTC e-commerce store; the website exists to sell. Every page should move the visitor toward purchase.
+2. **Built the Shopify way.** Online Store 2.0 conventions, JSON templates, section settings, Liquid variables — never fight the platform.
+3. **On-brand, always.** Use our brand styling and texts (colors, fonts, logo rules, tone of voice below). If a requested change deviates from the brand — wrong color, off-tone copy, emoji use, dishonest claims — flag it and propose the on-brand alternative.
+4. **Fully responsive.** Must look good on every device: phones, tablets, laptops, wide desktops. A change that only works on desktop is not done.
+
+### Conversion / Sales Optimization Rules
+- Primary CTA visible above the fold on every page — orange `#E8622A`, high contrast, action-oriented copy
+- Product cards always show price and a clear path to buy (one tap/click to PDP or cart)
+- Trust signals near every buy decision: reviews/stars, money-back guarantee ("30 dagen proef wassen"), shipping info (NL & BE), payment badges
+- Keep friction low: minimal steps to checkout, sticky add-to-cart on PDPs, cart drawer instead of full-page cart
+- Use honest urgency/scarcity only — never fake countdown timers or fabricated stock levels
+- Subscription upsell ("Abonneer & bespaar 15%") should be present but never block or trick the one-time purchase
+- Never bury the product: marketing/mission sections support the sale, they don't replace product visibility
+- When making layout/copy decisions, prefer the option that most plausibly increases conversion — and say when a user request is likely to hurt conversion
+
+---
+
 ## Brand Identity (Quick Reference)
 
 **Positioning:** Affordable, aesthetic eco-friendly products for everyone — not preachy, not expensive, not ugly.

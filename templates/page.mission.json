@@ -88,7 +88,8 @@
           "type": "stat",
           "settings": {
             "number": "100%",
-            "description": "van tabblie strips is biologisch afbreekbaar"
+            "description": "Biologisch afbreekbaar. Geen plasticafval.",
+            "is_positive": true
           }
         }
       },
@@ -110,7 +111,8 @@
         "eyebrow": "ONZE BELOFTE",
         "heading": "Klimaatneutraal — van productie tot bezorging",
         "description": "We compenseren onze volledige CO2-voetafdruk via gecertificeerde klimaatprojecten. Elke bestelling draagt bij aan een schonere planeet.",
-        "button_text": "Bekijk onze foundation"
+        "button_text": "Lees meer over duurzaamheid",
+        "button_url": "/pages/foundation"
       }
     },
     "values": {

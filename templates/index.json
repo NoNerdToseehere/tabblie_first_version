@@ -906,8 +906,9 @@
         "card_allpurpose": {
           "type": "collection_card",
           "settings": {
-            "label": "Allesreiniger",
-            "url": "/collections/all"
+            "label": "Nog even geheim...",
+            "url": "/collections/all",
+            "coming_soon": true
           }
         }
       },
@@ -918,7 +919,7 @@
         "card_allpurpose"
       ],
       "settings": {
-        "badge_text": "Sluit je aan bij <strong>1.000+</strong> huishoudens die slimmer schoonmaken",
+        "badge_text": "Sluit je aan bij <strong>1.000+</strong> huishoudens die schoner schoonmaken",
         "heading": "Schoonmaken,",
         "heading_accent": "opnieuw uitgevonden.",
         "subtext": "Geen plastic, geen onnodig afval, hetzelfde gemak — Tabblie, kind kan de was doen.",
@@ -953,7 +954,8 @@
           "type": "stat",
           "settings": {
             "number": "100%",
-            "description": "van tabblie strips is biologisch afbreekbaar"
+            "description": "Biologisch afbreekbaar. Geen plasticafval.",
+            "is_positive": true
           }
         }
       },
@@ -1140,6 +1142,7 @@
         "eyebrow": "WORD LID VAN DE CLUB",
         "title": "@tabblie op Instagram",
         "username": "tabblie",
+        "instagram_url": "https://www.instagram.com/tabblie/",
         "posts_count": "42",
         "followers_count": "1.2k",
         "following_count": "86",
@@ -1181,8 +1184,8 @@
         "step_3": {
           "type": "step",
           "settings": {
-            "title": "Klaar",
-            "description": "Schone kleding, vaat of oppervlakken — en nul plastic achtergelaten."
+            "title": "Klaar. Echt waar.",
+            "description": "Schone was, stralende vaat, een schoner huis — zonder plastic afval en zonder gedoe. Zo simpel kan het zijn."
           }
         }
       },

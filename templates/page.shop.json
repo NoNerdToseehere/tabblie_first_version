@@ -35,9 +35,10 @@
         "card_4": {
           "type": "product_card",
           "settings": {
-            "name": "Allesreiniger",
-            "description": "Eén strip voor elk oppervlak. Los op in water, spray en klaar. Keuken, badkamer en alles daartussenin.",
-            "bg_color": "#FCE8E8"
+            "name": "Nog even geheim...",
+            "description": "We werken aan iets nieuws voor je huis. Schrijf je in voor de nieuwsbrief en hoor het als eerste.",
+            "bg_color": "#FCE8E8",
+            "coming_soon": true
           }
         }
       },

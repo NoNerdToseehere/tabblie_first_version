@@ -1,6 +1,7 @@
 {%- comment -%}
   tabblie-how-it-works-v2.liquid
-  Bold 3-step process with gradient background and animated number badges.
+  Single-card stepper: numbered nodes with filling progress bars.
+  Auto-advances 1 → 2 → 3 when scrolled into view, stays on the final step.
 {%- endcomment -%}
 
 <style>
@@ -35,7 +36,7 @@
 
   .tabblie-hiw2__header {
     text-align: center;
-    margin-bottom: clamp(40px, 5vw, 64px);
+    margin-bottom: clamp(36px, 5vw, 56px);
   }
 
   .tabblie-hiw2__eyebrow {
@@ -57,234 +58,167 @@
     margin: 0;
   }
 
-  .tabblie-hiw2__steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(16px, 2vw, 28px);
-  }
-
-  .tabblie-hiw2__step {
+  /* ── Single stepper card ── */
+  .tabblie-hiw2__panel {
     background: #ffffff;
-    border-radius: 20px;
-    padding: clamp(28px, 3vw, 40px) clamp(20px, 2.5vw, 28px);
-    text-align: center;
-    position: relative;
-    box-shadow: 0 8px 32px rgba(31, 18, 9, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 24px;
+    padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 56px);
+    max-width: 640px;
+    margin: 0 auto;
+    box-shadow: 0 12px 40px rgba(31, 18, 9, 0.08);
   }
 
-  .tabblie-hiw2__step:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(31, 18, 9, 0.1);
+  /* track: nodes + connecting bars */
+  .tabblie-hiw2__track {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: clamp(24px, 3vw, 32px);
   }
 
-  .tabblie-hiw2__num {
+  .tabblie-hiw2__node {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(232, 98, 42, 0.3);
+    background: #ffffff;
+    color: rgba(31, 18, 9, 0.4);
+    font-family: var(--font-heading-family);
+    font-size: 1.15rem;
+    font-weight: 700;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 80px;
-    height: 80px;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .tabblie-hiw2__node-check {
+    display: none;
+    width: 18px;
+    height: 18px;
+  }
+
+  .tabblie-hiw2__node--active {
     background: #E8622A;
+    border-color: #E8622A;
     color: #ffffff;
-    font-family: var(--font-heading-family);
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 24px;
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(232, 98, 42, 0.35);
+  }
+
+  .tabblie-hiw2__node--done {
+    background: #38A169;
+    border-color: #38A169;
+    color: #ffffff;
+  }
+
+  .tabblie-hiw2__node--done .tabblie-hiw2__node-num {
+    display: none;
+  }
+
+  .tabblie-hiw2__node--done .tabblie-hiw2__node-check {
+    display: block;
+  }
+
+  .tabblie-hiw2__bar {
+    flex: 1;
+    height: 5px;
+    border-radius: 100px;
+    background: rgba(232, 98, 42, 0.15);
+    overflow: hidden;
+  }
+
+  .tabblie-hiw2__bar-fill {
+    display: block;
+    width: 0%;
+    height: 100%;
+    border-radius: 100px;
+    background: #E8622A;
+  }
+
+  .tabblie-hiw2__bar-fill--filling {
+    transition: width var(--hiw-step-ms, 1800ms) linear;
+    width: 100%;
+  }
+
+  .tabblie-hiw2__bar-fill--full {
+    width: 100%;
+  }
+
+  /* step content */
+  .tabblie-hiw2__contents {
+    display: grid;
+    text-align: center;
+  }
+
+  .tabblie-hiw2__content {
+    grid-area: 1 / 1;
     opacity: 0;
-    transform: scale(0.5) rotate(-5deg);
-    position: relative;
-    border-radius: 42% 58% 63% 37% / 45% 55% 45% 55%;
-    box-shadow: 0 6px 20px rgba(232, 98, 42, 0.35);
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+    visibility: hidden;
   }
 
-  .tabblie-hiw2__step:nth-child(2) .tabblie-hiw2__num {
-    border-radius: 55% 45% 38% 62% / 52% 40% 60% 48%;
-    transform: scale(0.5) rotate(5deg);
-  }
-
-  .tabblie-hiw2__step:nth-child(3) .tabblie-hiw2__num {
-    border-radius: 38% 62% 55% 45% / 60% 48% 52% 40%;
-    transform: scale(0.5) rotate(-8deg);
-  }
-
-  /* Drip drops */
-  .tabblie-hiw2__num::before {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 35%;
-    width: 8px;
-    height: 14px;
-    background: #E8622A;
-    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
-    opacity: 0.7;
-  }
-
-  .tabblie-hiw2__num::after {
-    content: '';
-    position: absolute;
-    bottom: -16px;
-    right: 30%;
-    width: 6px;
-    height: 10px;
-    background: #E8622A;
-    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
-    opacity: 0.5;
-  }
-
-  .tabblie-hiw2__step:nth-child(2) .tabblie-hiw2__num::before {
-    left: auto;
-    right: 25%;
-    bottom: -12px;
-  }
-
-  .tabblie-hiw2__step:nth-child(2) .tabblie-hiw2__num::after {
-    right: auto;
-    left: 28%;
-    bottom: -8px;
-    width: 5px;
-    height: 8px;
-  }
-
-  .tabblie-hiw2__step:nth-child(3) .tabblie-hiw2__num::before {
-    left: 40%;
-    bottom: -14px;
-    width: 7px;
-    height: 12px;
-  }
-
-  .tabblie-hiw2__step:nth-child(3) .tabblie-hiw2__num::after {
-    right: 22%;
-    bottom: -9px;
-    width: 5px;
-    height: 9px;
-    opacity: 0.4;
-  }
-
-  .tabblie-hiw2--in-view .tabblie-hiw2__step:nth-child(1) .tabblie-hiw2__num {
-    animation: hiw2-splash1 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s forwards;
-  }
-  .tabblie-hiw2--in-view .tabblie-hiw2__step:nth-child(2) .tabblie-hiw2__num {
-    animation: hiw2-splash2 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s forwards;
-  }
-  .tabblie-hiw2--in-view .tabblie-hiw2__step:nth-child(3) .tabblie-hiw2__num {
-    animation: hiw2-splash3 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.9s forwards;
-  }
-
-  @keyframes hiw2-splash1 {
-    0% { opacity: 0; transform: scale(0.3) rotate(15deg); }
-    60% { opacity: 1; transform: scale(1.15) rotate(-8deg); }
-    100% { opacity: 1; transform: scale(1) rotate(-5deg); }
-  }
-
-  @keyframes hiw2-splash2 {
-    0% { opacity: 0; transform: scale(0.3) rotate(-15deg); }
-    60% { opacity: 1; transform: scale(1.15) rotate(8deg); }
-    100% { opacity: 1; transform: scale(1) rotate(5deg); }
-  }
-
-  @keyframes hiw2-splash3 {
-    0% { opacity: 0; transform: scale(0.3) rotate(20deg); }
-    60% { opacity: 1; transform: scale(1.15) rotate(-12deg); }
-    100% { opacity: 1; transform: scale(1) rotate(-8deg); }
-  }
-
-  .tabblie-hiw2__step-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
-    color: #E8622A;
+  .tabblie-hiw2__content--active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    visibility: visible;
   }
 
   .tabblie-hiw2__step-title {
     font-family: var(--font-heading-family);
-    font-size: 1.3rem;
+    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
     font-weight: 600;
     color: #1F1209;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
   }
 
   .tabblie-hiw2__step-desc {
     font-family: var(--text-font-family);
-    font-size: 14px;
-    color: rgba(31, 18, 9, 0.6);
-    line-height: 1.6;
-    max-width: 240px;
+    font-size: 15px;
+    color: rgba(31, 18, 9, 0.65);
+    line-height: 1.65;
+    max-width: 420px;
     margin: 0 auto;
   }
 
-  /* Connector arrows between steps */
-  .tabblie-hiw2__connector {
-    display: none;
-  }
-
-  @media (min-width: 750px) {
-    .tabblie-hiw2__connector {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 36px;
-      right: -20px;
-      z-index: 2;
-      color: #E8622A;
-      opacity: 0.4;
-    }
-  }
-
-  /* Mobile */
   @media (max-width: 749px) {
-    .tabblie-hiw2__steps {
-      grid-template-columns: 1fr;
-      gap: 16px;
+    .tabblie-hiw2__panel {
+      padding: 24px 20px 28px;
     }
 
-    .tabblie-hiw2__step {
-      display: flex;
-      align-items: center;
-      text-align: left;
-      padding: 20px;
-      gap: 16px;
+    .tabblie-hiw2__node {
+      width: 44px;
+      height: 44px;
     }
 
-    .tabblie-hiw2__num {
-      width: 50px;
-      height: 50px;
-      font-size: 1.3rem;
-      margin-bottom: 0;
-      flex-shrink: 0;
-    }
-
-    .tabblie-hiw2__num::after {
-      display: none;
-    }
-
-    .tabblie-hiw2__step-content {
-      flex: 1;
-    }
-
-    .tabblie-hiw2__step-icon {
-      display: none;
-    }
-
-    .tabblie-hiw2__step-title {
-      margin-bottom: 4px;
+    .tabblie-hiw2__track {
+      gap: 8px;
     }
 
     .tabblie-hiw2__step-desc {
-      max-width: none;
-      font-size: 13px;
+      font-size: 14px;
     }
 
-    .tabblie-hiw2--in-view .tabblie-hiw2__num {
-      opacity: 1 !important;
-      transform: none !important;
-      animation: none !important;
+    .tabblie-hiw2__contents {
+      min-height: 96px;
     }
 
     .tabblie-hiw2::before {
       font-size: 10rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tabblie-hiw2__node,
+    .tabblie-hiw2__bar-fill,
+    .tabblie-hiw2__content {
+      transition: none !important;
     }
   }
 </style>
@@ -301,21 +235,22 @@
       {%- endif -%}
     </div>
 
-    <div class="tabblie-hiw2__steps">
-      {%- for block in section.blocks -%}
-        <div class="tabblie-hiw2__step" {{ block.shopify_attributes }}>
-          <div class="tabblie-hiw2__num">{{ forloop.index }}</div>
-          <div class="tabblie-hiw2__step-content">
-            <div class="tabblie-hiw2__step-icon">
-              {%- case forloop.index -%}
-                {%- when 1 -%}
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
-                {%- when 2 -%}
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v6l3-3"/><path d="M12 8l-3-3"/><circle cx="12" cy="16" r="6"/></svg>
-                {%- when 3 -%}
-                  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
-              {%- endcase -%}
-            </div>
+    <div class="tabblie-hiw2__panel" data-hiw-panel data-hiw-step-ms="1800">
+      <div class="tabblie-hiw2__track">
+        {%- for block in section.blocks -%}
+          <button type="button" class="tabblie-hiw2__node" data-hiw-node="{{ forloop.index0 }}" aria-label="Stap {{ forloop.index }}: {{ block.settings.title | escape }}" {{ block.shopify_attributes }}>
+            <span class="tabblie-hiw2__node-num">{{ forloop.index }}</span>
+            <svg class="tabblie-hiw2__node-check" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"/></svg>
+          </button>
+          {%- unless forloop.last -%}
+            <span class="tabblie-hiw2__bar"><span class="tabblie-hiw2__bar-fill" data-hiw-bar="{{ forloop.index0 }}"></span></span>
+          {%- endunless -%}
+        {%- endfor -%}
+      </div>
+
+      <div class="tabblie-hiw2__contents">
+        {%- for block in section.blocks -%}
+          <div class="tabblie-hiw2__content" data-hiw-content="{{ forloop.index0 }}">
             {%- if block.settings.title != blank -%}
               <h3 class="tabblie-hiw2__step-title">{{ block.settings.title }}</h3>
             {%- endif -%}
@@ -323,8 +258,8 @@
               <p class="tabblie-hiw2__step-desc">{{ block.settings.description }}</p>
             {%- endif -%}
           </div>
-        </div>
-      {%- endfor -%}
+        {%- endfor -%}
+      </div>
     </div>
 
   </div>
@@ -332,25 +267,82 @@
 
 <script>
 (function () {
-  var section = document.querySelector('.tabblie-hiw2');
-  if (!section) return;
-  if (window.matchMedia('(max-width: 749px)').matches) {
-    section.classList.add('tabblie-hiw2--in-view');
-    return;
+  var panel = document.querySelector('[data-hiw-panel]');
+  if (!panel) return;
+
+  var nodes = panel.querySelectorAll('[data-hiw-node]');
+  var bars = panel.querySelectorAll('[data-hiw-bar]');
+  var contents = panel.querySelectorAll('[data-hiw-content]');
+  var total = nodes.length;
+  if (!total) return;
+
+  var stepMs = parseInt(panel.getAttribute('data-hiw-step-ms'), 10) || 2600;
+  var timer = null;
+  var current = -1;
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setStep(index) {
+    current = index;
+    nodes.forEach(function (node, i) {
+      node.classList.toggle('tabblie-hiw2__node--active', i === index);
+      node.classList.toggle('tabblie-hiw2__node--done', i < index);
+    });
+    bars.forEach(function (bar, i) {
+      bar.classList.remove('tabblie-hiw2__bar-fill--filling');
+      bar.classList.toggle('tabblie-hiw2__bar-fill--full', i < index);
+      if (i >= index) {
+        bar.style.width = '';
+      }
+    });
+    contents.forEach(function (content, i) {
+      content.classList.toggle('tabblie-hiw2__content--active', i === index);
+    });
   }
+
+  function advanceFrom(index) {
+    if (index >= total - 1) return;
+    var bar = bars[index];
+    if (bar) {
+      // force reflow so the width transition restarts cleanly
+      void bar.offsetWidth;
+      bar.classList.add('tabblie-hiw2__bar-fill--filling');
+    }
+    timer = setTimeout(function () {
+      setStep(index + 1);
+      advanceFrom(index + 1);
+    }, stepMs);
+  }
+
+  function startSequence() {
+    if (reduceMotion) {
+      setStep(total - 1);
+      return;
+    }
+    setStep(0);
+    advanceFrom(0);
+  }
+
+  nodes.forEach(function (node, i) {
+    node.addEventListener('click', function () {
+      if (timer) { clearTimeout(timer); timer = null; }
+      setStep(i);
+    });
+  });
+
   var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
-        section.classList.add('tabblie-hiw2--in-view');
+        startSequence();
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
-  var rect = section.getBoundingClientRect();
+  }, { threshold: 0.35 });
+
+  var rect = panel.getBoundingClientRect();
   if (rect.top < window.innerHeight && rect.bottom > 0) {
-    section.classList.add('tabblie-hiw2--in-view');
+    startSequence();
   } else {
-    observer.observe(section);
+    observer.observe(panel);
   }
 })();
 </script>
@@ -379,7 +371,7 @@
       "blocks": [
         { "type": "step", "settings": { "title": "Scheur", "description": "Scheur één strip van de verpakking. Geen afmeten, geen rommel, geen plastic fles." } },
         { "type": "step", "settings": { "title": "Gooi", "description": "Gooi de strip in de wasmachine, vaatwasser of los op in water. Het lost volledig op." } },
-        { "type": "step", "settings": { "title": "Klaar", "description": "Schone kleding, vaat of oppervlakken — en nul plastic achtergelaten." } }
+        { "type": "step", "settings": { "title": "Klaar. Echt waar.", "description": "Schone was, stralende vaat, een schoner huis — zonder plastic afval en zonder gedoe. Zo simpel kan het zijn." } }
       ]
     }
   ],
