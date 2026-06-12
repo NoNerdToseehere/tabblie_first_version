@@ -120,6 +120,8 @@ Every change to this theme must serve these four goals. When a request conflicts
 
 ### Responsive Design — Non-Negotiable
 Every change must work perfectly on **both mobile and desktop**. This is a core requirement, not an afterthought.
+- **VERIFY EVERY CHANGE ON MOBILE BEFORE CALLING IT DONE.** Any visual/layout change must be checked at mobile width (390px) AND desktop width — use browser screenshots (Playwright against the `shopify theme dev` preview) when available. A change that only looks right on desktop is a bug, not a finished task. Never propose a commit for visual work that hasn't had its mobile check.
+- Watch for desktop-tuned values leaking to mobile: absolute/percentage positioning, fixed widths, large paddings, and section-relative offsets often need their own mobile values
 - **Mobile-first always** — write CSS starting from the smallest screen and scale up with `min-width` breakpoints
 - Test all layouts at: 375px (iPhone SE), 390px (iPhone 14), 768px (iPad), 1280px (desktop), 1440px (wide)
 - Touch targets must be at least 44×44px — buttons, links, nav items

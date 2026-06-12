@@ -102,6 +102,15 @@ body {
   max-width: 100%;
 }
 
+/* Hard guard against sideways scroll on mobile: 100vw-sized theme elements
+   overshoot the viewport by the scrollbar width on real devices.
+   `clip` (not `hidden`) keeps position:sticky headers working. */
+html,
+body {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
 body {
   font-family: var(--text-font-family);
   color: #1F1209;
@@ -1605,23 +1614,43 @@ select:focus {
   border-color: #E8622A !important;
 }
 
-/* Mobile: smaller cookie above smaller padding */
+/* Mobile: small cookie beside the title, full-width text and buttons,
+   compact so the banner doesn't swallow half the screen */
 @media (max-width: 749px) {
   .shopify-pc__banner__dialog {
-    padding: 22px 20px 20px 96px !important;
+    padding: 18px 18px 16px !important;
     left: 10px !important;
     right: 10px !important;
     bottom: 10px !important;
   }
 
   .shopify-pc__banner__dialog::before {
-    width: 58px;
-    height: 58px;
+    width: 46px;
+    height: 46px;
     left: 18px;
+    top: 18px;
+    transform: rotate(-12deg);
+  }
+
+  .shopify-pc__banner__dialog h2 {
+    padding-left: 60px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .shopify-pc__banner__dialog h2::after {
+    display: flex;
+    align-items: center;
+    min-height: 46px;
+    font-size: 1.2rem;
+  }
+
+  .shopify-pc__banner__dialog p {
+    font-size: 12px !important;
   }
 
   .shopify-pc__banner__dialog button {
     width: 100%;
     margin-top: 6px;
+    padding: 11px 22px !important;
   }
 }

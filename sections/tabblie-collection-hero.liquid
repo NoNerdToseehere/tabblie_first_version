@@ -11,18 +11,21 @@
     overflow: hidden;
   }
 
+  /* Background watermark: the real Tabblie wordmark (logo SVG used as a mask
+     so it renders white/translucent on the blue gradient) */
   .tabblie-chero::before {
-    content: 'tabblie';
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -55%);
-    font-family: var(--font-heading-family);
-    font-size: clamp(12rem, 20vw, 22rem);
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.25);
-    letter-spacing: 0.05em;
-    white-space: nowrap;
+    /* tabblie-logo-watermark.png is a re-rendered 3304px version of the
+       wordmark — sharp up to ~1650px CSS width on retina screens */
+    width: min(88vw, 1300px);
+    aspect-ratio: 826 / 254;
+    background-color: rgba(255, 255, 255, 0.3);
+    -webkit-mask: url('{{ 'tabblie-logo-watermark.png' | asset_url }}') center / contain no-repeat;
+    mask: url('{{ 'tabblie-logo-watermark.png' | asset_url }}') center / contain no-repeat;
     pointer-events: none;
     z-index: 0;
   }
@@ -87,9 +90,12 @@
   }
 
   @media (max-width: 749px) {
+    /* oversized, bleeding off both edges, straddling the top edge of the
+       cards (~42% of the section): top half peeks out above, bottom half
+       slides behind the cards for a layered depth effect */
     .tabblie-chero::before {
-      top: 45.5%;
-      font-size: 8rem;
+      top: 42%;
+      width: 150vw;
     }
   }
 
