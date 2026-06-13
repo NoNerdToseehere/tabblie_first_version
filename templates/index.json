@@ -864,7 +864,7 @@
         "faq_1": {
           "type": "faq",
           "settings": {
-            "question": "Zijn jullie strips echt zonder plasticafval?",
+            "question": "Zijn jullie strips echt zonder plastic?",
             "answer": "Ja! Onze strips worden verpakt in recyclebaar papier. Geen plastic fles, geen plastic verpakking, geen microplastics in de formule."
           }
         },
@@ -872,21 +872,14 @@
           "type": "faq",
           "settings": {
             "question": "Werken de strips net zo goed als vloeibaar wasmiddel?",
-            "answer": "Absoluut. Onze strips bevatten dezelfde werkzame stoffen als premium wasmiddelen, maar dan in geconcentreerde vorm. Ze lossen volledig op in warm én koud water."
-          }
-        },
-        "faq_3": {
-          "type": "faq",
-          "settings": {
-            "question": "Zijn de ingrediënten veilig voor gevoelige huid?",
-            "answer": "Ja. Onze formule is vrij van parabenen, fosfaten, kleurstoffen en kunstmatige geurstoffen. Dermatologisch getest en geschikt voor de hele familie."
+            "answer": "Ja. Onze strips zijn supergeconcentreerd: het water dat in een gewone fles wasmiddel zit (vaak 80 tot 90% van de inhoud), laten wij gewoon weg. Wat overblijft, zijn de werkzame stoffen die je was schoon krijgen — alleen dan zonder al dat meegesleepte water en plastic."
           }
         },
         "faq_4": {
           "type": "faq",
           "settings": {
             "question": "Hoe zit het met de verzending?",
-            "answer": "We verzenden gratis naar Nederland en België. Omdat onze strips zo compact en licht zijn, is de CO₂-uitstoot van verzending tot 90% lager dan bij traditionele schoonmaakmiddelen."
+            "answer": "Gratis bezorgd in Nederland en België — en zo licht dat het bijna vanzelf gaat. De CO₂ van het transport? Die compenseren we, zodat jouw bestelling klimaatneutraal op de mat valt."
           }
         },
         "faq_5": {
@@ -900,7 +893,6 @@
       "block_order": [
         "faq_1",
         "faq_2",
-        "faq_3",
         "faq_4",
         "faq_5"
       ],
