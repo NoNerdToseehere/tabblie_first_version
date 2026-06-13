@@ -258,7 +258,7 @@
             "height_icon": 100,
             "mg_bottom_icon": 20,
             "color_icon": "#3c3c3c",
-            "text": "KIKKER2",
+            "text": "Biologisch afbreekbaar",
             "type_tab_font": "font_1",
             "fontsize_title_block": 20,
             "fontsize_title_block_mb": 15,
@@ -301,7 +301,7 @@
             "height_icon": 100,
             "mg_bottom_icon": 20,
             "color_icon": "#3c3c3c",
-            "text": "Geen plastic flessen, ooit",
+            "text": "Geen plastic, nooit",
             "type_tab_font": "font_1",
             "fontsize_title_block": 20,
             "fontsize_title_block_mb": 15,
@@ -473,16 +473,16 @@
         "stat_1": {
           "type": "stat",
           "settings": {
-            "number": "80%",
-            "description": "van de schoonmaakmiddelen bevat onnodige chemicaliën",
+            "number": "90%",
+            "description": "van de schoonmaakproducten bevatten  microplastics",
             "is_positive": false
           }
         },
         "stat_2": {
           "type": "stat",
           "settings": {
-            "number": "12+",
-            "description": "plastic flessen per huishouden per jaar voor schoonmaak",
+            "number": "24",
+            "description": "kilo per persoon aan plastic afval van schoonmaakproducten",
             "is_positive": false
           }
         },
@@ -498,7 +498,7 @@
           "type": "stat",
           "settings": {
             "number": "100%",
-            "description": "Biologisch afbreekbaar. Geen plasticafval.",
+            "description": "Biologisch afbreekbaar. Geen plastic. Nooit",
             "is_positive": true
           }
         }
@@ -511,7 +511,7 @@
       ],
       "settings": {
         "eyebrow": "WIST JE DIT?",
-        "heading": "Wat grote merken",
+        "heading": "Wat traditionele merken",
         "heading_accent": "niet vertellen"
       }
     },
@@ -533,13 +533,19 @@
         "benefit_3": {
           "type": "benefit",
           "settings": {
-            "text": "Geen plastic flessen — nooit"
+            "text": "Microplastic (PVA) vrij"
           }
         },
         "benefit_4": {
           "type": "benefit",
           "settings": {
-            "text": "Veganistische formule, dierproefvrij gecertificeerd"
+            "text": "Betaalbaar en effectief"
+          }
+        },
+        "benefit_hmnNTt": {
+          "type": "benefit",
+          "settings": {
+            "text": "Gemakkelijk door de brievenbus"
           }
         }
       },
@@ -547,13 +553,14 @@
         "benefit_1",
         "benefit_2",
         "benefit_3",
-        "benefit_4"
+        "benefit_4",
+        "benefit_hmnNTt"
       ],
       "settings": {
         "image_side": "left",
         "eyebrow": "Waarom tabblie?",
         "title": "Eén strip. Nul plastic.",
-        "description": "Tabblie strips lossen direct op in water — geen afmeten, geen plastic, geen rommel. Gewoon schone was, vaat en oppervlakken, elke keer.",
+        "description": "Strip erin, opgelost, klaar — geen afmeten, geen plastic, geen rommel. Gewoon schone was, vaat en oppervlakken, elke keer weer.",
         "button_text": "Bekijk de strips",
         "button_url": "/collections/all"
       }
@@ -565,7 +572,7 @@
           "type": "step",
           "settings": {
             "title": "Scheur",
-            "description": "Scheur één strip van de verpakking. Geen afmeten, geen rommel, geen plastic fles."
+            "description": "Scheur één strip af. niks afmeten"
           }
         },
         "step_2": {
@@ -590,7 +597,7 @@
       ],
       "settings": {
         "eyebrow": "Zo werkt het",
-        "title": "Drie stappen naar een schoner huis."
+        "title": "Een, twee, drie - alles is schoon"
       }
     },
     "tabblie_hiw_main": {
@@ -635,7 +642,7 @@
         "eyebrow": "ONZE GARANTIE",
         "heading": "Probeer het 30 dagen.",
         "heading_accent": "Risicovrij!",
-        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of op elk oppervlak. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
+        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
         "button_text": "Bestel nu & bespaar",
         "button_url": "",
         "image_alt": "30 dagen proefwassen",
@@ -696,8 +703,8 @@
       "settings": {
         "image_alt": "Tabblie oprichter",
         "eyebrow": "ONS VERHAAL",
-        "title": "Een familiebedrijf met een missie",
-        "body": "Onze dochter keek op een dag naar onze schoonmaakkast en vroeg: \"Waarom zit dit allemaal in plastic?\" Eerlijk gezegd hadden we geen goed antwoord. Dus stopten we met uitleggen en begonnen we met bouwen.\n\nWant wees eerlijk — de meeste duurzame merken zijn om van in slaap te vallen. Saai groen design, fletse kleuren, belachelijke prijzen, en producten die het net niet redden. Alsof je straf krijgt voor het maken van een betere keuze.\n\nTabblie is anders. Wij geloven dat schoonmaken gewoon leuk mag zijn. Felle kleuren, producten die écht werken, en een prijs die niet voelt als een donatie. Nul plastic, nul rommel, nul excuses — maar wel honderd procent karakter.\n\nWij zijn niet de zoveelste groene club die je een slecht gevoel geeft. Wij bewijzen dat beter ook beter kan voelen.",
+        "title": "Gewoon een familie die dacht, dit kan anders",
+        "body": "Ergens tussen de zoveelste plastic fles en het zoveelste saaie groene merk dachten we: dit kan anders. Leuker. Makkelijker.<br><br>\nDus pakten we het anders aan. Opgericht door familie, gemaakt voor iedereen — met één missie en een sterk geloof dat schoonmaken en mileuvriendelijk niet saai of somber hoeft te zijn.<br><br>\nGeen muur van plastic flessen onder het aanrecht. Geen plakkerige flessen met restjes die er nooit helemaal uitkomen. Geen zware verpakkingen die je met twee handen uit de supermarkt sleept. Gewoon een klein doosje strips dat meer doet dan al die flessen bij elkaar — en zelfs door de brievenbus past.<br><br>\nEén strip. Voor de was. Voor de vaat. Voor het toilet. Scheur hem af, gooi hem erin, en hij lost helemaal op. Plantaardig, zacht voor je huid en vriendelijk voor het milieu. Geen plastic afval, geen restjes, geen gedoe.<br><br>\nDruk gezin met bergen wasgoed of klein appartement met een compacte vaatwasser — Tabblie past zich aan, niet andersom.<br><br want goed doen en leven gaan prima samen. net als felle kleuren een schoon geweten.>",
         "button_text": "Meer over tabblie",
         "button_url": ""
       }
@@ -705,10 +712,10 @@
     "tabblie_impact_main": {
       "type": "tabblie-impact",
       "settings": {
-        "eyebrow": "ONZE BELOFTE",
-        "heading": "Klimaatneutraal — van productie tot bezorging",
-        "description": "We compenseren onze volledige CO2-voetafdruk. Elke bestelling is klimaatneutraal — zonder dat jij er iets extra voor hoeft te doen.",
-        "button_text": "Meer over onze missie",
+        "eyebrow": "GENOEG GESJOUWD",
+        "heading": "Wij vonden het ook een gedoe",
+        "description": "Zware flessen sjouwen. Eindeloos afmeten. Morsen en plakkerige doppen. Een kast vol plasticflessen. En een prullenbak vol plastic. Wij vonden het ook een gedoe — dus maakten we er één simpel stripje van. Vederlicht, plat en compact: een heel doosje past door de brievenbus en verdwijnt zo in een la. Geen gesjouw, geen plastic, geen kast vol flessen meer. Gewoon een strip eruit, erin, en klaar — voor de was, de vaat én het toilet.",
+        "button_text": "Ook minder gedoe? - bekijk hier",
         "button_url": ""
       }
     },

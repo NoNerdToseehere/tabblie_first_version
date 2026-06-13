@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "header",
   "name": "Header Group",
@@ -9,7 +18,7 @@
           "type": "announcement",
           "settings": {
             "type": "html",
-            "text": "<span class='tabblie-announce-desktop'><span>Gratis verzending in NL & BE</span><span>Probeer 30 dagen risicovrij</span><span>100% geen plasticafval</span></span><span class='tabblie-announce-mobile'><span>Probeer 30 dagen risicovrij</span></span>",
+            "text": "<span class=\"tabblie-announce-desktop\"><span>Gratis verzending in NL &amp; BE</span><span>Probeer 30 dagen risicovrij</span><span>100% Plasticvrij</span></span><span class=\"tabblie-announce-mobile\"><span>Probeer 30 dagen risicovrij</span></span>",
             "text_rich": "<p>Gratis verzending in NL & BE</p>",
             "btn_color": "#f84248",
             "btn_border_color": "#ffffff",
@@ -55,7 +64,7 @@
             "bg_mega_menu": "#ffffff",
             "bg_mega_menu_gradient": "",
             "lv_1_color": "#232323",
-            "lv_1_color_hover": "#E8622A",
+            "lv_1_color_hover": "#e8622a",
             "lv_2_color": "#232323",
             "lv_2_color_hover": "#232323",
             "lv_3_color": "#3c3c3c",
@@ -90,8 +99,6 @@
           "type": "logo",
           "settings": {
             "logo_position": "always",
-            "logo": "",
-            "logo_transparent": "",
             "logo_width": 190,
             "logo_width_fixed": 100,
             "logo_text": "",
@@ -187,8 +194,6 @@
         "550fbd21-75fb-4051-9dee-77d91b5239f0": {
           "type": "logo",
           "settings": {
-            "logo_mobile": "",
-            "logo_transparent": "",
             "logo_width_mobile": 150,
             "logo_text": "",
             "logo_font_size": 20,
@@ -248,7 +253,7 @@
             "bg_mega_menu": "#ffffff",
             "bg_mega_menu_gradient": "",
             "lv_1_color": "#26292d",
-            "lv_1_color_hover": "#E8622A",
+            "lv_1_color_hover": "#e8622a",
             "lv_2_color": "#232323",
             "lv_2_color_hover": "#232323",
             "lv_3_color": "#3c3c3c",
@@ -283,7 +288,6 @@
           "type": "logo",
           "settings": {
             "logo_position": "always",
-            "logo": "",
             "logo_width": 190,
             "logo_width_fixed": 100,
             "logo_text": "",
@@ -329,7 +333,6 @@
             "menu_text_left": "",
             "menu_text_left_sale": "",
             "show_banner_1": true,
-            "banner_1": "",
             "banner_url_1": "",
             "product_limit": 4,
             "show_product": false,
