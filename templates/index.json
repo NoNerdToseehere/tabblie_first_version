@@ -1,5 +1,68 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "tabblie_collection_hero_main": {
+      "type": "tabblie-collection-hero",
+      "blocks": {
+        "card_laundry": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "Wasstrips",
+            "url": "/collections/all",
+            "coming_soon": false
+          }
+        },
+        "card_dishwasher": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "Vaatwasstrips",
+            "url": "/collections/all",
+            "coming_soon": false
+          }
+        },
+        "card_toilet": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "Toiletstrips",
+            "url": "/collections/all",
+            "coming_soon": false
+          }
+        },
+        "card_allpurpose": {
+          "type": "collection_card",
+          "settings": {
+            "collection": "",
+            "label": "Nog even geheim...",
+            "url": "/collections/all",
+            "coming_soon": true
+          }
+        }
+      },
+      "block_order": [
+        "card_laundry",
+        "card_dishwasher",
+        "card_toilet",
+        "card_allpurpose"
+      ],
+      "settings": {
+        "badge_text": "Sluit je aan bij <strong>1.000+</strong> huishoudens die schoner schoonmaken",
+        "heading": "Schoonmaken,",
+        "heading_accent": "opnieuw uitgevonden.",
+        "subtext": "Geen plastic, geen onnodig afval, hetzelfde gemak — Tabblie, kind kan de was doen.",
+        "marquee_text": "Geen plasticafval | Verzending naar NL & BE | 100% vegan | Geen schadelijke chemicaliën | Super effectief | Niet-goed-geld-terug"
+      }
+    },
     "163247026462da6862": {
       "type": "product-block",
       "custom_css": [
@@ -16,7 +79,7 @@
         "enable_minus_mg_top": false,
         "minus_spacing_top": -100,
         "product_block_layout": "grid",
-        "product_bg": "#FFFFFF",
+        "product_bg": "#ffffff",
         "product_bg_gradient": "",
         "product_block_collection": "new",
         "product_block_limit": 9,
@@ -159,13 +222,13 @@
             "title_block_font_weight": "400",
             "mg_bottom_title": 15,
             "mg_bottom_title_mb": 0,
-            "color_block": "#1F1209",
+            "color_block": "#1f1209",
             "description": "",
             "fontsize_des_block": 16,
             "fontsize_des_block_mb": 14,
             "lineheight_des_block": 22,
             "mg_bottom_des": 0,
-            "color_des_block": "rgba(31,18,9,0.65)",
+            "color_des_block": "#1f1209a6",
             "button": "",
             "link": "",
             "button_style": "style1",
@@ -195,20 +258,20 @@
             "height_icon": 100,
             "mg_bottom_icon": 20,
             "color_icon": "#3c3c3c",
-            "text": "Vegan & dierproefvrij",
+            "text": "KIKKER2",
             "type_tab_font": "font_1",
             "fontsize_title_block": 20,
             "fontsize_title_block_mb": 15,
             "title_block_font_weight": "400",
             "mg_bottom_title": 15,
             "mg_bottom_title_mb": 0,
-            "color_block": "#1F1209",
+            "color_block": "#1f1209",
             "description": "",
             "fontsize_des_block": 16,
             "fontsize_des_block_mb": 14,
             "lineheight_des_block": 22,
             "mg_bottom_des": 0,
-            "color_des_block": "rgba(31,18,9,0.65)",
+            "color_des_block": "#1f1209a6",
             "button": "",
             "link": "",
             "button_style": "style1",
@@ -245,13 +308,13 @@
             "title_block_font_weight": "400",
             "mg_bottom_title": 15,
             "mg_bottom_title_mb": 0,
-            "color_block": "#1F1209",
+            "color_block": "#1f1209",
             "description": "",
             "fontsize_des_block": 16,
             "fontsize_des_block_mb": 14,
             "lineheight_des_block": 22,
             "mg_bottom_des": 0,
-            "color_des_block": "rgba(31,18,9,0.65)",
+            "color_des_block": "#1f1209a6",
             "button": "",
             "link": "",
             "button_style": "style1",
@@ -288,13 +351,13 @@
             "title_block_font_weight": "400",
             "mg_bottom_title": 15,
             "mg_bottom_title_mb": 0,
-            "color_block": "#1F1209",
+            "color_block": "#1f1209",
             "description": "",
             "fontsize_des_block": 16,
             "fontsize_des_block_mb": 14,
             "lineheight_des_block": 22,
             "mg_bottom_des": 0,
-            "color_des_block": "rgba(31,18,9,0.65)",
+            "color_des_block": "#1f1209a6",
             "button": "",
             "link": "",
             "button_style": "style1",
@@ -333,20 +396,20 @@
         "display_border_bottom": false,
         "border_color": "rgba(0,0,0,0)",
         "service_block_swipe_on_mobile": "list",
-        "color_icon_slider": "#E8622A",
+        "color_icon_slider": "#e8622a",
         "service_block_style": "style_1",
-        "policies_bg": "#F8BFD6",
+        "policies_bg": "#f8bfd6",
         "policies_bg_gradient": "",
         "service_block_title": "Werkt als een tierelier. Beter voor de planeet.",
         "enable_border_title": false,
-        "color_title": "#1F1209",
+        "color_title": "#1f1209",
         "fontsize_title": 50,
         "fontsize_title_mb": 30,
         "mg_bottom_title_service_block": 23,
         "mg_bottom_title_service_block_mb": 20,
         "service_block_des": "",
         "service_block_des_pos": "bottom",
-        "color_des": "rgba(253,246,238,0.7)",
+        "color_des": "#fdf6eeb3",
         "fontsize_des": 16,
         "mg_top_service_block_des": 50,
         "mg_bottom_service_block_des": 50,
@@ -404,6 +467,351 @@
         "mg_bottom_mobile": 50
       }
     },
+    "tabblie_education_main": {
+      "type": "tabblie-education",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "80%",
+            "description": "van de schoonmaakmiddelen bevat onnodige chemicaliën",
+            "is_positive": false
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "12+",
+            "description": "plastic flessen per huishouden per jaar voor schoonmaak",
+            "is_positive": false
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "91%",
+            "description": "van al het plastic wordt niet gerecycled",
+            "is_positive": false
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "number": "100%",
+            "description": "Biologisch afbreekbaar. Geen plasticafval.",
+            "is_positive": true
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3",
+        "stat_4"
+      ],
+      "settings": {
+        "eyebrow": "WIST JE DIT?",
+        "heading": "Wat grote merken",
+        "heading_accent": "niet vertellen"
+      }
+    },
+    "tabblie_pf_main": {
+      "type": "tabblie-product-feature",
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "text": "Werkt in elke wasmachine of vaatwasser"
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "text": "Lost op in warm en koud water"
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "text": "Geen plastic flessen — nooit"
+          }
+        },
+        "benefit_4": {
+          "type": "benefit",
+          "settings": {
+            "text": "Veganistische formule, dierproefvrij gecertificeerd"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "benefit_4"
+      ],
+      "settings": {
+        "image_side": "left",
+        "eyebrow": "Waarom tabblie?",
+        "title": "Eén strip. Nul plastic.",
+        "description": "Tabblie strips lossen direct op in water — geen afmeten, geen plastic, geen rommel. Gewoon schone was, vaat en oppervlakken, elke keer.",
+        "button_text": "Bekijk de strips",
+        "button_url": "/collections/all"
+      }
+    },
+    "tabblie_hiw2_main": {
+      "type": "tabblie-how-it-works-v2",
+      "blocks": {
+        "step_1": {
+          "type": "step",
+          "settings": {
+            "title": "Scheur",
+            "description": "Scheur één strip van de verpakking. Geen afmeten, geen rommel, geen plastic fles."
+          }
+        },
+        "step_2": {
+          "type": "step",
+          "settings": {
+            "title": "Gooi",
+            "description": "Gooi de strip in de wasmachine, vaatwasser of los op in water. Het lost volledig op."
+          }
+        },
+        "step_3": {
+          "type": "step",
+          "settings": {
+            "title": "Klaar. Echt waar.",
+            "description": "Schone was, stralende vaat, een schoner huis — zonder plastic afval en zonder gedoe. Zo simpel kan het zijn."
+          }
+        }
+      },
+      "block_order": [
+        "step_1",
+        "step_2",
+        "step_3"
+      ],
+      "settings": {
+        "eyebrow": "Zo werkt het",
+        "title": "Drie stappen naar een schoner huis."
+      }
+    },
+    "tabblie_hiw_main": {
+      "type": "tabblie-how-it-works",
+      "blocks": {
+        "step_tear": {
+          "type": "step",
+          "settings": {
+            "title": "Scheur",
+            "description": "Scheur één strip van de verpakking. Geen afmeten, geen rommel, geen plastic fles."
+          }
+        },
+        "step_drop": {
+          "type": "step",
+          "settings": {
+            "title": "Gooi",
+            "description": "Gooi de strip in water of direct in je machine. Het lost volledig op."
+          }
+        },
+        "step_done": {
+          "type": "step",
+          "settings": {
+            "title": "Klaar",
+            "description": "Schone kleding, vaat of oppervlakken — en nul plastic achtergelaten."
+          }
+        }
+      },
+      "block_order": [
+        "step_tear",
+        "step_drop",
+        "step_done"
+      ],
+      "disabled": true,
+      "settings": {
+        "eyebrow": "Zo werkt het",
+        "title": "Drie stappen naar een schoner huis."
+      }
+    },
+    "tabblie_guarantee_main": {
+      "type": "tabblie-guarantee",
+      "settings": {
+        "eyebrow": "ONZE GARANTIE",
+        "heading": "Probeer het 30 dagen.",
+        "heading_accent": "Risicovrij!",
+        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of op elk oppervlak. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
+        "button_text": "Bestel nu & bespaar",
+        "button_url": "",
+        "image_alt": "30 dagen proefwassen",
+        "badge_text": "30 dagen proef wassen"
+      }
+    },
+    "tabblie_co2_main": {
+      "type": "tabblie-carbon-offset",
+      "settings": {
+        "bg_color": "#f0f7ee",
+        "title": "Tabblie compenseert haar CO2-voetafdruk",
+        "text": "Wij compenseren de CO2-voetafdruk van onze volledige toeleveringsketen — van grondstof tot bezorging bij jou thuis."
+      }
+    },
+    "tabblie_testi_main": {
+      "type": "tabblie-testimonials",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Zes maanden geleden overgestapt van vloeibaar wasmiddel. Mijn was is net zo schoon en ik koop geen plastic flessen meer.",
+            "name": "Lisa B.",
+            "location": "Amsterdam, NL"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "De vaatwasstrips werken zelfs beter dan mijn oude tabs. Geen residu, geen plastic, en mijn glazen zijn echt schoon.",
+            "name": "Thomas V.",
+            "location": "Rotterdam, NL"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Ik was sceptisch — een strip die toiletten reinigt? Maar het werkt echt. Scheelt ook enorm veel ruimte onder de gootsteen.",
+            "name": "Sophie M.",
+            "location": "Antwerp, BE"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
+      "settings": {
+        "eyebrow": "Wat klanten zeggen",
+        "title": "Eindelijk milieuvriendelijk schoonmaken — zonder in te leveren op kwaliteit, looks of prijs."
+      }
+    },
+    "tabblie_founder_main": {
+      "type": "tabblie-founder",
+      "settings": {
+        "image_alt": "Tabblie oprichter",
+        "eyebrow": "ONS VERHAAL",
+        "title": "Een familiebedrijf met een missie",
+        "body": "Onze dochter keek op een dag naar onze schoonmaakkast en vroeg: \"Waarom zit dit allemaal in plastic?\" Eerlijk gezegd hadden we geen goed antwoord. Dus stopten we met uitleggen en begonnen we met bouwen.\n\nWant wees eerlijk — de meeste duurzame merken zijn om van in slaap te vallen. Saai groen design, fletse kleuren, belachelijke prijzen, en producten die het net niet redden. Alsof je straf krijgt voor het maken van een betere keuze.\n\nTabblie is anders. Wij geloven dat schoonmaken gewoon leuk mag zijn. Felle kleuren, producten die écht werken, en een prijs die niet voelt als een donatie. Nul plastic, nul rommel, nul excuses — maar wel honderd procent karakter.\n\nWij zijn niet de zoveelste groene club die je een slecht gevoel geeft. Wij bewijzen dat beter ook beter kan voelen.",
+        "button_text": "Meer over tabblie",
+        "button_url": ""
+      }
+    },
+    "tabblie_impact_main": {
+      "type": "tabblie-impact",
+      "settings": {
+        "eyebrow": "ONZE BELOFTE",
+        "heading": "Klimaatneutraal — van productie tot bezorging",
+        "description": "We compenseren onze volledige CO2-voetafdruk. Elke bestelling is klimaatneutraal — zonder dat jij er iets extra voor hoeft te doen.",
+        "button_text": "Meer over onze missie",
+        "button_url": ""
+      }
+    },
+    "tabblie_insta_main": {
+      "type": "tabblie-instagram",
+      "blocks": {
+        "post_1": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/10_125e9cc1-743d-41c2-aa28-618e06100d36.png",
+            "likes": "234",
+            "comments": "12"
+          }
+        },
+        "post_2": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/17.png",
+            "likes": "187",
+            "comments": "9"
+          }
+        },
+        "post_3": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/8.png",
+            "likes": "312",
+            "comments": "18"
+          }
+        },
+        "post_4": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/12.png",
+            "likes": "156",
+            "comments": "7"
+          }
+        },
+        "post_5": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/13.png",
+            "likes": "278",
+            "comments": "14"
+          }
+        },
+        "post_6": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/11.png",
+            "likes": "198",
+            "comments": "11"
+          }
+        },
+        "post_7": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/14.png",
+            "likes": "245",
+            "comments": "16"
+          }
+        },
+        "post_8": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/9.png",
+            "likes": "167",
+            "comments": "6"
+          }
+        },
+        "post_9": {
+          "type": "post",
+          "settings": {
+            "image": "shopify://shop_images/19.png",
+            "likes": "289",
+            "comments": "13"
+          }
+        }
+      },
+      "block_order": [
+        "post_1",
+        "post_2",
+        "post_3",
+        "post_4",
+        "post_5",
+        "post_6",
+        "post_7",
+        "post_8",
+        "post_9"
+      ],
+      "settings": {
+        "eyebrow": "WORD LID VAN DE CLUB",
+        "title": "@tabblie op Instagram",
+        "username": "tabblie",
+        "instagram_url": "https://www.instagram.com/tabblie/",
+        "posts_count": "42",
+        "followers_count": "1.2k",
+        "following_count": "86",
+        "bio": "Schoonmaken, opnieuw uitgevonden. Zonder plasticafval, plantaardig, voor het hele gezin.",
+        "bio_link_text": "tabblie.com",
+        "cta_text": "Volg ons op Instagram"
+      }
+    },
     "rich_text_PNctxc": {
       "type": "rich-text",
       "blocks": {
@@ -421,6 +829,7 @@
       "block_order": [
         "heading_YjRFiT"
       ],
+      "disabled": true,
       "name": "t:sections.rich-text.presets.name",
       "settings": {
         "container": "container",
@@ -430,7 +839,7 @@
         "color_border_bottom": "#e8e8e8",
         "enable_minus_mg_top": false,
         "minus_spacing_top": -100,
-        "rich_text_bg": "#FFFFFF",
+        "rich_text_bg": "#ffffff",
         "rich_text_bg_gradient": "",
         "enable_column": false,
         "content_align": "center",
@@ -440,8 +849,59 @@
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0
+      }
+    },
+    "tabblie_faq_main": {
+      "type": "tabblie-faq",
+      "blocks": {
+        "faq_1": {
+          "type": "faq",
+          "settings": {
+            "question": "Zijn jullie strips echt zonder plasticafval?",
+            "answer": "Ja! Onze strips worden verpakt in recyclebaar papier. Geen plastic fles, geen plastic verpakking, geen microplastics in de formule."
+          }
+        },
+        "faq_2": {
+          "type": "faq",
+          "settings": {
+            "question": "Werken de strips net zo goed als vloeibaar wasmiddel?",
+            "answer": "Absoluut. Onze strips bevatten dezelfde werkzame stoffen als premium wasmiddelen, maar dan in geconcentreerde vorm. Ze lossen volledig op in warm én koud water."
+          }
+        },
+        "faq_3": {
+          "type": "faq",
+          "settings": {
+            "question": "Zijn de ingrediënten veilig voor gevoelige huid?",
+            "answer": "Ja. Onze formule is vrij van parabenen, fosfaten, kleurstoffen en kunstmatige geurstoffen. Dermatologisch getest en geschikt voor de hele familie."
+          }
+        },
+        "faq_4": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe zit het met de verzending?",
+            "answer": "We verzenden gratis naar Nederland en België. Omdat onze strips zo compact en licht zijn, is de CO₂-uitstoot van verzending tot 90% lager dan bij traditionele schoonmaakmiddelen."
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "Is tabblie vegan en dierproefvrij?",
+            "answer": "100%. Geen dierlijke ingrediënten, geen dierproeven. Ooit."
+          }
+        }
       },
-      "disabled": true
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
+      "settings": {
+        "icon": "question",
+        "eyebrow": "VEELGESTELDE VRAGEN",
+        "title": "Alles wat je wilt weten"
+      }
     },
     "1632364695b0f88b4f": {
       "type": "instagram",
@@ -611,6 +1071,7 @@
         "instagram_d66Aez",
         "instagram_bzQEAT"
       ],
+      "disabled": true,
       "settings": {
         "container": "container",
         "padding_full_width": 0,
@@ -621,7 +1082,7 @@
         "scroll_time": "30",
         "enable_border_instagram": false,
         "instagram_border_color": "rgba(0,0,0,0)",
-        "instagram_bg": "#FFFFFF",
+        "instagram_bg": "#ffffff",
         "instagram_bg_gradient": "",
         "style_block_header": "style1",
         "mg_bottom_header": 15,
@@ -630,7 +1091,7 @@
         "font_weight_instagram_title": "400",
         "enable_border_title": false,
         "border_color_title": "#232323",
-        "color_title": "#1F1209",
+        "color_title": "#1f1209",
         "mg_bottom_title": 15,
         "fontsize_title": 20,
         "fontsize_title_mb": 20,
@@ -686,8 +1147,7 @@
         "mg_bottom_desktop": 70,
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 50
-      },
-      "disabled": true
+      }
     },
     "newsletter_with_banner_collapsible_LAJWdD": {
       "type": "newsletter-with-banner-collapsible",
@@ -703,6 +1163,7 @@
       "block_order": [
         "banner_m8dPTT"
       ],
+      "disabled": true,
       "custom_css": [
         ".newsletter-section-banner-collapsible .section-content-wrapper {padding-bottom: 0px;}",
         ".newsletter-section-banner-collapsible .newsletter-form__button {width: 56px; height: 56px; overflow: visible;}",
@@ -715,7 +1176,7 @@
       "settings": {
         "container": "fullwidth",
         "padding_full_width": 0,
-        "background": "#F8BFD6",
+        "background": "#f8bfd6",
         "background_gradient": "",
         "section_title": "Slimmer schoonmaken?",
         "section_title_font_size": 50,
@@ -723,7 +1184,7 @@
         "section_title_font_weight": "400",
         "section_title_text_transform": "none",
         "section_title_font_style": "normal",
-        "section_title_color": "#1F1209",
+        "section_title_color": "#1f1209",
         "mg_bottom_title": 12,
         "mg_bottom_title_mb": 12,
         "input_width": 450,
@@ -743,9 +1204,9 @@
         "button_text_transform": "capitalize",
         "button_font_weight": "600",
         "input_placeholder": "Je e-mailadres",
-        "input_placeholder_color": "rgba(31,18,9,0.45)",
+        "input_placeholder_color": "#1f120973",
         "input_background_color": "rgba(0,0,0,0)",
-        "input_border_color": "rgba(31,18,9,0.25)",
+        "input_border_color": "#1f120940",
         "form_gap": 15,
         "heading_color": "#000000",
         "heading_border_color": "#000000",
@@ -756,403 +1217,11 @@
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0
-      },
-      "disabled": true
-    },
-    "tabblie_hiw_main": {
-      "type": "tabblie-how-it-works",
-      "blocks": {
-        "step_tear": {
-          "type": "step",
-          "settings": {
-            "title": "Scheur",
-            "description": "Scheur één strip van de verpakking. Geen afmeten, geen rommel, geen plastic fles."
-          }
-        },
-        "step_drop": {
-          "type": "step",
-          "settings": {
-            "title": "Gooi",
-            "description": "Gooi de strip in water of direct in je machine. Het lost volledig op."
-          }
-        },
-        "step_done": {
-          "type": "step",
-          "settings": {
-            "title": "Klaar",
-            "description": "Schone kleding, vaat of oppervlakken — en nul plastic achtergelaten."
-          }
-        }
-      },
-      "block_order": [
-        "step_tear",
-        "step_drop",
-        "step_done"
-      ],
-      "settings": {
-        "eyebrow": "Zo werkt het",
-        "title": "Drie stappen naar een schoner huis."
-      },
-      "disabled": true
-    },
-    "tabblie_pf_main": {
-      "type": "tabblie-product-feature",
-      "blocks": {
-        "benefit_1": {
-          "type": "benefit",
-          "settings": {
-            "text": "Werkt in elke wasmachine of vaatwasser"
-          }
-        },
-        "benefit_2": {
-          "type": "benefit",
-          "settings": {
-            "text": "Lost op in warm en koud water"
-          }
-        },
-        "benefit_3": {
-          "type": "benefit",
-          "settings": {
-            "text": "Geen plastic flessen — nooit"
-          }
-        },
-        "benefit_4": {
-          "type": "benefit",
-          "settings": {
-            "text": "Veganistische formule, dierproefvrij gecertificeerd"
-          }
-        }
-      },
-      "block_order": [
-        "benefit_1",
-        "benefit_2",
-        "benefit_3",
-        "benefit_4"
-      ],
-      "settings": {
-        "eyebrow": "Waarom tabblie?",
-        "title": "Eén strip. Nul plastic.",
-        "description": "Tabblie strips lossen direct op in water — geen afmeten, geen plastic, geen rommel. Gewoon schone was, vaat en oppervlakken, elke keer.",
-        "button_text": "Bekijk de strips",
-        "button_url": "/collections/all",
-        "image_side": "left"
-      }
-    },
-    "tabblie_testi_main": {
-      "type": "tabblie-testimonials",
-      "blocks": {
-        "review_1": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "quote": "Zes maanden geleden overgestapt van vloeibaar wasmiddel. Mijn was is net zo schoon en ik koop geen plastic flessen meer.",
-            "name": "Lisa B.",
-            "location": "Amsterdam, NL"
-          }
-        },
-        "review_2": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "quote": "De vaatwasstrips werken zelfs beter dan mijn oude tabs. Geen residu, geen plastic, en mijn glazen zijn echt schoon.",
-            "name": "Thomas V.",
-            "location": "Rotterdam, NL"
-          }
-        },
-        "review_3": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "quote": "Ik was sceptisch — een strip die toiletten reinigt? Maar het werkt echt. Scheelt ook enorm veel ruimte onder de gootsteen.",
-            "name": "Sophie M.",
-            "location": "Antwerp, BE"
-          }
-        }
-      },
-      "block_order": [
-        "review_1",
-        "review_2",
-        "review_3"
-      ],
-      "settings": {
-        "eyebrow": "Wat klanten zeggen",
-        "title": "Eindelijk milieuvriendelijk schoonmaken — zonder in te leveren op kwaliteit, looks of prijs."
-      }
-    },
-    "tabblie_collection_hero_main": {
-      "type": "tabblie-collection-hero",
-      "blocks": {
-        "card_laundry": {
-          "type": "collection_card",
-          "settings": {
-            "label": "Wasstrips",
-            "url": "/collections/all"
-          }
-        },
-        "card_dishwasher": {
-          "type": "collection_card",
-          "settings": {
-            "label": "Vaatwasstrips",
-            "url": "/collections/all"
-          }
-        },
-        "card_toilet": {
-          "type": "collection_card",
-          "settings": {
-            "label": "Toiletstrips",
-            "url": "/collections/all"
-          }
-        },
-        "card_allpurpose": {
-          "type": "collection_card",
-          "settings": {
-            "label": "Nog even geheim...",
-            "url": "/collections/all",
-            "coming_soon": true
-          }
-        }
-      },
-      "block_order": [
-        "card_laundry",
-        "card_dishwasher",
-        "card_toilet",
-        "card_allpurpose"
-      ],
-      "settings": {
-        "badge_text": "Sluit je aan bij <strong>1.000+</strong> huishoudens die schoner schoonmaken",
-        "heading": "Schoonmaken,",
-        "heading_accent": "opnieuw uitgevonden.",
-        "subtext": "Geen plastic, geen onnodig afval, hetzelfde gemak — Tabblie, kind kan de was doen.",
-        "marquee_text": "Geen plasticafval | Verzending naar NL & BE | 100% vegan | Geen schadelijke chemicaliën | Super effectief | Niet-goed-geld-terug"
-      }
-    },
-    "tabblie_education_main": {
-      "type": "tabblie-education",
-      "blocks": {
-        "stat_1": {
-          "type": "stat",
-          "settings": {
-            "number": "80%",
-            "description": "van de schoonmaakmiddelen bevat onnodige chemicaliën"
-          }
-        },
-        "stat_2": {
-          "type": "stat",
-          "settings": {
-            "number": "12+",
-            "description": "plastic flessen per huishouden per jaar voor schoonmaak"
-          }
-        },
-        "stat_3": {
-          "type": "stat",
-          "settings": {
-            "number": "91%",
-            "description": "van al het plastic wordt niet gerecycled"
-          }
-        },
-        "stat_4": {
-          "type": "stat",
-          "settings": {
-            "number": "100%",
-            "description": "Biologisch afbreekbaar. Geen plasticafval.",
-            "is_positive": true
-          }
-        }
-      },
-      "block_order": [
-        "stat_1",
-        "stat_2",
-        "stat_3",
-        "stat_4"
-      ],
-      "settings": {
-        "eyebrow": "WIST JE DIT?",
-        "heading": "Wat grote merken",
-        "heading_accent": "niet vertellen"
-      }
-    },
-    "tabblie_guarantee_main": {
-      "type": "tabblie-guarantee",
-      "settings": {
-        "eyebrow": "ONZE GARANTIE",
-        "heading": "Probeer het 30 dagen.",
-        "heading_accent": "Risicovrij!",
-        "button_text": "Bestel nu & bespaar",
-        "badge_text": "30 dagen proef wassen"
-      }
-    },
-    "tabblie_founder_main": {
-      "type": "tabblie-founder",
-      "settings": {
-        "eyebrow": "ONS VERHAAL",
-        "title": "Een familiebedrijf met een missie",
-        "body": "Onze dochter keek op een dag naar onze schoonmaakkast en vroeg: \"Waarom zit dit allemaal in plastic?\" Eerlijk gezegd hadden we geen goed antwoord. Dus stopten we met uitleggen en begonnen we met bouwen.\n\nWant wees eerlijk — de meeste duurzame merken zijn om van in slaap te vallen. Saai groen design, fletse kleuren, belachelijke prijzen, en producten die het net niet redden. Alsof je straf krijgt voor het maken van een betere keuze.\n\nTabblie is anders. Wij geloven dat schoonmaken gewoon leuk mag zijn. Felle kleuren, producten die écht werken, en een prijs die niet voelt als een donatie. Nul plastic, nul rommel, nul excuses — maar wel honderd procent karakter.\n\nWij zijn niet de zoveelste groene club die je een slecht gevoel geeft. Wij bewijzen dat beter ook beter kan voelen.",
-        "button_text": "Meer over tabblie"
-      }
-    },
-    "tabblie_impact_main": {
-      "type": "tabblie-impact",
-      "settings": {
-        "eyebrow": "ONZE BELOFTE",
-        "heading": "Klimaatneutraal — van productie tot bezorging",
-        "description": "We compenseren onze volledige CO2-voetafdruk. Elke bestelling is klimaatneutraal — zonder dat jij er iets extra voor hoeft te doen.",
-        "button_text": "Meer over onze missie"
-      }
-    },
-    "tabblie_faq_main": {
-      "type": "tabblie-faq",
-      "blocks": {
-        "faq_1": {
-          "type": "faq",
-          "settings": {
-            "question": "Zijn jullie strips echt zonder plasticafval?",
-            "answer": "Ja! Onze strips worden verpakt in recyclebaar papier. Geen plastic fles, geen plastic verpakking, geen microplastics in de formule."
-          }
-        },
-        "faq_2": {
-          "type": "faq",
-          "settings": {
-            "question": "Werken de strips net zo goed als vloeibaar wasmiddel?",
-            "answer": "Absoluut. Onze strips bevatten dezelfde werkzame stoffen als premium wasmiddelen, maar dan in geconcentreerde vorm. Ze lossen volledig op in warm én koud water."
-          }
-        },
-        "faq_3": {
-          "type": "faq",
-          "settings": {
-            "question": "Zijn de ingrediënten veilig voor gevoelige huid?",
-            "answer": "Ja. Onze formule is vrij van parabenen, fosfaten, kleurstoffen en kunstmatige geurstoffen. Dermatologisch getest en geschikt voor de hele familie."
-          }
-        },
-        "faq_4": {
-          "type": "faq",
-          "settings": {
-            "question": "Hoe zit het met de verzending?",
-            "answer": "We verzenden gratis naar Nederland en België. Omdat onze strips zo compact en licht zijn, is de CO₂-uitstoot van verzending tot 90% lager dan bij traditionele schoonmaakmiddelen."
-          }
-        },
-        "faq_5": {
-          "type": "faq",
-          "settings": {
-            "question": "Is tabblie vegan en dierproefvrij?",
-            "answer": "100%. Geen dierlijke ingrediënten, geen dierproeven. Ooit."
-          }
-        }
-      },
-      "block_order": [
-        "faq_1",
-        "faq_2",
-        "faq_3",
-        "faq_4",
-        "faq_5"
-      ],
-      "settings": {
-        "eyebrow": "VEELGESTELDE VRAGEN",
-        "heading": "Alles wat je wilt weten",
-        "icon": "question"
-      }
-    },
-    "tabblie_insta_main": {
-      "type": "tabblie-instagram",
-      "blocks": {
-        "post_1": {
-          "type": "post",
-          "settings": {
-            "likes": "234",
-            "comments": "12",
-            "image": "shopify://shop_images/10_125e9cc1-743d-41c2-aa28-618e06100d36.png"
-          }
-        },
-        "post_2": {
-          "type": "post",
-          "settings": {
-            "likes": "187",
-            "comments": "9",
-            "image": "shopify://shop_images/17.png"
-          }
-        },
-        "post_3": {
-          "type": "post",
-          "settings": {
-            "likes": "312",
-            "comments": "18",
-            "image": "shopify://shop_images/8.png"
-          }
-        },
-        "post_4": {
-          "type": "post",
-          "settings": {
-            "likes": "156",
-            "comments": "7",
-            "image": "shopify://shop_images/12.png"
-          }
-        },
-        "post_5": {
-          "type": "post",
-          "settings": {
-            "likes": "278",
-            "comments": "14",
-            "image": "shopify://shop_images/13.png"
-          }
-        },
-        "post_6": {
-          "type": "post",
-          "settings": {
-            "likes": "198",
-            "comments": "11",
-            "image": "shopify://shop_images/11.png"
-          }
-        },
-        "post_7": {
-          "type": "post",
-          "settings": {
-            "likes": "245",
-            "comments": "16",
-            "image": "shopify://shop_images/14.png"
-          }
-        },
-        "post_8": {
-          "type": "post",
-          "settings": {
-            "likes": "167",
-            "comments": "6",
-            "image": "shopify://shop_images/9.png"
-          }
-        },
-        "post_9": {
-          "type": "post",
-          "settings": {
-            "likes": "289",
-            "comments": "13",
-            "image": "shopify://shop_images/19.png"
-          }
-        }
-      },
-      "block_order": [
-        "post_1",
-        "post_2",
-        "post_3",
-        "post_4",
-        "post_5",
-        "post_6",
-        "post_7",
-        "post_8",
-        "post_9"
-      ],
-      "settings": {
-        "eyebrow": "WORD LID VAN DE CLUB",
-        "title": "@tabblie op Instagram",
-        "username": "tabblie",
-        "instagram_url": "https://www.instagram.com/tabblie/",
-        "posts_count": "42",
-        "followers_count": "1.2k",
-        "following_count": "86",
-        "cta_text": "Volg ons op Instagram",
-        "bio": "Schoonmaken, opnieuw uitgevonden. Zonder plasticafval, plantaardig, voor het hele gezin.",
-        "bio_link_text": "tabblie.com"
       }
     },
     "tabblie_newsletter_main": {
       "type": "tabblie-newsletter",
+      "disabled": true,
       "settings": {
         "badge_text": "Exclusieve aanbieding",
         "title": "Krijg",
@@ -1161,50 +1230,6 @@
         "placeholder": "Je e-mailadres",
         "button_text": "Ik wil 15% korting",
         "terms": "Geen spam, alleen schone deals. Je kunt je altijd uitschrijven."
-      },
-      "disabled": true
-    },
-    "tabblie_hiw2_main": {
-      "type": "tabblie-how-it-works-v2",
-      "blocks": {
-        "step_1": {
-          "type": "step",
-          "settings": {
-            "title": "Scheur",
-            "description": "Scheur één strip van de verpakking. Geen afmeten, geen rommel, geen plastic fles."
-          }
-        },
-        "step_2": {
-          "type": "step",
-          "settings": {
-            "title": "Gooi",
-            "description": "Gooi de strip in de wasmachine, vaatwasser of los op in water. Het lost volledig op."
-          }
-        },
-        "step_3": {
-          "type": "step",
-          "settings": {
-            "title": "Klaar. Echt waar.",
-            "description": "Schone was, stralende vaat, een schoner huis — zonder plastic afval en zonder gedoe. Zo simpel kan het zijn."
-          }
-        }
-      },
-      "block_order": [
-        "step_1",
-        "step_2",
-        "step_3"
-      ],
-      "settings": {
-        "eyebrow": "Zo werkt het",
-        "title": "Drie stappen naar een schoner huis."
-      }
-    },
-    "tabblie_co2_main": {
-      "type": "tabblie-carbon-offset",
-      "settings": {
-        "bg_color": "#F0F7EE",
-        "title": "Tabblie compenseert haar CO2-voetafdruk",
-        "text": "Wij compenseren de CO2-voetafdruk van onze volledige toeleveringsketen — van grondstof tot bezorging bij jou thuis."
       }
     }
   },
