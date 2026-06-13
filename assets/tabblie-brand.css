@@ -836,37 +836,81 @@ select:focus {
    FOOTER NEWSLETTER — Gradient splash with "15%" watermark
    ============================================================ */
 
-.footer-block__newsletter {
-  background: linear-gradient(135deg, #E8622A 0%, #F5934A 100%) !important;
-  border-radius: 20px !important;
-  padding: 32px 28px !important;
-  position: relative !important;
-  overflow: hidden !important;
+/* Let the "15%" sticker spill out of the card without being clipped —
+   the footer's top container is overflow:hidden by default */
+.footer__content-top,
+.footer__content-top .container {
+  overflow: visible !important;
 }
 
+/* Warm cream card with a bold black border + hard "pop" offset shadow —
+   funky and pops hard off the orange footer. Tilted "15%" sticker badge
+   and soap bubbles for the playful touch */
+.footer-block__newsletter {
+  background: #FDF6EE !important;
+  border: 2px solid #1F1209 !important;
+  border-radius: 30px 16px 30px 16px !important;
+  padding: 30px 30px 32px !important;
+  position: relative !important;
+  overflow: visible !important;
+  box-shadow: 8px 8px 0 rgba(31, 18, 9, 0.9) !important;
+  /* breathing room so the shadow + badge don't crowd the next footer column */
+  margin-right: 40px !important;
+}
+
+/* Tilted "15%" sticker badge, slapped on the top-right corner */
 .footer-block__newsletter::before {
   content: '15%' !important;
   position: absolute !important;
-  top: 50% !important;
-  right: -8% !important;
-  transform: translateY(-50%) rotate(-10deg) !important;
+  top: -30px !important;
+  right: 8px !important;
+  width: 78px !important;
+  height: 78px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(160deg, #F0824E 0%, #E8622A 65%) !important;
+  color: #ffffff !important;
   font-family: var(--font-heading-family) !important;
-  font-size: 8rem !important;
+  font-size: 1.45rem !important;
   font-weight: 800 !important;
-  color: rgba(255, 255, 255, 0.1) !important;
+  letter-spacing: -0.02em !important;
+  /* organic blob (like the soap bubbles) instead of a sterile circle */
+  border-radius: 46% 54% 60% 40% / 56% 42% 58% 44% !important;
+  border: 2.5px solid #1F1209 !important;
+  transform: rotate(-9deg) !important;
+  /* cream halo separates the badge from the orange footer + hard pop shadow */
+  box-shadow: 0 0 0 5px #FDF6EE, 4px 5px 0 rgba(31, 18, 9, 0.9) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+/* Soap-bubble cluster spilling off the bottom-left corner */
+.footer-block__newsletter::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -22px !important;
+  left: -18px !important;
+  width: 76px !important;
+  height: 76px !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='40' cy='58' r='30' fill='%235BB8A0' opacity='0.5'/%3E%3Ccircle cx='40' cy='58' r='30' fill='none' stroke='%235BB8A0' stroke-width='3'/%3E%3Cpath d='M22 52 A 20 20 0 0 1 32 39' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' opacity='0.8'/%3E%3Ccircle cx='75' cy='30' r='12' fill='%23F5C842' opacity='0.6'/%3E%3Ccircle cx='75' cy='30' r='12' fill='none' stroke='%23F5C842' stroke-width='2.5'/%3E%3Ccircle cx='82' cy='64' r='6' fill='%235BB8A0' opacity='0.65'/%3E%3C/svg%3E") center / contain no-repeat !important;
+  transform: rotate(-8deg) !important;
   pointer-events: none !important;
 }
 
 .footer-block__newsletter .footer-block__heading {
-  color: #ffffff !important;
-  font-size: 20px !important;
+  color: #1F1209 !important;
+  font-family: var(--font-heading-family) !important;
+  font-size: 22px !important;
   font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  max-width: 80% !important;
 }
 
 .footer-block__newsletter .footer-block__subheading,
 .footer-block__newsletter .rte,
 .footer-block__newsletter .rte p {
-  color: rgba(255, 255, 255, 0.85) !important;
+  color: rgba(31, 18, 9, 0.62) !important;
   width: auto !important;
   max-width: 100% !important;
 }
@@ -874,13 +918,12 @@ select:focus {
 .footer-block__newsletter .newsletter-form__field-wrapper {
   display: flex !important;
   align-items: stretch !important;
-  background: rgba(255, 255, 255, 0.2) !important;
-  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+  background: #ffffff !important;
+  border: 1.5px solid rgba(31, 18, 9, 0.15) !important;
   border-radius: 100px !important;
-  padding: 4px 4px 4px 20px !important;
+  padding: 4px 4px 4px 18px !important;
   gap: 0 !important;
   max-width: 100% !important;
-  backdrop-filter: blur(4px) !important;
 }
 
 .footer-block__newsletter .newsletter-form__field-wrapper .field {
@@ -895,14 +938,14 @@ select:focus {
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
-  color: #ffffff !important;
+  color: #1F1209 !important;
   font-family: var(--text-font-family) !important;
   font-size: 14px !important;
   padding: 10px 0 !important;
 }
 
 .footer-block__newsletter input[type="email"]::placeholder {
-  color: rgba(255, 255, 255, 0.55) !important;
+  color: rgba(31, 18, 9, 0.4) !important;
 }
 
 .footer-block__newsletter input[type="email"]:focus {
@@ -917,26 +960,53 @@ select:focus {
   min-width: unset !important;
   max-width: none !important;
   border-radius: 100px !important;
-  background: #ffffff !important;
-  background-color: #ffffff !important;
+  background: #E8622A !important;
+  background-color: #E8622A !important;
   border: none !important;
-  color: #E8622A !important;
+  color: #ffffff !important;
   font-size: 13px !important;
   font-weight: 700 !important;
   font-family: var(--text-font-family) !important;
-  padding: 10px 20px !important;
+  padding: 11px 22px !important;
   cursor: pointer !important;
   transition: background 0.2s, transform 0.2s !important;
 }
 
 .footer-block__newsletter .newsletter-form__button:hover {
-  background: #FDF6EE !important;
-  background-color: #FDF6EE !important;
-  transform: scale(1.03) !important;
+  background: #D4531D !important;
+  background-color: #D4531D !important;
+  transform: scale(1.04) rotate(-2deg) !important;
 }
 
 .footer-block__newsletter .newsletter-form__button svg {
   display: none !important;
+}
+
+@media (max-width: 749px) {
+  .footer-block__newsletter {
+    box-shadow: 6px 6px 0 rgba(31, 18, 9, 0.9) !important;
+    /* no column beside it on mobile — only leave room for the offset shadow */
+    margin-right: 12px !important;
+  }
+
+  .footer-block__newsletter::before {
+    width: 62px !important;
+    height: 62px !important;
+    font-size: 1.1rem !important;
+    top: -22px !important;
+    right: 6px !important;
+  }
+
+  .footer-block__newsletter::after {
+    width: 58px !important;
+    height: 58px !important;
+    bottom: -16px !important;
+    left: -10px !important;
+  }
+
+  .footer-block__newsletter .footer-block__heading {
+    max-width: 72% !important;
+  }
 }
 
 /* ============================================================
