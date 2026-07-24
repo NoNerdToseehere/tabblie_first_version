@@ -42,7 +42,7 @@ Update this file whenever any of these facts change.
 ## Theme
 
 - Base theme: Halo (Online Store 2.0), files at repo root so the GitHub integration detects them.
-- Dev preview: `shopify theme dev --store 7b9f5e-cc.myshopify.com`
+- **Preview-before-push workflow:** edit locally → `shopify theme dev --store 7b9f5e-cc.myshopify.com` → review at http://127.0.0.1:9292 (hot-reloads on save; also prints a shareable `?preview_theme_id=` link for phone testing) → only commit & push once approved. Pushing = deploying to the live theme, so never push unreviewed visual work.
 - Pull a specific theme: `shopify theme list --store 7b9f5e-cc.myshopify.com` to get IDs, then `shopify theme pull --store 7b9f5e-cc.myshopify.com --theme <ID>`
 - CLI auth: device-code login expires in minutes — run `shopify auth login` in a terminal you're watching.
 
