@@ -34,8 +34,10 @@ Update this file whenever any of these facts change.
 ## Shopify ↔ GitHub Integration
 
 - The theme named **`tabblie_first_version/main`** in the Shopify admin is connected to this repo via Shopify's GitHub integration — pushes to `main` auto-deploy to that theme, and edits made in the Shopify theme editor on that theme are auto-committed back to `main` (commits titled "Update from Shopify for theme tabblie_first_version/main").
-- **Duplicating a theme in the Shopify admin breaks this link** — the copy is a plain theme with no GitHub connection. Changes made on a copy exist only in Shopify.
-- ⚠️ **Current situation (2026-07-24, unresolved):** the live/published theme is a *copy* made in the admin with manual edits — it is NOT GitHub-connected. Plan: `shopify theme pull` from the live copy into this repo, review + commit the diff, then republish the GitHub-connected theme to restore sync.
+- **Duplicating a theme in the Shopify admin breaks this link** — the copy is a plain theme with no GitHub connection. Changes made on a copy exist only in Shopify. If it happens again: `shopify theme pull` from the copy, commit, push, wait for the integration to deploy, then `shopify theme publish` the connected theme.
+- ✅ **Resolved 2026-07-24:** editor edits made on a disconnected copy were pulled into git (commit `c75c3c9`) and the connected theme was republished. Live theme = `tabblie_first_version/main` (#201232744797) again.
+- The old copy "Copy of tabblie_first_version/main" (#206425522525) still exists unpublished as a backup — safe to delete once the live site is confirmed OK. **Make all future edits on the connected theme, not on copies.**
+- **Storefront is password-protected** (pre-launch) — you can't verify content via curl/public URL; use the admin preview or theme editor links.
 
 ## Theme
 
