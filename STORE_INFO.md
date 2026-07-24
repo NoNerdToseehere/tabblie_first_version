@@ -46,6 +46,24 @@ Update this file whenever any of these facts change.
 - Pull a specific theme: `shopify theme list --store 7b9f5e-cc.myshopify.com` to get IDs, then `shopify theme pull --store 7b9f5e-cc.myshopify.com --theme <ID>`
 - CLI auth: device-code login expires in minutes — run `shopify auth login` in a terminal you're watching.
 
+## Optimization Mandate — applies to EVERY change
+
+We optimize everything, always — no exceptions:
+
+1. **SEO** — correct heading hierarchy (one `h1` per page), meta titles/descriptions, descriptive alt text, structured data (JSON-LD), descriptive anchor text. Full rules → `CLAUDE.md` § SEO.
+2. **Speed** — Core Web Vitals green on mobile: no render-blocking resources, lazy-load below-the-fold images, Shopify image CDN with `image_url`, explicit dimensions against layout shift. Full rules → `CLAUDE.md` § Performance.
+3. **Conversion** — CTA above the fold, trust signals near buy decisions, low friction to checkout, product always visible. Full rules → `CLAUDE.md` § Conversion.
+
+Every new section, page, or copy change gets checked against all three before it ships.
+
+**ALWAYS fully responsive — no exceptions.** Everything must look and work perfectly on every device and screen size: phones (375px/390px), tablets/iPad (768px/1024px), laptops (1280px) and wide desktops (1440px+). Mobile-first CSS, no horizontal scroll anywhere, touch targets ≥ 44px. A change that only works on desktop is a bug, not a finished task — verify at least 390px + desktop (Playwright screenshots against `shopify theme dev`) before committing.
+
+**File naming:** always use SEO-friendly, descriptive, structured file names — lowercase kebab-case that says what the file is (`tabblie-wasstrips-doosje-hero.jpg`, not `IMG_4521.jpg` or `Screenshot 2026-...png`). Applies to images, assets, snippets, and section files alike.
+
+**Cleanup:** never leave unnecessary files behind. Temporary artifacts (screenshots, test scripts, scratch exports, one-off conversions) get deleted as soon as they've served their purpose — in the repo *and* in temp locations. If it's not used by the theme or the docs, it goes.
+
+**Always git commit & push:** git is the deploy pipeline — the GitHub integration only puts committed, pushed work on the live theme. Never end a work session with finished changes sitting uncommitted; commit and push as soon as a change is verified. Unpushed = not live.
+
 ## Related docs
 
 - Working instructions & brand rules → `CLAUDE.md`

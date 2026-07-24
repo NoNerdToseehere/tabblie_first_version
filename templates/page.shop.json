@@ -20,24 +20,30 @@
         "card_1": {
           "type": "product_card",
           "settings": {
+            "product": "tabblie-laundry",
             "name": "Wasstrips",
             "description": "Plantaardig wasmiddel, wasverzachter en vlekverwijderaar in één strip. Geschikt voor alle wasmachines en temperaturen.",
+            "image": "shopify://shop_images/Tabblie-34.jpg",
             "bg_color": "#FDEEE6"
           }
         },
         "card_2": {
           "type": "product_card",
           "settings": {
+            "product": "tabblie-dishwasher",
             "name": "Vaatwasstrips",
             "description": "Plantaardige vaatwasstrips zonder schadelijke chemicaliën. Laat je vaat stralend schoon achter, zonder plastic fles.",
+            "image": "shopify://shop_images/Tabblie-38.jpg",
             "bg_color": "#FDF5DD"
           }
         },
         "card_3": {
           "type": "product_card",
           "settings": {
+            "product": "tabblie-toilet",
             "name": "Toiletstrips",
             "description": "Krachtige reiniging voor je toilet, volledig biologisch afbreekbaar. Gooi een strip in de pot en laat het zijn werk doen.",
+            "image": "shopify://shop_images/Tabblie-44.jpg",
             "bg_color": "#E2F2ED"
           }
         },
@@ -67,8 +73,11 @@
         "eyebrow": "ONZE GARANTIE",
         "heading": "Probeer het 30 dagen.",
         "heading_accent": "Risicovrij!",
-        "body": "<p>Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p>",
-        "button_text": "Bestel nu",
+        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
+        "button_text": "Bestel nu & bespaar",
+        "button_url": "",
+        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
+        "image_alt": "30 dagen proefwassen",
         "badge_text": "30 dagen proef wassen"
       }
     },

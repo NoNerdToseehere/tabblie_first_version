@@ -100,7 +100,7 @@
           "type": "faq",
           "settings": {
             "question": "Hoe snel wordt mijn bestelling geleverd?",
-            "answer": "Bestellingen geplaatst voor 23:59 uur worden de volgende werkdag bezorgd. In het weekend geplaatste bestellingen worden op maandag verzonden."
+            "answer": "Bestel je op een werkdag vóór 16:00 uur? Dan versturen we je bestelling in de regel nog dezelfde dag. Na verzending wordt je pakket meestal binnen 1 tot 2 werkdagen bezorgd in Nederland en België — en omdat het doosje plat en licht is, past het gewoon door de brievenbus."
           }
         },
         "q3": {
@@ -121,7 +121,7 @@
           "type": "faq",
           "settings": {
             "question": "Welke betaalmethoden accepteren jullie?",
-            "answer": "We accepteren iDEAL, Visa, Mastercard, Apple Pay, Klarna (achteraf betalen) en PayPal."
+            "answer": "We accepteren onder andere iDEAL, Wero, Visa, Mastercard, Apple Pay, Google Pay, Klarna (achteraf betalen) en PayPal. Het volledige actuele overzicht zie je tijdens het afrekenen."
           }
         },
         "q6": {
@@ -161,7 +161,7 @@
           "type": "faq",
           "settings": {
             "question": "Wat als ik niet tevreden ben?",
-            "answer": "Je kunt je bestelling binnen 30 dagen retourneren voor een volledige terugbetaling. Neem contact met ons op via hello@tabblie.com met je bestelnummer."
+            "answer": "Je kunt je bestelling binnen 30 dagen retourneren voor een volledige terugbetaling. Neem contact met ons op via support@tabblie.com met je bestelnummer."
           }
         },
         "q2": {
@@ -175,21 +175,21 @@
           "type": "faq",
           "settings": {
             "question": "Hoe start ik een retour?",
-            "answer": "Stuur een e-mail naar hello@tabblie.com met je bestelnummer, reden van retour en bevestiging dat het product ongeopend is. Je ontvangt binnen 2 werkdagen retourinstructies."
+            "answer": "Stuur een e-mail naar support@tabblie.com met je bestelnummer, reden van retour en bevestiging dat het product ongeopend is. Je ontvangt binnen 2 werkdagen retourinstructies."
           }
         },
         "q4": {
           "type": "faq",
           "settings": {
             "question": "Hoe lang duurt het voordat ik mijn geld terugkrijg?",
-            "answer": "Na ontvangst en controle van je retour wordt je bedrag binnen 7-10 werkdagen teruggestort. Je bank kan 1-5 extra werkdagen nodig hebben."
+            "answer": "Na ontvangst en controle van je retour storten we je bedrag zo snel mogelijk terug, uiterlijk binnen 14 dagen — via hetzelfde betaalmiddel waarmee je hebt betaald. Je bank kan nog enkele dagen nodig hebben om het bij te schrijven."
           }
         },
         "q5": {
           "type": "faq",
           "settings": {
             "question": "Wat als mijn product beschadigd aankomt?",
-            "answer": "Neem binnen 48 uur contact met ons op via hello@tabblie.com met foto's van de beschadiging. We sturen gratis een vervanging of geven volledige terugbetaling — zonder dat je het product hoeft terug te sturen."
+            "answer": "Neem binnen 48 uur contact met ons op via support@tabblie.com met foto's van de beschadiging. We sturen gratis een vervanging of geven volledige terugbetaling — zonder dat je het product hoeft terug te sturen."
           }
         },
         "q6": {
@@ -237,12 +237,52 @@
             "question": "Waarom strips in plaats van flessen?",
             "answer": "Strips zijn geconcentreerd, licht en zonder plasticafval. Ze werken net zo goed maar zonder de plastic fles en onnodige toevoegingen. De CO2-uitstoot bij verzending is tot 90% lager."
           }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoeveel plastic bespaar ik met Tabblie?",
+            "answer": "Meer dan je denkt. Eén doosje wasstrips doet 64 wasbeurten — daar heb je anders zo'n 2 à 3 flessen wasmiddel voor nodig. Was je gemiddeld een paar keer per week? Dan scheelt dat al gauw een stuk of tien lege flessen per jaar. En dan tellen we de vaat en het toilet nog niet eens mee. Eén plat, plasticvrij doosje, in plaats van een rij flessen onder het aanrecht."
+          }
+        },
+        "q5": {
+          "type": "faq",
+          "settings": {
+            "question": "Waarom zijn strips beter dan een fles wasmiddel?",
+            "answer": "Een fles vloeibaar wasmiddel bestaat voor 80 tot 90% uit water. Dat water wordt geproduceerd, in plastic gegoten en de halve wereld over gereden — terwijl je het thuis zo uit de kraan haalt. Onze strips laten dat water gewoon weg. Wat overblijft is supergeconcentreerd, vederlicht en plasticvrij. Minder meesjouwen, evenveel schoon."
+          }
+        },
+        "q6": {
+          "type": "faq",
+          "settings": {
+            "question": "Is het niet zonde dat ik niet zelf kan doseren?",
+            "answer": "Juist niet — dat is een voordeel. De meeste mensen gebruiken twee tot vier keer méér wasmiddel dan nodig, met die onduidelijke doseerdop. Eén Tabblie-strip is precies één wasbeurt: nooit te veel, nooit te weinig. Beter voor je was, je portemonnee én het water waar het in terechtkomt."
+          }
+        },
+        "q7": {
+          "type": "faq",
+          "settings": {
+            "question": "Zijn de strips veilig voor het milieu nadat ze door de afvoer gaan?",
+            "answer": "Onze strips zijn plantaardig en lossen volledig op, zonder verborgen plastic zoals PVA — wij gebruiken een drager op basis van zeewier. Wat jij wegspoelt, is dus geen oplosbaar plastic maar plantaardige ingrediënten. Schoon je huis uit, schoon het water in."
+          }
+        },
+        "q8": {
+          "type": "faq",
+          "settings": {
+            "question": "Waarom maken jullie geen grote groene beloftes?",
+            "answer": "Omdat we liever gewoon laten zien wat we doen. Geen vage labels of mooie praatjes, maar concrete dingen: plasticvrije verpakking, geen meegesleept water, een drager op basis van zeewier en strips die door de brievenbus passen. Wij geloven meer in eerlijk doen dan in groot beloven."
+          }
         }
       },
       "block_order": [
         "q1",
         "q2",
-        "q3"
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8"
       ],
       "settings": {
         "icon": "globe",
@@ -255,7 +295,7 @@
       "settings": {
         "eyebrow": "",
         "heading": "Staat je vraag er niet tussen?",
-        "description": "Mail ons op hello@tabblie.com — we helpen je binnen 24 uur op werkdagen!",
+        "description": "Mail ons op support@tabblie.com — we helpen je binnen 24 uur op werkdagen!",
         "button_text": "Neem contact op",
         "button_url": ""
       }

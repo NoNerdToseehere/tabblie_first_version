@@ -38,7 +38,7 @@
           "type": "faq",
           "settings": {
             "question": "Hoe snel wordt mijn bestelling geleverd?",
-            "answer": "Bestellingen geplaatst voor 23:59 uur worden de volgende werkdag bezorgd. In het weekend geplaatste bestellingen worden op maandag verzonden."
+            "answer": "Bestel je op een werkdag vóór 16:00 uur? Dan versturen we je bestelling in de regel nog dezelfde dag. Na verzending wordt je pakket meestal binnen 1 tot 2 werkdagen bezorgd in Nederland en België — en omdat het doosje plat en licht is, past het gewoon door de brievenbus. Je hoeft er dus niet voor thuis te blijven."
           }
         },
         "s3": {
@@ -66,14 +66,14 @@
           "type": "faq",
           "settings": {
             "question": "Hoe retourneer ik een product?",
-            "answer": "Stuur ons een bericht via de contactpagina met je bestelnummer. We sturen je een retourlabel en zodra we het pakket ontvangen, wordt je bedrag binnen 5 werkdagen teruggestort."
+            "answer": "Stuur een e-mail naar support@tabblie.com met je bestelnummer. Je ontvangt van ons retourinstructies. Zodra we je retour hebben ontvangen en gecontroleerd, storten we je bedrag zo snel mogelijk terug — uiterlijk binnen 14 dagen, via hetzelfde betaalmiddel waarmee je hebt betaald."
           }
         },
         "s7": {
           "type": "faq",
           "settings": {
             "question": "Welke betaalmethoden accepteren jullie?",
-            "answer": "We accepteren iDEAL, Visa, Mastercard, Apple Pay, Klarna (achteraf betalen) en PayPal."
+            "answer": "We accepteren onder andere iDEAL, Wero, Visa, Mastercard, Apple Pay, Google Pay, Klarna (achteraf betalen) en PayPal. Het volledige actuele overzicht zie je tijdens het afrekenen."
           }
         },
         "s8": {
@@ -104,8 +104,11 @@
         "eyebrow": "ONZE GARANTIE",
         "heading": "Probeer het 30 dagen.",
         "heading_accent": "Risicovrij!",
-        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p>",
-        "button_text": "Bestel nu",
+        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
+        "button_text": "Bestel nu & bespaar",
+        "button_url": "",
+        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
+        "image_alt": "30 dagen proefwassen",
         "badge_text": "30 dagen proef wassen"
       }
     }

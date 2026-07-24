@@ -10,9 +10,9 @@
       "settings": {
         "bg_color": "#FDF6EE",
         "eyebrow": "DUURZAAMHEID",
-        "heading": "Klimaatneutraal,",
-        "heading_accent": "zonder compromis.",
-        "subtext": "Bij Tabblie geloven we dat schoonmaken niet ten koste hoeft te gaan van het milieu. Daarom compenseren we onze volledige CO2-voetafdruk en werken we elke dag aan producten die de planeet minder belasten."
+        "heading": "Schoon huis,",
+        "heading_accent": "schoner geweten.",
+        "subtext": "Bij Tabblie geloven we dat schoonmaken niet ten koste hoeft te gaan van het milieu. Daarom maakten we het zo simpel mogelijk: minder plastic, minder water, minder gesleep. Geen grote beloftes — gewoon concrete keuzes."
       }
     },
     "stats": {
@@ -21,22 +21,22 @@
         "stat_1": {
           "type": "stat",
           "settings": {
-            "number": "100%",
-            "label": "CO2-voetafdruk gecompenseerd"
+            "number": "0",
+            "label": "plastic flessen per bestelling"
           }
         },
         "stat_2": {
           "type": "stat",
           "settings": {
-            "number": "0",
-            "label": "plasticafval per bestelling"
+            "number": "100%",
+            "label": "plasticvrije, papieren verpakking"
           }
         },
         "stat_3": {
           "type": "stat",
           "settings": {
-            "number": "100%",
-            "label": "biologisch afbreekbare formule"
+            "number": "1 strip",
+            "label": "precies één dosis, nooit te veel"
           }
         }
       },
@@ -52,100 +52,17 @@
       "settings": {
         "eyebrow": "WAAROM DIT BELANGRIJK IS",
         "title": "De impact van schoonmaakmiddelen",
-        "body": "Elk jaar worden er miljoenen plastic flessen schoonmaakmiddel verkocht — gevuld met water, synthetische chemicaliën en verpakt in plastic dat honderden jaren nodig heeft om af te breken. Het transport van al die zware flessen stoot enorme hoeveelheden CO2 uit.\n\nTabblie strips zijn geconcentreerd, licht en verpakt in recyclebaar papier. Dat betekent minder transport, minder uitstoot, en geen plasticafval. Maar we stoppen daar niet — we compenseren ook de CO2 die wij wél uitstoten, van productie tot bezorging.",
+        "body": "Elk jaar worden er miljoenen plastic flessen schoonmaakmiddel verkocht — voor een groot deel gevuld met water. Een fles vloeibaar wasmiddel bestaat al gauw voor 80 tot 90% uit water, dat geproduceerd, in plastic gegoten en de halve wereld over gereden wordt. Terwijl je dat water thuis zo uit de kraan haalt.\n\nTabblie strips laten dat water gewoon weg. Wat overblijft is supergeconcentreerd, licht en verpakt in papier in plaats van plastic. Minder gewicht, minder verpakking, minder gedoe. Daarnaast past het zo door de brievenbus!",
         "button_text": "Bekijk onze producten"
-      }
-    },
-    "narrative": {
-      "type": "tabblie-narrative-split",
-      "blocks": {
-        "s1": {
-          "type": "story",
-          "settings": {
-            "label": "KLIMAATNEUTRAAL",
-            "title": "Onze volledige keten is CO2-gecompenseerd",
-            "body": "<p>Van de grondstoffen tot de bezorging bij jou thuis: we berekenen de CO2-uitstoot van elke stap en compenseren deze via gecertificeerde klimaatprojecten. Denk aan herbebossing, schone energie en methaan-reductie.</p>"
-          }
-        },
-        "s2": {
-          "type": "story",
-          "settings": {
-            "label": "GEEN PLASTICAFVAL",
-            "title": "Elke strip vervangt een plastic fles",
-            "body": "<p>Onze strips worden verpakt in recyclebaar papier. Geen plastic flessen, geen plastic verpakking, geen microplastics in de formule. Alles is biologisch afbreekbaar — er blijft simpelweg niks achter.</p>"
-          }
-        },
-        "s3": {
-          "type": "story",
-          "settings": {
-            "label": "LICHT & COMPACT",
-            "title": "90% minder CO2 bij transport",
-            "body": "<p>Een traditionele fles wasmiddel weegt meer dan 1 kilo. Onze strips wegen 45 gram. Dat betekent minder vrachtwagens, minder brandstof en tot 90% minder transportuitstoot per wasbeurt.</p>"
-          }
-        },
-        "s4": {
-          "type": "story",
-          "settings": {
-            "label": "EERLIJKE FORMULE",
-            "title": "Plantaardig, zonder schadelijke stoffen",
-            "body": "<p>Geen parabenen, fosfaten, kleurstoffen of optische witmakers. Onze formule is op plantbasis, dermatologisch getest en veilig voor het hele gezin — inclusief baby's en gevoelige huid.</p>"
-          }
-        }
-      },
-      "block_order": ["s1", "s2", "s3", "s4"],
-      "settings": {
-        "bg_color": "#ffffff",
-        "eyebrow": "WAT WIJ DOEN",
-        "heading": "Stap voor stap een schonere wereld"
       }
     },
     "impact": {
       "type": "tabblie-impact",
       "settings": {
-        "eyebrow": "ONS DOEL",
-        "heading": "Klimaatneutraal schoonmaken, voor iedereen toegankelijk",
-        "description": "Wij bewijzen dat duurzaam niet duur hoeft te zijn. Onze strips zijn beter voor het milieu, beter voor je portemonnee en net zo effectief als wat je nu gebruikt.",
+        "eyebrow": "ONZE AANPAK",
+        "heading": "Gewoon schoonmaken zoals het hoort",
+        "description": "Schoonmaken mag nooit ten koste gaan van de wereld om ons heen. Maar het mag wel fun zijn. Dus doen we het anders — felle kleuren, producten die écht werken, en nul plastic afval. Geen lege beloftes, geen saaie duurzaamheidstrip. Goed voor jou én de planeet.",
         "button_text": "Shop nu"
-      }
-    },
-    "how_it_works_v2": {
-      "type": "tabblie-how-it-works-v2",
-      "blocks": {
-        "step_1": {
-          "type": "step",
-          "settings": {
-            "title": "Jij bestelt",
-            "description": "Kies je favoriete tabblie strips en bestel online. Geleverd in een compacte verpakking zonder plasticafval."
-          }
-        },
-        "step_2": {
-          "type": "step",
-          "settings": {
-            "title": "Wij compenseren",
-            "description": "De CO2-uitstoot van productie tot bezorging wordt berekend en volledig gecompenseerd via gecertificeerde klimaatprojecten."
-          }
-        },
-        "step_3": {
-          "type": "step",
-          "settings": {
-            "title": "Samen schoner",
-            "description": "Elke strip die je gebruikt is een plastic fles minder en een stap richting een klimaatneutrale wereld."
-          }
-        }
-      },
-      "block_order": ["step_1", "step_2", "step_3"],
-      "settings": {
-        "eyebrow": "ZO WERKT HET",
-        "title": "Van bestelling tot impact"
-      }
-    },
-    "quote": {
-      "type": "tabblie-impact",
-      "settings": {
-        "eyebrow": "",
-        "heading": "\"Schoonmaken zonder de planeet vies te maken — dat is waar wij voor staan.\"",
-        "description": "— Het Tabblie team",
-        "button_text": ""
       }
     },
     "faq": {
@@ -154,33 +71,40 @@
         "faq_1": {
           "type": "faq",
           "settings": {
-            "question": "Wat betekent klimaatneutraal precies?",
-            "answer": "Het betekent dat we de totale CO2-uitstoot van onze producten — van grondstof tot bezorging — berekenen en volledig compenseren via gecertificeerde klimaatprojecten zoals herbebossing en schone energie."
+            "question": "Hoeveel plastic bespaar ik met Tabblie?",
+            "answer": "Meer dan je denkt. Eén doosje wasstrips doet 64 wasbeurten — daar heb je anders zo'n 2 à 3 flessen wasmiddel voor nodig. Was je gemiddeld een paar keer per week? Dan scheelt dat al gauw een stuk of tien lege flessen per jaar. En dan tellen we de vaat en het toilet nog niet eens mee. Eén plat, plasticvrij doosje, in plaats van een rij flessen onder het aanrecht."
           }
         },
         "faq_2": {
           "type": "faq",
           "settings": {
-            "question": "Hoe compenseren jullie de CO2-voetafdruk?",
-            "answer": "We werken samen met gecertificeerde partners die investeren in klimaatprojecten. Elke bestelling wordt doorgerekend op CO2-uitstoot en het equivalent wordt gecompenseerd."
+            "question": "Waarom zijn strips beter dan een fles wasmiddel?",
+            "answer": "Een fles vloeibaar wasmiddel bestaat voor 80 tot 90% uit water. Dat water wordt geproduceerd, in plastic gegoten en de halve wereld over gereden — terwijl je het thuis zo uit de kraan haalt. Onze strips laten dat water gewoon weg. Wat overblijft is supergeconcentreerd, vederlicht en plasticvrij. Minder meesjouwen, evenveel schoon."
           }
         },
         "faq_3": {
           "type": "faq",
           "settings": {
-            "question": "Zijn jullie producten echt zonder plasticafval?",
-            "answer": "Ja. Onze strips zijn verpakt in recyclebaar papier en de formule is 100% biologisch afbreekbaar. Geen plastic flessen, geen plastic verpakking, geen microplastics."
+            "question": "Is het niet zonde dat ik niet zelf kan doseren?",
+            "answer": "Juist niet — dat is een voordeel. De meeste mensen gebruiken twee tot vier keer méér wasmiddel dan nodig, met die onduidelijke doseerdop. Eén Tabblie-strip is precies één wasbeurt: nooit te veel, nooit te weinig. Beter voor je was, je portemonnee én het water waar het in terechtkomt."
           }
         },
         "faq_4": {
           "type": "faq",
           "settings": {
-            "question": "Hoe zit het met de CO2-uitstoot van verzending?",
-            "answer": "Onze strips wegen 45 gram — dat is tot 90% lichter dan een traditionele fles wasmiddel. Minder gewicht = minder brandstof = minder CO2. En wat er overblijft, compenseren we."
+            "question": "Zijn de strips veilig voor het milieu nadat ze door de afvoer gaan?",
+            "answer": "Onze strips zijn plantaardig en lossen volledig op, zonder verborgen plastic zoals PVA — wij gebruiken een drager op basis van zeewier. Wat jij wegspoelt, is dus geen oplosbaar plastic maar plantaardige ingrediënten. Schoon je huis uit, schoon het water in."
+          }
+        },
+        "faq_5": {
+          "type": "faq",
+          "settings": {
+            "question": "Waarom maken jullie geen grote groene beloftes?",
+            "answer": "Omdat we liever gewoon laten zien wat we doen. Geen vage labels of mooie praatjes, maar concrete dingen: plasticvrije verpakking, geen meegesleept water, een drager op basis van zeewier en strips die door de brievenbus passen. Wij geloven meer in eerlijk doen dan in groot beloven."
           }
         }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4"],
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5"],
       "settings": {
         "icon": "globe",
         "eyebrow": "VEELGESTELDE VRAGEN",
@@ -193,10 +117,7 @@
     "hero",
     "stats",
     "why_section",
-    "narrative",
     "impact",
-    "how_it_works_v2",
-    "quote",
     "faq"
   ]
 }

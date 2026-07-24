@@ -394,11 +394,14 @@
       "type": "tabblie-guarantee",
       "settings": {
         "eyebrow": "ONZE GARANTIE",
-        "heading": "Probeer het 60 dagen.",
+        "heading": "Probeer het 30 dagen.",
         "heading_accent": "Risicovrij!",
-        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 60 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Geen enkel risico voor jou.</strong></p>",
+        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
         "button_text": "Bestel nu & bespaar",
-        "badge_text": "60 dagen proef wassen"
+        "button_url": "",
+        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
+        "image_alt": "30 dagen proefwassen",
+        "badge_text": "30 dagen proef wassen"
       }
     },
     "eab_dosage": {
