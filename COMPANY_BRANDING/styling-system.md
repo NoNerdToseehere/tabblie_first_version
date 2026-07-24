@@ -430,3 +430,24 @@ silence" skincare styling.**
 On-page treatment (see `sections/tabblie-ingredients.liquid`): cards in product pastel
 colors (`#E2F2ED` / `#FCE8E8` / `#FDF5DD`), staggered fade-up reveal on scroll, hover =
 lift + slight rotate + image zoom (bouncy `cubic-bezier(0.34, 1.56, 0.64, 1)`).
+
+## 10. Hand-Drawn Product Illustrations (brand element — added 2026-07-24)
+
+Each package carries a **monochrome hand-drawn doodle illustration** under the Tabblie script
+wordmark, in the product's print color. These drawings ARE the brand and should return across
+the site (section decorations, dividers, empty states, category headers) — prefer them over
+generic decorative shapes.
+
+| Product | Illustration | Print color on pouch |
+|---|---|---|
+| Wasstrips | clothesline with hanging garments (shirts, pants, socks on a sagging line) | dark red on light blue |
+| Vaatwasstrips | stacked bowls/plates with a sponge and a sparkle | dark green on pink |
+| Toiletstrips | (see dieline) | per identity color |
+
+**Style traits:** playful slightly-wobbly line art with filled silhouettes, single color,
+naive/hand-sketched feel — never precise geometric icons, never multi-color for these.
+**Vector source:** the print dielines in `HIGGSFIELD_VIDEOS/product-reference/products/*/`
+(`*-dieline.pdf`) contain the original artwork — extract vectors from there for site use
+rather than redrawing.
+**In AI generations:** describe as "hand-drawn [clothesline/stacked-dishes] illustration in
+[dark red/dark green]" so the packaging renders faithfully.

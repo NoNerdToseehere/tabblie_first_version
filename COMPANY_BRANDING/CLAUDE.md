@@ -63,6 +63,13 @@ Market positioning → `market-positioning.md`
 - Body: 400 weight, line-height `1.6`–`1.7`
 - Eyebrows: 600, uppercase, letter-spacing `0.1em`, always orange `#E8622A`
 
+### Hand-drawn product illustrations (added 2026-07-24)
+Each package carries a monochrome hand-drawn doodle under the wordmark (laundry: clothesline
+with garments in dark red; dishwasher: stacked dishes + sponge in dark green). This sketchy
+single-color style is a core brand element — bring it back across the site (decorations,
+dividers, headers) instead of generic shapes. Vector source: the dieline PDFs in
+`HIGGSFIELD_VIDEOS/product-reference/products/*/`. Full spec → `styling-system.md` §10.
+
 ### Logo Assets
 - **Full wordmark:** Bold orange grotesk "Tabblie" — capital T, rest lowercase (`tabblie-logo.svg` / `tabblie-logo.png`). The wordmark stands alone — **no circle, badge, or container**.
 - **Small logo / Icon:** Just the "T" in brand orange (`tabblie-logo-small.png`) — use for compact spaces, app icons, mobile sticky nav
