@@ -1793,3 +1793,18 @@ select:focus {
   font-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif !important;
   font-weight: 700 !important;
 }
+
+/* ============================================================
+   Headings always bold (700) — Baloo 2 at weight 400 reads like a
+   completely different (thin) face. Some sections carry their own
+   weight-400 settings; this overrides them all.
+   ============================================================ */
+h1, h2, h3, .h1, .h2, .h3,
+.section-header h3.title,
+.product-block h3.title,
+[class*="tabblie-"][class*="__title"],
+[class*="tabblie-"][class*="__heading"],
+.tabblie-guarantee__heading,
+.productView-title {
+  font-weight: 700 !important;
+}

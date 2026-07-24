@@ -78,7 +78,7 @@ Every change to this theme must serve these four goals. When a request conflicts
 - **Small logo / Icon:** Orange "T" only (`tabblie-logo-small.png`) — compact UI, mobile sticky nav, app icons
 - **Favicon:** 256×256 orange "T" square (`tabblie-favicon.png`)
 
-**Logo rules:** always written "Tabblie" (capital T, rest lowercase) — never "tabblie" all-lowercase, never "TABBLIE" in caps. **This applies to ALL copy everywhere on the site** (headings, body text, FAQs, alt text), not just the logo. Only exceptions: email addresses (support@tabblie.com) and social handles (@tabblie). On light/cream: orange `#E8622A`. On dark/photographic: white. Never stretch, rotate, recolour, or add effects.
+**Logo rules:** always written "Tabblie" (capital T, rest lowercase) — never "tabblie" all-lowercase, never "TABBLIE" in caps. **This applies to ALL copy everywhere on the site** (headings, body text, FAQs, alt text), not just the logo. Only exception: email addresses (support@tabblie.com). Social handles are also written capitalized in copy (@Tabblie). On light/cream: orange `#E8622A`. On dark/photographic: white. Never stretch, rotate, recolour, or add effects.
 
 > Full style system (colors, gradients, icons, type scale, spacing) → `COMPANY_BRANDING/styling-system.md`
 
