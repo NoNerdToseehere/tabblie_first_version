@@ -20,7 +20,7 @@
         "card_1": {
           "type": "product_card",
           "settings": {
-            "product": "tabblie-laundry",
+            "product": "tabblie-wasstrips",
             "name": "Wasstrips",
             "description": "Plantaardig wasmiddel, wasverzachter en vlekverwijderaar in één strip. Geschikt voor alle wasmachines en temperaturen.",
             "image": "shopify://shop_images/Tabblie-34.jpg",
@@ -30,7 +30,7 @@
         "card_2": {
           "type": "product_card",
           "settings": {
-            "product": "tabblie-dishwasher",
+            "product": "tabblie-vaatwasstrips",
             "name": "Vaatwasstrips",
             "description": "Plantaardige vaatwasstrips zonder schadelijke chemicaliën. Laat je vaat stralend schoon achter, zonder plastic fles.",
             "image": "shopify://shop_images/Tabblie-38.jpg",
@@ -40,7 +40,7 @@
         "card_3": {
           "type": "product_card",
           "settings": {
-            "product": "tabblie-toilet",
+            "product": "tabblie-toiletstrips",
             "name": "Toiletstrips",
             "description": "Krachtige reiniging voor je toilet, volledig biologisch afbreekbaar. Gooi een strip in de pot en laat het zijn werk doen.",
             "image": "shopify://shop_images/Tabblie-44.jpg",

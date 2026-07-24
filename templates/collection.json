@@ -52,7 +52,7 @@
         "card_2": {
           "type": "product_card",
           "settings": {
-            "product": "tabblie-dishwasher",
+            "product": "tabblie-vaatwasstrips",
             "name": "Vaatwasstrips",
             "description": "Plantaardige vaatwasstrips zonder schadelijke chemicaliën. Laat je vaat stralend schoon achter, zonder plastic fles.",
             "url": "",
@@ -64,7 +64,7 @@
         "card_3": {
           "type": "product_card",
           "settings": {
-            "product": "tabblie-toilet",
+            "product": "tabblie-toiletstrips",
             "name": "Toiletstrips",
             "description": "Krachtige reiniging voor je toilet, volledig biologisch afbreekbaar. Gooi een strip in de pot en laat het zijn werk doen.",
             "url": "",
