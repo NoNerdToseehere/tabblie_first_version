@@ -20,6 +20,18 @@
     color: #ffffff;
   }
 
+  /* Spacer keeps the same breathing room when the marquee strip is hidden */
+  .tabblie-usp-spacer {
+    display: block !important;
+    height: 62px;
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-usp-spacer {
+      height: 56px;
+    }
+  }
+
   /* ── USP strip ── */
   .tabblie-usp-strip {
     background-color: #ffffff;
@@ -151,6 +163,8 @@
     {%- endfor -%}
   </div>
 </div>
+{%- else -%}
+  <div class="tabblie-usp-spacer" aria-hidden="true"></div>
 {%- endif -%}
 
 {% schema %}
