@@ -1368,70 +1368,6 @@
         "eyebrow": "",
         "title": ""
       }
-    },
-    "tabblie_comparison_classic": {
-      "type": "tabblie-comparison-classic",
-      "blocks": {
-        "row_1": {
-          "type": "row",
-          "settings": {
-            "tabblie_text": "Geen plasticafval",
-            "traditional_text": "Plastic flessen & verpakkingen",
-            "icon": "spray"
-          }
-        },
-        "row_2": {
-          "type": "row",
-          "settings": {
-            "tabblie_text": "Biologisch afbreekbaar",
-            "traditional_text": "Schadelijke chemicaliën",
-            "icon": "droplet"
-          }
-        },
-        "row_3": {
-          "type": "row",
-          "settings": {
-            "tabblie_text": "Compact & lichtgewicht",
-            "traditional_text": "Zwaar & omvangrijk",
-            "icon": "feather"
-          }
-        },
-        "row_4": {
-          "type": "row",
-          "settings": {
-            "tabblie_text": "Geen schadelijke stoffen",
-            "traditional_text": "Parabenen, fosfaten & kleurstoffen",
-            "icon": "shield"
-          }
-        },
-        "row_5": {
-          "type": "row",
-          "settings": {
-            "tabblie_text": "Verpakt in recyclebaar papier",
-            "traditional_text": "Niet-recyclebaar plastic",
-            "icon": "recycle"
-          }
-        },
-        "row_6": {
-          "type": "row",
-          "settings": {
-            "tabblie_text": "Gratis verzending NL & BE",
-            "traditional_text": "Hoge verzendkosten door gewicht",
-            "icon": "truck"
-          }
-        }
-      },
-      "block_order": [
-        "row_1",
-        "row_2",
-        "row_3",
-        "row_4",
-        "row_5",
-        "row_6"
-      ],
-      "settings": {
-        "heading": "vs. traditioneel"
-      }
     }
   },
   "order": [
@@ -1440,7 +1376,6 @@
     "custom_service_block_8Gzkxn",
     "tabblie_ingredients",
     "tabblie_comparison",
-    "tabblie_comparison_classic",
     "tabblie_vt_pdp",
     "tabblie_stories_pdp",
     "tabblie_guarantee_pdp",
