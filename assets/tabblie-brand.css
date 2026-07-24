@@ -65,6 +65,14 @@ html:root {
   --font-menu-lv1-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
   --font-menu-lv2-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
   --font-menu-lv3-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  --font-mega-menu-lv2-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  --font-mega-menu-lv3-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  --font-page-title-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  --btn-1-font-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  --btn-2-font-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  --btn-3-font-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  --footer-heading-font-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  --footer-link-font-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
 }
 
 :root {
