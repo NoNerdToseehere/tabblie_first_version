@@ -56,11 +56,12 @@ Market positioning → `market-positioning.md`
 - Never use emojis — always SVG icons with varied colors from the accent palette
 
 ### Fonts
-**Single typeface across the whole site:** Plus Jakarta Sans (Google Fonts, weights 400/500/600/700 + italic 400/600). Used for both `--heading-font-family` and `--text-font-family`. Do not introduce a second display face.
+**Single typeface across the whole site (updated 2026-07-24): Baloo 2** (Google Fonts, weights 400–800) — chunky rounded face matching the wordmark (closest free equivalent of paid TT Drugs). Fallback: Plus Jakarta Sans. Full system → `styling-system.md` §2.
 
-- Headings: 600 weight, letter-spacing `-0.02em`, line-height `1.1`–`1.15`
+- Headings: 700 weight, letter-spacing `-0.01em`, line-height `1.1`–`1.15`
+- Orange accents: 800 weight, never italic (Baloo 2 has no italics)
 - Body: 400 weight, line-height `1.6`–`1.7`
-- Eyebrows: 600–700, uppercase, letter-spacing `0.1em`, always orange `#E8622A`
+- Eyebrows: 600, uppercase, letter-spacing `0.1em`, always orange `#E8622A`
 
 ### Logo Assets
 - **Full wordmark:** Bold orange grotesk "Tabblie" — capital T, rest lowercase (`tabblie-logo.svg` / `tabblie-logo.png`). The wordmark stands alone — **no circle, badge, or container**.
@@ -68,7 +69,7 @@ Market positioning → `market-positioning.md`
 - **Favicon:** Square orange "T" for browser tab (`tabblie-favicon.png` — 256×256)
 
 **Logo rules:**
-- Always written "Tabblie" (capital T, rest lowercase) — never "tabblie" all-lowercase, never "TABBLIE" in caps
+- Always written "Tabblie" (capital T, rest lowercase) — never "tabblie" all-lowercase, never "TABBLIE" in caps. Applies to ALL copy everywhere (incl. @Tabblie, Tabblie.com); only email addresses stay lowercase
 - No circular background behind the wordmark — that treatment is retired
 - On light/cream: orange `#E8622A`. On dark/photographic: white.
 - Never stretch, rotate, recolour, or add effects
@@ -100,7 +101,7 @@ Market positioning → `market-positioning.md`
 - Background color for most sections: `#FDF6EE` (warm cream), not pure `#FFFFFF`
 - Copy tone must be cheeky and direct — avoid corporate/generic language
 - Never use dark green as a brand color — it reads as "typical eco brand"
-- **Honest claim language:** never say *"plasticvrij"* / *"plastic-free"* / *"100% plastic free"*. The products are not literally plastic-free. Always use **"geen plasticafval"** (NL) or **"no plastic waste"** (EN). We eliminate plastic *waste* — not every plastic molecule.
+- **Claim language (updated 2026-07-24):** **"100% plasticvrij"** (NL) / "plastic-free" (EN) is the approved claim — seaweed-based carrier (no PVA/microplastics), paper packaging. "Geen plasticafval" also fine.
 
 ### Shopify-specific rules
 - This is an **Online Store 2.0** theme — sections are JSON-defined in `/templates`

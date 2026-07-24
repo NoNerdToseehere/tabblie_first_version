@@ -17,7 +17,7 @@
           "settings": {
             "collection": "",
             "label": "Wasstrips",
-            "url": "/pages/alle-producten",
+            "url": "/products/tabblie-wasstrips",
             "image": "shopify://shop_images/Tabblie-49.jpg",
             "coming_soon": false
           }
@@ -27,7 +27,7 @@
           "settings": {
             "collection": "",
             "label": "Vaatwasstrips",
-            "url": "/pages/alle-producten",
+            "url": "/products/tabblie-vaatwasstrips",
             "image": "shopify://shop_images/Tabblie-26.jpg",
             "coming_soon": false
           }
@@ -37,7 +37,7 @@
           "settings": {
             "collection": "",
             "label": "Toiletstrips",
-            "url": "/pages/alle-producten",
+            "url": "/products/tabblie-toiletstrips",
             "image": "shopify://shop_images/4.jpg",
             "coming_soon": false
           }

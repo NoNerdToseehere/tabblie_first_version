@@ -88,18 +88,35 @@ background: linear-gradient(135deg, #E8622A 0%, #F5C842 50%, #5BB8A0 100%);
 
 ---
 
-## 2. Typography
+## 2. Typography (updated 2026-07-24)
 
 ### Single typeface
-**Plus Jakarta Sans** — Google Fonts, weights 400/500/600/700 with italic 400/600. Loaded once and used for both `--heading-font-family` and `--text-font-family`. Do not introduce a second face.
+**Baloo 2** — Google Fonts, weights 400/500/600/700/800. Chunky rounded face matching the Tabblie wordmark (closest free equivalent of TT Drugs, which is a paid font). Fallback: Plus Jakarta Sans. Used for *everything*: headings, body, buttons, menus, footer.
+
+**⚠️ Baloo 2 has NO italics.** Never use `font-style: italic` — the browser synthesizes a thin slanted fake that reads as a wrong font. Accents that used to be italic are now **weight 800, normal style, orange**.
+
+### Where it's implemented (all three layers must stay in sync)
+1. **Theme settings** (`config/settings_data.json`): `type_font_1_name` / `type_font_2_name` = `"Baloo 2"` — feeds all settings-driven components (product card titles etc.)
+2. **`assets/tabblie-brand.css`** `html:root` block: overrides both brand vars (`--heading-font-family`, `--text-font-family`) and every theme-generated var (`--font-family-1/2`, `--font-heading-family`, `--font-body-family`, menu/mega-menu/btn/footer/page-title vars)
+3. **`snippets/global-style.liquid`**: Google Fonts load, weights 400–800, `display=swap`
 
 ### CSS variables
 ```css
---heading-font-weight: 600;
+--heading-font-weight: 700;
 --text-font-weight: 400;
---heading-letter-spacing: -0.02em;
+--heading-letter-spacing: -0.01em;
 --text-letter-spacing: 0em;
 ```
+
+### Weights — the system
+| Element | Weight |
+|---|---|
+| All headings h1–h3 + tabblie section titles | **700** (forced via global rule in tabblie-brand.css — Baloo at 400 reads like a different, thin font) |
+| Orange heading accents ("opnieuw uitgevonden.", "Risicovrij!", "Tabblie" in comparison) | **800**, `font-style: normal`, `#E8622A` |
+| PDP product title (h1.productView-title) | **800**, `clamp(30px, 3.2vw, 42px)` (28px mobile), line-height 1.12 |
+| Product card titles (a.card-title) | **700** |
+| Eyebrows (uppercase labels) | **600** (700 gets blobby at 13px) |
+| Body | **400** |
 
 ### Type scale (live `clamp()` values)
 
@@ -107,6 +124,7 @@ background: linear-gradient(135deg, #E8622A 0%, #F5C842 50%, #5BB8A0 100%);
 |---|---|
 | Page hero H1 | `clamp(2.8rem, 6vw, 5.2rem)` |
 | Section H2 | `clamp(2.2rem, 4vw, 3.4rem)` |
+| PDP product title | `clamp(30px, 3.2vw, 42px)` |
 | Newsletter heading | `clamp(2.6rem, 5vw, 4rem)` |
 | Discount display | `clamp(4rem, 8vw, 6.5rem)` |
 | Card H3 | `clamp(1.25rem, 2vw, 1.5rem)` |
@@ -120,9 +138,11 @@ background: linear-gradient(135deg, #E8622A 0%, #F5C842 50%, #5BB8A0 100%);
 - Eyebrows: `1.5`
 
 ### Rules
-- Eyebrows always orange `#E8622A`, weight 600–700, letter-spacing `0.1em`, uppercase
+- Eyebrows always orange `#E8622A`, weight 600, letter-spacing `0.1em`, uppercase
+- Never `font-style: italic` anywhere (Baloo 2 has no italics — see above)
 - Never drop below 400 weight (accessibility)
 - Body text minimum 16px on mobile to avoid iOS zoom on inputs
+- **"Tabblie" is always capitalized** in every piece of copy (headings, body, FAQs, alt text, social: @Tabblie, Tabblie.com). Only exception: email addresses (support@tabblie.com)
 
 ---
 
