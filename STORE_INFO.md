@@ -58,6 +58,8 @@ Every new section, page, or copy change gets checked against all three before it
 
 **ALWAYS fully responsive — no exceptions.** Everything must look and work perfectly on every device and screen size: phones (375px/390px), tablets/iPad (768px/1024px), laptops (1280px) and wide desktops (1440px+). Mobile-first CSS, no horizontal scroll anywhere, touch targets ≥ 44px. A change that only works on desktop is a bug, not a finished task — verify at least 390px + desktop (Playwright screenshots against `shopify theme dev`) before committing.
 
+**URL paths / handles:** all paths must be SEO-optimized, Dutch, and descriptive — `/pages/duurzaamheid`, `/pages/veelgestelde-vragen`, `/pages/alle-producten`, `/products/tabblie-wasstrips` — never English or generic handles (`foundation`, `faqs`, `shop`, `tabblie-laundry`). When renaming a handle: update every internal link in the theme AND create a URL redirect (admin → urlRedirectCreate) from the old path.
+
 **File naming:** always use SEO-friendly, descriptive, structured file names — lowercase kebab-case that says what the file is (`tabblie-wasstrips-doosje-hero.jpg`, not `IMG_4521.jpg` or `Screenshot 2026-...png`). Applies to images, assets, snippets, and section files alike.
 
 **Cleanup:** never leave unnecessary files behind. Temporary artifacts (screenshots, test scripts, scratch exports, one-off conversions) get deleted as soon as they've served their purpose — in the repo *and* in temp locations. If it's not used by the theme or the docs, it goes.

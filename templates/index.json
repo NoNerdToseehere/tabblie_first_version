@@ -17,7 +17,7 @@
           "settings": {
             "collection": "",
             "label": "Wasstrips",
-            "url": "/pages/shop",
+            "url": "/pages/alle-producten",
             "image": "shopify://shop_images/Tabblie-49.jpg",
             "coming_soon": false
           }
@@ -27,7 +27,7 @@
           "settings": {
             "collection": "",
             "label": "Vaatwasstrips",
-            "url": "/pages/shop",
+            "url": "/pages/alle-producten",
             "image": "shopify://shop_images/Tabblie-26.jpg",
             "coming_soon": false
           }
@@ -37,7 +37,7 @@
           "settings": {
             "collection": "",
             "label": "Toiletstrips",
-            "url": "/pages/shop",
+            "url": "/pages/alle-producten",
             "image": "shopify://shop_images/4.jpg",
             "coming_soon": false
           }
@@ -47,7 +47,7 @@
           "settings": {
             "collection": "",
             "label": "Nog even geheim...",
-            "url": "/pages/shop",
+            "url": "/pages/alle-producten",
             "coming_soon": true
           }
         }
@@ -108,7 +108,7 @@
         "mg_bottom_view": 20,
         "mg_bottom_view_mb": 0,
         "enable_border_view_all": true,
-        "link_view_all": "shopify://collections/new",
+        "link_view_all": "shopify://collections/all",
         "color_view_all": "#3c3c3c",
         "icon_view_all": "",
         "color_view_all_icon": "#eb492f",
@@ -160,7 +160,7 @@
         "spacing_right": 0,
         "product_block_show": "4",
         "button_text_slider": "Bekijk alle producten",
-        "button_link_slider": "shopify://collections/new",
+        "button_link_slider": "shopify://collections/all",
         "enable_button_icon": false,
         "button_width": 280,
         "btn_spacing_top": 49,

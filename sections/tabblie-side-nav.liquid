@@ -422,12 +422,12 @@
           {%- for product in collections['new'].products limit: 4 -%}
             {%- assign tile_bg = '#FDF6EE' -%}
             {%- case product.handle -%}
-              {%- when 'tabblie-laundry' -%}{%- assign tile_bg = '#FDEEE6' -%}
-              {%- when 'tabblie-dishwasher' -%}{%- assign tile_bg = '#FDF5DD' -%}
-              {%- when 'tabblie-toilet' -%}{%- assign tile_bg = '#E2F2ED' -%}
-              {%- when 'tabblie-soap' -%}{%- assign tile_bg = '#FCE8E8' -%}
+              {%- when 'tabblie-wasstrips' -%}{%- assign tile_bg = '#FDEEE6' -%}
+              {%- when 'tabblie-vaatwasstrips' -%}{%- assign tile_bg = '#FDF5DD' -%}
+              {%- when 'tabblie-toiletstrips' -%}{%- assign tile_bg = '#E2F2ED' -%}
+              {%- when 'tabblie-binnenkort' -%}{%- assign tile_bg = '#FCE8E8' -%}
             {%- endcase -%}
-            {%- if product.handle == 'tabblie-soap' -%}
+            {%- if product.handle == 'tabblie-binnenkort' -%}
               <div class="tmf-tile tmf-tile--soon" style="background: {{ tile_bg }};">
                 <span class="tmf-tile__q" aria-hidden="true">?</span>
                 <div>
@@ -453,7 +453,7 @@
       </div>
 
       <div class="tmf-side">
-        <a class="tmf-promo" href="/pages/shop#abonnement">
+        <a class="tmf-promo" href="/pages/alle-producten#abonnement">
           <p class="tmf-promo__eyebrow">Binnenkort</p>
           <p class="tmf-promo__title">Abonneer & bespaar 15%</p>
           <p class="tmf-promo__text">Automatische bezorging op jouw ritme. Pauzeer of stop wanneer je wilt.</p>
@@ -461,9 +461,9 @@
 
         <ul class="tmf-links">
           <li><a href="/pages/missie">Onze missie<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
-          <li><a href="/pages/foundation">Duurzaamheid<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
+          <li><a href="/pages/duurzaamheid">Duurzaamheid<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
           <li><a href="/pages/verzending-retour">Verzending & retour<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
-          <li><a href="/pages/faqs">FAQs<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
+          <li><a href="/pages/veelgestelde-vragen">FAQs<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
           <li><a href="/pages/contact">Contact<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></li>
         </ul>
       </div>
@@ -471,7 +471,7 @@
     </div>
 
     <div class="tmf-panel__footer">
-      <a class="tmf-shop-all" href="/pages/shop">
+      <a class="tmf-shop-all" href="/pages/alle-producten">
         Shop alle producten
         <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
       </a>
