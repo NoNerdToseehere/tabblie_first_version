@@ -351,7 +351,7 @@
         "icon_color": "#000000",
         "main_image_position": "left",
         "main_image_layout": "1",
-        "main_image_arrows_desktop": false,
+        "main_image_arrows_desktop": true,
         "main_image_arrows_mobile": false,
         "main_image_counter_mobile": true,
         "main_image_enable_parallax_mb": false,

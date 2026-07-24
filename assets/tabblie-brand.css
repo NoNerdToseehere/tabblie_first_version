@@ -1379,37 +1379,59 @@ select:focus {
   border-radius: 0 !important;
 }
 
+/* Slick owns the strip layout (one row, synced with the main image).
+   Never force grid/flex on the initialized slider — that fights slick's
+   inline slide widths and collapses the thumbnails. */
 .template-product .productView-for {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 12px !important;
   margin-top: 0 !important;
   border: none !important;
   padding: 0 !important;
   border-radius: 0 !important;
 }
 
-.template-product .productView-for .productView-thumbnail {
-  border: 2px solid rgba(31, 18, 9, 0.08) !important;
-  border-radius: 14px !important;
+/* Pre-init guard: mirror slick's final one-row layout while it boots,
+   so thumbnails don't render full-size first and then snap small. */
+.template-product .productView-for:not(.slick-initialized) {
+  display: flex !important;
   overflow: hidden !important;
+}
+
+.template-product .productView-for:not(.slick-initialized) .productView-thumbnail {
+  flex: 0 0 25% !important;
+  max-width: 25% !important;
+}
+
+@media (max-width: 767px) {
+  .template-product .productView-for:not(.slick-initialized) .productView-thumbnail {
+    flex-basis: 33.333% !important;
+    max-width: 33.333% !important;
+  }
+}
+
+.template-product .productView-for .productView-thumbnail {
   aspect-ratio: 1 !important;
-  background: #FDF6EE !important;
-  transition: all 0.25s ease !important;
-  cursor: pointer !important;
-  padding: 0 !important;
+  padding: 0 12px 0 0 !important;
   margin: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  cursor: pointer !important;
   position: relative !important;
 }
 
-.template-product .productView-for .productView-thumbnail:hover {
+.template-product .productView-for .productView-thumbnail-link {
+  border: 2px solid rgba(31, 18, 9, 0.08) !important;
+  border-radius: 14px !important;
+  background: #FDF6EE !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.template-product .productView-for .productView-thumbnail:hover .productView-thumbnail-link {
   border-color: #E8622A !important;
-  transform: translateY(-2px) !important;
   box-shadow: 0 6px 20px rgba(232, 98, 42, 0.15) !important;
 }
 
-.template-product .productView-for .productView-thumbnail.is-active,
-.template-product .productView-for .productView-thumbnail.slick-current,
+.template-product .productView-for .productView-thumbnail.is-active .productView-thumbnail-link,
+.template-product .productView-for .productView-thumbnail.slick-current .productView-thumbnail-link,
 .template-product .productView-for .productView-thumbnail-link.is-active {
   border-color: #E8622A !important;
   border-width: 2.5px !important;
@@ -1435,8 +1457,7 @@ select:focus {
   width: 100% !important;
   height: 100% !important;
   padding: 0 !important;
-  border: none !important;
-  border-radius: 12px !important;
+  border-radius: 14px !important;
   overflow: hidden !important;
 }
 
