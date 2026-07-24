@@ -21,7 +21,21 @@
 
   <div style="font-size:13px;font-weight:600;text-align:center;color:#1F1209;margin:14px 0">Bestel voor 23:59 uur, <strong>morgen</strong> in huis!</div>
   <div style="font-size:12px;text-align:center;color:rgba(31,18,9,0.45);margin:0 0 14px">Support team, reageert binnen een paar uur.</div>
-  <a href="#onze-garantie" onclick="var t=document.getElementById('onze-garantie');if(t){event.preventDefault();t.scrollIntoView({behavior:'smooth'})}" style="border:2px dashed #5BB8A0;border-radius:50px;padding:10px 20px;display:flex;align-items:center;justify-content:center;background:#f0f7ee;text-decoration:none;cursor:pointer">
+  <a href="#onze-garantie" class="tabblie-guarantee-link" style="border:2px dashed #5BB8A0;border-radius:50px;padding:10px 20px;display:flex;align-items:center;justify-content:center;background:#f0f7ee;text-decoration:none;cursor:pointer">
     <span style="font-size:13px;font-weight:700;color:#3d7a32">100% geld-terug-garantie voor 30 dagen</span>
   </a>
+  <script>
+    (function () {
+      document.querySelectorAll('.tabblie-guarantee-link').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          var target = document.getElementById('onze-garantie');
+          if (!target) return;
+          e.preventDefault();
+          e.stopPropagation();
+          var top = target.getBoundingClientRect().top + window.pageYOffset - 90;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        });
+      });
+    })();
+  </script>
 </div>
