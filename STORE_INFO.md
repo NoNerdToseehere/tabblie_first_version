@@ -64,6 +64,8 @@ Every new section, page, or copy change gets checked against all three before it
 
 **Cleanup:** never leave unnecessary files behind. Temporary artifacts (screenshots, test scripts, scratch exports, one-off conversions) get deleted as soon as they've served their purpose — in the repo *and* in temp locations. If it's not used by the theme or the docs, it goes.
 
+**Keep the MD files up to date:** whenever a change alters something these docs describe (fonts, colors, claim language, URLs, store facts, workflow rules), update the relevant MD file(s) in the same session — `STORE_INFO.md`, `CLAUDE.md`, `COMPANY_BRANDING/CLAUDE.md` and `COMPANY_BRANDING/styling-system.md` must never contradict the live site. If it's unclear whether a change is a new standard or a one-off experiment, **ask before writing it into the docs**.
+
 **Always git commit & push:** git is the deploy pipeline — the GitHub integration only puts committed, pushed work on the live theme. Never end a work session with finished changes sitting uncommitted; commit and push as soon as a change is verified. Unpushed = not live.
 
 ## Related docs

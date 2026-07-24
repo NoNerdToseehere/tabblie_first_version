@@ -104,6 +104,9 @@ Every change to this theme must serve these four goals. When a request conflicts
 
 ## Working Principles
 
+### Keep documentation in sync
+When a change alters anything these docs describe (fonts, colors, claim language, tone, URLs, workflow), update the relevant MD files in the same session: this file, `STORE_INFO.md`, `COMPANY_BRANDING/CLAUDE.md`, `COMPANY_BRANDING/styling-system.md`. Docs must never contradict the live site. In doubt whether something is a new standard or a one-off experiment? **Ask before documenting it.**
+
 ### Always follow the brand
 - Use `#E8622A` for all primary CTAs and highlights — no grey or muted buttons
 - Background color for most sections: `#FDF6EE` (warm cream), not pure `#FFFFFF`
