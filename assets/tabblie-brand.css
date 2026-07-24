@@ -1745,3 +1745,28 @@ select:focus {
     padding: 11px 22px !important;
   }
 }
+
+/* ============================================================
+   PDP display-font experiment — Baloo 2 (Tabblie-wordmark style)
+   Scoped to product pages only. Headings get the chunky rounded
+   face; body copy stays Plus Jakarta Sans for readability.
+   ============================================================ */
+.template-product h1,
+.template-product h2,
+.template-product h3,
+.template-product .productView-title,
+.template-product .productView .price {
+  font-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.template-product .productView-title {
+  font-weight: 800 !important;
+}
+
+.template-product .productView .button,
+.template-product .productView [type="submit"] {
+  font-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 700 !important;
+}
