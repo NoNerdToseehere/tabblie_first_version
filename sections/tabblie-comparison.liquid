@@ -1,65 +1,29 @@
 {%- comment -%}
   tabblie-comparison.liquid
-  Comparison table — tabblie vs. traditionele schoonmaakmiddelen.
-  Brand: Tabblie — cream background, orange checks, grey X marks.
+  Comparison matrix — Tabblie (highlighted column) vs 3 competitor types.
+  Brand: cream background, elevated Tabblie column with wordmark, green checks.
 {%- endcomment -%}
 
 <style>
   .tabblie-compare {
     background-color: #FDF6EE;
-    padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 40px);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .tabblie-compare__leaf {
-    position: absolute;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .tabblie-compare__leaf--1 {
-    top: 20px;
-    right: -40px;
-    width: 120px;
-    height: 120px;
-    color: #5BB8A0;
-    opacity: 0.12;
-    transform: rotate(140deg);
-  }
-
-  .tabblie-compare__leaf--2 {
-    bottom: 40px;
-    left: -30px;
-    width: 100px;
-    height: 100px;
-    color: #E8622A;
-    opacity: 0.08;
-    transform: rotate(-40deg);
-  }
-
-  @media (max-width: 749px) {
-    .tabblie-compare__leaf {
-      display: none;
-    }
+    padding: clamp(48px, 6vw, 88px) clamp(12px, 3vw, 40px);
   }
 
   .tabblie-compare__inner {
-    position: relative;
-    z-index: 1;
-    max-width: 800px;
+    max-width: 980px;
     margin: 0 auto;
   }
 
   .tabblie-compare__heading {
     font-family: var(--font-heading-family);
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 600;
-    line-height: 1.15;
+    font-size: clamp(1.9rem, 4.2vw, 3rem);
+    font-weight: 700;
+    line-height: 1.12;
     letter-spacing: -0.02em;
     color: #1F1209;
     text-align: center;
-    margin: 0 0 clamp(32px, 4vw, 52px);
+    margin: 0 0 12px;
   }
 
   .tabblie-compare__heading em {
@@ -68,425 +32,282 @@
     font-weight: 800;
   }
 
-  /* Table layout */
-  .tabblie-compare__table {
-    width: 100%;
-    border-radius: 16px;
-    overflow: hidden;
-    background-color: #FFFFFF;
-    box-shadow: 0 2px 16px rgba(31, 18, 9, 0.06);
-  }
-
-  /* Column headers */
-  .tabblie-compare__header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-  }
-
-  .tabblie-compare__col-head {
+  .tabblie-compare__subtext {
     font-family: var(--text-font-family);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 18px 24px;
+    font-size: clamp(13px, 1.6vw, 15px);
+    color: rgba(31, 18, 9, 0.65);
     text-align: center;
+    margin: 0 auto clamp(28px, 4vw, 48px);
+    max-width: 560px;
+    line-height: 1.6;
   }
 
-  .tabblie-compare__col-head--tabblie {
-    background-color: #E8622A;
-    color: #FFFFFF;
-  }
-
-  .tabblie-compare__col-head--trad {
-    background-color: rgba(31, 18, 9, 0.06);
-    color: rgba(31, 18, 9, 0.5);
-  }
-
-  /* Rows */
-  .tabblie-compare__row {
+  /* ── Matrix grid ── */
+  .tabblie-compare__matrix {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    border-bottom: 1px solid rgba(31, 18, 9, 0.06);
+    grid-template-columns: minmax(0, 1.9fr) minmax(0, 1.1fr) repeat(3, minmax(0, 1fr));
+  }
+
+  .tabblie-compare__mrow {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+    align-items: stretch;
     opacity: 0;
-    transform: translateX(-16px);
-    transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+    transform: translateY(14px);
+    transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  .tabblie-compare__row.is-visible {
+  .tabblie-compare__mrow.is-visible {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
-  .tabblie-compare__row:hover {
-    background-color: rgba(232, 98, 42, 0.04);
-  }
-
-  .tabblie-compare__row:last-child {
-    border-bottom: none;
-  }
-
-  .tabblie-compare__row:nth-child(even) {
-    background-color: rgba(253, 246, 238, 0.5);
-  }
-
-  .tabblie-compare__cell {
-    display: flex;
+  .tabblie-compare__mcell {
+    /* !important beats the theme's div:empty display:none on the blank header cell */
+    display: flex !important;
     align-items: center;
-    gap: 10px;
-    padding: 16px 24px;
+    justify-content: center;
+    padding: 13px 8px;
+    min-height: 48px;
+  }
+
+  .tabblie-compare__mcell--label {
+    justify-content: flex-start;
     font-family: var(--text-font-family);
-    font-size: 15px;
-    line-height: 1.45;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1F1209;
+    text-align: left;
+    padding-left: 14px;
+    line-height: 1.35;
+  }
+
+  /* zebra rows (label + competitor cells) */
+  .tabblie-compare__mrow--zebra .tabblie-compare__mcell:not(.tabblie-compare__mcell--tabblie) {
+    background-color: #E1ECFA;
+  }
+  .tabblie-compare__mrow--zebra .tabblie-compare__mcell--label { border-radius: 12px 0 0 12px; }
+  .tabblie-compare__mrow--zebra .tabblie-compare__mcell:last-child { border-radius: 0 12px 12px 0; }
+
+  /* ── Elevated Tabblie column ── */
+  .tabblie-compare__mcell--tabblie {
+    background-color: #FFFFFF;
+    border-left: 2px solid #E8622A;
+    border-right: 2px solid #E8622A;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tabblie-compare__mrow--head .tabblie-compare__mcell--tabblie {
+    border-top: 2px solid #E8622A;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -10px 24px rgba(232, 98, 42, 0.12);
+  }
+
+  .tabblie-compare__mrow--last .tabblie-compare__mcell--tabblie {
+    border-bottom: 2px solid #E8622A;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 14px 28px rgba(232, 98, 42, 0.16);
+  }
+
+  /* ── Header row ── */
+  .tabblie-compare__mrow--head .tabblie-compare__mcell {
+    padding: 16px 8px 12px;
+  }
+
+  .tabblie-compare__brand-logo {
+    height: 26px;
+    width: auto;
+  }
+
+  .tabblie-compare__comp-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--text-font-family);
+    font-size: 10.5px;
+    font-weight: 600;
+    color: rgba(31, 18, 9, 0.55);
+    text-align: center;
+    line-height: 1.25;
+  }
+
+  .tabblie-compare__comp-head svg {
+    width: 26px;
+    height: 26px;
+    color: rgba(31, 18, 9, 0.45);
+  }
+
+  /* ── Price row ── */
+  .tabblie-compare__price {
+    font-family: var(--text-font-family);
+    font-size: 13.5px;
+    font-weight: 700;
     color: #1F1209;
   }
 
-  .tabblie-compare__cell--tabblie {
-    background-color: rgba(253, 238, 230, 0.55);
-    font-weight: 600;
+  .tabblie-compare__mcell--tabblie .tabblie-compare__price {
+    color: #E8622A;
+    font-weight: 800;
+    font-size: 15px;
   }
 
-  .tabblie-compare__cell--trad {
-    color: rgba(31, 18, 9, 0.55);
-  }
-
-  /* Per-row topic icon chip — rotating brand colors */
-  .tabblie-compare__topic {
+  /* ── Check / X marks ── */
+  .tabblie-compare__check,
+  .tabblie-compare__xmark {
     flex-shrink: 0;
-    width: 34px;
-    height: 34px;
-    border-radius: 10px;
+    width: 24px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: scale(0);
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s;
+    border-radius: 50%;
   }
 
-  .tabblie-compare__row.is-visible .tabblie-compare__topic {
+  .tabblie-compare__check {
+    background-color: #38A169;
+    color: #ffffff;
+    transform: scale(0);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s;
+  }
+
+  .tabblie-compare__mrow.is-visible .tabblie-compare__check {
     transform: scale(1);
   }
 
-  .tabblie-compare__row:hover .tabblie-compare__topic {
-    transform: scale(1.12) rotate(-6deg);
+  .tabblie-compare__check svg { width: 13px; height: 13px; }
+
+  .tabblie-compare__xmark {
+    background-color: rgba(31, 18, 9, 0.05);
+    border: 1.5px solid rgba(31, 18, 9, 0.12);
+    color: rgba(31, 18, 9, 0.3);
   }
 
-  .tabblie-compare__topic svg {
-    width: 18px;
-    height: 18px;
-  }
+  .tabblie-compare__xmark svg { width: 10px; height: 10px; }
 
-  .tabblie-compare__row:nth-child(6n + 2) .tabblie-compare__topic { background: #E2F2ED; color: #38897A; }
-  .tabblie-compare__row:nth-child(6n + 3) .tabblie-compare__topic { background: #FDEEE6; color: #E8622A; }
-  .tabblie-compare__row:nth-child(6n + 4) .tabblie-compare__topic { background: #FDF5DD; color: #B7791F; }
-  .tabblie-compare__row:nth-child(6n + 5) .tabblie-compare__topic { background: #FCE8E8; color: #E85B7A; }
-  .tabblie-compare__row:nth-child(6n + 6) .tabblie-compare__topic { background: #E1ECFA; color: #3B7DD8; }
-  .tabblie-compare__row:nth-child(6n + 7) .tabblie-compare__topic { background: #E6F4EA; color: #38A169; }
+  .tabblie-compare__footnote {
+    font-family: var(--text-font-family);
+    font-size: 11px;
+    color: rgba(31, 18, 9, 0.45);
+    text-align: center;
+    margin: 18px 0 0;
+  }
 
   @media (prefers-reduced-motion: reduce) {
-    .tabblie-compare__row,
-    .tabblie-compare__row.is-visible,
-    .tabblie-compare__topic,
-    .tabblie-compare__row.is-visible .tabblie-compare__topic {
+    .tabblie-compare__mrow,
+    .tabblie-compare__mrow.is-visible,
+    .tabblie-compare__check,
+    .tabblie-compare__mrow.is-visible .tabblie-compare__check {
       opacity: 1;
       transform: none;
       transition: none;
     }
   }
 
-  /* Check mark (tabblie column) — green */
-  .tabblie-compare__check {
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: rgba(72, 187, 120, 0.15);
-    color: #38A169;
-  }
-
-  .tabblie-compare__check svg {
-    width: 13px;
-    height: 13px;
-  }
-
-  /* X mark (traditional column) */
-  .tabblie-compare__xmark {
-    flex-shrink: 0;
-    width: 22px;
-    height: 22px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color: rgba(31, 18, 9, 0.06);
-    color: rgba(31, 18, 9, 0.35);
-  }
-
-  .tabblie-compare__xmark svg {
-    width: 11px;
-    height: 11px;
-  }
-
-  /* ── MOBILE: stack as cards ── */
-  /* === Visual scenes flanking the table === */
-  .tabblie-compare__layout {
-    display: grid;
-    grid-template-columns: 1fr minmax(0, 720px) 1fr;
-    align-items: center;
-    gap: clamp(20px, 3vw, 40px);
-    margin-top: 24px;
-  }
-
-  .tabblie-compare__layout > .tabblie-compare__table {
-    grid-column: 2;
-  }
-
-  .tabblie-compare__scene {
-    position: relative;
-    aspect-ratio: 3 / 4;
-    overflow: hidden;
-    border-radius: 18px;
-    box-shadow: 0 6px 22px rgba(31, 18, 9, 0.08);
-  }
-
-  .tabblie-compare__scene--good { grid-column: 1; }
-  .tabblie-compare__scene--bad  { grid-column: 3; }
-
-  .tabblie-compare__scene-label {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    z-index: 3;
-    font-family: var(--text-font-family);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 5px 12px;
-    border-radius: 100px;
-  }
-
-  .tabblie-compare__scene-label--good {
-    background: #ffffff;
-    color: #38A169;
-  }
-
-  .tabblie-compare__scene-label--bad {
-    background: rgba(31, 18, 9, 0.85);
-    color: #ffffff;
-  }
-
-  /* Tabblie scene — green hill, sun, washline */
-  .tabblie-compare__scene--good {
-    background: linear-gradient(180deg, #E1ECFA 0%, #C8DFF0 55%, #B5E0C9 55%, #8FCFA8 100%);
-  }
-
-  .tabblie-compare__scene--good svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-
-  /* Traditional scene — grey backdrop with plastic pile */
-  .tabblie-compare__scene--bad {
-    background: linear-gradient(180deg, #4a5159 0%, #2c3036 100%);
-  }
-
-  .tabblie-compare__scene--bad svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-
-  @media (max-width: 1024px) {
-    .tabblie-compare__layout {
-      grid-template-columns: 1fr;
-      gap: 16px;
+  /* fallback for browsers without subgrid */
+  @supports not (grid-template-columns: subgrid) {
+    .tabblie-compare__mrow {
+      grid-template-columns: minmax(0, 1.9fr) minmax(0, 1.1fr) repeat(3, minmax(0, 1fr));
     }
-    .tabblie-compare__layout > .tabblie-compare__table { grid-column: 1; }
-    .tabblie-compare__scene { aspect-ratio: 16 / 9; }
-    .tabblie-compare__scene--good { grid-column: 1; grid-row: 1; }
-    .tabblie-compare__layout > .tabblie-compare__table { grid-row: 2; }
-    .tabblie-compare__scene--bad { grid-column: 1; grid-row: 3; }
   }
 
   @media (max-width: 749px) {
-    .tabblie-compare {
-      padding: clamp(36px, 8vw, 56px) 20px;
+    .tabblie-compare { padding-left: 10px; padding-right: 10px; }
+
+    .tabblie-compare__matrix { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) repeat(3, minmax(0, 0.82fr)); }
+
+    @supports not (grid-template-columns: subgrid) {
+      .tabblie-compare__mrow { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) repeat(3, minmax(0, 0.82fr)); }
     }
 
-    .tabblie-compare__table {
-      background-color: #ffffff;
-      box-shadow: 0 2px 12px rgba(31, 18, 9, 0.06);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-
-    .tabblie-compare__header {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr;
-      margin-bottom: 0;
-    }
-
-    .tabblie-compare__row {
-      grid-template-columns: 1fr 1fr;
-      background-color: #FFFFFF;
-      border-bottom: 1px solid rgba(31, 18, 9, 0.06);
-      border-radius: 0;
-      margin-bottom: 0;
-      box-shadow: none;
-    }
-
-    .tabblie-compare__row:last-child {
-      border-bottom: none;
-    }
-
-    .tabblie-compare__row:nth-child(even) {
-      background-color: #f9f6f2;
-    }
-
-    .tabblie-compare__cell {
-      padding: 12px 14px;
-      font-size: 13px;
-    }
-
-    .tabblie-compare__cell--tabblie {
-      border-bottom: none;
-      border-right: 1px solid rgba(31, 18, 9, 0.06);
-    }
-
-    .tabblie-compare__heading {
-      margin-bottom: 24px;
-      font-size: clamp(1.8rem, 5vw, 2.4rem);
-    }
+    .tabblie-compare__mcell { padding: 10px 3px; min-height: 42px; }
+    .tabblie-compare__mcell--label { font-size: 11px; padding-left: 8px; }
+    .tabblie-compare__price { font-size: 11px; }
+    .tabblie-compare__mcell--tabblie .tabblie-compare__price { font-size: 12.5px; }
+    .tabblie-compare__check, .tabblie-compare__xmark { width: 20px; height: 20px; }
+    .tabblie-compare__check svg { width: 11px; height: 11px; }
+    .tabblie-compare__brand-logo { height: 18px; }
+    .tabblie-compare__comp-head { font-size: 8.5px; }
+    .tabblie-compare__comp-head svg { width: 20px; height: 20px; }
   }
 </style>
 
 <section class="tabblie-compare" id="tabblie-compare-{{ section.id }}">
-  <svg class="tabblie-compare__leaf tabblie-compare__leaf--1" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-    <circle cx="42" cy="54" r="33" fill="currentColor" opacity="0.35"/><circle cx="42" cy="54" r="33" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 46 A 23 23 0 0 1 33 31" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" opacity="0.9"/><circle cx="79" cy="28" r="13" fill="currentColor" opacity="0.35"/><circle cx="79" cy="28" r="13" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M71 25 A 9 9 0 0 1 75 19" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.9"/><circle cx="86" cy="68" r="6" fill="currentColor" opacity="0.55"/>
-  </svg>
-  <svg class="tabblie-compare__leaf tabblie-compare__leaf--2" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-    <circle cx="42" cy="54" r="33" fill="currentColor" opacity="0.35"/><circle cx="42" cy="54" r="33" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 46 A 23 23 0 0 1 33 31" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" opacity="0.9"/><circle cx="79" cy="28" r="13" fill="currentColor" opacity="0.35"/><circle cx="79" cy="28" r="13" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M71 25 A 9 9 0 0 1 75 19" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.9"/><circle cx="86" cy="68" r="6" fill="currentColor" opacity="0.55"/>
-  </svg>
   <div class="tabblie-compare__inner">
 
-    {%- if section.settings.heading != blank -%}
-      <h2 class="tabblie-compare__heading">
-        <em>Tabblie</em> {{ section.settings.heading }}
-      </h2>
+    <h2 class="tabblie-compare__heading">
+      Waarom <em>{{ section.settings.heading_accent | default: '1.000+ mensen' }}</em><br>
+      {{ section.settings.heading | default: 'kiezen voor Tabblie wasstrips' }}
+    </h2>
+    {%- if section.settings.subtext != blank -%}
+      <p class="tabblie-compare__subtext">{{ section.settings.subtext }}</p>
     {%- endif -%}
 
-    {%- if section.blocks.size > 0 -%}
-    <div class="tabblie-compare__layout">
-      <div class="tabblie-compare__scene tabblie-compare__scene--good" aria-hidden="true">
-        <span class="tabblie-compare__scene-label tabblie-compare__scene-label--good">Met tabblie</span>
-        <svg viewBox="0 0 400 533" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="tcSkyV" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#E1ECFA"/><stop offset="100%" stop-color="#C8DFF0"/></linearGradient>
-            <linearGradient id="tcHillV" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#A6D8B6"/><stop offset="100%" stop-color="#7FBE94"/></linearGradient>
-          </defs>
-          <rect x="0" y="0" width="400" height="340" fill="url(#tcSkyV)"/>
-          <circle cx="310" cy="90" r="34" fill="#F5C842"/>
-          <path d="M0 360 Q 100 320 200 345 T 400 340 L 400 533 L 0 533 Z" fill="url(#tcHillV)"/>
-          <path d="M0 400 Q 120 370 220 388 T 400 380 L 400 533 L 0 533 Z" fill="#5BB8A0" opacity="0.55"/>
-          <line x1="50" y1="240" x2="350" y2="232" stroke="#1F1209" stroke-width="2" stroke-linecap="round"/>
-          <line x1="52" y1="240" x2="52" y2="380" stroke="#1F1209" stroke-width="2"/>
-          <line x1="348" y1="232" x2="348" y2="370" stroke="#1F1209" stroke-width="2"/>
-          <g transform="translate(95,240)"><rect x="-16" y="0" width="32" height="42" rx="4" fill="#ffffff"/></g>
-          <g transform="translate(160,239)"><rect x="-18" y="0" width="36" height="48" rx="4" fill="#FDEEE6"/></g>
-          <g transform="translate(225,237)"><rect x="-18" y="0" width="36" height="40" rx="4" fill="#5BB8A0"/></g>
-          <g transform="translate(290,235)"><rect x="-16" y="0" width="32" height="50" rx="4" fill="#E8622A"/></g>
-          <path d="M70 100 q 12 -8 22 0 q 12 -8 22 0" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
-          <path d="M210 60 q 9 -7 18 0 q 9 -7 18 0" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
-          <path d="M40 160 q 8 -6 16 0 q 8 -6 16 0" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-        </svg>
-      </div>
+    <div class="tabblie-compare__matrix" role="table" aria-label="Vergelijking Tabblie versus traditionele wasmiddelen">
 
-      <div class="tabblie-compare__table" role="table" aria-label="Vergelijking tabblie versus traditioneel">
-
-        {%- comment -%} Column headers (desktop) {%- endcomment -%}
-        <div class="tabblie-compare__header" role="row">
-          <div class="tabblie-compare__col-head tabblie-compare__col-head--tabblie" role="columnheader">
-            Tabblie
-          </div>
-          <div class="tabblie-compare__col-head tabblie-compare__col-head--trad" role="columnheader">
-            Traditioneel
-          </div>
+      {%- comment -%} Header row {%- endcomment -%}
+      <div class="tabblie-compare__mrow tabblie-compare__mrow--head" role="row">
+        <div class="tabblie-compare__mcell tabblie-compare__mcell--label" role="columnheader"></div>
+        <div class="tabblie-compare__mcell tabblie-compare__mcell--tabblie" role="columnheader">
+          <img class="tabblie-compare__brand-logo" src="{{ 'tabblie-logo.svg' | asset_url }}" alt="Tabblie" width="90" height="26" loading="lazy">
         </div>
+        <div class="tabblie-compare__mcell" role="columnheader">
+          <span class="tabblie-compare__comp-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v3"/><path d="M14 3v3"/><path d="M8 6h8l1 3v11a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1V9z"/><path d="M7 13h10"/></svg>
+            {{ section.settings.comp1_label | default: 'Vloeibaar wasmiddel' }}
+          </span>
+        </div>
+        <div class="tabblie-compare__mcell" role="columnheader">
+          <span class="tabblie-compare__comp-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M12 4c-2 3-2 13 0 16"/><path d="M4.5 9.5c4-2 11-2 15 0"/></svg>
+            {{ section.settings.comp2_label | default: 'Pods & capsules' }}
+          </span>
+        </div>
+        <div class="tabblie-compare__mcell" role="columnheader">
+          <span class="tabblie-compare__comp-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 9h16"/><path d="M9 14h.01"/><path d="M13 16h.01"/><path d="M12 12.5h.01"/><path d="M15.5 13.5h.01"/><path d="M8.5 17h.01"/></svg>
+            {{ section.settings.comp3_label | default: 'Waspoeder' }}
+          </span>
+        </div>
+      </div>
 
-        {%- comment -%} Data rows {%- endcomment -%}
-        {%- for block in section.blocks -%}
-          <div class="tabblie-compare__row" role="row" {{ block.shopify_attributes }}>
-            <div class="tabblie-compare__cell tabblie-compare__cell--tabblie" role="cell">
-              {%- assign topic_icon = block.settings.icon | default: 'check' -%}
-              <span class="tabblie-compare__topic" aria-hidden="true">
-                {%- case topic_icon -%}
-                  {%- when 'spray' -%}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10V7a1 1 0 0 1 1-1h2"/><path d="M13 6h3v3h-3z"/><path d="M16 7h2"/><path d="M7 22v-8.5L10 10h4l3 3.5V22a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1z" transform="translate(0,-1)"/><path d="M21 4h.01"/><path d="M22 7h.01"/><path d="M21 10h.01"/></svg>
-                  {%- when 'package' -%}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
-                  {%- when 'droplet' -%}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg>
-                  {%- when 'feather' -%}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z"/><path d="M16 8 2 22"/><path d="M17.5 15H9"/></svg>
-                  {%- when 'shield' -%}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-                  {%- when 'recycle' -%}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
-                  {%- when 'truck' -%}
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18h2"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg>
-                  {%- else -%}
-                    <svg viewBox="0 0 256 256" fill="currentColor"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"/></svg>
-                {%- endcase -%}
-              </span>
-              {{ block.settings.tabblie_text }}
-            </div>
-            <div class="tabblie-compare__cell tabblie-compare__cell--trad" role="cell">
-              <span class="tabblie-compare__xmark" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-                </svg>
-              </span>
-              {{ block.settings.traditional_text }}
-            </div>
+      {%- comment -%} Price row {%- endcomment -%}
+      {%- if section.settings.show_price_row -%}
+        <div class="tabblie-compare__mrow" role="row">
+          <div class="tabblie-compare__mcell tabblie-compare__mcell--label" role="cell">{{ section.settings.price_label | default: 'Prijs per wasbeurt' }}</div>
+          <div class="tabblie-compare__mcell tabblie-compare__mcell--tabblie" role="cell"><span class="tabblie-compare__price">{{ section.settings.price_tabblie }}</span></div>
+          <div class="tabblie-compare__mcell" role="cell"><span class="tabblie-compare__price">{{ section.settings.price_comp1 }}</span></div>
+          <div class="tabblie-compare__mcell" role="cell"><span class="tabblie-compare__price">{{ section.settings.price_comp2 }}</span></div>
+          <div class="tabblie-compare__mcell" role="cell"><span class="tabblie-compare__price">{{ section.settings.price_comp3 }}</span></div>
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} Feature rows {%- endcomment -%}
+      {%- for block in section.blocks -%}
+        <div class="tabblie-compare__mrow{% cycle ' tabblie-compare__mrow--zebra', '' %}{% if forloop.last %} tabblie-compare__mrow--last{% endif %}" role="row" {{ block.shopify_attributes }}>
+          <div class="tabblie-compare__mcell tabblie-compare__mcell--label" role="cell">{{ block.settings.text | default: block.settings.tabblie_text }}</div>
+          <div class="tabblie-compare__mcell tabblie-compare__mcell--tabblie" role="cell">
+            <span class="tabblie-compare__check" aria-label="Ja"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"/></svg></span>
           </div>
-        {%- endfor -%}
+          {%- assign comps = 'c1,c2,c3' | split: ',' -%}
+          {%- for c in comps -%}
+            <div class="tabblie-compare__mcell" role="cell">
+              {%- if block.settings[c] -%}
+                <span class="tabblie-compare__check" aria-label="Ja"><svg viewBox="0 0 256 256" fill="currentColor"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"/></svg></span>
+              {%- else -%}
+                <span class="tabblie-compare__xmark" aria-label="Nee"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></span>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endfor -%}
 
-      </div>
-
-      <div class="tabblie-compare__scene tabblie-compare__scene--bad" aria-hidden="true">
-        <span class="tabblie-compare__scene-label tabblie-compare__scene-label--bad">Traditioneel</span>
-        <svg viewBox="0 0 400 533" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="tcMurkV" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5a6068"/><stop offset="100%" stop-color="#2c3036"/></linearGradient>
-          </defs>
-          <rect x="0" y="0" width="400" height="533" fill="url(#tcMurkV)"/>
-          <ellipse cx="200" cy="525" rx="280" ry="36" fill="#1c1f24" opacity="0.6"/>
-          <g opacity="0.18" fill="#ffffff"><circle cx="60" cy="60" r="3"/><circle cx="120" cy="100" r="2"/><circle cx="240" cy="55" r="2.5"/><circle cx="330" cy="90" r="2"/><circle cx="180" cy="140" r="2"/></g>
-          <g transform="translate(80,360)"><path d="M0 0 q -6 -28 0 -50 l 16 0 q 6 22 0 50 l -16 0 z" fill="#5b8aa9"/><rect x="-2" y="-66" width="20" height="10" fill="#3a5d75"/><circle cx="6" cy="-30" r="3" fill="#ffffff" opacity="0.4"/></g>
-          <g transform="translate(150,400)"><path d="M0 0 q -8 -32 0 -60 l 18 0 q 8 28 0 60 l -18 0 z" fill="#86736a"/><rect x="0" y="-78" width="18" height="12" fill="#5d4f48"/><rect x="-4" y="-22" width="24" height="10" fill="#a8927f" opacity="0.6"/></g>
-          <g transform="translate(220,340)"><path d="M-18 0 q -3 -38 6 -62 l 24 0 q 9 24 6 62 l -36 0 z" fill="#c0c5cb"/><rect x="-9" y="-78" width="22" height="10" fill="#7a7e84"/><rect x="-18" y="-26" width="36" height="10" fill="#ffffff" opacity="0.55"/></g>
-          <g transform="translate(290,400)"><path d="M-12 0 q -4 -22 4 -38 l 16 0 q 8 16 4 38 l -24 0 z" fill="#e8a05c"/><rect x="-5" y="-52" width="14" height="10" fill="#9e6c3c"/></g>
-          <g transform="translate(330,355)"><path d="M-15 0 q -4 -32 5 -54 l 22 0 q 9 22 5 54 l -32 0 z" fill="#7da692"/><rect x="-7" y="-68" width="20" height="10" fill="#4f6f60"/><rect x="-15" y="-32" width="32" height="10" fill="#ffffff" opacity="0.5"/></g>
-          <g transform="translate(120,470)"><path d="M-13 0 q -3 -22 5 -36 l 16 0 q 8 14 5 36 l -26 0 z" fill="#bcbfc4"/><rect x="-5" y="-46" width="14" height="10" fill="#7d8086"/></g>
-          <g transform="translate(290,475)"><path d="M-12 0 q -4 -18 4 -28 l 16 0 q 6 12 4 28 l -24 0 z" fill="#c75c5c"/><rect x="-5" y="-38" width="14" height="10" fill="#7a3939"/></g>
-          <g transform="translate(60,460)"><rect x="-30" y="-12" width="60" height="20" rx="3" fill="#3a3f47"/><rect x="-30" y="-22" width="60" height="10" rx="3" fill="#2a2e34"/></g>
-          <g transform="translate(360,470)"><path d="M-14 0 q -4 -10 0 -18 l 14 0 q 6 8 0 18 l -14 0 z" fill="#aeb1b5"/></g>
-          <g transform="translate(200,495)"><path d="M-10 0 q -2 -14 4 -22 l 12 0 q 4 8 4 22 l -20 0 z" fill="#9eb8a8"/></g>
-          <path d="M70 200 Q 130 170 200 185 T 340 200" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.18" stroke-dasharray="3 6"/>
-        </svg>
-      </div>
     </div>
+
+    {%- if section.settings.footnote != blank -%}
+      <p class="tabblie-compare__footnote">{{ section.settings.footnote }}</p>
     {%- endif -%}
 
   </div>
@@ -494,7 +315,7 @@
 
 <script>
   (function () {
-    var rows = document.querySelectorAll('#tabblie-compare-{{ section.id }} .tabblie-compare__row');
+    var rows = document.querySelectorAll('#tabblie-compare-{{ section.id }} .tabblie-compare__mrow');
     if (!rows.length) return;
     if (!('IntersectionObserver' in window)) {
       rows.forEach(function (r) { r.classList.add('is-visible'); });
@@ -504,8 +325,8 @@
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           var row = entry.target;
-          var idx = Array.prototype.indexOf.call(row.parentNode.querySelectorAll('.tabblie-compare__row'), row);
-          row.style.transitionDelay = (idx * 0.08) + 's';
+          var idx = Array.prototype.indexOf.call(row.parentNode.children, row);
+          row.style.transitionDelay = (idx * 0.06) + 's';
           row.classList.add('is-visible');
           io.unobserve(row);
         }
@@ -523,9 +344,38 @@
   "settings": [
     {
       "type": "text",
+      "id": "heading_accent",
+      "label": "Heading accent (oranje deel)",
+      "default": "1.000+ mensen"
+    },
+    {
+      "type": "text",
       "id": "heading",
-      "label": "Heading (na 'tabblie')",
-      "default": "vs. traditioneel"
+      "label": "Heading (rest, na 'Waarom [accent]')",
+      "default": "kiezen voor Tabblie wasstrips"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtekst",
+      "default": "Doe mee met de wasrevolutie en zwaai de dure, ouderwetse, vervuilende wasmiddelen voorgoed uit."
+    },
+    { "type": "header", "content": "Concurrent-kolommen" },
+    { "type": "text", "id": "comp1_label", "label": "Concurrent 1", "default": "Vloeibaar wasmiddel" },
+    { "type": "text", "id": "comp2_label", "label": "Concurrent 2", "default": "Pods & capsules" },
+    { "type": "text", "id": "comp3_label", "label": "Concurrent 3", "default": "Waspoeder" },
+    { "type": "header", "content": "Prijsrij" },
+    { "type": "checkbox", "id": "show_price_row", "label": "Toon prijsrij", "default": true },
+    { "type": "text", "id": "price_label", "label": "Label", "default": "Prijs per wasbeurt" },
+    { "type": "text", "id": "price_tabblie", "label": "Prijs Tabblie", "default": "€0,17" },
+    { "type": "text", "id": "price_comp1", "label": "Prijs concurrent 1", "default": "€0,45" },
+    { "type": "text", "id": "price_comp2", "label": "Prijs concurrent 2", "default": "€0,38" },
+    { "type": "text", "id": "price_comp3", "label": "Prijs concurrent 3", "default": "€0,28" },
+    {
+      "type": "text",
+      "id": "footnote",
+      "label": "Voetnoot",
+      "default": "*Gemiddelde prijzen per wasbeurt, gebaseerd op adviesprijzen van bekende merken."
     }
   ],
   "blocks": [
@@ -533,34 +383,10 @@
       "type": "row",
       "name": "Vergelijkingsrij",
       "settings": [
-        {
-          "type": "select",
-          "id": "icon",
-          "label": "Icoon",
-          "options": [
-            { "value": "check", "label": "Vinkje" },
-            { "value": "spray", "label": "Sprayfles (plastic)" },
-            { "value": "package", "label": "Verpakking" },
-            { "value": "droplet", "label": "Druppel (afbreekbaar)" },
-            { "value": "feather", "label": "Veertje (licht)" },
-            { "value": "shield", "label": "Schild (veilig)" },
-            { "value": "recycle", "label": "Recycle (papier)" },
-            { "value": "truck", "label": "Bezorging" }
-          ],
-          "default": "check"
-        },
-        {
-          "type": "text",
-          "id": "tabblie_text",
-          "label": "tabblie (voordeel)",
-          "default": "Voordeel tabblie"
-        },
-        {
-          "type": "text",
-          "id": "traditional_text",
-          "label": "Traditioneel (nadeel)",
-          "default": "Nadeel traditioneel"
-        }
+        { "type": "text", "id": "text", "label": "Kenmerk", "default": "Kenmerk" },
+        { "type": "checkbox", "id": "c1", "label": "Concurrent 1 heeft dit ook", "default": false },
+        { "type": "checkbox", "id": "c2", "label": "Concurrent 2 heeft dit ook", "default": false },
+        { "type": "checkbox", "id": "c3", "label": "Concurrent 3 heeft dit ook", "default": false }
       ]
     }
   ],
@@ -569,48 +395,14 @@
     {
       "name": "Comparison Table",
       "blocks": [
-        {
-          "type": "row",
-          "settings": {
-            "tabblie_text": "Geen plasticafval",
-            "traditional_text": "Plastic flessen & verpakkingen"
-          }
-        },
-        {
-          "type": "row",
-          "settings": {
-            "tabblie_text": "Biologisch afbreekbaar",
-            "traditional_text": "Schadelijke chemicali\u00ebn"
-          }
-        },
-        {
-          "type": "row",
-          "settings": {
-            "tabblie_text": "Compact & lichtgewicht",
-            "traditional_text": "Zwaar & omvangrijk"
-          }
-        },
-        {
-          "type": "row",
-          "settings": {
-            "tabblie_text": "Geen schadelijke stoffen",
-            "traditional_text": "Parabenen, fosfaten & kleurstoffen"
-          }
-        },
-        {
-          "type": "row",
-          "settings": {
-            "tabblie_text": "Verpakt in recyclebaar papier",
-            "traditional_text": "Niet-recyclebaar plastic"
-          }
-        },
-        {
-          "type": "row",
-          "settings": {
-            "tabblie_text": "Gratis verzending NL & BE",
-            "traditional_text": "Hoge verzendkosten door gewicht"
-          }
-        }
+        { "type": "row", "settings": { "text": "Geen plastic verpakking" } },
+        { "type": "row", "settings": { "text": "Vlekverwijderende enzymen", "c1": true, "c2": true } },
+        { "type": "row", "settings": { "text": "Plantaardig" } },
+        { "type": "row", "settings": { "text": "Huidvriendelijke ingrediënten" } },
+        { "type": "row", "settings": { "text": "Makkelijk te doseren", "c2": true } },
+        { "type": "row", "settings": { "text": "Geld-terug-garantie" } },
+        { "type": "row", "settings": { "text": "Licht & makkelijk mee te nemen" } },
+        { "type": "row", "settings": { "text": "Doneert 10% van de winst" } }
       ]
     }
   ]
