@@ -118,8 +118,8 @@
   .tmf-panel__body {
     padding: 20px 24px 24px;
     display: grid;
-    grid-template-columns: 1.25fr 0.95fr 0.85fr;
-    gap: 22px;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 28px;
   }
 
   /* Blog column tiles (Lekker-style: square image + title stacked) */
@@ -213,7 +213,7 @@
   /* Products grid */
   .tmf-products {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 10px;
   }
 
@@ -263,9 +263,10 @@
   }
 
   .tmf-tile__img {
-    width: 44px;
-    height: 44px;
-    object-fit: contain;
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 10px;
     flex-shrink: 0;
   }
 
@@ -418,34 +419,36 @@
       <div>
         <p class="tmf-col-label">Producten</p>
         <div class="tmf-products">
-          <a class="tmf-tile" href="/pages/shop" style="background: #FDEEE6;">
-            <img class="tmf-tile__img" src="{{ 'tabblie-wasstrips.png' | asset_url }}" alt="Wasstrips" loading="lazy" width="44" height="44">
-            <div>
-              <p class="tmf-tile__name">Wasstrips</p>
-              <p class="tmf-tile__sub">32 wasbeurten</p>
-            </div>
-          </a>
-          <a class="tmf-tile" href="/pages/shop" style="background: #FDF5DD;">
-            <img class="tmf-tile__img" src="{{ 'tabblie-vaatwasstrips.png' | asset_url }}" alt="Vaatwasstrips" loading="lazy" width="44" height="44">
-            <div>
-              <p class="tmf-tile__name">Vaatwasstrips</p>
-              <p class="tmf-tile__sub">32 afwasbeurten</p>
-            </div>
-          </a>
-          <a class="tmf-tile" href="/pages/shop" style="background: #E2F2ED;">
-            <img class="tmf-tile__img" src="{{ 'tabblie-toiletstrips.png' | asset_url }}" alt="Toiletstrips" loading="lazy" width="44" height="44">
-            <div>
-              <p class="tmf-tile__name">Toiletstrips</p>
-              <p class="tmf-tile__sub">32 toiletbeurten</p>
-            </div>
-          </a>
-          <div class="tmf-tile tmf-tile--soon" style="background: #FCE8E8;">
-            <span class="tmf-tile__q" aria-hidden="true">?</span>
-            <div>
-              <p class="tmf-tile__name">Nog even geheim...</p>
-              <p class="tmf-tile__sub">Binnenkort beschikbaar</p>
-            </div>
-          </div>
+          {%- for product in collections['new'].products limit: 4 -%}
+            {%- assign tile_bg = '#FDF6EE' -%}
+            {%- case product.handle -%}
+              {%- when 'tabblie-laundry' -%}{%- assign tile_bg = '#FDEEE6' -%}
+              {%- when 'tabblie-dishwasher' -%}{%- assign tile_bg = '#FDF5DD' -%}
+              {%- when 'tabblie-toilet' -%}{%- assign tile_bg = '#E2F2ED' -%}
+              {%- when 'tabblie-soap' -%}{%- assign tile_bg = '#FCE8E8' -%}
+            {%- endcase -%}
+            {%- if product.handle == 'tabblie-soap' -%}
+              <div class="tmf-tile tmf-tile--soon" style="background: {{ tile_bg }};">
+                <span class="tmf-tile__q" aria-hidden="true">?</span>
+                <div>
+                  <p class="tmf-tile__name">{{ product.title | escape }}</p>
+                  <p class="tmf-tile__sub">Nog even geheim</p>
+                </div>
+              </div>
+            {%- else -%}
+              <a class="tmf-tile" href="{{ product.url }}" style="background: {{ tile_bg }};">
+                {%- if product.featured_image -%}
+                  <img class="tmf-tile__img" src="{{ product.featured_image | image_url: width: 112 }}" alt="{{ product.title | escape }}" loading="lazy" width="56" height="56">
+                {%- else -%}
+                  <span class="tmf-tile__q" aria-hidden="true">?</span>
+                {%- endif -%}
+                <div>
+                  <p class="tmf-tile__name">{{ product.title | escape }}</p>
+                  <p class="tmf-tile__sub">{{ product.price | money }}</p>
+                </div>
+              </a>
+            {%- endif -%}
+          {%- endfor -%}
         </div>
       </div>
 
@@ -465,54 +468,6 @@
         </ul>
       </div>
 
-      <div>
-        <p class="tmf-col-label">Inspiratie</p>
-        <div class="tmf-blog">
-          {%- assign blog_handle = section.settings.blog_handle | default: 'news' -%}
-          {%- assign b = blogs[blog_handle] -%}
-          {%- if b.articles.size > 0 -%}
-            {%- for article in b.articles limit: 3 -%}
-              <a class="tmf-article" href="{{ article.url }}">
-                {%- if article.image -%}
-                  <img class="tmf-article__img" src="{{ article.image | image_url: width: 128 }}" alt="{{ article.title | escape }}" loading="lazy" width="64" height="64">
-                {%- else -%}
-                  <span class="tmf-article__img" aria-hidden="true"></span>
-                {%- endif -%}
-                <div>
-                  <p class="tmf-article__title">{{ article.title | truncate: 48 }}</p>
-                  <p class="tmf-article__meta">Lees meer</p>
-                </div>
-              </a>
-            {%- endfor -%}
-          {%- else -%}
-            <a class="tmf-article" href="/blogs/{{ blog_handle }}">
-              <span class="tmf-article__img" aria-hidden="true"></span>
-              <div>
-                <p class="tmf-article__title">Zo werken wasstrips (echt)</p>
-                <p class="tmf-article__meta">Binnenkort</p>
-              </div>
-            </a>
-            <a class="tmf-article" href="/blogs/{{ blog_handle }}">
-              <span class="tmf-article__img" aria-hidden="true"></span>
-              <div>
-                <p class="tmf-article__title">Geen plasticafval: wat betekent dat?</p>
-                <p class="tmf-article__meta">Binnenkort</p>
-              </div>
-            </a>
-            <a class="tmf-article" href="/blogs/{{ blog_handle }}">
-              <span class="tmf-article__img" aria-hidden="true"></span>
-              <div>
-                <p class="tmf-article__title">Zo compenseren we onze CO2-voetafdruk</p>
-                <p class="tmf-article__meta">Binnenkort</p>
-              </div>
-            </a>
-          {%- endif -%}
-          <a class="tmf-blog__all" href="/blogs/{{ blog_handle }}">
-            Alle artikelen
-            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </a>
-        </div>
-      </div>
     </div>
 
     <div class="tmf-panel__footer">

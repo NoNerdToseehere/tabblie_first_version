@@ -92,7 +92,8 @@
         "card_4"
       ],
       "settings": {
-        "title": "Onze producten"
+        "title": "Onze producten",
+        "show_price": false
       }
     },
     "product-grid": {

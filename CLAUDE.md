@@ -109,7 +109,7 @@ Every change to this theme must serve these four goals. When a request conflicts
 - Background color for most sections: `#FDF6EE` (warm cream), not pure `#FFFFFF`
 - Copy tone must be cheeky and direct — avoid corporate/generic language
 - Never use dark green as a brand color — it reads as "typical eco brand"
-- **Honest claim language:** never say *"plasticvrij"* / *"plastic-free"* / *"100% plastic free"*. The products are not literally plastic-free. Always use **"geen plasticafval"** (NL) or **"no plastic waste"** (EN). We eliminate plastic *waste* — not every plastic molecule.
+- **Claim language (updated 2026-07-24):** **"100% plasticvrij"** (NL) / "plastic-free" (EN) is the approved claim — the strips use a seaweed-based carrier (no PVA/microplastics) and paper packaging. "Geen plasticafval" is also fine but "100% plasticvrij" is preferred. Do not walk claims back to the old "geen plasticafval"-only wording.
 
 ### Shopify-specific rules
 - This is an **Online Store 2.0** theme — sections are JSON-defined in `/templates`

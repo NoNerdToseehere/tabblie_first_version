@@ -293,7 +293,7 @@
               {%- if block.settings.coming_soon -%}
                 <span class="tabblie-shop__card-soon-text">Binnenkort beschikbaar</span>
               {%- else -%}
-                {%- if product -%}
+                {%- if product and section.settings.show_price -%}
                   <span class="tabblie-shop__card-price">{{ card_price }}</span>
                 {%- endif -%}
                 <span class="tabblie-shop__card-btn" aria-hidden="true">
@@ -320,6 +320,12 @@
       "id": "title",
       "label": "Heading",
       "default": "Onze producten"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "label": "Toon prijs op kaarten",
+      "default": true
     }
   ],
   "blocks": [
