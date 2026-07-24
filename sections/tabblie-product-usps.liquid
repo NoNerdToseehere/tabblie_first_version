@@ -7,15 +7,15 @@
   /* ── Deal bar ── */
   .tabblie-deal-bar {
     background-color: #E8622A;
-    padding: 10px 16px;
+    padding: 14px 16px;
     text-align: center;
   }
 
   .tabblie-deal-bar__text {
     font-family: var(--text-font-family);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
+    font-size: clamp(16px, 2.2vw, 20px);
+    font-weight: 800;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
     color: #ffffff;
   }
@@ -112,6 +112,7 @@
   </div>
 {%- endif -%}
 
+{%- if section.settings.show_usp_strip -%}
 <div class="tabblie-usp-strip" aria-hidden="true">
   <div class="tabblie-usp-strip__track">
     {%- for _i in (1..4) -%}
@@ -150,6 +151,7 @@
     {%- endfor -%}
   </div>
 </div>
+{%- endif -%}
 
 {% schema %}
 {
@@ -160,7 +162,13 @@
       "type": "text",
       "id": "deal_text",
       "label": "Deal bar text (leave blank to hide)",
-      "default": "LENTEKORTING: 2+1 GRATIS"
+      "default": "BUNDELDEAL: 2+1 GRATIS"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_usp_strip",
+      "label": "Toon USP marquee-strip",
+      "default": false
     }
   ],
   "blocks": [
