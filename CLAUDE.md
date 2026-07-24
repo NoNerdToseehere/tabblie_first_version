@@ -12,6 +12,7 @@ This file provides context and working instructions for Claude Code when working
 **Base theme:** Halo (exported from tabblie.com)
 **Purpose:** DTC e-commerce store for eco-friendly household strips (laundry, dishwasher, toilet)
 
+**Store IDs, git setup, CLI commands, GitHub-sync status → `STORE_INFO.md`** (read this before any Shopify CLI or deploy work)
 Full brand details → `COMPANY_BRANDING/brand-document.md`
 Full website requirements → `COMPANY_BRANDING/PRD.md`
 **Live style system (colors, gradients, icons, spacing) → `COMPANY_BRANDING/styling-system.md`**

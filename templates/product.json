@@ -1,8 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "tabblie_product_usps": {
+      "type": "tabblie-product-usps",
+      "blocks": {
+        "usp_1": {
+          "type": "usp",
+          "settings": {
+            "icon": "plasticfree",
+            "text": "Geen plasticafval"
+          }
+        },
+        "usp_2": {
+          "type": "usp",
+          "settings": {
+            "icon": "heart",
+            "text": "100% vegan"
+          }
+        },
+        "usp_3": {
+          "type": "usp",
+          "settings": {
+            "icon": "truck",
+            "text": "Gratis verzending NL & BE"
+          }
+        },
+        "usp_4": {
+          "type": "usp",
+          "settings": {
+            "icon": "check",
+            "text": "Nederlands familiebedrijf"
+          }
+        },
+        "usp_5": {
+          "type": "usp",
+          "settings": {
+            "icon": "star",
+            "text": "Super effectief"
+          }
+        },
+        "usp_6": {
+          "type": "usp",
+          "settings": {
+            "icon": "footprint",
+            "text": "Klimaatneutraal verzonden"
+          }
+        }
+      },
+      "block_order": [
+        "usp_1",
+        "usp_2",
+        "usp_3",
+        "usp_4",
+        "usp_5",
+        "usp_6"
+      ],
+      "settings": {
+        "deal_text": "LENTEKORTING: 2+1 GRATIS"
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
+        "review_score_custom": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#e8622a",
+            "text": "tabblie-review-score",
+            "color_title": "#e8622a",
+            "text_description": "tabblie-review-score",
+            "color_des": "#1f1209",
+            "fontsize_text": 14,
+            "content_popup": "",
+            "spacing_top": 0,
+            "spacing_bottom": 5
+          }
+        },
         "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0": {
           "type": "title",
           "settings": {
@@ -11,6 +93,21 @@
             "color_title": "#232323",
             "spacing_top": 0,
             "spacing_bottom": 10
+          }
+        },
+        "slogan": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#e8622a",
+            "text": "",
+            "color_title": "#1f1209",
+            "text_description": "<p style='font-size:13px;color:rgba(31,18,9,0.45);font-style:italic;margin:0;font-family:var(--text-font-family)'>Tabblie, kind kan de was doen.</p>",
+            "color_des": "#1f1209",
+            "fontsize_text": 13,
+            "content_popup": "",
+            "spacing_top": 0,
+            "spacing_bottom": 4
           }
         },
         "judge_me_reviews_preview_badge_ayaigx": {
@@ -23,6 +120,21 @@
             "fontsize_text": 22,
             "spacing_top": 13,
             "spacing_bottom": 0
+          }
+        },
+        "benefit_checks": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#e8622a",
+            "text": "tabblie-benefit-checks",
+            "color_title": "#1f1209",
+            "text_description": "tabblie-benefit-checks",
+            "color_des": "#1f1209",
+            "fontsize_text": 14,
+            "content_popup": "",
+            "spacing_top": 5,
+            "spacing_bottom": 10
           }
         },
         "d98e243b-3682-495a-965a-1c7f7d460880": {
@@ -53,6 +165,21 @@
             "spacing_bottom": 15
           }
         },
+        "trust_badges": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#e8622a",
+            "text": "tabblie-trust-badges-pdp",
+            "color_title": "#e8622a",
+            "text_description": "tabblie-trust-badges-pdp",
+            "color_des": "#1f1209",
+            "fontsize_text": 12,
+            "content_popup": "",
+            "spacing_top": 0,
+            "spacing_bottom": 10
+          }
+        },
         "f1b31d90-1e43-4948-9fe3-97ba43f6fb34": {
           "type": "buy_buttons",
           "settings": {
@@ -79,11 +206,32 @@
             "spacing_bottom": 15
           }
         },
-        "10093fcf-2053-47e9-bedb-841bb0d046fa": {
-          "type": "trust_image",
-          "disabled": true,
+        "social_delivery": {
+          "type": "custom_information",
           "settings": {
-            "show_trust_image": true,
+            "icon": "",
+            "color_icon": "#e8622a",
+            "text": "tabblie-social-delivery",
+            "color_title": "#1f1209",
+            "text_description": "tabblie-social-delivery",
+            "color_des": "#1f1209",
+            "fontsize_text": 12,
+            "content_popup": "",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "ugc_videos": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#1f1209",
+            "text": "tabblie-ugc-videos",
+            "color_title": "#1f1209",
+            "text_description": "tabblie-ugc-videos",
+            "color_des": "#1f1209",
+            "fontsize_text": 13,
+            "content_popup": "",
             "spacing_top": 0,
             "spacing_bottom": 0
           }
@@ -136,96 +284,6 @@
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
             "maximum_des_to_show": 300
-          }
-        },
-        "review_score_custom": {
-          "type": "custom_information",
-          "settings": {
-            "icon": "",
-            "color_icon": "#E8622A",
-            "text": "tabblie-review-score",
-            "color_title": "#E8622A",
-            "text_description": "tabblie-review-score",
-            "color_des": "#1F1209",
-            "fontsize_text": 14,
-            "content_popup": " ",
-            "spacing_top": 0,
-            "spacing_bottom": 5
-          }
-        },
-        "benefit_checks": {
-          "type": "custom_information",
-          "settings": {
-            "icon": "",
-            "color_icon": "#E8622A",
-            "text": "tabblie-benefit-checks",
-            "color_title": "#1F1209",
-            "text_description": "tabblie-benefit-checks",
-            "color_des": "#1F1209",
-            "fontsize_text": 14,
-            "content_popup": " ",
-            "spacing_top": 5,
-            "spacing_bottom": 10
-          }
-        },
-        "trust_badges": {
-          "type": "custom_information",
-          "settings": {
-            "icon": "",
-            "color_icon": "#E8622A",
-            "text": "tabblie-trust-badges-pdp",
-            "color_title": "#E8622A",
-            "text_description": "tabblie-trust-badges-pdp",
-            "color_des": "#1F1209",
-            "fontsize_text": 12,
-            "content_popup": " ",
-            "spacing_top": 0,
-            "spacing_bottom": 10
-          }
-        },
-        "social_delivery": {
-          "type": "custom_information",
-          "settings": {
-            "icon": "",
-            "color_icon": "#E8622A",
-            "text": "tabblie-social-delivery",
-            "color_title": "#1F1209",
-            "text_description": "tabblie-social-delivery",
-            "color_des": "#1F1209",
-            "fontsize_text": 12,
-            "content_popup": " ",
-            "spacing_top": 0,
-            "spacing_bottom": 0
-          }
-        },
-        "ugc_videos": {
-          "type": "custom_information",
-          "settings": {
-            "icon": "",
-            "color_icon": "#1F1209",
-            "text": "tabblie-ugc-videos",
-            "color_title": "#1F1209",
-            "text_description": "tabblie-ugc-videos",
-            "color_des": "#1F1209",
-            "fontsize_text": 13,
-            "content_popup": "",
-            "spacing_top": 0,
-            "spacing_bottom": 0
-          }
-        },
-        "slogan": {
-          "type": "custom_information",
-          "settings": {
-            "icon": "",
-            "color_icon": "#E8622A",
-            "text": "",
-            "color_title": "#1F1209",
-            "text_description": "<p style='font-size:13px;color:rgba(31,18,9,0.45);font-style:italic;margin:0;font-family:var(--text-font-family)'>Tabblie, kind kan de was doen.</p>",
-            "color_des": "#1F1209",
-            "fontsize_text": 13,
-            "content_popup": "",
-            "spacing_top": 0,
-            "spacing_bottom": 4
           }
         },
         "custom_shipping": {
@@ -386,7 +444,7 @@
             "title_block_font_weight": "400",
             "mg_bottom_title": 14,
             "mg_bottom_title_mb": 0,
-            "color_block": "#5BB8A0",
+            "color_block": "#5bb8a0",
             "description": "",
             "fontsize_des_block": 16,
             "fontsize_des_block_mb": 14,
@@ -429,7 +487,7 @@
             "title_block_font_weight": "400",
             "mg_bottom_title": 15,
             "mg_bottom_title_mb": 0,
-            "color_block": "#E85B7A",
+            "color_block": "#e85b7a",
             "description": "",
             "fontsize_des_block": 16,
             "fontsize_des_block_mb": 14,
@@ -472,7 +530,7 @@
             "title_block_font_weight": "400",
             "mg_bottom_title": 15,
             "mg_bottom_title_mb": 0,
-            "color_block": "#F5C842",
+            "color_block": "#f5c842",
             "description": "",
             "fontsize_des_block": 16,
             "fontsize_des_block_mb": 14,
@@ -515,7 +573,7 @@
             "title_block_font_weight": "400",
             "mg_bottom_title": 15,
             "mg_bottom_title_mb": 0,
-            "color_block": "#3B7DD8",
+            "color_block": "#3b7dd8",
             "description": "",
             "fontsize_des_block": 16,
             "fontsize_des_block_mb": 14,
@@ -558,7 +616,7 @@
             "title_block_font_weight": "400",
             "mg_bottom_title": 15,
             "mg_bottom_title_mb": 0,
-            "color_block": "#5BB8A0",
+            "color_block": "#5bb8a0",
             "description": "",
             "fontsize_des_block": 16,
             "fontsize_des_block_mb": 14,
@@ -674,275 +732,6 @@
         "mg_bottom_mobile": 50
       }
     },
-    "faqs_6mziiU": {
-      "type": "faqs",
-      "blocks": {
-        "paragraph_aMkfUp": {
-          "type": "paragraph",
-          "settings": {
-            "title": "",
-            "question_1": "Hoe gebruik ik de tabblie strips?",
-            "answer_1": "<p>Scheur een strip af, gooi hem in de wasmachine, vaatwasser of los hem op in water. Klaar! Geen afmeten, geen rommel.</p>",
-            "question_2": "Werken de strips in koud water?",
-            "answer_2": "<p>Ja! Onze strips lossen volledig op in zowel warm als koud water. Perfect voor elke wastemperatuur.</p>",
-            "question_3": "Zijn de strips veilig voor gevoelige huid?",
-            "answer_3": "<p>Absoluut. Onze formule is vrij van parabenen, fosfaten, kleurstoffen en kunstmatige geurstoffen. Dermatologisch getest en geschikt voor het hele gezin.</p>",
-            "question_4": "Hoe zit het met verzending en retourneren?",
-            "answer_4": "<p>We verzenden gratis naar Nederland en België. Niet tevreden? Je kunt binnen 30 dagen retourneren voor volledige terugbetaling.</p>",
-            "question_5": "",
-            "answer_5": "",
-            "question_6": "",
-            "answer_6": "",
-            "question_7": "",
-            "answer_7": "",
-            "question_8": "",
-            "answer_8": "",
-            "question_9": "",
-            "answer_9": "",
-            "question_10": "",
-            "answer_10": ""
-          }
-        }
-      },
-      "block_order": [
-        "paragraph_aMkfUp"
-      ],
-      "custom_css": [
-        ".faqs .faqs-item .card-header .title {color: #2b2b2b; font-size: 16px; letter-spacing: 0px; font-weight: 500; background: #f8f4f0; padding: 5px 0px; border-top: none; border-bottom: 1px solid #f84d27;}",
-        "faqs-item#FaqsSection-template--26621760274781__faqs_6mziiU {background-color: #f9f5f1;}",
-        ".faqs-item .collapse {background: #f8f4f0; color: #000; font-size: 16px; line-height: 22px; border: none;}",
-        ".faqs .faqs-item .card-header:not(.collapsed) .title:after {transform: scale(0); transform-origin: left;}"
-      ],
-      "name": "t:sections.faqs.presets.name",
-      "settings": {
-        "container": "1170",
-        "padding_full_width": 0,
-        "title": "",
-        "color_title": "#f4633a",
-        "fontsize_title": 15,
-        "fontsize_title_mb": 16,
-        "mg_bottom_title": 12,
-        "mg_bottom_title_mb": 12,
-        "enable_border_title": false,
-        "border_color_title": "rgba(0,0,0,0)",
-        "description": "",
-        "color_des": "#f4633a",
-        "fontsize_des": 16,
-        "contact_text": "",
-        "contact_link": "",
-        "contact_color": "#ffffff",
-        "contact_color_border": "#ef6454",
-        "contact_color_bg": "#ef6454",
-        "contact_color_bg_gradient": "",
-        "contact_color_hover": "#ffffff",
-        "contact_color_border_hover": "#ef6454",
-        "contact_color_bg_hover": "#ef6454",
-        "contact_color_bg_gradient_hover": "",
-        "title_alignment": "left",
-        "show_faqs_filter": false,
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 0,
-        "mg_top_mobile": 0,
-        "mg_bottom_desktop": 50,
-        "mg_bottom_tablet": 50,
-        "mg_bottom_mobile": 50,
-        "icon": "product"
-      },
-      "disabled": true
-    },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "custom_css": [
-        ".slick-slide img {border-radius: 10px;}",
-        ".slick-slide img:hover {border-radius: 10px;}",
-        ".card-media {border-radius: 10px;}"
-      ],
-      "settings": {
-        "display_product_block": true,
-        "product_block_container": "fullwidth",
-        "padding_full_width": 50,
-        "enable_border_top": false,
-        "enable_border_bottom": false,
-        "color_border_bottom": "#e8e8e8",
-        "border_style": "container",
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 0,
-        "mg_top_mobile": 20,
-        "mg_bottom_desktop": 50,
-        "mg_bottom_tablet": 25,
-        "mg_bottom_mobile": 25,
-        "product_block_layout": "slider",
-        "product_bg": "#f8bed6",
-        "style_block_header": "style1",
-        "product_block_title": "Misschien ook iets voor jou?",
-        "enable_border_title": false,
-        "mg_top_title": 50,
-        "mg_bottom_title": 50,
-        "fontsize_title": 50,
-        "fontsize_title_mb": 30,
-        "color_title": "#f4633a",
-        "border_color_title": "rgba(0,0,0,0)",
-        "product_block_title_align": "center",
-        "product_block_limit": 10,
-        "grid_gap": 30,
-        "product_block_per_row": "4",
-        "product_block_swipe_on_mobile": false,
-        "product_block_dots": false,
-        "product_block_dots_mb": true,
-        "product_block_arrows": true,
-        "product_block_arrows_mb": false,
-        "product_block_show": "4",
-        "product_block_per_view": "4",
-        "show_half": true,
-        "scroll_height": 4,
-        "scroll_track_bg": "#f1f1f1",
-        "scroll_thumb_color": "#000000",
-        "scroll_thumb_hover_color": "#444444",
-        "enable_layout_special": false,
-        "bg_card": "#ffffff",
-        "padding_card": 15,
-        "border_radius_card": 5,
-        "border_layout_card": "full",
-        "border_width_card": 5,
-        "border_color_card": "#f0f1f4"
-      },
-      "disabled": true
-    },
-    "1758362424bdd6576e": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_CL9X6g": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "review_data": "real_data",
-            "max_width": 1200
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_CL9X6g"
-      ],
-      "custom_css": [
-        "div#shopify-block-ARk9sVEhQVnpwSXFRa__judge_me_reviews_review_widget_CL9X6g {background: #f7f7f7; padding: 50px 0;}",
-        ".jdgm-row-actions,.jdgm-rev-widg__body {padding: 0px 20px;}"
-      ],
-      "settings": {
-        "include_margins": false
-      }
-    },
-    "product-recently-viewed": {
-      "type": "product-recently-viewed",
-      "disabled": true,
-      "settings": {
-        "display_product_recently_viewed": true,
-        "product_recently_viewed_container": "container",
-        "padding_full_width": 0,
-        "enable_border_top": true,
-        "enable_border_bottom": false,
-        "color_border_bottom": "#e8e8e8",
-        "border_style": "container",
-        "mg_top_desktop": 80,
-        "mg_top_tablet": 50,
-        "mg_top_mobile": 30,
-        "mg_bottom_desktop": 0,
-        "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 0,
-        "product_recently_viewed_layout": "slider",
-        "product_bg": "#ffffff",
-        "product_bg_gradient": "",
-        "style_block_header": "style1",
-        "product_recently_viewed_title": "Recently Viewed Products",
-        "enable_border_title": false,
-        "mg_top_title": 50,
-        "mg_bottom_title": 50,
-        "fontsize_title": 45,
-        "fontsize_title_mb": 40,
-        "border_color_title": "#232323",
-        "color_title": "#232323",
-        "product_recently_viewed_title_align": "center",
-        "product_recently_viewed_limit": 10,
-        "product_recently_viewed_image_ratio": "adapt",
-        "grid_gap": 30,
-        "product_recently_viewed_per_row": "4",
-        "product_recently_viewed_swipe_on_mobile": true,
-        "product_recently_viewed_dots": false,
-        "product_recently_viewed_dots_mb": true,
-        "product_recently_viewed_arrows": true,
-        "product_recently_viewed_arrows_mb": false,
-        "product_recently_viewed_show": "4",
-        "product_block_per_view": "4",
-        "show_half": true,
-        "scroll_height": 4,
-        "scroll_track_bg": "#f1f1f1",
-        "scroll_thumb_color": "#000000",
-        "scroll_thumb_hover_color": "#444444",
-        "enable_layout_special": false,
-        "bg_card": "#ffffff",
-        "padding_card": 15,
-        "border_radius_card": 5,
-        "border_layout_card": "full",
-        "border_width_card": 5,
-        "border_color_card": "#f0f1f4"
-      }
-    },
-    "tabblie_product_usps": {
-      "type": "tabblie-product-usps",
-      "blocks": {
-        "usp_1": {
-          "type": "usp",
-          "settings": {
-            "icon": "plasticfree",
-            "text": "Geen plasticafval"
-          }
-        },
-        "usp_2": {
-          "type": "usp",
-          "settings": {
-            "icon": "heart",
-            "text": "100% vegan"
-          }
-        },
-        "usp_3": {
-          "type": "usp",
-          "settings": {
-            "icon": "truck",
-            "text": "Gratis verzending NL & BE"
-          }
-        },
-        "usp_4": {
-          "type": "usp",
-          "settings": {
-            "icon": "check",
-            "text": "Nederlands familiebedrijf"
-          }
-        },
-        "usp_5": {
-          "type": "usp",
-          "settings": {
-            "icon": "star",
-            "text": "Super effectief"
-          }
-        },
-        "usp_6": {
-          "type": "usp",
-          "settings": {
-            "icon": "footprint",
-            "text": "Klimaatneutraal verzonden"
-          }
-        }
-      },
-      "block_order": [
-        "usp_1",
-        "usp_2",
-        "usp_3",
-        "usp_4",
-        "usp_5",
-        "usp_6"
-      ],
-      "settings": {
-        "deal_text": "LENTEKORTING: 2+1 GRATIS"
-      }
-    },
     "tabblie_ingredients": {
       "type": "tabblie-ingredients",
       "blocks": {
@@ -1032,7 +821,67 @@
         "row_5",
         "row_6"
       ],
-      "settings": {}
+      "settings": {
+        "heading": "vs. traditioneel"
+      }
+    },
+    "tabblie_vt_pdp": {
+      "type": "tabblie-video-text",
+      "settings": {
+        "bg_color": "#fdf6ee",
+        "video_side": "right",
+        "eyebrow": "ZO WERKT HET",
+        "title": "Scheur, gooi,",
+        "title_accent": "klaar.",
+        "body": "<p>Eén strip vervangt één plastic fles. Scheur hem af, gooi hem in je wasmachine of vaatwasser, en je bent klaar. Geen afmeten, geen rommel, geen plastic afval.</p><p>Werkt in koud en warm water. Dermatologisch getest en veilig voor het hele gezin.</p>",
+        "button_text": "Bestel nu",
+        "button_url": "",
+        "video_url": ""
+      }
+    },
+    "tabblie_stories_pdp": {
+      "type": "tabblie-insta-stories",
+      "blocks": {
+        "s1": {
+          "type": "story",
+          "settings": {
+            "video_url": "",
+            "username": "@lisabeun",
+            "time_ago": "2u",
+            "caption": "Sinds ik tabblie gebruik bespaar ik maandelijks 3+ plastic flessen ✨"
+          }
+        },
+        "s2": {
+          "type": "story",
+          "settings": {
+            "video_url": "",
+            "username": "@mariekevh",
+            "time_ago": "5u",
+            "caption": "Was eerst sceptisch maar deze strips werken echt 🙌"
+          }
+        },
+        "s3": {
+          "type": "story",
+          "settings": {
+            "video_url": "",
+            "username": "@sophiedebeer",
+            "time_ago": "1d",
+            "caption": "Geen zware flessen meer sjouwen naar huis 🎉"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "bg_color": "#fdf6ee",
+        "eyebrow": "NIET VAN ONS",
+        "title": "Geloof onze klanten.",
+        "cta_text": "Volg @tabblie",
+        "cta_url": ""
+      }
     },
     "tabblie_guarantee_pdp": {
       "type": "tabblie-guarantee",
@@ -1042,19 +891,222 @@
         "heading_accent": "Risicovrij!",
         "body": "<p>Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p>",
         "button_text": "Bestel nu",
+        "button_url": "",
+        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
+        "image_alt": "30 dagen proefwassen",
         "badge_text": "30 dagen proef wassen"
       }
     },
-    "tabblie_vt_pdp": {
-      "type": "tabblie-video-text",
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "custom_css": [
+        ".slick-slide img {border-radius: 10px;}",
+        ".slick-slide img:hover {border-radius: 10px;}",
+        ".card-media {border-radius: 10px;}"
+      ],
       "settings": {
-        "bg_color": "#FDF6EE",
-        "video_side": "right",
-        "eyebrow": "ZO WERKT HET",
-        "title": "Scheur, gooi,",
-        "title_accent": "klaar.",
-        "body": "<p>Eén strip vervangt één plastic fles. Scheur hem af, gooi hem in je wasmachine of vaatwasser, en je bent klaar. Geen afmeten, geen rommel, geen plastic afval.</p><p>Werkt in koud en warm water. Dermatologisch getest en veilig voor het hele gezin.</p>",
-        "button_text": "Bestel nu"
+        "display_product_block": true,
+        "product_block_container": "fullwidth",
+        "padding_full_width": 50,
+        "enable_border_top": false,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "border_style": "container",
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 20,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 25,
+        "mg_bottom_mobile": 25,
+        "product_block_layout": "slider",
+        "product_bg": "#f8bed6",
+        "style_block_header": "style1",
+        "product_block_title": "Misschien ook iets voor jou?",
+        "enable_border_title": false,
+        "mg_top_title": 50,
+        "mg_bottom_title": 50,
+        "fontsize_title": 50,
+        "fontsize_title_mb": 30,
+        "color_title": "#f4633a",
+        "border_color_title": "rgba(0,0,0,0)",
+        "product_block_title_align": "center",
+        "product_block_limit": 10,
+        "grid_gap": 30,
+        "product_block_per_row": "4",
+        "product_block_swipe_on_mobile": false,
+        "product_block_dots": false,
+        "product_block_dots_mb": true,
+        "product_block_arrows": true,
+        "product_block_arrows_mb": false,
+        "product_block_show": "4",
+        "product_block_per_view": "4",
+        "show_half": true,
+        "scroll_height": 4,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#000000",
+        "scroll_thumb_hover_color": "#444444",
+        "enable_layout_special": false,
+        "bg_card": "#ffffff",
+        "padding_card": 15,
+        "border_radius_card": 5,
+        "border_layout_card": "full",
+        "border_width_card": 5,
+        "border_color_card": "#f0f1f4"
+      }
+    },
+    "1758362424bdd6576e": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_CL9X6g": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_CL9X6g"
+      ],
+      "custom_css": [
+        "div#shopify-block-ARk9sVEhQVnpwSXFRa__judge_me_reviews_review_widget_CL9X6g {background: #f7f7f7; padding: 50px 0;}",
+        ".jdgm-row-actions,.jdgm-rev-widg__body {padding: 0px 20px;}"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "product-recently-viewed": {
+      "type": "product-recently-viewed",
+      "disabled": true,
+      "settings": {
+        "display_product_recently_viewed": true,
+        "product_recently_viewed_container": "container",
+        "padding_full_width": 0,
+        "enable_border_top": true,
+        "enable_border_bottom": false,
+        "color_border_bottom": "#e8e8e8",
+        "border_style": "container",
+        "mg_top_desktop": 80,
+        "mg_top_tablet": 50,
+        "mg_top_mobile": 30,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "product_recently_viewed_layout": "slider",
+        "product_bg": "#ffffff",
+        "product_bg_gradient": "",
+        "style_block_header": "style1",
+        "product_recently_viewed_title": "Recently Viewed Products",
+        "enable_border_title": false,
+        "mg_top_title": 50,
+        "mg_bottom_title": 50,
+        "fontsize_title": 45,
+        "fontsize_title_mb": 40,
+        "border_color_title": "#232323",
+        "color_title": "#232323",
+        "product_recently_viewed_title_align": "center",
+        "product_recently_viewed_limit": 10,
+        "product_recently_viewed_image_ratio": "adapt",
+        "grid_gap": 30,
+        "product_recently_viewed_per_row": "4",
+        "product_recently_viewed_swipe_on_mobile": true,
+        "product_recently_viewed_dots": false,
+        "product_recently_viewed_dots_mb": true,
+        "product_recently_viewed_arrows": true,
+        "product_recently_viewed_arrows_mb": false,
+        "product_recently_viewed_show": "4",
+        "product_block_per_view": "4",
+        "show_half": true,
+        "scroll_height": 4,
+        "scroll_track_bg": "#f1f1f1",
+        "scroll_thumb_color": "#000000",
+        "scroll_thumb_hover_color": "#444444",
+        "enable_layout_special": false,
+        "bg_card": "#ffffff",
+        "padding_card": 15,
+        "border_radius_card": 5,
+        "border_layout_card": "full",
+        "border_width_card": 5,
+        "border_color_card": "#f0f1f4"
+      }
+    },
+    "faqs_6mziiU": {
+      "type": "faqs",
+      "blocks": {
+        "paragraph_aMkfUp": {
+          "type": "paragraph",
+          "settings": {
+            "title": "",
+            "question_1": "Hoe gebruik ik de tabblie strips?",
+            "answer_1": "<p>Scheur een strip af, gooi hem in de wasmachine, vaatwasser of los hem op in water. Klaar! Geen afmeten, geen rommel.</p>",
+            "question_2": "Werken de strips in koud water?",
+            "answer_2": "<p>Ja! Onze strips lossen volledig op in zowel warm als koud water. Perfect voor elke wastemperatuur.</p>",
+            "question_3": "Zijn de strips veilig voor gevoelige huid?",
+            "answer_3": "<p>Absoluut. Onze formule is vrij van parabenen, fosfaten, kleurstoffen en kunstmatige geurstoffen. Dermatologisch getest en geschikt voor het hele gezin.</p>",
+            "question_4": "Hoe zit het met verzending en retourneren?",
+            "answer_4": "<p>We verzenden gratis naar Nederland en België. Niet tevreden? Je kunt binnen 30 dagen retourneren voor volledige terugbetaling.</p>",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": ""
+          }
+        }
+      },
+      "block_order": [
+        "paragraph_aMkfUp"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".faqs .faqs-item .card-header .title {color: #2b2b2b; font-size: 16px; letter-spacing: 0px; font-weight: 500; background: #f8f4f0; padding: 5px 0px; border-top: none; border-bottom: 1px solid #f84d27;}",
+        "faqs-item#FaqsSection-template--26621760274781__faqs_6mziiU {background-color: #f9f5f1;}",
+        ".faqs-item .collapse {background: #f8f4f0; color: #000; font-size: 16px; line-height: 22px; border: none;}",
+        ".faqs .faqs-item .card-header:not(.collapsed) .title:after {transform: scale(0); transform-origin: left;}"
+      ],
+      "name": "t:sections.faqs.presets.name",
+      "settings": {
+        "container": "1170",
+        "padding_full_width": 0,
+        "title": "",
+        "color_title": "#f4633a",
+        "fontsize_title": 15,
+        "fontsize_title_mb": 16,
+        "mg_bottom_title": 12,
+        "mg_bottom_title_mb": 12,
+        "enable_border_title": false,
+        "border_color_title": "rgba(0,0,0,0)",
+        "description": "",
+        "color_des": "#f4633a",
+        "fontsize_des": 16,
+        "contact_text": "",
+        "contact_link": "",
+        "contact_color": "#ffffff",
+        "contact_color_border": "#ef6454",
+        "contact_color_bg": "#ef6454",
+        "contact_color_bg_gradient": "",
+        "contact_color_hover": "#ffffff",
+        "contact_color_border_hover": "#ef6454",
+        "contact_color_bg_hover": "#ef6454",
+        "contact_color_bg_gradient_hover": "",
+        "title_alignment": "left",
+        "show_faqs_filter": false,
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 50,
+        "mg_bottom_tablet": 50,
+        "mg_bottom_mobile": 50
       }
     },
     "tabblie_insta_pdp": {
@@ -1144,56 +1196,17 @@
         "post_8",
         "post_9"
       ],
+      "disabled": true,
       "settings": {
         "eyebrow": "WAT KLANTEN DELEN",
         "title": "@tabblie op Instagram",
         "username": "tabblie",
-        "bio": "Schoonmaken, opnieuw uitgevonden. Zonder plasticafval, plantaardig, voor het hele gezin.",
-        "bio_link_text": "tabblie.com",
+        "instagram_url": "",
         "posts_count": "42",
         "followers_count": "1.2k",
         "following_count": "86",
-        "cta_text": "Volg @tabblie"
-      },
-      "disabled": true
-    },
-    "tabblie_stories_pdp": {
-      "type": "tabblie-insta-stories",
-      "blocks": {
-        "s1": {
-          "type": "story",
-          "settings": {
-            "username": "@lisabeun",
-            "time_ago": "2u",
-            "caption": "Sinds ik tabblie gebruik bespaar ik maandelijks 3+ plastic flessen ✨"
-          }
-        },
-        "s2": {
-          "type": "story",
-          "settings": {
-            "username": "@mariekevh",
-            "time_ago": "5u",
-            "caption": "Was eerst sceptisch maar deze strips werken echt 🙌"
-          }
-        },
-        "s3": {
-          "type": "story",
-          "settings": {
-            "username": "@sophiedebeer",
-            "time_ago": "1d",
-            "caption": "Geen zware flessen meer sjouwen naar huis 🎉"
-          }
-        }
-      },
-      "block_order": [
-        "s1",
-        "s2",
-        "s3"
-      ],
-      "settings": {
-        "bg_color": "#FDF6EE",
-        "eyebrow": "NIET VAN ONS",
-        "title": "Geloof onze klanten.",
+        "bio": "Schoonmaken, opnieuw uitgevonden. Zonder plasticafval, plantaardig, voor het hele gezin.",
+        "bio_link_text": "tabblie.com",
         "cta_text": "Volg @tabblie"
       }
     },

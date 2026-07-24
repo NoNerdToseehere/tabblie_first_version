@@ -1,9 +1,38 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "banner": {
       "type": "main-collection-banner",
       "disabled": true,
-      "settings": {}
+      "settings": {
+        "container": "container",
+        "padding_full_width": 0,
+        "layout": "1",
+        "show_breadcrumb": true,
+        "breadcrumb_alignment": "left",
+        "breadcrumb_color": "",
+        "breadcrumb_bg": "",
+        "breadcrumb_gradient": "",
+        "breadcrumb_color_mb": "",
+        "breadcrumb_bg_mb": "#f6f6f6",
+        "breadcrumb_gradient_mb": "",
+        "show_page_title": false,
+        "page_title_alignment": "left",
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0
+      }
     },
     "shop_grid": {
       "type": "tabblie-shop-grid",
@@ -11,38 +40,57 @@
         "card_1": {
           "type": "product_card",
           "settings": {
+            "product": "",
             "name": "Wasstrips",
             "description": "Plantaardig wasmiddel, wasverzachter en vlekverwijderaar in één strip. Geschikt voor alle wasmachines en temperaturen.",
-            "bg_color": "#FDEEE6"
+            "url": "",
+            "image": "shopify://shop_images/Tabblie-34.jpg",
+            "bg_color": "#fdeee6",
+            "coming_soon": false
           }
         },
         "card_2": {
           "type": "product_card",
           "settings": {
+            "product": "",
             "name": "Vaatwasstrips",
             "description": "Plantaardige vaatwasstrips zonder schadelijke chemicaliën. Laat je vaat stralend schoon achter, zonder plastic fles.",
-            "bg_color": "#FDF5DD"
+            "url": "",
+            "image": "shopify://shop_images/Tabblie-38.jpg",
+            "bg_color": "#fdf5dd",
+            "coming_soon": false
           }
         },
         "card_3": {
           "type": "product_card",
           "settings": {
+            "product": "",
             "name": "Toiletstrips",
             "description": "Krachtige reiniging voor je toilet, volledig biologisch afbreekbaar. Gooi een strip in de pot en laat het zijn werk doen.",
-            "bg_color": "#E2F2ED"
+            "url": "",
+            "image": "shopify://shop_images/Tabblie-44.jpg",
+            "bg_color": "#e2f2ed",
+            "coming_soon": false
           }
         },
         "card_4": {
           "type": "product_card",
           "settings": {
+            "product": "",
             "name": "Nog even geheim...",
             "description": "We werken aan iets nieuws voor je huis. Schrijf je in voor de nieuwsbrief en hoor het als eerste.",
-            "bg_color": "#FCE8E8",
+            "url": "",
+            "bg_color": "#fce8e8",
             "coming_soon": true
           }
         }
       },
-      "block_order": ["card_1", "card_2", "card_3", "card_4"],
+      "block_order": [
+        "card_1",
+        "card_2",
+        "card_3",
+        "card_4"
+      ],
       "settings": {
         "title": "Onze producten"
       }
@@ -81,6 +129,15 @@
         "layout": "4",
         "show_infinite_scrolling": "show_more",
         "show_banner": false,
+        "show_banner_1": true,
+        "banner_position_1": "4",
+        "link_banner_1": "",
+        "show_banner_2": true,
+        "banner_position_2": "5",
+        "link_banner_2": "",
+        "show_banner_3": true,
+        "banner_position_3": "12",
+        "link_banner_3": "",
         "product_space_between_vert_desk": 30,
         "product_space_between_vert_mb": 16,
         "product_space_between_horiz_desk": 30,

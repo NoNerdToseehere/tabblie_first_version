@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -8,11 +17,13 @@
     "hero": {
       "type": "tabblie-page-hero",
       "settings": {
-        "bg_color": "#FDF6EE",
+        "bg_color": "#fdf6ee",
         "eyebrow": "FAQ",
         "heading": "Veelgestelde",
         "heading_accent": "vragen.",
-        "subtext": "Alles wat je wilt weten over tabblie, onze producten en onze missie."
+        "subtext": "Alles wat je wilt weten over tabblie, onze producten en onze missie.",
+        "button_text": "",
+        "button_url": ""
       }
     },
     "faq_producten": {
@@ -22,7 +33,7 @@
           "type": "faq",
           "settings": {
             "question": "Hoe gebruik ik de tabblie strips?",
-            "answer": "Scheur een strip af, gooi hem in de wasmachine, vaatwasser of los hem op in water. Klaar! Geen afmeten, geen rommel, geen plastic fles."
+            "answer": "Scheur een strip af, gooi hem in de wasmachine, vaatwasser of in de toilet. Klaar! Geen afmeten, geen rommel, geen plastic fles."
           }
         },
         "q2": {
@@ -70,9 +81,9 @@
         "q6"
       ],
       "settings": {
+        "icon": "product",
         "eyebrow": "OVER ONZE PRODUCTEN",
-        "heading": "Producten & gebruik",
-        "icon": "product"
+        "title": "Alles wat je wilt weten"
       }
     },
     "faq_bestellen": {
@@ -138,9 +149,9 @@
         "q7"
       ],
       "settings": {
+        "icon": "shipping",
         "eyebrow": "BESTELLEN & VERZENDING",
-        "heading": "Bestellen & bezorging",
-        "icon": "shipping"
+        "title": "Alles wat je wilt weten"
       }
     },
     "faq_retour": {
@@ -198,9 +209,9 @@
         "q6"
       ],
       "settings": {
+        "icon": "return",
         "eyebrow": "RETOUR & GARANTIE",
-        "heading": "Retourneren & garantie",
-        "icon": "return"
+        "title": "Alles wat je wilt weten"
       }
     },
     "faq_missie": {
@@ -234,9 +245,9 @@
         "q3"
       ],
       "settings": {
+        "icon": "globe",
         "eyebrow": "ONZE MISSIE",
-        "heading": "Over tabblie & duurzaamheid",
-        "icon": "globe"
+        "title": "Alles wat je wilt weten"
       }
     },
     "contact_cta": {
@@ -245,7 +256,8 @@
         "eyebrow": "",
         "heading": "Staat je vraag er niet tussen?",
         "description": "Mail ons op hello@tabblie.com — we helpen je binnen 24 uur op werkdagen!",
-        "button_text": "Neem contact op"
+        "button_text": "Neem contact op",
+        "button_url": ""
       }
     }
   },
