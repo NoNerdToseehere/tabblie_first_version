@@ -32,6 +32,56 @@
     font-weight: 800;
   }
 
+  /* Social-proof avatar cluster */
+  .tabblie-compare__avatars {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 14px;
+  }
+
+  .tabblie-compare__avatars img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2.5px solid #FDF6EE;
+    position: relative;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .tabblie-compare__avatars img + img,
+  .tabblie-compare__avatars .tabblie-compare__avatars-more {
+    margin-left: -12px;
+  }
+
+  .tabblie-compare__avatars img:hover {
+    transform: translateY(-4px) scale(1.08);
+    z-index: 5;
+  }
+
+  .tabblie-compare__avatars-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 46px;
+    padding: 0 14px;
+    border-radius: 100px;
+    background: #E8622A;
+    border: 2.5px solid #FDF6EE;
+    color: #ffffff;
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 800;
+    position: relative;
+    z-index: 4;
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-compare__avatars img { width: 38px; height: 38px; }
+    .tabblie-compare__avatars-more { height: 38px; font-size: 11.5px; padding: 0 11px; }
+  }
+
   .tabblie-compare__subtext {
     font-family: var(--text-font-family);
     font-size: clamp(13px, 1.6vw, 15px);
@@ -241,6 +291,15 @@
       Waarom <em>{{ section.settings.heading_accent | default: '1.000+ mensen' }}</em><br>
       {{ section.settings.heading | default: 'kiezen voor Tabblie wasstrips' }}
     </h2>
+    {%- if section.settings.show_avatars -%}
+      <div class="tabblie-compare__avatars" aria-hidden="true">
+        <img src="{{ 'tabblie-avatar-lisa.jpg' | asset_url }}" alt="Lisa, Tabblie klant" width="46" height="46" loading="lazy" style="z-index:4">
+        <img src="{{ 'tabblie-avatar-marieke.jpg' | asset_url }}" alt="Marieke, Tabblie klant" width="46" height="46" loading="lazy" style="z-index:3">
+        <img src="{{ 'tabblie-avatar-sophie.jpg' | asset_url }}" alt="Sophie, Tabblie klant" width="46" height="46" loading="lazy" style="z-index:2">
+        <img src="{{ 'tabblie-avatar-sanne.jpg' | asset_url }}" alt="Sanne, Tabblie klant" width="46" height="46" loading="lazy" style="z-index:1">
+        <span class="tabblie-compare__avatars-more">+1.000</span>
+      </div>
+    {%- endif -%}
     {%- if section.settings.subtext != blank -%}
       <p class="tabblie-compare__subtext">{{ section.settings.subtext }}</p>
     {%- endif -%}
@@ -355,6 +414,12 @@
       "default": "kiezen voor Tabblie wasstrips"
     },
     {
+      "type": "checkbox",
+      "id": "show_avatars",
+      "label": "Toon klant-avatars (social proof)",
+      "default": true
+    },
+    {
       "type": "textarea",
       "id": "subtext",
       "label": "Subtekst",
@@ -395,7 +460,7 @@
     {
       "name": "Comparison Table",
       "blocks": [
-        { "type": "row", "settings": { "text": "Geen plastic verpakking" } },
+        { "type": "row", "settings": { "text": "Volledig plasticvrij" } },
         { "type": "row", "settings": { "text": "Vlekverwijderende enzymen", "c1": true, "c2": true } },
         { "type": "row", "settings": { "text": "Plantaardig" } },
         { "type": "row", "settings": { "text": "Huidvriendelijke ingrediënten" } },

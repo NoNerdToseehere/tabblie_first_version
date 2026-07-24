@@ -780,10 +780,10 @@
         "row_1": {
           "type": "row",
           "settings": {
-            "text": "Geen plastic verpakking",
+            "text": "Volledig plasticvrij",
             "c1": false,
             "c2": false,
-            "c3": true
+            "c3": false
           }
         },
         "row_2": {
@@ -873,7 +873,8 @@
         "price_comp1": "€0,56",
         "price_comp2": "€0,50",
         "price_comp3": "€0,25",
-        "footnote": "*Prijs per wasbeurt o.b.v. 1 pak (64 wasbeurten); concurrentprijzen zijn gemiddelde adviesprijzen van bekende merken."
+        "footnote": "*Prijs per wasbeurt o.b.v. 1 pak (64 wasbeurten); concurrentprijzen zijn gemiddelde adviesprijzen van bekende merken.",
+        "show_avatars": true
       }
     },
     "tabblie_vt_pdp": {
