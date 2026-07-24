@@ -1,0 +1,52 @@
+/* ── Tabblie custom overrides ─────────────────────────────────── */
+
+/* Sticky add-to-cart bar: more height + presence (2026-07-24) */
+.productView-stickyCart {
+  padding: 14px 0 !important;
+  box-shadow: 0 -6px 24px rgba(31, 18, 9, 0.12);
+}
+
+.productView-stickyCart .sticky-image img {
+  width: 62px !important;
+  height: 62px !important;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.productView-stickyCart .sticky-info .sticky-title,
+.productView-stickyCart .sticky-info h5,
+.productView-stickyCart .sticky-info .product-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #1F1209;
+}
+
+.productView-stickyCart .sticky-info [class*="price"] {
+  font-size: 15px !important;
+  font-weight: 700;
+}
+
+.productView-stickyCart button[data-sticky-add-to-cart],
+.productView-stickyCart .btn--submit {
+  padding: 14px 32px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: 100px !important;
+}
+
+@media (max-width: 749px) {
+  .productView-stickyCart {
+    padding: 10px 0 !important;
+  }
+
+  .productView-stickyCart .sticky-image img {
+    width: 52px !important;
+    height: 52px !important;
+  }
+
+  .productView-stickyCart button[data-sticky-add-to-cart],
+  .productView-stickyCart .btn--submit {
+    padding: 12px 22px !important;
+    font-size: 14px !important;
+  }
+}
