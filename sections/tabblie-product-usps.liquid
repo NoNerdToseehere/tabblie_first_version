@@ -118,7 +118,9 @@
       {%- for block in section.blocks -%}
         <span class="tabblie-usp-strip__item{% if block.settings.icon == 'check' %} tabblie-usp-strip__item--nl{% endif %}">
           {%- assign icon_name = block.settings.icon -%}
-          {%- if icon_name == 'footprint' -%}
+          {%- if block.settings.custom_image != blank -%}
+            <img class="tabblie-usp-strip__icon-img" src="{{ block.settings.custom_image | image_url: width: 64 }}" alt="" style="width:auto;height:22px;object-fit:contain;flex-shrink:0" loading="lazy">
+          {%- elsif icon_name == 'footprint' -%}
             <img class="tabblie-usp-strip__icon-img" src="{{ 'tabblie-carbon-footprint.png' | asset_url }}" alt="" style="width:18px;height:18px;object-fit:contain;flex-shrink:0">
           {%- elsif icon_name == 'plasticfree' -%}
             <img class="tabblie-usp-strip__icon-img" src="{{ 'tabblie-plasticfree.png' | asset_url }}" alt="" style="width:22px;height:22px;object-fit:contain;flex-shrink:0">
@@ -166,6 +168,11 @@
       "type": "usp",
       "name": "USP item",
       "settings": [
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Logo afbeelding (vervangt icoon)"
+        },
         {
           "type": "select",
           "id": "icon",

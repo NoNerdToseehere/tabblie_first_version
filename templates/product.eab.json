@@ -16,14 +16,16 @@
           "type": "usp",
           "settings": {
             "icon": "leaf",
-            "text": "Geen plasticafval"
+            "text": "Geen plasticafval",
+            "custom_image": "shopify://shop_images/icon-usp-certified_200x_cc3346f8-da36-4c52-a8c6-e3f52909d020.png"
           }
         },
         "u2": {
           "type": "usp",
           "settings": {
             "icon": "heart",
-            "text": "100% vegan"
+            "text": "100% vegan",
+            "custom_image": "shopify://shop_images/icon-usp-sustainable_200x_351df314-87fc-4509-ae33-1cb02ea136d9.png"
           }
         },
         "u3": {
@@ -37,14 +39,16 @@
           "type": "usp",
           "settings": {
             "icon": "star",
-            "text": "Super effectief"
+            "text": "Super effectief",
+            "custom_image": "shopify://shop_images/icon-usp-effective_200x_0ec970a2-b8e4-4d4a-bdef-8443fa1d8526.png"
           }
         },
         "u5": {
           "type": "usp",
           "settings": {
             "icon": "footprint",
-            "text": "Klimaatneutraal verzonden"
+            "text": "Klimaatneutraal verzonden",
+            "custom_image": "shopify://shop_images/icon-usp-sustainable_200x_3aee02bf-aad3-41e0-ba35-c258b0868ba8.png"
           }
         }
       },

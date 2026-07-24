@@ -16,14 +16,16 @@
           "type": "usp",
           "settings": {
             "icon": "leaf",
-            "text": "Geen plasticafval"
+            "text": "Geen plasticafval",
+            "custom_image": "shopify://shop_images/icon-usp-certified_200x_cc3346f8-da36-4c52-a8c6-e3f52909d020.png"
           }
         },
         "u2": {
           "type": "usp",
           "settings": {
             "icon": "heart",
-            "text": "100% vegan"
+            "text": "100% vegan",
+            "custom_image": "shopify://shop_images/icon-usp-sustainable_200x_351df314-87fc-4509-ae33-1cb02ea136d9.png"
           }
         },
         "u3": {
