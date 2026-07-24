@@ -68,8 +68,8 @@ Every change to this theme must serve these four goals. When a request conflicts
 **Color rules:** Orange is brand anchor. Each product has identity color. Sections alternate cream/white/blue/pink/orange. Never use emojis — always SVG icons with varied colors.
 
 ### Fonts
-**Single typeface across the whole site:** Plus Jakarta Sans (Google Fonts, weights 400/500/600/700 + italic 400/600). Used for both `--heading-font-family` and `--text-font-family`. Do not introduce a second display face.
-- Headings: 600 weight, letter-spacing `-0.02em`, line-height `1.1–1.15`
+**Single typeface across the whole site (updated 2026-07-24): Baloo 2** (Google Fonts, weights 400/500/600/700/800) — chunky rounded face matching the Tabblie wordmark (closest free equivalent of TT Drugs, which is paid). Set via `html:root` overrides in `assets/tabblie-brand.css` for both brand vars (`--heading-font-family`, `--text-font-family`) and the theme-generated vars (`--font-family-1/2`, `--font-heading-family`, `--font-body-family`, menu vars). Fallback: Plus Jakarta Sans.
+- Headings: 700 weight, letter-spacing `-0.01em`, line-height `1.1–1.15`
 - Body: 400 weight, line-height `1.6–1.7`
 - Eyebrows: 600–700, uppercase, letter-spacing `0.1em`, always orange `#E8622A`
 
@@ -78,7 +78,7 @@ Every change to this theme must serve these four goals. When a request conflicts
 - **Small logo / Icon:** Orange "T" only (`tabblie-logo-small.png`) — compact UI, mobile sticky nav, app icons
 - **Favicon:** 256×256 orange "T" square (`tabblie-favicon.png`)
 
-**Logo rules:** always written "Tabblie" (capital T, rest lowercase) — never "tabblie" all-lowercase, never "TABBLIE" in caps. On light/cream: orange `#E8622A`. On dark/photographic: white. Never stretch, rotate, recolour, or add effects.
+**Logo rules:** always written "Tabblie" (capital T, rest lowercase) — never "tabblie" all-lowercase, never "TABBLIE" in caps. **This applies to ALL copy everywhere on the site** (headings, body text, FAQs, alt text), not just the logo. Only exceptions: email addresses (support@tabblie.com) and social handles (@tabblie). On light/cream: orange `#E8622A`. On dark/photographic: white. Never stretch, rotate, recolour, or add effects.
 
 > Full style system (colors, gradients, icons, type scale, spacing) → `COMPANY_BRANDING/styling-system.md`
 

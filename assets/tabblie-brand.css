@@ -45,14 +45,29 @@
    FONTS — Override theme font variables with Fraunces + DM Sans
    ============================================================ */
 
-:root {
-  --heading-font-family: 'Plus Jakarta Sans', Helvetica, Arial, sans-serif;
-  --text-font-family: 'Plus Jakarta Sans', Helvetica, Arial, sans-serif;
-  --heading-font-weight: 600;
+/* Full-site Tabblie typography: Baloo 2 (chunky rounded, matches the
+   wordmark / TT Drugs style). html:root outranks the theme's generated
+   :root variables (Poppins) regardless of load order. */
+html:root {
+  --heading-font-family: 'Baloo 2', 'Plus Jakarta Sans', Helvetica, Arial, sans-serif;
+  --text-font-family: 'Baloo 2', 'Plus Jakarta Sans', Helvetica, Arial, sans-serif;
+  --heading-font-weight: 700;
   --text-font-weight: 400;
   --heading-text-transform: none;
-  --heading-letter-spacing: -0.02em;
+  --heading-letter-spacing: -0.01em;
   --text-letter-spacing: 0em;
+
+  /* Theme-generated font vars (variable.liquid) — flip Poppins to Baloo 2 */
+  --font-family-1: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  --font-family-2: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  --font-heading-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  --font-body-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  --font-menu-lv1-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  --font-menu-lv2-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+  --font-menu-lv3-family: 'Baloo 2', 'Plus Jakarta Sans', sans-serif;
+}
+
+:root {
 
   /* Tabblie core brand colors */
   --tabblie-orange: #E8622A;

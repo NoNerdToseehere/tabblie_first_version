@@ -21,7 +21,7 @@
         "eyebrow": "FAQ",
         "heading": "Veelgestelde",
         "heading_accent": "vragen.",
-        "subtext": "Alles wat je wilt weten over tabblie, onze producten en onze missie.",
+        "subtext": "Alles wat je wilt weten over Tabblie, onze producten en onze missie.",
         "button_text": "",
         "button_url": ""
       }
@@ -32,7 +32,7 @@
         "q1": {
           "type": "faq",
           "settings": {
-            "question": "Hoe gebruik ik de tabblie strips?",
+            "question": "Hoe gebruik ik de Tabblie strips?",
             "answer": "Scheur een strip af, gooi hem in de wasmachine, vaatwasser of in de toilet. Klaar! Geen afmeten, geen rommel, geen plastic fles."
           }
         },
@@ -220,7 +220,7 @@
         "q1": {
           "type": "faq",
           "settings": {
-            "question": "Is tabblie vegan en dierproefvrij?",
+            "question": "Is Tabblie vegan en dierproefvrij?",
             "answer": "100%. Geen dierlijke ingredienten, geen dierproeven. Ooit."
           }
         },
