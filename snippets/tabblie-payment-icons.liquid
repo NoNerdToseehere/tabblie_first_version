@@ -1,15 +1,31 @@
 {% doc %}
-  Renders the payment method icon row.
+  Renders the payment method icon row — icons pop up playfully on hover.
 
   @example
   {% render 'tabblie-payment-icons' %}
 {% enddoc %}
 
-<div style="display:flex;align-items:center;justify-content:center;gap:8px;margin:8px 0">
-  <img src="{{ 'pay-ideal.svg' | asset_url }}" alt="iDEAL" style="height:22px" loading="lazy">
-  <img src="{{ 'pay-visa.svg' | asset_url }}" alt="Visa" style="height:22px" loading="lazy">
-  <img src="{{ 'pay-master.svg' | asset_url }}" alt="Mastercard" style="height:22px" loading="lazy">
-  <img src="{{ 'pay-applepay.svg' | asset_url }}" alt="Apple Pay" style="height:22px" loading="lazy">
-  <img src="{{ 'pay-klarna.png' | asset_url }}" alt="Klarna" style="height:22px" loading="lazy">
-  <img src="{{ 'pay-paypal.svg' | asset_url }}" alt="PayPal" style="height:22px" loading="lazy">
+<style>
+  .tabblie-pay-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 8px 0;
+  }
+  .tabblie-pay-icons img {
+    height: 22px;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .tabblie-pay-icons img:hover {
+    transform: translateY(-3px) scale(1.15) rotate(-3deg);
+  }
+</style>
+<div class="tabblie-pay-icons">
+  <img src="{{ 'pay-ideal.svg' | asset_url }}" alt="iDEAL" loading="lazy">
+  <img src="{{ 'pay-visa.svg' | asset_url }}" alt="Visa" loading="lazy">
+  <img src="{{ 'pay-master.svg' | asset_url }}" alt="Mastercard" loading="lazy">
+  <img src="{{ 'pay-applepay.svg' | asset_url }}" alt="Apple Pay" loading="lazy">
+  <img src="{{ 'pay-klarna.png' | asset_url }}" alt="Klarna" loading="lazy">
+  <img src="{{ 'pay-paypal.svg' | asset_url }}" alt="PayPal" loading="lazy">
 </div>

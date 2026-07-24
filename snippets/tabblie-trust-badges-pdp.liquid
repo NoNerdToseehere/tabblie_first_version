@@ -1,5 +1,6 @@
 {% doc %}
-  Renders the 3-column trust badge grid (Klarna, live viewers, CO2).
+  Renders the 3-column trust badge strip (Klarna, live viewers, CO2) — compact
+  horizontal pills in brand pastels, Smooche-style slim benefit bar.
 
   @example
   {% render 'tabblie-trust-badges-pdp' %}
@@ -7,19 +8,81 @@
 
 <style>
   @keyframes pulse-green{0%{box-shadow:0 0 0 0 rgba(74,222,128,0.6)}70%{box-shadow:0 0 0 8px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
+
+  .tabblie-trust-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .tabblie-trust-strip__item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 12px;
+    border-radius: 100px;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .tabblie-trust-strip__item:hover {
+    transform: translateY(-2px);
+  }
+
+  .tabblie-trust-strip__item--klarna { background: #FCE8F1; }
+  .tabblie-trust-strip__item--live   { background: #E1ECFA; }
+  .tabblie-trust-strip__item--co2    { background: #E2F2ED; }
+
+  .tabblie-trust-strip__icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tabblie-trust-strip__label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1F1209;
+    line-height: 1.35;
+    text-align: left;
+  }
+
+  @media (max-width: 479px) {
+    .tabblie-trust-strip {
+      gap: 6px;
+    }
+    .tabblie-trust-strip__item {
+      flex-direction: column;
+      gap: 6px;
+      padding: 10px 6px;
+      border-radius: 14px;
+    }
+    .tabblie-trust-strip__label {
+      text-align: center;
+      font-size: 10.5px;
+    }
+  }
 </style>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px">
-  <div style="background:#ffffff;border-radius:10px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Klarna_Payment_Badge.svg/1920px-Klarna_Payment_Badge.svg.png" alt="Klarna" style="height:22px" loading="lazy">
-    <span style="font-size:11px;font-weight:600;color:#1F1209;line-height:1.4">Eerst proberen,<br>dan betalen</span>
+
+<div class="tabblie-trust-strip">
+  <div class="tabblie-trust-strip__item tabblie-trust-strip__item--klarna">
+    <span class="tabblie-trust-strip__icon">
+      <img src="{{ 'pay-klarna.png' | asset_url }}" alt="Klarna" style="height:18px" loading="lazy">
+    </span>
+    <span class="tabblie-trust-strip__label">Eerst proberen,<br>dan betalen</span>
   </div>
-  <div style="background:#ffffff;border-radius:10px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
-    <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,0.6);animation:pulse-green 2s infinite;margin-top:4px"></span>
-    <span style="font-size:11px;font-weight:600;color:#1F1209;line-height:1.4"><span id="tabblie-scarcity">12</span> anderen<br>kijken nu ook</span>
+  <div class="tabblie-trust-strip__item tabblie-trust-strip__item--live">
+    <span class="tabblie-trust-strip__icon">
+      <span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 0 rgba(74,222,128,0.6);animation:pulse-green 2s infinite"></span>
+    </span>
+    <span class="tabblie-trust-strip__label"><span id="tabblie-scarcity">12</span> anderen<br>kijken nu ook</span>
   </div>
-  <div style="background:#ffffff;border-radius:10px;padding:12px 10px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center">
-    <img src="{{ 'tabblie-carbon-footprint.png' | asset_url }}" alt="CO2 footprint" style="height:30px;width:30px;object-fit:contain" loading="lazy">
-    <span style="font-size:11px;font-weight:600;color:#1F1209;line-height:1.4">CO2-voetafdruk<br>gecompenseerd</span>
+  <div class="tabblie-trust-strip__item tabblie-trust-strip__item--co2">
+    <span class="tabblie-trust-strip__icon">
+      <img src="{{ 'tabblie-carbon-footprint.png' | asset_url }}" alt="CO2-voetafdruk gecompenseerd" style="height:22px;width:22px;object-fit:contain" loading="lazy">
+    </span>
+    <span class="tabblie-trust-strip__label">CO2-voetafdruk<br>gecompenseerd</span>
   </div>
 </div>
 <script id="tabblie-scarcity-script">

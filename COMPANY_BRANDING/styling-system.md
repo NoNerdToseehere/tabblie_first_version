@@ -409,3 +409,24 @@ When modifying the theme, update this file whenever you:
 - Retire an old pattern (e.g. the circular logo background)
 
 The goal: this document should stay readable as a single page and always match what is live.
+
+## 9. Generated Imagery Style (AI images/videos — approved 2026-07-24)
+
+Tabblie imagery is **funky, colorful and product-forward — never quiet beige "aesthetic
+silence" skincare styling.**
+
+**The formula** (validated on the PDP ingredient cards):
+- Solid vivid background in a brand/product identity color (teal `#5BB8A0`, pink, yellow
+  `#F5C842`, blue `#E1ECFA`-deepened) — one color per image, rotate across a set
+- The product in frame where possible: the white strip (flat, dotted middle perforation) or
+  the cardboard package
+- Dynamic pop-art energy: objects mid-air, bursts/splashes frozen in motion, punchy
+  directional light, crisp graphic shadows
+- Green is allowed when the story is literally "plantaardig" (aloe/eucalyptus as playful
+  props on brand teal) — but never dark-green eco-cliché or preachy
+- Prompt template + live examples: `HIGGSFIELD_VIDEOS/generated/ingredient-images/prompts.md`
+- Personas, product references and video recipes: `HIGGSFIELD_VIDEOS/README.md`
+
+On-page treatment (see `sections/tabblie-ingredients.liquid`): cards in product pastel
+colors (`#E2F2ED` / `#FCE8E8` / `#FDF5DD`), staggered fade-up reveal on scroll, hover =
+lift + slight rotate + image zoom (bouncy `cubic-bezier(0.34, 1.56, 0.64, 1)`).

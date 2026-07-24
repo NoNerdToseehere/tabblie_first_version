@@ -743,21 +743,24 @@
           "type": "ingredient",
           "settings": {
             "title": "Plantaardige surfactanten",
-            "description": "Krachtige, biologisch afbreekbare reinigingsmiddelen op plantbasis. Net zo effectief als chemische alternatieven, maar volledig veilig voor het milieu."
+            "description": "Krachtige, biologisch afbreekbare reinigingsmiddelen op plantbasis. Net zo effectief als chemische alternatieven, maar volledig veilig voor het milieu.",
+            "image_asset": "tabblie-ingredient-surfactanten.jpg"
           }
         },
         "ing_2": {
           "type": "ingredient",
           "settings": {
             "title": "Natuurlijke enzymen",
-            "description": "Breken hardnekkig vuil en vlekken af op natuurlijke wijze. Werken bij lage en hoge temperaturen voor een grondige reiniging."
+            "description": "Breken hardnekkig vuil en vlekken af op natuurlijke wijze. Werken bij lage en hoge temperaturen voor een grondige reiniging.",
+            "image_asset": "tabblie-ingredient-enzymen.jpg"
           }
         },
         "ing_3": {
           "type": "ingredient",
           "settings": {
             "title": "Essentiele olien",
-            "description": "Een subtiele, frisse geur zonder kunstmatige geurstoffen. Volledig natuurlijk en vrij van allergenen."
+            "description": "Een subtiele, frisse geur zonder kunstmatige geurstoffen. Volledig natuurlijk en vrij van allergenen.",
+            "image_asset": "tabblie-ingredient-olien.jpg"
           }
         }
       },
@@ -778,42 +781,48 @@
           "type": "row",
           "settings": {
             "tabblie_text": "Geen plasticafval",
-            "traditional_text": "Plastic flessen & verpakkingen"
+            "traditional_text": "Plastic flessen & verpakkingen",
+            "icon": "spray"
           }
         },
         "row_2": {
           "type": "row",
           "settings": {
             "tabblie_text": "Biologisch afbreekbaar",
-            "traditional_text": "Schadelijke chemicalien"
+            "traditional_text": "Schadelijke chemicalien",
+            "icon": "droplet"
           }
         },
         "row_3": {
           "type": "row",
           "settings": {
             "tabblie_text": "Compact & lichtgewicht",
-            "traditional_text": "Zwaar & omvangrijk"
+            "traditional_text": "Zwaar & omvangrijk",
+            "icon": "feather"
           }
         },
         "row_4": {
           "type": "row",
           "settings": {
             "tabblie_text": "Geen schadelijke stoffen",
-            "traditional_text": "Parabenen, fosfaten & kleurstoffen"
+            "traditional_text": "Parabenen, fosfaten & kleurstoffen",
+            "icon": "shield"
           }
         },
         "row_5": {
           "type": "row",
           "settings": {
             "tabblie_text": "Verpakt in recyclebaar papier",
-            "traditional_text": "Niet-recyclebaar plastic"
+            "traditional_text": "Niet-recyclebaar plastic",
+            "icon": "recycle"
           }
         },
         "row_6": {
           "type": "row",
           "settings": {
             "tabblie_text": "Gratis verzending NL & BE",
-            "traditional_text": "Hoge verzendkosten door gewicht"
+            "traditional_text": "Hoge verzendkosten door gewicht",
+            "icon": "truck"
           }
         }
       },
