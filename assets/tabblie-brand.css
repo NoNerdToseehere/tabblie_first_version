@@ -1518,22 +1518,22 @@ select:focus {
 }
 
 
-/* Product title — compact */
+/* Product title — big & fat, wordmark style */
 .template-product .productView-title,
 .template-product .productView-title span,
 .template-product h1.productView-title {
   font-family: var(--font-heading-family) !important;
-  font-size: 22px !important;
-  font-weight: 500 !important;
+  font-size: clamp(30px, 3.2vw, 42px) !important;
+  font-weight: 800 !important;
   color: #1F1209 !important;
   letter-spacing: -0.01em !important;
-  line-height: 1.3 !important;
+  line-height: 1.12 !important;
 }
 
 @media (max-width: 749px) {
   .template-product .productView-title,
   .template-product h1.productView-title {
-    font-size: 20px !important;
+    font-size: 28px !important;
   }
 }
 
@@ -1806,5 +1806,20 @@ h1, h2, h3, .h1, .h2, .h3,
 [class*="tabblie-"][class*="__heading"],
 .tabblie-guarantee__heading,
 .productView-title {
+  font-weight: 700 !important;
+}
+
+/* PDP product title: bigger and fatter (wordmark-style) */
+.template-product .productView-title {
+  font-size: clamp(30px, 3.2vw, 42px) !important;
+  font-weight: 800 !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Product card titles — bold, matching the display face */
+a.card-title,
+.card .card-title,
+.card-title .text {
   font-weight: 700 !important;
 }
