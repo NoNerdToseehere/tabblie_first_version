@@ -56,32 +56,18 @@
 
   .tabblie-edu__card {
     background-color: #FDF6EE;
-    border: solid #1F1209;
-    /* drawn pen-stroke feel: line weight varies around the card */
-    border-width: 2px 3.5px 3.5px 2px;
-    border-radius: 18px;
+    border-radius: 16px;
     padding: clamp(24px, 3vw, 36px) clamp(20px, 2.5vw, 28px);
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 4px 5px 0 rgba(232, 98, 42, 0.85);
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
   }
 
-  .tabblie-edu__card:nth-child(even) { border-width: 3.5px 2px 2px 3.5px; }
-
   .tabblie-edu__card:hover {
-    transform: translate(-2px, -4px);
-    box-shadow: 7px 8px 0 rgba(232, 98, 42, 0.85);
-  }
-
-  .tabblie-edu__card--positive {
-    box-shadow: 4px 5px 0 rgba(56, 161, 105, 0.85);
-  }
-
-  .tabblie-edu__card--positive:hover {
-    box-shadow: 7px 8px 0 rgba(56, 161, 105, 0.85);
+    transform: translateY(-5px) rotate(-0.6deg);
+    box-shadow: 0 12px 28px rgba(31, 18, 9, 0.1);
   }
 
   /* Newsletter-splash style marks: orange gradient chip, white icon */
@@ -93,8 +79,9 @@
     height: 36px;
     border-radius: 50%;
     background: linear-gradient(135deg, #E8622A 0%, #F5934A 100%);
+    border: 2px solid #1F1209;
     color: #ffffff;
-    box-shadow: 0 4px 12px rgba(232, 98, 42, 0.3);
+    box-shadow: 2px 3px 0 rgba(31, 18, 9, 0.25);
     margin-bottom: 14px;
     flex-shrink: 0;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -142,7 +129,8 @@
 
   .tabblie-edu__card--positive .tabblie-edu__card-mark {
     background: linear-gradient(135deg, #38A169 0%, #5BC98B 100%);
-    box-shadow: 0 4px 12px rgba(56, 161, 105, 0.3);
+    border: 2px solid #1F1209;
+    box-shadow: 2px 3px 0 rgba(31, 18, 9, 0.25);
     color: #FFFFFF;
   }
 
