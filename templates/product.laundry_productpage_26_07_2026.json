@@ -819,7 +819,7 @@
             "text": "Makkelijk te doseren",
             "c1": false,
             "c2": true,
-            "c3": false
+            "c3": true
           }
         },
         "row_6": {
@@ -836,7 +836,7 @@
           "settings": {
             "text": "Licht & makkelijk mee te nemen",
             "c1": false,
-            "c2": false,
+            "c2": true,
             "c3": false
           }
         },
