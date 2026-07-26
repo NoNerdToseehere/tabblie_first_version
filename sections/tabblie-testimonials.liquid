@@ -104,19 +104,36 @@
     gap: clamp(12px, 1.5vw, 24px);
   }
 
-  /* Card */
+  /* Card — sticker style (styling-system §11) */
   .tabblie-testi__card {
-    background-color: #F7F7F7;
+    background-color: #FDF6EE;
+    border: 2px solid #1F1209;
     border-radius: 16px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     gap: 0;
-    transition: transform 0.2s ease;
+    box-shadow: 5px 5px 0 rgba(232, 98, 42, 0.9);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
   }
 
   .tabblie-testi__card:hover {
-    transform: translateY(-3px);
+    transform: translate(-2px, -4px) rotate(-0.5deg);
+    box-shadow: 8px 9px 0 rgba(232, 98, 42, 0.9);
+  }
+
+  /* rotating accent shadows */
+  .tabblie-testi__card:nth-child(3n + 2) {
+    box-shadow: 5px 5px 0 rgba(91, 184, 160, 0.9);
+  }
+  .tabblie-testi__card:nth-child(3n + 2):hover {
+    box-shadow: 8px 9px 0 rgba(91, 184, 160, 0.9);
+  }
+  .tabblie-testi__card:nth-child(3n + 3) {
+    box-shadow: 5px 5px 0 rgba(245, 200, 66, 0.9);
+  }
+  .tabblie-testi__card:nth-child(3n + 3):hover {
+    box-shadow: 8px 9px 0 rgba(245, 200, 66, 0.9);
   }
 
   /* Card image */
