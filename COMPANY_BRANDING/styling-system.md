@@ -484,3 +484,39 @@ Rules:
   #F5934A)` (green variant `#38A169 → #5BC98B`), white icon, soft glow, pops/rotates on hover
 - Always the house bouncy easing `cubic-bezier(0.34, 1.56, 0.64, 1)`
 - Pairs with the gradient-splash style (§4/newsletter) and the hand-drawn illustrations (§10)
+
+
+## 12. Homepage Design Language 2026-07 ("Tierelier look" — approved 2026-07-26)
+
+Reference: `HIGGSFIELD_VIDEOS/product-reference/homepage-design-2026-07.jpeg` (founder design).
+Live implementations: `tabblie-tierelier.liquid`, `tabblie-education.liquid`,
+`tabblie-product-feature.liquid`.
+
+### Color updates
+| Token | Hex | Use |
+|---|---|---|
+| **Text (NEW)** | `#182D20` | ALL body/heading dark text — replaces dark earth `#1F1209` everywhere (2026-07-26) |
+| **Design green** | `#26523F` | big headings, pills, check chips, ink details |
+| **Plant green** | `#2C6B4E` | Matisse plant cutouts (slightly brighter so it reads green) |
+| **Hero pink (deep)** | `#F08CAE` | tierelier strip background (punchier than section pink #F8BFD6) |
+
+> The old rule "never use dark green" is RETIRED per the founder's 2026-07 design — dark
+> green is now a core brand color for headings/pills/accents. Avoid only the clichéd
+> "eco leaf + dark green everywhere" look; green is used graphic and playful, not preachy.
+
+### Recurring elements
+- **Two-tone chunky headings**: line 1 in design green, line 2 HUGE in white (weight 800,
+  line-height ~0.95) — e.g. "Werkt als een / tierelier."
+- **Pill sub-lines**: dark-green pill, white bold text + white heart (SVG heart, never emoji)
+- **Brush-paint icons**: hand-painted white PNGs on colored backgrounds (flower, check, X,
+  smiley — uploaded as shop images 1..4)
+- **White hairline dividers** between icon items (rgba(255,255,255,0.55), 1px)
+- **Eyebrow dashes**: short pink strokes (#F08CAE, 22×3px, ±8° rotated) flanking uppercase
+  orange eyebrows
+- **Sparkle strokes**: 2-3 short dark strokes (`#182D20`, 2.5px, rotated) as "ping" accents
+  near icons/cards
+- **Matisse plant cutouts**: `{% render 'tabblie-plant' %}` — flat organic finger-lobes,
+  cropped into section corners
+- **Check chips**: solid dark-green circles with white checks (lists + positive stat cards);
+  X chips solid orange with white X
+- **CTA pills**: orange, white bold text + white heart, e.g. "Kies voor Tabblie ♥"

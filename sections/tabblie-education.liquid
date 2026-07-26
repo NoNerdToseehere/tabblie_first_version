@@ -28,13 +28,28 @@
     text-transform: uppercase;
     color: #E8622A;
     margin: 0 0 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
   }
+
+  /* pink hand-drawn dashes flanking the eyebrow */
+  .tabblie-edu__eyebrow::before,
+  .tabblie-edu__eyebrow::after {
+    content: '';
+    width: 22px;
+    height: 3px;
+    border-radius: 3px;
+    background: #F08CAE;
+  }
+  .tabblie-edu__eyebrow::before { transform: rotate(8deg); }
+  .tabblie-edu__eyebrow::after { transform: rotate(-8deg); }
 
   .tabblie-edu__title {
     font-family: var(--heading-font-family);
     font-size: clamp(2.4rem, 4vw, 3.6rem);
     font-weight: 600;
-    color: #1F1209;
+    color: #182D20;
     letter-spacing: -0.02em;
     line-height: 1.15;
     margin: 0 auto;
@@ -67,7 +82,7 @@
 
   .tabblie-edu__card:hover {
     transform: translateY(-5px) rotate(-0.6deg);
-    box-shadow: 0 12px 28px rgba(31, 18, 9, 0.1);
+    box-shadow: 0 12px 28px rgba(24, 45, 32, 0.1);
   }
 
   /* Newsletter-splash style marks: orange gradient chip, white icon */
@@ -79,9 +94,7 @@
     height: 36px;
     border-radius: 50%;
     background: linear-gradient(135deg, #E8622A 0%, #F5934A 100%);
-    border: 2px solid #1F1209;
     color: #ffffff;
-    box-shadow: 2px 3px 0 rgba(31, 18, 9, 0.25);
     margin-bottom: 14px;
     flex-shrink: 0;
     transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -109,7 +122,7 @@
   .tabblie-edu__card-desc {
     font-family: var(--text-font-family);
     font-size: 15px;
-    color: rgba(31, 18, 9, 0.7);
+    color: rgba(24, 45, 32, 0.7);
     line-height: 1.55;
     margin: 0;
     max-width: 220px;
@@ -118,6 +131,21 @@
   /* Positive (Tabblie) card */
   .tabblie-edu__card--positive {
     background-color: #E9F5EE;
+    position: relative;
+  }
+
+  .tabblie-edu__card--positive::after {
+    content: '';
+    position: absolute;
+    top: -22px;
+    right: -6px;
+    width: 26px;
+    height: 26px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23182D20' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M4 16 8 9'/%3E%3Cpath d='M11 17l2-9'/%3E%3Cpath d='M16 18l4-7'/%3E%3C/svg%3E");
+    transform: rotate(24deg);
+    pointer-events: none;
   }
 
   .tedu-block-logo {
@@ -128,9 +156,7 @@
   }
 
   .tabblie-edu__card--positive .tabblie-edu__card-mark {
-    background: linear-gradient(135deg, #38A169 0%, #5BC98B 100%);
-    border: 2px solid #1F1209;
-    box-shadow: 2px 3px 0 rgba(31, 18, 9, 0.25);
+    background: #26523F;
     color: #FFFFFF;
   }
 

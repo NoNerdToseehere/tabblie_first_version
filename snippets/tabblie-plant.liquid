@@ -1,0 +1,29 @@
+{% doc %}
+  Matisse-style plant/coral cutout for section corners (2026-07 homepage design).
+  Distinct rounded finger-lobes fanning from a small base, single flat color.
+
+  @param color - fill color (default: dark green #26523F)
+  @param width - CSS width (default: 180px)
+  @param flip - set to true to mirror horizontally
+
+  @example
+  {% render 'tabblie-plant', color: '#26523F', width: '220px', flip: true %}
+{% enddoc %}
+
+{%- assign plant_color = color | default: '#26523F' -%}
+{%- assign plant_width = width | default: '180px' -%}
+
+<svg
+  viewBox="0 0 220 210"
+  fill="{{ plant_color }}"
+  aria-hidden="true"
+  style="display:block;width:{{ plant_width }};height:auto;fill:{{ plant_color }};{% if flip %}transform:scaleX(-1);{% endif %}"
+>
+  <!-- distinct finger lobes, clear gaps between them -->
+  <ellipse cx="58" cy="112" rx="17" ry="52" transform="rotate(20 58 112)"/>
+  <ellipse cx="103" cy="82" rx="18" ry="60" transform="rotate(-3 103 82)"/>
+  <ellipse cx="150" cy="112" rx="15" ry="44" transform="rotate(-25 150 112)"/>
+  <ellipse cx="188" cy="152" rx="11" ry="26" transform="rotate(-48 188 152)"/>
+  <!-- compact base mound -->
+  <path d="M68 210 Q 105 168 148 210 Z"/>
+</svg>

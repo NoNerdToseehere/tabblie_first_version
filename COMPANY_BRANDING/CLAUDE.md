@@ -32,7 +32,7 @@ Market positioning → `market-positioning.md`
 |---|---|---|
 | Primary (Orange) | `#E8622A` | Logo, CTAs, brand anchor |
 | Background (Warm Cream) | `#FDF6EE` | Page body, cards |
-| Text (Dark Earth) | `#1F1209` | Body text, headings |
+| Text (Very Dark Green) | `#182D20` | Body text, headings (replaced dark earth #1F1209, 2026-07-26) |
 | Hero Blue | `#E1ECFA` | Homepage hero (gradient to #C8D9F5) |
 | Section Pink | `#F8BFD6` | How-it-works, icon strips |
 | Wasstrips | `#E8622A` / `#FDEEE6` | Orange accent / card bg |
@@ -107,7 +107,7 @@ dividers, headers) instead of generic shapes. Vector source: the dieline PDFs in
 - Use `#E8622A` for all primary CTAs and highlights — no grey or muted buttons
 - Background color for most sections: `#FDF6EE` (warm cream), not pure `#FFFFFF`
 - Copy tone must be cheeky and direct — avoid corporate/generic language
-- Never use dark green as a brand color — it reads as "typical eco brand"
+- Dark green (`#26523F`) is a core brand color since the 2026-07 design (headings, pills, checks, plant cutouts) — just never combine it with clichéd eco imagery (leaves + globes + guilt copy)
 - **Claim language (updated 2026-07-24):** **"100% plasticvrij"** (NL) / "plastic-free" (EN) is the approved claim — seaweed-based carrier (no PVA/microplastics), paper packaging. "Geen plasticafval" also fine.
 
 ### Shopify-specific rules

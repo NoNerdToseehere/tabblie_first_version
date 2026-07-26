@@ -74,8 +74,8 @@
   .tabblie-pf__title {
     font-family: var(--heading-font-family);
     font-size: clamp(2.2rem, 3.5vw, 3.4rem);
-    font-weight: 600;
-    color: #1F1209;
+    font-weight: 700;
+    color: #26523F;
     letter-spacing: -0.02em;
     line-height: 1.1;
     margin: 0 0 20px;
@@ -84,7 +84,7 @@
   .tabblie-pf__desc {
     font-family: var(--text-font-family);
     font-size: 16px;
-    color: rgba(31, 18, 9, 0.65);
+    color: rgba(24, 45, 32, 0.65);
     line-height: 1.7;
     margin: 0 0 36px;
   }
@@ -105,7 +105,7 @@
     gap: 12px;
     font-family: var(--text-font-family);
     font-size: 15px;
-    color: #1F1209;
+    color: #182D20;
     line-height: 1.5;
   }
 
@@ -114,7 +114,7 @@
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background-color: rgba(232, 98, 42, 0.15);
+    background-color: #26523F;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,7 +122,7 @@
   }
 
   .tabblie-pf__benefit-icon svg {
-    color: #E8622A;
+    color: #FFFFFF;
   }
 
   /* CTA */
@@ -186,7 +186,10 @@
   }
 </style>
 
-<section class="tabblie-pf" id="tabblie-pf-{{ section.id }}">
+<section class="tabblie-pf" id="tabblie-pf-{{ section.id }}" style="position:relative;overflow:hidden">
+  <div style="position:absolute;bottom:-14px;right:-30px;pointer-events:none" aria-hidden="true">
+    {% render 'tabblie-plant', color: '#2C6B4E', width: 'clamp(120px, 14vw, 210px)' %}
+  </div>
   <div class="tabblie-pf__inner{% if section.settings.image_side == 'right' %} tabblie-pf__inner--reversed{% endif %}">
 
     <div class="tabblie-pf__media">
@@ -242,8 +245,8 @@
       {%- if section.settings.button_text != blank -%}
         <a class="tabblie-pf__cta" href="{{ section.settings.button_url | default: '#' }}">
           {{ section.settings.button_text }}
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M3 8H13M9.5 4.5L13 8L9.5 11.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/>
           </svg>
         </a>
       {%- endif -%}
