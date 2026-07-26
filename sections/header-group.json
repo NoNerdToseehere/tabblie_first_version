@@ -18,7 +18,7 @@
           "type": "announcement",
           "settings": {
             "type": "html",
-            "text": "<span class=\"tabblie-announce-desktop\"><span>Gratis verzending in NL &amp; BE</span><span>Probeer 30 dagen risicovrij</span><span>100% Plasticvrij</span></span><span class=\"tabblie-announce-mobile\"><span>Probeer 30 dagen risicovrij</span></span>",
+            "text": "<a href=\"/collections/all\" class=\"tabblie-announce-deal\"><strong>BUNDELDEAL: 2+1 GRATIS</strong><span class=\"tabblie-announce-deal__sub\">Mix &amp; match mogelijk</span></a>",
             "text_rich": "<p>Gratis verzending in NL & BE</p>",
             "btn_color": "#f84248",
             "btn_border_color": "#ffffff",
@@ -39,15 +39,15 @@
         "bg_color_text_gradient": "",
         "font_size_text": 15,
         "font_style_text": "normal",
-        "font_weight_text": "500",
+        "font_weight_text": "800",
         "arrow_active": false,
         "content_max_width": 38,
-        "padding_top": 0,
-        "padding_top_tablet": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom": 0,
-        "padding_bottom_tablet": 0,
-        "padding_bottom_mobile": 0
+        "padding_top": 6,
+        "padding_top_tablet": 5,
+        "padding_top_mobile": 4,
+        "padding_bottom": 6,
+        "padding_bottom_tablet": 5,
+        "padding_bottom_mobile": 4
       }
     },
     "header_navigation_hamburger_Ytq3iJ": {
