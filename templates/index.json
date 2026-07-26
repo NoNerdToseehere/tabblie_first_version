@@ -468,7 +468,8 @@
         "mg_bottom_desktop": 50,
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 50
-      }
+      },
+      "disabled": true
     },
     "tabblie_education_main": {
       "type": "tabblie-education",
@@ -1222,11 +1223,61 @@
         "button_text": "Ik wil 15% korting",
         "terms": "Geen spam, alleen schone deals. Je kunt je altijd uitschrijven."
       }
+    },
+    "tabblie_tierelier_main": {
+      "type": "tabblie-tierelier",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/1_2979738d-9656-43ce-8efa-19856c3ee753.png",
+            "label": "Natuurlijke formule",
+            "sublabel": "Zacht voor jou, hard voor vuil."
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/2_9e3d8a68-d3a0-47fa-a5b2-6242d565b40e.png",
+            "label": "Biologisch afbreekbaar",
+            "sublabel": "Keer terug naar de natuur."
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/3_96fadf1d-b746-4710-bac5-3447a9828883.png",
+            "label": "Geen plastic, nooit",
+            "sublabel": "Geen microplastics. Nooit."
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/4_7889bf7b-2673-4d52-bde0-f37fa754b3e7.png",
+            "label": "Super effectief",
+            "sublabel": "Schitterend schoon, elke keer."
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "bg_color": "#F08CAE",
+        "heading_line1": "Werkt als een",
+        "heading_line2": "tierelier.",
+        "pill_text": "Beter voor de planeet."
+      }
     }
   },
   "order": [
     "tabblie_collection_hero_main",
     "163247026462da6862",
+    "tabblie_tierelier_main",
     "custom_service_block_4Nnayh",
     "tabblie_education_main",
     "tabblie_pf_main",
@@ -1243,4 +1294,3 @@
     "tabblie_newsletter_main"
   ]
 }
-

@@ -1,0 +1,214 @@
+{%- comment -%}
+  tabblie-tierelier.liquid
+  Pink hero strip: two-tone chunky heading ("Werkt als een" green / "tierelier." white),
+  dark-green pill sub-line with heart, 4 hand-painted brush icons with labels,
+  sublabels and white dividers. Matches the 2026-07 homepage design.
+{%- endcomment -%}
+
+<style>
+  .tabblie-tier {
+    background-color: {{ section.settings.bg_color | default: '#F08CAE' }};
+    padding: clamp(48px, 6vw, 84px) clamp(16px, 3vw, 40px) clamp(40px, 5vw, 64px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tabblie-tier__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .tabblie-tier__heading {
+    font-family: var(--font-heading-family);
+    font-weight: 800;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+  }
+
+  .tabblie-tier__heading-line1 {
+    display: block;
+    color: #26523F;
+    font-size: clamp(2.4rem, 5vw, 4.2rem);
+  }
+
+  .tabblie-tier__heading-line2 {
+    display: block;
+    color: #FFFFFF;
+    font-size: clamp(3.4rem, 8vw, 6.8rem);
+  }
+
+  .tabblie-tier__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #26523F;
+    color: #FFFFFF;
+    font-family: var(--font-heading-family);
+    font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+    font-weight: 700;
+    padding: 10px 26px;
+    border-radius: 100px;
+    margin-bottom: clamp(36px, 5vw, 60px);
+  }
+
+  .tabblie-tier__pill svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .tabblie-tier__grid {
+    display: grid;
+    grid-template-columns: repeat({{ section.blocks.size | at_most: 4 }}, 1fr);
+  }
+
+  .tabblie-tier__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 clamp(12px, 2vw, 32px);
+    position: relative;
+  }
+
+  .tabblie-tier__item + .tabblie-tier__item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8%;
+    bottom: 18%;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.55);
+  }
+
+  .tabblie-tier__icon {
+    height: clamp(72px, 9vw, 110px);
+    width: auto;
+    margin-bottom: 18px;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .tabblie-tier__item:hover .tabblie-tier__icon {
+    transform: scale(1.1) rotate(-4deg);
+  }
+
+  .tabblie-tier__label {
+    font-family: var(--text-font-family);
+    font-size: clamp(15px, 1.5vw, 17px);
+    font-weight: 700;
+    color: #1F1209;
+    margin: 0 0 4px;
+  }
+
+  .tabblie-tier__sublabel {
+    font-family: var(--text-font-family);
+    font-size: clamp(12.5px, 1.2vw, 14px);
+    color: rgba(31, 18, 9, 0.75);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  /* small hand-drawn accent strokes */
+  .tabblie-tier__accent {
+    position: absolute;
+    color: #26523F;
+    pointer-events: none;
+  }
+
+  .tabblie-tier__accent--left { top: -6px; left: 6%; width: 26px; height: 26px; transform: rotate(-15deg); }
+  .tabblie-tier__accent--right { top: -10px; right: 5%; width: 26px; height: 26px; transform: rotate(20deg) scaleX(-1); }
+
+  @media (max-width: 749px) {
+    .tabblie-tier__grid {
+      grid-template-columns: 1fr 1fr;
+      row-gap: 32px;
+    }
+
+    /* only a divider between the two columns, not between rows */
+    .tabblie-tier__item:nth-child(3)::before { display: none; }
+
+    .tabblie-tier__icon { height: 64px; margin-bottom: 12px; }
+    .tabblie-tier__accent { display: none; }
+  }
+</style>
+
+<section class="tabblie-tier" id="tabblie-tier-{{ section.id }}">
+  <div class="tabblie-tier__inner">
+
+    <h2 class="tabblie-tier__heading">
+      <span class="tabblie-tier__heading-line1">{{ section.settings.heading_line1 | default: 'Werkt als een' }}</span>
+      <span class="tabblie-tier__heading-line2">{{ section.settings.heading_line2 | default: 'tierelier.' }}</span>
+    </h2>
+
+    {%- if section.settings.pill_text != blank -%}
+      <div class="tabblie-tier__pill">
+        {{ section.settings.pill_text }}
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+    {%- endif -%}
+
+    <div class="tabblie-tier__grid">
+      <svg class="tabblie-tier__accent tabblie-tier__accent--left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
+      <svg class="tabblie-tier__accent tabblie-tier__accent--right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
+
+      {%- for block in section.blocks -%}
+        <div class="tabblie-tier__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.image != blank -%}
+            <img
+              class="tabblie-tier__icon"
+              src="{{ block.settings.image | image_url: width: 220 }}"
+              alt=""
+              width="110"
+              height="110"
+              loading="lazy"
+            >
+          {%- endif -%}
+          {%- if block.settings.label != blank -%}
+            <p class="tabblie-tier__label">{{ block.settings.label }}</p>
+          {%- endif -%}
+          {%- if block.settings.sublabel != blank -%}
+            <p class="tabblie-tier__sublabel">{{ block.settings.sublabel }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Tierelier strip",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Achtergrondkleur", "default": "#F08CAE" },
+    { "type": "text", "id": "heading_line1", "label": "Kop regel 1 (groen)", "default": "Werkt als een" },
+    { "type": "text", "id": "heading_line2", "label": "Kop regel 2 (wit, groot)", "default": "tierelier." },
+    { "type": "text", "id": "pill_text", "label": "Pill-tekst", "default": "Beter voor de planeet." }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Icoon-item",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Brush-icoon (wit, PNG)" },
+        { "type": "text", "id": "label", "label": "Label", "default": "Natuurlijke formule" },
+        { "type": "text", "id": "sublabel", "label": "Subtekst", "default": "Zacht voor jou, hard voor vuil." }
+      ]
+    }
+  ],
+  "max_blocks": 4,
+  "presets": [
+    {
+      "name": "Tierelier strip",
+      "blocks": [
+        { "type": "item", "settings": { "label": "Natuurlijke formule", "sublabel": "Zacht voor jou, hard voor vuil." } },
+        { "type": "item", "settings": { "label": "Biologisch afbreekbaar", "sublabel": "Keer terug naar de natuur." } },
+        { "type": "item", "settings": { "label": "Geen plastic, nooit", "sublabel": "Geen microplastics. Nooit." } },
+        { "type": "item", "settings": { "label": "Super effectief", "sublabel": "Schitterend schoon, elke keer." } }
+      ]
+    }
+  ]
+}
+{% endschema %}
