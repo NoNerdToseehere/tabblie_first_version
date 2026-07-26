@@ -25,3 +25,9 @@ Upload the real photos via media_upload when first needed and record the media I
 Pouch pink #F8BFD6-ish, print dark green. Site accents: yellow #F5C842 / card bg #FDF5DD
 (check styling-system.md — pink pouch print is dark green, site identity color for
 vaatwasstrips is yellow).
+
+## Nieuw front-design (26-07-2026)
+`vaatwasstrips-newfront-design.png` — Higgsfield media_id `1ca8c82e-ba7c-4a83-9e92-3c4806ac87f4`.
+Front: pink, DARK GREEN print, stacked dishes + sponge, "Dishwasher Sheets — 32 strips",
+"DISHWASHER DETERGENT FOR: GLASS / DISHES / CUTLERY", "UP TO 64 CYCLES", green diagonal
+corner triangle with "100% PVA free".

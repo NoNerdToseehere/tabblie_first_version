@@ -71,3 +71,9 @@ each hand, and tear straight down the middle perforation in ONE smooth motion �
 rectangular halves, clean straight serrated edge. Never crumple, twist, fold or tear diagonally.
 Prompt: "she tears the sheet in one smooth motion straight along the middle perforation line,
 splitting it into two equal rectangular halves".
+
+## Nieuw front-design (26-07-2026)
+`wasstrips-newfront-design.png` — Higgsfield media_id `83f16f13-c7f5-48df-b6fa-49e6b749cedb`.
+Front: light blue, dark red print, clothesline, "Laundry Sheets — 32 strips & 64 washes",
+"DETERGENT FOR: WHITES / COLOURS / DARKS", "UP TO 64 WASHES", dark-red diagonal corner
+triangle with "100% PVA free".
