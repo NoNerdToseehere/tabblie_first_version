@@ -475,7 +475,7 @@ Rules:
 - The "drawn" feel comes from **varied border weight** (pen pressure), alternating the
   heavy corner per card — never from distorted shapes
 - **Use the ink outline sparingly — in the details** (updated 2026-07-26): badges, icon
-  chips and circles (e.g. the "30 dagen proef wassen" badge, the stat-card icon chips:
+  chips and circles (e.g. the "30 dagen proef wassen" badge, the stat-card icon chips, the "Een twee drie" stepper nodes:
   `border: 2px solid #1F1209; box-shadow: 2px 3px 0 rgba(31,18,9,0.25)`). Full-card
   outlines only where the section carries it (e.g. the ingredient cards) — not on every grid
 - Solid (non-blurred) offset shadow in an accent color — orange by default, **green

@@ -112,7 +112,8 @@
     height: 50px;
     flex-shrink: 0;
     border-radius: 46% 54% 52% 48% / 52% 46% 54% 48%;
-    border: 2px dashed rgba(232, 98, 42, 0.5);
+    border: 2px solid #1F1209; /* ink outline in the details (styling-system §11) */
+    box-shadow: 2px 3px 0 rgba(31, 18, 9, 0.18);
     background: #FDF6EE;
     color: rgba(31, 18, 9, 0.45);
     font-family: var(--font-heading-family);
@@ -139,9 +140,9 @@
 
   .tabblie-hiw2__node--active {
     background: #E8622A;
-    border: 2px solid #E8622A;
+    border: 2px solid #1F1209;
     color: #ffffff;
-    box-shadow: 0 6px 18px rgba(232, 98, 42, 0.4);
+    box-shadow: 2px 3px 0 rgba(31, 18, 9, 0.25);
   }
 
   .tabblie-hiw2__node--active:nth-of-type(1) { transform: rotate(-5deg) scale(1.14); }
@@ -161,8 +162,9 @@
 
   .tabblie-hiw2__node--done {
     background: #38A169;
-    border: 2px solid #38A169;
+    border: 2px solid #1F1209;
     color: #ffffff;
+    box-shadow: 2px 3px 0 rgba(31, 18, 9, 0.18);
   }
 
   .tabblie-hiw2__node--done .tabblie-hiw2__node-num { display: none; }
