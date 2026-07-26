@@ -837,7 +837,7 @@
             "text": "Licht & makkelijk mee te nemen",
             "c1": false,
             "c2": false,
-            "c3": true
+            "c3": false
           }
         },
         "row_8": {
@@ -866,7 +866,7 @@
         "subtext": "Doe mee met de wasrevolutie en zwaai de dure, ouderwetse, vervuilende wasmiddelen voorgoed uit.",
         "comp1_label": "Vloeibaar wasmiddel",
         "comp2_label": "Pods & capsules",
-        "comp3_label": "Andere wasstrips",
+        "comp3_label": "Waspoeder",
         "show_price_row": true,
         "price_label": "Prijs per wasbeurt",
         "price_tabblie": "€0,23",
