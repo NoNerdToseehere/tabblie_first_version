@@ -280,13 +280,45 @@
     color: rgba(31, 18, 9, 0.55);
   }
 
+  /* Coming-soon card face: newsletter-splash style (orange gradient) */
+  .tabblie-chero__card--soon .tabblie-chero__card-img {
+    background: linear-gradient(135deg, #E8622A 0%, #F5934A 100%) !important;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* soft floating bubbles, like the newsletter section */
+  .tabblie-chero__card--soon .tabblie-chero__card-img::before,
+  .tabblie-chero__card--soon .tabblie-chero__card-img::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+  }
+
+  .tabblie-chero__card--soon .tabblie-chero__card-img::before {
+    width: 120px;
+    height: 120px;
+    top: -35px;
+    right: -35px;
+  }
+
+  .tabblie-chero__card--soon .tabblie-chero__card-img::after {
+    width: 90px;
+    height: 90px;
+    bottom: -25px;
+    left: -25px;
+  }
+
   .tabblie-chero__card-soon {
     position: absolute;
     top: 12px;
     left: 10px;
     z-index: 1;
-    background: #E8622A;
-    color: #FDF6EE;
+    background: rgba(255, 255, 255, 0.22);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff;
     font-family: var(--text-font-family);
     font-size: 11px;
     font-weight: 700;
@@ -295,7 +327,6 @@
     padding: 6px 14px;
     border-radius: 100px;
     transform: rotate(-4deg);
-    box-shadow: 0 4px 12px rgba(232, 98, 42, 0.35);
   }
 
   .tabblie-chero__card-soon-mark {
@@ -306,11 +337,17 @@
     justify-content: center;
     font-family: var(--font-heading-family);
     font-size: clamp(3.5rem, 6vw, 5rem);
-    font-weight: 700;
-    color: #E8622A;
-    opacity: 0.5;
+    font-weight: 800;
+    color: #ffffff;
+    opacity: 0.95;
     transform: rotate(8deg);
+    text-shadow: 0 4px 16px rgba(31, 18, 9, 0.15);
     pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .tabblie-chero__card--soon:hover .tabblie-chero__card-soon-mark {
+    transform: rotate(-4deg) scale(1.12);
   }
 
   /* per-card accent colours */
