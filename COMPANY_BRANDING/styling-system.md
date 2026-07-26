@@ -528,6 +528,14 @@ Live implementations: `tabblie-tierelier.liquid`, `tabblie-education.liquid`,
   line-height ~0.95) — e.g. "Werkt als een / tierelier."
 - **Pill sub-lines**: dark-green pill, white bold text + white heart (SVG heart, never emoji) —
   also used as the hero badge ("Sluit je aan bij 1.000+ huishoudens...")
+- **PDP buy box (redesign 2026-07-26)**: flat green stars (#26523F) + "4,8/5 • 1.000+
+  tevreden klanten", green 800 title, italic subline, 4 compact trust pills incl.
+  delivery, full-width orange ATC with cart icon, green guarantee strip (#E2F2ED)
+  directly under it, 76px reviewer avatar with big green stars. "Geliefd door 1.000+
+  klanten" header art (heading + sparkle + colored clothesline snippet
+  `tabblie-clothesline-color` + plant) sits LEFT under the social-proof card;
+  UGC videos with white name/star pills stay in the right column. Package bundles
+  come from the Kaching Bundles app — never build a custom package selector.
 - **Orange utility strips** (announcement bar + hero marquee): white text weight 800
   (announcement 13px, marquee uppercase ~14.5px), fat white icons (16-18px, SVG
   stroke-width 2.6-2.8) — thin/light text on orange strips is off-brand

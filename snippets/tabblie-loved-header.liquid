@@ -1,0 +1,20 @@
+{% doc %}
+  "Geliefd door 1.000+ klanten" header art (2026-07 PDP redesign):
+  big green heading + orange sparkle strokes + colored clothesline + plant.
+  Rendered in the LEFT gallery column, under the social-proof card.
+  The UGC videos themselves render separately (tabblie-ugc-videos) on the right.
+
+  @example
+  {% render 'tabblie-loved-header' %}
+{% enddoc %}
+
+<div class="tabblie-loved-header" style="position:relative;margin:30px 0 10px;padding:6px 0 0">
+  <h3 style="font-family:var(--heading-font-family);font-size:clamp(26px,2.6vw,34px);font-weight:800;color:#26523F;line-height:1.06;letter-spacing:-0.02em;margin:0 0 12px">Geliefd door<br>1.000+ klanten</h3>
+  <svg width="40" height="40" style="width:40px;height:40px;position:absolute;top:-4px;left:min(250px, 68%);color:#E8622A;transform:rotate(16deg)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
+  <div style="position:relative;max-width:52%">
+    {% render 'tabblie-clothesline-color', width: '100%' %}
+    <div style="position:absolute;left:-20px;bottom:-14px;pointer-events:none">
+      {% render 'tabblie-plant', color: '#2C6B4E', width: '48px' %}
+    </div>
+  </div>
+</div>

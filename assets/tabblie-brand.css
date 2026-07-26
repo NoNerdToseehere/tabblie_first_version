@@ -1593,11 +1593,11 @@ select:focus {
 .template-product .productView-title span,
 .template-product h1.productView-title {
   font-family: var(--font-heading-family) !important;
-  font-size: clamp(30px, 3.2vw, 42px) !important;
+  font-size: clamp(34px, 3.9vw, 54px) !important;
   font-weight: 800 !important;
-  color: #1F1209 !important;
-  letter-spacing: -0.01em !important;
-  line-height: 1.12 !important;
+  color: #26523F !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.04 !important;
 }
 
 @media (max-width: 749px) {

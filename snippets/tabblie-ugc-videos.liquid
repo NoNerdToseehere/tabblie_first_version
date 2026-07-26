@@ -1,15 +1,13 @@
 {% doc %}
-  Renders the 3 UGC video cards with play/pause toggle.
+  Renders the 3 UGC video cards with name/star pills (right buy-box column).
+  The "Geliefd door 1.000+ klanten" header art renders separately on the left
+  via tabblie-loved-header.
 
   @example
   {% render 'tabblie-ugc-videos' %}
 {% enddoc %}
 
-<div style="margin:20px 0">
-  <h3 style="text-align:center;font-size:18px;font-weight:700;color:#182D20;margin:0 0 6px">Geliefd door 1.000+ klanten</h3>
-  <div style="display:flex;justify-content:center;margin:0 0 14px">
-    {% render 'tabblie-clothesline', width: '230px' %}
-  </div>
+<div class="tabblie-loved" style="margin:20px 0 8px">
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
     {%- assign names = 'Lisa,Marieke,Sophie' | split: ',' -%}
     {%- for name in names -%}
@@ -18,13 +16,18 @@
       {%- assign avatar_file = 'tabblie-avatar-' | append: handle | append: '.jpg' -%}
       <div class="ugc-item" style="position:relative;border-radius:14px;overflow:hidden;cursor:pointer;background:#1a1a1a;aspect-ratio:9/16" onclick="playVideo(this)">
         <video src="{{ video_file | asset_url }}#t=0.001" style="width:100%;height:100%;object-fit:cover;display:block" playsinline preload="auto" loop muted></video>
-        <div class="play-overlay" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,0.15);transition:opacity 0.2s">
-          <div style="width:48px;height:48px;background:rgba(255,255,255,0.9);border-radius:50%;display:flex;align-items:center;justify-content:center">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="#1a1a1a"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        <div class="play-overlay" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.12);transition:opacity 0.2s">
+          <div style="width:48px;height:48px;background:rgba(255,255,255,0.94);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,0.18)">
+            <svg width="18" height="18" style="width:18px;height:18px;margin-left:2px" viewBox="0 0 24 24" fill="#182D20"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           </div>
-          <span style="display:flex;align-items:center;gap:6px;margin-top:8px">
-            <img src="{{ avatar_file | asset_url }}" alt="{{ name }}, Tabblie klant" width="22" height="22" loading="lazy" style="width:22px;height:22px;border-radius:50%;object-fit:cover;border:1.5px solid rgba(255,255,255,0.9)">
-            <span style="color:#fff;font-size:12px;font-weight:600;text-shadow:0 1px 3px rgba(0,0,0,0.4)">{{ name }}</span>
+        </div>
+        <div style="position:absolute;left:7px;right:7px;bottom:7px;display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 9px 4px 4px">
+          <img src="{{ avatar_file | asset_url }}" alt="{{ name }}, Tabblie klant" width="24" height="24" loading="lazy" style="width:24px;height:24px;border-radius:50%;object-fit:cover;flex-shrink:0">
+          <span style="font-size:12px;font-weight:800;color:#182D20;white-space:nowrap">{{ name }}</span>
+          <span style="display:inline-flex;gap:1.5px;margin-left:auto" aria-hidden="true">
+            {%- for i in (1..5) -%}
+              <svg width="10" height="10" style="width:10px;height:10px;fill:#E8622A" viewBox="0 0 24 24" fill="#E8622A"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2l-6.1 3.4 1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+            {%- endfor -%}
           </span>
         </div>
       </div>
