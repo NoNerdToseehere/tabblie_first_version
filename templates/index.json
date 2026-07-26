@@ -695,17 +695,6 @@
         "title": "Eindelijk milieuvriendelijk schoonmaken — zonder in te leveren op kwaliteit, looks of prijs."
       }
     },
-    "tabblie_founder_main": {
-      "type": "tabblie-founder",
-      "settings": {
-        "image_alt": "Tabblie oprichter",
-        "eyebrow": "ONS VERHAAL",
-        "title": "Gewoon een familie die dacht, dit kan anders",
-        "body": "Ergens tussen de zoveelste plastic fles en het zoveelste saaie groene merk dachten we: dit kan anders. Leuker. Makkelijker.<br><br>\nDus pakten we het anders aan. Opgericht door familie, gemaakt voor iedereen — met één missie en een sterk geloof dat schoonmaken en milieuvriendelijk niet saai of somber hoeft te zijn.<br><br>\nGeen muur van plastic flessen onder het aanrecht. Geen plakkerige flessen met restjes die er nooit helemaal uitkomen. Geen zware verpakkingen die je met twee handen uit de supermarkt sleept. Gewoon een klein doosje strips dat meer doet dan al die flessen bij elkaar — en zelfs door de brievenbus past.<br><br>\nEén strip. Voor de was. Voor de vaat. Voor het toilet. Scheur hem af, gooi hem erin, en hij lost helemaal op. Plantaardig, zacht voor je huid en vriendelijk voor het milieu. Geen plastic afval, geen restjes, geen gedoe.<br><br>\nDruk gezin met bergen wasgoed of klein appartement met een compacte vaatwasser — Tabblie past zich aan, niet andersom.<br><br>\nWant goed doen en leven gaan prima samen. Net als felle kleuren en een schoon geweten.",
-        "button_text": "Meer over Tabblie",
-        "button_url": ""
-      }
-    },
     "tabblie_impact_main": {
       "type": "tabblie-impact",
       "settings": {
@@ -1239,7 +1228,6 @@
     "tabblie_hiw_main",
     "tabblie_guarantee_main",
     "tabblie_testi_main",
-    "tabblie_founder_main",
     "tabblie_impact_main",
     "tabblie_insta_main",
     "rich_text_PNctxc",
