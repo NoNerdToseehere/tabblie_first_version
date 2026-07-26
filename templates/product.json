@@ -309,7 +309,7 @@
             "open_tab_mobile": false,
             "title": "Duurzaamheid",
             "type": "all",
-            "content": "Onze CO2-voetafdruk wordt volledig gecompenseerd door donaties aan gecertificeerde milieuprojecten.<br><br>10% van onze winst gaat naar milieuorganisaties die plastic opruimen uit oceanen en bomen planten.<br><br>Onze strips zijn 100% biologisch afbreekbaar, verpakt in recyclebaar papier. Geen plastic, geen microplastics, geen compromis.<br><br>Omdat onze strips zo compact en licht zijn, is de CO2-uitstoot bij verzending tot 90% lager dan bij traditionele schoonmaakmiddelen in plastic flessen.",
+            "content": "Onze CO2-voetafdruk wordt volledig gecompenseerd door donaties aan gecertificeerde milieuprojecten.<br><br>We steunen milieu-initiatieven die plastic opruimen uit oceanen en bomen planten.<br><br>Onze strips zijn 100% biologisch afbreekbaar, verpakt in recyclebaar papier. Geen plastic, geen microplastics, geen compromis.<br><br>Omdat onze strips zo compact en licht zijn, is de CO2-uitstoot bij verzending tot 90% lager dan bij traditionele schoonmaakmiddelen in plastic flessen.",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -843,7 +843,7 @@
         "row_8": {
           "type": "row",
           "settings": {
-            "text": "Doneert 10% van de winst",
+            "text": "Steunt milieu-initiatieven",
             "c1": false,
             "c2": false,
             "c3": false

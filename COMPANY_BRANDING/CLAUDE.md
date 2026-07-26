@@ -193,7 +193,7 @@ Refer to `PRD.md` (same folder) for full scope.
 1. Apply Tabblie brand colors and fonts throughout the theme
 2. Homepage: hero ("Clean our world."), product grid, mission strip, how-it-works, initiative teaser, reviews, email capture
 3. Product pages: one-time + subscription toggle, benefit icons, how-to-use section
-4. Environmental Initiative page (10% of profits commitment)
+4. Environmental Initiative page (steunt milieu-initiatieven — no fixed % claim)
 5. Bilingual: EN + NL throughout
 6. Cart drawer with subscription upsell nudge
 
