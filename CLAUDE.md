@@ -66,6 +66,8 @@ Every change to this theme must serve these four goals. When a request conflicts
 | Blue (verified) | `#3B7DD8` | Verified badges, shipping |
 | Trustpilot Green | `#00B67A` | Review stars |
 
+**Button & boldness rule (2026-07-26):** ALL primary buttons site-wide are solid orange `#E8622A` pills with BOLD white text (weight 700-800, white stays white on hover) — never outline/ghost/grey. Body text is `#182D20` (never black), headings 700-800. Full spec → `COMPANY_BRANDING/styling-system.md` §12 "HARD RULES".
+
 **Color rules:** Orange is brand anchor. Each product has identity color. Sections alternate cream/white/blue/pink/orange. Never use emojis — always SVG icons with varied colors.
 
 ### Fonts

@@ -255,14 +255,14 @@ h1, h2, h3, h4, h5, h6,
 .button.button-ATC,
 .card-product .button,
 .card-product__button2 .button {
-  background: transparent !important;
-  border: 1.5px solid #E8622A !important;
-  color: #E8622A !important;
+  background: #E8622A !important;
+  border: none !important;
+  color: #FFFFFF !important;
   font-family: var(--text-font-family) !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
   border-radius: 100px !important;
-  padding: 10px 20px !important;
+  padding: 12px 22px !important;
   min-width: unset !important;
   text-transform: none !important;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease !important;
@@ -273,8 +273,8 @@ h1, h2, h3, h4, h5, h6,
 .button.button-ATC:hover,
 .card-product .button:hover,
 .card-product__button2 .button:hover {
-  background: #E8622A !important;
-  border-color: #E8622A !important;
+  background: #cf531e !important;
+  border-color: #cf531e !important;
   color: #FFFFFF !important;
 }
 
@@ -1622,23 +1622,31 @@ select:focus {
   font-family: var(--text-font-family) !important;
 }
 
-/* Collection page — outlined buttons (high specificity to beat global orange fill) */
+/* Collection page — solid orange buttons, brand standard 2026-07-26 */
 .template-collection .card-action .button:not(.button--secondary):not(.button--subdued):not(.button--outline) {
-  background: #ffffff !important;
-  background-color: #ffffff !important;
-  color: #E8622A !important;
-  border: 1.5px solid #E8622A !important;
+  background: #E8622A !important;
+  background-color: #E8622A !important;
+  color: #FFFFFF !important;
+  border: none !important;
   border-radius: 100px !important;
-  font-size: 12px !important;
-  padding: 5px 24px !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  padding: 10px 24px !important;
   min-width: unset !important;
   box-shadow: none !important;
 }
 
 .template-collection .card-action .button:hover {
-  background: #E8622A !important;
-  background-color: #E8622A !important;
-  color: #ffffff !important;
+  background: #cf531e !important;
+  background-color: #cf531e !important;
+  color: #FFFFFF !important;
+}
+
+@media (max-width: 479px) {
+  .template-collection .card-action .button:not(.button--secondary):not(.button--subdued):not(.button--outline) {
+    padding: 10px 10px !important;
+    font-size: 12.5px !important;
+  }
 }
 
 @media (max-width: 749px) {
@@ -1920,4 +1928,33 @@ a.card-title,
 .footer .footer__copyright,
 .footer .copyright__content {
   font-weight: 600;
+}
+
+
+/* Global text-color migration to very dark green #182D20 — never black (2026-07-26).
+   Theme setting vars still carry #232323/#1F1209; override them all here. */
+html:root {
+  --color-text: #182D20;
+  --color-global: #182D20;
+  --color-link: #182D20;
+  --color-link-hover: #E8622A;
+  --product-title-color: #182D20;
+  --product-title-color-hover: #E8622A;
+  --product-price-color: #182D20;
+  --form-input-color: #182D20;
+  --form-label: #182D20;
+  --icon: #182D20;
+  --variant-color: #182D20;
+  --variant-size: #182D20;
+  --variant-size-border-hover: #182D20;
+  --variant-color-active: #182D20;
+  --product-swatch-border-active: #182D20;
+  --swatch-border-active: #182D20;
+  --color-label-multiLevel-categories: #182D20;
+  --colors-breadcrumb-hover: #E8622A;
+  --tabblie-earth: #182D20;
+}
+
+body {
+  color: #182D20;
 }

@@ -1,19 +1,19 @@
 /* ── Tabblie custom overrides ─────────────────────────────────── */
 
-/* Product cards: solid orange buttons with bold white text (2026-07-26) */
-.product-block .card-action .button,
-.product-block .button.button-ATC,
-.product-block .quickview-button.button {
+/* Product cards SITE-WIDE: solid orange buttons with bold white text (2026-07-26) */
+body .card-action .button.button.button,
+body .button.button-ATC.button-ATC,
+body .quickview-button.button.button {
   background-color: #E8622A !important;
   border-color: #E8622A !important;
   color: #FFFFFF !important;
-  font-weight: 700 !important;
+  font-weight: 800 !important;
   border-radius: 100px !important;
 }
 
-.product-block .card-action .button:hover,
-.product-block .button.button-ATC:hover,
-.product-block .quickview-button.button:hover {
+body .card-action .button.button.button:hover,
+body .button.button-ATC.button-ATC:hover,
+body .quickview-button.button.button:hover {
   background-color: #cf531e !important;
   border-color: #cf531e !important;
   color: #FFFFFF !important;
@@ -107,11 +107,19 @@
 .tabblie-impact__btn:hover, .tabblie-guarantee__cta:hover, .tabblie-nl__btn:hover,
 .tabblie-pf__cta:hover, .tabblie-phero__cta:hover, .tabblie-shop__card-btn:hover,
 .tabblie-vt__cta:hover,
-.product-block .card-action .button:hover,
-.product-block .button.button-ATC:hover,
+.card-action .button:hover,
+.button.button-ATC:hover,
 .product-block .view_all:hover,
 .product-block .button-slider:hover {
   color: #FFFFFF !important;
+}
+
+/* PDP add-to-cart: bold white per brand standard (2026-07-26) */
+.productView button[name="add"],
+.productView .button--submit,
+.productView [data-btn-addToCart] {
+  font-weight: 800 !important;
+  letter-spacing: 0.01em;
 }
 
 /* FAQ: pink dashes flank the question-mark icon, not the big header (2026-07-26) */

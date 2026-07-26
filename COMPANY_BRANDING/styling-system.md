@@ -202,19 +202,22 @@ background: linear-gradient(135deg, #E8622A 0%, #F5C842 50%, #5BB8A0 100%);
 
 ## 4. Buttons & CTAs
 
-### Primary CTA (solid orange pill)
+### Primary CTA (solid orange pill) — THE button standard (updated 2026-07-26)
+Every buy/CTA button on every page is a SOLID orange pill with BOLD white text.
+Outline/ghost buttons are off-brand for primary actions.
 ```css
-background: #E8622A;
-color: #FFFFFF;
-padding: 12px 32px;
+background: #E8622A;         /* solid — never transparent, never grey */
+color: #FFFFFF;              /* white, ALSO on hover (guard against theme a:hover) */
+padding: 15–17px 32–36px;    /* big CTAs: 17px 36px */
 border-radius: 100px;
-font-size: 14–15px;
-font-weight: 600–700;
+font-size: 15–18px;          /* hero/PDP CTAs: 18px */
+font-weight: 800;            /* bold is the brand — 600 reads too thin in Baloo 2 */
 border: none;
 transition: background 0.2s ease;
 
 /* hover */
-background: #D4531D;
+background: #cf531e;
+color: #FFFFFF;              /* explicitly re-set; theme a:hover turns it orange */
 ```
 
 ### Secondary CTA (orange outline pill)
@@ -487,6 +490,22 @@ Rules:
 
 
 ## 12. Homepage Design Language 2026-07 ("Tierelier look" — approved 2026-07-26)
+
+### HARD RULES — apply on EVERY page (not just the homepage)
+These are founder-confirmed brand law (2026-07-26). Any page or new section that
+violates them is off-brand and must be fixed:
+
+1. **Text is very dark green `#182D20` — NEVER black** (`#000000`/`#1F1209` are retired).
+   Softer copy uses rgba(24, 45, 32, x). Headings: `#182D20` or design green `#26523F`.
+2. **Buttons are solid orange `#E8622A` with BOLD white text (weight 700–800)** —
+   product cards, view-all, CTAs, sticky bars. White stays white on hover.
+   No outline, ghost, grey, or thin-text buttons for primary actions.
+3. **Bold is the default voice**: headings 700–800, button/label text 700–800,
+   utility strips (announcement bar, marquees) white 800 with fat icons
+   (16–18px, stroke ≥2.6). Thin/light text on colored strips is off-brand.
+4. **Small orange eyebrows get pink dashes** (global custom.css rule); big headers don't.
+5. Follow the recurring elements below for decoration (pills + hearts, stripe
+   accents, plants on light bottom corners only, check chips).
 
 Reference: `HIGGSFIELD_VIDEOS/product-reference/homepage-design-2026-07.jpeg` (founder design).
 Live implementations: `tabblie-tierelier.liquid`, `tabblie-education.liquid`,

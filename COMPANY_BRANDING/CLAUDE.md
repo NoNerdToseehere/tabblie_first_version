@@ -56,6 +56,8 @@ Market positioning → `market-positioning.md`
 - Section backgrounds alternate: cream, white, blue, pink, orange for visual rhythm
 - Never use emojis — always SVG icons with varied colors from the accent palette
 
+**Button & boldness rule (2026-07-26):** ALL primary buttons site-wide are solid orange `#E8622A` pills with BOLD white text (weight 700-800, white stays white on hover) — never outline/ghost/grey. Body text is `#182D20` (never black), headings 700-800. Full spec → `styling-system.md` §12 "HARD RULES".
+
 ### Fonts
 **Single typeface across the whole site (updated 2026-07-24): Baloo 2** (Google Fonts, weights 400–800) — chunky rounded face matching the wordmark (closest free equivalent of paid TT Drugs). Fallback: Plus Jakarta Sans. Full system → `styling-system.md` §2.
 
