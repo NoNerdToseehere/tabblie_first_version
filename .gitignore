@@ -28,3 +28,4 @@ assets/files_tosave/
 .agents/
 .claude/
 skills-lock.json
+.playwright-mcp/
