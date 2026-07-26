@@ -110,29 +110,19 @@
     line-height: 1.4;
   }
 
-  /* corner decorations: hanging plants + bold stripe accents */
-  .tabblie-tier__corner {
-    position: absolute;
-    top: -8px;
-    pointer-events: none;
-  }
-
-  .tabblie-tier__corner--left { left: -26px; transform: scaleY(-1) rotate(8deg); }
-  .tabblie-tier__corner--right { right: -26px; transform: scaleY(-1) scaleX(-1) rotate(8deg); }
-
+  /* bold stripe accents */
   .tabblie-tier__accent {
     position: absolute;
     color: #26523F;
     pointer-events: none;
   }
 
-  .tabblie-tier__accent--left { top: 26px; left: 12%; width: 58px; height: 58px; transform: rotate(-15deg); }
-  .tabblie-tier__accent--right { top: 22px; right: 11%; width: 58px; height: 58px; transform: rotate(20deg) scaleX(-1); }
+  .tabblie-tier__accent--left { top: 30px; left: 14%; width: 92px; height: 92px; transform: rotate(-15deg); }
+  .tabblie-tier__accent--right { top: 24px; right: 13%; width: 92px; height: 92px; transform: rotate(20deg) scaleX(-1); }
 
   @media (max-width: 1023px) {
-    .tabblie-tier__corner { display: none; }
-    .tabblie-tier__accent--left { width: 40px; height: 40px; left: 4%; }
-    .tabblie-tier__accent--right { width: 40px; height: 40px; right: 4%; }
+    .tabblie-tier__accent--left { width: 56px; height: 56px; left: 5%; }
+    .tabblie-tier__accent--right { width: 56px; height: 56px; right: 5%; }
   }
 
   @media (max-width: 749px) {
@@ -150,12 +140,6 @@
 </style>
 
 <section class="tabblie-tier" id="tabblie-tier-{{ section.id }}">
-  <div class="tabblie-tier__corner tabblie-tier__corner--left" aria-hidden="true">
-    {% render 'tabblie-plant', color: '#26523F', width: 'clamp(90px, 10vw, 150px)' %}
-  </div>
-  <div class="tabblie-tier__corner tabblie-tier__corner--right" aria-hidden="true">
-    {% render 'tabblie-plant', color: '#26523F', width: 'clamp(90px, 10vw, 150px)' %}
-  </div>
   <svg class="tabblie-tier__accent tabblie-tier__accent--left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
   <svg class="tabblie-tier__accent tabblie-tier__accent--right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
   <div class="tabblie-tier__inner">

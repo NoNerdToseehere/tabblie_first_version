@@ -1,5 +1,145 @@
 /* ── Tabblie custom overrides ─────────────────────────────────── */
 
+/* Product cards: solid orange buttons with bold white text (2026-07-26) */
+.product-block .card-action .button,
+.product-block .button.button-ATC,
+.product-block .quickview-button.button {
+  background-color: #E8622A !important;
+  border-color: #E8622A !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  border-radius: 100px !important;
+}
+
+.product-block .card-action .button:hover,
+.product-block .button.button-ATC:hover,
+.product-block .quickview-button.button:hover {
+  background-color: #cf531e !important;
+  border-color: #cf531e !important;
+  color: #FFFFFF !important;
+}
+
+/* Eyebrow texts: pink dashes on both sides, like "WIST JE DIT?" (2026-07-26) */
+.tabblie-pf__eyebrow, .tabblie-guarantee__eyebrow,
+.tabblie-hiw2__eyebrow, .tabblie-hiw__eyebrow,
+.tabblie-ingredients__eyebrow, .tabblie-phero__eyebrow,
+.tabblie-stats__eyebrow, .tabblie-stories__eyebrow, .tabblie-testi__eyebrow,
+.tabblie-vt__eyebrow, .tbl-eyebrow, .tcl__eyebrow, .tdg__eyebrow,
+.tmf-panel__eyebrow, .tmf-promo__eyebrow, .tns__eyebrow, .tabblie-founder__eyebrow {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 12px;
+}
+
+.tabblie-pf__eyebrow::before, .tabblie-guarantee__eyebrow::before,
+.tabblie-hiw2__eyebrow::before, .tabblie-hiw__eyebrow::before,
+.tabblie-ingredients__eyebrow::before, .tabblie-phero__eyebrow::before,
+.tabblie-stats__eyebrow::before, .tabblie-stories__eyebrow::before, .tabblie-testi__eyebrow::before,
+.tabblie-vt__eyebrow::before, .tbl-eyebrow::before, .tcl__eyebrow::before, .tdg__eyebrow::before,
+.tmf-panel__eyebrow::before, .tmf-promo__eyebrow::before, .tns__eyebrow::before, .tabblie-founder__eyebrow::before,
+.tabblie-pf__eyebrow::after, .tabblie-guarantee__eyebrow::after,
+.tabblie-hiw2__eyebrow::after, .tabblie-hiw__eyebrow::after,
+.tabblie-ingredients__eyebrow::after, .tabblie-phero__eyebrow::after,
+.tabblie-stats__eyebrow::after, .tabblie-stories__eyebrow::after, .tabblie-testi__eyebrow::after,
+.tabblie-vt__eyebrow::after, .tbl-eyebrow::after, .tcl__eyebrow::after, .tdg__eyebrow::after,
+.tmf-panel__eyebrow::after, .tmf-promo__eyebrow::after, .tns__eyebrow::after, .tabblie-founder__eyebrow::after {
+  content: '';
+  width: 22px;
+  height: 3px;
+  border-radius: 3px;
+  background: #F08CAE;
+  flex-shrink: 0;
+}
+
+.tabblie-pf__eyebrow::before, .tabblie-guarantee__eyebrow::before,
+.tabblie-hiw2__eyebrow::before, .tabblie-hiw__eyebrow::before,
+.tabblie-ingredients__eyebrow::before, .tabblie-phero__eyebrow::before,
+.tabblie-stats__eyebrow::before, .tabblie-stories__eyebrow::before, .tabblie-testi__eyebrow::before,
+.tabblie-vt__eyebrow::before, .tbl-eyebrow::before, .tcl__eyebrow::before, .tdg__eyebrow::before,
+.tmf-panel__eyebrow::before, .tmf-promo__eyebrow::before, .tns__eyebrow::before, .tabblie-founder__eyebrow::before {
+  transform: rotate(8deg);
+}
+
+.tabblie-pf__eyebrow::after, .tabblie-guarantee__eyebrow::after,
+.tabblie-hiw2__eyebrow::after, .tabblie-hiw__eyebrow::after,
+.tabblie-ingredients__eyebrow::after, .tabblie-phero__eyebrow::after,
+.tabblie-stats__eyebrow::after, .tabblie-stories__eyebrow::after, .tabblie-testi__eyebrow::after,
+.tabblie-vt__eyebrow::after, .tbl-eyebrow::after, .tcl__eyebrow::after, .tdg__eyebrow::after,
+.tmf-panel__eyebrow::after, .tmf-promo__eyebrow::after, .tns__eyebrow::after, .tabblie-founder__eyebrow::after {
+  transform: rotate(-8deg);
+}
+
+/* "Bekijk alle producten" view-all: solid orange pill + sparkle strokes (2026-07-26) */
+.product-block .view_all,
+.product-block .button-slider {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #E8622A !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  border: none !important;
+  border-radius: 100px;
+  padding: 15px 34px;
+  font-weight: 800 !important;
+  font-size: 16px;
+  text-decoration: none !important;
+  overflow: visible !important;
+}
+
+.product-block .view_all:hover,
+.product-block .button-slider:hover {
+  background-color: #cf531e !important;
+  color: #FFFFFF !important;
+}
+
+/* All Tabblie CTA buttons: extra-bold white text, brand standard (2026-07-26) */
+.tabblie-impact__btn, .tabblie-founder__cta, .tabblie-guarantee__cta,
+.tabblie-insta__cta, .tabblie-insta__follow-btn, .tabblie-nl__btn,
+.tabblie-pf__cta, .tabblie-phero__cta, .tabblie-shop__card-btn,
+.tabblie-stories__cta, .tabblie-vt__cta {
+  font-weight: 800 !important;
+  letter-spacing: 0.01em;
+}
+
+/* keep white text on hover — theme a:hover otherwise turns it orange-on-orange */
+.tabblie-impact__btn:hover, .tabblie-guarantee__cta:hover, .tabblie-nl__btn:hover,
+.tabblie-pf__cta:hover, .tabblie-phero__cta:hover, .tabblie-shop__card-btn:hover,
+.tabblie-vt__cta:hover,
+.product-block .card-action .button:hover,
+.product-block .button.button-ATC:hover,
+.product-block .view_all:hover,
+.product-block .button-slider:hover {
+  color: #FFFFFF !important;
+}
+
+/* FAQ: pink dashes flank the question-mark icon, not the big header (2026-07-26) */
+.tabblie-faq__section-icon {
+  position: relative;
+}
+
+.tabblie-faq__section-icon::before,
+.tabblie-faq__section-icon::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 22px;
+  height: 3px;
+  border-radius: 3px;
+  background: #F08CAE;
+}
+
+.tabblie-faq__section-icon::before {
+  left: calc(50% - 64px);
+  transform: rotate(8deg);
+}
+
+.tabblie-faq__section-icon::after {
+  left: calc(50% + 42px);
+  transform: rotate(-8deg);
+}
+
 /* Sticky add-to-cart bar: more height + presence (2026-07-24) */
 .productView-stickyCart {
   padding: 14px 0 !important;

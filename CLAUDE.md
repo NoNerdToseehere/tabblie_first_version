@@ -16,6 +16,7 @@ This file provides context and working instructions for Claude Code when working
 Full brand details → `COMPANY_BRANDING/brand-document.md`
 Full website requirements → `COMPANY_BRANDING/PRD.md`
 **Live style system (colors, gradients, icons, spacing) → `COMPANY_BRANDING/styling-system.md`**
+> **This file is the brand style guide — consult it BEFORE building or restyling anything.** New sections/components must follow §12 (Tierelier design language), §11 (ink details) and §9-10 (imagery & illustrations) by default.
 Market positioning → `COMPANY_BRANDING/market-positioning.md`
 
 ---

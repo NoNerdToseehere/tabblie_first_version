@@ -16,6 +16,7 @@ Full brand details → `brand-document.md`
 Full website requirements → `PRD.md`
 Market positioning → `market-positioning.md`
 **Live style guide (colors, gradients, icons, type scale, spacing) → `styling-system.md`**
+> **This file is the brand style guide — consult it BEFORE building or restyling anything.** New sections/components must follow §12 (Tierelier design language), §11 (ink details) and §9-10 (imagery & illustrations) by default.
 
 ---
 

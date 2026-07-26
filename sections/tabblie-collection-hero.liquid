@@ -123,36 +123,53 @@
 
   /* Badge */
   .tabblie-chero__badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: #26523F;
+    color: #FFFFFF;
     font-family: var(--text-font-family);
-    font-size: 14px;
-    font-weight: 500;
-    color: rgba(24, 45, 32, 0.65);
-    letter-spacing: 0.04em;
-    margin-bottom: 20px;
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 9px 22px;
+    border-radius: 100px;
+    margin-bottom: 24px;
+  }
+
+  .tabblie-chero__badge::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ffffff'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/svg%3E");
   }
 
   .tabblie-chero__badge strong {
-    color: #182D20;
-    font-weight: 700;
+    color: #FFFFFF;
+    font-weight: 800;
   }
 
   /* Heading */
   .tabblie-chero__heading {
     font-family: var(--heading-font-family);
-    font-size: clamp(2.8rem, 6vw, 5.6rem);
-    font-weight: 600;
-    line-height: 1.08;
+    font-size: clamp(2.6rem, 5.2vw, 4.6rem);
+    font-weight: 800;
+    line-height: 1.0;
     letter-spacing: -0.02em;
-    color: #182D20;
+    color: #26523F;
     margin: 0 auto 20px;
-    max-width: 820px;
+    max-width: 900px;
   }
 
   .tabblie-chero__accent {
+    display: block;
     color: #E8622A;
     font-style: normal;
     font-weight: 800;
+    font-size: clamp(3rem, 6.6vw, 6rem);
   }
 
   /* Subtext */
@@ -379,9 +396,9 @@
 
   .tabblie-chero__marquee-item {
     font-family: var(--text-font-family);
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    font-size: 14.5px;
+    font-weight: 800;
+    letter-spacing: 0.07em;
     text-transform: uppercase;
     color: #FFFFFF;
     padding: 0 28px;
@@ -392,10 +409,17 @@
   }
 
   .tabblie-chero__marquee-icon {
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     flex-shrink: 0;
-    opacity: 0.9;
+    opacity: 1;
+  }
+
+  .tabblie-chero__marquee-icon path,
+  .tabblie-chero__marquee-icon circle,
+  .tabblie-chero__marquee-icon line,
+  .tabblie-chero__marquee-icon rect {
+    stroke-width: 2.6;
   }
 
   .tabblie-chero__marquee-dot {

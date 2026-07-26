@@ -507,16 +507,31 @@ Live implementations: `tabblie-tierelier.liquid`, `tabblie-education.liquid`,
 ### Recurring elements
 - **Two-tone chunky headings**: line 1 in design green, line 2 HUGE in white (weight 800,
   line-height ~0.95) — e.g. "Werkt als een / tierelier."
-- **Pill sub-lines**: dark-green pill, white bold text + white heart (SVG heart, never emoji)
+- **Pill sub-lines**: dark-green pill, white bold text + white heart (SVG heart, never emoji) —
+  also used as the hero badge ("Sluit je aan bij 1.000+ huishoudens...")
+- **Marquee strips**: white text weight 800 uppercase ~14.5px, icons 18px with stroke-width 2.6
 - **Brush-paint icons**: hand-painted white PNGs on colored backgrounds (flower, check, X,
   smiley — uploaded as shop images 1..4)
 - **White hairline dividers** between icon items (rgba(255,255,255,0.55), 1px)
 - **Eyebrow dashes**: short pink strokes (#F08CAE, 22×3px, ±8° rotated) flanking uppercase
-  orange eyebrows
+  orange eyebrows. **This is now GLOBAL**: `assets/custom.css` applies the dashes to every
+  `*__eyebrow` class site-wide (2026-07-26) — new sections get it for free by naming their
+  eyebrow class `tabblie-xxx__eyebrow` and adding it to the custom.css selector list
 - **Sparkle strokes**: 2-3 short dark strokes (`#182D20`, 2.5px, rotated) as "ping" accents
-  near icons/cards
+  near icons/cards or flanking big two-tone headings (~92px on the Tierelier strip);
+  NOT next to buttons (founder removed them at "Bekijk alle producten")
 - **Matisse plant cutouts**: `{% render 'tabblie-plant' %}` — flat organic finger-lobes,
-  cropped into section corners
+  cropped into section corners. Use sparingly: BOTTOM corners on light sections only
+  (founder removed them from the hero top and the pink Tierelier strip, 2026-07-26)
 - **Check chips**: solid dark-green circles with white checks (lists + positive stat cards);
   X chips solid orange with white X
-- **CTA pills**: orange, white bold text + white heart, e.g. "Kies voor Tabblie ♥"
+- **CTA pills**: orange, white bold text + white heart, e.g. "Kies voor Tabblie ♥" —
+  primary CTAs are BIG and bold: 18px / weight 800 / padding 17px 36px
+- **Solid orange buttons everywhere**: product-card buttons (`.button-ATC`) and the
+  "Bekijk alle producten" view-all link are solid `#E8622A` pills with bold white text
+  (never outline/ghost); text stays WHITE on hover (theme a:hover otherwise turns it
+  orange-on-orange — guarded in custom.css)
+- **Plant snippet shape (2026-07-26)**: `snippets/tabblie-plant.liquid` redrawn to the
+  founder-approved reference — 4 fat rounded finger-lobes (ellipses, rx 15-28) fanning out
+  of a low wide mound, deep green `#26523F`, transparent background, always via inline
+  `style="fill:..."` (theme CSS overrides the fill attribute)
