@@ -663,7 +663,9 @@
             "rating": 5,
             "quote": "Zes maanden geleden overgestapt van vloeibaar wasmiddel. Mijn was is net zo schoon en ik koop geen plastic flessen meer.",
             "name": "Lisa B.",
-            "location": "Amsterdam, NL"
+            "location": "Amsterdam, NL",
+            "avatar_asset": "tabblie-avatar-lisa.jpg",
+            "image_asset": "tabblie-review-laundry.jpg"
           }
         },
         "review_2": {
@@ -672,7 +674,9 @@
             "rating": 5,
             "quote": "De vaatwasstrips werken zelfs beter dan mijn oude tabs. Geen residu, geen plastic, en mijn glazen zijn echt schoon.",
             "name": "Thomas V.",
-            "location": "Rotterdam, NL"
+            "location": "Rotterdam, NL",
+            "avatar_asset": "tabblie-avatar-thomas.jpg",
+            "image_asset": "tabblie-review-dishes.jpg"
           }
         },
         "review_3": {
@@ -681,7 +685,9 @@
             "rating": 5,
             "quote": "Ik was sceptisch — een strip die toiletten reinigt? Maar het werkt echt. Scheelt ook enorm veel ruimte onder de gootsteen.",
             "name": "Sophie M.",
-            "location": "Antwerp, BE"
+            "location": "Antwerp, BE",
+            "avatar_asset": "tabblie-avatar-sophie.jpg",
+            "image_asset": "tabblie-review-bathroom.jpg"
           }
         }
       },
@@ -793,7 +799,7 @@
         "post_9"
       ],
       "settings": {
-        "eyebrow": "Word lid van de strip-club (oke, andere strips)",
+        "eyebrow": "Volg ons op social media",
         "title": "@Tabblie op Instagram",
         "username": "Tabblie",
         "instagram_url": "https://www.instagram.com/tabblie/",
@@ -1237,3 +1243,4 @@
     "tabblie_newsletter_main"
   ]
 }
+
