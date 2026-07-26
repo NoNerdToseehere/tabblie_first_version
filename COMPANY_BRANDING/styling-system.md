@@ -458,21 +458,22 @@ The house style for stat/feature cards ("Wat traditionele merken niet vertellen"
 reference implementation, `sections/tabblie-education.liquid`):
 
 ```css
-border: 2px solid #1F1209;            /* dark ink outline */
-/* hand-drawn wobble: irregular per-corner radii, VARY the values per card */
-border-radius: 19px 15px 21px 14px / 14px 21px 15px 20px;
+border: solid #1F1209;                /* dark ink outline */
+border-width: 2px 3.5px 3.5px 2px;    /* pen-pressure: heavier toward one corner */
+/* alternate per card: even cards flip to 3.5px 2px 2px 3.5px */
+border-radius: 18px;
 background: #FDF6EE;                  /* or product pastel */
 box-shadow: 5px 5px 0 rgba(232, 98, 42, 0.9);   /* SOLID offset shadow, accent color */
 /* hover: card moves toward the light, shadow grows */
-transform: translate(-2px, -4px) rotate(-0.6deg);
+transform: translate(-2px, -4px);
 box-shadow: 8px 9px 0 rgba(232, 98, 42, 0.9);
 transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 ```
 
 Rules:
-- **Drawn, not gamified**: every card gets slightly different corner radii and a micro-tilt
-  (`rotate(-0.5deg)` odd / `rotate(0.4deg)` even) so no two cards are identical — the grid
-  should feel sketched by hand, not stamped
+- Clean uniform geometry — NO wobbly radii or card tilts (tried 2026-07-26, rejected)
+- The "drawn" feel comes from **varied border weight** (pen pressure), alternating the
+  heavy corner per card — never from distorted shapes
 - Solid (non-blurred) offset shadow in an accent color — orange by default, **green
   (`rgba(56,161,105,0.9)`) when the card is the positive/Tabblie card**
 - Icon chips inside cards: 36px circle, brand gradient `linear-gradient(135deg, #E8622A,
