@@ -451,3 +451,27 @@ naive/hand-sketched feel — never precise geometric icons, never multi-color fo
 rather than redrawing.
 **In AI generations:** describe as "hand-drawn [clothesline/stacked-dishes] illustration in
 [dark red/dark green]" so the packaging renders faithfully.
+
+## 11. Sticker Cards (approved card style — 2026-07-26)
+
+The house style for stat/feature cards ("Wat traditionele merken niet vertellen" is the
+reference implementation, `sections/tabblie-education.liquid`):
+
+```css
+border: 2px solid #1F1209;            /* dark sticker outline */
+border-radius: 16px;
+background: #FDF6EE;                  /* or product pastel */
+box-shadow: 5px 5px 0 rgba(232, 98, 42, 0.9);   /* SOLID offset shadow, accent color */
+/* hover: card moves toward the light, shadow grows */
+transform: translate(-2px, -4px) rotate(-0.6deg);
+box-shadow: 8px 9px 0 rgba(232, 98, 42, 0.9);
+transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+```
+
+Rules:
+- Solid (non-blurred) offset shadow in an accent color — orange by default, **green
+  (`rgba(56,161,105,0.9)`) when the card is the positive/Tabblie card**
+- Icon chips inside cards: 36px circle, brand gradient `linear-gradient(135deg, #E8622A,
+  #F5934A)` (green variant `#38A169 → #5BC98B`), white icon, soft glow, pops/rotates on hover
+- Always the house bouncy easing `cubic-bezier(0.34, 1.56, 0.64, 1)`
+- Pairs with the gradient-splash style (§4/newsletter) and the hand-drawn illustrations (§10)
