@@ -190,9 +190,7 @@
 </style>
 
 <section class="tabblie-pf" id="tabblie-pf-{{ section.id }}" style="position:relative;overflow:hidden">
-  <div style="position:absolute;bottom:-4px;right:-24px;pointer-events:none" aria-hidden="true">
-    {% render 'tabblie-plant', color: '#26523F', width: 'clamp(130px, 15vw, 230px)' %}
-  </div>
+  <svg style="position:absolute;bottom:42px;right:5%;width:clamp(56px,7vw,92px);height:auto;color:#26523F;transform:rotate(20deg) scaleX(-1);pointer-events:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
   <div class="tabblie-pf__inner{% if section.settings.image_side == 'right' %} tabblie-pf__inner--reversed{% endif %}">
 
     <div class="tabblie-pf__media">
@@ -248,7 +246,7 @@
       {%- if section.settings.button_text != blank -%}
         <a class="tabblie-pf__cta" href="{{ section.settings.button_url | default: '#' }}">
           {{ section.settings.button_text }}
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true">
             <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/>
           </svg>
         </a>
