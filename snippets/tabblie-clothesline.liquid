@@ -1,0 +1,23 @@
+{% doc %}
+  Renders the hand-drawn clothesline brand illustration — the ORIGINAL artwork
+  from the wasstrips packaging (extracted from the print dieline, transparent
+  background: assets/tabblie-clothesline.png, dark red on transparent).
+
+  @param width - CSS max-width (default: 240px)
+  @param alt - alt text (default: empty, decorative)
+
+  @example
+  {% render 'tabblie-clothesline', width: '260px' %}
+{% enddoc %}
+
+{%- assign line_width = width | default: '240px' -%}
+
+<img
+  src="{{ 'tabblie-clothesline.png' | asset_url }}"
+  alt="{{ alt | default: '' }}"
+  width="471"
+  height="157"
+  loading="lazy"
+  aria-hidden="{% if alt == blank %}true{% else %}false{% endif %}"
+  style="display:block;width:100%;max-width:{{ line_width }};height:auto"
+>
