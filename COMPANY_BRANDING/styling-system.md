@@ -509,7 +509,9 @@ Live implementations: `tabblie-tierelier.liquid`, `tabblie-education.liquid`,
   line-height ~0.95) — e.g. "Werkt als een / tierelier."
 - **Pill sub-lines**: dark-green pill, white bold text + white heart (SVG heart, never emoji) —
   also used as the hero badge ("Sluit je aan bij 1.000+ huishoudens...")
-- **Marquee strips**: white text weight 800 uppercase ~14.5px, icons 18px with stroke-width 2.6
+- **Orange utility strips** (announcement bar + hero marquee): white text weight 800
+  (announcement 13px, marquee uppercase ~14.5px), fat white icons (16-18px, SVG
+  stroke-width 2.6-2.8) — thin/light text on orange strips is off-brand
 - **Brush-paint icons**: hand-painted white PNGs on colored backgrounds (flower, check, X,
   smiley — uploaded as shop images 1..4)
 - **White hairline dividers** between icon items (rgba(255,255,255,0.55), 1px)
