@@ -317,7 +317,7 @@
       <svg class="tabblie-compare__accent tabblie-compare__accent--right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
     <h2 class="tabblie-compare__heading">
       Waarom <em>{{ section.settings.heading_accent | default: '100+ mensen' }}</em><br>
-      {{ section.settings.heading | default: 'kiezen voor Tabblie wasstrips' }}
+      {{ section.settings.heading | default: 'kiezen voor Tabblie' }}
     </h2>
     {%- if section.settings.show_avatars -%}
       <div class="tabblie-compare__avatars" aria-hidden="true">
@@ -440,7 +440,7 @@
       "type": "text",
       "id": "heading",
       "label": "Heading (rest, na 'Waarom [accent]')",
-      "default": "kiezen voor Tabblie wasstrips"
+      "default": "kiezen voor Tabblie"
     },
     {
       "type": "checkbox",
