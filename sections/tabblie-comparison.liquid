@@ -273,7 +273,8 @@
     margin: 18px 0 0;
   }
 
-  @media (prefers-reduced-motion: reduce) {
+  /* Phone: table is fully loaded right away — no scroll-reveal on the rows */
+  @media (prefers-reduced-motion: reduce), (max-width: 749px) {
     .tabblie-compare__mrow,
     .tabblie-compare__mrow.is-visible,
     .tabblie-compare__check,
