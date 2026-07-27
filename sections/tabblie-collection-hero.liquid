@@ -378,7 +378,7 @@
     margin-top: 0;
     background-color: #f4633a;
     border-top: none;
-    padding: 14px 0;
+    padding: 22px 0;
     overflow: hidden;
   }
 
@@ -387,7 +387,7 @@
     align-items: center;
     gap: 0;
     width: max-content;
-    animation: tabblie-marquee 28s linear infinite;
+    animation: tabblie-marquee 75s linear infinite;
   }
 
   .tabblie-chero__marquee:hover .tabblie-chero__marquee-track {
@@ -396,21 +396,21 @@
 
   .tabblie-chero__marquee-item {
     font-family: var(--text-font-family);
-    font-size: 14.5px;
+    font-size: 17px;
     font-weight: 800;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #FFFFFF;
-    padding: 0 28px;
+    padding: 0 46px;
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    gap: 13px;
   }
 
   .tabblie-chero__marquee-icon {
-    width: 18px;
-    height: 18px;
+    width: 30px;
+    height: 30px;
     flex-shrink: 0;
     opacity: 1;
   }
@@ -419,7 +419,12 @@
   .tabblie-chero__marquee-icon circle,
   .tabblie-chero__marquee-icon line,
   .tabblie-chero__marquee-icon rect {
-    stroke-width: 2.6;
+    stroke-width: 2.2;
+  }
+
+  /* clean, professional: no dot separators (Marcel's-style) */
+  .tabblie-chero__marquee-dot {
+    display: none;
   }
 
   .tabblie-chero__marquee-dot {
