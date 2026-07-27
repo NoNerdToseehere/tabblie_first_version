@@ -1971,3 +1971,24 @@ body.template-product .productView .product-form__submit:disabled {
   letter-spacing: 0.01em !important;
   padding: 19px 28px !important;
 }
+
+
+/* Mobile gallery photo counter (1/7): dark-green brand pill (2026-07-27) */
+.template-product .slick-counter {
+  background: #26523F !important;
+  color: #FFFFFF !important;
+  font-family: var(--text-font-family) !important;
+  font-size: 12.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.04em;
+  border-radius: 100px !important;
+  padding: 5px 13px !important;
+  border: none !important;
+  box-shadow: 0 2px 8px rgba(24, 45, 32, 0.18);
+}
+
+.template-product .slick-counter .slick-counter--current,
+.template-product .slick-counter .slick-counter--total {
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+}
