@@ -316,7 +316,7 @@
       <svg class="tabblie-compare__accent tabblie-compare__accent--left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
       <svg class="tabblie-compare__accent tabblie-compare__accent--right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
     <h2 class="tabblie-compare__heading">
-      Waarom <em>{{ section.settings.heading_accent | default: '100+ mensen' }}</em><br>
+      Waarom <em>{{ section.settings.heading_accent | default: '1.000+ mensen' }}</em><br>
       {{ section.settings.heading | default: 'kiezen voor Tabblie' }}
     </h2>
     {%- if section.settings.show_avatars -%}
@@ -325,7 +325,7 @@
         <img src="{{ 'tabblie-avatar-marieke.jpg' | asset_url }}" alt="Marieke, Tabblie klant" width="46" height="46" loading="lazy" style="z-index:3">
         <img src="{{ 'tabblie-avatar-sophie.jpg' | asset_url }}" alt="Sophie, Tabblie klant" width="46" height="46" loading="lazy" style="z-index:2">
         <img src="{{ 'tabblie-avatar-sanne.jpg' | asset_url }}" alt="Sanne, Tabblie klant" width="46" height="46" loading="lazy" style="z-index:1">
-        <span class="tabblie-compare__avatars-more">+100</span>
+        <span class="tabblie-compare__avatars-more">+1.000</span>
       </div>
     {%- endif -%}
     {%- if section.settings.subtext != blank -%}
@@ -434,7 +434,7 @@
       "type": "text",
       "id": "heading_accent",
       "label": "Heading accent (oranje deel)",
-      "default": "100+ mensen"
+      "default": "1.000+ mensen"
     },
     {
       "type": "text",
