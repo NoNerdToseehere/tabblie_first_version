@@ -122,32 +122,6 @@ body .quickview-button.button.button:hover {
   letter-spacing: 0.01em;
 }
 
-/* FAQ: pink dashes flank the question-mark icon, not the big header (2026-07-26) */
-.tabblie-faq__section-icon {
-  position: relative;
-}
-
-.tabblie-faq__section-icon::before,
-.tabblie-faq__section-icon::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 22px;
-  height: 3px;
-  border-radius: 3px;
-  background: #F08CAE;
-}
-
-.tabblie-faq__section-icon::before {
-  left: calc(50% - 64px);
-  transform: rotate(8deg);
-}
-
-.tabblie-faq__section-icon::after {
-  left: calc(50% + 42px);
-  transform: rotate(-8deg);
-}
-
 /* Sticky add-to-cart bar: more height + presence (2026-07-24) */
 .productView-stickyCart {
   padding: 14px 0 !important;
