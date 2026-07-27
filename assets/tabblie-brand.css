@@ -1595,7 +1595,7 @@ select:focus {
 .template-product .productView-title span,
 .template-product h1.productView-title {
   font-family: var(--font-heading-family) !important;
-  font-size: clamp(34px, 3.9vw, 54px) !important;
+  font-size: clamp(38px, 4.8vw, 66px) !important;
   font-weight: 800 !important;
   color: #26523F !important;
   letter-spacing: -0.02em !important;
@@ -1605,7 +1605,7 @@ select:focus {
 @media (max-width: 749px) {
   .template-product .productView-title,
   .template-product h1.productView-title {
-    font-size: 28px !important;
+    font-size: 34px !important;
   }
 }
 
