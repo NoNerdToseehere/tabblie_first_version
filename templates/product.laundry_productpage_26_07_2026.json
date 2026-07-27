@@ -1373,10 +1373,10 @@
   },
   "order": [
     "tabblie_product_usps",
-    "main",
+"main",
+    "tabblie_comparison",
     "custom_service_block_8Gzkxn",
     "tabblie_ingredients",
-    "tabblie_comparison",
     "tabblie_vt_pdp",
     "tabblie_stories_pdp",
     "tabblie_guarantee_pdp",
