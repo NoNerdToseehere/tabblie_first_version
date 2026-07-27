@@ -97,7 +97,7 @@
             "color_icon": "#e8622a",
             "text": "",
             "color_title": "#182D20",
-            "text_description": "<p style='font-size:14.5px;font-weight:600;color:rgba(24,45,32,0.65);font-style:italic;margin:0;font-family:var(--text-font-family)'>De pot schoon. Zonder bleek. Zonder plastic.</p>",
+            "text_description": "<p style='font-size:14.5px;font-weight:600;color:rgba(24,45,32,0.65);font-style:italic;margin:0;font-family:var(--text-font-family)'>Streeploos schone vaat. Zonder plastic. Zonder gedoe.</p>",
             "color_des": "#182D20",
             "fontsize_text": 13,
             "content_popup": "",
@@ -122,9 +122,9 @@
           "settings": {
             "icon": "",
             "color_icon": "#e8622a",
-            "text": "tabblie-benefit-checks-toilet",
+            "text": "tabblie-benefit-checks-vaat",
             "color_title": "#182D20",
-            "text_description": "tabblie-benefit-checks-toilet",
+            "text_description": "tabblie-benefit-checks-vaat",
             "color_des": "#182D20",
             "fontsize_text": 14,
             "content_popup": "",
@@ -206,9 +206,9 @@
           "settings": {
             "icon": "",
             "color_icon": "#e8622a",
-            "text": "tabblie-social-delivery-toilet",
+            "text": "tabblie-social-delivery-vaat",
             "color_title": "#182D20",
-            "text_description": "tabblie-social-delivery-toilet",
+            "text_description": "tabblie-social-delivery-vaat",
             "color_des": "#182D20",
             "fontsize_text": 12,
             "content_popup": "",
@@ -233,7 +233,7 @@
             "open_tab_mobile": false,
             "title": "Gebruik",
             "type": "all",
-            "content": "<strong>Zo simpel is het</strong><br>1. Scheur een strip af langs de perforatie.<br>2. Gooi de strip in de pot en laat hem 10-15 minuten bruisen en inwerken.<br>3. Even borstelen, doorspoelen, klaar.<br><br><strong>Hardnekkige aanslag of kalk?</strong><br>Laat de strip een nacht inwerken en borstel daarna kort na.<br><br><strong>Hoe vaak gebruiken?</strong><br>1-2 keer per week is genoeg voor een fris en schoon toilet.<br><br><strong>Veilig voor mijn afvoer?</strong><br>Ja — de strip lost volledig op, is 100% biologisch afbreekbaar en veilig voor afvoer en septic tank.",
+            "content": "<strong>Zo simpel is het</strong><br>1. Scheur een strip af langs de perforatie — voor een halfvolle machine is een halve strip genoeg.<br>2. Leg de strip in het bestekmandje of het tabletvak.<br>3. Start je programma. Klaar.<br><br><strong>Werkt het op elk programma?</strong><br>Ja — ook op eco en korte programma's. De strip lost volledig en zonder resten op.<br><br><strong>Streeploos bij hard water?</strong><br>Citroenzuur ontkalkt tijdens het wassen, dus glazen komen er helder uit. Bij zeer hard water: vul het glansspoelmiddelvakje zoals je gewend bent.<br><br><strong>Hoeveel wasbeurten haal ik uit een pak?</strong><br>Elke strip heeft een middenperforatie: een heel pak is goed voor het dubbele aantal beurten bij normale belading.",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -246,7 +246,7 @@
             "open_tab_mobile": false,
             "title": "Ingrediënten",
             "type": "all",
-            "content": "• Citroenzuur — lost kalkaanslag op<br>• Natriumbicarbonaat — bruiswerking die vuil losweekt<br>• Plantaardige surfactanten — reinigers op plantbasis<br>• Essentiële oliën — frisse, natuurlijke geur<br><br><strong>Wat er niet in zit:</strong> chloor, bleek, fosfaten, kleurstoffen, PVA en microplastics. Vegan en dierproefvrij.",
+            "content": "• Natuurlijke enzymen — breken vet en aangekoekt vuil af<br>• Citroenzuur — glans en kalkbescherming<br>• Natriumcarbonaat — ontvet en versterkt de reiniging<br>• Plantaardige surfactanten — reinigers op plantbasis<br><br><strong>Wat er niet in zit:</strong> chloor, fosfaten, kleurstoffen, PVA-folie en microplastics. Vegan en dierproefvrij.",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -259,7 +259,7 @@
             "open_tab_mobile": false,
             "title": "Ingrediënten uitgelegd",
             "type": "all",
-            "content": "<strong>Citroenzuur</strong> — pakt kalkaanslag en urinesteen aan zonder agressieve zuren.<br><strong>Natriumbicarbonaat</strong> — zorgt voor de bruiswerking die vuil en aanslag losweekt.<br><strong>Plantaardige surfactanten</strong> — biologisch afbreekbare reinigers op plantbasis.<br><strong>Essentiële oliën</strong> — een frisse geur zonder chloordampen of kunstmatige geurstoffen.<br><br><strong>Is dat veilig voor mijn gezin?</strong><br>Ja. Geen chloor, bleek of microplastics. Bewaar de strips wel — net als elk schoonmaakmiddel — buiten bereik van kinderen.",
+            "content": "<strong>Natuurlijke enzymen</strong> — breken vet, zetmeel en aangekoekte etensresten af, ook op lage temperaturen.<br><strong>Citroenzuur</strong> — beschermt tegen kalk en zorgt voor streeploze glazen.<br><strong>Natriumcarbonaat</strong> — maakt water zachter en versterkt de reinigende werking.<br><strong>Plantaardige surfactanten</strong> — biologisch afbreekbare reinigers op plantbasis.<br><br><strong>Is dat veilig voor mijn gezin?</strong><br>Ja. Geen chloor, fosfaten of microplastics. Bewaar de strips wel — net als elk vaatwasmiddel — buiten bereik van kinderen.",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -401,146 +401,7 @@
         "mg_bottom_mobile": 0
       }
     },
-    "tabblie_testimonials_toilet": {
-      "type": "tabblie-testimonials",
-      "blocks": {
-        "rev1": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "quote": "Geen chloorlucht meer, gewoon een frisse wc. Strip erin voor het slapen, 's ochtends even doorspoelen. Klaar.",
-            "name": "Thomas V.",
-            "location": "Utrecht",
-            "avatar_asset": "tabblie-avatar-thomas.jpg",
-            "image_asset": "tabblie-review-bathroom.jpg"
-          }
-        },
-        "rev2": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "quote": "Ik was klaar met die plastic blokjeshouders aan de rand. Dit ruikt fris en je ziet er niks van.",
-            "name": "Marieke B.",
-            "location": "Gent",
-            "avatar_asset": "tabblie-avatar-marieke.jpg",
-            "image_asset": "tabblie-toiletstrips.png"
-          }
-        },
-        "rev3": {
-          "type": "review",
-          "settings": {
-            "rating": 5,
-            "quote": "De kalkaanslag onder de rand is echt minder geworden. En geen zware flessen meer mee naar huis sjouwen.",
-            "name": "Sophie K.",
-            "location": "Rotterdam",
-            "avatar_asset": "tabblie-avatar-sophie.jpg",
-            "image": "shopify://shop_images/4.jpg"
-          }
-        }
-      },
-      "block_order": [
-        "rev1",
-        "rev2",
-        "rev3"
-      ],
-      "settings": {
-        "eyebrow": "GELIEFD DOOR 1.000+ KLANTEN",
-        "title": "Wat klanten zeggen"
-      }
-    },
-    "tabblie_pf_toilet": {
-      "type": "tabblie-product-feature",
-      "blocks": {
-        "ben1": {
-          "type": "benefit",
-          "settings": {
-            "text": "Bruist vuil en kalkaanslag weg"
-          }
-        },
-        "ben2": {
-          "type": "benefit",
-          "settings": {
-            "text": "Frisse geur zonder chloordampen"
-          }
-        },
-        "ben3": {
-          "type": "benefit",
-          "settings": {
-            "text": "Veilig voor afvoer en septic tank"
-          }
-        },
-        "ben4": {
-          "type": "benefit",
-          "settings": {
-            "text": "Geen plastic flessen of blokjes meer"
-          }
-        }
-      },
-      "block_order": [
-        "ben1",
-        "ben2",
-        "ben3",
-        "ben4"
-      ],
-      "settings": {
-        "image_side": "left",
-        "image": "shopify://shop_images/4.jpg",
-        "eyebrow": "WAAROM TABBLIE?",
-        "title": "Fris toilet. Nul bleek.",
-        "description": "Strip erin, laten bruisen, doorspoelen — geen agressieve chloor, geen plastic fles, geen gedoe. Gewoon een schone, fris ruikende wc, elke keer weer.",
-        "button_text": "Kies voor Tabblie",
-        "button_url": "#"
-      }
-    },
-    "tabblie_vt_toilet": {
-      "type": "tabblie-video-text",
-      "settings": {
-        "bg_color": "#E2F2ED",
-        "video_side": "right",
-        "eyebrow": "ZO WERKT HET",
-        "title": "Hoe werkt",
-        "title_accent": "de strip?",
-        "body": "<p>Gooi een strip in de pot en het bruisen begint vanzelf: natriumbicarbonaat weekt vuil en aanslag los, citroenzuur pakt kalk aan en de plantaardige reinigers doen de rest. Na 10-15 minuten even borstelen en doorspoelen — de strip lost volledig op, zonder resten.</p>",
-        "image": "shopify://shop_images/4.jpg",
-        "button_text": ""
-      }
-    },
-    "tabblie_stats_toilet": {
-      "type": "tabblie-stats",
-      "blocks": {
-        "st1": {
-          "type": "stat",
-          "settings": {
-            "number": "94%",
-            "label": "zou Tabblie aanraden aan vrienden en familie"
-          }
-        },
-        "st2": {
-          "type": "stat",
-          "settings": {
-            "number": "0",
-            "label": "chloor, bleek of plastic — in strip én verpakking"
-          }
-        },
-        "st3": {
-          "type": "stat",
-          "settings": {
-            "number": "100%",
-            "label": "biologisch afbreekbaar en veilig voor de afvoer"
-          }
-        }
-      },
-      "block_order": [
-        "st1",
-        "st2",
-        "st3"
-      ],
-      "settings": {
-        "eyebrow": "ECHTE RESULTATEN",
-        "title": "Daarom stappen mensen over"
-      }
-    },
-    "tabblie_comparison_toilet": {
+    "tabblie_comparison": {
       "type": "tabblie-comparison",
       "blocks": {
         "row1": {
@@ -555,7 +416,7 @@
         "row2": {
           "type": "row",
           "settings": {
-            "text": "Zonder chloor of bleek",
+            "text": "Zonder PVA-folie om je tablet",
             "c1": false,
             "c2": false,
             "c3": false
@@ -564,8 +425,8 @@
         "row3": {
           "type": "row",
           "settings": {
-            "text": "Veilig voor afvoer & septic tank",
-            "c1": false,
+            "text": "Streeploos, ook bij hard water",
+            "c1": true,
             "c2": true,
             "c3": false
           }
@@ -573,10 +434,10 @@
         "row4": {
           "type": "row",
           "settings": {
-            "text": "Frisse, natuurlijke geur",
+            "text": "Makkelijk te doseren (halve strip kan)",
             "c1": true,
             "c2": false,
-            "c3": false
+            "c3": true
           }
         },
         "row5": {
@@ -618,136 +479,16 @@
       ],
       "settings": {
         "heading_accent": "100+ mensen",
-        "heading": "kiezen voor Tabblie toiletstrips",
+        "heading": "kiezen voor Tabblie vaatwasstrips",
         "show_avatars": true,
-        "subtext": "Zwaai de chloorflessen en plastic blokjes voorgoed uit — schoon en fris kan ook zonder.",
-        "comp1_label": "Toiletblokjes",
-        "comp2_label": "Chloor & gels",
-        "comp3_label": "Bruistabletten",
+        "subtext": "Zwaai de plastic wikkels en zware pakken tabletten voorgoed uit — streeploos schoon kan ook zonder.",
+        "comp1_label": "Vaatwastabletten",
+        "comp2_label": "Gel & poeder",
+        "comp3_label": "Eco-tabletten",
         "show_price_row": false
       }
     },
-    "tabblie_ingredients_toilet": {
-      "type": "tabblie-ingredients",
-      "blocks": {
-        "ing1": {
-          "type": "ingredient",
-          "settings": {
-            "image_asset": "tabblie-ingredient-enzymen.jpg",
-            "title": "Natriumbicarbonaat",
-            "description": "De bruiswerking die vuil en aanslag moeiteloos losweekt — zonder schrobben."
-          }
-        },
-        "ing2": {
-          "type": "ingredient",
-          "settings": {
-            "image_asset": "tabblie-ingredient-surfactanten.jpg",
-            "title": "Citroenzuur",
-            "description": "Pakt kalkaanslag en urinesteen aan, op natuurlijke kracht in plaats van agressieve zuren."
-          }
-        },
-        "ing3": {
-          "type": "ingredient",
-          "settings": {
-            "image_asset": "tabblie-ingredient-olien.jpg",
-            "title": "Essentiële oliën",
-            "description": "Een frisse, natuurlijke geur in de badkamer — zonder chloordampen."
-          }
-        }
-      },
-      "block_order": [
-        "ing1",
-        "ing2",
-        "ing3"
-      ],
-      "settings": {
-        "eyebrow": "WAT ZIT ERIN?",
-        "heading": "De kracht van elke strip"
-      }
-    },
-    "tabblie_guarantee_toilet": {
-      "type": "tabblie-guarantee",
-      "settings": {
-        "eyebrow": "ONZE GARANTIE",
-        "heading": "Probeer het 30 dagen.",
-        "heading_accent": "Risicovrij!",
-        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
-        "button_text": "Bestel nu & bespaar",
-        "button_url": "",
-        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
-        "image_alt": "30 dagen proefwassen",
-        "badge_text": "30 dagen proef wassen"
-      }
-    },
-    "tabblie_faq_toilet": {
-      "type": "tabblie-faq",
-      "blocks": {
-        "q1": {
-          "type": "faq",
-          "settings": {
-            "question": "Werkt het echt tegen kalkaanslag?",
-            "answer": "<p>Ja — citroenzuur lost kalk op. Voor hardnekkige aanslag laat je de strip een nacht inwerken en borstel je kort na.</p>"
-          }
-        },
-        "q2": {
-          "type": "faq",
-          "settings": {
-            "question": "Is het veilig voor mijn afvoer en septic tank?",
-            "answer": "<p>Helemaal. De strip lost volledig op, is 100% biologisch afbreekbaar en bevat geen chloor of bleek.</p>"
-          }
-        },
-        "q3": {
-          "type": "faq",
-          "settings": {
-            "question": "Hoe vaak moet ik een strip gebruiken?",
-            "answer": "<p>1 tot 2 keer per week is genoeg voor een fris en schoon toilet. Bij intensief gebruik kan het vaker.</p>"
-          }
-        },
-        "q4": {
-          "type": "faq",
-          "settings": {
-            "question": "Ruikt het naar chloor?",
-            "answer": "<p>Nee — juist niet. De essentiële oliën geven een frisse, natuurlijke geur zonder chloordampen.</p>"
-          }
-        },
-        "q5": {
-          "type": "faq",
-          "settings": {
-            "question": "Is het veilig met kinderen en huisdieren in huis?",
-            "answer": "<p>De strips bevatten geen chloor of bleek. Bewaar ze wel — net als elk schoonmaakmiddel — buiten bereik van kinderen en huisdieren.</p>"
-          }
-        },
-        "q6": {
-          "type": "faq",
-          "settings": {
-            "question": "Hoe werkt de geld-terug-garantie?",
-            "answer": "<p>Je hebt 30 dagen om te proberen. Niet tevreden? Mail support@tabblie.com en je krijgt je geld terug — zonder gedoe.</p>"
-          }
-        },
-        "q7": {
-          "type": "faq",
-          "settings": {
-            "question": "Wat kost verzending en hoe snel is het er?",
-            "answer": "<p>Verzending is gratis in Nederland en België. Voor 23:59 besteld? Morgen in huis — en de verpakking past door de brievenbus.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
-        "q5",
-        "q6",
-        "q7"
-      ],
-      "settings": {
-        "icon": "question",
-        "eyebrow": "VEELGESTELDE VRAGEN",
-        "title": "Alles wat je wilt weten"
-      }
-    },
-    "custom_service_block_toilet": {
+    "custom_service_block": {
       "type": "custom-service-block",
       "blocks": {
         "text_e3hFFf": {
@@ -1056,19 +797,219 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 50
       }
+    },
+    "tabblie_ingredients": {
+      "type": "tabblie-ingredients",
+      "blocks": {
+        "ing1": {
+          "type": "ingredient",
+          "settings": {
+            "image_asset": "tabblie-ingredient-enzymen.jpg",
+            "title": "Natuurlijke enzymen",
+            "description": "Breken vet en aangekoekte etensresten af — ook op eco-programma's."
+          }
+        },
+        "ing2": {
+          "type": "ingredient",
+          "settings": {
+            "image_asset": "tabblie-ingredient-surfactanten.jpg",
+            "title": "Citroenzuur",
+            "description": "Beschermt tegen kalk en zorgt voor streeploos heldere glazen."
+          }
+        },
+        "ing3": {
+          "type": "ingredient",
+          "settings": {
+            "image_asset": "tabblie-ingredient-olien.jpg",
+            "title": "Plantaardige surfactanten",
+            "description": "Krachtige reiniging op plantbasis, volledig biologisch afbreekbaar."
+          }
+        }
+      },
+      "block_order": [
+        "ing1",
+        "ing2",
+        "ing3"
+      ],
+      "settings": {
+        "eyebrow": "WAT ZIT ERIN?",
+        "heading": "De kracht van elke strip"
+      }
+    },
+    "tabblie_vt_pdp": {
+      "type": "tabblie-video-text",
+      "settings": {
+        "bg_color": "#FDF5DD",
+        "video_side": "right",
+        "eyebrow": "ZO WERKT HET",
+        "title": "Hoe werkt",
+        "title_accent": "de strip?",
+        "body": "<p>Leg een strip in het bestekmandje en start je machine. De enzymen breken vet en etensresten af, citroenzuur beschermt tegen kalk en zorgt voor streeploze glazen. De strip lost volledig op — zonder PVA-folie, zonder resten.</p>",
+        "image": "shopify://shop_images/Tabblie-26.jpg",
+        "button_text": ""
+      }
+    },
+    "tabblie_stories_pdp": {
+      "type": "tabblie-insta-stories",
+      "blocks": {
+        "s1": {
+          "type": "story",
+          "settings": {
+            "video_url": "",
+            "username": "@lisabeun",
+            "time_ago": "2u",
+            "caption": "Sinds ik tabblie gebruik bespaar ik maandelijks 3+ plastic flessen"
+          }
+        },
+        "s2": {
+          "type": "story",
+          "settings": {
+            "video_url": "",
+            "username": "@mariekevh",
+            "time_ago": "5u",
+            "caption": "Was eerst sceptisch maar deze strips werken echt"
+          }
+        },
+        "s3": {
+          "type": "story",
+          "settings": {
+            "video_url": "",
+            "username": "@sophiedebeer",
+            "time_ago": "1d",
+            "caption": "Geen zware flessen meer sjouwen naar huis"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "bg_color": "#fdf6ee",
+        "eyebrow": "NIET VAN ONS",
+        "title": "Geloof onze klanten.",
+        "cta_text": "Volg @Tabblie",
+        "cta_url": ""
+      }
+    },
+    "tabblie_guarantee_pdp": {
+      "type": "tabblie-guarantee",
+      "settings": {
+        "eyebrow": "ONZE GARANTIE",
+        "heading": "Probeer het 30 dagen.",
+        "heading_accent": "Risicovrij!",
+        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
+        "button_text": "Bestel nu & bespaar",
+        "button_url": "",
+        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
+        "image_alt": "30 dagen proefwassen",
+        "badge_text": "30 dagen proef wassen"
+      }
+    },
+    "apps_reviews": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_CL9X6g": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "real_data",
+            "max_width": 1200,
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget"
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_CL9X6g"
+      ],
+      "custom_css": [
+        "div#shopify-block-ARk9sVEhQVnpwSXFRa__judge_me_reviews_review_widget_CL9X6g {background: #f7f7f7; padding: 50px 0;}",
+        ".jdgm-row-actions,.jdgm-rev-widg__body {padding: 0px 20px;}"
+      ],
+      "settings": {
+        "include_margins": false
+      }
+    },
+    "tabblie_faq_pdp": {
+      "type": "tabblie-faq",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "Werkt het in elke vaatwasser?",
+            "answer": "<p>Ja — in elk merk en elk model, op elk programma. Ook op eco en korte programma's.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Waar leg ik de strip?",
+            "answer": "<p>In het bestekmandje of het tabletvak. De strip lost volledig op, zonder resten.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "Komen mijn glazen er streeploos uit?",
+            "answer": "<p>Ja — citroenzuur beschermt tegen kalk. Bij zeer hard water kun je het glansspoelmiddelvakje gevuld houden zoals je gewend bent.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "Zit er PVA of plastic folie omheen?",
+            "answer": "<p>Nee. Geen PVA-folie, geen plastic wikkels — de strips zijn 100% plastic- & microplasticvrij en verpakt in papier.</p>"
+          }
+        },
+        "q5": {
+          "type": "faq",
+          "settings": {
+            "question": "Werkt het ook bij aangekoekte pannen?",
+            "answer": "<p>Natuurlijke enzymen breken vet en zetmeel af. Voor zwaar aangekoekte pannen geldt hetzelfde als bij tabletten: even voorweken helpt.</p>"
+          }
+        },
+        "q6": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe werkt de geld-terug-garantie?",
+            "answer": "<p>Je hebt 30 dagen om te proberen. Niet tevreden? Mail support@tabblie.com en je krijgt je geld terug — zonder gedoe.</p>"
+          }
+        },
+        "q7": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat kost verzending en hoe snel is het er?",
+            "answer": "<p>Verzending is gratis in Nederland en België. Voor 23:59 besteld? Morgen in huis — en de verpakking past door de brievenbus.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ],
+      "settings": {
+        "icon": "question",
+        "eyebrow": "VEELGESTELDE VRAGEN",
+        "title": "Alles wat je wilt weten"
+      }
     }
   },
   "order": [
     "tabblie_product_usps",
     "main",
-    "tabblie_testimonials_toilet",
-    "tabblie_pf_toilet",
-    "tabblie_vt_toilet",
-    "tabblie_stats_toilet",
-    "tabblie_comparison_toilet",
-    "custom_service_block_toilet",
-    "tabblie_ingredients_toilet",
-    "tabblie_guarantee_toilet",
-    "tabblie_faq_toilet"
+    "tabblie_comparison",
+    "custom_service_block",
+    "tabblie_ingredients",
+    "tabblie_vt_pdp",
+    "tabblie_stories_pdp",
+    "tabblie_guarantee_pdp",
+    "apps_reviews",
+    "tabblie_faq_pdp"
   ]
 }

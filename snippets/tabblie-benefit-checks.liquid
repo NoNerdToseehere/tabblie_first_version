@@ -2,7 +2,7 @@
   Renders green checkmark benefit list for product pages.
   Pass style param to switch between templates.
 
-  @param {string} [style] - "default", "eab", "mea", or "toilet"
+  @param {string} [style] - "default", "eab", "mea", "toilet", or "vaat"
 
   @example
   {% render 'tabblie-benefit-checks', style: 'default' %}
@@ -18,7 +18,12 @@
 {%- endcapture -%}
 
 <div style="font-size:14px;line-height:2.2;color:#182D20">
-  {%- if style == 'toilet' -%}
+  {%- if style == 'vaat' -%}
+    {{ check_span }}Streeploos schoon, ook bij hard water<br>
+    {{ check_span }}Werkt in elke vaatwasser, ook op eco<br>
+    {{ check_span }}100% biologisch afbreekbaar — zonder PVA-folie<br>
+    {{ check_span }}Geen plastic wikkels of zware flessen meer
+  {%- elsif style == 'toilet' -%}
     {{ check_span }}Fris en schoon zonder chloor of bleek<br>
     {{ check_span }}Veilig voor afvoer en septic tank<br>
     {{ check_span }}100% biologisch afbreekbaar<br>

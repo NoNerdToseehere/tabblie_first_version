@@ -4,7 +4,7 @@
   2. testimonial quote card with stars
   3. payment icons
 
-  @param {string} [style] - "default" (Sanne/wasstrips) or "toilet" (Thomas)
+  @param {string} [style] - "default" (Sanne/wasstrips), "vaat" (Marieke) or "toilet" (Thomas)
 
   @example
   {% render 'tabblie-social-delivery' %}
@@ -13,7 +13,11 @@
 {%- assign quote_name = 'Sanne' -%}
 {%- assign quote_avatar = 'tabblie-avatar-sanne.jpg' -%}
 {%- assign quote_text = '"Ik was sceptisch, maar deze strips werken echt net zo goed als mijn oude wasmiddel. En geen plastic meer!"' -%}
-{%- if style == 'toilet' -%}
+{%- if style == 'vaat' -%}
+  {%- assign quote_name = 'Marieke' -%}
+  {%- assign quote_avatar = 'tabblie-avatar-marieke.jpg' -%}
+  {%- assign quote_text = '"De vaat komt er net zo schoon uit als met tabletten — maar zonder die plastic wikkeltjes. Ik ga nooit meer terug."' -%}
+{%- elsif style == 'toilet' -%}
   {%- assign quote_name = 'Thomas' -%}
   {%- assign quote_avatar = 'tabblie-avatar-thomas.jpg' -%}
   {%- assign quote_text = '"Eindelijk geen chloorlucht meer in de badkamer. De pot is net zo schoon — en nooit meer een plastic fles onder de wastafel."' -%}

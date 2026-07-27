@@ -97,7 +97,7 @@
             "color_icon": "#e8622a",
             "text": "",
             "color_title": "#182D20",
-            "text_description": "<p style='font-size:14.5px;font-weight:600;color:rgba(24,45,32,0.65);font-style:italic;margin:0;font-family:var(--text-font-family)'>De pot schoon. Zonder bleek. Zonder plastic.</p>",
+            "text_description": "<p style='font-size:14.5px;font-weight:600;color:rgba(24,45,32,0.65);font-style:italic;margin:0;font-family:var(--text-font-family)'>Schoon wassen. Zonder plastic. Zonder gedoe.</p>",
             "color_des": "#182D20",
             "fontsize_text": 13,
             "content_popup": "",
@@ -122,9 +122,9 @@
           "settings": {
             "icon": "",
             "color_icon": "#e8622a",
-            "text": "tabblie-benefit-checks-toilet",
+            "text": "tabblie-benefit-checks",
             "color_title": "#182D20",
-            "text_description": "tabblie-benefit-checks-toilet",
+            "text_description": "tabblie-benefit-checks",
             "color_des": "#182D20",
             "fontsize_text": 14,
             "content_popup": "",
@@ -206,9 +206,24 @@
           "settings": {
             "icon": "",
             "color_icon": "#e8622a",
-            "text": "tabblie-social-delivery-toilet",
+            "text": "tabblie-social-delivery",
             "color_title": "#182D20",
-            "text_description": "tabblie-social-delivery-toilet",
+            "text_description": "tabblie-social-delivery",
+            "color_des": "#182D20",
+            "fontsize_text": 12,
+            "content_popup": "",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "ugc_videos": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#e8622a",
+            "text": "tabblie-ugc-videos",
+            "color_title": "#182D20",
+            "text_description": "tabblie-ugc-videos",
             "color_des": "#182D20",
             "fontsize_text": 12,
             "content_popup": "",
@@ -233,7 +248,7 @@
             "open_tab_mobile": false,
             "title": "Gebruik",
             "type": "all",
-            "content": "<strong>Zo simpel is het</strong><br>1. Scheur een strip af langs de perforatie.<br>2. Gooi de strip in de pot en laat hem 10-15 minuten bruisen en inwerken.<br>3. Even borstelen, doorspoelen, klaar.<br><br><strong>Hardnekkige aanslag of kalk?</strong><br>Laat de strip een nacht inwerken en borstel daarna kort na.<br><br><strong>Hoe vaak gebruiken?</strong><br>1-2 keer per week is genoeg voor een fris en schoon toilet.<br><br><strong>Veilig voor mijn afvoer?</strong><br>Ja — de strip lost volledig op, is 100% biologisch afbreekbaar en veilig voor afvoer en septic tank.",
+            "content": "<strong>Zo simpel is het</strong><br>1. Scheur een strip af langs de perforatie — voor een kleine of licht vervuilde was is een halve strip genoeg.<br>2. Gooi de strip direct in de trommel bij je wasgoed (niet in het wasmiddelbakje) of in het bestekmandje van je vaatwasser.<br>3. Start je programma. Klaar.<br><br><strong>Op welke temperatuur werkt het?</strong><br>De strip lost volledig en zonder resten op in koud én warm water — ook op de eco-stand.<br><br><strong>Voor welke was?</strong><br>Veilig voor witte én gekleurde was, en dermatologisch getest — dus ook voor babykleding en een gevoelige huid.<br><br><strong>Hoeveel wasbeurten haal ik uit een pak?</strong><br>Elke strip heeft een middenperforatie: een heel pak is goed voor het dubbele aantal wasbeurten bij normale vervuiling.<br><br><strong>Handwas?</strong><br>Los een halve strip op in een teiltje warm water en was zoals je gewend bent.",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -246,7 +261,7 @@
             "open_tab_mobile": false,
             "title": "Ingrediënten",
             "type": "all",
-            "content": "• Citroenzuur — lost kalkaanslag op<br>• Natriumbicarbonaat — bruiswerking die vuil losweekt<br>• Plantaardige surfactanten — reinigers op plantbasis<br>• Essentiële oliën — frisse, natuurlijke geur<br><br><strong>Wat er niet in zit:</strong> chloor, bleek, fosfaten, kleurstoffen, PVA en microplastics. Vegan en dierproefvrij.",
+            "content": "• Plantaardige surfactanten — reinigers op plantbasis<br>• Natuurlijke enzymen — vlekverwijdering<br>• Essentiële oliën — frisse, natuurlijke geur<br>• Natriumcarbonaat — waterontharder<br>• Citroenzuur — pH-balans<br><br><strong>Wat er niet in zit:</strong> parabenen, fosfaten, kleurstoffen, PVA en microplastics. Vegan en dierproefvrij.",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -259,7 +274,7 @@
             "open_tab_mobile": false,
             "title": "Ingrediënten uitgelegd",
             "type": "all",
-            "content": "<strong>Citroenzuur</strong> — pakt kalkaanslag en urinesteen aan zonder agressieve zuren.<br><strong>Natriumbicarbonaat</strong> — zorgt voor de bruiswerking die vuil en aanslag losweekt.<br><strong>Plantaardige surfactanten</strong> — biologisch afbreekbare reinigers op plantbasis.<br><strong>Essentiële oliën</strong> — een frisse geur zonder chloordampen of kunstmatige geurstoffen.<br><br><strong>Is dat veilig voor mijn gezin?</strong><br>Ja. Geen chloor, bleek of microplastics. Bewaar de strips wel — net als elk schoonmaakmiddel — buiten bereik van kinderen.",
+            "content": "<strong>Plantaardige surfactanten</strong> — krachtige reinigers op basis van kokos- en palmolie. Biologisch afbreekbaar en net zo effectief als synthetische alternatieven.<br><strong>Natuurlijke enzymen</strong> — breken eiwitten en vetten af voor grondige vlekverwijdering, ook bij lage temperaturen.<br><strong>Essentiële oliën</strong> — een subtiele, frisse geur zonder kunstmatige geurstoffen of allergenen.<br><strong>Natriumcarbonaat</strong> — maakt hard water zachter voor een betere waswerking.<br><strong>Citroenzuur</strong> — houdt de pH-waarde in balans voor optimale reiniging.<br><br><strong>Is dat veilig voor mijn gezin?</strong><br>Ja. Geen parabenen, fosfaten, kleurstoffen of microplastics, en dermatologisch getest. Bewaar de strips wel — net als elk wasmiddel — buiten bereik van kinderen.",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -306,6 +321,7 @@
         "trust_badges",
         "f1b31d90-1e43-4948-9fe3-97ba43f6fb34",
         "social_delivery",
+        "ugc_videos",
         "short_description_eciCw3",
         "custom_QK3rYR",
         "custom_cqfTAp",
@@ -401,40 +417,40 @@
         "mg_bottom_mobile": 0
       }
     },
-    "tabblie_testimonials_toilet": {
+    "tabblie_testimonials": {
       "type": "tabblie-testimonials",
       "blocks": {
         "rev1": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "Geen chloorlucht meer, gewoon een frisse wc. Strip erin voor het slapen, 's ochtends even doorspoelen. Klaar.",
-            "name": "Thomas V.",
-            "location": "Utrecht",
-            "avatar_asset": "tabblie-avatar-thomas.jpg",
-            "image_asset": "tabblie-review-bathroom.jpg"
+            "quote": "Zes maanden geleden overgestapt van vloeibaar wasmiddel. Mijn was is net zo schoon en ik heb geen enkele plastic fles meer gekocht.",
+            "name": "Lisa B.",
+            "location": "Amsterdam",
+            "avatar_asset": "tabblie-avatar-lisa.jpg",
+            "image_asset": "tabblie-review-laundry.jpg"
           }
         },
         "rev2": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "Ik was klaar met die plastic blokjeshouders aan de rand. Dit ruikt fris en je ziet er niks van.",
-            "name": "Marieke B.",
-            "location": "Gent",
-            "avatar_asset": "tabblie-avatar-marieke.jpg",
-            "image_asset": "tabblie-toiletstrips.png"
+            "quote": "Ik was sceptisch, maar deze strips werken echt net zo goed als mijn oude wasmiddel. En geen plastic meer!",
+            "name": "Sanne K.",
+            "location": "Eindhoven",
+            "avatar_asset": "tabblie-avatar-sanne.jpg",
+            "image": "shopify://shop_images/Tabblie-49.jpg"
           }
         },
         "rev3": {
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "De kalkaanslag onder de rand is echt minder geworden. En geen zware flessen meer mee naar huis sjouwen.",
-            "name": "Sophie K.",
-            "location": "Rotterdam",
-            "avatar_asset": "tabblie-avatar-sophie.jpg",
-            "image": "shopify://shop_images/4.jpg"
+            "quote": "Kind kan de was doen — letterlijk. Strip erin en klaar, zonder geknoei met doseerdoppen.",
+            "name": "Marieke B.",
+            "location": "Gent",
+            "avatar_asset": "tabblie-avatar-marieke.jpg",
+            "image_asset": "tabblie-review-laundry.jpg"
           }
         }
       },
@@ -448,31 +464,31 @@
         "title": "Wat klanten zeggen"
       }
     },
-    "tabblie_pf_toilet": {
+    "tabblie_pf": {
       "type": "tabblie-product-feature",
       "blocks": {
         "ben1": {
           "type": "benefit",
           "settings": {
-            "text": "Bruist vuil en kalkaanslag weg"
+            "text": "Werkt in elke wasmachine of vaatwasser"
           }
         },
         "ben2": {
           "type": "benefit",
           "settings": {
-            "text": "Frisse geur zonder chloordampen"
+            "text": "Lost op in warm en koud water"
           }
         },
         "ben3": {
           "type": "benefit",
           "settings": {
-            "text": "Veilig voor afvoer en septic tank"
+            "text": "Microplastic (PVA) vrij"
           }
         },
         "ben4": {
           "type": "benefit",
           "settings": {
-            "text": "Geen plastic flessen of blokjes meer"
+            "text": "Gemakkelijk door de brievenbus"
           }
         }
       },
@@ -484,28 +500,29 @@
       ],
       "settings": {
         "image_side": "left",
-        "image": "shopify://shop_images/4.jpg",
+        "image": "shopify://shop_images/foto_s_start_website_homepage_1.jpg",
         "eyebrow": "WAAROM TABBLIE?",
-        "title": "Fris toilet. Nul bleek.",
-        "description": "Strip erin, laten bruisen, doorspoelen — geen agressieve chloor, geen plastic fles, geen gedoe. Gewoon een schone, fris ruikende wc, elke keer weer.",
+        "title": "Eén strip. Nul plastic.",
+        "description": "Strip erin, opgelost, klaar — geen afmeten, geen plastic, geen rommel. Gewoon schone was, elke keer weer.",
         "button_text": "Kies voor Tabblie",
         "button_url": "#"
       }
     },
-    "tabblie_vt_toilet": {
+    "tabblie_vt": {
       "type": "tabblie-video-text",
       "settings": {
-        "bg_color": "#E2F2ED",
+        "bg_color": "#fdf6ee",
         "video_side": "right",
         "eyebrow": "ZO WERKT HET",
-        "title": "Hoe werkt",
-        "title_accent": "de strip?",
-        "body": "<p>Gooi een strip in de pot en het bruisen begint vanzelf: natriumbicarbonaat weekt vuil en aanslag los, citroenzuur pakt kalk aan en de plantaardige reinigers doen de rest. Na 10-15 minuten even borstelen en doorspoelen — de strip lost volledig op, zonder resten.</p>",
-        "image": "shopify://shop_images/4.jpg",
-        "button_text": ""
+        "title": "Scheur, gooi,",
+        "title_accent": "klaar.",
+        "body": "<p>Eén strip vervangt één plastic fles. Scheur hem af, gooi hem in je wasmachine of vaatwasser, en je bent klaar. Geen afmeten, geen rommel, geen plastic afval.</p><p>Werkt in koud en warm water. Dermatologisch getest en veilig voor het hele gezin.</p>",
+        "button_text": "Bestel nu",
+        "button_url": "",
+        "video_url": ""
       }
     },
-    "tabblie_stats_toilet": {
+    "tabblie_stats": {
       "type": "tabblie-stats",
       "blocks": {
         "st1": {
@@ -518,15 +535,15 @@
         "st2": {
           "type": "stat",
           "settings": {
-            "number": "0",
-            "label": "chloor, bleek of plastic — in strip én verpakking"
+            "number": "60",
+            "label": "plastic flessen per jaar vervangen door één brievenbusdoosje"
           }
         },
         "st3": {
           "type": "stat",
           "settings": {
             "number": "100%",
-            "label": "biologisch afbreekbaar en veilig voor de afvoer"
+            "label": "biologisch afbreekbaar — zonder PVA of microplastics"
           }
         }
       },
@@ -540,10 +557,10 @@
         "title": "Daarom stappen mensen over"
       }
     },
-    "tabblie_comparison_toilet": {
+    "tabblie_comparison": {
       "type": "tabblie-comparison",
       "blocks": {
-        "row1": {
+        "row_1": {
           "type": "row",
           "settings": {
             "text": "100% plastic- & microplasticvrij",
@@ -552,43 +569,43 @@
             "c3": false
           }
         },
-        "row2": {
+        "row_2": {
           "type": "row",
           "settings": {
-            "text": "Zonder chloor of bleek",
+            "text": "Natuurlijke enzymen",
             "c1": false,
             "c2": false,
             "c3": false
           }
         },
-        "row3": {
+        "row_3": {
           "type": "row",
           "settings": {
-            "text": "Veilig voor afvoer & septic tank",
+            "text": "100% plantaardig",
+            "c1": false,
+            "c2": false,
+            "c3": false
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "text": "Huidvriendelijke ingrediënten",
+            "c1": false,
+            "c2": false,
+            "c3": false
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "text": "Makkelijk te doseren",
             "c1": false,
             "c2": true,
-            "c3": false
-          }
-        },
-        "row4": {
-          "type": "row",
-          "settings": {
-            "text": "Frisse, natuurlijke geur",
-            "c1": true,
-            "c2": false,
-            "c3": false
-          }
-        },
-        "row5": {
-          "type": "row",
-          "settings": {
-            "text": "Licht & compact in huis",
-            "c1": false,
-            "c2": false,
             "c3": true
           }
         },
-        "row6": {
+        "row_6": {
           "type": "row",
           "settings": {
             "text": "Geld-terug-garantie",
@@ -597,7 +614,16 @@
             "c3": false
           }
         },
-        "row7": {
+        "row_7": {
+          "type": "row",
+          "settings": {
+            "text": "Licht & makkelijk mee te nemen",
+            "c1": false,
+            "c2": true,
+            "c3": false
+          }
+        },
+        "row_8": {
           "type": "row",
           "settings": {
             "text": "Steunt milieu-initiatieven",
@@ -608,146 +634,33 @@
         }
       },
       "block_order": [
-        "row1",
-        "row2",
-        "row3",
-        "row4",
-        "row5",
-        "row6",
-        "row7"
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6",
+        "row_7",
+        "row_8"
       ],
       "settings": {
         "heading_accent": "100+ mensen",
-        "heading": "kiezen voor Tabblie toiletstrips",
-        "show_avatars": true,
-        "subtext": "Zwaai de chloorflessen en plastic blokjes voorgoed uit — schoon en fris kan ook zonder.",
-        "comp1_label": "Toiletblokjes",
-        "comp2_label": "Chloor & gels",
-        "comp3_label": "Bruistabletten",
-        "show_price_row": false
+        "heading": "kiezen voor Tabblie wasstrips",
+        "subtext": "Doe mee met de wasrevolutie en zwaai de dure, ouderwetse, vervuilende wasmiddelen voorgoed uit.",
+        "comp1_label": "Vloeibaar wasmiddel",
+        "comp2_label": "Pods & capsules",
+        "comp3_label": "Waspoeder",
+        "show_price_row": true,
+        "price_label": "Prijs per wasbeurt",
+        "price_tabblie": "€0,23",
+        "price_comp1": "€0,56",
+        "price_comp2": "€0,50",
+        "price_comp3": "€0,25",
+        "footnote": "*Prijs per wasbeurt o.b.v. 1 pak (64 wasbeurten); concurrentprijzen zijn gemiddelde adviesprijzen van bekende merken.",
+        "show_avatars": true
       }
     },
-    "tabblie_ingredients_toilet": {
-      "type": "tabblie-ingredients",
-      "blocks": {
-        "ing1": {
-          "type": "ingredient",
-          "settings": {
-            "image_asset": "tabblie-ingredient-enzymen.jpg",
-            "title": "Natriumbicarbonaat",
-            "description": "De bruiswerking die vuil en aanslag moeiteloos losweekt — zonder schrobben."
-          }
-        },
-        "ing2": {
-          "type": "ingredient",
-          "settings": {
-            "image_asset": "tabblie-ingredient-surfactanten.jpg",
-            "title": "Citroenzuur",
-            "description": "Pakt kalkaanslag en urinesteen aan, op natuurlijke kracht in plaats van agressieve zuren."
-          }
-        },
-        "ing3": {
-          "type": "ingredient",
-          "settings": {
-            "image_asset": "tabblie-ingredient-olien.jpg",
-            "title": "Essentiële oliën",
-            "description": "Een frisse, natuurlijke geur in de badkamer — zonder chloordampen."
-          }
-        }
-      },
-      "block_order": [
-        "ing1",
-        "ing2",
-        "ing3"
-      ],
-      "settings": {
-        "eyebrow": "WAT ZIT ERIN?",
-        "heading": "De kracht van elke strip"
-      }
-    },
-    "tabblie_guarantee_toilet": {
-      "type": "tabblie-guarantee",
-      "settings": {
-        "eyebrow": "ONZE GARANTIE",
-        "heading": "Probeer het 30 dagen.",
-        "heading_accent": "Risicovrij!",
-        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
-        "button_text": "Bestel nu & bespaar",
-        "button_url": "",
-        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
-        "image_alt": "30 dagen proefwassen",
-        "badge_text": "30 dagen proef wassen"
-      }
-    },
-    "tabblie_faq_toilet": {
-      "type": "tabblie-faq",
-      "blocks": {
-        "q1": {
-          "type": "faq",
-          "settings": {
-            "question": "Werkt het echt tegen kalkaanslag?",
-            "answer": "<p>Ja — citroenzuur lost kalk op. Voor hardnekkige aanslag laat je de strip een nacht inwerken en borstel je kort na.</p>"
-          }
-        },
-        "q2": {
-          "type": "faq",
-          "settings": {
-            "question": "Is het veilig voor mijn afvoer en septic tank?",
-            "answer": "<p>Helemaal. De strip lost volledig op, is 100% biologisch afbreekbaar en bevat geen chloor of bleek.</p>"
-          }
-        },
-        "q3": {
-          "type": "faq",
-          "settings": {
-            "question": "Hoe vaak moet ik een strip gebruiken?",
-            "answer": "<p>1 tot 2 keer per week is genoeg voor een fris en schoon toilet. Bij intensief gebruik kan het vaker.</p>"
-          }
-        },
-        "q4": {
-          "type": "faq",
-          "settings": {
-            "question": "Ruikt het naar chloor?",
-            "answer": "<p>Nee — juist niet. De essentiële oliën geven een frisse, natuurlijke geur zonder chloordampen.</p>"
-          }
-        },
-        "q5": {
-          "type": "faq",
-          "settings": {
-            "question": "Is het veilig met kinderen en huisdieren in huis?",
-            "answer": "<p>De strips bevatten geen chloor of bleek. Bewaar ze wel — net als elk schoonmaakmiddel — buiten bereik van kinderen en huisdieren.</p>"
-          }
-        },
-        "q6": {
-          "type": "faq",
-          "settings": {
-            "question": "Hoe werkt de geld-terug-garantie?",
-            "answer": "<p>Je hebt 30 dagen om te proberen. Niet tevreden? Mail support@tabblie.com en je krijgt je geld terug — zonder gedoe.</p>"
-          }
-        },
-        "q7": {
-          "type": "faq",
-          "settings": {
-            "question": "Wat kost verzending en hoe snel is het er?",
-            "answer": "<p>Verzending is gratis in Nederland en België. Voor 23:59 besteld? Morgen in huis — en de verpakking past door de brievenbus.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "q1",
-        "q2",
-        "q3",
-        "q4",
-        "q5",
-        "q6",
-        "q7"
-      ],
-      "settings": {
-        "icon": "question",
-        "eyebrow": "VEELGESTELDE VRAGEN",
-        "title": "Alles wat je wilt weten"
-      }
-    },
-    "custom_service_block_toilet": {
+    "custom_service_block": {
       "type": "custom-service-block",
       "blocks": {
         "text_e3hFFf": {
@@ -1056,19 +969,179 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 50
       }
+    },
+    "tabblie_ingredients": {
+      "type": "tabblie-ingredients",
+      "blocks": {
+        "ing_1": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Plantaardige surfactanten",
+            "description": "Krachtige, biologisch afbreekbare reinigingsmiddelen op plantbasis. Net zo effectief als chemische alternatieven, maar volledig veilig voor het milieu.",
+            "image_asset": "tabblie-ingredient-surfactanten.jpg"
+          }
+        },
+        "ing_2": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Natuurlijke enzymen",
+            "description": "Breken hardnekkig vuil en vlekken af op natuurlijke wijze. Werken bij lage en hoge temperaturen voor een grondige reiniging.",
+            "image_asset": "tabblie-ingredient-enzymen.jpg"
+          }
+        },
+        "ing_3": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Essentiele olien",
+            "description": "Een subtiele, frisse geur zonder kunstmatige geurstoffen. Volledig natuurlijk en vrij van allergenen.",
+            "image_asset": "tabblie-ingredient-olien.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "ing_1",
+        "ing_2",
+        "ing_3"
+      ],
+      "settings": {
+        "eyebrow": "WAT ZIT ERIN?",
+        "heading": "De kracht van elke strip"
+      }
+    },
+    "tabblie_guarantee": {
+      "type": "tabblie-guarantee",
+      "settings": {
+        "eyebrow": "ONZE GARANTIE",
+        "heading": "Probeer het 30 dagen.",
+        "heading_accent": "Risicovrij!",
+        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
+        "button_text": "Bestel nu & bespaar",
+        "button_url": "",
+        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
+        "image_alt": "30 dagen proefwassen",
+        "badge_text": "30 dagen proef wassen"
+      }
+    },
+    "tabblie_faq": {
+      "type": "tabblie-faq",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "Werken de strips echt zo goed als vloeibaar wasmiddel?",
+            "answer": "Ja. Onze strips bevatten dezelfde werkzame stoffen als premium wasmiddelen, alleen dan in geconcentreerde, vaste vorm. Ze lossen volledig op in koud én warm water (vanaf 30°C). Geen residu, geen restjes, geen verschil in resultaat — wel een groot verschil in plasticafval."
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoeveel wasbeurten zitten er in één pak?",
+            "answer": "32 wasbeurten per pak. Eén strip = één was. Voor extra vuile was kun je een halve strip extra gebruiken. Bij normaal gebruik (2-3 wasjes per week) doe je dus zo’n 3 maanden met één pak."
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "Zijn de strips veilig voor gevoelige huid en kinderkleding?",
+            "answer": "Volledig. Onze formule is dermatologisch getest, hypoallergeen, en vrij van parabenen, fosfaten, kleurstoffen en kunstmatige geurstoffen. Veilig voor babykleding, huidvriendelijk voor de hele familie."
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "Werken ze ook op koude wasprogrammas?",
+            "answer": "Ja, ze lossen perfect op vanaf 20°C. Dat scheelt je flink op de energierekening én is beter voor je kleding én de planeet."
+          }
+        },
+        "q5": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat zit er precies in?",
+            "answer": "Plantaardige zepen (kokosolie, palmolievrij), biologisch afbreekbare enzymen die vlekken aanpakken, plantaardige weekmakers en een lichte, natuurlijke geur. Geen microplastics, geen optische witmakers, geen zooi. De volledige ingrediëntenlijst staat op de verpakking en op de productpagina."
+          }
+        },
+        "q6": {
+          "type": "faq",
+          "settings": {
+            "question": "Geschikt voor alle wasmachines?",
+            "answer": "Ja, voor alle types: voorlader, bovenlader, condensdroger combo. Stop de strip in de trommel (niet in het zeepbakje) voordat je je was erin doet. Dat’s it."
+          }
+        },
+        "q7": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe zit het met sterke vlekken zoals rode wijn of gras?",
+            "answer": "Voor hardnekkige vlekken: voorbehandel de plek door een stukje strip met wat water tot een pasta te maken en kort te laten intrekken. Dan gewoon meewassen. Werkt op de meeste vlekken even goed als gespecialiseerde voorbehandelaars."
+          }
+        },
+        "q8": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe bewaar ik de strips?",
+            "answer": "Op een droge plek, kamertemperatuur. De papieren verpakking houdt ze maximaal 18 maanden goed. Niet in de badkamer bewaren — vocht laat de strips voortijdig oplossen."
+          }
+        },
+        "q9": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat als ze niet bevallen?",
+            "answer": "Geen probleem. Je hebt 30 dagen om ze risicovrij te proberen. Niet tevreden? Stuur ze terug en we storten je geld terug — geen vragen, geen gedoe."
+          }
+        },
+        "q10": {
+          "type": "faq",
+          "settings": {
+            "question": "Wanneer wordt mijn bestelling geleverd?",
+            "answer": "Bestellingen vóór 15:00 uur versturen we dezelfde werkdag. Levering in Nederland duurt 1-2 werkdagen, in België 2-3 werkdagen. Verzending is altijd gratis."
+          }
+        },
+        "q11": {
+          "type": "faq",
+          "settings": {
+            "question": "Bieden jullie abonnementen aan?",
+            "answer": "Binnenkort. We werken aan een abonnementsmodel waarmee je 15% korting krijgt op elke bestelling, met automatische levering op jouw ritme (elke 4, 8 of 12 weken). Pauzeren of stoppen kan altijd. Schrijf je in voor onze nieuwsbrief om als eerste te horen wanneer het live gaat."
+          }
+        },
+        "q12": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe zit het met jullie CO2-voetafdruk?",
+            "answer": "We compenseren de CO2-voetafdruk van onze volledige toeleveringsketen — van grondstof tot bezorging bij jou thuis — via gecertificeerde klimaatprojecten zoals herbebossing en schone energie. Elke bestelling is dus klimaatneutraal."
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8",
+        "q9",
+        "q10",
+        "q11",
+        "q12"
+      ],
+      "settings": {
+        "icon": "none",
+        "eyebrow": "",
+        "title": ""
+      }
     }
   },
   "order": [
     "tabblie_product_usps",
     "main",
-    "tabblie_testimonials_toilet",
-    "tabblie_pf_toilet",
-    "tabblie_vt_toilet",
-    "tabblie_stats_toilet",
-    "tabblie_comparison_toilet",
-    "custom_service_block_toilet",
-    "tabblie_ingredients_toilet",
-    "tabblie_guarantee_toilet",
-    "tabblie_faq_toilet"
+    "tabblie_testimonials",
+    "tabblie_pf",
+    "tabblie_vt",
+    "tabblie_stats",
+    "tabblie_comparison",
+    "custom_service_block",
+    "tabblie_ingredients",
+    "tabblie_guarantee",
+    "tabblie_faq"
   ]
 }
