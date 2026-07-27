@@ -102,31 +102,30 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E8622A' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M4 14 8 8'/%3E%3Cpath d='M10 16l2-8'/%3E%3Cpath d='M15 17l4-6'/%3E%3C/svg%3E");
   }
 
+  /* One sticker panel holding all three ingredients (2026-07-27) */
   .tabblie-ingredients__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(16px, 2vw, 24px);
+    gap: 0;
+    background-color: #FFFFFF;
+    border: solid #182D20;
+    /* drawn pen-stroke feel: line weight varies around the panel (styling-system §11) */
+    border-width: 2px 3.5px 3.5px 2px;
+    border-radius: 22px;
+    box-shadow: 7px 8px 0 rgba(24, 45, 32, 0.92);
   }
 
   .tabblie-ingredients__card {
-    background-color: #FDF6EE;
-    border: solid #182D20;
-    /* drawn pen-stroke feel: line weight varies around the card (styling-system §11) */
-    border-width: 2px 3.5px 3.5px 2px;
-    border-radius: 18px;
-    box-shadow: 6px 7px 0 rgba(24, 45, 32, 0.92);
     padding: clamp(24px, 3vw, 36px);
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
     opacity: 0;
     transform: translateY(28px);
   }
 
-  .tabblie-ingredients__card:nth-child(even) { border-width: 3.5px 2px 2px 3.5px; }
-
-  /* Per-card brand pastels: teal / pink / yellow */
-  .tabblie-ingredients__card:nth-child(3n + 1) { background-color: #E2F2ED; }
-  .tabblie-ingredients__card:nth-child(3n + 2) { background-color: #FCE8E8; }
-  .tabblie-ingredients__card:nth-child(3n + 3) { background-color: #FDF5DD; }
+  /* thin dividers between the three items */
+  .tabblie-ingredients__card + .tabblie-ingredients__card {
+    border-left: 1.5px solid rgba(24, 45, 32, 0.15);
+  }
 
   /* Scroll-in reveal with stagger */
   .tabblie-ingredients__card.is-visible {
@@ -138,8 +137,7 @@
   .tabblie-ingredients__card:nth-child(3).is-visible { transition-delay: 0.24s; }
 
   .tabblie-ingredients__card.is-visible:hover {
-    transform: translateY(-6px) rotate(-1.2deg);
-    box-shadow: 8px 10px 0 rgba(24, 45, 32, 0.92);
+    transform: translateY(-4px);
     transition-delay: 0s;
   }
 
@@ -193,8 +191,8 @@
 
   /* Tablet: 2 columns */
   @media (min-width: 750px) and (max-width: 1023px) {
-    .tabblie-ingredients__grid {
-      grid-template-columns: repeat(2, 1fr);
+    .tabblie-ingredients__card {
+      padding: 20px;
     }
   }
 
@@ -206,6 +204,11 @@
 
     .tabblie-ingredients__grid {
       grid-template-columns: 1fr;
+    }
+
+    .tabblie-ingredients__card + .tabblie-ingredients__card {
+      border-left: none;
+      border-top: 1.5px solid rgba(24, 45, 32, 0.15);
       gap: 14px;
     }
 
