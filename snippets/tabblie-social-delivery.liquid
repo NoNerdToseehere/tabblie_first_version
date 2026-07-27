@@ -4,9 +4,20 @@
   2. testimonial quote card with stars
   3. payment icons
 
+  @param {string} [style] - "default" (Sanne/wasstrips) or "toilet" (Thomas)
+
   @example
   {% render 'tabblie-social-delivery' %}
 {% enddoc %}
+
+{%- assign quote_name = 'Sanne' -%}
+{%- assign quote_avatar = 'tabblie-avatar-sanne.jpg' -%}
+{%- assign quote_text = '"Ik was sceptisch, maar deze strips werken echt net zo goed als mijn oude wasmiddel. En geen plastic meer!"' -%}
+{%- if style == 'toilet' -%}
+  {%- assign quote_name = 'Thomas' -%}
+  {%- assign quote_avatar = 'tabblie-avatar-thomas.jpg' -%}
+  {%- assign quote_text = '"Eindelijk geen chloorlucht meer in de badkamer. De pot is net zo schoon — en nooit meer een plastic fles onder de wastafel."' -%}
+{%- endif -%}
 
 <div style="margin-top:2px">
   <a href="#onze-garantie" class="tabblie-guarantee-link" style="display:flex;align-items:center;justify-content:center;gap:9px;background:#E2F2ED;border-radius:12px;padding:11px 18px;margin-bottom:16px;text-decoration:none;cursor:pointer">
@@ -15,11 +26,11 @@
   </a>
 
   <div style="background:#ffffff;border:1.5px solid rgba(24,45,32,0.18);border-radius:16px;padding:8px 18px 8px 8px;margin-bottom:14px;display:flex;gap:16px;align-items:center">
-    <img src="{{ 'tabblie-avatar-sanne.jpg' | asset_url }}" alt="Sanne, Tabblie klant" width="104" height="104" loading="lazy" style="width:104px;height:104px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid #FDF6EE;align-self:center">
+    <img src="{{ quote_avatar | asset_url }}" alt="{{ quote_name }}, Tabblie klant" width="104" height="104" loading="lazy" style="width:104px;height:104px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid #FDF6EE;align-self:center">
     <div>
-      <p style="font-size:13.5px;font-weight:600;color:#182D20;line-height:1.55;margin:0 0 8px;font-style:italic">"Ik was sceptisch, maar deze strips werken echt net zo goed als mijn oude wasmiddel. En geen plastic meer!"</p>
+      <p style="font-size:13.5px;font-weight:600;color:#182D20;line-height:1.55;margin:0 0 8px;font-style:italic">{{ quote_text }}</p>
       <div style="display:flex;align-items:center;gap:8px">
-        <span style="font-size:13px;font-weight:800;color:#182D20">&mdash; Sanne</span>
+        <span style="font-size:13px;font-weight:800;color:#182D20">&mdash; {{ quote_name }}</span>
         <span style="display:inline-flex;gap:3px" aria-hidden="true">
           {%- for i in (1..5) -%}
             <svg width="17" height="17" style="width:17px;height:17px;fill:#26523F" viewBox="0 0 24 24" fill="#26523F"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2l-6.1 3.4 1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
