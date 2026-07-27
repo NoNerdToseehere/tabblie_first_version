@@ -231,7 +231,8 @@ body .quickview-button.button.button:hover {
   width: 100%;
 }
 
-.template-product .productView .product-form__submit {
+body.template-product .productView .product-form__submit.product-form__submit,
+body.template-product .productView .product-form__submit.product-form__submit[disabled] {
   width: 100% !important;
   max-width: none !important;
   display: inline-flex !important;
@@ -248,12 +249,12 @@ body .quickview-button.button.button:hover {
   border: none !important;
 }
 
-.template-product .productView .product-form__submit:hover {
+body.template-product .productView .product-form__submit.product-form__submit:hover {
   background: #cf531e !important;
   color: #FFFFFF !important;
 }
 
-.template-product .productView .product-form__submit::before {
+body.template-product .productView .product-form__submit.product-form__submit::before {
   content: '';
   display: inline-block;
   width: 22px;
