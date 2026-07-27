@@ -1730,7 +1730,7 @@ select:focus {
 }
 
 .shopify-pc__banner__dialog h2::after {
-  content: 'Koekje erbij?';
+  content: 'Cookies erbij?';
   display: block;
   font-family: var(--font-heading-family);
   font-size: 1.35rem;
