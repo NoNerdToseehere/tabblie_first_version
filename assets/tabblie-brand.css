@@ -1992,3 +1992,19 @@ body.template-product .productView .product-form__submit:disabled {
   color: #FFFFFF !important;
   font-weight: 800 !important;
 }
+
+
+/* Footer bottom: company details line (2026-07-27) */
+.footer .copyright__content p + p,
+.footer .footer-bottom p + p {
+  margin-top: 6px;
+  font-size: 12.5px;
+  opacity: 0.9;
+}
+
+.footer .copyright__content a,
+.footer .footer-bottom a {
+  color: #FFFFFF !important;
+  text-decoration: underline;
+  font-weight: 700;
+}

@@ -1,0 +1,194 @@
+{
+  "sections": {
+    "affiliate_hero": {
+      "type": "tabblie-page-hero",
+      "settings": {
+        "bg_color": "#E1ECFA",
+        "eyebrow": "AFFILIATE PROGRAMMA",
+        "heading": "Verdien mee met",
+        "heading_accent": "schoner schoonmaken.",
+        "subtext": "Deel Tabblie met je volgers, vrienden of lezers en verdien commissie over elke bestelling. Goed voor jou, goed voor de planeet.",
+        "button_text": "Meld je aan",
+        "button_url": "mailto:support@tabblie.com?subject=Aanmelding%20affiliate%20programma"
+      }
+    },
+    "affiliate_hiw": {
+      "type": "tabblie-how-it-works-v2",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Meld je aan",
+            "description": "Stuur ons een mailtje met wie je bent en waar je Tabblie wilt delen. Binnen 2 werkdagen hoor je van ons."
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Deel je persoonlijke link",
+            "description": "Je krijgt een unieke kortingslink voor je volgers. Elke bestelling via jouw link telt automatisch mee."
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Verdien commissie",
+            "description": "Je ontvangt commissie over elke verkoop, maandelijks uitbetaald. Zo simpel is het."
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "eyebrow": "ZO WERKT HET",
+        "title": "In drie stappen partner"
+      }
+    },
+    "affiliate_pf": {
+      "type": "tabblie-product-feature",
+      "blocks": {
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "text": "Commissie over elke bestelling via jouw link"
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "text": "Gratis Tabblie-pakket om te testen en te laten zien"
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "text": "Exclusieve kortingscode voor je volgers"
+          }
+        },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "text": "Maandelijkse uitbetaling, zonder gedoe"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
+      "settings": {
+        "image_side": "left",
+        "image": "shopify://shop_images/foto_s_start_website_homepage_1.jpg",
+        "eyebrow": "WAAROM MEEDOEN?",
+        "title": "Goed verhaal, goed verdienmodel",
+        "description": "Tabblie verkoopt zichzelf: een product dat mensen elke week gebruiken, een missie waar je achter kunt staan en content die het goed doet. Jij deelt, wij regelen de rest.",
+        "button_text": "Meld je aan",
+        "button_url": "mailto:support@tabblie.com?subject=Aanmelding%20affiliate%20programma"
+      }
+    },
+    "affiliate_stats": {
+      "type": "tabblie-stats",
+      "blocks": {
+        "st1": {
+          "type": "stat",
+          "settings": {
+            "number": "10%",
+            "label": "commissie over elke bestelling via jouw link"
+          }
+        },
+        "st2": {
+          "type": "stat",
+          "settings": {
+            "number": "30",
+            "label": "dagen cookie — ook latere aankopen tellen mee"
+          }
+        },
+        "st3": {
+          "type": "stat",
+          "settings": {
+            "number": "0",
+            "label": "kosten of verplichtingen — opzeggen kan altijd"
+          }
+        }
+      },
+      "block_order": [
+        "st1",
+        "st2",
+        "st3"
+      ],
+      "settings": {
+        "eyebrow": "DE CIJFERS",
+        "title": "Wat levert het op?"
+      }
+    },
+    "affiliate_faq": {
+      "type": "tabblie-faq",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "Wie kan affiliate worden?",
+            "answer": "<p>Iedereen met een publiek dat bij Tabblie past: content creators, bloggers, nieuwsbriefschrijvers of gewoon een groot netwerk. Je hoeft geen duizenden volgers te hebben.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoeveel commissie verdien ik?",
+            "answer": "<p>Je verdient commissie over elke bestelling die via jouw link binnenkomt. De exacte afspraken bespreken we bij je aanmelding — hoe beter de match, hoe meer er mogelijk is.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "Wanneer wordt er uitbetaald?",
+            "answer": "<p>Maandelijks, automatisch. Je ziet je resultaten en verdiensten in je persoonlijke dashboard.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "Krijg ik producten om te laten zien?",
+            "answer": "<p>Ja — na goedkeuring sturen we je een gratis Tabblie-pakket zodat je het product zelf kunt ervaren en laten zien.</p>"
+          }
+        },
+        "q5": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe meld ik me aan?",
+            "answer": "<p>Mail naar support@tabblie.com met een korte introductie: wie je bent, waar je Tabblie wilt delen en een link naar je kanaal. Binnen 2 werkdagen hoor je van ons.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ],
+      "settings": {
+        "icon": "question",
+        "eyebrow": "VEELGESTELDE VRAGEN",
+        "title": "Alles over het programma"
+      }
+    },
+    "affiliate_guarantee": {
+      "type": "tabblie-impact",
+      "settings": {}
+    }
+  },
+  "order": [
+    "affiliate_hero",
+    "affiliate_hiw",
+    "affiliate_pf",
+    "affiliate_stats",
+    "affiliate_faq",
+    "affiliate_guarantee"
+  ]
+}
