@@ -15,6 +15,34 @@
     margin: 0 auto;
   }
 
+  .tabblie-compare__header-wrap {
+    position: relative;
+  }
+
+  .tabblie-compare__accent {
+    position: absolute;
+    color: #26523F;
+    width: clamp(46px, 5vw, 72px);
+    height: clamp(46px, 5vw, 72px);
+    pointer-events: none;
+  }
+
+  .tabblie-compare__accent--left {
+    top: 4px;
+    left: clamp(8px, 7vw, 90px);
+    transform: rotate(-18deg) scaleX(-1);
+  }
+
+  .tabblie-compare__accent--right {
+    top: 0;
+    right: clamp(8px, 7vw, 90px);
+    transform: rotate(18deg);
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-compare__accent { display: none; }
+  }
+
   .tabblie-compare__heading {
     font-family: var(--font-heading-family);
     font-size: clamp(1.9rem, 4.2vw, 3rem);
@@ -287,6 +315,9 @@
 <section class="tabblie-compare" id="tabblie-compare-{{ section.id }}">
   <div class="tabblie-compare__inner">
 
+    <div class="tabblie-compare__header-wrap">
+      <svg class="tabblie-compare__accent tabblie-compare__accent--left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
+      <svg class="tabblie-compare__accent tabblie-compare__accent--right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
     <h2 class="tabblie-compare__heading">
       Waarom <em>{{ section.settings.heading_accent | default: '1.000+ mensen' }}</em><br>
       {{ section.settings.heading | default: 'kiezen voor Tabblie wasstrips' }}
@@ -303,6 +334,7 @@
     {%- if section.settings.subtext != blank -%}
       <p class="tabblie-compare__subtext">{{ section.settings.subtext }}</p>
     {%- endif -%}
+    </div>
 
     <div class="tabblie-compare__matrix" role="table" aria-label="Vergelijking Tabblie versus traditionele wasmiddelen">
 
