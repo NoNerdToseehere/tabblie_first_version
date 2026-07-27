@@ -50,7 +50,7 @@
         "card_4": {
           "type": "product_card",
           "settings": {
-            "name": "Nog even geheim...",
+            "name": "Er komt iets aan.",
             "description": "We werken aan iets nieuws voor je huis. Schrijf je in voor de nieuwsbrief en hoor het als eerste.",
             "bg_color": "#FCE8E8",
             "coming_soon": true
