@@ -6,7 +6,7 @@
  * Core brand colors:
  *   Primary orange:  #E8622A
  *   Warm cream bg:   #FDF6EE
- *   Deep earth text: #1F1209
+ *   Deep earth text: #182D20
  *   Accent teal:     #5BB8A0
  *   Sunny yellow:    #F5C842
  *   Blush pink:      #F2A0A0
@@ -82,7 +82,7 @@ html:root {
   /* Tabblie core brand colors */
   --tabblie-orange: #E8622A;
   --tabblie-cream: #FFFFFF;
-  --tabblie-earth: #1F1209;
+  --tabblie-earth: #182D20;
   --tabblie-teal: #5BB8A0;
   --tabblie-yellow: #F5C842;
   --tabblie-pink: #F2A0A0;
@@ -104,7 +104,7 @@ html:root {
 /* ============================================================
    SECTION BACKGROUND UTILITIES
    Use these classes on sections to apply brand bg colors.
-   Text on lavender/powder-blue: use --tabblie-earth (#1F1209)
+   Text on lavender/powder-blue: use --tabblie-earth (#182D20)
    Text on golden: use --tabblie-earth or --tabblie-orange
    ============================================================ */
 
@@ -138,7 +138,7 @@ body {
 
 body {
   font-family: var(--text-font-family);
-  color: #1F1209;
+  color: #182D20;
   background-color: #FDF6EE;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -150,7 +150,7 @@ h1, h2, h3, h4, h5, h6,
   font-family: var(--heading-font-family);
   font-weight: 600;
   letter-spacing: -0.02em;
-  color: #1F1209;
+  color: #182D20;
 }
 
 /* ============================================================
@@ -287,7 +287,7 @@ h1, h2, h3, h4, h5, h6,
 .header,
 #shopify-section-header {
   background-color: #FFFFFF;
-  border-bottom: 1px solid rgba(31, 18, 9, 0.08);
+  border-bottom: 1px solid rgba(24, 45, 32, 0.08);
 }
 
 /* Top-level nav links: clean hover/click — text turns orange, nothing else.
@@ -373,7 +373,7 @@ body.menu_open .section-header-mobile {
 .header__inline-menu .menu-lv-1__action .text,
 .header-nav-basic .header__inline-menu a,
 .header-nav-basic .header__inline-menu .link {
-  color: #1F1209 !important;
+  color: #182D20 !important;
 }
 
 .header__inline-menu .menu-lv-1:hover .menu-lv-1__action,
@@ -863,7 +863,7 @@ select:focus {
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
-  color: #1F1209 !important;
+  color: #182D20 !important;
   font-family: var(--text-font-family) !important;
   font-size: 16px !important;
   padding: 14px 12px 14px 0 !important;
@@ -874,7 +874,7 @@ select:focus {
 .newsletter-section-banner-collapsible .field__input::placeholder,
 .newsletter-section-banner-collapsible .effect_placeholder,
 .newsletter-section-banner-collapsible .input_placeholder {
-  color: rgba(31, 18, 9, 0.45) !important;
+  color: rgba(24, 45, 32, 0.45) !important;
   font-family: var(--text-font-family) !important;
 }
 
@@ -882,7 +882,7 @@ select:focus {
 .newsletter-section-banner-collapsible .newsletter-form__button {
   background: transparent !important;
   background-color: transparent !important;
-  color: #1F1209 !important;
+  color: #182D20 !important;
   border: none !important;
   border-radius: 100px !important;
   padding: 14px 22px !important;
@@ -943,12 +943,12 @@ select:focus {
    and soap bubbles for the playful touch */
 .footer-block__newsletter {
   background: #FDF6EE !important;
-  border: 2px solid #1F1209 !important;
+  border: 2px solid #182D20 !important;
   border-radius: 30px 16px 30px 16px !important;
   padding: 30px 30px 32px !important;
   position: relative !important;
   overflow: visible !important;
-  box-shadow: 8px 8px 0 rgba(31, 18, 9, 0.9) !important;
+  box-shadow: 8px 8px 0 rgba(24, 45, 32, 0.9) !important;
   /* breathing room so the shadow + badge don't crowd the next footer column */
   margin-right: 40px !important;
 }
@@ -972,10 +972,10 @@ select:focus {
   letter-spacing: -0.02em !important;
   /* organic blob (like the soap bubbles) instead of a sterile circle */
   border-radius: 46% 54% 60% 40% / 56% 42% 58% 44% !important;
-  border: 2.5px solid #1F1209 !important;
+  border: 2.5px solid #182D20 !important;
   transform: rotate(-9deg) !important;
   /* cream halo separates the badge from the orange footer + hard pop shadow */
-  box-shadow: 0 0 0 5px #FDF6EE, 4px 5px 0 rgba(31, 18, 9, 0.9) !important;
+  box-shadow: 0 0 0 5px #FDF6EE, 4px 5px 0 rgba(24, 45, 32, 0.9) !important;
   z-index: 2 !important;
   pointer-events: none !important;
 }
@@ -994,7 +994,7 @@ select:focus {
 }
 
 .footer-block__newsletter .footer-block__heading {
-  color: #1F1209 !important;
+  color: #182D20 !important;
   font-family: var(--font-heading-family) !important;
   font-size: 22px !important;
   font-weight: 700 !important;
@@ -1005,7 +1005,7 @@ select:focus {
 .footer-block__newsletter .footer-block__subheading,
 .footer-block__newsletter .rte,
 .footer-block__newsletter .rte p {
-  color: rgba(31, 18, 9, 0.62) !important;
+  color: rgba(24, 45, 32, 0.62) !important;
   width: auto !important;
   max-width: 100% !important;
 }
@@ -1014,7 +1014,7 @@ select:focus {
   display: flex !important;
   align-items: stretch !important;
   background: #ffffff !important;
-  border: 1.5px solid rgba(31, 18, 9, 0.15) !important;
+  border: 1.5px solid rgba(24, 45, 32, 0.15) !important;
   border-radius: 100px !important;
   padding: 4px 4px 4px 18px !important;
   gap: 0 !important;
@@ -1033,14 +1033,14 @@ select:focus {
   border: none !important;
   outline: none !important;
   box-shadow: none !important;
-  color: #1F1209 !important;
+  color: #182D20 !important;
   font-family: var(--text-font-family) !important;
   font-size: 14px !important;
   padding: 10px 0 !important;
 }
 
 .footer-block__newsletter input[type="email"]::placeholder {
-  color: rgba(31, 18, 9, 0.4) !important;
+  color: rgba(24, 45, 32, 0.4) !important;
 }
 
 .footer-block__newsletter input[type="email"]:focus {
@@ -1079,7 +1079,7 @@ select:focus {
 
 @media (max-width: 749px) {
   .footer-block__newsletter {
-    box-shadow: 6px 6px 0 rgba(31, 18, 9, 0.9) !important;
+    box-shadow: 6px 6px 0 rgba(24, 45, 32, 0.9) !important;
     /* no column beside it on mobile — only leave room for the offset shadow */
     margin-right: 12px !important;
   }
@@ -1110,7 +1110,7 @@ select:focus {
 
 ::selection {
   background-color: rgba(232, 98, 42, 0.2);
-  color: #1F1209;
+  color: #182D20;
 }
 
 /* ============================================================
@@ -1146,7 +1146,7 @@ select:focus {
 [style*="background-color: rgb(42, 85"],
 [style*="background-color: rgb(26, 102"] {
   background-color: #FDF6EE !important;
-  color: #1F1209 !important;
+  color: #182D20 !important;
 }
 
 /* SS Collection Tabs — force Tabblie orange on buttons regardless of saved settings */
@@ -1356,7 +1356,7 @@ select:focus {
 .template-page .contact-us input[type="text"],
 .template-page .contact-us input[type="email"],
 .template-page .contact-us textarea {
-  border: 1.5px solid rgba(31, 18, 9, 0.15) !important;
+  border: 1.5px solid rgba(24, 45, 32, 0.15) !important;
   border-radius: 12px !important;
   padding: 14px 18px !important;
   font-family: var(--text-font-family) !important;
@@ -1395,12 +1395,12 @@ select:focus {
 
 .template-page .contact-info__title {
   font-family: var(--font-heading-family) !important;
-  color: #1F1209 !important;
+  color: #182D20 !important;
 }
 
 .template-page .contact-info__text {
   font-family: var(--text-font-family) !important;
-  color: rgba(31, 18, 9, 0.6) !important;
+  color: rgba(24, 45, 32, 0.6) !important;
   line-height: 1.7 !important;
 }
 
@@ -1514,7 +1514,7 @@ select:focus {
 }
 
 .template-product .productView-for .productView-thumbnail-link {
-  border: 2px solid rgba(31, 18, 9, 0.08) !important;
+  border: 2px solid rgba(24, 45, 32, 0.08) !important;
   border-radius: 14px !important;
   background: #FDF6EE !important;
   transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
@@ -1618,9 +1618,9 @@ select:focus {
 }
 
 .template-product .faqs .faqs-item .card-header .title {
-  border-bottom: 1px solid rgba(31, 18, 9, 0.1) !important;
+  border-bottom: 1px solid rgba(24, 45, 32, 0.1) !important;
   border-top: none !important;
-  color: #1F1209 !important;
+  color: #182D20 !important;
   font-family: var(--text-font-family) !important;
 }
 
@@ -1675,8 +1675,8 @@ select:focus {
 .template-product .product-tabs .title {
   font-family: var(--text-font-family) !important;
   font-weight: 600 !important;
-  color: #1F1209 !important;
-  border-color: rgba(31, 18, 9, 0.1) !important;
+  color: #182D20 !important;
+  border-color: rgba(24, 45, 32, 0.1) !important;
 }
 
 /* Product info area — trust badges spacing */
@@ -1698,7 +1698,7 @@ select:focus {
   background: #FDF6EE !important;
   border: 2px solid #E8622A !important;
   border-radius: 24px !important;
-  box-shadow: 0 20px 60px rgba(31, 18, 9, 0.2) !important;
+  box-shadow: 0 20px 60px rgba(24, 45, 32, 0.2) !important;
   padding: 26px 28px 26px 124px !important;
   left: 16px !important;
   right: 16px !important;
@@ -1735,12 +1735,12 @@ select:focus {
   font-family: var(--font-heading-family);
   font-size: 1.35rem;
   font-weight: 700;
-  color: #1F1209;
+  color: #182D20;
   letter-spacing: -0.02em;
 }
 
 .shopify-pc__banner__dialog p {
-  color: rgba(31, 18, 9, 0.65) !important;
+  color: rgba(24, 45, 32, 0.65) !important;
   font-size: 13px !important;
   line-height: 1.55 !important;
 }
@@ -1785,7 +1785,7 @@ select:focus {
 #shopify-pc__banner__btn-manage-prefs {
   background: transparent !important;
   border: none !important;
-  color: rgba(31, 18, 9, 0.55) !important;
+  color: rgba(24, 45, 32, 0.55) !important;
   text-decoration: underline !important;
   padding: 10px 8px !important;
 }
@@ -1934,7 +1934,7 @@ a.card-title,
 
 
 /* Global text-color migration to very dark green #182D20 — never black (2026-07-26).
-   Theme setting vars still carry #232323/#1F1209; override them all here. */
+   Theme setting vars still carry #232323/#182D20; override them all here. */
 html:root {
   --color-text: #182D20;
   --color-global: #182D20;

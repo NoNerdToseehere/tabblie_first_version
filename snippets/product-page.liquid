@@ -519,6 +519,7 @@
                                     data-arrows-mobi="{{ main_image_arrows_mobile }}"
                                     data-counter-mobi="{{ main_image_counter_mobile }}"
                                     data-media-count="{{ product.media.size }}"
+                                    data-start-photo="{{ section.settings.gallery_start_photo | default: 1 }}"
                                 >
                                     {%- for media in product.media -%}
                                         {%- case media.media_type -%}
@@ -810,9 +811,11 @@
                                     <span style="display:block;font-size:13.5px;font-weight:800;color:#182D20;margin-top:7px">Geliefd door 1.000+ klanten</span>
                                 </div>
                             </div>
-                            {%- if product.template_suffix == blank or product.template_suffix contains 'laundry' -%}
+                            {%- comment -%}
+                                Waslijn-art tijdelijk uitgeschakeld op verzoek founder (2026-07-27).
+                                Weer aanzetten: verwijder deze comment-tags rond de render hieronder.
                                 {% render 'tabblie-loved-header' %}
-                            {%- endif -%}
+                            {%- endcomment -%}
                         </div>
                     </div>
                     <div class="halo-productView-right productView-details clearfix">
@@ -1626,3 +1629,21 @@
 {% render 'schema',
     product: product
 %}
+<script>
+  (function () {
+    var gal = document.querySelector('[data-image-gallery-main][data-start-photo]');
+    if (!gal) return;
+    var start = parseInt(gal.getAttribute('data-start-photo'), 10);
+    if (!start || start <= 1) return;
+    var tries = 0;
+    var timer = setInterval(function () {
+      tries++;
+      if (window.jQuery && jQuery(gal).hasClass('slick-initialized')) {
+        clearInterval(timer);
+        jQuery(gal).slick('slickGoTo', start - 1, true);
+      } else if (tries > 40) {
+        clearInterval(timer);
+      }
+    }, 150);
+  })();
+</script>

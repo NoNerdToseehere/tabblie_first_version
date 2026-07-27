@@ -20,22 +20,40 @@
     margin-bottom: clamp(32px, 4vw, 56px);
   }
 
+  /* House style: small orange eyebrow with pink dashes, big green 800 title */
   .tabblie-faq__eyebrow {
-    font-family: var(--font-heading-family);
-    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--text-font-family);
+    font-size: 13px;
     font-weight: 600;
-    color: #182D20;
-    letter-spacing: -0.02em;
-    line-height: 1.1;
-    margin-bottom: 8px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin-bottom: 12px;
   }
 
+  .tabblie-faq__eyebrow::before,
+  .tabblie-faq__eyebrow::after {
+    content: '';
+    width: 22px;
+    height: 3px;
+    border-radius: 3px;
+    background: #F08CAE;
+    flex-shrink: 0;
+  }
+
+  .tabblie-faq__eyebrow::before { transform: rotate(8deg); }
+  .tabblie-faq__eyebrow::after { transform: rotate(-8deg); }
+
   .tabblie-faq__title {
-    font-family: var(--text-font-family);
-    font-size: 15px;
-    font-weight: 400;
-    color: rgba(24, 45, 32, 0.5);
-    line-height: 1.5;
+    font-family: var(--font-heading-family);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: #26523F;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
     margin: 0;
   }
 
