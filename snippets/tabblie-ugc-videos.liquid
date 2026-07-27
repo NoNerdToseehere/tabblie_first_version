@@ -21,19 +21,33 @@
             <svg width="18" height="18" style="width:18px;height:18px;margin-left:2px" viewBox="0 0 24 24" fill="#182D20"><polygon points="5 3 19 12 5 21 5 3"/></svg>
           </div>
         </div>
-        <div style="position:absolute;left:7px;right:7px;bottom:7px;display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 9px 4px 4px">
-          <img src="{{ avatar_file | asset_url }}" alt="{{ name }}, Tabblie klant" width="24" height="24" loading="lazy" style="width:24px;height:24px;border-radius:50%;object-fit:cover;flex-shrink:0">
-          <span style="font-size:12px;font-weight:800;color:#182D20;white-space:nowrap">{{ name }}</span>
-          <span style="display:inline-flex;gap:1.5px;margin-left:auto" aria-hidden="true">
+        <div class="ugc-pill">
+          <img src="{{ avatar_file | asset_url }}" alt="{{ name }}, Tabblie klant" width="24" height="24" loading="lazy" class="ugc-pill__avatar">
+          <span class="ugc-pill__name">{{ name }}</span>
+          <span class="ugc-pill__stars" aria-hidden="true">
             {%- for i in (1..5) -%}
-              <svg width="10" height="10" style="width:10px;height:10px;fill:#E8622A" viewBox="0 0 24 24" fill="#E8622A"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2l-6.1 3.4 1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="#E8622A"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2l-6.1 3.4 1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
             {%- endfor -%}
           </span>
         </div>
       </div>
     {%- endfor -%}
   </div>
-  <style>.ugc-item video::-webkit-media-controls{display:none!important}</style>
+  <style>
+    .ugc-item video::-webkit-media-controls{display:none!important}
+    .ugc-pill{position:absolute;left:7px;right:7px;bottom:7px;display:flex;align-items:center;gap:6px;background:rgba(255,255,255,0.95);border-radius:100px;padding:4px 9px 4px 4px}
+    .ugc-pill__avatar{width:24px;height:24px;border-radius:50%;object-fit:cover;flex-shrink:0}
+    .ugc-pill__name{font-size:12px;font-weight:800;color:#182D20;white-space:nowrap}
+    .ugc-pill__stars{display:inline-flex;gap:1.5px;margin-left:auto;flex-shrink:0}
+    .ugc-pill__stars svg{width:10px !important;height:10px !important;fill:#E8622A !important;flex-shrink:0}
+    @media (max-width: 749px){
+      .ugc-pill{flex-direction:column;gap:3px;border-radius:14px;padding:6px 4px;left:5px;right:5px;bottom:5px}
+      .ugc-pill__avatar{width:22px;height:22px}
+      .ugc-pill__name{font-size:10.5px}
+      .ugc-pill__stars{margin-left:0}
+      .ugc-pill__stars svg{width:9px !important;height:9px !important}
+    }
+  </style>
   <script>
     function playVideo(item){var v=item.querySelector("video"),o=item.querySelector(".play-overlay");document.querySelectorAll(".ugc-item video").forEach(function(x){if(x!==v){x.pause();x.muted=true;x.closest(".ugc-item").querySelector(".play-overlay").style.opacity="1";x.closest(".ugc-item").querySelector(".play-overlay").style.pointerEvents="auto"}});if(v.paused){v.muted=false;v.play();o.style.opacity="0";o.style.pointerEvents="none"}else{v.pause();v.muted=true;o.style.opacity="1";o.style.pointerEvents="auto"}}
   </script>
