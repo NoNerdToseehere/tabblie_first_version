@@ -376,9 +376,10 @@
   /* ── Marquee strip ── */
   .tabblie-chero__marquee {
     margin-top: 0;
-    background-color: #f4633a;
-    border-top: none;
-    padding: 22px 0;
+    background-color: #FDF6EE;
+    border-top: 1.5px solid rgba(24, 45, 32, 0.12);
+    border-bottom: 1.5px solid rgba(24, 45, 32, 0.12);
+    padding: 20px 0;
     overflow: hidden;
   }
 
@@ -400,7 +401,7 @@
     font-weight: 800;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #182D20;
     padding: 0 46px;
     white-space: nowrap;
     display: inline-flex;
@@ -413,6 +414,13 @@
     height: 30px;
     flex-shrink: 0;
     opacity: 1;
+  }
+
+  .tabblie-chero__marquee-stamp {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    object-fit: contain;
   }
 
   .tabblie-chero__marquee-icon path,
@@ -651,6 +659,13 @@
           {%- for item in marquee_items -%}
             {%- assign item_lower = item | strip | downcase -%}
             <span class="tabblie-chero__marquee-item">
+              {%- if item_lower contains 'plastic' -%}
+                <img class="tabblie-chero__marquee-stamp" src="{{ 'tabblie-stamp-microplasticvrij.png' | asset_url }}" alt="" loading="lazy" width="44" height="44">
+              {%- elsif item_lower contains 'vegan' -%}
+                <img class="tabblie-chero__marquee-stamp" src="{{ 'tabblie-stamp-vegan.png' | asset_url }}" alt="" loading="lazy" width="44" height="44">
+              {%- elsif item_lower contains 'afbreekbaar' -%}
+                <img class="tabblie-chero__marquee-stamp" src="{{ 'tabblie-stamp-afbreekbaar.png' | asset_url }}" alt="" loading="lazy" width="44" height="44">
+              {%- else -%}
               <svg class="tabblie-chero__marquee-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 {%- if item_lower contains 'plastic' or item_lower contains 'formula' -%}
                   <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/>
@@ -668,6 +683,7 @@
                   <path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/>
                 {%- endif -%}
               </svg>
+              {%- endif -%}
               {{ item | strip }}
             </span>
             <span class="tabblie-chero__marquee-dot">·</span>
