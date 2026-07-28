@@ -1014,8 +1014,9 @@ select:focus {
   display: flex !important;
   align-items: stretch !important;
   background: #ffffff !important;
-  border: 1.5px solid rgba(24, 45, 32, 0.15) !important;
+  border: 2.5px solid #182D20 !important;
   border-radius: 100px !important;
+  box-shadow: 4px 4px 0 #182D20 !important;
   padding: 4px 4px 4px 18px !important;
   gap: 0 !important;
   max-width: 100% !important;
