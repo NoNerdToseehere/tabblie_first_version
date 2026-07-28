@@ -1,491 +1,240 @@
 {%- comment -%}
   tabblie-how-it-works-v2.liquid
-  Single-card stepper with a soap-bubble trail: numbered nodes connected by
-  bubbles that "pop" orange one by one. Auto-advances 1 → 2 → 3 when scrolled
-  into view, stays on the final step. Funky hand-placed look: tilted panel,
-  uneven corners, rotated nodes, bubble clusters on the card edges.
+  "Zo werkt het" — rebrand 2026-07-28: cream strip with hand-drawn step
+  illustrations (assets tabblie-step-*.png), heading with a hand-drawn pink
+  underline under the accent word, thin dividers between the three steps.
 {%- endcomment -%}
 
 <style>
   .tabblie-hiw2 {
-    background: #F08CAE;
-  }
-
-  /* on the solid pink, eyebrow + dashes go white for contrast */
-  .tabblie-hiw2 .tabblie-hiw2__eyebrow {
-    color: #FFFFFF;
-  }
-
-  .tabblie-hiw2 .tabblie-hiw2__eyebrow::before,
-  .tabblie-hiw2 .tabblie-hiw2__eyebrow::after {
-    background: #FFFFFF;
-  }
-
-  .tabblie-hiw2 {
+    background: #FDF6EE;
     padding: clamp(56px, 7vw, 96px) clamp(16px, 3vw, 40px);
     position: relative;
     overflow: hidden;
   }
 
-  .tabblie-hiw2::before {
-    content: '1 2 3';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: var(--font-heading-family);
-    font-size: clamp(14rem, 22vw, 22rem);
-    font-weight: 800;
-    color: rgba(255, 255, 255, 0.12);
-    letter-spacing: 0.15em;
-    white-space: nowrap;
-    pointer-events: none;
-  }
-
   .tabblie-hiw2__inner {
-    max-width: 1100px;
+    max-width: 1240px;
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
-
-  .tabblie-hiw2__header {
-    text-align: center;
-    margin-bottom: clamp(36px, 5vw, 56px);
   }
 
   .tabblie-hiw2__eyebrow {
+    display: flex !important;
+    justify-content: center;
     font-family: var(--text-font-family);
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #E8622A;
-    margin-bottom: 14px;
+    margin: 0 0 10px;
   }
 
   .tabblie-hiw2__title {
     font-family: var(--font-heading-family);
-    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
     font-weight: 800;
-    color: #26523F;
-    line-height: 1.1;
-    margin: 0;
+    color: #182D20;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0 0 clamp(36px, 5vw, 60px);
   }
 
-  /* ── Single stepper card: slightly tilted, uneven corners ── */
-  .tabblie-hiw2__panel {
-    background: #ffffff;
-    border-radius: 30px 20px 34px 18px;
-    padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 56px);
-    max-width: 640px;
-    margin: 0 auto;
-    box-shadow: 0 12px 40px rgba(24, 45, 32, 0.1);
-    transform: rotate(-1.2deg);
+  .tabblie-hiw2__accent {
     position: relative;
+    white-space: nowrap;
   }
 
-  /* bubble clusters spilling over the card edges */
-  .tabblie-hiw2__deco {
+  .tabblie-hiw2__accent svg {
     position: absolute;
-    pointer-events: none;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 10px;
   }
 
-  .tabblie-hiw2__deco--1 {
-    top: -30px;
-    right: -24px;
-    width: 88px;
-    height: 88px;
-    color: #5BB8A0;
-    opacity: 0.85;
-    transform: rotate(15deg);
+  .tabblie-hiw2__steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .tabblie-hiw2__deco--2 {
-    bottom: -26px;
-    left: -22px;
-    width: 72px;
-    height: 72px;
-    color: #F5C842;
-    opacity: 0.9;
-    transform: rotate(150deg);
-  }
-
-  /* track: nodes + bubble trails */
-  .tabblie-hiw2__track {
+  .tabblie-hiw2__step {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: clamp(24px, 3vw, 32px);
-    transform: rotate(1.2deg); /* counter the panel tilt so the track sits level */
-  }
-
-  .tabblie-hiw2__node {
-    width: 50px;
-    height: 50px;
-    flex-shrink: 0;
-    border-radius: 46% 54% 52% 48% / 52% 46% 54% 48%;
-    border: 2px solid #182D20; /* ink outline in the details (styling-system §11) */
-    box-shadow: 2px 3px 0 rgba(24, 45, 32, 0.18);
-    background: #FDF6EE;
-    color: rgba(24, 45, 32, 0.45);
-    font-family: var(--font-heading-family);
-    font-size: 1.2rem;
-    font-weight: 700;
-    display: inline-flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    padding: 0;
-    position: relative;
-    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    gap: clamp(14px, 1.6vw, 22px);
+    padding: 0 clamp(12px, 2vw, 32px);
   }
 
-  .tabblie-hiw2__node:nth-of-type(1) { transform: rotate(-5deg); }
-  .tabblie-hiw2__node:nth-of-type(2) { transform: rotate(4deg); }
-  .tabblie-hiw2__node:nth-of-type(3) { transform: rotate(-4deg); }
-
-  .tabblie-hiw2__node-check {
-    display: none;
-    width: 18px;
-    height: 18px;
+  .tabblie-hiw2__step + .tabblie-hiw2__step {
+    border-left: 1.5px solid rgba(24, 45, 32, 0.14);
   }
 
-  .tabblie-hiw2__node--active {
+  .tabblie-hiw2__step-art {
+    flex-shrink: 0;
+    width: clamp(120px, 11vw, 170px);
+  }
+
+  .tabblie-hiw2__step-art img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .tabblie-hiw2__step-num {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
     background: #E8622A;
-    border: 2px solid #182D20;
-    color: #ffffff;
-    box-shadow: 2px 3px 0 rgba(24, 45, 32, 0.25);
-  }
-
-  .tabblie-hiw2__node--active:nth-of-type(1) { transform: rotate(-5deg) scale(1.14); }
-  .tabblie-hiw2__node--active:nth-of-type(2) { transform: rotate(4deg) scale(1.14); }
-  .tabblie-hiw2__node--active:nth-of-type(3) { transform: rotate(-4deg) scale(1.14); }
-
-  /* one-shot ring pulse when a node becomes active */
-  .tabblie-hiw2__node--active::after {
-    content: '';
-    position: absolute;
-    inset: -3px;
-    border-radius: inherit;
-    border: 2px solid rgba(232, 98, 42, 0.5);
-    animation: hiw2-ring 0.8s ease-out forwards;
-    pointer-events: none;
-  }
-
-  .tabblie-hiw2__node--done {
-    background: #38A169;
-    border: 2px solid #182D20;
-    color: #ffffff;
-    box-shadow: 2px 3px 0 rgba(24, 45, 32, 0.18);
-  }
-
-  .tabblie-hiw2__node--done .tabblie-hiw2__node-num { display: none; }
-  .tabblie-hiw2__node--done .tabblie-hiw2__node-check { display: block; }
-
-  @keyframes hiw2-ring {
-    0% { opacity: 0.9; transform: scale(1); }
-    100% { opacity: 0; transform: scale(1.5); }
-  }
-
-  /* ── bubble trail between nodes ── */
-  .tabblie-hiw2__trail {
-    flex: 1;
+    color: #FFFFFF;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    height: 26px;
+    justify-content: center;
+    font-family: var(--font-heading-family);
+    font-size: 26px;
+    font-weight: 800;
   }
 
-  .tabblie-hiw2__trail i {
-    display: block;
-    border-radius: 50%;
-    background: rgba(232, 98, 42, 0.16);
-    transform: translateY(var(--ty, 0px));
-  }
-
-  .tabblie-hiw2__trail i:nth-child(1) { --ty: 3px;  --d: 0; width: 7px;  height: 7px; }
-  .tabblie-hiw2__trail i:nth-child(2) { --ty: -5px; --d: 1; width: 11px; height: 11px; }
-  .tabblie-hiw2__trail i:nth-child(3) { --ty: 2px;  --d: 2; width: 8px;  height: 8px; }
-  .tabblie-hiw2__trail i:nth-child(4) { --ty: -3px; --d: 3; width: 13px; height: 13px; }
-  .tabblie-hiw2__trail i:nth-child(5) { --ty: 4px;  --d: 4; width: 9px;  height: 9px; }
-
-  /* filling: bubbles pop orange one by one across the step duration */
-  .tabblie-hiw2__trail--filling i {
-    animation: hiw2-bubble-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    animation-delay: calc(var(--d) * 320ms);
-  }
-
-  .tabblie-hiw2__trail--full i {
-    background: #E8622A;
-  }
-
-  @keyframes hiw2-bubble-pop {
-    0%   { background: rgba(232, 98, 42, 0.16); transform: translateY(var(--ty, 0px)) scale(1); }
-    55%  { background: #E8622A; transform: translateY(var(--ty, 0px)) scale(1.5); }
-    100% { background: #E8622A; transform: translateY(var(--ty, 0px)) scale(1); }
-  }
-
-  /* step content */
-  .tabblie-hiw2__contents {
-    display: grid;
-    text-align: center;
-  }
-
-  .tabblie-hiw2__content {
-    grid-area: 1 / 1;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    pointer-events: none;
-    visibility: hidden;
-  }
-
-  .tabblie-hiw2__content--active {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-    visibility: visible;
+  .tabblie-hiw2__step-copy {
+    min-width: 0;
   }
 
   .tabblie-hiw2__step-title {
-    font-family: var(--font-heading-family);
-    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
-    font-weight: 600;
+    font-family: var(--text-font-family);
+    font-size: clamp(16px, 1.4vw, 19px);
+    font-weight: 800;
     color: #182D20;
-    margin: 0 0 10px;
-    text-decoration: underline wavy rgba(245, 200, 66, 0.9) 2.5px;
-    text-underline-offset: 7px;
+    line-height: 1.25;
+    margin: 0 0 6px;
   }
 
   .tabblie-hiw2__step-desc {
     font-family: var(--text-font-family);
-    font-size: 15px;
+    font-size: clamp(13.5px, 1.1vw, 15px);
+    font-weight: 500;
     color: rgba(24, 45, 32, 0.65);
-    line-height: 1.65;
-    max-width: 420px;
-    margin: 0 auto;
+    line-height: 1.5;
+    margin: 0;
   }
 
-  @media (max-width: 749px) {
-    .tabblie-hiw2__panel {
-      padding: 24px 20px 28px;
-      border-radius: 24px 16px 28px 14px;
+  @media (max-width: 899px) {
+    .tabblie-hiw2__steps {
+      grid-template-columns: 1fr;
+      row-gap: 26px;
+      max-width: 440px;
+      margin: 0 auto;
     }
 
-    .tabblie-hiw2__deco--1 {
-      width: 64px;
-      height: 64px;
-      top: -22px;
-      right: -12px;
+    .tabblie-hiw2__step {
+      justify-content: flex-start;
+      padding: 0;
     }
 
-    .tabblie-hiw2__deco--2 {
-      width: 52px;
-      height: 52px;
-      bottom: -18px;
-      left: -10px;
+    .tabblie-hiw2__step + .tabblie-hiw2__step {
+      border-left: none;
+      border-top: 1.5px solid rgba(24, 45, 32, 0.14);
+      padding-top: 26px;
     }
 
-    .tabblie-hiw2__node {
-      width: 44px;
-      height: 44px;
-    }
-
-    .tabblie-hiw2__track {
-      gap: 6px;
-    }
-
-    .tabblie-hiw2__trail i:nth-child(4),
-    .tabblie-hiw2__trail i:nth-child(5) {
-      display: none;
-    }
-
-    .tabblie-hiw2__step-desc {
-      font-size: 14px;
-    }
-
-    .tabblie-hiw2__contents {
-      min-height: 110px;
-    }
-
-    .tabblie-hiw2::before {
-      font-size: 10rem;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .tabblie-hiw2__node,
-    .tabblie-hiw2__trail i,
-    .tabblie-hiw2__content {
-      transition: none !important;
-      animation: none !important;
-    }
-    .tabblie-hiw2__node--active::after {
-      animation: none !important;
-      opacity: 0;
-    }
-    .tabblie-hiw2__panel {
-      transform: none;
-    }
-    .tabblie-hiw2__track {
-      transform: none;
+    .tabblie-hiw2__step-art {
+      width: 116px;
     }
   }
 </style>
 
+<div id="zo-werkt-het" aria-hidden="true" style="display:block !important;height:1px;margin-top:-1px;scroll-margin-top:90px"></div>
 <section class="tabblie-hiw2" id="tabblie-hiw2-{{ section.id }}">
   <div class="tabblie-hiw2__inner">
 
-    <div class="tabblie-hiw2__header">
-      {%- if section.settings.eyebrow != blank -%}
-        <p class="tabblie-hiw2__eyebrow">{{ section.settings.eyebrow }}</p>
-      {%- endif -%}
-      {%- if section.settings.title != blank -%}
-        <h2 class="tabblie-hiw2__title">{{ section.settings.title }}</h2>
-      {%- endif -%}
-    </div>
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="tabblie-hiw2__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
 
-    <div class="tabblie-hiw2__panel" data-hiw-panel data-hiw-step-ms="1800">
-      <svg class="tabblie-hiw2__deco tabblie-hiw2__deco--1" viewBox="0 0 100 100" aria-hidden="true"><circle cx="42" cy="54" r="33" fill="currentColor" opacity="0.35"/><circle cx="42" cy="54" r="33" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 46 A 23 23 0 0 1 33 31" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" opacity="0.9"/><circle cx="79" cy="28" r="13" fill="currentColor" opacity="0.35"/><circle cx="79" cy="28" r="13" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M71 25 A 9 9 0 0 1 75 19" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.9"/><circle cx="86" cy="68" r="6" fill="currentColor" opacity="0.55"/></svg>
-      <svg class="tabblie-hiw2__deco tabblie-hiw2__deco--2" viewBox="0 0 100 100" aria-hidden="true"><circle cx="42" cy="54" r="33" fill="currentColor" opacity="0.35"/><circle cx="42" cy="54" r="33" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 46 A 23 23 0 0 1 33 31" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" opacity="0.9"/><circle cx="79" cy="28" r="13" fill="currentColor" opacity="0.35"/><circle cx="79" cy="28" r="13" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M71 25 A 9 9 0 0 1 75 19" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.9"/><circle cx="86" cy="68" r="6" fill="currentColor" opacity="0.55"/></svg>
+    {%- if section.settings.title != blank -%}
+      {%- assign accent = section.settings.title_accent_word -%}
+      <h2 class="tabblie-hiw2__title">
+        {%- if accent != blank and section.settings.title contains accent -%}
+          {%- capture accent_html -%}<span class="tabblie-hiw2__accent">{{ accent }}<svg viewBox="0 0 80 10" fill="none" preserveAspectRatio="none" aria-hidden="true"><path d="M3 7 C 25 2, 55 2, 77 6" stroke="#E8879F" stroke-width="3.5" stroke-linecap="round" style="fill:none"/></svg></span>{%- endcapture -%}
+          {{ section.settings.title | replace_first: accent, accent_html }}
+        {%- else -%}
+          {{ section.settings.title }}
+        {%- endif -%}
+      </h2>
+    {%- endif -%}
 
-      <div class="tabblie-hiw2__track">
+    {%- if section.blocks.size > 0 -%}
+      <div class="tabblie-hiw2__steps">
         {%- for block in section.blocks -%}
-          <button type="button" class="tabblie-hiw2__node" data-hiw-node="{{ forloop.index0 }}" aria-label="Stap {{ forloop.index }}: {{ block.settings.title | escape }}" {{ block.shopify_attributes }}>
-            <span class="tabblie-hiw2__node-num">{{ forloop.index }}</span>
-            <svg class="tabblie-hiw2__node-check" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"/></svg>
-          </button>
-          {%- unless forloop.last -%}
-            <span class="tabblie-hiw2__trail" data-hiw-bar="{{ forloop.index0 }}" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>
-          {%- endunless -%}
-        {%- endfor -%}
-      </div>
-
-      <div class="tabblie-hiw2__contents">
-        {%- for block in section.blocks -%}
-          <div class="tabblie-hiw2__content" data-hiw-content="{{ forloop.index0 }}">
-            {%- if block.settings.title != blank -%}
-              <h3 class="tabblie-hiw2__step-title">{{ block.settings.title }}</h3>
+          <div class="tabblie-hiw2__step" {{ block.shopify_attributes }}>
+            {%- if block.settings.image_asset != blank -%}
+              <div class="tabblie-hiw2__step-art">
+                <img src="{{ block.settings.image_asset | asset_url }}" alt="" width="340" height="270" loading="lazy">
+              </div>
+            {%- else -%}
+              <div class="tabblie-hiw2__step-num" aria-hidden="true">{{ forloop.index }}</div>
             {%- endif -%}
-            {%- if block.settings.description != blank -%}
-              <p class="tabblie-hiw2__step-desc">{{ block.settings.description }}</p>
-            {%- endif -%}
+            <div class="tabblie-hiw2__step-copy">
+              {%- if block.settings.title != blank -%}
+                <h3 class="tabblie-hiw2__step-title">{{ block.settings.title }}</h3>
+              {%- endif -%}
+              {%- if block.settings.description != blank -%}
+                <p class="tabblie-hiw2__step-desc">{{ block.settings.description }}</p>
+              {%- endif -%}
+            </div>
           </div>
         {%- endfor -%}
       </div>
-    </div>
+    {%- endif -%}
 
   </div>
 </section>
 
-<script>
-(function () {
-  var panel = document.querySelector('[data-hiw-panel]');
-  if (!panel) return;
-
-  var nodes = panel.querySelectorAll('[data-hiw-node]');
-  var bars = panel.querySelectorAll('[data-hiw-bar]');
-  var contents = panel.querySelectorAll('[data-hiw-content]');
-  var total = nodes.length;
-  if (!total) return;
-
-  var stepMs = parseInt(panel.getAttribute('data-hiw-step-ms'), 10) || 1800;
-  var timer = null;
-  var current = -1;
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function setStep(index) {
-    current = index;
-    nodes.forEach(function (node, i) {
-      node.classList.toggle('tabblie-hiw2__node--active', i === index);
-      node.classList.toggle('tabblie-hiw2__node--done', i < index);
-    });
-    bars.forEach(function (bar, i) {
-      bar.classList.remove('tabblie-hiw2__trail--filling');
-      bar.classList.toggle('tabblie-hiw2__trail--full', i < index);
-    });
-    contents.forEach(function (content, i) {
-      content.classList.toggle('tabblie-hiw2__content--active', i === index);
-    });
-  }
-
-  function advanceFrom(index) {
-    if (index >= total - 1) return;
-    var bar = bars[index];
-    if (bar) {
-      // force reflow so the bubble-pop animations restart cleanly
-      void bar.offsetWidth;
-      bar.classList.add('tabblie-hiw2__trail--filling');
-    }
-    timer = setTimeout(function () {
-      setStep(index + 1);
-      advanceFrom(index + 1);
-    }, stepMs);
-  }
-
-  function startSequence() {
-    if (reduceMotion) {
-      setStep(total - 1);
-      return;
-    }
-    setStep(0);
-    advanceFrom(0);
-  }
-
-  nodes.forEach(function (node, i) {
-    node.addEventListener('click', function () {
-      if (timer) { clearTimeout(timer); timer = null; }
-      setStep(i);
-    });
-  });
-
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        startSequence();
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.35 });
-
-  var rect = panel.getBoundingClientRect();
-  if (rect.top < window.innerHeight && rect.bottom > 0) {
-    startSequence();
-  } else {
-    observer.observe(panel);
-  }
-})();
-</script>
-
 {% schema %}
 {
-  "name": "How It Works v2",
+  "name": "Tabblie How It Works v2",
   "tag": "section",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Zo werkt het" },
-    { "type": "text", "id": "title", "label": "Heading", "default": "Drie stappen naar een schoner huis." }
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow (optioneel)"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titel",
+      "default": "Kleine strips. Een groot verschil in je routine."
+    },
+    {
+      "type": "text",
+      "id": "title_accent_word",
+      "label": "Woord met roze onderstreping",
+      "default": "groot"
+    }
   ],
   "blocks": [
     {
       "type": "step",
-      "name": "Step",
+      "name": "Stap",
       "settings": [
-        { "type": "text", "id": "title", "label": "Step title", "default": "Scheur" },
-        { "type": "textarea", "id": "description", "label": "Description", "default": "Scheur één strip van de verpakking." }
+        { "type": "text", "id": "title", "label": "Titel" },
+        { "type": "text", "id": "description", "label": "Beschrijving" },
+        { "type": "text", "id": "image_asset", "label": "Illustratie (asset bestandsnaam)", "info": "Bijv. tabblie-step-pak.png — leeg = oranje nummer" }
       ]
     }
   ],
   "presets": [
     {
-      "name": "How It Works v2",
+      "name": "Tabblie How It Works v2",
       "blocks": [
-        { "type": "step", "settings": { "title": "Scheur", "description": "Scheur één strip van de verpakking. Geen afmeten, geen rommel, geen plastic fles." } },
-        { "type": "step", "settings": { "title": "Gooi", "description": "Gooi de strip in de wasmachine, vaatwasser of los op in water. Het lost volledig op." } },
-        { "type": "step", "settings": { "title": "Klaar. Echt waar.", "description": "Schone was, stralende vaat, een schoner huis — zonder plastic afval en zonder gedoe. Zo simpel kan het zijn." } }
+        { "type": "step", "settings": { "title": "1. Pak een strip", "description": "Simpel, schoon en zonder geknoei.", "image_asset": "tabblie-step-pak.png" } },
+        { "type": "step", "settings": { "title": "2. Gooi 'm erin", "description": "In de trommel bij je was.", "image_asset": "tabblie-step-gooi.png" } },
+        { "type": "step", "settings": { "title": "3. Klaar. Echt waar.", "description": "Frisse was, elke keer weer.", "image_asset": "tabblie-step-klaar.png" } }
       ]
     }
-  ],
-  "max_blocks": 4
+  ]
 }
 {% endschema %}

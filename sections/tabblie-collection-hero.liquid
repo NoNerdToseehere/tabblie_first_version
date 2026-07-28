@@ -182,24 +182,13 @@
     max-width: 520px;
   }
 
-  /* ── Full-photo hero (experiment 2026-07-28) ── */
+  /* ── Full-photo hero with cream info card (2026-07-28) ── */
   .tabblie-chero--photo {
-    background-size: cover;
-    background-position: center 30%;
+    background-color: #FDF6EE;
+    background-size: auto 100%;
+    background-position: right center;
+    background-repeat: no-repeat;
     position: relative;
-  }
-
-  /* readability overlay: soft dark green fading down */
-  .tabblie-chero--photo .tabblie-chero__photo-overlay {
-    /* display:block beats the theme's div:empty { display:none } */
-    display: block !important;
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background:
-      linear-gradient(180deg, rgba(24, 45, 32, 0.62) 0%, rgba(24, 45, 32, 0.42) 40%, rgba(24, 45, 32, 0.12) 65%, rgba(24, 45, 32, 0) 80%),
-      rgba(24, 45, 32, 0.18);
-    pointer-events: none;
   }
 
   .tabblie-chero--photo::before,
@@ -207,97 +196,166 @@
     display: none !important;
   }
 
+  /* old overlay text unused in card layout */
   .tabblie-chero--photo .tabblie-chero__inner {
-    min-height: clamp(490px, 68vh, 720px);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: clamp(48px, 7vh, 90px);
+    display: none !important;
   }
 
-  .tabblie-chero--photo .tabblie-chero__heading {
-    color: #FFFFFF;
-    text-shadow: 0 2px 22px rgba(24, 45, 32, 0.6);
+  /* desktop: photo fades into cream on the left where the text sits */
+  .tabblie-chero--photo .tabblie-chero__photo-overlay {
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(90deg, #FDF6EE 0%, #FDF6EE 26%, rgba(253, 246, 238, 0) 55%);
+    pointer-events: none;
   }
 
-  .tabblie-chero--photo .tabblie-chero__sub {
-    color: rgba(255, 255, 255, 0.94);
-    text-shadow: 0 1px 14px rgba(24, 45, 32, 0.65);
-    font-weight: 600;
+  .tabblie-chero__hero-card {
+    display: block;
+    position: relative;
+    z-index: 1;
+    max-width: 560px;
+    text-align: left;
+    padding: clamp(70px, 13vh, 130px) 0;
+    margin-left: clamp(24px, 6vw, 96px);
   }
 
-  @media (max-width: 749px) {
-    .tabblie-chero--photo {
-      background-position: center 42%;
-    }
-
-    .tabblie-chero--photo .tabblie-chero__inner {
-      min-height: 60vh;
-    }
+  /* desktop: no link/usp row (mock) */
+  .tabblie-chero__hc-link,
+  .tabblie-chero__hc-usps {
+    display: none;
   }
 
-  .tabblie-chero__cta {
+  .tabblie-chero__hc-eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 9px;
+    font-family: var(--text-font-family);
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #182D20;
+    margin-bottom: 16px;
+  }
+
+  .tabblie-chero__hc-eyebrow svg {
+    width: 28px;
+    height: 13px;
+    flex-shrink: 0;
+  }
+
+  .tabblie-chero__hc-heading {
+    font-family: var(--heading-font-family);
+    font-size: clamp(2.5rem, 3.9vw, 3.6rem);
+    font-weight: 800;
+    color: #26523F;
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px;
+  }
+
+  .tabblie-chero__hc-sub {
+    font-family: var(--text-font-family);
+    font-size: 17px;
+    font-weight: 600;
+    color: #182D20;
+    line-height: 1.5;
+    margin: 0 0 22px;
+  }
+
+  .tabblie-chero__hc-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     background: #E8622A;
     color: #FFFFFF !important;
     font-family: var(--text-font-family);
-    font-size: 21px;
+    font-size: 17px;
     font-weight: 800;
-    letter-spacing: 0.01em;
-    padding: 23px 52px;
-    border-radius: 100px;
+    padding: 16px 32px;
+    border-radius: 14px;
     text-decoration: none;
-    margin-bottom: 8px;
-    box-shadow: 0 6px 22px rgba(24, 45, 32, 0.28);
+    margin-bottom: 20px;
     transition: background 0.2s ease, transform 0.2s ease;
   }
 
-  /* photo mode: push the CTA lower on the image */
-  .tabblie-chero--photo .tabblie-chero__cta {
-    margin-top: clamp(28px, 8vh, 90px);
-  }
-
-  @media (max-width: 749px) {
-    .tabblie-chero__cta {
-      font-size: 16.5px;
-      padding: 15px 32px;
-      gap: 9px;
-    }
-  }
-
-  .tabblie-chero__cta:hover {
+  .tabblie-chero__hc-cta:hover {
     background: #cf531e;
     color: #FFFFFF !important;
     transform: translateY(-2px);
   }
 
-  .tabblie-chero__hero-image {
-    width: 88%;
-    max-width: 1160px;
-    margin: 40px auto -6px;
-    position: relative;
-    z-index: 1;
+  .tabblie-chero__hc-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--text-font-family);
+    font-size: 15.5px;
+    font-weight: 800;
+    color: #182D20 !important;
+    text-decoration: none;
+    border-bottom: 2.5px solid #26523F;
+    padding-bottom: 3px;
+    margin-bottom: 24px;
   }
 
-  .tabblie-chero__hero-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 28px;
+  .tabblie-chero__hc-usps {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    font-family: var(--text-font-family);
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #182D20;
+  }
+
+  .tabblie-chero__hc-usp {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .tabblie-chero__hc-usp svg {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+  }
+
+  .tabblie-chero__hc-dot {
+    color: rgba(24, 45, 32, 0.4);
   }
 
   @media (max-width: 749px) {
-    .tabblie-chero__hero-image {
-      width: calc(100% - 32px);
-      margin-top: 28px;
-      border-radius: 18px;
+    .tabblie-chero--photo {
+      background-size: cover;
+      background-position: center top;
     }
 
-    .tabblie-chero__hero-image img {
-      border-radius: 18px;
+    .tabblie-chero--photo .tabblie-chero__photo-overlay {
+      display: none !important;
+    }
+
+    .tabblie-chero__hero-card {
+      max-width: none;
+      margin: 40vh 14px 18px;
+      background: #FDF6EE;
+      border-radius: 26px;
+      padding: 30px 22px 26px;
+      box-shadow: 0 10px 30px rgba(24, 45, 32, 0.18);
+    }
+
+    .tabblie-chero__hc-link,
+    .tabblie-chero__hc-usps {
+      display: inline-flex;
+    }
+
+    .tabblie-chero__hc-usps {
+      display: flex;
+    }
+
+    .tabblie-chero__hc-heading {
+      font-size: clamp(2.1rem, 9vw, 2.6rem);
     }
   }
 
@@ -676,6 +734,40 @@
 
 <section class="tabblie-chero{% if section.settings.hero_image_asset != blank %} tabblie-chero--photo{% endif %}" id="tabblie-chero-{{ section.id }}"{% if section.settings.hero_image_asset != blank %} style="background-image:url('{{ section.settings.hero_image_asset | asset_url }}')"{% endif %}>
   {%- if section.settings.hero_image_asset != blank -%}<div class="tabblie-chero__photo-overlay" aria-hidden="true"></div>{%- endif -%}
+
+  {%- if section.settings.hero_image_asset != blank -%}
+    <div class="tabblie-chero__hero-card">
+      <span class="tabblie-chero__hc-eyebrow">
+        <svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:none;stroke:#26523F" fill="none" stroke="#26523F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" style="fill:none"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" style="fill:none"/></svg>
+        Schoonmaken zonder gedoe
+      </span>
+      <h1 class="tabblie-chero__hc-heading">Een schoner huis. Een&nbsp;lichtere routine.</h1>
+      <p class="tabblie-chero__hc-sub">Plasticvrij en PVA-vrij. Slimme strips voor was, vaat en toilet.</p>
+      <a class="tabblie-chero__hc-cta" href="/collections/all">Ontdek de strips
+        <svg width="18" height="18" style="width:18px;height:18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13" style="fill:none"/><path d="M12.5 6 18.5 12l-6 6" style="fill:none"/></svg>
+      </a>
+      <br>
+      <a class="tabblie-chero__hc-link" href="#zo-werkt-het">Zo werkt het
+        <svg width="16" height="16" style="width:16px;height:16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="M12.5 6 18.5 12l-6 6"/></svg>
+      </a>
+      <div class="tabblie-chero__hc-usps" aria-label="Voordelen">
+        <span class="tabblie-chero__hc-usp">
+          <svg viewBox="0 0 24 24" style="fill:none;stroke:#182D20" fill="none" stroke="#182D20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" style="fill:none"/><path d="M8 15c2-5 5-7 8-8-1 4-3 7-8 8z" style="fill:none"/></svg>
+          Plasticvrij
+        </span>
+        <span class="tabblie-chero__hc-dot">&bull;</span>
+        <span class="tabblie-chero__hc-usp">
+          <svg viewBox="0 0 24 24" style="fill:none;stroke:#182D20" fill="none" stroke="#182D20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" style="fill:none"/><path d="M8 15c2-5 5-7 8-8-1 4-3 7-8 8z" style="fill:none"/></svg>
+          PVA-vrij
+        </span>
+        <span class="tabblie-chero__hc-dot">&bull;</span>
+        <span class="tabblie-chero__hc-usp">
+          <svg viewBox="0 0 24 24" style="fill:none;stroke:#182D20" fill="none" stroke="#182D20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" style="fill:none"/><path d="m9 9 6 6" style="fill:none"/><path d="m15 9-6 6" style="fill:none"/></svg>
+          Biologisch afbreekbaar
+        </span>
+      </div>
+    </div>
+  {%- endif -%}
   <svg class="tabblie-chero__leaf tabblie-chero__leaf--1" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
     <circle cx="42" cy="54" r="33" fill="currentColor" opacity="0.35"/><circle cx="42" cy="54" r="33" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 46 A 23 23 0 0 1 33 31" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" opacity="0.9"/><circle cx="79" cy="28" r="13" fill="currentColor" opacity="0.35"/><circle cx="79" cy="28" r="13" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M71 25 A 9 9 0 0 1 75 19" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.9"/><circle cx="86" cy="68" r="6" fill="currentColor" opacity="0.55"/>
   </svg>
@@ -822,6 +914,20 @@
     </div>
   {%- endif -%}
 </section>
+
+<script>
+  (function () {
+    document.querySelectorAll('.tabblie-chero__hc-link[href="#zo-werkt-het"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var target = document.getElementById('zo-werkt-het');
+        if (!target) return;
+        e.preventDefault();
+        var top = target.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      });
+    });
+  })();
+</script>
 
 {% schema %}
 {
