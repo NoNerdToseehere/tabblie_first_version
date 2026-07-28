@@ -207,7 +207,7 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: linear-gradient(90deg, #FDF6EE 0%, #FDF6EE 26%, rgba(253, 246, 238, 0) 55%);
+    background: linear-gradient(90deg, #FDF6EE 0%, #FDF6EE 28%, rgba(253, 246, 238, 0.92) 40%, rgba(253, 246, 238, 0.55) 55%, rgba(253, 246, 238, 0.2) 70%, rgba(253, 246, 238, 0) 85%);
     pointer-events: none;
   }
 
@@ -217,14 +217,39 @@
     z-index: 1;
     max-width: 560px;
     text-align: left;
-    padding: clamp(70px, 13vh, 130px) 0;
+    padding: clamp(46px, 8.5vh, 84px) 0;
     margin-left: clamp(24px, 6vw, 96px);
   }
 
-  /* desktop: no link/usp row (mock) */
-  .tabblie-chero__hc-link,
+  /* mobile-only photo at the top (desktop uses section background) */
+  .tabblie-chero--photo .tabblie-chero__photo-mobile { display: none !important; }
+
+  /* desktop: USP rows hidden (stamp bar below covers them) */
   .tabblie-chero__hc-usps {
     display: none;
+  }
+
+  .tabblie-chero__hc-usp-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #26523F;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tabblie-chero__hc-usp-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .tabblie-chero__hc-usp-chev {
+    width: 18px;
+    height: 18px;
+    margin-left: auto;
+    flex-shrink: 0;
   }
 
   .tabblie-chero__hc-eyebrow {
@@ -299,63 +324,76 @@
     margin-bottom: 24px;
   }
 
-  .tabblie-chero__hc-usps {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px 12px;
-    font-family: var(--text-font-family);
-    font-size: 13.5px;
-    font-weight: 700;
-    color: #182D20;
-  }
-
-  .tabblie-chero__hc-usp {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .tabblie-chero__hc-usp svg {
-    width: 17px;
-    height: 17px;
-    flex-shrink: 0;
-  }
-
-  .tabblie-chero__hc-dot {
-    color: rgba(24, 45, 32, 0.4);
-  }
-
   @media (max-width: 749px) {
+    /* mobile: no section background photo — use the img at top */
     .tabblie-chero--photo {
-      background-size: cover;
-      background-position: center top;
+      background-image: none !important;
+      background-color: #FDF6EE;
     }
 
     .tabblie-chero--photo .tabblie-chero__photo-overlay {
       display: none !important;
     }
 
+    .tabblie-chero--photo .tabblie-chero__photo-mobile {
+      display: block !important;
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
     .tabblie-chero__hero-card {
       max-width: none;
-      margin: 40vh 14px 18px;
+      margin: -18px 0 0;
       background: #FDF6EE;
-      border-radius: 26px;
-      padding: 30px 22px 26px;
-      box-shadow: 0 10px 30px rgba(24, 45, 32, 0.18);
+      border-radius: 22px 22px 0 0;
+      padding: 26px 22px 22px;
+      box-shadow: none;
     }
 
-    .tabblie-chero__hc-link,
-    .tabblie-chero__hc-usps {
-      display: inline-flex;
+    .tabblie-chero__hc-link {
+      display: none;
     }
 
-    .tabblie-chero__hc-usps {
+    .tabblie-chero__hc-cta {
       display: flex;
+      width: 100%;
+      justify-content: center;
+      font-size: 18px;
+      padding: 17px 20px;
+      margin-bottom: 20px;
     }
 
     .tabblie-chero__hc-heading {
       font-size: clamp(2.1rem, 9vw, 2.6rem);
+    }
+
+    /* USP rows visible on mobile */
+    .tabblie-chero__hc-usps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .tabblie-chero__hc-usp {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: 100%;
+      padding: 14px 0;
+      font-family: var(--text-font-family);
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #182D20;
+    }
+
+    .tabblie-chero__hc-usp + .tabblie-chero__hc-usp {
+      border-top: 1.5px solid rgba(24, 45, 32, 0.12);
+    }
+
+    /* hide the stamp bar on mobile (USP rows replace it) */
+    .tabblie-chero__marquee {
+      display: none;
     }
   }
 
@@ -550,78 +588,94 @@
   .tabblie-chero__card:nth-child(3) .tabblie-chero__card-img { background-color: rgba(91,184,160,0.15); }
   .tabblie-chero__card:nth-child(4) .tabblie-chero__card-img { background-color: rgba(242,160,160,0.15); }
 
-  /* ── Marquee strip ── */
+  /* ── Static USP bar (2026-07-28: no scroll, 3 badges) ── */
   .tabblie-chero__marquee {
     margin-top: 0;
     background-color: #FDF6EE;
     border-top: 1.5px solid rgba(24, 45, 32, 0.12);
     border-bottom: 1.5px solid rgba(24, 45, 32, 0.12);
-    padding: 20px 0;
-    overflow: hidden;
+    padding: 26px clamp(16px, 3vw, 40px);
   }
 
   .tabblie-chero__marquee-track {
     display: flex;
     align-items: center;
-    gap: 0;
-    width: max-content;
-    animation: tabblie-marquee 75s linear infinite;
-  }
-
-  .tabblie-chero__marquee:hover .tabblie-chero__marquee-track {
-    animation-play-state: paused;
+    justify-content: center;
+    gap: clamp(24px, 5vw, 72px);
+    max-width: 1240px;
+    margin: 0 auto;
   }
 
   .tabblie-chero__marquee-item {
     font-family: var(--text-font-family);
-    font-size: 17px;
+    font-size: 15.5px;
     font-weight: 800;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
     color: #182D20;
-    padding: 0 46px;
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
-    gap: 13px;
+    gap: 12px;
   }
 
-  .tabblie-chero__marquee-icon {
-    width: 30px;
-    height: 30px;
-    flex-shrink: 0;
-    opacity: 1;
+  .tabblie-chero__marquee-item + .tabblie-chero__marquee-item {
+    border-left: 1.5px solid rgba(24, 45, 32, 0.14);
+    padding-left: clamp(24px, 5vw, 72px);
   }
 
-  .tabblie-chero__marquee-stamp {
-    width: 46px;
-    height: 46px;
+  .tabblie-chero__marquee-badge {
     flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .tabblie-chero__marquee-badge img {
+    width: 48px;
+    height: 48px;
     object-fit: contain;
   }
 
-  .tabblie-chero__marquee-icon path,
-  .tabblie-chero__marquee-icon circle,
-  .tabblie-chero__marquee-icon line,
-  .tabblie-chero__marquee-icon rect {
-    stroke-width: 2.2;
+  .tabblie-chero__marquee-badge svg {
+    width: 30px;
+    height: 30px;
   }
 
-  /* clean, professional: no dot separators (Marcel's-style) */
-  .tabblie-chero__marquee-dot {
-    display: none;
-  }
+  @media (max-width: 749px) {
+    .tabblie-chero__marquee {
+      padding: 8px 20px 4px;
+      border-top: none;
+    }
 
-  .tabblie-chero__marquee-dot {
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 18px;
-    line-height: 1;
-    flex-shrink: 0;
-  }
+    .tabblie-chero__marquee-track {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
 
-  @keyframes tabblie-marquee {
-    0%   { transform: translateX(0); }
-    100% { transform: translateX(-33.333%); }
+    .tabblie-chero__marquee-item {
+      width: 100%;
+      padding: 15px 0;
+      font-size: 15px;
+      gap: 14px;
+    }
+
+    .tabblie-chero__marquee-item + .tabblie-chero__marquee-item {
+      border-left: none;
+      border-top: 1.5px solid rgba(24, 45, 32, 0.12);
+      padding-left: 0;
+    }
+
+    .tabblie-chero__marquee-badge {
+      width: 42px;
+      height: 42px;
+    }
+
+    .tabblie-chero__marquee-badge img {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   /* ── MOBILE ── */
@@ -734,6 +788,9 @@
 
 <section class="tabblie-chero{% if section.settings.hero_image_asset != blank %} tabblie-chero--photo{% endif %}" id="tabblie-chero-{{ section.id }}"{% if section.settings.hero_image_asset != blank %} style="background-image:url('{{ section.settings.hero_image_asset | asset_url }}')"{% endif %}>
   {%- if section.settings.hero_image_asset != blank -%}<div class="tabblie-chero__photo-overlay" aria-hidden="true"></div>{%- endif -%}
+  {%- if section.settings.hero_image_asset != blank -%}
+    <img class="tabblie-chero__photo-mobile" src="{{ section.settings.hero_image_asset | asset_url }}" alt="Tabblie was-, vaat- en toiletstrips" width="1600" height="1066" fetchpriority="high">
+  {%- endif -%}
 
   {%- if section.settings.hero_image_asset != blank -%}
     <div class="tabblie-chero__hero-card">
@@ -752,18 +809,25 @@
       </a>
       <div class="tabblie-chero__hc-usps" aria-label="Voordelen">
         <span class="tabblie-chero__hc-usp">
-          <svg viewBox="0 0 24 24" style="fill:none;stroke:#182D20" fill="none" stroke="#182D20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" style="fill:none"/><path d="M8 15c2-5 5-7 8-8-1 4-3 7-8 8z" style="fill:none"/></svg>
-          Plasticvrij
+          <span class="tabblie-chero__hc-usp-icon">
+            <svg viewBox="0 0 24 24" style="fill:none;stroke:#FFFFFF" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" style="fill:none"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" style="fill:none"/></svg>
+          </span>
+          <span class="tabblie-chero__hc-usp-text">Plasticvrij &amp; PVA-vrij</span>
+          <svg class="tabblie-chero__hc-usp-chev" viewBox="0 0 24 24" style="fill:none;stroke:#182D20" fill="none" stroke="#182D20" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6" style="fill:none"/></svg>
         </span>
-        <span class="tabblie-chero__hc-dot">&bull;</span>
         <span class="tabblie-chero__hc-usp">
-          <svg viewBox="0 0 24 24" style="fill:none;stroke:#182D20" fill="none" stroke="#182D20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" style="fill:none"/><path d="M8 15c2-5 5-7 8-8-1 4-3 7-8 8z" style="fill:none"/></svg>
-          PVA-vrij
+          <span class="tabblie-chero__hc-usp-icon">
+            <svg viewBox="0 0 24 24" style="fill:none;stroke:#FFFFFF" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10" style="fill:none"/><path d="M12 20V10" style="fill:none"/><path d="M12 10C12 6 9 4 5 4c0 4 2 6 7 6z" style="fill:none"/><path d="M12 13c0-3 2.5-5 6.5-5 0 3.5-2 5.5-6.5 5z" style="fill:none"/></svg>
+          </span>
+          <span class="tabblie-chero__hc-usp-text">Biologisch afbreekbaar</span>
+          <svg class="tabblie-chero__hc-usp-chev" viewBox="0 0 24 24" style="fill:none;stroke:#182D20" fill="none" stroke="#182D20" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6" style="fill:none"/></svg>
         </span>
-        <span class="tabblie-chero__hc-dot">&bull;</span>
         <span class="tabblie-chero__hc-usp">
-          <svg viewBox="0 0 24 24" style="fill:none;stroke:#182D20" fill="none" stroke="#182D20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" style="fill:none"/><path d="m9 9 6 6" style="fill:none"/><path d="m15 9-6 6" style="fill:none"/></svg>
-          Biologisch afbreekbaar
+          <span class="tabblie-chero__hc-usp-icon">
+            <svg viewBox="0 0 24 24" style="fill:none;stroke:#FFFFFF" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2" style="fill:none"/><path d="M3 12h18" style="fill:none"/><path d="M9 8V6a3 3 0 0 1 6 0v2" style="fill:none"/></svg>
+          </span>
+          <span class="tabblie-chero__hc-usp-text">Past door de brievenbus</span>
+          <svg class="tabblie-chero__hc-usp-chev" viewBox="0 0 24 24" style="fill:none;stroke:#182D20" fill="none" stroke="#182D20" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6" style="fill:none"/></svg>
         </span>
       </div>
     </div>
@@ -874,41 +938,26 @@
 
   {%- if section.settings.marquee_text != blank -%}
     {%- assign marquee_items = section.settings.marquee_text | split: '|' -%}
-    <div class="tabblie-chero__marquee" aria-hidden="true">
+    <div class="tabblie-chero__marquee" aria-label="Voordelen">
       <div class="tabblie-chero__marquee-track">
-        {%- for _i in (1..4) -%}
-          {%- for item in marquee_items -%}
-            {%- assign item_lower = item | strip | downcase -%}
-            <span class="tabblie-chero__marquee-item">
-              {%- if item_lower contains 'plastic' -%}
-                <img class="tabblie-chero__marquee-stamp" src="{{ 'tabblie-stamp-microplasticvrij.png' | asset_url }}" alt="" loading="lazy" width="44" height="44">
-              {%- elsif item_lower contains 'vegan' -%}
-                <img class="tabblie-chero__marquee-stamp" src="{{ 'tabblie-stamp-vegan.png' | asset_url }}" alt="" loading="lazy" width="44" height="44">
+        {%- for item in marquee_items -%}
+          {%- assign item_lower = item | strip | downcase -%}
+          <span class="tabblie-chero__marquee-item">
+            <span class="tabblie-chero__marquee-badge">
+              {%- if item_lower contains 'plastic' or item_lower contains 'pva' -%}
+                <img src="{{ 'tabblie-stamp-microplasticvrij.png' | asset_url }}" alt="" width="48" height="48" loading="lazy">
               {%- elsif item_lower contains 'afbreekbaar' -%}
-                <img class="tabblie-chero__marquee-stamp" src="{{ 'tabblie-stamp-afbreekbaar.png' | asset_url }}" alt="" loading="lazy" width="44" height="44">
+                <img src="{{ 'tabblie-stamp-afbreekbaar.png' | asset_url }}" alt="" width="48" height="48" loading="lazy">
+              {%- elsif item_lower contains 'vegan' -%}
+                <img src="{{ 'tabblie-stamp-vegan.png' | asset_url }}" alt="" width="48" height="48" loading="lazy">
+              {%- elsif item_lower contains 'brievenbus' -%}
+                <svg viewBox="0 0 24 24" style="fill:none;stroke:#182D20" fill="none" stroke="#182D20" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2" style="fill:none"/><path d="M3 12h18" style="fill:none"/><path d="M9 8V6a3 3 0 0 1 6 0v2" style="fill:none"/></svg>
               {%- else -%}
-              <svg class="tabblie-chero__marquee-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                {%- if item_lower contains 'plastic' or item_lower contains 'formula' -%}
-                  <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/>
-                {%- elsif item_lower contains 'ship' or item_lower contains 'verzend' or item_lower contains 'nl &' -%}
-                  <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/>
-                {%- elsif item_lower contains 'vegan' -%}
-                  <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-                {%- elsif item_lower contains 'chemical' or item_lower contains 'harsh' -%}
-                  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>
-                {%- elsif item_lower contains 'effective' or item_lower contains 'effectief' or item_lower contains 'super' -%}
-                  <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                {%- elsif item_lower contains 'money' or item_lower contains 'guarantee' or item_lower contains 'geld' or item_lower contains 'terug' -%}
-                  <path d="M4 10h12"/><path d="M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/>
-                {%- else -%}
-                  <path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/>
-                {%- endif -%}
-              </svg>
+                <svg viewBox="0 0 24 24" style="fill:none;stroke:#182D20" fill="none" stroke="#182D20" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" style="fill:none"/></svg>
               {%- endif -%}
-              {{ item | strip }}
             </span>
-            <span class="tabblie-chero__marquee-dot">·</span>
-          {%- endfor -%}
+            {{ item | strip }}
+          </span>
         {%- endfor -%}
       </div>
     </div>
