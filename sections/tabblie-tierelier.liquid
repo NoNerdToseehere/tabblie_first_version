@@ -19,12 +19,44 @@
     margin: 0 auto;
   }
 
+  .tabblie-tier__head {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 18px;
+  }
+
   .tabblie-tier__heading {
     font-family: var(--font-heading-family);
     font-weight: 800;
     line-height: 0.95;
     letter-spacing: -0.02em;
-    margin: 0 0 18px;
+    margin: 0;
+  }
+
+  .tabblie-tier__spark {
+    position: absolute;
+    width: clamp(38px, 4vw, 58px);
+    height: clamp(38px, 4vw, 58px);
+    color: #26523F;
+    pointer-events: none;
+  }
+
+  .tabblie-tier__spark--left {
+    top: 6px;
+    left: clamp(-46px, -5vw, -12px);
+    transform: rotate(-16deg) scaleX(-1);
+  }
+
+  .tabblie-tier__spark--right {
+    top: 2px;
+    right: clamp(-46px, -5vw, -12px);
+    transform: rotate(16deg);
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-tier__spark { width: 32px; height: 32px; }
+    .tabblie-tier__spark--left { left: -6px; }
+    .tabblie-tier__spark--right { right: -6px; }
   }
 
   .tabblie-tier__heading-line1 {
@@ -140,13 +172,16 @@
 </style>
 
 <section class="tabblie-tier" id="tabblie-tier-{{ section.id }}">
-  <svg class="tabblie-tier__accent tabblie-tier__accent--right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
   <div class="tabblie-tier__inner">
 
-    <h2 class="tabblie-tier__heading">
-      <span class="tabblie-tier__heading-line1">{{ section.settings.heading_line1 | default: 'Werkt als een' }}</span>
-      <span class="tabblie-tier__heading-line2">{{ section.settings.heading_line2 | default: 'tierelier.' }}</span>
-    </h2>
+    <div class="tabblie-tier__head">
+      <svg class="tabblie-tier__spark tabblie-tier__spark--left" viewBox="0 0 24 24" fill="none" stroke="#26523F" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
+      <svg class="tabblie-tier__spark tabblie-tier__spark--right" viewBox="0 0 24 24" fill="none" stroke="#26523F" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
+      <h2 class="tabblie-tier__heading">
+        <span class="tabblie-tier__heading-line1">{{ section.settings.heading_line1 | default: 'Werkt als een' }}</span>
+        <span class="tabblie-tier__heading-line2">{{ section.settings.heading_line2 | default: 'tierelier.' }}</span>
+      </h2>
+    </div>
 
     {%- if section.settings.pill_text != blank -%}
       <div class="tabblie-tier__pill">
