@@ -93,10 +93,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 42px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: #E8622A;
+    transform: rotate(-7deg);
     color: #ffffff;
     margin-bottom: 14px;
     flex-shrink: 0;
@@ -104,7 +105,17 @@
   }
 
   .tabblie-edu__card:hover .tabblie-edu__card-mark {
-    transform: scale(1.15) rotate(-8deg);
+    transform: scale(1.15) rotate(6deg);
+  }
+
+  .tabblie-edu__card-mark img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+  }
+
+  .tabblie-edu__card--positive .tabblie-edu__card-mark {
+    transform: rotate(7deg);
   }
 
   .tabblie-edu__card-mark svg {
@@ -222,9 +233,9 @@
           <div class="tabblie-edu__card{% if block.settings.is_positive %} tabblie-edu__card--positive{% endif %}" {{ block.shopify_attributes }}>
             <span class="tabblie-edu__card-mark" aria-hidden="true">
               {%- if block.settings.is_positive -%}
-                <svg viewBox="0 0 256 256" fill="currentColor"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z"/></svg>
+                <img src="{{ '2_9e3d8a68-d3a0-47fa-a5b2-6242d565b40e.png' | file_img_url: '100x' }}" alt="" width="26" height="26" loading="lazy">
               {%- else -%}
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                <img src="{{ '3_96fadf1d-b746-4710-bac5-3447a9828883.png' | file_img_url: '100x' }}" alt="" width="26" height="26" loading="lazy">
               {%- endif -%}
             </span>
             {%- if block.settings.number != blank -%}
