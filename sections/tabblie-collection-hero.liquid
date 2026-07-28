@@ -208,7 +208,7 @@
   }
 
   .tabblie-chero--photo .tabblie-chero__inner {
-    min-height: clamp(440px, 60vh, 640px);
+    min-height: clamp(490px, 68vh, 720px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -233,25 +233,31 @@
     }
 
     .tabblie-chero--photo .tabblie-chero__inner {
-      min-height: 54vh;
+      min-height: 60vh;
     }
   }
 
   .tabblie-chero__cta {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     background: #E8622A;
     color: #FFFFFF !important;
     font-family: var(--text-font-family);
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 800;
     letter-spacing: 0.01em;
-    padding: 16px 34px;
+    padding: 20px 44px;
     border-radius: 100px;
     text-decoration: none;
     margin-bottom: 8px;
+    box-shadow: 0 6px 22px rgba(24, 45, 32, 0.28);
     transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  /* photo mode: push the CTA lower on the image */
+  .tabblie-chero--photo .tabblie-chero__cta {
+    margin-top: clamp(28px, 8vh, 90px);
   }
 
   .tabblie-chero__cta:hover {
