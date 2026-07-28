@@ -182,6 +182,111 @@
     max-width: 520px;
   }
 
+  /* ── Full-photo hero (experiment 2026-07-28) ── */
+  .tabblie-chero--photo {
+    background-size: cover;
+    background-position: center 30%;
+    position: relative;
+  }
+
+  /* readability overlay: soft dark green fading down */
+  .tabblie-chero--photo .tabblie-chero__photo-overlay {
+    /* display:block beats the theme's div:empty { display:none } */
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+      linear-gradient(180deg, rgba(24, 45, 32, 0.62) 0%, rgba(24, 45, 32, 0.42) 40%, rgba(24, 45, 32, 0.12) 65%, rgba(24, 45, 32, 0) 80%),
+      rgba(24, 45, 32, 0.18);
+    pointer-events: none;
+  }
+
+  .tabblie-chero--photo::before,
+  .tabblie-chero--photo .tabblie-chero__leaf {
+    display: none !important;
+  }
+
+  .tabblie-chero--photo .tabblie-chero__inner {
+    min-height: clamp(520px, 74vh, 780px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: clamp(48px, 7vh, 90px);
+  }
+
+  .tabblie-chero--photo .tabblie-chero__heading {
+    color: #FFFFFF;
+    text-shadow: 0 2px 22px rgba(24, 45, 32, 0.6);
+  }
+
+  .tabblie-chero--photo .tabblie-chero__sub {
+    color: rgba(255, 255, 255, 0.94);
+    text-shadow: 0 1px 14px rgba(24, 45, 32, 0.65);
+    font-weight: 600;
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-chero--photo {
+      background-position: center 42%;
+    }
+
+    .tabblie-chero--photo .tabblie-chero__inner {
+      min-height: 66vh;
+    }
+  }
+
+  .tabblie-chero__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #E8622A;
+    color: #FFFFFF !important;
+    font-family: var(--text-font-family);
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    padding: 16px 34px;
+    border-radius: 100px;
+    text-decoration: none;
+    margin-bottom: 8px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+
+  .tabblie-chero__cta:hover {
+    background: #cf531e;
+    color: #FFFFFF !important;
+    transform: translateY(-2px);
+  }
+
+  .tabblie-chero__hero-image {
+    width: 88%;
+    max-width: 1160px;
+    margin: 40px auto -6px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .tabblie-chero__hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 28px;
+  }
+
+  @media (max-width: 749px) {
+    .tabblie-chero__hero-image {
+      width: calc(100% - 32px);
+      margin-top: 28px;
+      border-radius: 18px;
+    }
+
+    .tabblie-chero__hero-image img {
+      border-radius: 18px;
+    }
+  }
+
   /* ── Cards white panel ── */
   .tabblie-chero__cards-wrap {
     background-color: #ffffff;
@@ -555,7 +660,8 @@
   }
 </style>
 
-<section class="tabblie-chero" id="tabblie-chero-{{ section.id }}">
+<section class="tabblie-chero{% if section.settings.hero_image_asset != blank %} tabblie-chero--photo{% endif %}" id="tabblie-chero-{{ section.id }}"{% if section.settings.hero_image_asset != blank %} style="background-image:url('{{ section.settings.hero_image_asset | asset_url }}')"{% endif %}>
+  {%- if section.settings.hero_image_asset != blank -%}<div class="tabblie-chero__photo-overlay" aria-hidden="true"></div>{%- endif -%}
   <svg class="tabblie-chero__leaf tabblie-chero__leaf--1" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
     <circle cx="42" cy="54" r="33" fill="currentColor" opacity="0.35"/><circle cx="42" cy="54" r="33" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 46 A 23 23 0 0 1 33 31" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" opacity="0.9"/><circle cx="79" cy="28" r="13" fill="currentColor" opacity="0.35"/><circle cx="79" cy="28" r="13" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M71 25 A 9 9 0 0 1 75 19" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.9"/><circle cx="86" cy="68" r="6" fill="currentColor" opacity="0.55"/>
   </svg>
@@ -585,8 +691,16 @@
       <p class="tabblie-chero__sub">{{ section.settings.subtext }}</p>
     {%- endif -%}
 
+    {%- if section.settings.hero_image_asset != blank and section.settings.button_text != blank -%}
+      <a class="tabblie-chero__cta" href="{{ section.settings.button_url | default: '/collections/all' }}">
+        {{ section.settings.button_text }}
+        <svg width="20" height="20" style="width:20px;height:20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13"/><path d="M12.5 6 18.5 12l-6 6"/></svg>
+      </a>
+    {%- endif -%}
+
   </div>
 
+  {%- if section.settings.hero_image_asset == blank -%}
   <div class="tabblie-chero__cards-wrap">
     <div class="tabblie-chero__cards">
       {%- for block in section.blocks -%}
@@ -650,6 +764,7 @@
       {%- endfor -%}
     </div>
   </div>
+  {%- endif -%}
 
   {%- if section.settings.marquee_text != blank -%}
     {%- assign marquee_items = section.settings.marquee_text | split: '|' -%}
@@ -723,6 +838,22 @@
       "id": "subtext",
       "label": "Subtext",
       "default": "One strip replaces one plastic bottle. No waste, no compromise. Ships to NL & BE."
+    },
+    {
+      "type": "text",
+      "id": "hero_image_asset",
+      "label": "Grote hero-afbeelding (asset bestandsnaam, vervangt de productkaarten)"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "CTA tekst",
+      "default": "Ontdek onze producten"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "CTA link"
     },
     {
       "type": "text",
