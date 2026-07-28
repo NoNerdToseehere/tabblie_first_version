@@ -576,36 +576,42 @@
     "tabblie_hiw2_main": {
       "type": "tabblie-how-it-works-v2",
       "blocks": {
-        "step_1": {
+        "s1": {
           "type": "step",
           "settings": {
-            "title": "Scheur",
-            "description": "Scheur één strip af. niks afmeten"
+            "title": "1. Pak een strip",
+            "description": "Simpel, schoon en zonder geknoei.",
+            "image_asset": "tabblie-step-pak.svg"
           }
         },
-        "step_2": {
+        "s2": {
           "type": "step",
           "settings": {
-            "title": "Gooi",
-            "description": "Gooi de strip in de wasmachine, vaatwasser of los op in water. Het lost volledig op."
+            "title": "2. Gooi 'm erin",
+            "description": "In de trommel bij je was.",
+            "image_asset": "tabblie-step-gooi.svg"
           }
         },
-        "step_3": {
+        "s3": {
           "type": "step",
           "settings": {
-            "title": "Klaar. Echt waar.",
-            "description": "Schone was, stralende vaat, een schoner huis — zonder plastic afval en zonder gedoe. Zo simpel kan het zijn."
+            "title": "3. Klaar. Echt waar.",
+            "description": "Frisse was, elke keer weer.",
+            "image_asset": "tabblie-step-klaar.svg"
           }
         }
       },
       "block_order": [
-        "step_1",
-        "step_2",
-        "step_3"
+        "s1",
+        "s2",
+        "s3"
       ],
       "settings": {
-        "eyebrow": "Zo werkt het",
-        "title": "Een, twee, drie - alles is schoon"
+        "bg_color": "#E8622A",
+        "eyebrow": "ZO WERKT HET",
+        "title": "Kleine strips. Een groot verschil in je routine.",
+        "cta_text": "Bekijk alle strips",
+        "cta_url": "/collections/all"
       }
     },
     "tabblie_hiw_main": {
@@ -1288,7 +1294,7 @@
         "b2": {
           "type": "benefit",
           "settings": {
-            "text": "Vervangt tot 60 plastic flessen per jaar"
+            "text": "Biologisch afbreekbaar"
           }
         },
         "b3": {
