@@ -1,12 +1,13 @@
 {%- comment -%}
   tabblie-buy-feature.liquid
   Focused single-product buy block for the homepage (2026-07-28):
-  packshot left, title + price + benefit checks + add-to-cart right.
+  packshot/lifestyle left, title + price + benefit checks + add-to-cart right.
   Pick the product in the section settings. Falls back gracefully.
 {%- endcomment -%}
 
 {%- assign product = section.settings.product -%}
 {%- assign variant = product.selected_or_first_available_variant -%}
+{%- assign media_i = section.settings.media_index | default: 2 | minus: 1 -%}
 
 <style>
   .tabblie-buy {
@@ -26,7 +27,7 @@
   .tabblie-buy__media {
     border-radius: 24px;
     overflow: hidden;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
     background-color: rgba(24, 45, 32, 0.04);
     position: relative;
   }
@@ -178,7 +179,7 @@
     }
 
     .tabblie-buy__media {
-      aspect-ratio: 4 / 3;
+      aspect-ratio: 1 / 1;
     }
 
     .tabblie-buy__atc {
@@ -191,7 +192,12 @@
   <div class="tabblie-buy__inner">
 
     <div class="tabblie-buy__media">
-      {%- if section.settings.image != blank -%}
+      {%- assign chosen = product.media[media_i] -%}
+      {%- if chosen != blank -%}
+        <img src="{{ chosen.preview_image | image_url: width: 1000 }}" alt="{{ product.title | escape }}" width="1000" height="1000" loading="lazy">
+      {%- elsif section.settings.image_asset != blank -%}
+        <img src="{{ section.settings.image_asset | asset_url }}" alt="{{ product.title | default: 'Tabblie' | escape }}" width="900" height="675" loading="lazy">
+      {%- elsif section.settings.image != blank -%}
         <img src="{{ section.settings.image | image_url: width: 900 }}" alt="{{ product.title | default: 'Tabblie' | escape }}" width="900" height="675" loading="lazy">
       {%- elsif product.featured_image != blank -%}
         <img src="{{ product.featured_image | image_url: width: 900 }}" alt="{{ product.title | escape }}" width="900" height="675" loading="lazy">
@@ -242,7 +248,7 @@
               {{ section.settings.button_text | default: 'In winkelwagen' }}
             </button>
           </form>
-          <a class="tabblie-buy__options" href="{{ product.url }}">Alle opties bekijken</a>
+          <a class="tabblie-buy__options" href="{{ product.url }}">Meer informatie</a>
         {%- else -%}
           <a class="tabblie-buy__atc" href="{{ section.settings.button_url | default: '/collections/all' }}">{{ section.settings.button_text | default: 'Ontdek de strips' }}</a>
         {%- endif -%}
@@ -258,7 +264,9 @@
   "tag": "section",
   "settings": [
     { "type": "product", "id": "product", "label": "Product" },
+    { "type": "number", "id": "media_index", "label": "Productfoto nummer (1 = eerste galerijfoto)", "info": "Gebruikt dezelfde foto als op de productpagina" },
     { "type": "image_picker", "id": "image", "label": "Afbeelding (optioneel, anders productfoto)" },
+    { "type": "text", "id": "image_asset", "label": "Afbeelding uit theme assets (bestandsnaam)", "info": "Bijv. tabblie-product-feature.png — heeft voorrang" },
     { "type": "color", "id": "bg_color", "label": "Achtergrondkleur", "default": "#E2F2ED" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "MEEST GEKOZEN" },
     { "type": "text", "id": "title", "label": "Titel (leeg = productnaam)" },
