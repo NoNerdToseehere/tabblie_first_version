@@ -8,7 +8,20 @@
 
 <style>
   .tabblie-hiw2 {
-    background: linear-gradient(135deg, #F8BFD6 0%, #FADCE8 50%, #FDF0E8 100%);
+    background: #F08CAE;
+  }
+
+  /* on the solid pink, eyebrow + dashes go white for contrast */
+  .tabblie-hiw2 .tabblie-hiw2__eyebrow {
+    color: #FFFFFF;
+  }
+
+  .tabblie-hiw2 .tabblie-hiw2__eyebrow::before,
+  .tabblie-hiw2 .tabblie-hiw2__eyebrow::after {
+    background: #FFFFFF;
+  }
+
+  .tabblie-hiw2 {
     padding: clamp(56px, 7vw, 96px) clamp(16px, 3vw, 40px);
     position: relative;
     overflow: hidden;
