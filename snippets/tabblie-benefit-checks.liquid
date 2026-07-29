@@ -8,10 +8,11 @@
   {% render 'tabblie-benefit-checks', style: 'default' %}
 {% enddoc %}
 
+{%- comment -%}
+  Checks are brand dark green on every product page. The toilet/mea pages
+  used to swap in their identity colour, which made them the odd ones out.
+{%- endcomment -%}
 {%- assign check_color = '#26523F' -%}
-{%- if style == 'mea' or style == 'toilet' -%}
-  {%- assign check_color = '#5BB8A0' -%}
-{%- endif -%}
 
 {%- capture check_span -%}
 <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:{{ check_color }};margin-right:8px;flex-shrink:0;vertical-align:middle"><svg width="12" height="12" viewBox="0 0 256 256" fill="#ffffff" style="display:block;width:12px;height:12px;fill:#ffffff"><path d="M232.49,80.49l-128,128a12,12,0,0,1-17,0l-56-56a12,12,0,1,1,17-17L96,183,215.51,63.51a12,12,0,0,1,17,17Z" stroke="#ffffff" stroke-width="10"/></svg></span>

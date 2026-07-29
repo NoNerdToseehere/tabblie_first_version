@@ -152,12 +152,12 @@
     background: var(--card-bg, rgba(232, 98, 42, 0.1));
   }
 
-  /* coming soon card */
-  .tabblie-shop__card--soon {
+  /* coming soon card — still clickable when it has a teaser page to link to */
+  .tabblie-shop__card--soon:not(a) {
     cursor: default;
   }
 
-  .tabblie-shop__card--soon:hover {
+  .tabblie-shop__card--soon:not(a):hover {
     transform: none;
     box-shadow: none;
   }
@@ -239,10 +239,20 @@
         {%- assign card_desc = block.settings.description -%}
         {%- assign card_price = product.price | money -%}
 
-        {%- if block.settings.coming_soon -%}
-          <div class="tabblie-shop__card tabblie-shop__card--soon" style="--card-bg: {{ block.settings.bg_color }}" {{ block.shopify_attributes }}>
+        {%- comment -%}
+          A coming-soon card still links when it has somewhere to go — the
+          unrevealed product has its own teaser page. Only cards with no
+          destination at all fall back to a plain div.
+        {%- endcomment -%}
+        {%- assign card_linked = true -%}
+        {%- if card_url == '#' or card_url == blank -%}
+          {%- assign card_linked = false -%}
+        {%- endif -%}
+
+        {%- if card_linked -%}
+          <a class="tabblie-shop__card{% if block.settings.coming_soon %} tabblie-shop__card--soon{% endif %}" href="{{ card_url }}" style="--card-bg: {{ block.settings.bg_color }}" {{ block.shopify_attributes }}>
         {%- else -%}
-          <a class="tabblie-shop__card" href="{{ card_url }}" style="--card-bg: {{ block.settings.bg_color }}" {{ block.shopify_attributes }}>
+          <div class="tabblie-shop__card{% if block.settings.coming_soon %} tabblie-shop__card--soon{% endif %}" style="--card-bg: {{ block.settings.bg_color }}" {{ block.shopify_attributes }}>
         {%- endif -%}
           <div class="tabblie-shop__card-img">
             {%- if block.settings.coming_soon -%}
@@ -297,10 +307,11 @@
             <div class="tabblie-shop__card-footer">
               {%- if block.settings.coming_soon -%}
                 <span class="tabblie-shop__card-soon-text">Binnenkort beschikbaar</span>
-              {%- else -%}
-                {%- if product and section.settings.show_price -%}
-                  <span class="tabblie-shop__card-price">{{ card_price }}</span>
-                {%- endif -%}
+              {%- elsif product and section.settings.show_price -%}
+                <span class="tabblie-shop__card-price">{{ card_price }}</span>
+              {%- endif -%}
+
+              {%- if card_linked -%}
                 <span class="tabblie-shop__card-btn" aria-hidden="true">
                   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M5 12h13"/><path d="M12.5 6 18.5 12l-6 6"/>
@@ -309,7 +320,7 @@
               {%- endif -%}
             </div>
           </div>
-        {%- if block.settings.coming_soon -%}</div>{%- else -%}</a>{%- endif -%}
+        {%- if card_linked -%}</a>{%- else -%}</div>{%- endif -%}
       {%- endfor -%}
     </div>
   </div>
@@ -376,7 +387,7 @@
           "type": "checkbox",
           "id": "coming_soon",
           "label": "Coming soon",
-          "info": "Shows a 'Binnenkort' badge and disables the link",
+          "info": "Shows a 'Binnenkort' badge. The card still links to the product/URL if one is set.",
           "default": false
         }
       ]
