@@ -55,10 +55,13 @@
     transform: rotate(16deg);
   }
 
+  /* On phones the heading box hugs the text, so the sparks need their own
+     gutter inside the box — otherwise they land on top of line 1. */
   @media (max-width: 749px) {
-    .tabblie-tier__spark { width: 32px; height: 32px; }
-    .tabblie-tier__spark--left { left: -6px; }
-    .tabblie-tier__spark--right { right: -6px; }
+    .tabblie-tier__head { padding-inline: 42px; }
+    .tabblie-tier__spark { width: 30px; height: 30px; }
+    .tabblie-tier__spark--left { top: 8px; left: 2px; }
+    .tabblie-tier__spark--right { top: 4px; right: 2px; }
   }
 
   .tabblie-tier__heading-line1 {

@@ -227,11 +227,14 @@
     font-family: var(--text-font-family);
     font-size: 13px;
     color: rgba(24, 45, 32, 0.5);
+    white-space: nowrap;
   }
 
   /* Verified badge */
   .tabblie-testi__verified {
     margin-left: auto;
+    white-space: nowrap;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     gap: 4px;
@@ -252,14 +255,32 @@
       margin-bottom: 40px;
     }
 
+    /* one row, swipe left/right instead of three stacked cards */
     .tabblie-testi__grid {
-      grid-template-columns: 1fr;
+      display: flex;
+      grid-template-columns: none;
+      align-items: stretch;
       gap: 16px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 20px;
+      margin-inline: -20px;
+      padding: 0 20px 6px;
+      scrollbar-width: none;
     }
 
+    .tabblie-testi__grid::-webkit-scrollbar { display: none; }
+
     .tabblie-testi__card {
+      flex: 0 0 clamp(230px, 78vw, 300px);
+      scroll-snap-align: start;
       padding: 24px 20px;
     }
+
+    /* no lift on touch — it fights the swipe */
+    .tabblie-testi__card:hover { transform: none; }
   }
 
   /* Tablet */
