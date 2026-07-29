@@ -504,7 +504,34 @@
                             </div>
                         {%- endif -%}
                         <div class="productView-images-wrapper" data-video-{{ video_layout }}>
+                            {%- comment -%}
+                              Render the chosen photo first so the browser paints
+                              it immediately. No variant image is assigned, so
+                              Halo's variant JS has nothing to switch to and the
+                              gallery never moves after load.
+                            {%- endcomment -%}
+                            {%- assign pdp_media = product.media -%}
+                            {%- assign start_i = section.settings.gallery_start_photo | default: 1 | minus: 1 -%}
+                            {%- if start_i > 0 and start_i < product.media.size -%}
+                              {%- assign lead_arr = product.media | slice: start_i, 1 -%}
+                              {%- assign head_arr = product.media | slice: 0, start_i -%}
+                              {%- assign tail_start = start_i | plus: 1 -%}
+                              {%- assign tail_len = product.media.size | minus: tail_start -%}
+                              {%- assign pdp_media = lead_arr -%}
+                              {%- if tail_len > 0 -%}
+                                {%- assign tail_arr = product.media | slice: tail_start, tail_len -%}
+                                {%- assign pdp_media = pdp_media | concat: tail_arr -%}
+                              {%- endif -%}
+                              {%- assign pdp_media = pdp_media | concat: head_arr -%}
+                            {%- endif -%}
                             <div class="productView-image-wrapper">
+                                {%- comment -%} 2+1 deal sticker, same treatment as the Binnenkort teaser {%- endcomment -%}
+                                {%- if product.available -%}
+                                  <span class="tabblie-deal-stamp" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4"/><path d="M12 8v13M5 12v9h14v-9"/><path d="M12 8s-1.5-4-4.5-4a2.5 2.5 0 0 0 0 5"/><path d="M12 8s1.5-4 4.5-4a2.5 2.5 0 0 1 0 5"/></svg>
+                                    2+1 mix &amp; match
+                                  </span>
+                                {%- endif -%}
                                 {%- if show_badge -%}
                                     {% render 'product-badge',
                                         product: product,
@@ -519,9 +546,8 @@
                                     data-arrows-mobi="{{ main_image_arrows_mobile }}"
                                     data-counter-mobi="{{ main_image_counter_mobile }}"
                                     data-media-count="{{ product.media.size }}"
-                                    data-start-photo="{{ section.settings.gallery_start_photo | default: 1 }}"
                                 >
-                                    {%- for media in product.media -%}
+                                    {%- for media in pdp_media -%}
                                         {%- case media.media_type -%}
                                             {%- when 'image' -%}
                                                 <div class="productView-image productView-image-{{ media_size }}{% if show_variant_image_group %} filter-{{ media.alt | escape | downcase | replace: ' ', '-' | replace: '(', '-' | replace: ')', '-' }}{% endif %} fit-{{ media_fit }}" data-index="{{ forloop.index }}">
@@ -707,7 +733,7 @@
                                 </div>
                                 {%- if video_layout == 'popup' -%}
                                     <div class="productView-videoPopup">
-                                        {%- for media in product.media -%}
+                                        {%- for media in pdp_media -%}
                                             {%- case media.media_type -%}
                                                 {%- when 'external_video' -%}
                                                     {%- if media.host == 'youtube' -%}
@@ -746,7 +772,7 @@
                             {%- if thumnail_layout != '4' -%}
                                 <div class="productView-thumbnail-wrapper{% unless show_thumbnail_mobile %} is-hidden-mobile{% endunless %}">
                                     <div class="productView-for clearfix" data-max-thumbnail-to-show="{{ max_thumbnail_to_show }}">
-                                        {%- for media in product.media -%}
+                                        {%- for media in pdp_media -%}
                                             {%- case media.media_type -%}
                                                 {%- when 'image' -%}
                                                     <div class="productView-thumbnail{% if show_variant_image_group %} filter-{{ media.alt | escape | downcase | replace: ' ', '-' | replace: '(', '-' | replace: ')', '-' }}{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
@@ -1629,21 +1655,8 @@
 {% render 'schema',
     product: product
 %}
-<script>
-  (function () {
-    var gal = document.querySelector('[data-image-gallery-main][data-start-photo]');
-    if (!gal) return;
-    var start = parseInt(gal.getAttribute('data-start-photo'), 10);
-    if (!start || start <= 1) return;
-    var tries = 0;
-    var timer = setInterval(function () {
-      tries++;
-      if (window.jQuery && jQuery(gal).hasClass('slick-initialized')) {
-        clearInterval(timer);
-        jQuery(gal).slick('slickGoTo', start - 1, true);
-      } else if (tries > 40) {
-        clearInterval(timer);
-      }
-    }, 150);
-  })();
-</script>
+{%- comment -%}
+  The gallery used to render slide 1 and then slickGoTo the chosen photo,
+  which is the jump you saw on load. The opening image is now set in Shopify
+  instead — it's the "1 pak" variant's image — so no script is needed.
+{%- endcomment -%}

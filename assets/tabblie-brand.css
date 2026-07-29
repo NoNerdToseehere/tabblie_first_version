@@ -2126,3 +2126,51 @@ body.template-product .productView .product-form__submit:disabled {
 .contact-content a[href^="mailto:"]:hover {
   text-decoration: underline;
 }
+
+
+/* ── PDP deal sticker: same orange pill as the Binnenkort teaser (2026-07-29) ── */
+.productView-image-wrapper {
+  position: relative;
+}
+
+.tabblie-deal-stamp {
+  position: absolute;
+  top: -10px;
+  left: -6px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #E8622A;
+  color: #FFFFFF;
+  border: 3px solid #182D20;
+  border-radius: 100px;
+  box-shadow: 4px 5px 0 #182D20;
+  padding: 9px 18px;
+  font-family: var(--text-font-family);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: rotate(-5deg);
+  pointer-events: none;
+}
+
+.tabblie-deal-stamp svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  fill: none;
+}
+
+@media (max-width: 749px) {
+  .tabblie-deal-stamp {
+    top: -8px;
+    left: -2px;
+    font-size: 11.5px;
+    padding: 7px 14px;
+    gap: 6px;
+  }
+  .tabblie-deal-stamp svg { width: 13px; height: 13px; }
+}
