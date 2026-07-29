@@ -44,7 +44,7 @@
     font-family: var(--font-heading-family);
     font-size: clamp(2rem, 3.5vw, 3rem);
     font-weight: var(--font-heading-weight);
-    color: #182D20;
+    color: #26523F;
     line-height: 1.15;
     margin: 0 0 18px;
   }
@@ -89,6 +89,14 @@
     color: #ffffff;
   }
 
+  .tabblie-vt__inner--solo {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+    text-align: center;
+  }
+
+  .tabblie-vt__inner--solo .tabblie-vt__cta { margin-inline: auto; }
+
   .tabblie-vt__media {
     border-radius: 20px;
     overflow: hidden;
@@ -122,8 +130,12 @@
   }
 </style>
 
+{%- assign vt_has_media = false -%}
+{%- if section.settings.video_url != blank or section.settings.video_asset != blank or section.settings.image != blank -%}
+  {%- assign vt_has_media = true -%}
+{%- endif -%}
 <section class="tabblie-vt">
-  <div class="tabblie-vt__inner{% if section.settings.video_side == 'left' %} tabblie-vt__inner--reversed{% endif %}">
+  <div class="tabblie-vt__inner{% unless vt_has_media %} tabblie-vt__inner--solo{% endunless %}{% if section.settings.video_side == 'left' %} tabblie-vt__inner--reversed{% endif %}">
     <div class="tabblie-vt__content">
       {%- if section.settings.eyebrow != blank -%}
         <p class="tabblie-vt__eyebrow">{{ section.settings.eyebrow }}</p>
@@ -143,15 +155,23 @@
         </a>
       {%- endif -%}
     </div>
-    <div class="tabblie-vt__media">
-      {%- if section.settings.video_url != blank -%}
+    {%- comment -%}
+      No video and no image = text only. The old fallback dropped a generic
+      stock clip into any section that hadn't been given media.
+    {%- endcomment -%}
+    {%- if section.settings.video_url != blank -%}
+      <div class="tabblie-vt__media">
         <video src="{{ section.settings.video_url }}" autoplay muted loop playsinline></video>
-      {%- elsif section.settings.image != blank -%}
+      </div>
+    {%- elsif section.settings.video_asset != blank -%}
+      <div class="tabblie-vt__media">
+        <video src="{{ section.settings.video_asset | asset_url }}" autoplay muted loop playsinline></video>
+      </div>
+    {%- elsif section.settings.image != blank -%}
+      <div class="tabblie-vt__media">
         <img src="{{ section.settings.image | image_url: width: 800 }}" alt="{{ section.settings.title | escape }}" loading="lazy">
-      {%- else -%}
-        <video src="{{ 'tabblie-ugc-video.mp4' | asset_url }}" autoplay muted loop playsinline></video>
-      {%- endif -%}
-    </div>
+      </div>
+    {%- endif -%}
   </div>
 </section>
 
@@ -178,6 +198,7 @@
     { "type": "text", "id": "button_text", "label": "Button text", "default": "Bekijk onze producten" },
     { "type": "url", "id": "button_url", "label": "Button link" },
     { "type": "url", "id": "video_url", "label": "Video URL (MP4)" },
+    { "type": "text", "id": "video_asset", "label": "Video uit theme assets", "info": "Bestandsnaam, bijv. tabblie-ugc-marieke.mp4. Alleen gebruikt als hierboven geen URL staat." },
     { "type": "image_picker", "id": "image", "label": "Image (fallback)" }
   ],
   "presets": [{ "name": "Video + Text" }]

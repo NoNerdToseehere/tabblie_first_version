@@ -424,7 +424,7 @@
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0,
-        "gallery_start_photo": 6
+        "gallery_start_photo": 1
       }
     },
     "custom_service_block_8Gzkxn": {
@@ -889,7 +889,8 @@
         "body": "<p>Eén strip vervangt één plastic fles. Scheur hem af, gooi hem in je wasmachine of vaatwasser, en je bent klaar. Geen afmeten, geen rommel, geen plastic afval.</p><p>Werkt in koud en warm water. Dermatologisch getest en veilig voor het hele gezin.</p>",
         "button_text": "Bestel nu",
         "button_url": "",
-        "video_url": ""
+        "video_url": "",
+        "video_asset": "tabblie-ugc-marieke.mp4"
       }
     },
     "tabblie_stories_pdp": {
