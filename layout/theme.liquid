@@ -17,15 +17,59 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta name="theme-color" content="">
+        <meta name="theme-color" content="#E8622A">
         <link rel="canonical" href="{{ canonical_url }}" canonical-shop-url="{{ shop.url }}/">
-        <link rel="icon" href="{{ 'tabblie-favicon.png' | asset_url }}" type="image/png">
+        <link rel="icon" href="{{ 'tabblie-favicon.png' | asset_url }}" type="image/png" sizes="32x32">
         <link rel="shortcut icon" href="{{ 'tabblie-favicon.png' | asset_url }}" type="image/png">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ 'tabblie-favicon.png' | asset_url }}">
         <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
-        <title>{{ page_title }} {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%} {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%} {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}</title>
+        {%- comment -%}
+          The shop's SEO title ("Tabblie - Als Nieuw") is 20 chars and says
+          nothing about what we sell, wasting the SERP line. Homepage gets a
+          descriptive one; every other page keeps its own title.
+        {%- endcomment -%}
+        {%- if request.page_type == 'index' -%}
+            <title>Tabblie &ndash; Plasticvrije was-, vaatwas- &amp; toiletstrips</title>
+        {%- else -%}
+            <title>{{ page_title }} {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%} {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%} {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}</title>
+        {%- endif -%}
 
-        {%- if page_description -%}
-            <meta name="description" content="{{ page_description | escape }}">
+        {%- liquid
+            assign meta_description = page_description
+            if meta_description == blank and request.page_type == 'index'
+                assign meta_description = 'Plasticvrije schoonmaakstrips voor je was, vaat en toilet. Pak een strip, gooi ’m erin, klaar. Geen plastic flessen, geen gedoe. Gratis verzending NL & BE.'
+            endif
+            comment
+              Products and collections had no SEO description set either, so
+              they were shipping without the tag too. Fall back to their own
+              copy rather than leaving search engines to invent a snippet.
+            endcomment
+            if meta_description == blank and request.page_type == 'product'
+                assign meta_description = product.description | strip_html | strip | truncate: 155
+            endif
+            if meta_description == blank and request.page_type == 'collection'
+                assign meta_description = collection.description | strip_html | strip | truncate: 155
+            endif
+            if meta_description == blank and request.page_type == 'page'
+                assign meta_description = page.content | strip_html | strip | truncate: 155
+            endif
+            comment
+              Every product in Shopify currently has an empty description, so
+              the fallbacks above resolve to nothing — compose one from the
+              title rather than shipping the page with no tag at all.
+            endcomment
+            if meta_description == blank and request.page_type == 'product'
+                assign meta_description = product.title | append: ' van Tabblie. Plasticvrij, biologisch afbreekbaar en zonder gedoe. Gratis verzending in NL & BE.'
+            endif
+            if meta_description == blank
+                assign meta_description = shop.description
+            endif
+            if meta_description == blank
+                assign meta_description = 'Tabblie maakt plasticvrije schoonmaakstrips voor je was, vaat en toilet. Geen plastic flessen, geen gedoe. Gratis verzending in NL & BE.'
+            endif
+        -%}
+        {%- if meta_description != blank -%}
+            <meta name="description" content="{{ meta_description | escape }}">
         {%- endif -%}
         {% render 'meta-tags' %}
         {{ content_for_header }}
