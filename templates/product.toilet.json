@@ -233,7 +233,7 @@
             "open_tab_mobile": false,
             "title": "Gebruik",
             "type": "all",
-            "content": "<strong>Zo simpel is het</strong><br>1. Pak \u00e9\u00e9n strip uit de verpakking \u2014 elke strip is al op maat, scheuren hoeft niet.<br>2. Gooi de strip in de pot en laat hem 10-15 minuten bruisen en inwerken.<br>3. Even borstelen, doorspoelen, klaar.<br><br><strong>Hardnekkige aanslag of kalk?</strong><br>Laat de strip een nacht inwerken en borstel daarna kort na.<br><br><strong>Hoe vaak gebruiken?</strong><br>1-2 keer per week is genoeg voor een fris en schoon toilet.<br><br><strong>Veilig voor mijn afvoer?</strong><br>Ja — de strip lost volledig op, is 100% biologisch afbreekbaar en veilig voor afvoer en septic tank.",
+            "content": "<strong>Zo simpel is het</strong><br>1. Pak één strip uit de verpakking — elke strip is al op maat, scheuren hoeft niet.<br>2. Gooi de strip in de pot en laat hem 10-15 minuten bruisen en inwerken.<br>3. Even borstelen, doorspoelen, klaar.<br><br><strong>Hardnekkige aanslag of kalk?</strong><br>Laat de strip een nacht inwerken en borstel daarna kort na.<br><br><strong>Hoe vaak gebruiken?</strong><br>1-2 keer per week is genoeg voor een fris en schoon toilet.<br><br><strong>Veilig voor mijn afvoer?</strong><br>Ja — de strip lost volledig op, is 100% biologisch afbreekbaar en veilig voor afvoer en septic tank.",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -452,7 +452,7 @@
         "ben1": {
           "type": "benefit",
           "settings": {
-            "text": "16 strips \u2014 16 kant-en-klare doseringen"
+            "text": "16 strips — 16 kant-en-klare doseringen"
           }
         },
         "ben1b": {
@@ -494,7 +494,8 @@
         "title": "Fris toilet. Nul bleek.",
         "description": "Strip erin, laten bruisen, doorspoelen — geen agressieve chloor, geen plastic fles, geen gedoe. Gewoon een schone, fris ruikende wc, elke keer weer.",
         "button_text": "Kies voor Tabblie",
-        "button_url": "#"
+        "button_url": "#",
+        "image_ratio": "1 / 1"
       }
     },
     "tabblie_vt_toilet": {

@@ -555,12 +555,13 @@
       ],
       "settings": {
         "image_side": "right",
-        "image": "shopify://shop_images/foto_s_start_website_homepage_1.jpg",
+        "image": "shopify://shop_images/1_732b5100-dd14-47e2-8089-925275b3b445.jpg",
         "eyebrow": "",
         "title": "Betaalbaar en effectief",
         "description": "Alles wat een tablet doet, zonder de nadelen.",
         "button_text": "",
-        "button_url": "#"
+        "button_url": "#",
+        "image_ratio": "1 / 1"
       }
     },
     "tabblie_benefit_card_3": {
@@ -629,12 +630,13 @@
       ],
       "settings": {
         "image_side": "right",
-        "image": "shopify://shop_images/foto_s_start_website_homepage_1.jpg",
+        "image": "shopify://shop_images/5_7c9b3263-5343-4926-858b-5812367850e7.jpg",
         "eyebrow": "",
         "title": "Veilig voor je gezin",
         "description": "Schone vaat zonder agressieve chemicaliën.",
         "button_text": "",
-        "button_url": "#"
+        "button_url": "#",
+        "image_ratio": "1 / 1"
       }
     },
     "tabblie_benefit_card_5": {

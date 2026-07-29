@@ -1,15 +1,17 @@
 {% doc %}
-  Renders the review score badge — 5 flat green stars + score text
-  (2026-07 PDP redesign: big bold stars in design green).
+  Renders the review score badge — 5 flat brand-orange stars + score text.
+  Same star shape, size and colour as the rating on the homepage product rows
+  (tabblie-buy-feature), so the two read as one system. No stroke — the old
+  outlined star looked hand-drawn next to the homepage one.
 
   @example
   {% render 'tabblie-review-score' %}
 {% enddoc %}
 
 <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap">
-  <span style="display:inline-flex;gap:3px;flex-shrink:0" aria-hidden="true">
+  <span style="display:inline-flex;gap:2px;flex-shrink:0;color:#E8622A" aria-hidden="true">
     {%- for i in (1..5) -%}
-      <svg width="22" height="22" style="width:22px;height:22px;fill:#38A169" viewBox="0 0 24 24" fill="#38A169" stroke="#38A169" stroke-width="1.6" stroke-linejoin="round"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2l-6.1 3.4 1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+      <svg viewBox="0 0 24 24" style="width:19px;height:19px;fill:currentColor;stroke:none;display:block"><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.35 6.19 20.4l1.11-6.47L2.6 9.35l6.5-.95z"/></svg>
     {%- endfor -%}
   </span>
   <span style="font-size:14.5px;font-weight:700;color:#182D20"><strong style="font-weight:800">4,8/5</strong> &nbsp;&bull;&nbsp; <strong style="font-weight:800">1.000+</strong> tevreden klanten</span>
