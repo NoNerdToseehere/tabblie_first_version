@@ -13,6 +13,15 @@
   elsif request.page_type == 'password'
     assign og_url = shop.url
   endif
+
+  comment
+    On the homepage the shared card should read as the brand, not as the
+    theme-generated page title.
+  endcomment
+  if request.page_type == 'index'
+    assign og_title = 'Tabblie - Kind kan de was doen'
+    assign og_description = 'Schoonmaken zonder gedoe. Pak een strip, gooi ’m erin, klaar. Echt waar. Plasticvrije strips voor was, vaat en toilet.'
+  endif
 %}
 
 <meta property="og:site_name" content="{{ shop.name }}">
@@ -20,12 +29,45 @@
 <meta property="og:title" content="{{ og_title | escape }}">
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:description" content="{{ og_description | escape }}">
+<meta property="og:locale" content="nl_NL">
 
-{%- if page_image -%}
+{%- comment -%}
+  WhatsApp, iMessage and the rest read og:image. page_image falls back to the
+  theme's share image, which here is the 256px favicon — far too small for a
+  link preview, so only trust it when it's actually a content-sized image.
+{%- endcomment -%}
+{%- assign use_page_image = false -%}
+{%- if page_image and page_image.width >= 600 and request.page_type != 'index' -%}
+  {%- assign use_page_image = true -%}
+{%- endif -%}
+{%- if use_page_image -%}
   <meta property="og:image" content="http:{{ page_image | img_url: 'master' }}">
   <meta property="og:image:secure_url" content="https:{{ page_image | img_url: 'master' }}">
   <meta property="og:image:width" content="{{ page_image.width }}">
   <meta property="og:image:height" content="{{ page_image.height }}">
+  <meta property="og:image:alt" content="{{ og_title | escape }}">
+  <meta name="twitter:image" content="https:{{ page_image | img_url: 'master' }}">
+{%- else -%}
+  {%- comment -%}
+    og:image must be absolute. asset_url returns "//cdn.shopify.com/..." in
+    production and "/cdn/shop/..." on the dev server — neither is fetchable by
+    a scraper as-is.
+  {%- endcomment -%}
+  {%- assign card_path = 'tabblie-share-card.jpg' | asset_url -%}
+  {%- assign card_prefix = card_path | slice: 0, 2 -%}
+  {%- assign share_card = card_path -%}
+  {%- if card_prefix == '//' -%}
+    {%- assign share_card = card_path | prepend: 'https:' -%}
+  {%- elsif card_prefix != 'ht' -%}
+    {%- assign share_card = card_path | prepend: shop.url -%}
+  {%- endif -%}
+  <meta property="og:image" content="{{ share_card }}">
+  <meta property="og:image:secure_url" content="{{ share_card }}">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Tabblie — schoonmaken zonder gedoe">
+  <meta name="twitter:image" content="{{ share_card }}">
 {%- endif -%}
 
 {%- if request.page_type == 'product' -%}
