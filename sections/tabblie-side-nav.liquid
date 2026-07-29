@@ -307,7 +307,7 @@
     display: block;
     padding: 14px 16px;
     border-radius: 12px;
-    background: #26523F;
+    background: #E8622A;
     color: #ffffff;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -315,7 +315,7 @@
 
   .tmf-promo:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(38, 82, 63, 0.22);
+    box-shadow: 0 8px 20px rgba(232, 98, 42, 0.25);
     color: #ffffff;
   }
 
@@ -325,7 +325,7 @@
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: #F5A97A;
+    color: rgba(255, 255, 255, 0.85);
     margin: 0 0 4px;
   }
 
@@ -350,6 +350,21 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    /* fill the leftover height so the column ends level with the product
+       tiles on the left instead of stopping ~47px short */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .tmf-links li {
+    display: flex;
+    flex: 1;
+  }
+
+  .tmf-links li > a {
+    flex: 1;
   }
 
   .tmf-links li + li {
@@ -417,12 +432,18 @@
 
 <div class="tmf-wrap" data-tmf aria-hidden="true">
   <div class="tmf-panel" id="tmf-panel" role="menu">
-    <div class="tmf-panel__header">
-      <div>
-        <p class="tmf-panel__eyebrow">{{ section.settings.eyebrow }}</p>
-        <h2 class="tmf-panel__title">{{ section.settings.title }}</h2>
+    {%- if section.settings.eyebrow != blank or section.settings.title != blank -%}
+      <div class="tmf-panel__header">
+        <div>
+          {%- if section.settings.eyebrow != blank -%}
+            <p class="tmf-panel__eyebrow">{{ section.settings.eyebrow }}</p>
+          {%- endif -%}
+          {%- if section.settings.title != blank -%}
+            <h2 class="tmf-panel__title">{{ section.settings.title }}</h2>
+          {%- endif -%}
+        </div>
       </div>
-    </div>
+    {%- endif -%}
 
     <div class="tmf-panel__body">
       <div>
@@ -521,6 +542,21 @@
         top = navLink.getBoundingClientRect().bottom;
       }
       panel.style.top = Math.max(0, top) + 'px';
+
+      // Land the bottom edge on the trust strip under the hero. Without this
+      // the panel stops ~30px short and a sliver of the hero photo shows
+      // through, which reads as a mistake. Falls back to natural height when
+      // that strip isn't on screen (other templates, or scrolled past).
+      panel.style.minHeight = '';
+      var stopAt = document.querySelector('.tabblie-chero__marquee');
+      if (stopAt) {
+        var stopTop = stopAt.getBoundingClientRect().top;
+        var available = stopTop - top;
+        if (available > panel.offsetHeight && available < window.innerHeight) {
+          panel.style.minHeight = available + 'px';
+        }
+      }
+
       // transform is handled by CSS (.is-open) — never set it inline,
       // an inline value overrides the class and leaves the panel 10px high
     }
@@ -608,8 +644,8 @@
   "name": "Tabblie Side Nav",
   "tag": "section",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Panel eyebrow", "default": "TABBLIE" },
-    { "type": "text", "id": "title", "label": "Panel title", "default": "Eindelijk milieuvriendelijk schoonmaken — zonder in te leveren op kwaliteit, looks of prijs." },
+    { "type": "text", "id": "eyebrow", "label": "Panel eyebrow" },
+    { "type": "text", "id": "title", "label": "Panel title" },
     { "type": "text", "id": "blog_handle", "label": "Blog handle", "default": "news" }
   ],
   "presets": [{ "name": "Tabblie Side Nav" }]
