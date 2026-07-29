@@ -683,21 +683,24 @@
           "type": "step",
           "settings": {
             "title": "Scheur een strip af",
-            "description": "Langs de perforatie — een halve strip voor een halfvolle machine."
+            "description": "Langs de perforatie — een halve strip voor een halfvolle machine.",
+            "image_asset": "vaatwas-step-1-scheur-strip-af.svg"
           }
         },
         "s2": {
           "type": "step",
           "settings": {
             "title": "In het bestekmandje",
-            "description": "Of in het tabletvak, wat jij makkelijk vindt."
+            "description": "Of in het tabletvak, wat jij makkelijk vindt.",
+            "image_asset": "vaatwas-step-2-bestekmandje.svg"
           }
         },
         "s3": {
           "type": "step",
           "settings": {
             "title": "Start je programma",
-            "description": "De strip lost volledig op. Streeploos schone vaat."
+            "description": "De strip lost volledig op. Streeploos schone vaat.",
+            "image_asset": "vaatwas-step-3-start-programma.svg"
           }
         }
       },
@@ -708,7 +711,9 @@
       ],
       "settings": {
         "eyebrow": "ZO WERKT HET",
-        "title": "Een, twee, drie - alles is schoon"
+        "title": "Een, twee, drie - alles is schoon",
+        "cta_text": "",
+        "cta_url": ""
       }
     },
     "tabblie_testimonials": {

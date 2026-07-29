@@ -738,7 +738,9 @@
       ],
       "settings": {
         "eyebrow": "ZO WERKT HET",
-        "title": "Een, twee, drie - alles is schoon"
+        "title": "Een, twee, drie - alles is schoon",
+        "cta_text": "",
+        "cta_url": ""
       }
     },
     "tabblie_testimonials": {

@@ -503,7 +503,7 @@
       "settings": {
         "bg_color": "#E2F2ED",
         "video_side": "right",
-        "eyebrow": "ZO WERKT HET",
+        "eyebrow": "DE WERKING",
         "title": "Hoe werkt",
         "title_accent": "de strip?",
         "body": "<p>Gooi een strip in de pot en het bruisen begint vanzelf: natriumbicarbonaat weekt vuil en aanslag los, citroenzuur pakt kalk aan en de plantaardige reinigers doen de rest. Na 10-15 minuten even borstelen en doorspoelen — de strip lost volledig op, zonder resten.</p>",
@@ -1062,6 +1062,47 @@
         "mg_bottom_tablet": 50,
         "mg_bottom_mobile": 50
       }
+    },
+    "tabblie_hiw_toilet": {
+      "type": "tabblie-how-it-works-v2",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "1. Pak één strip",
+            "description": "Al op maat — scheuren hoeft niet.",
+            "image_asset": "toilet-step-1-pak-een-strip.svg"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "2. Gooi 'm in de pot",
+            "description": "Laat 'm 10-15 minuten bruisen.",
+            "image_asset": "toilet-step-2-gooi-in-toilet.svg"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "3. Borstel en spoel",
+            "description": "Fris toilet. Nul bleek.",
+            "image_asset": "toilet-step-3-borstel-schoon.svg"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "bg_color": "#E8622A",
+        "eyebrow": "IN 3 STAPPEN",
+        "title": "Zo simpel is het",
+        "cta_text": "",
+        "cta_url": ""
+      }
     }
   },
   "order": [
@@ -1070,6 +1111,7 @@
     "tabblie_testimonials_toilet",
     "tabblie_pf_toilet",
     "tabblie_vt_toilet",
+    "tabblie_hiw_toilet",
     "tabblie_stats_toilet",
     "tabblie_comparison_toilet",
     "custom_service_block_toilet",

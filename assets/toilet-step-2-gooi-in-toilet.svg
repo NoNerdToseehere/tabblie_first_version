@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 280" role="img" aria-labelledby="title desc">
+  <title id="title">Gooi hem in het toilet</title>
+  <desc id="desc">Een hand laat een toiletstrip in de toiletpot vallen.</desc>
+  <g stroke="#182D20" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path fill="#FDF6EE" d="M46 38h118v89H46z"/>
+    <path d="M58 127v36c0 41 33 74 74 74h44"/>
+    <path fill="#C7DDE8" d="M74 132h140c0 62-27 100-72 100-44 0-68-38-68-100Z"/>
+    <ellipse cx="144" cy="132" rx="88" ry="32" fill="#FDF6EE"/>
+    <ellipse cx="144" cy="132" rx="59" ry="17" fill="#C7DDE8"/>
+    <path fill="#F6CBB7" d="M310 39c-30 7-57 20-80 39l-42 34-23-8c-15-5-31 3-36 18-5 15 3 31 18 36l39 13c15 5 31 1 42-9l45-39c17-15 31-32 42-51Z"/>
+    <path fill="#FDF6EE" d="m159 85 50 15-14 45-50-15z"/>
+    <path d="M187 160c-5 16-17 26-34 31"/>
+  </g>
+  <path fill="#E8622A" d="M234 139c11 0 21 3 29 10-9 5-19 6-30 2l1-12Z"/>
+</svg>

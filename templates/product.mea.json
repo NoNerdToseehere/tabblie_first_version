@@ -359,7 +359,9 @@
     "mea_hiw": {
       "type": "tabblie-how-it-works-v2",
       "settings": {
-        "eyebrow": "ZO WERKT HET"
+        "eyebrow": "ZO WERKT HET",
+        "cta_text": "",
+        "cta_url": ""
       }
     },
     "mea_testimonials": {
