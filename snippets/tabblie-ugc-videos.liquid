@@ -3,6 +3,10 @@
   The "Geliefd door 1.000+ klanten" header art renders separately on the left
   via tabblie-loved-header.
 
+  Lisa and Sophie are trimmed in the source files themselves (Lisa to 4s,
+  Sophie with the throw-it-in segment cut out and the audio stripped).
+  Sophie stays muted on play — data-mute.
+
   @example
   {% render 'tabblie-ugc-videos' %}
 {% enddoc %}
@@ -14,8 +18,18 @@
       {%- assign handle = name | downcase -%}
       {%- assign video_file = 'tabblie-ugc-' | append: handle | append: '.mp4' -%}
       {%- assign avatar_file = 'tabblie-avatar-' | append: handle | append: '.jpg' -%}
+
+      {%- comment -%} Sophie's clip has no audio track and plays silent {%- endcomment -%}
+      {%- assign clip_mute = false -%}
+      {%- if handle == 'sophie' -%}{%- assign clip_mute = true -%}{%- endif -%}
+
       <div class="ugc-item" style="position:relative;border-radius:14px;overflow:hidden;cursor:pointer;background:#1a1a1a;aspect-ratio:3/4" onclick="playVideo(this)">
-        <video src="{{ video_file | asset_url }}#t=0.001" style="width:100%;height:100%;object-fit:cover;display:block" playsinline preload="auto" loop muted></video>
+        <video
+          src="{{ video_file | asset_url }}#t=0.001"
+          style="width:100%;height:100%;object-fit:cover;display:block"
+          playsinline preload="auto" loop muted
+          {% if clip_mute %}data-mute="true"{% endif %}
+        ></video>
         <div class="play-overlay" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.12);transition:opacity 0.2s">
           <div style="width:48px;height:48px;background:rgba(255,255,255,0.94);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,0.18)">
             <svg width="18" height="18" style="width:18px;height:18px;margin-left:2px" viewBox="0 0 24 24" fill="#182D20"><polygon points="5 3 19 12 5 21 5 3"/></svg>
@@ -49,6 +63,23 @@
     }
   </style>
   <script>
-    function playVideo(item){var v=item.querySelector("video"),o=item.querySelector(".play-overlay");document.querySelectorAll(".ugc-item video").forEach(function(x){if(x!==v){x.pause();x.muted=true;x.closest(".ugc-item").querySelector(".play-overlay").style.opacity="1";x.closest(".ugc-item").querySelector(".play-overlay").style.pointerEvents="auto"}});if(v.paused){v.muted=false;v.play();o.style.opacity="0";o.style.pointerEvents="none"}else{v.pause();v.muted=true;o.style.opacity="1";o.style.pointerEvents="auto"}}
+    function playVideo(item) {
+      var v = item.querySelector('video'), o = item.querySelector('.play-overlay');
+      document.querySelectorAll('.ugc-item video').forEach(function (x) {
+        if (x !== v) {
+          x.pause(); x.muted = true;
+          var ov = x.closest('.ugc-item').querySelector('.play-overlay');
+          ov.style.opacity = '1'; ov.style.pointerEvents = 'auto';
+        }
+      });
+      if (v.paused) {
+        v.muted = v.dataset.mute === 'true';
+        v.play();
+        o.style.opacity = '0'; o.style.pointerEvents = 'none';
+      } else {
+        v.pause(); v.muted = true;
+        o.style.opacity = '1'; o.style.pointerEvents = 'auto';
+      }
+    }
   </script>
 </div>

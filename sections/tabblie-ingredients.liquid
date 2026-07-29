@@ -202,18 +202,42 @@
       padding: clamp(36px, 8vw, 56px) 20px;
     }
 
+    /* one swipeable row instead of three stacked cards */
     .tabblie-ingredients__grid {
-      grid-template-columns: 1fr;
+      display: flex;
+      grid-template-columns: none;
+      align-items: stretch;
+      gap: 14px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 20px;
+      margin-inline: -20px;
+      padding: 0 20px 6px;
+      scrollbar-width: none;
     }
 
+    .tabblie-ingredients__grid::-webkit-scrollbar { display: none; }
+
+    /* the divider between cards only makes sense when they're stacked */
     .tabblie-ingredients__card + .tabblie-ingredients__card {
       border-left: none;
-      border-top: 1.5px solid rgba(24, 45, 32, 0.15);
-      gap: 14px;
+      border-top: none;
     }
 
     .tabblie-ingredients__card {
-      padding: 24px;
+      flex: 0 0 clamp(220px, 74vw, 290px);
+      scroll-snap-align: start;
+      gap: 14px;
+      padding: 22px;
+      border: 1.5px solid rgba(24, 45, 32, 0.15);
+      border-radius: 16px;
+    }
+
+    /* no lift on touch — it fights the swipe */
+    .tabblie-ingredients__card.is-visible:hover {
+      transform: none;
     }
 
     .tabblie-ingredients__card-desc {
