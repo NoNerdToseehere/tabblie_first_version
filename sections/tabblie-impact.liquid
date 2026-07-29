@@ -55,13 +55,18 @@
     border: 2px solid #FFFFFF;
     border-radius: 100px;
     padding: 14px 36px;
-    text-decoration: none;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
   }
 
-  .tabblie-impact__btn:hover {
+  /* the theme's global a:hover wins without !important, which left white text
+     on the white hover fill — i.e. an invisible label */
+  .tabblie-impact__btn:hover,
+  .tabblie-impact__btn:focus {
     background-color: #FFFFFF;
-    color: #E8622A;
+    color: #182D20 !important;
+    border-color: #FFFFFF;
+    transform: translateY(-2px);
   }
 
   /* Mobile */

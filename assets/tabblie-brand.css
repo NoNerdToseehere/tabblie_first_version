@@ -2049,3 +2049,80 @@ body.template-product .productView .product-form__submit:disabled {
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
 }
+
+
+/* ── Contact page form: Halo defaults were tiny near-black text; bring it
+   onto the brand type scale and dark green headings (2026-07-29) ── */
+.contact-content .contact-title,
+.contact-content .page-subheader {
+  font-family: var(--font-heading-family) !important;
+  font-size: clamp(20px, 2vw, 26px) !important;
+  font-weight: 800 !important;
+  color: #26523F !important;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  text-transform: none !important;
+  margin-bottom: 14px !important;
+}
+
+.contact-content,
+.contact-content p,
+.contact-content .contact-text {
+  font-family: var(--text-font-family);
+  font-size: 15.5px;
+  color: rgba(24, 45, 32, 0.75);
+  line-height: 1.65;
+}
+
+.contact-content .form-label {
+  font-family: var(--text-font-family) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #182D20 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  margin-bottom: 7px !important;
+}
+
+/* required marker: brand orange, not the theme's alarm red */
+.contact-content .form-label .required,
+.contact-content .form-label span[style*="red"],
+.contact-content abbr[title="required"] {
+  color: #E8622A !important;
+  text-decoration: none !important;
+}
+
+.contact-content .form-input,
+.contact-content .form-textarea,
+.contact-content input[type="text"],
+.contact-content input[type="tel"],
+.contact-content input[type="email"],
+.contact-content textarea {
+  font-family: var(--text-font-family) !important;
+  font-size: 16px !important;
+  color: #182D20 !important;
+  background: #FFFFFF !important;
+  border: 2px solid rgba(24, 45, 32, 0.15) !important;
+  border-radius: 12px !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-content .form-input:focus,
+.contact-content .form-textarea:focus,
+.contact-content input:focus,
+.contact-content textarea:focus {
+  border-color: #E8622A !important;
+  box-shadow: 0 0 0 3px rgba(232, 98, 42, 0.16) !important;
+  outline: none !important;
+}
+
+/* email + address details in the right column */
+.contact-content a[href^="mailto:"] {
+  color: #E8622A !important;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.contact-content a[href^="mailto:"]:hover {
+  text-decoration: underline;
+}

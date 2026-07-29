@@ -65,7 +65,7 @@
         "subtext": "Geen plastic, geen onnodig afval, hetzelfde gemak — Tabblie, kind kan de was doen.",
         "hero_image_asset": "tabblie-hero-image.jpg",
         "button_text": "Ontdek onze producten",
-        "button_url": "/collections/all",
+        "button_url": "#tabblie-strips",
         "marquee_text": "Plasticvrij & PVA-vrij | Biologisch afbreekbaar | 100% vegan"
       }
     },
@@ -162,7 +162,7 @@
         "spacing_bottom": 0,
         "spacing_right": 0,
         "product_block_show": "4",
-        "button_text_slider": "Bekijk alle producten",
+        "button_text_slider": "",
         "button_link_slider": "shopify://collections/all",
         "enable_button_icon": false,
         "button_width": 280,
