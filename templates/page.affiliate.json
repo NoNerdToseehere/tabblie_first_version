@@ -9,7 +9,7 @@
         "heading_accent": "schoner schoonmaken.",
         "subtext": "Deel Tabblie met je volgers, vrienden of lezers en verdien commissie over elke bestelling. Goed voor jou, goed voor de planeet.",
         "button_text": "Meld je aan",
-        "button_url": "mailto:support@tabblie.com?subject=Aanmelding%20affiliate%20programma"
+        "button_url": "/pages/contact"
       }
     },
     "affiliate_hiw": {
@@ -44,7 +44,9 @@
       ],
       "settings": {
         "eyebrow": "ZO WERKT HET",
-        "title": "In drie stappen partner"
+        "title": "In drie stappen partner",
+        "cta_text": "",
+        "cta_url": ""
       }
     },
     "affiliate_pf": {
@@ -105,7 +107,7 @@
           "type": "stat",
           "settings": {
             "number": "30",
-            "label": "dagen cookie — ook latere aankopen tellen mee"
+            "label": "dagen geldig — bestelt iemand later alsnog, dan is de commissie nog steeds van jou"
           }
         },
         "st3": {
@@ -180,7 +182,13 @@
     },
     "affiliate_guarantee": {
       "type": "tabblie-impact",
-      "settings": {}
+      "settings": {
+        "eyebrow": "VRAGEN?",
+        "heading": "Even sparren over samenwerken?",
+        "description": "Vul het contactformulier in of mail ons op support@tabblie.com — je krijgt binnen 1 werkdag antwoord van een echt persoon. Ook als je nog twijfelt of het iets voor je is.",
+        "button_text": "Neem contact op",
+        "button_url": "/pages/contact"
+      }
     }
   },
   "order": [
