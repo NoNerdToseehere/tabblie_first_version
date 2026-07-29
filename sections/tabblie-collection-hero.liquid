@@ -269,6 +269,32 @@
     flex-shrink: 0;
   }
 
+  /* orange accent line, matching every other heading on the site */
+  .tabblie-chero__hc-accent {
+    color: #E8622A;
+  }
+
+  /* "was" carries the wordplay — italic + a hand-drawn underline so it reads
+     as the pun rather than as "we only do laundry" */
+  .tabblie-chero__hc-wink {
+    font-style: italic;
+    font-weight: 800;
+    position: relative;
+    white-space: nowrap;
+  }
+
+  .tabblie-chero__hc-wink::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    right: -2px;
+    bottom: 0.06em;
+    height: 0.09em;
+    border-radius: 100px;
+    background: #26523F;
+    transform: rotate(-1.2deg);
+  }
+
   .tabblie-chero__hc-heading {
     font-family: var(--heading-font-family);
     font-size: clamp(3.2rem, 5.1vw, 4.9rem);
@@ -800,7 +826,7 @@
         <svg viewBox="0 0 24 24" style="width:22px;height:22px;fill:none;stroke:#26523F" fill="none" stroke="#26523F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" style="fill:none"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" style="fill:none"/></svg>
         Schoonmaken zonder gedoe
       </span>
-      <h1 class="tabblie-chero__hc-heading">Een schoner huis.<br>Een lichtere routine.</h1>
+      <h1 class="tabblie-chero__hc-heading">Tabblie,<br><span class="tabblie-chero__hc-accent">kind kan de <em class="tabblie-chero__hc-wink">was</em> doen.</span></h1>
       <p class="tabblie-chero__hc-sub">Plasticvrij en PVA-vrij. Slimme strips voor was, vaat en toilet.</p>
       <a class="tabblie-chero__hc-cta" href="#tabblie-strips">Ontdek de strips
         <svg width="18" height="18" style="width:18px;height:18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v13" style="fill:none"/><path d="M6 12.5 12 18.5l6-6" style="fill:none"/></svg>
