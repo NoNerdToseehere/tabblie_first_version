@@ -204,37 +204,36 @@
     margin-top: clamp(24px, 3vw, 38px);
   }
 
-  /* solid button — orange-on-orange has no contrast, so white fill with
-     ink text is the readable equivalent of the brand's primary button */
+  /* same outline treatment as .tabblie-impact__btn — both sit on orange, so
+     the site's solid-orange primary would have no contrast here */
   .tabblie-hiw2__cta {
     display: inline-flex;
     align-items: center;
-    gap: 11px;
-    background: #FFFFFF;
-    color: {{ ink }} !important;
+    gap: 10px;
+    background: transparent;
+    color: #FFFFFF !important;
     font-family: var(--text-font-family);
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 800;
-    padding: 17px 40px;
-    border: 3px solid {{ ink }};
+    letter-spacing: 0.02em;
+    padding: 14px 36px;
+    border: 2px solid #FFFFFF;
     border-radius: 100px;
-    box-shadow: 5px 6px 0 {{ ink }};
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none !important;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
   }
 
-  .tabblie-hiw2__cta:hover {
-    color: {{ ink }} !important;
-    transform: translateY(-3px);
-    box-shadow: 7px 9px 0 {{ ink }};
+  /* the theme's global a:hover wins without !important, which would leave
+     white text on the white hover fill */
+  .tabblie-hiw2__cta:hover,
+  .tabblie-hiw2__cta:focus {
+    background-color: #FFFFFF;
+    color: #182D20 !important;
+    border-color: #FFFFFF;
+    transform: translateY(-2px);
   }
 
-  .tabblie-hiw2__cta:active {
-    transform: translateY(1px);
-    box-shadow: 3px 4px 0 {{ ink }};
-  }
-
-  .tabblie-hiw2__cta svg { width: 20px; height: 20px; flex-shrink: 0; }
+  .tabblie-hiw2__cta svg { width: 17px; height: 17px; flex-shrink: 0; }
 
   /* the arrow nudges downward to say "keep scrolling" */
   .tabblie-hiw2__cta svg { animation: tabblie-hiw2-cta-down 2.1s ease-in-out infinite; }
@@ -263,6 +262,9 @@
       overscroll-behavior-x: contain;
       -webkit-overflow-scrolling: touch;
       scroll-snap-type: x mandatory;
+      /* vertical swipes belong to the page, not this rail — without this a
+         downward drag that starts on a card slides the row sideways */
+      touch-action: pan-x pinch-zoom;
       scroll-padding-left: 26px;
       scrollbar-width: none;
     }

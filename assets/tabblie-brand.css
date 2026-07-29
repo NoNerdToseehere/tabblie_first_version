@@ -2026,6 +2026,9 @@ body.template-product .productView .product-form__submit:disabled {
     overscroll-behavior-x: contain;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
+    /* vertical swipes belong to the page, not this rail — without this a
+       downward drag that starts on a card slides the row sideways */
+    touch-action: pan-x pinch-zoom;
     scroll-padding-left: 16px;
     margin-inline: -5px;
     padding: 0 16px 6px;
