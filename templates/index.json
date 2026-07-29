@@ -588,7 +588,7 @@
           "type": "step",
           "settings": {
             "title": "2. Gooi 'm erin",
-            "description": "In de trommel bij je was.",
+            "description": "In de wasmachine, de vaatwasser of de wc.",
             "image_asset": "tabblie-step-gooi.svg"
           }
         },
@@ -596,7 +596,7 @@
           "type": "step",
           "settings": {
             "title": "3. Klaar. Echt waar.",
-            "description": "Frisse was, elke keer weer.",
+            "description": "Schone was, vaat én toilet. Elke keer weer.",
             "image_asset": "tabblie-step-klaar.svg"
           }
         }
@@ -693,7 +693,7 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "Een strip z\u00f3nder chloor en bleek die de wc echt schoon krijgt? Dat geloofde ik dus niet. Maar het werkt \u2014 en het scheelt enorm veel ruimte onder de gootsteen.",
+            "quote": "Een strip zónder chloor en bleek die de wc echt schoon krijgt? Dat geloofde ik dus niet. Maar het werkt — en het scheelt enorm veel ruimte onder de gootsteen.",
             "name": "Sophie M.",
             "location": "Antwerp, BE",
             "avatar_asset": "tabblie-avatar-sophie.jpg",
@@ -714,12 +714,37 @@
     "tabblie_buy_vaatwas": {
       "type": "tabblie-buy-feature",
       "blocks": {
-        "b1": { "type": "benefit", "settings": { "text": "Geen half opgeloste blokjes" } },
-        "b2": { "type": "benefit", "settings": { "text": "Biologisch afbreekbaar" } },
-        "b3": { "type": "benefit", "settings": { "text": "100% plastic- & microplasticvrij" } },
-        "b4": { "type": "benefit", "settings": { "text": "Gratis verzending, morgen in huis" } }
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "text": "Geen half opgeloste blokjes"
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "text": "Biologisch afbreekbaar"
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "text": "100% plastic- & microplasticvrij"
+          }
+        },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "text": "Gratis verzending, morgen in huis"
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3", "b4"],
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
       "settings": {
         "product": "tabblie-vaatwasstrips",
         "bg_color": "#FDF6EE",
@@ -729,7 +754,7 @@
         "title": "Tabblie Vaatwasstrips",
         "rating": "4.5",
         "review_quote": "De vaatwasstrips werken zelfs beter dan mijn oude tabs. Geen residu, geen plastic, en mijn glazen zijn echt schoon.",
-        "review_author": "Thomas V. \u2014 Rotterdam",
+        "review_author": "Thomas V. — Rotterdam",
         "review_avatar_asset": "tabblie-avatar-thomas.jpg",
         "button_text": "In winkelwagen",
         "media_index": 2
@@ -738,12 +763,37 @@
     "tabblie_buy_toilet": {
       "type": "tabblie-buy-feature",
       "blocks": {
-        "b1": { "type": "benefit", "settings": { "text": "Frisse pot zonder plastic fles" } },
-        "b2": { "type": "benefit", "settings": { "text": "Biologisch afbreekbaar" } },
-        "b3": { "type": "benefit", "settings": { "text": "100% plastic- & microplasticvrij" } },
-        "b4": { "type": "benefit", "settings": { "text": "Gratis verzending, morgen in huis" } }
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "text": "Frisse pot zonder plastic fles"
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "text": "Biologisch afbreekbaar"
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "text": "100% plastic- & microplasticvrij"
+          }
+        },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "text": "Gratis verzending, morgen in huis"
+          }
+        }
       },
-      "block_order": ["b1", "b2", "b3", "b4"],
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4"
+      ],
       "settings": {
         "product": "tabblie-toiletstrips",
         "bg_color": "#FDF6EE",
@@ -752,8 +802,8 @@
         "eyebrow": "VOOR HET TOILET",
         "title": "Tabblie Toiletstrips",
         "rating": "4.5",
-        "review_quote": "Een strip z\u00f3nder chloor en bleek die de wc echt schoon krijgt? Dat geloofde ik dus niet. Maar het werkt \u2014 en het scheelt enorm veel ruimte onder de gootsteen.",
-        "review_author": "Sophie M. \u2014 Antwerpen",
+        "review_quote": "Een strip zónder chloor en bleek die de wc echt schoon krijgt? Dat geloofde ik dus niet. Maar het werkt — en het scheelt enorm veel ruimte onder de gootsteen.",
+        "review_author": "Sophie M. — Antwerpen",
         "review_avatar_asset": "tabblie-avatar-sophie.jpg",
         "button_text": "In winkelwagen",
         "media_index": 2
@@ -762,13 +812,44 @@
     "tabblie_cs_home": {
       "type": "tabblie-coming-soon",
       "blocks": {
-        "p1": { "type": "promise", "settings": { "text": "100% plastic- & microplasticvrij" } },
-        "p2": { "type": "promise", "settings": { "text": "Biologisch afbreekbaar" } },
-        "p3": { "type": "promise", "settings": { "text": "Gewoon weer een strip \u2014 geen fles, geen gedoe" } },
-        "p4": { "type": "promise", "settings": { "text": "Duurzaam gemaakt, eerlijk geprijsd" } },
-        "p5": { "type": "promise", "settings": { "text": "30 dagen proberen \u2014 niet goed, geld terug" } }
+        "p1": {
+          "type": "promise",
+          "settings": {
+            "text": "100% plastic- & microplasticvrij"
+          }
+        },
+        "p2": {
+          "type": "promise",
+          "settings": {
+            "text": "Biologisch afbreekbaar"
+          }
+        },
+        "p3": {
+          "type": "promise",
+          "settings": {
+            "text": "Gewoon weer een strip — geen fles, geen gedoe"
+          }
+        },
+        "p4": {
+          "type": "promise",
+          "settings": {
+            "text": "Duurzaam gemaakt, eerlijk geprijsd"
+          }
+        },
+        "p5": {
+          "type": "promise",
+          "settings": {
+            "text": "30 dagen proberen — niet goed, geld terug"
+          }
+        }
       },
-      "block_order": ["p1", "p2", "p3", "p4", "p5"],
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
       "settings": {
         "bg_color": "#E1ECFA",
         "compact": true,
@@ -779,7 +860,7 @@
         "eyebrow": "NOG HEEL EVEN GEDULD",
         "heading": "Er komt iets aan.",
         "heading_accent": "Wat? Dat verklappen we nog niet.",
-        "intro": "We werken aan het volgende Tabblie-product. W\u00e1t het wordt houden we nog even voor onszelf \u2014 maar waar het aan moet voldoen, dat staat al vast.",
+        "intro": "We werken aan het volgende Tabblie-product. Wát het wordt houden we nog even voor onszelf — maar waar het aan moet voldoen, dat staat al vast.",
         "image_alt": "Het volgende Tabblie-product, nog niet onthuld",
         "link_label": "Bekijk wat eraan komt",
         "signup_title": "Wil je 'm als eerste proberen?",
@@ -788,7 +869,7 @@
         "button_text": "Ja, ik wil gratis samples",
         "signup_tag": "sample-launch",
         "success_text": "Gelukt! Je staat op de lijst voor gratis samples.",
-        "terms": "Gratis samples bij de lancering, zolang de voorraad strekt. Geen spam \u2014 uitschrijven kan altijd."
+        "terms": "Gratis samples bij de lancering, zolang de voorraad strekt. Geen spam — uitschrijven kan altijd."
       }
     },
     "tabblie_impact_main": {
@@ -1406,7 +1487,7 @@
         "title": "Tabblie Wasstrips",
         "rating": "4.5",
         "review_quote": "Zoveel goedkoper, en geen gemors of verspilling meer. Ook geen zware flessen meer sjouwen. Ik stap nooit meer terug over op vloeibaar wasmiddel.",
-        "review_author": "Lisa B. \u2014 Amsterdam",
+        "review_author": "Lisa B. — Amsterdam",
         "review_avatar_asset": "tabblie-avatar-lisa.jpg",
         "button_text": "In winkelwagen",
         "media_index": 2
