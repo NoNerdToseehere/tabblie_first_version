@@ -233,7 +233,7 @@
             "open_tab_mobile": false,
             "title": "Gebruik",
             "type": "all",
-            "content": "<strong>Zo simpel is het</strong><br>1. Scheur een strip af langs de perforatie.<br>2. Gooi de strip in de pot en laat hem 10-15 minuten bruisen en inwerken.<br>3. Even borstelen, doorspoelen, klaar.<br><br><strong>Hardnekkige aanslag of kalk?</strong><br>Laat de strip een nacht inwerken en borstel daarna kort na.<br><br><strong>Hoe vaak gebruiken?</strong><br>1-2 keer per week is genoeg voor een fris en schoon toilet.<br><br><strong>Veilig voor mijn afvoer?</strong><br>Ja — de strip lost volledig op, is 100% biologisch afbreekbaar en veilig voor afvoer en septic tank.",
+            "content": "<strong>Zo simpel is het</strong><br>1. Scheur een strip af langs de perforatie.<br>2. Gooi de strip in de pot en laat hem 10-15 minuten bruisen en inwerken.<br>3. Even borstelen, doorspoelen, klaar.<br><br><strong>Hardnekkige aanslag of kalk?</strong><br>Laat de strip een nacht inwerken en borstel daarna kort na.<br><br><strong>Hoe vaak gebruiken?</strong><br>1-2 keer per week is genoeg voor een fris en schoon toilet.<br><br><strong>Veilig voor mijn afvoer?</strong><br>Ja — de strip lost volledig op, is biologisch afbreekbaar en veilig voor afvoer en septic tank.",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -285,7 +285,7 @@
             "open_tab_mobile": false,
             "title": "Duurzaamheid",
             "type": "all",
-            "content": "<strong>Is het echt 100% plasticvrij?</strong><br>Ja. Geen plastic fles, geen plastic folie én geen verborgen plastic: onze strips bevatten geen PVA of microplastics en zijn 100% biologisch afbreekbaar.<br><br><strong>En de verpakking?</strong><br>Papier — compact, licht en gewoon bij het oud papier te recyclen.<br><br><strong>Hoe zit het met CO2?</strong><br>We compenseren onze volledige CO2-voetafdruk via gecertificeerde milieuprojecten en steunen initiatieven die plastic uit oceanen halen en bomen planten. En omdat strips zo compact en licht zijn (geen water meesjouwen), is de uitstoot bij verzending tot 90% lager dan bij schoonmaakmiddelen in plastic flessen.",
+            "content": "<strong>Is het echt 100% plasticvrij?</strong><br>Ja. Geen plastic fles, geen plastic folie én geen verborgen plastic: onze strips bevatten geen PVA of microplastics en zijn biologisch afbreekbaar.<br><br><strong>En de verpakking?</strong><br>Papier — compact, licht en gewoon bij het oud papier te recyclen.<br><br><strong>Hoe zit het met CO2?</strong><br>We compenseren onze volledige CO2-voetafdruk via gecertificeerde milieuprojecten en steunen initiatieven die plastic uit oceanen halen en bomen planten. En omdat strips zo compact en licht zijn (geen water meesjouwen), is de uitstoot bij verzending tot 90% lager dan bij schoonmaakmiddelen in plastic flessen.",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -501,7 +501,7 @@
         "b2": {
           "type": "benefit",
           "settings": {
-            "text": "100% biologisch afbreekbaar"
+            "text": "Biologisch afbreekbaar"
           }
         },
         "b3": {
@@ -1100,7 +1100,7 @@
           "type": "faq",
           "settings": {
             "question": "Is het veilig voor mijn afvoer en septic tank?",
-            "answer": "<p>Helemaal. De strip lost volledig op, is 100% biologisch afbreekbaar en bevat geen chloor of bleek.</p>"
+            "answer": "<p>Helemaal. De strip lost volledig op, is biologisch afbreekbaar en bevat geen chloor of bleek.</p>"
           }
         },
         "q3": {

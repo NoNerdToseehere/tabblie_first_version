@@ -300,7 +300,7 @@
             "open_tab_mobile": false,
             "title": "Duurzaamheid",
             "type": "all",
-            "content": "<strong>Is het echt 100% plasticvrij?</strong><br>Ja. Geen plastic fles, geen plastic folie én geen verborgen plastic: onze strips bevatten geen PVA of microplastics en zijn 100% biologisch afbreekbaar.<br><br><strong>En de verpakking?</strong><br>Papier — compact, licht en gewoon bij het oud papier te recyclen.<br><br><strong>Hoe zit het met CO2?</strong><br>We compenseren onze volledige CO2-voetafdruk via gecertificeerde milieuprojecten en steunen initiatieven die plastic uit oceanen halen en bomen planten. En omdat strips zo compact en licht zijn (geen water meesjouwen), is de uitstoot bij verzending tot 90% lager dan bij schoonmaakmiddelen in plastic flessen.",
+            "content": "<strong>Is het echt 100% plasticvrij?</strong><br>Ja. Geen plastic fles, geen plastic folie én geen verborgen plastic: onze strips bevatten geen PVA of microplastics en zijn biologisch afbreekbaar.<br><br><strong>En de verpakking?</strong><br>Papier — compact, licht en gewoon bij het oud papier te recyclen.<br><br><strong>Hoe zit het met CO2?</strong><br>We compenseren onze volledige CO2-voetafdruk via gecertificeerde milieuprojecten en steunen initiatieven die plastic uit oceanen halen en bomen planten. En omdat strips zo compact en licht zijn (geen water meesjouwen), is de uitstoot bij verzending tot 90% lager dan bij schoonmaakmiddelen in plastic flessen.",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -533,7 +533,7 @@
         "b2": {
           "type": "benefit",
           "settings": {
-            "text": "100% biologisch afbreekbaar — zonder PVA of microplastics"
+            "text": "Biologisch afbreekbaar — zonder PVA of microplastics"
           }
         },
         "b3": {
