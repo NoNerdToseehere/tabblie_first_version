@@ -85,8 +85,9 @@
 
   /* Panel header strip */
   .tmf-panel__header {
-    background: linear-gradient(160deg, #E1ECFA 0%, #C8D9F5 60%, #D5E3F8 100%);
-    padding: 18px 24px;
+    background: #FFFFFF;
+    border-bottom: 1px solid rgba(24, 45, 32, 0.08);
+    padding: 16px 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -105,9 +106,9 @@
 
   .tmf-panel__title {
     font-family: var(--heading-font-family);
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #182D20;
+    font-size: 15px;
+    font-weight: 700;
+    color: #26523F;
     letter-spacing: -0.015em;
     line-height: 1.3;
     margin: 0;
@@ -220,17 +221,20 @@
   .tmf-tile {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 12px 12px 10px;
+    gap: 12px;
+    padding: 10px 12px;
     border-radius: 12px;
+    background: #FFFFFF;
+    border: 1px solid rgba(24, 45, 32, 0.08);
     text-decoration: none;
     color: #182D20;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
   }
 
   .tmf-tile:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(24, 45, 32, 0.08);
+    background: #FDF6EE;
+    border-color: rgba(232, 98, 42, 0.45);
+    transform: translateX(2px);
   }
 
   .tmf-tile--soon {
@@ -243,8 +247,10 @@
   }
 
   .tmf-tile__q {
-    width: 44px;
-    height: 44px;
+    width: 52px;
+    height: 52px;
+    background: var(--tile-accent, #FDF6EE);
+    border-radius: 10px;
     flex-shrink: 0;
     display: inline-flex;
     align-items: center;
@@ -263,17 +269,20 @@
   }
 
   .tmf-tile__img {
-    width: 56px;
-    height: 56px;
-    object-fit: cover;
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
     border-radius: 10px;
     flex-shrink: 0;
+    background: var(--tile-accent, #FDF6EE);
+    padding: 4px;
   }
 
   .tmf-tile__name {
     font-family: var(--heading-font-family);
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #26523F;
     letter-spacing: -0.01em;
     line-height: 1.15;
     margin: 0 0 2px;
@@ -298,7 +307,7 @@
     display: block;
     padding: 14px 16px;
     border-radius: 12px;
-    background: linear-gradient(135deg, #E8622A 0%, #F5934A 100%);
+    background: #26523F;
     color: #ffffff;
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -306,7 +315,7 @@
 
   .tmf-promo:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(232, 98, 42, 0.25);
+    box-shadow: 0 8px 20px rgba(38, 82, 63, 0.22);
     color: #ffffff;
   }
 
@@ -316,7 +325,7 @@
     font-weight: 700;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.85);
+    color: #F5A97A;
     margin: 0 0 4px;
   }
 
@@ -428,7 +437,7 @@
               {%- when 'tabblie-binnenkort' -%}{%- assign tile_bg = '#FCE8E8' -%}
             {%- endcase -%}
             {%- if product.handle == 'tabblie-binnenkort' -%}
-              <div class="tmf-tile tmf-tile--soon" style="background: {{ tile_bg }};">
+              <div class="tmf-tile tmf-tile--soon" style="--tile-accent: {{ tile_bg }};">
                 <span class="tmf-tile__q" aria-hidden="true">?</span>
                 <div>
                   <p class="tmf-tile__name">{{ product.title | escape }}</p>
@@ -436,7 +445,7 @@
                 </div>
               </div>
             {%- else -%}
-              <a class="tmf-tile" href="{{ product.url }}" style="background: {{ tile_bg }};">
+              <a class="tmf-tile" href="{{ product.url }}" style="--tile-accent: {{ tile_bg }};">
                 {%- if product.featured_image -%}
                   <img class="tmf-tile__img" src="{{ product.featured_image | image_url: width: 112 }}" alt="{{ product.title | escape }}" loading="lazy" width="56" height="56">
                 {%- else -%}
