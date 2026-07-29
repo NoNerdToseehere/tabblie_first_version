@@ -204,29 +204,49 @@
     margin-top: clamp(24px, 3vw, 38px);
   }
 
+  /* solid button — orange-on-orange has no contrast, so white fill with
+     ink text is the readable equivalent of the brand's primary button */
   .tabblie-hiw2__cta {
     display: inline-flex;
     align-items: center;
     gap: 11px;
-    background: transparent;
-    color: #FFFFFF !important;
+    background: #FFFFFF;
+    color: {{ ink }} !important;
     font-family: var(--text-font-family);
     font-size: 17px;
     font-weight: 800;
-    padding: 16px 40px;
-    border: 2.5px solid #FFFFFF;
+    padding: 17px 40px;
+    border: 3px solid {{ ink }};
     border-radius: 100px;
+    box-shadow: 5px 6px 0 {{ ink }};
     text-decoration: none;
-    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .tabblie-hiw2__cta:hover {
-    background: #FFFFFF;
     color: {{ ink }} !important;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    box-shadow: 7px 9px 0 {{ ink }};
+  }
+
+  .tabblie-hiw2__cta:active {
+    transform: translateY(1px);
+    box-shadow: 3px 4px 0 {{ ink }};
   }
 
   .tabblie-hiw2__cta svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+  /* the arrow nudges downward to say "keep scrolling" */
+  .tabblie-hiw2__cta svg { animation: tabblie-hiw2-cta-down 2.1s ease-in-out infinite; }
+
+  @keyframes tabblie-hiw2-cta-down {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tabblie-hiw2__cta svg { animation: none; }
+  }
 
   /* Phone/tablet: the three steps stay on one line and scroll left-to-right,
      with an arrow in each gap so it reads as one continuous flow. */
@@ -342,7 +362,7 @@
       <div class="tabblie-hiw2__cta-wrap">
         <a class="tabblie-hiw2__cta" href="{{ section.settings.cta_url | default: '/collections/all' }}">
           {{ section.settings.cta_text }}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13"/><path d="M12.5 6 18.5 12l-6 6"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v13"/><path d="M6 12.5 12 18.5l6-6"/></svg>
         </a>
       </div>
     {%- endif -%}

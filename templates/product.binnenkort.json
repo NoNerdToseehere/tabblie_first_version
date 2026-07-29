@@ -1,0 +1,158 @@
+{
+  "sections": {
+    "coming_soon": {
+      "type": "tabblie-coming-soon",
+      "blocks": {
+        "p1": {
+          "type": "promise",
+          "settings": {
+            "text": "100% plastic- & microplasticvrij"
+          }
+        },
+        "p2": {
+          "type": "promise",
+          "settings": {
+            "text": "Biologisch afbreekbaar"
+          }
+        },
+        "p3": {
+          "type": "promise",
+          "settings": {
+            "text": "Gewoon weer een strip — geen fles, geen gedoe"
+          }
+        },
+        "p4": {
+          "type": "promise",
+          "settings": {
+            "text": "Duurzaam gemaakt, eerlijk geprijsd"
+          }
+        },
+        "p5": {
+          "type": "promise",
+          "settings": {
+            "text": "30 dagen proberen — niet goed, geld terug"
+          }
+        }
+      },
+      "block_order": ["p1", "p2", "p3", "p4", "p5"],
+      "settings": {
+        "bg_color": "#E1ECFA",
+        "stamp_text": "Binnenkort",
+        "eyebrow": "NOG HEEL EVEN GEDULD",
+        "heading": "Er komt iets aan.",
+        "heading_accent": "Wat? Dat verklappen we nog niet.",
+        "intro": "We werken aan het volgende Tabblie-product. Wát het wordt houden we nog even voor onszelf — maar waar het aan moet voldoen, dat staat al vast.",
+        "image_alt": "Het volgende Tabblie-product, nog niet onthuld",
+        "signup_title": "Wil je 'm als eerste proberen?",
+        "signup_sub": "Schrijf je in en je krijgt bij de lancering gratis samples in de bus. Geen kosten, geen verplichting.",
+        "placeholder": "Je e-mailadres",
+        "button_text": "Ja, ik wil gratis samples",
+        "signup_tag": "sample-launch",
+        "success_text": "Gelukt! Je staat op de lijst voor gratis samples.",
+        "terms": "Gratis samples bij de lancering, zolang de voorraad strekt. Geen spam — uitschrijven kan altijd."
+      }
+    },
+    "tierelier": {
+      "type": "tabblie-tierelier",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/1_2979738d-9656-43ce-8efa-19856c3ee753.png",
+            "label": "Natuurlijke formule",
+            "sublabel": "Zacht voor jou, hard voor vuil."
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/2_9e3d8a68-d3a0-47fa-a5b2-6242d565b40e.png",
+            "label": "Biologisch afbreekbaar",
+            "sublabel": "Keer terug naar de natuur."
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/3_96fadf1d-b746-4710-bac5-3447a9828883.png",
+            "label": "Geen plastic, nooit",
+            "sublabel": "Geen microplastics. Nooit."
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/4_7889bf7b-2673-4d52-bde0-f37fa754b3e7.png",
+            "label": "Super effectief",
+            "sublabel": "Schitterend schoon, elke keer."
+          }
+        }
+      },
+      "block_order": ["item_1", "item_2", "item_3", "item_4"],
+      "settings": {
+        "bg_color": "#F08CAE",
+        "heading_line1": "Werkt als een",
+        "heading_line2": "tierelier.",
+        "pill_text": "Beter voor de planeet."
+      }
+    },
+    "education": {
+      "type": "tabblie-education",
+      "blocks": {
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "number": "90%",
+            "description": "van de schoonmaakproducten bevatten microplastics",
+            "is_positive": false
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "number": "24",
+            "description": "kilo per persoon aan plastic afval van schoonmaakproducten",
+            "is_positive": false
+          }
+        },
+        "stat_3": {
+          "type": "stat",
+          "settings": {
+            "number": "91%",
+            "description": "van al het plastic wordt niet gerecycled",
+            "is_positive": false
+          }
+        },
+        "stat_4": {
+          "type": "stat",
+          "settings": {
+            "number": "100%",
+            "description": "100% plastic- & microplasticvrij",
+            "is_positive": true
+          }
+        }
+      },
+      "block_order": ["stat_1", "stat_2", "stat_3", "stat_4"],
+      "settings": {
+        "eyebrow": "WAAROM WE DIT DOEN",
+        "heading": "Wat traditionele merken",
+        "heading_accent": "niet vertellen"
+      }
+    },
+    "guarantee": {
+      "type": "tabblie-guarantee",
+      "settings": {
+        "eyebrow": "ONZE GARANTIE",
+        "heading": "Probeer het 30 dagen.",
+        "heading_accent": "Risicovrij!",
+        "body": "<p>Elk Tabblie-product krijgt dezelfde belofte mee: 30 dagen risicovrij proberen. Ook dit nieuwe product straks.</p><p><strong>Niet tevreden? Dan krijg je je geld volledig terug.</strong> Geen vragen, geen gedoe.</p>",
+        "button_text": "",
+        "button_url": "",
+        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
+        "image_alt": "30 dagen proefwassen",
+        "badge_text": "30 dagen proef wassen"
+      }
+    }
+  },
+  "order": ["coming_soon", "tierelier", "education", "guarantee"]
+}

@@ -10,8 +10,10 @@
 {%- assign media_i = section.settings.media_index | default: 2 | minus: 1 -%}
 
 <style>
+  /* NB: background comes from an inline style, not this rule. Several
+     instances of this section share one class name, so a Liquid-interpolated
+     background here would let the last one on the page win for all of them. */
   .tabblie-buy {
-    background-color: {{ section.settings.bg_color | default: '#E2F2ED' }};
     padding: clamp(48px, 6vw, 84px) clamp(16px, 3vw, 40px);
   }
 
@@ -37,6 +39,20 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.35s cubic-bezier(0.34, 1.2, 0.64, 1);
+  }
+
+  .tabblie-buy__media-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .tabblie-buy__media-link:hover img { transform: scale(1.035); }
+
+  .tabblie-buy__media-link:focus-visible {
+    outline: 3px solid #E8622A;
+    outline-offset: 3px;
   }
 
   .tabblie-buy__content {
@@ -94,6 +110,96 @@
     font-size: 18px;
     font-weight: 600;
     color: rgba(24, 45, 32, 0.5);
+  }
+
+  /* ── Social proof ── */
+  .tabblie-buy__rating {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 12px;
+  }
+
+  .tabblie-buy__stars {
+    display: inline-flex;
+    gap: 2px;
+    color: #E8622A;
+  }
+
+  .tabblie-buy__stars svg {
+    width: 19px;
+    height: 19px;
+    fill: currentColor;
+  }
+
+  .tabblie-buy__rating-text {
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 700;
+    color: #182D20;
+  }
+
+  .tabblie-buy__rating-text span {
+    font-weight: 600;
+    color: rgba(24, 45, 32, 0.6);
+  }
+
+  .tabblie-buy__review {
+    margin: 0 0 22px;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.66);
+    border-radius: 14px;
+    border-left: 4px solid #E8622A;
+  }
+
+  .tabblie-buy__review blockquote {
+    margin: 0;
+    font-family: var(--text-font-family);
+    font-size: 14.5px;
+    font-style: italic;
+    font-weight: 500;
+    color: rgba(24, 45, 32, 0.85);
+    line-height: 1.5;
+  }
+
+  .tabblie-buy__review figcaption {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    margin-top: 8px;
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 700;
+    color: #182D20;
+  }
+
+  .tabblie-buy__review-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #FFFFFF;
+    box-shadow: 0 1px 4px rgba(24, 45, 32, 0.18);
+  }
+
+  .tabblie-buy__review-name { margin-right: auto; }
+
+  .tabblie-buy__review-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #E8622A;
+    white-space: nowrap;
+  }
+
+  .tabblie-buy__review-verified svg {
+    width: 12px;
+    height: 12px;
+    fill: none;
   }
 
   .tabblie-buy__benefits {
@@ -172,6 +278,58 @@
     padding-bottom: 3px;
   }
 
+  /* Image side — alternates when several of these stack up. Mobile always
+     leads with the image, so this only applies once side-by-side. */
+  @media (min-width: 750px) {
+    .tabblie-buy--reversed .tabblie-buy__media { order: 2; }
+    .tabblie-buy--reversed .tabblie-buy__inner { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Compact — for stacking several of these in a row without the page
+     running away. Smaller image, tighter type, less air. */
+  .tabblie-buy--compact {
+    padding: clamp(18px, 1.9vw, 26px) clamp(16px, 3vw, 40px);
+  }
+
+  .tabblie-buy--compact .tabblie-buy__inner {
+    max-width: 940px;
+    grid-template-columns: 0.78fr 1.22fr;
+    gap: clamp(20px, 2.6vw, 38px);
+  }
+
+  /* the photo is the tallest thing in the row — capping it is what actually
+     shortens the section */
+  .tabblie-buy--compact .tabblie-buy__media {
+    aspect-ratio: 1 / 1;
+    max-height: 268px;
+    max-width: 268px;
+    margin-inline: auto;
+  }
+
+  .tabblie-buy--compact.tabblie-buy--reversed .tabblie-buy__inner {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .tabblie-buy--compact .tabblie-buy__media { border-radius: 18px; }
+  .tabblie-buy--compact .tabblie-buy__title { font-size: clamp(21px, 2.1vw, 28px); margin-bottom: 5px; }
+  .tabblie-buy--compact .tabblie-buy__eyebrow { font-size: 11.5px; margin-bottom: 7px; }
+  .tabblie-buy--compact .tabblie-buy__price { font-size: 20px; margin-bottom: 10px; }
+  .tabblie-buy--compact .tabblie-buy__rating { margin-bottom: 7px; gap: 7px; }
+  .tabblie-buy--compact .tabblie-buy__stars svg { width: 15px; height: 15px; }
+  .tabblie-buy--compact .tabblie-buy__rating-text { font-size: 13px; }
+  .tabblie-buy--compact .tabblie-buy__review { padding: 10px 13px; margin-bottom: 14px; border-radius: 12px; }
+  .tabblie-buy--compact .tabblie-buy__review blockquote { font-size: 13px; line-height: 1.45; }
+  .tabblie-buy--compact .tabblie-buy__review figcaption { margin-top: 6px; font-size: 12px; gap: 3px 8px; }
+  .tabblie-buy--compact .tabblie-buy__review-avatar { width: 28px; height: 28px; }
+  .tabblie-buy--compact .tabblie-buy__benefits { gap: 6px; margin-bottom: 15px; }
+  .tabblie-buy--compact .tabblie-buy__benefit { font-size: 13.5px; gap: 9px; }
+  .tabblie-buy--compact .tabblie-buy__check { width: 19px; height: 19px; }
+  .tabblie-buy--compact .tabblie-buy__check svg { width: 10px; height: 10px; }
+  .tabblie-buy--compact .tabblie-buy__actions { gap: 10px 16px; }
+  .tabblie-buy--compact .tabblie-buy__atc { font-size: 15px; padding: 12px 26px; }
+  .tabblie-buy--compact .tabblie-buy__atc svg { width: 17px; height: 17px; }
+  .tabblie-buy--compact .tabblie-buy__options { font-size: 14px; }
+
   @media (max-width: 749px) {
     .tabblie-buy__inner {
       grid-template-columns: 1fr;
@@ -185,13 +343,24 @@
     .tabblie-buy__atc {
       width: 100%;
     }
+
+    .tabblie-buy--compact { padding: 26px 16px; }
+    .tabblie-buy--compact .tabblie-buy__inner { grid-template-columns: 1fr; gap: 16px; }
+    /* a tall photo per product is a lot of scrolling on a phone */
+    .tabblie-buy--compact .tabblie-buy__media { aspect-ratio: 1 / 1; max-height: 240px; max-width: 240px; }
   }
 </style>
 
-<section class="tabblie-buy" id="tabblie-buy-{{ section.id }}">
+{%- if section.settings.anchor_id != blank -%}
+  <div id="{{ section.settings.anchor_id | handle }}" aria-hidden="true" style="display:block;height:1px;margin-top:-1px;scroll-margin-top:90px"></div>
+{%- endif -%}
+<section class="tabblie-buy{% if section.settings.compact %} tabblie-buy--compact{% endif %}{% if section.settings.image_side == 'right' %} tabblie-buy--reversed{% endif %}" id="tabblie-buy-{{ section.id }}" style="background-color: {{ section.settings.bg_color | default: '#E2F2ED' }}">
   <div class="tabblie-buy__inner">
 
     <div class="tabblie-buy__media">
+      {%- if product != blank -%}
+        <a class="tabblie-buy__media-link" href="{{ product.url }}" aria-label="{{ product.title | escape }} bekijken">
+      {%- endif -%}
       {%- assign chosen = product.media[media_i] -%}
       {%- if chosen != blank -%}
         <img src="{{ chosen.preview_image | image_url: width: 1000 }}" alt="{{ product.title | escape }}" width="1000" height="1000" loading="lazy">
@@ -204,6 +373,7 @@
       {%- else -%}
         <img src="{{ 'tabblie-wasstrips.png' | asset_url }}" alt="Tabblie Wasstrips" width="900" height="675" loading="lazy">
       {%- endif -%}
+      {%- if product != blank -%}</a>{%- endif -%}
     </div>
 
     <div class="tabblie-buy__content">
@@ -212,6 +382,33 @@
       {%- endif -%}
 
       <h2 class="tabblie-buy__title">{{ section.settings.title | default: product.title | default: 'Tabblie Wasstrips' }}</h2>
+
+      {%- if section.settings.rating != blank -%}
+        <div class="tabblie-buy__rating">
+          <span class="tabblie-buy__stars" role="img" aria-label="{{ section.settings.rating }} van de 5 sterren">
+            {%- assign rating_num = section.settings.rating | times: 1.0 -%}
+            {%- for i in (1..5) -%}
+              {%- assign remaining = rating_num | minus: forloop.index0 -%}
+              {%- if remaining >= 1 -%}
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.35 6.19 20.4l1.11-6.47L2.6 9.35l6.5-.95z"/></svg>
+              {%- elsif remaining > 0 -%}
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <defs><linearGradient id="tbhalf-{{ section.id }}"><stop offset="50%" stop-color="currentColor"/><stop offset="50%" stop-color="transparent"/></linearGradient></defs>
+                  <path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.35 6.19 20.4l1.11-6.47L2.6 9.35l6.5-.95z" fill="url(#tbhalf-{{ section.id }})" stroke="currentColor" stroke-width="1.4"/>
+                </svg>
+              {%- else -%}
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.35 6.19 20.4l1.11-6.47L2.6 9.35l6.5-.95z" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+              {%- endif -%}
+            {%- endfor -%}
+          </span>
+          <span class="tabblie-buy__rating-text">
+            {{ section.settings.rating }}/5
+            {%- if section.settings.rating_count != blank -%}
+              {{ ' ' }}<span>· {{ section.settings.rating_count }}</span>
+            {%- endif -%}
+          </span>
+        </div>
+      {%- endif -%}
 
       {%- if product != blank -%}
         <p class="tabblie-buy__price">
@@ -237,6 +434,32 @@
             {%- endif -%}
           {%- endfor -%}
         </ul>
+      {%- endif -%}
+
+      {%- if section.settings.review_quote != blank -%}
+        <figure class="tabblie-buy__review">
+          <blockquote>{{ section.settings.review_quote }}</blockquote>
+          {%- if section.settings.review_author != blank -%}
+            <figcaption>
+              {%- if section.settings.review_avatar != blank -%}
+                <img class="tabblie-buy__review-avatar"
+                     src="{{ section.settings.review_avatar | image_url: width: 96 }}"
+                     alt=""
+                     width="36" height="36" loading="lazy">
+              {%- elsif section.settings.review_avatar_asset != blank -%}
+                <img class="tabblie-buy__review-avatar"
+                     src="{{ section.settings.review_avatar_asset | asset_url }}"
+                     alt=""
+                     width="36" height="36" loading="lazy">
+              {%- endif -%}
+              <span class="tabblie-buy__review-name">{{ section.settings.review_author }}</span>
+              <span class="tabblie-buy__review-verified">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
+                Geverifieerd
+              </span>
+            </figcaption>
+          {%- endif -%}
+        </figure>
       {%- endif -%}
 
       <div class="tabblie-buy__actions">
@@ -268,6 +491,16 @@
     { "type": "image_picker", "id": "image", "label": "Afbeelding (optioneel, anders productfoto)" },
     { "type": "text", "id": "image_asset", "label": "Afbeelding uit theme assets (bestandsnaam)", "info": "Bijv. tabblie-product-feature.png — heeft voorrang" },
     { "type": "color", "id": "bg_color", "label": "Achtergrondkleur", "default": "#E2F2ED" },
+    { "type": "checkbox", "id": "compact", "label": "Compacte weergave", "info": "Kleiner blok — gebruik dit als er meerdere productblokken onder elkaar staan.", "default": false },
+    { "type": "select", "id": "image_side", "label": "Afbeelding aan", "options": [ { "value": "left", "label": "Links" }, { "value": "right", "label": "Rechts" } ], "default": "left" },
+    { "type": "text", "id": "anchor_id", "label": "Anker-id", "info": "Maakt deze sectie linkbaar, bijv. 'tabblie-strips' → link ernaartoe met #tabblie-strips." },
+    { "type": "header", "content": "Social proof" },
+    { "type": "text", "id": "rating", "label": "Beoordeling (0-5)", "info": "Moet de échte gemiddelde score zijn — verzonnen scores zijn in de EU verboden. Leeg = geen sterren." },
+    { "type": "text", "id": "rating_count", "label": "Aantal beoordelingen", "info": "Bijv. '128 reviews'. Leeg = alleen de score." },
+    { "type": "textarea", "id": "review_quote", "label": "Review citaat", "info": "Alleen een echte, herleidbare klantreview." },
+    { "type": "text", "id": "review_author", "label": "Naam klant", "info": "Bijv. 'Lisa B. — Amsterdam'" },
+    { "type": "image_picker", "id": "review_avatar", "label": "Foto klant" },
+    { "type": "text", "id": "review_avatar_asset", "label": "Foto klant uit theme assets", "info": "Bestandsnaam, bijv. tabblie-avatar-lisa.jpg. Alleen gebruikt als hierboven geen foto is gekozen." },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "MEEST GEKOZEN" },
     { "type": "text", "id": "title", "label": "Titel (leeg = productnaam)" },
     { "type": "text", "id": "button_text", "label": "Knop tekst", "default": "In winkelwagen" },

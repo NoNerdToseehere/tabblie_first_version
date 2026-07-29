@@ -611,7 +611,7 @@
         "eyebrow": "ZO WERKT HET",
         "title": "Kleine strips. Een groot verschil in je routine.",
         "cta_text": "Bekijk alle strips",
-        "cta_url": "/collections/all"
+        "cta_url": "#tabblie-strips"
       }
     },
     "tabblie_hiw_main": {
@@ -693,7 +693,7 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "Ik was sceptisch — een strip die toiletten reinigt? Maar het werkt echt. Scheelt ook enorm veel ruimte onder de gootsteen.",
+            "quote": "Een strip z\u00f3nder chloor en bleek die de wc echt schoon krijgt? Dat geloofde ik dus niet. Maar het werkt \u2014 en het scheelt enorm veel ruimte onder de gootsteen.",
             "name": "Sophie M.",
             "location": "Antwerp, BE",
             "avatar_asset": "tabblie-avatar-sophie.jpg",
@@ -709,6 +709,86 @@
       "settings": {
         "eyebrow": "Wat klanten zeggen",
         "title": "Eindelijk milieuvriendelijk schoonmaken — zonder in te leveren op kwaliteit, looks of prijs."
+      }
+    },
+    "tabblie_buy_vaatwas": {
+      "type": "tabblie-buy-feature",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "text": "Geen half opgeloste blokjes" } },
+        "b2": { "type": "benefit", "settings": { "text": "Biologisch afbreekbaar" } },
+        "b3": { "type": "benefit", "settings": { "text": "100% plastic- & microplasticvrij" } },
+        "b4": { "type": "benefit", "settings": { "text": "Gratis verzending, morgen in huis" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"],
+      "settings": {
+        "product": "tabblie-vaatwasstrips",
+        "bg_color": "#FDF6EE",
+        "compact": true,
+        "image_side": "right",
+        "eyebrow": "VOOR DE VAATWASSER",
+        "title": "Tabblie Vaatwasstrips",
+        "rating": "4.5",
+        "review_quote": "De vaatwasstrips werken zelfs beter dan mijn oude tabs. Geen residu, geen plastic, en mijn glazen zijn echt schoon.",
+        "review_author": "Thomas V. \u2014 Rotterdam",
+        "review_avatar_asset": "tabblie-avatar-thomas.jpg",
+        "button_text": "In winkelwagen",
+        "media_index": 2
+      }
+    },
+    "tabblie_buy_toilet": {
+      "type": "tabblie-buy-feature",
+      "blocks": {
+        "b1": { "type": "benefit", "settings": { "text": "Frisse pot zonder plastic fles" } },
+        "b2": { "type": "benefit", "settings": { "text": "Biologisch afbreekbaar" } },
+        "b3": { "type": "benefit", "settings": { "text": "100% plastic- & microplasticvrij" } },
+        "b4": { "type": "benefit", "settings": { "text": "Gratis verzending, morgen in huis" } }
+      },
+      "block_order": ["b1", "b2", "b3", "b4"],
+      "settings": {
+        "product": "tabblie-toiletstrips",
+        "bg_color": "#FDF6EE",
+        "compact": true,
+        "image_side": "left",
+        "eyebrow": "VOOR HET TOILET",
+        "title": "Tabblie Toiletstrips",
+        "rating": "4.5",
+        "review_quote": "Een strip z\u00f3nder chloor en bleek die de wc echt schoon krijgt? Dat geloofde ik dus niet. Maar het werkt \u2014 en het scheelt enorm veel ruimte onder de gootsteen.",
+        "review_author": "Sophie M. \u2014 Antwerpen",
+        "review_avatar_asset": "tabblie-avatar-sophie.jpg",
+        "button_text": "In winkelwagen",
+        "media_index": 2
+      }
+    },
+    "tabblie_cs_home": {
+      "type": "tabblie-coming-soon",
+      "blocks": {
+        "p1": { "type": "promise", "settings": { "text": "100% plastic- & microplasticvrij" } },
+        "p2": { "type": "promise", "settings": { "text": "Biologisch afbreekbaar" } },
+        "p3": { "type": "promise", "settings": { "text": "Gewoon weer een strip \u2014 geen fles, geen gedoe" } },
+        "p4": { "type": "promise", "settings": { "text": "Duurzaam gemaakt, eerlijk geprijsd" } },
+        "p5": { "type": "promise", "settings": { "text": "30 dagen proberen \u2014 niet goed, geld terug" } }
+      },
+      "block_order": ["p1", "p2", "p3", "p4", "p5"],
+      "settings": {
+        "bg_color": "#E1ECFA",
+        "compact": true,
+        "image_side": "right",
+        "heading_tag": "h2",
+        "product": "tabblie-binnenkort",
+        "stamp_text": "Binnenkort",
+        "eyebrow": "NOG HEEL EVEN GEDULD",
+        "heading": "Er komt iets aan.",
+        "heading_accent": "Wat? Dat verklappen we nog niet.",
+        "intro": "We werken aan het volgende Tabblie-product. W\u00e1t het wordt houden we nog even voor onszelf \u2014 maar waar het aan moet voldoen, dat staat al vast.",
+        "image_alt": "Het volgende Tabblie-product, nog niet onthuld",
+        "link_label": "Bekijk wat eraan komt",
+        "signup_title": "Wil je 'm als eerste proberen?",
+        "signup_sub": "Schrijf je in en je krijgt bij de lancering gratis samples in de bus. Geen kosten, geen verplichting.",
+        "placeholder": "Je e-mailadres",
+        "button_text": "Ja, ik wil gratis samples",
+        "signup_tag": "sample-launch",
+        "success_text": "Gelukt! Je staat op de lijst voor gratis samples.",
+        "terms": "Gratis samples bij de lancering, zolang de voorraad strekt. Geen spam \u2014 uitschrijven kan altijd."
       }
     },
     "tabblie_impact_main": {
@@ -1318,9 +1398,16 @@
       ],
       "settings": {
         "product": "tabblie-wasstrips",
-        "bg_color": "#E1ECFA",
+        "bg_color": "#FDF6EE",
+        "compact": true,
+        "image_side": "left",
+        "anchor_id": "tabblie-strips",
         "eyebrow": "MEEST GEKOZEN",
         "title": "Tabblie Wasstrips",
+        "rating": "4.5",
+        "review_quote": "Zoveel goedkoper, en geen gemors of verspilling meer. Ook geen zware flessen meer sjouwen. Ik stap nooit meer terug over op vloeibaar wasmiddel.",
+        "review_author": "Lisa B. \u2014 Amsterdam",
+        "review_avatar_asset": "tabblie-avatar-lisa.jpg",
         "button_text": "In winkelwagen",
         "media_index": 2
       }
@@ -1335,6 +1422,9 @@
     "tabblie_pf_main",
     "tabblie_hiw2_main",
     "tabblie_buy_main",
+    "tabblie_buy_vaatwas",
+    "tabblie_buy_toilet",
+    "tabblie_cs_home",
     "tabblie_hiw_main",
     "tabblie_guarantee_main",
     "tabblie_testi_main",

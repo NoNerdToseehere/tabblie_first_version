@@ -2039,3 +2039,9 @@ body.template-product .productView .product-form__submit:disabled {
     scroll-snap-align: start;
   }
 }
+
+
+/* Smooth in-page anchor jumps (e.g. "Zo werkt het" → strips) — 2026-07-29 */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}

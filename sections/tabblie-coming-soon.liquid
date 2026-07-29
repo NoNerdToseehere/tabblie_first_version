@@ -1,0 +1,566 @@
+{%- comment -%}
+  tabblie-coming-soon.liquid
+  Teaser hero for an unrevealed product (2026-07-29).
+  No price, no variants, no add-to-cart — the product isn't described yet.
+  Instead: the Tabblie brand promise it will ship with, plus an email capture
+  that trades a signup for free samples at launch.
+  Sticker design language per styling-system.md §12.
+{%- endcomment -%}
+
+{%- assign ink = '#182D20' -%}
+
+<style>
+  /* background is set inline on the element — this section can appear more
+     than once, and a Liquid-interpolated background here would leak between
+     instances (same class name, last one wins). */
+  .tabblie-cs {
+    padding: clamp(36px, 5vw, 72px) clamp(16px, 3vw, 44px) clamp(44px, 6vw, 80px);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tabblie-cs__inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(28px, 4vw, 56px);
+    align-items: center;
+  }
+
+  /* ── Visual ── */
+  .tabblie-cs__media {
+    position: relative;
+    order: -1;
+  }
+
+  .tabblie-cs__frame-link {
+    display: block;
+    text-decoration: none;
+    border-radius: 22px;
+  }
+
+  .tabblie-cs__frame-link:focus-visible {
+    outline: 3px solid #E8622A;
+    outline-offset: 4px;
+  }
+
+  .tabblie-cs__frame-link .tabblie-cs__frame {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+  }
+
+  .tabblie-cs__frame-link:hover .tabblie-cs__frame {
+    transform: translateY(-5px);
+    box-shadow: 10px 12px 0 {{ ink }};
+  }
+
+  .tabblie-cs__frame {
+    position: relative;
+    background: #FDF6EE;
+    border: 3px solid {{ ink }};
+    border-radius: 22px;
+    box-shadow: 7px 8px 0 {{ ink }};
+    padding: clamp(18px, 2.5vw, 30px);
+    overflow: hidden;
+  }
+
+  .tabblie-cs__frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .tabblie-cs__placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    font-family: var(--font-heading-family);
+    font-size: clamp(64px, 14vw, 116px);
+    font-weight: 800;
+    color: rgba(24, 45, 32, 0.18);
+  }
+
+  /* sticker badge over the frame */
+  .tabblie-cs__stamp {
+    position: absolute;
+    top: -14px;
+    left: -10px;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #E8622A;
+    color: #FFFFFF;
+    border: 3px solid {{ ink }};
+    border-radius: 100px;
+    box-shadow: 4px 5px 0 {{ ink }};
+    padding: 9px 18px;
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transform: rotate(-5deg);
+  }
+
+  /* the theme sets a global svg fill — these icons are stroke-only */
+  .tabblie-cs__stamp svg,
+  .tabblie-cs__promise-mark svg,
+  .tabblie-cs__success svg { fill: none; }
+
+  .tabblie-cs__stamp svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  .tabblie-cs__bubble {
+    position: absolute;
+    z-index: 2;
+    width: 76px;
+    height: 76px;
+    right: -22px;
+    bottom: -24px;
+    pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='40' cy='58' r='30' fill='%235BB8A0' opacity='0.5'/%3E%3Ccircle cx='40' cy='58' r='30' fill='none' stroke='%235BB8A0' stroke-width='3'/%3E%3Cpath d='M22 52 A 20 20 0 0 1 32 39' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' opacity='0.8'/%3E%3Ccircle cx='75' cy='30' r='12' fill='%23F5C842' opacity='0.6'/%3E%3Ccircle cx='75' cy='30' r='12' fill='none' stroke='%23F5C842' stroke-width='2.5'/%3E%3Ccircle cx='82' cy='64' r='6' fill='%235BB8A0' opacity='0.65'/%3E%3C/svg%3E") center / contain no-repeat;
+    transform: rotate(8deg) scaleX(-1);
+  }
+
+  /* ── Copy ── */
+  .tabblie-cs__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin: 0 0 12px;
+  }
+
+  .tabblie-cs__eyebrow::before,
+  .tabblie-cs__eyebrow::after {
+    content: '';
+    width: 22px;
+    height: 3px;
+    border-radius: 3px;
+    background: #F08CAE;
+    flex-shrink: 0;
+  }
+  .tabblie-cs__eyebrow::before { transform: rotate(8deg); }
+  .tabblie-cs__eyebrow::after { transform: rotate(-8deg); }
+
+  .tabblie-cs__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(30px, 4.4vw, 46px);
+    font-weight: 800;
+    color: #26523F;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 14px;
+  }
+
+  .tabblie-cs__title-accent { color: #E8622A; }
+
+  .tabblie-cs__intro {
+    font-family: var(--text-font-family);
+    font-size: clamp(16px, 1.3vw, 17.5px);
+    font-weight: 500;
+    color: rgba(24, 45, 32, 0.78);
+    line-height: 1.6;
+    margin: 0 0 clamp(20px, 2.5vw, 28px);
+    max-width: 520px;
+  }
+
+  /* ── Brand promise list ── */
+  .tabblie-cs__promises {
+    list-style: none;
+    margin: 0 0 clamp(24px, 3vw, 32px);
+    padding: 0;
+    display: grid;
+    gap: 12px;
+  }
+
+  .tabblie-cs__promise {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-family: var(--text-font-family);
+    font-size: 15.5px;
+    font-weight: 600;
+    color: {{ ink }};
+    line-height: 1.45;
+  }
+
+  .tabblie-cs__promise-mark {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #26523F;
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .tabblie-cs__promise-mark svg { width: 15px; height: 15px; }
+
+  /* ── Sample signup ── */
+  .tabblie-cs__signup {
+    background: #FDF6EE;
+    border: 3px solid {{ ink }};
+    border-radius: 20px;
+    box-shadow: 6px 7px 0 {{ ink }};
+    padding: clamp(20px, 2.6vw, 28px);
+    max-width: 560px;
+  }
+
+  /* extra specificity — the theme sets a small global size on h2 */
+  .tabblie-cs .tabblie-cs__signup-title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(20px, 1.9vw, 25px);
+    font-weight: 800;
+    color: #26523F;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    margin: 0 0 6px;
+  }
+
+  .tabblie-cs__signup-sub {
+    font-family: var(--text-font-family);
+    font-size: 14.5px;
+    font-weight: 500;
+    color: rgba(24, 45, 32, 0.72);
+    line-height: 1.5;
+    margin: 0 0 16px;
+  }
+
+  .tabblie-cs__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .tabblie-cs__input {
+    width: 100%;
+    font-family: var(--text-font-family);
+    font-size: 16px;
+    font-weight: 500;
+    color: {{ ink }};
+    background: #FFFFFF;
+    border: 2.5px solid {{ ink }};
+    border-radius: 100px;
+    padding: 15px 22px;
+    min-height: 52px;
+  }
+
+  .tabblie-cs__input::placeholder { color: rgba(24, 45, 32, 0.45); }
+  .tabblie-cs__input:focus { outline: 3px solid rgba(232, 98, 42, 0.45); outline-offset: 1px; }
+
+  .tabblie-cs__btn {
+    width: 100%;
+    min-height: 52px;
+    background: #E8622A;
+    color: #FFFFFF;
+    font-family: var(--text-font-family);
+    font-size: 16.5px;
+    font-weight: 800;
+    border: none;
+    border-radius: 100px;
+    padding: 15px 26px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+
+  .tabblie-cs__btn:hover { background: #D2521C; color: #FFFFFF; transform: translateY(-2px); }
+
+  .tabblie-cs__terms {
+    font-family: var(--text-font-family);
+    font-size: 12.5px;
+    font-weight: 500;
+    color: rgba(24, 45, 32, 0.6);
+    line-height: 1.45;
+    margin: 12px 0 0;
+  }
+
+  .tabblie-cs__success {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #E9F5EE;
+    border: 2.5px solid #26523F;
+    border-radius: 14px;
+    padding: 14px 18px;
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    font-weight: 700;
+    color: #26523F;
+    margin: 0 0 14px;
+  }
+
+  .tabblie-cs__success svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+  /* Compact — matches tabblie-buy-feature's compact rows so the four
+     product blocks read as one series. */
+  .tabblie-cs--compact {
+    padding: clamp(32px, 3.6vw, 52px) clamp(16px, 3vw, 40px);
+  }
+
+  .tabblie-cs--compact .tabblie-cs__inner {
+    max-width: 980px;
+    gap: clamp(24px, 3.4vw, 48px);
+  }
+
+  .tabblie-cs--compact .tabblie-cs__title { font-size: clamp(26px, 2.9vw, 36px); }
+  .tabblie-cs--compact .tabblie-cs__intro { font-size: 15.5px; margin-bottom: 18px; }
+  .tabblie-cs--compact .tabblie-cs__promises { gap: 8px; margin-bottom: 20px; }
+  .tabblie-cs--compact .tabblie-cs__promise { font-size: 14.5px; }
+  .tabblie-cs--compact .tabblie-cs__promise-mark { width: 24px; height: 24px; }
+  .tabblie-cs--compact .tabblie-cs__promise-mark svg { width: 13px; height: 13px; }
+  .tabblie-cs--compact .tabblie-cs__signup { padding: 20px; }
+  .tabblie-cs--compact .tabblie-cs__frame { padding: clamp(14px, 1.8vw, 20px); }
+
+  /* ── Desktop ── */
+  @media (min-width: 900px) {
+    .tabblie-cs--compact .tabblie-cs__inner { grid-template-columns: 0.85fr 1.15fr; }
+
+    /* image side — mobile always leads with the image */
+    .tabblie-cs--reversed .tabblie-cs__media { order: 2; }
+    .tabblie-cs--compact.tabblie-cs--reversed .tabblie-cs__inner { grid-template-columns: 1.15fr 0.85fr; }
+  }
+
+  @media (min-width: 900px) {
+    .tabblie-cs__inner {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .tabblie-cs__media { order: 0; }
+
+    .tabblie-cs__form {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .tabblie-cs__input { flex: 1 1 auto; }
+    .tabblie-cs__btn { width: auto; flex-shrink: 0; }
+  }
+</style>
+
+{%- liquid
+  comment
+    Works both as a product template section and anywhere else (e.g. the
+    homepage). On a product page it falls back to that product's image; off it,
+    point the section at a product or pick an image directly.
+  endcomment
+  assign teaser_product = section.settings.product
+  if teaser_product == blank and request.page_type == 'product'
+    assign teaser_product = product
+  endif
+
+  assign teaser_image = section.settings.image
+  if teaser_image == blank and teaser_product != blank
+    assign teaser_image = teaser_product.featured_image
+  endif
+
+  assign heading_tag = section.settings.heading_tag | default: 'h1'
+  assign sub_heading_tag = 'h3'
+  if heading_tag == 'h1'
+    assign sub_heading_tag = 'h2'
+  endif
+  assign form_id = 'tabblie-cs-form-' | append: section.id
+
+  assign teaser_link = blank
+  if section.settings.product != blank and request.page_type != 'product'
+    assign teaser_link = section.settings.product.url
+  endif
+
+  if request.page_type == 'product'
+    assign is_lcp = true
+  endif
+-%}
+
+<section class="tabblie-cs{% if section.settings.compact %} tabblie-cs--compact{% endif %}{% if section.settings.image_side == 'right' %} tabblie-cs--reversed{% endif %}" id="tabblie-cs-{{ section.id }}" style="background-color: {{ section.settings.bg_color | default: '#E1ECFA' }}">
+  <div class="tabblie-cs__inner">
+
+    <div class="tabblie-cs__media">
+      <span class="tabblie-cs__stamp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        {{ section.settings.stamp_text | default: 'Binnenkort' }}
+      </span>
+      {%- if teaser_link != blank -%}<a class="tabblie-cs__frame-link" href="{{ teaser_link }}" aria-label="{{ section.settings.link_label | default: 'Bekijk wat eraan komt' | escape }}">{%- endif -%}
+      <div class="tabblie-cs__frame">
+        {%- if teaser_image != blank -%}
+          <img
+            src="{{ teaser_image | image_url: width: 800 }}"
+            srcset="{{ teaser_image | image_url: width: 400 }} 400w,
+                    {{ teaser_image | image_url: width: 800 }} 800w,
+                    {{ teaser_image | image_url: width: 1200 }} 1200w"
+            sizes="(min-width: 900px) 480px, 92vw"
+            width="{{ teaser_image.width }}"
+            height="{{ teaser_image.height }}"
+            alt="{{ section.settings.image_alt | default: 'Het volgende Tabblie-product, nog niet onthuld' | escape }}"
+            {% if is_lcp %}loading="eager" fetchpriority="high"{% else %}loading="lazy"{% endif %}
+          >
+        {%- else -%}
+          <div class="tabblie-cs__placeholder" aria-hidden="true">?</div>
+        {%- endif -%}
+      </div>
+      {%- if teaser_link != blank -%}</a>{%- endif -%}
+      <span class="tabblie-cs__bubble" aria-hidden="true"></span>
+    </div>
+
+    <div class="tabblie-cs__copy">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tabblie-cs__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+
+      <{{ heading_tag }} class="tabblie-cs__title">
+        {{ section.settings.heading | default: 'Er komt iets aan.' | escape }}
+        {%- if section.settings.heading_accent != blank -%}
+          {{ ' ' }}<span class="tabblie-cs__title-accent">{{ section.settings.heading_accent | escape }}</span>
+        {%- endif -%}
+      </{{ heading_tag }}>
+
+      {%- if section.settings.intro != blank -%}
+        <p class="tabblie-cs__intro">{{ section.settings.intro }}</p>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="tabblie-cs__promises">
+          {%- for block in section.blocks -%}
+            <li class="tabblie-cs__promise" {{ block.shopify_attributes }}>
+              <span class="tabblie-cs__promise-mark" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
+              </span>
+              <span>{{ block.settings.text }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      <div class="tabblie-cs__signup">
+        <{{ sub_heading_tag }} class="tabblie-cs__signup-title">{{ section.settings.signup_title | default: "Wil je 'm als eerste proberen?" }}</{{ sub_heading_tag }}>
+        <p class="tabblie-cs__signup-sub">{{ section.settings.signup_sub | default: 'Schrijf je in en je krijgt bij de lancering gratis samples in de bus. Geen kosten, geen verplichting.' }}</p>
+
+        {%- form 'customer', id: form_id, class: 'tabblie-cs__form-wrap' -%}
+          {%- if form.posted_successfully? -%}
+            <p class="tabblie-cs__success">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
+              {{ section.settings.success_text | default: 'Gelukt! Je staat op de lijst voor gratis samples.' }}
+            </p>
+          {%- else -%}
+            <input type="hidden" name="contact[tags]" value="{{ section.settings.signup_tag | default: 'sample-launch' }}">
+            <div class="tabblie-cs__form">
+              <label class="visually-hidden" for="tabblie-cs-email-{{ section.id }}">{{ section.settings.placeholder | default: 'Je e-mailadres' }}</label>
+              <input
+                type="email"
+                id="tabblie-cs-email-{{ section.id }}"
+                name="contact[email]"
+                class="tabblie-cs__input"
+                placeholder="{{ section.settings.placeholder | default: 'Je e-mailadres' | escape }}"
+                required
+                autocomplete="email"
+              >
+              <button type="submit" class="tabblie-cs__btn">{{ section.settings.button_text | default: 'Ja, ik wil gratis samples' }}</button>
+            </div>
+          {%- endif -%}
+        {%- endform -%}
+
+        {%- if section.settings.terms != blank -%}
+          <p class="tabblie-cs__terms">{{ section.settings.terms }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{%- comment -%}
+  Product schema only on the product page itself — the homepage instance is a
+  teaser, not the canonical listing, and must not emit a second Product entity.
+{%- endcomment -%}
+{%- if request.page_type == 'product' -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": {{ product.title | default: 'Binnenkort' | json }},
+  "description": {{ section.settings.intro | default: 'Het volgende Tabblie-product. Binnenkort verkrijgbaar.' | strip_html | json }},
+  "brand": { "@type": "Brand", "name": "Tabblie" },
+  {%- if product.featured_image != blank -%}
+  "image": {{ product.featured_image | image_url: width: 1200 | prepend: 'https:' | json }},
+  {%- endif -%}
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/PreOrder",
+    "priceCurrency": {{ cart.currency.iso_code | json }},
+    "url": {{ request.origin | append: product.url | json }}
+  }
+}
+</script>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Tabblie Coming Soon",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Achtergrondkleur", "default": "#E1ECFA" },
+    { "type": "checkbox", "id": "compact", "label": "Compacte weergave", "info": "Kleiner blok — gebruik dit als de sectie onder andere productblokken staat.", "default": false },
+    { "type": "select", "id": "image_side", "label": "Afbeelding aan", "options": [ { "value": "left", "label": "Links" }, { "value": "right", "label": "Rechts" } ], "default": "left" },
+    { "type": "text", "id": "stamp_text", "label": "Sticker tekst", "default": "Binnenkort" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "NOG HEEL EVEN GEDULD" },
+    { "type": "text", "id": "heading", "label": "Titel", "default": "Er komt iets aan." },
+    { "type": "text", "id": "heading_accent", "label": "Titel accent (oranje)", "default": "Wat? Dat verklappen we nog niet." },
+    { "type": "textarea", "id": "intro", "label": "Introtekst", "default": "We werken aan het volgende Tabblie-product. Wat het wordt houden we nog even voor onszelf — maar waar het aan moet voldoen, dat staat al vast." },
+    { "type": "text", "id": "image_alt", "label": "Alt-tekst afbeelding", "default": "Het volgende Tabblie-product, nog niet onthuld" },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Titel-niveau (SEO)",
+      "info": "h1 op de productpagina, h2 als de sectie ergens staat waar al een h1 is (zoals de homepage).",
+      "options": [
+        { "value": "h1", "label": "h1" },
+        { "value": "h2", "label": "h2" }
+      ],
+      "default": "h1"
+    },
+    { "type": "header", "content": "Buiten de productpagina" },
+    { "type": "product", "id": "product", "label": "Product", "info": "Nodig als de sectie niet op de productpagina staat: levert de afbeelding en de link." },
+    { "type": "image_picker", "id": "image", "label": "Afbeelding", "info": "Optioneel. Overschrijft de productafbeelding." },
+    { "type": "text", "id": "link_label", "label": "Link omschrijving (toegankelijkheid)", "default": "Bekijk wat eraan komt" },
+    { "type": "header", "content": "Gratis samples aanmelding" },
+    { "type": "text", "id": "signup_title", "label": "Titel", "default": "Wil je 'm als eerste proberen?" },
+    { "type": "textarea", "id": "signup_sub", "label": "Subtekst", "default": "Schrijf je in en je krijgt bij de lancering gratis samples in de bus. Geen kosten, geen verplichting." },
+    { "type": "text", "id": "placeholder", "label": "Placeholder e-mailveld", "default": "Je e-mailadres" },
+    { "type": "text", "id": "button_text", "label": "Knop tekst", "default": "Ja, ik wil gratis samples" },
+    { "type": "text", "id": "signup_tag", "label": "Klant-tag", "default": "sample-launch", "info": "Tag waarmee aanmelders in Shopify worden gelabeld." },
+    { "type": "text", "id": "success_text", "label": "Bevestigingstekst", "default": "Gelukt! Je staat op de lijst voor gratis samples." },
+    { "type": "textarea", "id": "terms", "label": "Kleine lettertjes", "default": "Gratis samples bij de lancering, zolang de voorraad strekt. Geen spam — uitschrijven kan altijd." }
+  ],
+  "blocks": [
+    {
+      "type": "promise",
+      "name": "Belofte",
+      "settings": [
+        { "type": "text", "id": "text", "label": "Tekst" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tabblie Coming Soon",
+      "blocks": [
+        { "type": "promise", "settings": { "text": "100% plastic- & microplasticvrij" } },
+        { "type": "promise", "settings": { "text": "Biologisch afbreekbaar" } },
+        { "type": "promise", "settings": { "text": "Gewoon weer een strip — geen fles, geen gedoe" } },
+        { "type": "promise", "settings": { "text": "Duurzaam gemaakt, eerlijk geprijsd" } },
+        { "type": "promise", "settings": { "text": "30 dagen proberen — niet goed, geld terug" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
