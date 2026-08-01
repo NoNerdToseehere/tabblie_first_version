@@ -221,3 +221,4 @@ Refer to `COMPANY_BRANDING/PRD.md` for full scope.
 - Do not add new npm/build dependencies — this is a standard Shopify theme with no build pipeline
 - Do not use pure black (`#000000`) or pure white (`#FFFFFF`) as primary brand colors
 - Do not add eco clichés: no green leaves, no hands holding globes, no "save the planet" guilt copy
+- Do not leave unused files, assets, CSS or code in the theme — if nothing references it, delete it in the same session. Unused assets still upload and serve from the CDN (slower site), and stale files get wired up later by mistake. Grep the repo for the filename first, and strip any doc rows that describe it. Full rule → `STORE_INFO.md` § Cleanup

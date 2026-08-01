@@ -62,7 +62,11 @@ Every new section, page, or copy change gets checked against all three before it
 
 **File naming:** always use SEO-friendly, descriptive, structured file names — lowercase kebab-case that says what the file is (`tabblie-wasstrips-doosje-hero.jpg`, not `IMG_4521.jpg` or `Screenshot 2026-...png`). Applies to images, assets, snippets, and section files alike.
 
-**Cleanup:** never leave unnecessary files behind. Temporary artifacts (screenshots, test scripts, scratch exports, one-off conversions) get deleted as soon as they've served their purpose — in the repo *and* in temp locations. If it's not used by the theme or the docs, it goes.
+**Cleanup — delete, don't leave lying around:** never keep files, assets, code or settings that nothing uses. This covers temporary artifacts (screenshots, test scripts, scratch exports, one-off conversions) *and* anything that has stopped being used: superseded images, dead CSS, unreferenced snippets, placeholder assets that were never adopted. Delete it in the same session you notice it, in the repo *and* in temp locations, and remove any doc rows describing it so the docs don't advertise something that no longer exists.
+
+Why it matters: every unused asset is still uploaded to the theme and served from the CDN, so it costs load time; and a stale file is a trap — someone (or some future session) wires it up believing it's current. A placeholder favicon that wasn't the real brand mark sat in `assets/` for months for exactly this reason.
+
+Before deleting, grep the whole repo for the filename to confirm nothing references it — including the MD docs.
 
 **Keep the MD files up to date:** whenever a change alters something these docs describe (fonts, colors, claim language, URLs, store facts, workflow rules), update the relevant MD file(s) in the same session — `STORE_INFO.md`, `CLAUDE.md`, `COMPANY_BRANDING/CLAUDE.md` and `COMPANY_BRANDING/styling-system.md` must never contradict the live site. If it's unclear whether a change is a new standard or a one-off experiment, **ask before writing it into the docs**.
 
