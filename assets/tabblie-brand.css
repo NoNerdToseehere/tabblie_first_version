@@ -2044,6 +2044,9 @@ body.template-product .productView .product-form__submit:disabled {
     width: auto !important;
     max-width: none;
     scroll-snap-align: start;
+    /* Halo gives rows 2+ of its old 2-col grid a 10px top margin. In a single
+       swipe row that just drops cards 3 and 4 below the first two. */
+    margin-top: 0 !important;
   }
 }
 
