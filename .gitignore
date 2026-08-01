@@ -24,6 +24,10 @@ node_modules/
 # Working/dev-only folders — not part of the theme
 assets/files_tosave/
 
+# Retired images/video — kept locally so they stay recoverable, never pushed
+# and never uploaded to the theme. See STORE_INFO.md § Cleanup.
+_archive/
+
 # Agent tooling (Higgsfield skills etc.) — not part of the theme
 .agents/
 .claude/

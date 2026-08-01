@@ -66,7 +66,11 @@ Every new section, page, or copy change gets checked against all three before it
 
 Why it matters: every unused asset is still uploaded to the theme and served from the CDN, so it costs load time; and a stale file is a trap — someone (or some future session) wires it up believing it's current. A placeholder favicon that wasn't the real brand mark sat in `assets/` for months for exactly this reason.
 
-Before deleting, grep the whole repo for the filename to confirm nothing references it — including the MD docs.
+Before deleting, grep the whole repo for the filename to confirm nothing references it — including the MD docs. Watch for Liquid that builds filenames dynamically (`{{ 'tabblie-step-' | append: handle | append: '.svg' }}`) — a plain grep for the full filename won't find those.
+
+**Where retired media goes → `_archive/`** (`_archive/images/`, `_archive/video/`). It's gitignored, so nothing there is committed, pushed, or uploaded to the theme — zero load-time cost, but the file stays recoverable if a photo or clip is wanted back. Move media there rather than deleting it outright. **Code, snippets and CSS are not archived** — delete those outright; git history is the recovery path.
+
+⚠️ Removing a file from `assets/` makes the GitHub integration delete it from the live theme on the next deploy. Always confirm it's unreferenced first.
 
 **Keep the MD files up to date:** whenever a change alters something these docs describe (fonts, colors, claim language, URLs, store facts, workflow rules), update the relevant MD file(s) in the same session — `STORE_INFO.md`, `CLAUDE.md`, `COMPANY_BRANDING/CLAUDE.md` and `COMPANY_BRANDING/styling-system.md` must never contradict the live site. If it's unclear whether a change is a new standard or a one-off experiment, **ask before writing it into the docs**.
 
