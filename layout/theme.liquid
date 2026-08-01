@@ -19,9 +19,17 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <meta name="theme-color" content="#E8622A">
         <link rel="canonical" href="{{ canonical_url }}" canonical-shop-url="{{ shop.url }}/">
-        <link rel="icon" href="{{ 'tabblie-favicon.png' | asset_url }}" type="image/png" sizes="32x32">
-        <link rel="shortcut icon" href="{{ 'tabblie-favicon.png' | asset_url }}" type="image/png">
-        <link rel="apple-touch-icon" sizes="180x180" href="{{ 'tabblie-favicon.png' | asset_url }}">
+        {%- comment -%}
+          Google wants a square favicon whose size is a multiple of 48px and
+          renders its globe placeholder otherwise — the old single 256x256 is
+          not. 96px is declared first as the primary icon.
+        {%- endcomment -%}
+        <link rel="icon" href="{{ 'tabblie-favicon-96.png' | asset_url }}" type="image/png" sizes="96x96">
+        <link rel="icon" href="{{ 'tabblie-favicon-48.png' | asset_url }}" type="image/png" sizes="48x48">
+        <link rel="icon" href="{{ 'tabblie-favicon-144.png' | asset_url }}" type="image/png" sizes="144x144">
+        <link rel="icon" href="{{ 'tabblie-favicon-192.png' | asset_url }}" type="image/png" sizes="192x192">
+        <link rel="shortcut icon" href="{{ 'tabblie-favicon-96.png' | asset_url }}" type="image/png">
+        <link rel="apple-touch-icon" sizes="180x180" href="{{ 'tabblie-favicon-180.png' | asset_url }}">
         <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
         {%- comment -%}
           The shop's SEO title ("Tabblie - Als Nieuw") is 20 chars and says
