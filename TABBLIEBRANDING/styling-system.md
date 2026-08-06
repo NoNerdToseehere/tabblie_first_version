@@ -190,7 +190,7 @@ background: linear-gradient(135deg, #E8622A 0%, #F5C842 50%, #5BB8A0 100%);
 | `tabblie-logo.svg` / `tabblie-logo.png` | Full orange bold wordmark (header, footer) |
 | `tabblie-logo-dark.svg` | Dark variant (on light photographic backgrounds if needed) |
 | `tabblie-logo-small.png` | Orange "T" only — compact UI, mobile sticky nav, social avatars |
-| `tabblie-favicon.png` | 256×256 orange "T" square, browser tab |
+| `tabblie-favicon.png` | 256×256 — orange script "T" on hero blue with a soap bubble, browser tab |
 | `tabblie-favicon-48/96/144/180/192.png` | Sized variants — Google only accepts favicons that are a multiple of 48px |
 
 **Never:**

@@ -79,7 +79,7 @@ Every change to this theme must serve these four goals. When a request conflicts
 ### Logo Assets
 - **Full wordmark:** Bold orange grotesk "Tabblie" — capital T, rest lowercase (`tabblie-logo.svg` / `tabblie-logo.png`). The wordmark stands alone — **no circle, pill, or badge behind it**.
 - **Small logo / Icon:** Orange "T" only (`tabblie-logo-small.png`) — compact UI, mobile sticky nav, app icons
-- **Favicon:** 256×256 orange "T" square (`tabblie-favicon.png`)
+- **Favicon:** orange script "T" on hero blue `#D6E4F7` with a soap bubble (`tabblie-favicon.png`, 256×256). Sized variants at 48/96/144/180/192 — **Google only shows a favicon whose size is a multiple of 48px**, so regenerate all of them from the same source if the mark ever changes.
 
 **Logo rules:** always written "Tabblie" (capital T, rest lowercase) — never "tabblie" all-lowercase, never "TABBLIE" in caps. **This applies to ALL copy everywhere on the site** (headings, body text, FAQs, alt text), not just the logo. Only exception: email addresses (support@tabblie.com). Social handles are also written capitalized in copy (@Tabblie). On light/cream: orange `#E8622A`. On dark/photographic: white. Never stretch, rotate, recolour, or add effects.
 
