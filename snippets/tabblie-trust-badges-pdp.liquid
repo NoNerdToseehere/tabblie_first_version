@@ -22,7 +22,10 @@
     gap: 7px;
     padding: 8px 10px;
     border: 1.5px solid rgba(24, 45, 32, 0.18);
-    border-radius: 100px;
+    /* 16px, not a full pill (2026-08-14): the 100px pill is this brand's
+       BUTTON shape (add-to-cart uses it), so it made these read as tappable.
+       16px matches the gift tiles — the informational-card family. */
+    border-radius: 16px;
     transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 

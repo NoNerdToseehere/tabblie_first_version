@@ -312,6 +312,36 @@ body.template-product .productView .product-form__submit.product-form__submit::b
   outline-offset: 2px;
 }
 
+/* Progressive gifts: the tiles were 160px tall, driven by a 100px product
+   image, which pushed the add-to-cart down. 60px (52px on phones) keeps the
+   product recognisable at a glance without the row dominating the buy box.
+   Desktop 190 -> 146px, mobile 136px. */
+.kaching-bundles.kaching-bundles .kaching-bundles__progressive-gifts__gift__image-wrapper,
+.kaching-bundles.kaching-bundles .kaching-bundles__progressive-gifts__gift__image-wrapper img {
+  height: 60px;
+  width: 60px;
+}
+
+.kaching-bundles.kaching-bundles .kaching-bundles__progressive-gifts__gift {
+  padding: 6px;
+}
+
+.kaching-bundles.kaching-bundles .kaching-bundles__progressive-gifts__gifts {
+  gap: 6px;
+}
+
+@media (max-width: 749px) {
+  .kaching-bundles.kaching-bundles .kaching-bundles__progressive-gifts__gift__image-wrapper,
+  .kaching-bundles.kaching-bundles .kaching-bundles__progressive-gifts__gift__image-wrapper img {
+    height: 52px;
+    width: 52px;
+  }
+
+  .kaching-bundles.kaching-bundles .kaching-bundles__progressive-gifts__gift {
+    padding: 5px;
+  }
+}
+
 /* NOTE: badge weight/letter-spacing are NOT settable from here — the app wins.
    Use the badge's own "Text size" / "Text spacing" fields in Kaching instead. */
 
