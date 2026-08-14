@@ -207,7 +207,8 @@
       display: flex;
       grid-template-columns: none;
       align-items: stretch;
-      gap: 14px;
+      /* no gap: the hairline divider sits flush between items */
+      gap: 0;
       overflow-x: auto;
       overscroll-behavior-x: contain;
       -webkit-overflow-scrolling: touch;
@@ -223,19 +224,21 @@
 
     .tabblie-ingredients__grid::-webkit-scrollbar { display: none; }
 
-    /* the divider between cards only makes sense when they're stacked */
+    /* Dividers, not nested cards (2026-08-14): the sticker panel is the only
+       card. Giving each item its own border/radius read as cards-in-a-card.
+       Same hairline divider desktop uses — these are parallel ingredients,
+       so no arrows: an arrow would imply one leads to the next. */
     .tabblie-ingredients__card + .tabblie-ingredients__card {
-      border-left: none;
       border-top: none;
+      border-left: 1.5px solid rgba(24, 45, 32, 0.15);
     }
 
     .tabblie-ingredients__card {
       flex: 0 0 clamp(220px, 74vw, 290px);
       scroll-snap-align: start;
-      gap: 14px;
       padding: 22px;
-      border: 1.5px solid rgba(24, 45, 32, 0.15);
-      border-radius: 16px;
+      border: none;
+      border-radius: 0;
     }
 
     /* no lift on touch — it fights the swipe */

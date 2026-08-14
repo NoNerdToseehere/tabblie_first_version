@@ -245,7 +245,9 @@
     height: 19px;
   }
 
-  .tabblie-chero__hc-usp-chev {
+  /* Confirmation check, not a chevron (2026-08-14). A right-pointing chevron
+     read as "tap me" on a row that isn't a link. */
+  .tabblie-chero__hc-usp-check {
     width: 18px;
     height: 18px;
     margin-left: auto;
@@ -406,13 +408,26 @@
     .tabblie-chero__hc-usp {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       width: 100%;
-      padding: 14px 0;
+      /* tightened from 14px (2026-08-14) — three rows sat 207px tall and
+         pushed the hero CTA down the page */
+      padding: 9px 0;
       font-family: var(--text-font-family);
       font-size: 15.5px;
       font-weight: 700;
       color: #182D20;
+    }
+
+    /* the 40px icon circle drives the row height, so it shrinks too */
+    .tabblie-chero__hc-usp-icon {
+      width: 34px;
+      height: 34px;
+    }
+
+    .tabblie-chero__hc-usp-icon svg {
+      width: 17px;
+      height: 17px;
     }
 
     .tabblie-chero__hc-usp + .tabblie-chero__hc-usp {
@@ -841,21 +856,21 @@
             <svg viewBox="0 0 24 24" style="fill:none;stroke:#FFFFFF" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" style="fill:none"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" style="fill:none"/></svg>
           </span>
           <span class="tabblie-chero__hc-usp-text">Plasticvrij &amp; PVA-vrij</span>
-          <svg class="tabblie-chero__hc-usp-chev" viewBox="0 0 24 24" style="fill:none;stroke:#182D20" fill="none" stroke="#182D20" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6" style="fill:none"/></svg>
+          <svg class="tabblie-chero__hc-usp-check" viewBox="0 0 24 24" style="fill:none;stroke:#38A169" fill="none" stroke="#38A169" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" style="fill:none"/></svg>
         </span>
         <span class="tabblie-chero__hc-usp">
           <span class="tabblie-chero__hc-usp-icon">
             <svg viewBox="0 0 24 24" style="fill:none;stroke:#FFFFFF" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20h10" style="fill:none"/><path d="M12 20V10" style="fill:none"/><path d="M12 10C12 6 9 4 5 4c0 4 2 6 7 6z" style="fill:none"/><path d="M12 13c0-3 2.5-5 6.5-5 0 3.5-2 5.5-6.5 5z" style="fill:none"/></svg>
           </span>
           <span class="tabblie-chero__hc-usp-text">Biologisch afbreekbaar</span>
-          <svg class="tabblie-chero__hc-usp-chev" viewBox="0 0 24 24" style="fill:none;stroke:#182D20" fill="none" stroke="#182D20" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6" style="fill:none"/></svg>
+          <svg class="tabblie-chero__hc-usp-check" viewBox="0 0 24 24" style="fill:none;stroke:#38A169" fill="none" stroke="#38A169" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" style="fill:none"/></svg>
         </span>
         <span class="tabblie-chero__hc-usp">
           <span class="tabblie-chero__hc-usp-icon">
             <svg viewBox="0 0 24 24" style="fill:none;stroke:#FFFFFF" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2" style="fill:none"/><path d="M3 12h18" style="fill:none"/><path d="M9 8V6a3 3 0 0 1 6 0v2" style="fill:none"/></svg>
           </span>
           <span class="tabblie-chero__hc-usp-text">Past door de brievenbus</span>
-          <svg class="tabblie-chero__hc-usp-chev" viewBox="0 0 24 24" style="fill:none;stroke:#182D20" fill="none" stroke="#182D20" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6" style="fill:none"/></svg>
+          <svg class="tabblie-chero__hc-usp-check" viewBox="0 0 24 24" style="fill:none;stroke:#38A169" fill="none" stroke="#38A169" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5" style="fill:none"/></svg>
         </span>
       </div>
     </div>

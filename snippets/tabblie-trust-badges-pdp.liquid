@@ -50,20 +50,26 @@
     text-align: left;
   }
 
+  /* Phone: keep all four on ONE row so the bundle selector sits higher up
+     the page. Four columns at 390px leaves ~88px per item, so the type and
+     padding tighten to match. (Was 2x2, which cost ~60px of vertical space
+     directly above the buy decision.) */
   @media (max-width: 479px) {
     .tabblie-trust-strip {
-      grid-template-columns: 1fr 1fr;
-      gap: 6px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
     }
     .tabblie-trust-strip__item {
       flex-direction: column;
-      gap: 6px;
-      padding: 10px 6px;
-      border-radius: 14px;
+      gap: 4px;
+      padding: 8px 3px;
+      border-radius: 12px;
     }
     .tabblie-trust-strip__label {
       text-align: center;
-      font-size: 10.5px;
+      font-size: 9px;
+      line-height: 1.25;
+      hyphens: auto;
     }
   }
 </style>
