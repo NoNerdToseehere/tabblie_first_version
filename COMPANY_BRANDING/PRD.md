@@ -149,18 +149,18 @@
 
 ## 6. Subscription Model Requirements
 
-**App recommendation:** Shopify's native subscriptions or Recharge / Bold Subscriptions
+**App in use (2026-08-14):** Kaching Subscriptions, paired with Kaching Bundles — the bundle block renders the subscribe/one-time toggle, so both come from one vendor and share one styling pass.
 
 ### Subscription Features Required
 - Toggle on product page: one-time vs subscribe
-- Frequency options: monthly, every 2 months (configurable)
-- Discount clearly shown (e.g. "Save 15% with subscription")
+- Frequency options: elke 2 / 3 / 4 maanden — **3 maanden is the default** (1 pak = 64 wasbeurten ≈ 3 months at average use; shipping monthly over-supplies and drives cancellations)
+- Discount clearly shown (e.g. "Abonneer & bespaar 20%")
 - Customer portal: manage, pause, cancel, swap products
 - Subscription reminder emails
 - Cancellation flow with save offer (e.g. "Skip a month instead?")
 
 ### Cart Behaviour
-- If customer adds a one-time product, show soft nudge: *"Switch to subscription and save 15%"*
+- If customer adds a one-time product, show soft nudge: *"Abonneer & bespaar 20%"*
 - Subscription orders should be clearly differentiated in cart/checkout
 
 ---

@@ -97,7 +97,7 @@ Works full-time, two kids, shops online. Wants to make better choices but doesn'
 
 - **Accessible pricing** — not premium, not budget. Fair.
 - **Free shipping** on all orders (NL & BE) — strips are light, shipping cost is minimal
-- **Subscription discount** — 15% off recurring orders
+- **Subscription discount** — 20% off recurring orders (updated 2026-08-14)
 - **First-order discount** — 15% via email signup
 - **Bundle savings** — buy 3+, get discount
 

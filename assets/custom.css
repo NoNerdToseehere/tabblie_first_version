@@ -252,3 +252,73 @@ body.template-product .productView .product-form__submit.product-form__submit::b
     display: none !important;
   }
 }
+
+
+/* ==========================================================================
+   Kaching Bundles — Tabblie brand pass (2026-08-14)
+   Colours/fonts/radius that the app CAN set live in its own Style panel;
+   only what that panel cannot express lives here.
+
+   WARNING: these selectors are deliberately verbose. Kaching's stylesheet
+   (#kaching-bundles-styles) uses 2-4 class specificity, so single-class
+   rules are silently ignored. Do not "simplify" them.
+   ========================================================================== */
+
+/* Subscription card -> Tierelier card, matching .footer-block__newsletter.
+   Kaching draws this with a dashed border via a 4-class rule; this matches it. */
+.kaching-bundles.kaching-bundles .kaching-bundles__subscriptions.kaching-bundles__subscriptions--checkbox .kaching-bundles__subscriptions__card {
+  background: #FDF6EE;
+  border: 2px solid #182D20;
+  border-radius: 24px 12px;
+  box-shadow: 6px 6px 0 0 rgba(24, 45, 32, 0.9);
+  margin: 4px 8px 10px 0; /* keeps the hard shadow inside the container */
+}
+
+@media (max-width: 749px) {
+  .kaching-bundles.kaching-bundles .kaching-bundles__subscriptions.kaching-bundles__subscriptions--checkbox .kaching-bundles__subscriptions__card {
+    border-radius: 20px 10px;
+    box-shadow: 4px 4px 0 0 rgba(24, 45, 32, 0.9);
+    margin: 4px 6px 8px 0;
+  }
+}
+
+.kaching-bundles.kaching-bundles .kaching-bundles__subscriptions__title {
+  color: #182D20;
+  font-weight: 700;
+}
+
+.kaching-bundles.kaching-bundles .kaching-bundles__subscriptions__subtitle {
+  color: #5A6B60;
+}
+
+/* Frequency dropdown. App default: pure black text, no border, 8px radius,
+   36.5px tall (under the 44px touch minimum). */
+.kaching-bundles.kaching-bundles .kaching-bundles__selling-plan-select {
+  color: #182D20;
+  font-weight: 600;
+  border: 2px solid #182D20;
+  border-radius: 12px;
+  min-height: 44px;
+  padding: 8px 44px 8px 14px;
+  background-color: #FFFFFF;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23182D20' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+}
+
+.kaching-bundles.kaching-bundles .kaching-bundles__selling-plan-select:focus-visible {
+  outline: 3px solid #E8622A;
+  outline-offset: 2px;
+}
+
+/* NOTE: badge weight/letter-spacing are NOT settable from here — the app wins.
+   Use the badge's own "Text size" / "Text spacing" fields in Kaching instead. */
+
+/* The badge marquee animates; the app has no reduced-motion setting. */
+@media (prefers-reduced-motion: reduce) {
+  .kaching-bundles.kaching-bundles .kaching-bundles__badge-border,
+  .kaching-bundles.kaching-bundles .kaching-bundles__badge-border__text {
+    animation: none !important;
+  }
+}

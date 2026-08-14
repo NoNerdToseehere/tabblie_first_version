@@ -36,7 +36,7 @@ Every change to this theme must serve these four goals. When a request conflicts
 - Trust signals near every buy decision: reviews/stars, money-back guarantee ("30 dagen proef wassen"), shipping info (NL & BE), payment badges
 - Keep friction low: minimal steps to checkout, sticky add-to-cart on PDPs, cart drawer instead of full-page cart
 - Use honest urgency/scarcity only — never fake countdown timers or fabricated stock levels
-- Subscription upsell ("Abonneer & bespaar 15%") should be present but never block or trick the one-time purchase
+- Subscription upsell ("Abonneer & bespaar 20%") should be present but never block or trick the one-time purchase
 - Never bury the product: marketing/mission sections support the sale, they don't replace product visibility
 - When making layout/copy decisions, prefer the option that most plausibly increases conversion — and say when a user request is likely to hurt conversion
 
