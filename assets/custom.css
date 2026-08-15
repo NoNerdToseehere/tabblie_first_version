@@ -254,6 +254,17 @@ body.template-product .productView .product-form__submit.product-form__submit::b
 }
 
 
+/* Product-card CTA size (2026-08-15). The .gridadd "Bestellen" button rendered
+   at 34px tall with 14px text, while the sold-out .button-ATC next to it was
+   50px/16px — visibly mismatched in the same row, and 34px is under the 44px
+   touch minimum. Matched to the 50px sibling. */
+body .gridadd.product-form__submit {
+  min-height: 50px;
+  padding: 14px 24px;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
 /* Homepage product blocks (2026-08-15): three compact tabblie-buy sections sit
    back-to-back on identical cream, ~1400px of unbroken colour with nothing
    marking where one product ends and the next begins. A hairline between them
