@@ -1033,7 +1033,14 @@
                                             </div>
                                         {%- endif -%}
                                     {%- when 'variant_picker' -%}
-                                        {% unless has_product_combo %}
+                                        {%- comment -%}
+                                          Skip the picker when there is only one variant (2026-08-15).
+                                          A selector offering a single choice is pure friction, and
+                                          Kaching's "hide theme variant picker" can only remove it
+                                          with JS after paint — which caused a visible flash on load.
+                                          Not rendering it server-side removes the flash entirely.
+                                        {%- endcomment -%}
+                                        {% unless has_product_combo or variant_count == 1 %}
                                             <div class="productView-moreItem productView-moreItem-product-variant{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}"
                                                 style="--spacing-top: {{ spacing_top | append: 'px' }};
                                                 --spacing-bottom: {{ spacing_bottom | append: 'px' }}"
