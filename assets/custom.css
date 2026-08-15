@@ -254,6 +254,22 @@ body.template-product .productView .product-form__submit.product-form__submit::b
 }
 
 
+/* Homepage product blocks (2026-08-15): three compact tabblie-buy sections sit
+   back-to-back on identical cream, ~1400px of unbroken colour with nothing
+   marking where one product ends and the next begins. A hairline between them
+   defines the edge without adding a third and fourth background tint — the
+   blue section below already carries the colour change.
+
+   :has() keeps the line BETWEEN blocks only (never above the first). It is
+   already relied on elsewhere on this site and is supported everywhere we
+   target; if it ever fails the sections simply render as they do today. */
+.shopify-section:has(> .tabblie-buy--compact)
+  + .shopify-section:has(> .tabblie-buy--compact)
+  .tabblie-buy__inner {
+  border-top: 1.5px solid rgba(24, 45, 32, 0.14);
+  padding-top: clamp(28px, 4vw, 44px);
+}
+
 /* ==========================================================================
    Kaching Bundles — Tabblie brand pass (2026-08-14)
    Colours/fonts/radius that the app CAN set live in its own Style panel;
