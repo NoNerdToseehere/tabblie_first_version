@@ -9,6 +9,21 @@
     <h2 class="footer-block__heading">{{- heading_payment | escape -}}</h2>
   {%- endif -%} <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
   <ul class="list list-payment clearfix" role="list">
+    {%- comment -%}
+      Wero (2026-08-16): rendered from our own asset because Shopify's
+      payment_type_svg_tag has no Wero icon and the theme's custom list
+      doesn't offer one either — it's too new a scheme. Same file the PDP
+      uses (tabblie-payment-icons), so footer and product page match.
+      First in the row: it's the dominant NL method.
+    {%- endcomment -%}
+    <li class="list-payment__item wero">
+      {%- comment -%}
+        84x32 keeps the source 480x182 ratio. Height matches the sibling
+        .icon SVGs (32px) so the row aligns; width is wider because Wero is
+        a wordmark, not a card logo.
+      {%- endcomment -%}
+      <img src="{{ 'pay-wero.svg' | asset_url }}" alt="iDEAL Wero" width="84" height="32" loading="lazy">
+    </li>
     {%- if payment_type == 'default' -%}
       {%- for type in shop.enabled_payment_types -%}
         <li class="list-payment__item">{{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}</li>

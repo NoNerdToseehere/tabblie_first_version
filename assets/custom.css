@@ -254,6 +254,17 @@ body.template-product .productView .product-form__submit.product-form__submit::b
 }
 
 
+/* Footer payment row: Wero is an <img> (Shopify has no Wero payment icon),
+   and component-list-payment.css caps img at max-height 24px while sizing
+   the sibling .icon SVGs at 32px — so it rendered visibly smaller than the
+   card logos. Match the 32px height and let the width follow the source
+   480x182 ratio rather than squashing it into the cards' 38x24 box. */
+.list-payment__item.wero img {
+  max-height: 32px;
+  height: 32px;
+  width: auto;
+}
+
 /* Product-card CTA size (2026-08-15). The .gridadd "Bestellen" button rendered
    at 34px tall with 14px text, while the sold-out .button-ATC next to it was
    50px/16px — visibly mismatched in the same row, and 34px is under the 44px
