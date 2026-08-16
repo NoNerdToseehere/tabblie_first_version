@@ -19,7 +19,7 @@
           "type": "step",
           "settings": {
             "title": "Meld je aan",
-            "description": "Stuur ons een mailtje met wie je bent en waar je Tabblie wilt delen. Binnen 2 werkdagen hoor je van ons."
+            "description": "Stuur ons een mailtje met wie je bent en waar je Tabblie wilt delen. Op werkdagen reageren we binnen 1 werkdag."
           }
         },
         "s2": {
@@ -163,7 +163,7 @@
           "type": "faq",
           "settings": {
             "question": "Hoe meld ik me aan?",
-            "answer": "<p>Mail naar support@tabblie.com met een korte introductie: wie je bent, waar je Tabblie wilt delen en een link naar je kanaal. Binnen 2 werkdagen hoor je van ons.</p>"
+            "answer": "<p>Mail naar support@tabblie.com met een korte introductie: wie je bent, waar je Tabblie wilt delen en een link naar je kanaal. Op werkdagen reageren we binnen 1 werkdag.</p>"
           }
         }
       },
@@ -185,7 +185,7 @@
       "settings": {
         "eyebrow": "VRAGEN?",
         "heading": "Even sparren over samenwerken?",
-        "description": "Vul het contactformulier in of mail ons op support@tabblie.com — je krijgt binnen 1 werkdag antwoord van een echt persoon. Ook als je nog twijfelt of het iets voor je is.",
+        "description": "Vul het contactformulier in of mail ons op support@tabblie.com — op werkdagen krijg je binnen 1 werkdag antwoord van een echt persoon. Ook als je nog twijfelt of het iets voor je is.",
         "button_text": "Neem contact op",
         "button_url": "/pages/contact"
       }

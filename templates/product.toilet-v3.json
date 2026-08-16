@@ -272,7 +272,7 @@
             "open_tab_mobile": false,
             "title": "Verzending & retour",
             "type": "all",
-            "content": "• Gratis verzending in Nederland en België vanaf €30.<br>• Voor 23:59 besteld? Morgen in huis.<br>• De verpakking past door de brievenbus, dus je hoeft er niet voor thuis te blijven.<br>• Alle bestellingen worden klimaatneutraal verzonden.<br><br><strong>Wat als het niet bevalt?</strong><br>Je hebt 30 dagen om te proberen. Niet tevreden? Mail support@tabblie.com en je krijgt je geld terug — zonder gedoe. Ongeopende producten kun je binnen 30 dagen retourneren voor een volledige terugbetaling.",
+            "content": "• Gratis verzending in Nederland en België vanaf €30.<br>• Voor 17:00 besteld? Morgen verstuurd.<br>• De verpakking past door de brievenbus, dus je hoeft er niet voor thuis te blijven.<br>• Alle bestellingen worden klimaatneutraal verzonden.<br><br><strong>Wat als het niet bevalt?</strong><br>Je hebt 30 dagen om te proberen. Niet tevreden? Mail support@tabblie.com en je krijgt je geld terug — zonder gedoe. Ongeopende producten kun je binnen 30 dagen retourneren voor een volledige terugbetaling.",
             "product_custom_source": "dynamic",
             "product_tab_key_metafield": "",
             "enable_btn_show_more": false,
@@ -1135,7 +1135,7 @@
           "type": "faq",
           "settings": {
             "question": "Wat kost verzending en hoe snel is het er?",
-            "answer": "<p>Verzending is gratis vanaf €30 in Nederland en België. Voor 23:59 besteld? Morgen in huis — en de verpakking past door de brievenbus.</p>"
+            "answer": "<p>Verzending is gratis vanaf €30 in Nederland en België. Voor 17:00 besteld? Morgen verstuurd — en de verpakking past door de brievenbus.</p>"
           }
         }
       },

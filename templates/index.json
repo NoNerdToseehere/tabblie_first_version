@@ -735,7 +735,7 @@
         "b4": {
           "type": "benefit",
           "settings": {
-            "text": "Gratis verzending vanaf €30, morgen in huis"
+            "text": "Gratis verzending vanaf €30, morgen verstuurd"
           }
         }
       },
@@ -784,7 +784,7 @@
         "b4": {
           "type": "benefit",
           "settings": {
-            "text": "Gratis verzending vanaf €30, morgen in huis"
+            "text": "Gratis verzending vanaf €30, morgen verstuurd"
           }
         }
       },
@@ -1049,7 +1049,7 @@
           "type": "faq",
           "settings": {
             "question": "Hoelang duurt de verzending?",
-            "answer": "Voor je het weet. Bestel op een werkdag vóór 16:00 en je strips gaan diezelfde dag op weg — in het weekend of op een feestdag pakken we 'm de eerstvolgende werkdag op. Binnen 1-2 werkdagen ploft het doosje door je brievenbus, geen thuisblijven nodig."
+            "answer": "Voor je het weet. Bestel je op een werkdag vóór 17:00 uur? Dan versturen we je bestelling de volgende werkdag — in het weekend of op een feestdag pakken we 'm de eerstvolgende werkdag op. Het doosje past door je brievenbus, dus thuisblijven hoeft niet."
           }
         }
       },
@@ -1467,7 +1467,7 @@
         "b4": {
           "type": "benefit",
           "settings": {
-            "text": "Gratis verzending vanaf €30, morgen in huis"
+            "text": "Gratis verzending vanaf €30, morgen verstuurd"
           }
         }
       },

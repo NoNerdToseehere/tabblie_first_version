@@ -100,7 +100,7 @@
           "type": "faq",
           "settings": {
             "question": "Hoe snel wordt mijn bestelling geleverd?",
-            "answer": "Bestel je op een werkdag vóór 16:00 uur? Dan versturen we je bestelling in de regel nog dezelfde dag. Na verzending wordt je pakket meestal binnen 1 tot 2 werkdagen bezorgd in Nederland en België — en omdat het doosje plat en licht is, past het gewoon door de brievenbus."
+            "answer": "Bestel je op een werkdag vóór 17:00 uur? Dan versturen we je bestelling de volgende werkdag. Het doosje is plat en licht en past gewoon door de brievenbus."
           }
         },
         "q3": {
@@ -175,7 +175,7 @@
           "type": "faq",
           "settings": {
             "question": "Hoe start ik een retour?",
-            "answer": "Stuur een e-mail naar support@tabblie.com met je bestelnummer, reden van retour en bevestiging dat het product ongeopend is. Je ontvangt binnen 2 werkdagen retourinstructies."
+            "answer": "Stuur een e-mail naar support@tabblie.com met je bestelnummer, reden van retour en bevestiging dat het product ongeopend is. Op werkdagen reageren we binnen 1 werkdag met retourinstructies."
           }
         },
         "q4": {
@@ -295,7 +295,7 @@
       "settings": {
         "eyebrow": "",
         "heading": "Staat je vraag er niet tussen?",
-        "description": "Mail ons op support@tabblie.com — we helpen je binnen 24 uur op werkdagen!",
+        "description": "Mail ons op support@tabblie.com — op werkdagen reageren we binnen 1 werkdag!",
         "button_text": "Neem contact op",
         "button_url": "/pages/contact"
       }
