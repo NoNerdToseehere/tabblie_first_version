@@ -220,7 +220,12 @@
       {%- endif -%}
 
       {%- if section.settings.body != blank -%}
-        <p class="tabblie-founder__body">{{ section.settings.body }}</p>
+        {%- comment -%}
+          newline_to_br (2026-08-16): the body is a textarea whose copy is
+          written in paragraphs. Without this the line breaks collapse and
+          it renders as one run-on block.
+        {%- endcomment -%}
+        <p class="tabblie-founder__body">{{ section.settings.body | newline_to_br }}</p>
       {%- endif -%}
 
       {%- if section.settings.button_text != blank -%}
