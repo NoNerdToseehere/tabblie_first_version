@@ -954,6 +954,11 @@
         "type": "shopify://apps/kaching-cart/blocks/embed/7705621e-3c0f-4e97-9d29-5c8528b19fb7",
         "disabled": false,
         "settings": {}
+      },
+      "15599951759576395258": {
+        "type": "shopify://apps/mida-replay-heatmaps/blocks/mida_recorder/e4c350c5-eabf-426d-8014-47ef50412bd0",
+        "disabled": false,
+        "settings": {}
       }
     }
   },
