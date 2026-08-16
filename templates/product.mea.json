@@ -66,7 +66,7 @@
         "u6"
       ],
       "settings": {
-        "deal_text": "GRATIS VERZENDING OP ALLE BESTELLINGEN"
+        "deal_text": "GRATIS VERZENDING VANAF €30"
       }
     },
     "main": {
@@ -263,7 +263,7 @@
           "type": "badge",
           "settings": {
             "icon": "truck",
-            "text": "Gratis verzending"
+            "text": "Gratis verzending vanaf €30"
           }
         },
         "b3": {
@@ -465,7 +465,7 @@
           "type": "faq",
           "settings": {
             "question": "Wanneer wordt mijn bestelling geleverd?",
-            "answer": "Bestellingen vóór 23:59 worden dezelfde werkdag verstuurd. NL: 1-2 werkdagen, BE: 2-3 werkdagen. Altijd gratis."
+            "answer": "Bestellingen vóór 23:59 worden dezelfde werkdag verstuurd. NL: 1-2 werkdagen, BE: 2-3 werkdagen. Gratis vanaf €30."
           }
         },
         "q11": {
