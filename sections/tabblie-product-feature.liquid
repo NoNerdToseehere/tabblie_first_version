@@ -197,9 +197,15 @@
 
     <div class="tabblie-pf__media">
       {%- if section.settings.image != blank -%}
+        {%- comment -%}
+          Prefer the image's own alt text (set in Shopify Files) over the
+          heading (2026-08-16). Falling back to the title described the
+          section, not the picture, which is no use to screen readers or
+          image search.
+        {%- endcomment -%}
         <img
           src="{{ section.settings.image | image_url: width: 900 }}"
-          alt="{{ section.settings.title | escape }}"
+          alt="{{ section.settings.image.alt | default: section.settings.title | escape }}"
           width="900"
           height="1125"
           loading="lazy"
