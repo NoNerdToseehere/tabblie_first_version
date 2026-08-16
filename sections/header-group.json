@@ -19,7 +19,7 @@
           "settings": {
             "type": "html",
             "text": "<a href=\"/collections/all\" class=\"tabblie-announce-deal\"><strong>BUNDELDEAL: 3+1 GRATIS</strong><span class=\"tabblie-announce-deal__sub\">Bundel &amp; bespaar</span></a>",
-            "text_rich": "<p>Gratis verzending in NL & BE</p>",
+            "text_rich": "<p>Gratis verzending vanaf €30</p>",
             "btn_color": "#f84248",
             "btn_border_color": "#ffffff",
             "btn_bg_color": "#ffffff",

@@ -735,7 +735,7 @@
         "b4": {
           "type": "benefit",
           "settings": {
-            "text": "Gratis verzending, morgen in huis"
+            "text": "Gratis verzending vanaf €30, morgen in huis"
           }
         }
       },
@@ -784,7 +784,7 @@
         "b4": {
           "type": "benefit",
           "settings": {
-            "text": "Gratis verzending, morgen in huis"
+            "text": "Gratis verzending vanaf €30, morgen in huis"
           }
         }
       },
@@ -1467,7 +1467,7 @@
         "b4": {
           "type": "benefit",
           "settings": {
-            "text": "Gratis verzending, morgen in huis"
+            "text": "Gratis verzending vanaf €30, morgen in huis"
           }
         }
       },

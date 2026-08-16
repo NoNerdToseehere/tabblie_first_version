@@ -74,7 +74,7 @@ Works full-time, two kids, shops online. Wants to make better choices but doesn'
 ### Phase 1: Launch (Current)
 - **DTC webshop** (Shopify) — direct to consumer, NL & BE
 - **4 products:** Wasstrips, Vaatwasstrips, Toiletstrips, Allesreiniger
-- **Key hooks:** Free shipping, 30-day guarantee, 15% first-order discount
+- **Key hooks:** Free shipping from €30, 30-day guarantee, 15% first-order discount
 - **Social proof:** Trustpilot-style ratings, UGC video testimonials
 - **Foundation:** 10% of profits to environmental projects (Plastic Soup Foundation)
 
@@ -96,7 +96,7 @@ Works full-time, two kids, shops online. Wants to make better choices but doesn'
 ## Pricing Strategy
 
 - **Accessible pricing** — not premium, not budget. Fair.
-- **Free shipping** on all orders (NL & BE) — strips are light, shipping cost is minimal
+- **Free shipping from €30** (NL & BE) — corrected 2026-08-16; it is NOT free on all orders. Any copy stating "gratis verzending" must carry the €30 threshold.
 - **Subscription discount** — 20% off recurring orders (updated 2026-08-14)
 - **First-order discount** — 15% via email signup
 - **Bundle savings** — buy 3+, get discount

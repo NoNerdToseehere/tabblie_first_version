@@ -45,7 +45,7 @@
         {%- liquid
             assign meta_description = page_description
             if meta_description == blank and request.page_type == 'index'
-                assign meta_description = 'Plasticvrije schoonmaakstrips voor je was, vaat en toilet. Pak een strip, gooi ’m erin, klaar. Geen plastic flessen, geen gedoe. Gratis verzending NL & BE.'
+                assign meta_description = 'Plasticvrije schoonmaakstrips voor je was, vaat en toilet. Pak een strip, gooi ’m erin, klaar. Geen plastic flessen, geen gedoe. Gratis verzending vanaf €30.'
             endif
             comment
               Products and collections had no SEO description set either, so
@@ -67,13 +67,13 @@
               title rather than shipping the page with no tag at all.
             endcomment
             if meta_description == blank and request.page_type == 'product'
-                assign meta_description = product.title | append: ' van Tabblie. Plasticvrij, biologisch afbreekbaar en zonder gedoe. Gratis verzending in NL & BE.'
+                assign meta_description = product.title | append: ' van Tabblie. Plasticvrij, biologisch afbreekbaar en zonder gedoe. Gratis verzending vanaf €30.'
             endif
             if meta_description == blank
                 assign meta_description = shop.description
             endif
             if meta_description == blank
-                assign meta_description = 'Tabblie maakt plasticvrije schoonmaakstrips voor je was, vaat en toilet. Geen plastic flessen, geen gedoe. Gratis verzending in NL & BE.'
+                assign meta_description = 'Tabblie maakt plasticvrije schoonmaakstrips voor je was, vaat en toilet. Geen plastic flessen, geen gedoe. Gratis verzending vanaf €30.'
             endif
         -%}
         {%- if meta_description != blank -%}
