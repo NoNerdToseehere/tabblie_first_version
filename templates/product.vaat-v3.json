@@ -674,7 +674,7 @@
           "settings": {
             "title": "Scheur een strip af",
             "description": "Langs de perforatie — een halve strip voor een halfvolle machine.",
-            "image_asset": "vaatwas-step-1-scheur-strip-af.svg"
+            "image_asset": "tabblie-stap-scheur-strip.png"
           }
         },
         "s2": {
@@ -682,7 +682,7 @@
           "settings": {
             "title": "In het bestekmandje",
             "description": "Of in het tabletvak, wat jij makkelijk vindt.",
-            "image_asset": "vaatwas-step-2-bestekmandje.svg"
+            "image_asset": "tabblie-stap-strip-in-vaatwasser.png"
           }
         },
         "s3": {
@@ -690,7 +690,7 @@
           "settings": {
             "title": "Start je programma",
             "description": "De strip lost volledig op. Streeploos schone vaat.",
-            "image_asset": "vaatwas-step-3-start-programma.svg"
+            "image_asset": "tabblie-stap-vaatwasser-schoon.png"
           }
         }
       },

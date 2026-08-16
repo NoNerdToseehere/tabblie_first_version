@@ -142,7 +142,8 @@
     z-index: 1;
   }
 
-  .tabblie-hiw2__art svg { width: 100%; height: auto; display: block; }
+  .tabblie-hiw2__art svg,
+  .tabblie-hiw2__art img { width: 100%; height: auto; display: block; }
 
   .tabblie-hiw2__badge {
     position: absolute;
@@ -341,7 +342,20 @@
             <div class="tabblie-hiw2__band">
               <span class="tabblie-hiw2__ghost" aria-hidden="true">{{ forloop.index }}</span>
               {%- if block.settings.image_asset != blank -%}
-                <span class="tabblie-hiw2__art">{{ block.settings.image_asset | inline_asset_content }}</span>
+                {%- comment -%}
+                  inline_asset_content only works for SVG — it dumps the raw
+                  file into the page. Raster illustrations (PNG) have to go
+                  through an <img> instead (2026-08-16). The alt is empty on
+                  purpose: the step title next to it already carries the
+                  meaning, so announcing the icon too would just repeat it.
+                {%- endcomment -%}
+                {%- if block.settings.image_asset contains '.svg' -%}
+                  <span class="tabblie-hiw2__art">{{ block.settings.image_asset | inline_asset_content }}</span>
+                {%- else -%}
+                  <span class="tabblie-hiw2__art">
+                    <img src="{{ block.settings.image_asset | asset_url }}" alt="" width="400" height="400" loading="lazy">
+                  </span>
+                {%- endif -%}
               {%- endif -%}
             </div>
             <span class="tabblie-hiw2__badge" aria-hidden="true">{{ forloop.index }}</span>
@@ -403,7 +417,7 @@
       "settings": [
         { "type": "text", "id": "title", "label": "Titel" },
         { "type": "text", "id": "description", "label": "Beschrijving" },
-        { "type": "text", "id": "image_asset", "label": "Illustratie (asset bestandsnaam, .svg)" }
+        { "type": "text", "id": "image_asset", "label": "Illustratie (asset bestandsnaam, .svg of .png)" }
       ]
     }
   ],
@@ -411,9 +425,9 @@
     {
       "name": "Tabblie How It Works v2",
       "blocks": [
-        { "type": "step", "settings": { "title": "1. Pak een strip", "description": "Simpel, schoon en zonder geknoei.", "image_asset": "tabblie-step-pak.svg" } },
-        { "type": "step", "settings": { "title": "2. Gooi 'm erin", "description": "In de trommel bij je was.", "image_asset": "tabblie-step-gooi.svg" } },
-        { "type": "step", "settings": { "title": "3. Klaar. Echt waar.", "description": "Frisse was, elke keer weer.", "image_asset": "tabblie-step-klaar.svg" } }
+        { "type": "step", "settings": { "title": "1. Pak een strip", "description": "Simpel, schoon en zonder geknoei.", "image_asset": "tabblie-stap-scheur-strip.png" } },
+        { "type": "step", "settings": { "title": "2. Gooi 'm erin", "description": "In de trommel bij je was.", "image_asset": "tabblie-stap-strip-in-wasmachine.png" } },
+        { "type": "step", "settings": { "title": "3. Klaar. Echt waar.", "description": "Frisse was, elke keer weer.", "image_asset": "tabblie-stap-start-wasmachine.png" } }
       ]
     }
   ]

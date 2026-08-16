@@ -581,7 +581,7 @@
           "settings": {
             "title": "1. Pak een strip",
             "description": "Simpel, schoon en zonder geknoei.",
-            "image_asset": "tabblie-step-pak.svg"
+            "image_asset": "tabblie-stap-scheur-strip.png"
           }
         },
         "s2": {
@@ -589,7 +589,7 @@
           "settings": {
             "title": "2. Gooi 'm erin",
             "description": "In de wasmachine, de vaatwasser of de wc.",
-            "image_asset": "tabblie-step-gooi.svg"
+            "image_asset": "tabblie-stap-strip-in-wasmachine.png"
           }
         },
         "s3": {
@@ -597,7 +597,7 @@
           "settings": {
             "title": "3. Klaar. Echt waar.",
             "description": "Schone was, vaat én toilet. Elke keer weer.",
-            "image_asset": "tabblie-step-klaar.svg"
+            "image_asset": "tabblie-stap-start-wasmachine.png"
           }
         }
       },
