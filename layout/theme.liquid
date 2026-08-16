@@ -216,6 +216,28 @@
 
         {% section 'tabblie-side-nav' %}
 
+        {%- comment -%}
+          Logo click while already on that page (2026-08-16): the browser
+          treats it as a reload and restores the previous scroll position,
+          so you land back in the middle of the page instead of the top.
+          Intercept it and scroll up instead of reloading.
+        {%- endcomment -%}
+        <script>
+          document.addEventListener('click', function (e) {
+            var a = e.target.closest('a.header__heading-link, a.header__logo-link');
+            if (!a) return;
+            var href = a.getAttribute('href');
+            if (!href) return;
+            var dest = new URL(href, location.href);
+            if (dest.pathname !== location.pathname || dest.search !== location.search) return;
+            e.preventDefault();
+            window.scrollTo({
+              top: 0,
+              behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+            });
+          });
+        </script>
+
     </body>
     <style>
         /* No-plastic-waste announcement icon — sparkle, matches hero marquee */
