@@ -33,6 +33,14 @@ class StickyAddToCart extends HTMLElement {
     }
 
     openStickyModal() {
+        // Add the selected variant straight to the cart instead of opening the
+        // mobile options sheet — the sheet (huge gallery + second button) only
+        // remains as a fallback when the current variant can't be added.
+        const stickyAtc = this.sticky.querySelector('#product-sticky-add-to-cart');
+        if (stickyAtc && !stickyAtc.disabled) {
+            stickyAtc.click();
+            return;
+        }
         document.body.classList.add('show-mobile-options');
         const height = this.closest('[data-sticky-add-to-cart]').clientHeight;
         this.sticky.querySelector('.sticky-product-mobile').style.bottom = height + 'px';
