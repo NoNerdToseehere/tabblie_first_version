@@ -526,7 +526,7 @@
           "settings": {
             "title": "1. Pak één strip",
             "description": "Al op maat — scheuren hoeft niet.",
-            "image_asset": "toilet-step-1-pak-een-strip.svg"
+            "image_asset": "toilet-step-1-pak-een-strip.png"
           }
         },
         "s2": {
@@ -534,7 +534,7 @@
           "settings": {
             "title": "2. Gooi 'm in de pot",
             "description": "Laat 'm 10-15 minuten bruisen.",
-            "image_asset": "toilet-step-2-gooi-in-toilet.svg"
+            "image_asset": "toilet-step-2-gooi-in-toilet.png"
           }
         },
         "s3": {
@@ -542,7 +542,7 @@
           "settings": {
             "title": "3. Borstel en spoel",
             "description": "Fris toilet. Nul bleek.",
-            "image_asset": "toilet-step-3-borstel-schoon.svg"
+            "image_asset": "toilet-step-3-borstel-schoon.png"
           }
         }
       },
