@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "tabblie_product_usps": {
@@ -6,17 +15,17 @@
         "usp_1": {
           "type": "usp",
           "settings": {
+            "custom_image": "shopify://shop_images/icon-usp-certified_200x_cc3346f8-da36-4c52-a8c6-e3f52909d020.png",
             "icon": "plasticfree",
-            "text": "Geen plasticafval",
-            "custom_image": "shopify://shop_images/icon-usp-certified_200x_cc3346f8-da36-4c52-a8c6-e3f52909d020.png"
+            "text": "Geen plasticafval"
           }
         },
         "usp_2": {
           "type": "usp",
           "settings": {
+            "custom_image": "shopify://shop_images/icon-usp-sustainable_200x_351df314-87fc-4509-ae33-1cb02ea136d9.png",
             "icon": "heart",
-            "text": "100% vegan",
-            "custom_image": "shopify://shop_images/icon-usp-sustainable_200x_351df314-87fc-4509-ae33-1cb02ea136d9.png"
+            "text": "100% vegan"
           }
         },
         "usp_3": {
@@ -36,17 +45,17 @@
         "usp_5": {
           "type": "usp",
           "settings": {
+            "custom_image": "shopify://shop_images/icon-usp-effective_200x_0ec970a2-b8e4-4d4a-bdef-8443fa1d8526.png",
             "icon": "star",
-            "text": "Super effectief",
-            "custom_image": "shopify://shop_images/icon-usp-effective_200x_0ec970a2-b8e4-4d4a-bdef-8443fa1d8526.png"
+            "text": "Super effectief"
           }
         },
         "usp_6": {
           "type": "usp",
           "settings": {
+            "custom_image": "shopify://shop_images/icon-usp-sustainable_200x_3aee02bf-aad3-41e0-ba35-c258b0868ba8.png",
             "icon": "footprint",
-            "text": "Klimaatneutraal verzonden",
-            "custom_image": "shopify://shop_images/icon-usp-sustainable_200x_3aee02bf-aad3-41e0-ba35-c258b0868ba8.png"
+            "text": "Klimaatneutraal verzonden"
           }
         }
       },
@@ -59,7 +68,8 @@
         "usp_6"
       ],
       "settings": {
-        "deal_text": "BUNDELDEAL: 3+1 GRATIS"
+        "deal_text": "BUNDELDEAL: 3+1 GRATIS",
+        "show_usp_strip": false
       }
     },
     "main": {
@@ -73,7 +83,7 @@
             "text": "tabblie-review-score",
             "color_title": "#e8622a",
             "text_description": "tabblie-review-score",
-            "color_des": "#182D20",
+            "color_des": "#182d20",
             "fontsize_text": 14,
             "content_popup": "",
             "spacing_top": 0,
@@ -96,9 +106,9 @@
             "icon": "",
             "color_icon": "#e8622a",
             "text": "",
-            "color_title": "#182D20",
+            "color_title": "#182d20",
             "text_description": "<p style='font-size:14.5px;font-weight:600;color:rgba(24,45,32,0.65);font-style:italic;margin:0;font-family:var(--text-font-family)'>Streeploos schone vaat. Zonder plastic. Zonder gedoe.</p>",
-            "color_des": "#182D20",
+            "color_des": "#182d20",
             "fontsize_text": 13,
             "content_popup": "",
             "spacing_top": 0,
@@ -123,9 +133,9 @@
             "icon": "",
             "color_icon": "#e8622a",
             "text": "tabblie-benefit-checks-vaat",
-            "color_title": "#182D20",
+            "color_title": "#182d20",
             "text_description": "tabblie-benefit-checks-vaat",
-            "color_des": "#182D20",
+            "color_des": "#182d20",
             "fontsize_text": 14,
             "content_popup": "",
             "spacing_top": 5,
@@ -159,7 +169,7 @@
             "text": "tabblie-trust-badges-pdp",
             "color_title": "#e8622a",
             "text_description": "tabblie-trust-badges-pdp",
-            "color_des": "#182D20",
+            "color_des": "#182d20",
             "fontsize_text": 12,
             "content_popup": "",
             "spacing_top": 0,
@@ -198,9 +208,9 @@
             "icon": "",
             "color_icon": "#e8622a",
             "text": "tabblie-social-delivery-vaat",
-            "color_title": "#182D20",
+            "color_title": "#182d20",
             "text_description": "tabblie-social-delivery-vaat",
-            "color_des": "#182D20",
+            "color_des": "#182d20",
             "fontsize_text": 12,
             "content_popup": "",
             "spacing_top": 0,
@@ -323,6 +333,7 @@
         "main_image_arrows_desktop": true,
         "main_image_arrows_mobile": false,
         "main_image_counter_mobile": true,
+        "gallery_start_photo": 3,
         "main_image_enable_parallax_mb": false,
         "main_image_show_zoom_icon_mb": false,
         "show_thumbnail_mobile": true,
@@ -388,8 +399,7 @@
         "mg_top_mobile": 0,
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 0,
-        "gallery_start_photo": 3
+        "mg_bottom_mobile": 0
       }
     },
     "tabblie_comparison": {
@@ -476,7 +486,13 @@
         "comp1_label": "Vaatwastabletten",
         "comp2_label": "Gel & poeder",
         "comp3_label": "Eco-tabletten",
-        "show_price_row": false
+        "show_price_row": false,
+        "price_label": "Prijs per wasbeurt",
+        "price_tabblie": "€0,17",
+        "price_comp1": "€0,45",
+        "price_comp2": "€0,38",
+        "price_comp3": "€0,28",
+        "footnote": "*Gemiddelde prijzen per wasbeurt, gebaseerd op adviesprijzen van bekende merken."
       }
     },
     "tabblie_benefit_card_1": {
@@ -507,6 +523,7 @@
         "b3"
       ],
       "settings": {
+        "image_ratio": "4 / 5",
         "image_side": "left",
         "image": "shopify://shop_images/Tabblie-26.jpg",
         "eyebrow": "",
@@ -544,14 +561,14 @@
         "b3"
       ],
       "settings": {
+        "image_ratio": "1 / 1",
         "image_side": "right",
         "image": "shopify://shop_images/1_732b5100-dd14-47e2-8089-925275b3b445.jpg",
         "eyebrow": "",
         "title": "Betaalbaar en effectief",
         "description": "Alles wat een tablet doet, zonder de nadelen.",
         "button_text": "",
-        "button_url": "#",
-        "image_ratio": "1 / 1"
+        "button_url": "#"
       }
     },
     "tabblie_benefit_card_3": {
@@ -582,8 +599,9 @@
         "b3"
       ],
       "settings": {
+        "image_ratio": "4 / 5",
         "image_side": "left",
-        "image": "shopify://shop_images/Tabblie-26.jpg",
+        "image": "shopify://shop_images/Tabblie-23_b909ed55-aed6-4487-a91a-d3c7206368fa.jpg",
         "eyebrow": "",
         "title": "Krachtige reiniging",
         "description": "Natuurlijke enzymen breken vet en aangekoekt vuil af.",
@@ -619,14 +637,14 @@
         "b3"
       ],
       "settings": {
+        "image_ratio": "1 / 1",
         "image_side": "right",
         "image": "shopify://shop_images/5_7c9b3263-5343-4926-858b-5812367850e7.jpg",
         "eyebrow": "",
         "title": "Veilig voor je gezin",
         "description": "Schone vaat zonder agressieve chemicaliën.",
         "button_text": "",
-        "button_url": "#",
-        "image_ratio": "1 / 1"
+        "button_url": "#"
       }
     },
     "tabblie_benefit_card_5": {
@@ -657,8 +675,9 @@
         "b3"
       ],
       "settings": {
+        "image_ratio": "4 / 5",
         "image_side": "left",
-        "image": "shopify://shop_images/Tabblie-26.jpg",
+        "image": "shopify://shop_images/Tabblie-35_8bcc47e1-fcc8-43be-8675-dac7a194caea.jpg",
         "eyebrow": "",
         "title": "Compact en licht",
         "description": "Nooit meer zware pakken tabletten sjouwen.",
@@ -700,6 +719,7 @@
         "s3"
       ],
       "settings": {
+        "bg_color": "#e8622a",
         "eyebrow": "ZO WERKT HET",
         "title": "Een, twee, drie - alles is schoon",
         "cta_text": "",
@@ -728,7 +748,8 @@
             "name": "Marieke B.",
             "location": "Gent",
             "avatar_asset": "tabblie-avatar-marieke.jpg",
-            "image": "shopify://shop_images/Tabblie-26.jpg"
+            "image": "shopify://shop_images/Tabblie-26.jpg",
+            "image_asset": ""
           }
         },
         "rev3": {
@@ -738,7 +759,10 @@
             "quote": "Zo'n klein pakje door de brievenbus in plaats van dat zware pak tabletten meesjouwen. Nooit meer anders.",
             "name": "Lisa B.",
             "location": "Amsterdam",
-            "avatar_asset": "tabblie-avatar-lisa.jpg"
+            "avatar": "shopify://shop_images/1_b0126052-cfba-4890-a2da-c603ed78a5b6.jpg",
+            "avatar_asset": "tabblie-avatar-lisa.jpg",
+            "image": "shopify://shop_images/IMG_3244_2.heic",
+            "image_asset": ""
           }
         }
       },
@@ -768,7 +792,13 @@
     },
     "tabblie_impact": {
       "type": "tabblie-impact",
-      "settings": {}
+      "settings": {
+        "eyebrow": "ONZE BELOFTE",
+        "heading": "Samen met jou steunen we milieu-initiatieven voor een groenere planeet",
+        "description": "Bij elke bestelling draag je bij aan milieuprojecten. Samen maken we het verschil — strip voor strip.",
+        "button_text": "Meer over onze missie",
+        "button_url": ""
+      }
     },
     "custom_service_block": {
       "type": "custom-service-block",
