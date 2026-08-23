@@ -17,11 +17,13 @@
     "hero": {
       "type": "tabblie-page-hero",
       "settings": {
-        "bg_color": "#FDF6EE",
+        "bg_color": "#fdf6ee",
         "eyebrow": "DUURZAAMHEID",
         "heading": "Schoon huis,",
         "heading_accent": "schoner geweten.",
-        "subtext": "Bij Tabblie geloven we dat schoonmaken niet ten koste hoeft te gaan van het milieu. Daarom maakten we het zo simpel mogelijk: minder plastic, minder water, minder gesleep. Geen grote beloftes — gewoon concrete keuzes."
+        "subtext": "Bij Tabblie geloven we dat schoonmaken niet ten koste hoeft te gaan van het milieu. Daarom maakten we het zo simpel mogelijk: minder plastic, minder water, minder gesleep. Geen grote beloftes — gewoon concrete keuzes.",
+        "button_text": "",
+        "button_url": ""
       }
     },
     "stats": {
@@ -49,9 +51,13 @@
           }
         }
       },
-      "block_order": ["stat_1", "stat_2", "stat_3"],
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "stat_3"
+      ],
       "settings": {
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "eyebrow": "ONZE CIJFERS",
         "title": "Feiten, geen loze beloftes"
       }
@@ -59,10 +65,13 @@
     "why_section": {
       "type": "tabblie-founder",
       "settings": {
+        "image": "shopify://shop_images/Founder_image.png",
+        "image_alt": "Tabblie oprichter",
         "eyebrow": "WAAROM DIT BELANGRIJK IS",
         "title": "De impact van schoonmaakmiddelen",
         "body": "Een gemiddeld Nederlands huishouden gooit ieder jaar zo'n 50 plastic flessen schoonmaakmiddel weg. Wat ons betreft zijn dat er 50 te veel.\n\nZeker als je bedenkt wat er in veel van die flessen zit: voornamelijk water. Een fles vloeibaar wasmiddel bestaat al snel voor 80 tot 90% uit water. Water dat wordt verpakt in plastic, vervoerd naar de winkel en vervolgens door jou mee naar huis wordt genomen.\n\nBij Tabblie houden we alleen over wat je écht nodig hebt: een supergeconcentreerde strip die klein, licht en krachtig is.\n\nGeen grote plastic fles. Geen onnodig gewicht. Geen gesjouw. Gewoon verpakt in papier en zó compact dat het door je brievenbus past.\n\nMinder plastic. Minder gewicht. Minder gedoe. En die 50 flessen? Die moeten wat ons betreft gewoon uit de schoonmaakkast verdwijnen.",
-        "button_text": "Bekijk onze producten"
+        "button_text": "Bekijk onze producten",
+        "button_url": ""
       }
     },
     "impact": {
@@ -71,7 +80,8 @@
         "eyebrow": "ONZE AANPAK",
         "heading": "Gewoon schoonmaken zoals het hoort",
         "description": "Schoonmaken mag nooit ten koste gaan van de wereld om ons heen. Maar het mag wel fun zijn. Dus doen we het anders — felle kleuren, producten die écht werken, en nul plastic afval. Geen lege beloftes, geen saaie duurzaamheidstrip. Goed voor jou én de planeet.",
-        "button_text": "Shop nu"
+        "button_text": "Shop nu",
+        "button_url": ""
       }
     },
     "faq": {
@@ -113,7 +123,13 @@
           }
         }
       },
-      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4", "faq_5"],
+      "block_order": [
+        "faq_1",
+        "faq_2",
+        "faq_3",
+        "faq_4",
+        "faq_5"
+      ],
       "settings": {
         "icon": "globe",
         "eyebrow": "VEELGESTELDE VRAGEN",
