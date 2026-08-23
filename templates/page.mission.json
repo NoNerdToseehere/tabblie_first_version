@@ -17,20 +17,25 @@
     "hero": {
       "type": "tabblie-page-hero",
       "settings": {
-        "bg_color": "#FDF6EE",
+        "bg_color": "#fdf6ee",
         "eyebrow": "ONZE MISSIE",
         "heading": "Wij maken schoonmaken",
         "heading_accent": "beter voor de planeet.",
-        "subtext": "Tabblie bestaat omdat wij geloven dat schoonmaken niet ten koste hoeft te gaan van het milieu. Geen plastic flessen, geen schadelijke chemicaliën, geen compromissen."
+        "subtext": "Tabblie bestaat omdat wij geloven dat schoonmaken niet ten koste hoeft te gaan van het milieu. Geen plastic flessen, geen schadelijke chemicaliën, geen compromissen.",
+        "button_text": "",
+        "button_url": ""
       }
     },
     "founder": {
       "type": "tabblie-founder",
       "settings": {
+        "image": "shopify://shop_images/Founder_image.png",
+        "image_alt": "Tabblie oprichter",
         "eyebrow": "ONS VERHAAL",
         "title": "Een familiebedrijf met een missie",
         "body": "Tabblie begon met een simpele gedachte: waarom gebruiken we nog zoveel plastic voor iets wat we iedere week opnieuw nodig hebben?\n\nKijk in een gemiddelde schoonmaakkast en je ziet flessen. Heel veel verschillende plastic flessen. Voor een groot deel gevuld met water, verpakt in plastic, vervoerd naar de winkel, gesjouwd naar huis en uiteindelijk weer weggegooid.\n\nDat moet slimmer kunnen.\n\nMaar duurzamer alleen vonden we niet genoeg. Want waarom voelt een duurzamere keuze zo vaak als een compromis? Minder mooi. Minder leuk. Minder handig. Duurder. Of nét iets minder goed.\n\nWij geloven dat je niet hoeft te kiezen tussen duurzaam, tof en goed.\n\nDaarom maken we schoonmaakproducten die anders naar schoonmaken kijken. Minder onnodig plastic en rommel, maar juist méér kleur, karakter en plezier. Producten die doen wat ze moeten doen, er goed uitzien in je huis en betaalbaar blijven.\n\nWant verandering hoeft niet altijd groots of ingewikkeld te zijn. Soms begint het gewoon bij iets wat we allemaal doen: schoonmaken.\n\nMinder plastic. Meer plezier. Gewoon beter.\n\nDat is Tabblie.",
-        "button_text": "Bekijk onze producten"
+        "button_text": "Bekijk onze producten",
+        "button_url": ""
       }
     },
     "stats": {
@@ -64,7 +69,7 @@
         "stat_3"
       ],
       "settings": {
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "eyebrow": "ONZE IMPACT",
         "title": "Waar we voor staan"
       }
@@ -76,21 +81,24 @@
           "type": "stat",
           "settings": {
             "number": "80%",
-            "description": "van de schoonmaakmiddelen bevat onnodige chemicaliën"
+            "description": "van de schoonmaakmiddelen bevat onnodige chemicaliën",
+            "is_positive": false
           }
         },
         "stat_2": {
           "type": "stat",
           "settings": {
             "number": "12+",
-            "description": "plastic flessen per huishouden per jaar voor schoonmaak"
+            "description": "plastic flessen per huishouden per jaar voor schoonmaak",
+            "is_positive": false
           }
         },
         "stat_3": {
           "type": "stat",
           "settings": {
             "number": "91%",
-            "description": "van al het plastic wordt niet gerecycled"
+            "description": "van al het plastic wordt niet gerecycled",
+            "is_positive": false
           }
         },
         "stat_4": {
@@ -130,6 +138,7 @@
         "val_1": {
           "type": "ingredient",
           "settings": {
+            "image_asset": "",
             "title": "Geen plastic, ooit",
             "description": "Van formule tot verpakking: geen plasticafval. Onze strips worden verpakt in recyclebaar papier en zijn biologisch afbreekbaar."
           }
@@ -137,6 +146,7 @@
         "val_2": {
           "type": "ingredient",
           "settings": {
+            "image_asset": "",
             "title": "Eerlijk & transparant",
             "description": "We vertellen je precies wat erin zit en waarom. Geen kleine lettertjes, geen groene claims zonder bewijs."
           }
@@ -144,6 +154,7 @@
         "val_3": {
           "type": "ingredient",
           "settings": {
+            "image_asset": "",
             "title": "Voor het hele gezin",
             "description": "Onze formules zijn dermatologisch getest, vrij van parabenen en fosfaten, en geschikt voor gevoelige huid. Veilig voor iedereen."
           }
@@ -190,7 +201,9 @@
         "faq_3"
       ],
       "settings": {
-        "eyebrow": "VEELGESTELDE VRAGEN"
+        "icon": "question",
+        "eyebrow": "VEELGESTELDE VRAGEN",
+        "title": "Alles wat je wilt weten"
       }
     }
   },
