@@ -1,0 +1,784 @@
+{
+  "sections": {
+    "mof_intro": {
+      "type": "tabblie-narrative-split",
+      "blocks": {
+        "fles": {
+          "type": "story",
+          "settings": {
+            "label": "DE FLES",
+            "title": "Vloeibaar wasmiddel is vooral… water",
+            "body": "<p>De grote fles bestaat grotendeels uit water. Je sjouwt dus kilo’s water de trap op en betaalt ervoor mee. De doseerdop giet standaard te veel — en elke lege fles is er weer één op de plastic berg.</p>"
+          }
+        },
+        "pod": {
+          "type": "story",
+          "settings": {
+            "label": "DE POD",
+            "title": "Handig, maar verpakt in oplosbaar plastic",
+            "body": "<p>Pods zijn per wasbeurt vaak de duurste keuze in het schap. En dat ‘oplosbare’ omhulsel is <strong>PVA</strong>: een synthetisch, in water oplosbaar plastic. <a href=\"https://www.mdpi.com/1660-4601/18/11/6027\" target=\"_blank\" rel=\"noopener\">Onderzoekers van Arizona State University</a> schatten dat er jaarlijks duizenden tonnen PVA via het riool in het milieu terechtkomen — over hoe snel het volledig afbreekt, zijn wetenschappers het nog niet eens.</p>"
+          }
+        },
+        "strip": {
+          "type": "story",
+          "settings": {
+            "label": "DE STRIP",
+            "title": "Zonder PVA, zonder water, zonder fles",
+            "body": "<p>Tabblie wasstrips gebruiken een drager op <strong>zeewierbasis</strong> — dus geen PVA — en zitten in een papieren verpakking die door de brievenbus past. Dezelfde werkzame stoffen als vloeibaar wasmiddel, alleen zonder het water. Hieronder zie je precies hoe dat zich verhoudt.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "fles",
+        "pod",
+        "strip"
+      ],
+      "settings": {
+        "bg_color": "#FDF6EE",
+        "eyebrow": "EVEN EERLIJK",
+        "heading": "Wat zit er nu écht in je bijkeuken?"
+      }
+    },
+    "tabblie_comparison": {
+      "type": "tabblie-comparison",
+      "blocks": {
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "text": "100% plastic- & microplasticvrij",
+            "c1": false,
+            "c2": false,
+            "c3": false
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "text": "Natuurlijke enzymen",
+            "c1": false,
+            "c2": false,
+            "c3": false
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "text": "100% plantaardig",
+            "c1": false,
+            "c2": false,
+            "c3": false
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "text": "Huidvriendelijke ingrediënten",
+            "c1": false,
+            "c2": false,
+            "c3": false
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "text": "Makkelijk te doseren",
+            "c1": false,
+            "c2": true,
+            "c3": true
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "text": "Geld-terug-garantie",
+            "c1": false,
+            "c2": false,
+            "c3": false
+          }
+        },
+        "row_7": {
+          "type": "row",
+          "settings": {
+            "text": "Licht & makkelijk mee te nemen",
+            "c1": false,
+            "c2": true,
+            "c3": false
+          }
+        },
+        "row_8": {
+          "type": "row",
+          "settings": {
+            "text": "Steunt milieu-initiatieven",
+            "c1": false,
+            "c2": false,
+            "c3": false
+          }
+        }
+      },
+      "block_order": [
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6",
+        "row_7",
+        "row_8"
+      ],
+      "settings": {
+        "heading_accent": "1.000+ mensen",
+        "heading": "kiezen voor Tabblie",
+        "subtext": "Doe mee met de wasrevolutie en zwaai de dure, ouderwetse, vervuilende wasmiddelen voorgoed uit.",
+        "comp1_label": "Vloeibaar wasmiddel",
+        "comp2_label": "Pods & capsules",
+        "comp3_label": "Waspoeder",
+        "show_price_row": true,
+        "price_label": "Prijs per wasbeurt",
+        "price_tabblie": "€0,18",
+        "price_comp1": "€0,56",
+        "price_comp2": "€0,50",
+        "price_comp3": "€0,25",
+        "footnote": "*Prijs per wasbeurt o.b.v. 1 pak (64 wasbeurten); concurrentprijzen zijn gemiddelde adviesprijzen van bekende merken.",
+        "show_avatars": true
+      }
+    },
+    "tabblie_product_usps": {
+      "type": "tabblie-product-usps",
+      "blocks": {
+        "usp_1": {
+          "type": "usp",
+          "settings": {
+            "icon": "plasticfree",
+            "text": "Geen plasticafval",
+            "custom_image": "shopify://shop_images/icon-usp-certified_200x_cc3346f8-da36-4c52-a8c6-e3f52909d020.png"
+          }
+        },
+        "usp_2": {
+          "type": "usp",
+          "settings": {
+            "icon": "heart",
+            "text": "100% vegan",
+            "custom_image": "shopify://shop_images/icon-usp-sustainable_200x_351df314-87fc-4509-ae33-1cb02ea136d9.png"
+          }
+        },
+        "usp_3": {
+          "type": "usp",
+          "settings": {
+            "icon": "truck",
+            "text": "Gratis verzending vanaf €30"
+          }
+        },
+        "usp_4": {
+          "type": "usp",
+          "settings": {
+            "icon": "check",
+            "text": "Nederlands familiebedrijf"
+          }
+        },
+        "usp_5": {
+          "type": "usp",
+          "settings": {
+            "icon": "star",
+            "text": "Super effectief",
+            "custom_image": "shopify://shop_images/icon-usp-effective_200x_0ec970a2-b8e4-4d4a-bdef-8443fa1d8526.png"
+          }
+        },
+        "usp_6": {
+          "type": "usp",
+          "settings": {
+            "icon": "footprint",
+            "text": "Klimaatneutraal verzonden",
+            "custom_image": "shopify://shop_images/icon-usp-sustainable_200x_3aee02bf-aad3-41e0-ba35-c258b0868ba8.png"
+          }
+        }
+      },
+      "block_order": [
+        "usp_1",
+        "usp_2",
+        "usp_3",
+        "usp_4",
+        "usp_5",
+        "usp_6"
+      ],
+      "settings": {
+        "deal_text": "BUNDELDEAL: 3+1 GRATIS"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "review_score_custom": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#e8622a",
+            "text": "tabblie-review-score",
+            "color_title": "#e8622a",
+            "text_description": "tabblie-review-score",
+            "color_des": "#182D20",
+            "fontsize_text": 14,
+            "content_popup": "",
+            "spacing_top": 0,
+            "spacing_bottom": 5
+          }
+        },
+        "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0": {
+          "type": "title",
+          "settings": {
+            "fontsize_text": 18,
+            "fontsize_text_mb": 16,
+            "color_title": "#232323",
+            "spacing_top": 0,
+            "spacing_bottom": 10
+          }
+        },
+        "slogan": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#e8622a",
+            "text": "",
+            "color_title": "#182D20",
+            "text_description": "<p style='font-size:14.5px;font-weight:600;color:rgba(24,45,32,0.65);font-style:italic;margin:0;font-family:var(--text-font-family)'>Schoon wassen. Zonder plastic. Zonder gedoe.</p>",
+            "color_des": "#182D20",
+            "fontsize_text": 13,
+            "content_popup": "",
+            "spacing_top": 0,
+            "spacing_bottom": 4
+          }
+        },
+        "judge_me_reviews_preview_badge_ayaigx": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "4f95b592-8369-4ab0-b30d-24e463fb6890": {
+          "type": "price",
+          "settings": {
+            "fontsize_text": 22,
+            "spacing_top": 13,
+            "spacing_bottom": 0
+          }
+        },
+        "benefit_checks": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#e8622a",
+            "text": "tabblie-benefit-checks",
+            "color_title": "#182D20",
+            "text_description": "tabblie-benefit-checks",
+            "color_des": "#182D20",
+            "fontsize_text": 14,
+            "content_popup": "",
+            "spacing_top": 5,
+            "spacing_bottom": 10
+          }
+        },
+        "d98e243b-3682-495a-965a-1c7f7d460880": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "show_variant_image_group": false,
+            "enable_border_top": false,
+            "enable_border_bottom": false,
+            "color_border": "#e6e6e6",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "d97e417a-941b-4a5d-bef3-a651adb918d8": {
+          "type": "variant_description",
+          "settings": {
+            "spacing_top": 0,
+            "spacing_bottom": 12
+          }
+        },
+        "trust_badges": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#e8622a",
+            "text": "tabblie-trust-badges-pdp",
+            "color_title": "#e8622a",
+            "text_description": "tabblie-trust-badges-pdp",
+            "color_des": "#182D20",
+            "fontsize_text": 12,
+            "content_popup": "",
+            "spacing_top": 0,
+            "spacing_bottom": 10
+          }
+        },
+        "f1b31d90-1e43-4948-9fe3-97ba43f6fb34": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "atc_animation": "horizontal-shaking",
+            "atc_color": "#ffffff",
+            "atc_border_color": "#f4633a",
+            "atc_bg_color": "#f4633a",
+            "atc_bg_color_gradient": "",
+            "atc_color_hover": "#ffffff",
+            "atc_border_color_hover": "#00a5bd",
+            "atc_bg_color_hover": "#00a5bd",
+            "atc_bg_color_gradient_hover": "",
+            "bin_color": "#232323",
+            "bin_border_color": "#acacac",
+            "bin_bg_color": "#ffffff",
+            "bin_bg_color_gradient": "",
+            "bin_color_hover": "#ffffff",
+            "bin_border_color_hover": "#232323",
+            "bin_bg_color_hover": "#232323",
+            "bin_bg_color_hover_gradient": "",
+            "spacing_top": 0,
+            "spacing_bottom": 15
+          }
+        },
+        "social_delivery": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#e8622a",
+            "text": "tabblie-social-delivery",
+            "color_title": "#182D20",
+            "text_description": "tabblie-social-delivery",
+            "color_des": "#182D20",
+            "fontsize_text": 12,
+            "content_popup": "",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "ugc_videos": {
+          "type": "custom_information",
+          "settings": {
+            "icon": "",
+            "color_icon": "#e8622a",
+            "text": "tabblie-ugc-videos",
+            "color_title": "#182D20",
+            "text_description": "tabblie-ugc-videos",
+            "color_des": "#182D20",
+            "fontsize_text": 12,
+            "content_popup": "",
+            "spacing_top": 0,
+            "spacing_bottom": 0
+          }
+        },
+        "short_description_eciCw3": {
+          "type": "short_description",
+          "settings": {
+            "show_short_description": true,
+            "word_number": "17",
+            "fontsize_text": 12,
+            "color_text": "#3c3c3c",
+            "spacing_top": 0,
+            "spacing_bottom": 13
+          }
+        },
+        "custom_QK3rYR": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Gebruik",
+            "type": "all",
+            "content": "<strong>Zo simpel is het</strong><br>1. Scheur een strip af langs de perforatie — voor een kleine of licht vervuilde was is een halve strip genoeg.<br>2. Gooi de strip direct in de trommel bij je wasgoed (niet in het wasmiddelbakje) of in het bestekmandje van je vaatwasser.<br>3. Start je programma. Klaar.<br><br><strong>Op welke temperatuur werkt het?</strong><br>De strip lost volledig en zonder resten op in koud én warm water — ook op de eco-stand.<br><br><strong>Voor welke was?</strong><br>Veilig voor witte én gekleurde was, en dermatologisch getest — dus ook voor babykleding en een gevoelige huid.<br><br><strong>Hoeveel wasbeurten haal ik uit een pak?</strong><br>Elke strip heeft een middenperforatie: een heel pak is goed voor het dubbele aantal wasbeurten bij normale vervuiling.<br><br><strong>Handwas?</strong><br>Los een halve strip op in een teiltje warm water en was zoals je gewend bent.",
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        },
+        "custom_cqfTAp": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Ingrediënten",
+            "type": "all",
+            "content": "• Plantaardige surfactanten — reinigers op plantbasis<br>• Natuurlijke enzymen — vlekverwijdering<br>• Essentiële oliën — frisse, natuurlijke geur<br>• Natriumcarbonaat — waterontharder<br>• Citroenzuur — pH-balans<br><br><strong>Wat er niet in zit:</strong> parabenen, fosfaten, kleurstoffen, PVA en microplastics. Vegan en dierproefvrij.",
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        },
+        "custom_NVDLg6": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Ingrediënten uitgelegd",
+            "type": "all",
+            "content": "<strong>Plantaardige surfactanten</strong> — krachtige reinigers op basis van kokos- en palmolie. Biologisch afbreekbaar en net zo effectief als synthetische alternatieven.<br><strong>Natuurlijke enzymen</strong> — breken eiwitten en vetten af voor grondige vlekverwijdering, ook bij lage temperaturen.<br><strong>Essentiële oliën</strong> — een subtiele, frisse geur zonder kunstmatige geurstoffen of allergenen.<br><strong>Natriumcarbonaat</strong> — maakt hard water zachter voor een betere waswerking.<br><strong>Citroenzuur</strong> — houdt de pH-waarde in balans voor optimale reiniging.<br><br><strong>Is dat veilig voor mijn gezin?</strong><br>Ja. Geen parabenen, fosfaten, kleurstoffen of microplastics, en dermatologisch getest. Bewaar de strips wel — net als elk wasmiddel — buiten bereik van kinderen.",
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        },
+        "custom_shipping": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Verzending & retour",
+            "type": "all",
+            "content": "• Gratis verzending in Nederland en België vanaf €30.<br>• Voor 17:00 besteld? Morgen verstuurd.<br>• De verpakking past door de brievenbus, dus je hoeft er niet voor thuis te blijven.<br>• Alle bestellingen worden klimaatneutraal verzonden.<br><br><strong>Wat als het niet bevalt?</strong><br>Je hebt 30 dagen om te proberen. Niet tevreden? Mail support@tabblie.com en je krijgt je geld terug — zonder gedoe. Ongeopende producten kun je binnen 30 dagen retourneren voor een volledige terugbetaling.",
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        },
+        "custom_sustain": {
+          "type": "custom",
+          "settings": {
+            "open_tab_mobile": false,
+            "title": "Duurzaamheid",
+            "type": "all",
+            "content": "<strong>Is het echt 100% plasticvrij?</strong><br>Ja. Geen plastic fles, geen plastic folie én geen verborgen plastic: onze strips bevatten geen PVA of microplastics en zijn biologisch afbreekbaar.<br><br><strong>En de verpakking?</strong><br>Papier — compact, licht en gewoon bij het oud papier te recyclen.<br><br><strong>Hoe zit het met CO2?</strong><br>We compenseren onze volledige CO2-voetafdruk via gecertificeerde milieuprojecten en steunen initiatieven die plastic uit oceanen halen en bomen planten. En omdat strips zo compact en licht zijn (geen water meesjouwen), is de uitstoot bij verzending tot 90% lager dan bij schoonmaakmiddelen in plastic flessen.",
+            "product_custom_source": "dynamic",
+            "product_tab_key_metafield": "",
+            "enable_btn_show_more": false,
+            "maximum_des_to_show": 300
+          }
+        }
+      },
+      "block_order": [
+        "review_score_custom",
+        "b0ea69b7-8a54-4a3c-9abd-0fcceeabaaa0",
+        "slogan",
+        "judge_me_reviews_preview_badge_ayaigx",
+        "4f95b592-8369-4ab0-b30d-24e463fb6890",
+        "benefit_checks",
+        "d98e243b-3682-495a-965a-1c7f7d460880",
+        "d97e417a-941b-4a5d-bef3-a651adb918d8",
+        "trust_badges",
+        "f1b31d90-1e43-4948-9fe3-97ba43f6fb34",
+        "social_delivery",
+        "ugc_videos",
+        "short_description_eciCw3",
+        "custom_QK3rYR",
+        "custom_cqfTAp",
+        "custom_NVDLg6",
+        "custom_shipping",
+        "custom_sustain"
+      ],
+      "custom_css": [
+        "button#product-add-to-cart {width: 200px; display: inline; padding: 8px 0px;}"
+      ],
+      "settings": {
+        "container": "1170",
+        "padding_full_width": 0,
+        "show_sticky_info": true,
+        "media_fit": "unset",
+        "product_image_ratio": "adapt",
+        "portrait_aspect_ratio": 148,
+        "video_layout": "popup",
+        "zoomed_image": false,
+        "product_image_popup": "none",
+        "main_image_show_custom_cursor": false,
+        "icon_color": "#000000",
+        "main_image_position": "left",
+        "main_image_layout": "1",
+        "main_image_arrows_desktop": true,
+        "main_image_arrows_mobile": false,
+        "main_image_counter_mobile": true,
+        "main_image_enable_parallax_mb": false,
+        "main_image_show_zoom_icon_mb": false,
+        "show_thumbnail_mobile": true,
+        "thumnail_layout": "3",
+        "thumbnail_to_show": 5,
+        "enable_sticky": false,
+        "sidebar_layout": "layout_1",
+        "sidebar_collapse": "collapse",
+        "sidebar_collapse_default": "expand",
+        "sidebar_position": "left",
+        "sidebar_heading_font": "font_1",
+        "sidebar_heading_font_size": 14,
+        "sidebar_heading_font_weight": "700",
+        "sidebar_heading_text_transform": "uppercase",
+        "show_badge": true,
+        "show_subtotal": false,
+        "subtotal_style": "1",
+        "show_sticky_add_to_cart": true,
+        "sticky_atc_layout": "1",
+        "enable_sticky_add_to_cart_always_mobile": true,
+        "show_sticky_vendor": false,
+        "show_quick_order_list": false,
+        "show_image": false,
+        "show_sku": false,
+        "show_tab": true,
+        "tab_layout": "vertical",
+        "tab_layout_mobile": "popup",
+        "icon_style_layout": "style_1",
+        "title_font_size": 18,
+        "title_font_size_mb": 16,
+        "font_weight_title": "500",
+        "title_text_transform": "none",
+        "title_padding_top_bottom": 15,
+        "tab_border_color": "#000000",
+        "tab_border_color_rgb": "",
+        "show_product_bundle": true,
+        "background_color": "#f8f8f8",
+        "block_title": "Frequenly Bought Together",
+        "block_title_align": "left",
+        "product_style": "2",
+        "block_image_ratio": "adapt",
+        "bundle_discount": true,
+        "bundle_discount_text": "Get a [discount]% discount buying these products together",
+        "bundle_discount_text_color": "#232323",
+        "total_btn_color": "#ffffff",
+        "total_btn_border": "#232323",
+        "total_btn_bg": "#232323",
+        "total_btn_bg_gradient": "",
+        "total_btn_color_hover": "#232323",
+        "total_btn_border_hover": "#232323",
+        "total_btn_bg_hover": "#ffffff",
+        "total_btn_bg_gradient_hover": "",
+        "block_dots": true,
+        "block_arrows": true,
+        "padding_top": 30,
+        "padding_top_tablet": 30,
+        "padding_top_mobile": 30,
+        "padding_bottom": 70,
+        "padding_bottom_tablet": 40,
+        "padding_bottom_mobile": 30,
+        "mg_top_desktop": 0,
+        "mg_top_tablet": 0,
+        "mg_top_mobile": 0,
+        "mg_bottom_desktop": 0,
+        "mg_bottom_tablet": 0,
+        "mg_bottom_mobile": 0,
+        "gallery_start_photo": 6
+      }
+    },
+    "tabblie_vt_pdp": {
+      "type": "tabblie-video-text",
+      "settings": {
+        "bg_color": "#fdf6ee",
+        "video_side": "right",
+        "eyebrow": "ZO WERKT HET",
+        "title": "Scheur, gooi,",
+        "title_accent": "klaar.",
+        "body": "<p>Eén strip vervangt één plastic fles. Scheur hem af, gooi hem in je wasmachine of vaatwasser, en je bent klaar. Geen afmeten, geen rommel, geen plastic afval.</p><p>Werkt in koud en warm water. Dermatologisch getest en veilig voor het hele gezin.</p>",
+        "button_text": "Bestel nu",
+        "button_url": "",
+        "video_url": "",
+        "video_asset": "tabblie-ugc-marieke.mp4"
+      }
+    },
+    "tabblie_ingredients": {
+      "type": "tabblie-ingredients",
+      "blocks": {
+        "ing_1": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Plantaardige surfactanten",
+            "description": "Krachtige, biologisch afbreekbare reinigingsmiddelen op plantbasis. Net zo effectief als chemische alternatieven, maar volledig veilig voor het milieu.",
+            "image_asset": "tabblie-ingredient-surfactanten.jpg"
+          }
+        },
+        "ing_2": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Natuurlijke enzymen",
+            "description": "Breken hardnekkig vuil en vlekken af op natuurlijke wijze. Werken bij lage en hoge temperaturen voor een grondige reiniging.",
+            "image_asset": "tabblie-ingredient-enzymen.jpg"
+          }
+        },
+        "ing_3": {
+          "type": "ingredient",
+          "settings": {
+            "title": "Essentiele olien",
+            "description": "Een subtiele, frisse geur zonder kunstmatige geurstoffen. Volledig natuurlijk en vrij van allergenen.",
+            "image_asset": "tabblie-ingredient-olien.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "ing_1",
+        "ing_2",
+        "ing_3"
+      ],
+      "settings": {
+        "eyebrow": "WAT ZIT ERIN?",
+        "heading": "De kracht van elke strip"
+      }
+    },
+    "tabblie_stories_pdp": {
+      "type": "tabblie-insta-stories",
+      "blocks": {
+        "s1": {
+          "type": "story",
+          "settings": {
+            "video_url": "",
+            "username": "@lisabeun",
+            "time_ago": "2u",
+            "caption": "Sinds ik tabblie gebruik bespaar ik maandelijks 3+ plastic flessen"
+          }
+        },
+        "s2": {
+          "type": "story",
+          "settings": {
+            "video_url": "",
+            "username": "@mariekevh",
+            "time_ago": "5u",
+            "caption": "Was eerst sceptisch maar deze strips werken echt"
+          }
+        },
+        "s3": {
+          "type": "story",
+          "settings": {
+            "video_url": "",
+            "username": "@sophiedebeer",
+            "time_ago": "1d",
+            "caption": "Geen zware flessen meer sjouwen naar huis"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "bg_color": "#fdf6ee",
+        "eyebrow": "NIET VAN ONS",
+        "title": "Geloof onze klanten.",
+        "cta_text": "Volg @Tabblie",
+        "cta_url": ""
+      }
+    },
+    "tabblie_guarantee_pdp": {
+      "type": "tabblie-guarantee",
+      "settings": {
+        "eyebrow": "ONZE GARANTIE",
+        "heading": "Probeer het 30 dagen.",
+        "heading_accent": "Risicovrij!",
+        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
+        "button_text": "Bestel nu & bespaar",
+        "button_url": "",
+        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
+        "image_alt": "30 dagen proefwassen",
+        "badge_text": "30 dagen proef wassen"
+      }
+    },
+    "tabblie_faq_pdp": {
+      "type": "tabblie-faq",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "Werken de strips echt zo goed als vloeibaar wasmiddel?",
+            "answer": "Ja. Onze strips bevatten dezelfde werkzame stoffen als premium wasmiddelen, alleen dan in geconcentreerde, vaste vorm. Ze lossen volledig op in koud én warm water (vanaf 30°C). Geen residu, geen restjes, geen verschil in resultaat — wel een groot verschil in plasticafval."
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoeveel wasbeurten zitten er in één pak?",
+            "answer": "32 wasbeurten per pak. Eén strip = één was. Voor extra vuile was kun je een halve strip extra gebruiken. Bij normaal gebruik (2-3 wasjes per week) doe je dus zo’n 3 maanden met één pak."
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "Zijn de strips veilig voor gevoelige huid en kinderkleding?",
+            "answer": "Volledig. Onze formule is dermatologisch getest, hypoallergeen, en vrij van parabenen, fosfaten, kleurstoffen en kunstmatige geurstoffen. Veilig voor babykleding, huidvriendelijk voor de hele familie."
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "Werken ze ook op koude wasprogrammas?",
+            "answer": "Ja, ze lossen perfect op vanaf 20°C. Dat scheelt je flink op de energierekening én is beter voor je kleding én de planeet."
+          }
+        },
+        "q5": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat zit er precies in?",
+            "answer": "Plantaardige zepen (kokosolie, palmolievrij), biologisch afbreekbare enzymen die vlekken aanpakken, plantaardige weekmakers en een lichte, natuurlijke geur. Geen microplastics, geen optische witmakers, geen zooi. De volledige ingrediëntenlijst staat op de verpakking en op de productpagina."
+          }
+        },
+        "q6": {
+          "type": "faq",
+          "settings": {
+            "question": "Geschikt voor alle wasmachines?",
+            "answer": "Ja, voor alle types: voorlader, bovenlader, condensdroger combo. Stop de strip in de trommel (niet in het zeepbakje) voordat je je was erin doet. Dat’s it."
+          }
+        },
+        "q7": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe zit het met sterke vlekken zoals rode wijn of gras?",
+            "answer": "Voor hardnekkige vlekken: voorbehandel de plek door een stukje strip met wat water tot een pasta te maken en kort te laten intrekken. Dan gewoon meewassen. Werkt op de meeste vlekken even goed als gespecialiseerde voorbehandelaars."
+          }
+        },
+        "q8": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe bewaar ik de strips?",
+            "answer": "Op een droge plek, kamertemperatuur. De papieren verpakking houdt ze maximaal 18 maanden goed. Niet in de badkamer bewaren — vocht laat de strips voortijdig oplossen."
+          }
+        },
+        "q9": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat als ze niet bevallen?",
+            "answer": "Geen probleem. Je hebt 30 dagen om ze risicovrij te proberen. Niet tevreden? Stuur ze terug en we storten je geld terug — geen vragen, geen gedoe."
+          }
+        },
+        "q10": {
+          "type": "faq",
+          "settings": {
+            "question": "Wanneer wordt mijn bestelling geleverd?",
+            "answer": "Bestel je op een werkdag vóór 17:00 uur? Dan versturen we je bestelling de volgende werkdag. Verzending is gratis vanaf €30."
+          }
+        },
+        "q11": {
+          "type": "faq",
+          "settings": {
+            "question": "Bieden jullie abonnementen aan?",
+            "answer": "Binnenkort. We werken aan een abonnementsmodel waarmee je 15% korting krijgt op elke bestelling, met automatische levering op jouw ritme (elke 4, 8 of 12 weken). Pauzeren of stoppen kan altijd. Schrijf je in voor onze nieuwsbrief om als eerste te horen wanneer het live gaat."
+          }
+        },
+        "q12": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe zit het met jullie CO2-voetafdruk?",
+            "answer": "We compenseren de CO2-voetafdruk van onze volledige toeleveringsketen — van grondstof tot bezorging bij jou thuis — via gecertificeerde klimaatprojecten zoals herbebossing en schone energie. Elke bestelling is dus klimaatneutraal."
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7",
+        "q8",
+        "q9",
+        "q10",
+        "q11",
+        "q12"
+      ],
+      "settings": {
+        "icon": "none",
+        "eyebrow": "",
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "mof_intro",
+    "tabblie_comparison",
+    "tabblie_product_usps",
+    "main",
+    "tabblie_vt_pdp",
+    "tabblie_ingredients",
+    "tabblie_stories_pdp",
+    "tabblie_guarantee_pdp",
+    "tabblie_faq_pdp"
+  ]
+}
