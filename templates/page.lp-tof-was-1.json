@@ -118,11 +118,11 @@
           "type": "offer",
           "settings": {
             "kicker": "Zo probeer je het zonder risico",
-            "title": "Het proefpakket: kennismaken voor €4,95",
-            "text": "<p>Tabblie maakt een kleine miniverpakking waarmee je de strips een paar wasbeurten test voordat je een heel pak koopt. Door de brievenbus, geen abonnement — en de 30-dagengarantie geldt ook hier.</p>",
-            "cta_label": "Probeer het proefpakket →",
-            "cta_url": "/products/tabblie-wasstrips-miniverpakking",
-            "note": "30 dagen niet-goed-geld-terug · Geen abonnement"
+            "title": "Probeer het 30 dagen — niet goed, geld terug",
+            "text": "<p>Een pak kost €21,95 en is goed voor tot 64 wasbeurten. Valt het tegen? Dan krijg je binnen 30 dagen gewoon je geld terug — je kunt dus letterlijk een maand proefwassen. Het pak valt door de brievenbus, een abonnement is niet nodig.</p>",
+            "cta_label": "Bekijk de wasstrips →",
+            "cta_url": "/products/tabblie-wasstrips",
+            "note": "30 dagen niet-goed-geld-terug · Geen abonnement nodig · Verzonden vanuit Nederland"
           }
         }
       },
