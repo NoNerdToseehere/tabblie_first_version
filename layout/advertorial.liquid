@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- comment -%}
+    Advertorial layout: no theme header/footer/nav so the page reads as an
+    editorial article, but content_for_header stays — that is what injects
+    the Meta pixel, consent banner and app embeds, which paid traffic needs.
+    noindex: these pages are ad destinations, not organic search content.
+  {%- endcomment -%}
+  <meta name="robots" content="noindex, nofollow">
+  <title>{{ page_title }}</title>
+  {%- if page_description -%}
+    <meta name="description" content="{{ page_description | escape }}">
+  {%- endif -%}
+  <link rel="canonical" href="{{ canonical_url }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  {{ content_for_header }}
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body { margin: 0; padding: 0; }
+    /* The article must read as editorial: no floating cart bubble here.
+       The Kaching cart embed loads globally; hide only its sticky button. */
+    .kaching-cart__sticky-cart { display: none !important; }
+  </style>
+</head>
+<body class="advertorial-body">
+  {{ content_for_layout }}
+</body>
+</html>

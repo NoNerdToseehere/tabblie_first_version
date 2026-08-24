@@ -1,0 +1,156 @@
+{
+  "layout": "advertorial",
+  "sections": {
+    "main": {
+      "type": "advertorial-article",
+      "blocks": {
+        "kop": {
+          "type": "heading",
+          "settings": {
+            "text": "3 manieren waarop Nederlandse huishoudens afrekenen met zware wasmiddelflessen (en de plastic berg in de bijkeuken)"
+          }
+        },
+        "meta": {
+          "type": "meta",
+          "settings": {
+            "text": "Door de redactie · Bijgewerkt augustus 2026 · Leestijd: 4 minuten"
+          }
+        },
+        "hero": {
+          "type": "image",
+          "settings": {
+            "caption": ""
+          }
+        },
+        "intro": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Draai jij ook drie of vier wasjes per week? Dan ken je het ritueel: de grote fles uit de bijkeuken tillen, de doseerdop die overloopt, plakkerige randen — en elke paar weken wéér een lege plastic fles bij het afval.</p><p>Wat de meeste mensen niet weten: vloeibaar wasmiddel bestaat <strong>grotendeels uit water</strong>. Je betaalt dus om water door het land te laten rijden, en sjouwt het daarna zelf de trap op. Ondertussen groeit de stapel plastic flessen gestaag door.</p><p>Steeds meer huishoudens stappen daarom over op een alternatief. Wij zetten de drie bekendste routes op een rij — inclusief de nadelen waar niemand het over heeft.</p>"
+          }
+        },
+        "optie1": {
+          "type": "option",
+          "settings": {
+            "number": "1",
+            "title": "Navullen bij een verpakkingsvrije winkel",
+            "text": "<p>Steeds meer steden hebben een winkel waar je je eigen fles wasmiddel bijvult. Geen nieuw plastic, vaak lokale producten — een sympathieke optie die echt werkt.</p><p>Maar eerlijk is eerlijk: je moet er wél elke keer naartoe, mét je lege flessen. Buiten de grote steden is er vaak geen navulwinkel in de buurt, en goedkoop is navullen zelden.</p>",
+            "verdict": "Duurzaam, maar alleen praktisch als er een winkel om de hoek zit."
+          }
+        },
+        "optie2": {
+          "type": "option",
+          "settings": {
+            "number": "2",
+            "title": "Zelf wasmiddel maken",
+            "text": "<p>Soda, groene zeep raspen, kastanjes verzamelen — internet staat vol recepten. Leuk om te proberen en spotgoedkoop.</p><p>In de praktijk: het is geklieder, het resultaat wisselt per wasbeurt, en bij vlekken of witte was val je al snel terug op ‘gewoon’ wasmiddel. Sommige recepten zijn bovendien niet goed voor je wasmachine.</p>",
+            "verdict": "Goedkoop en plasticvrij, maar rommelig en onvoorspelbaar."
+          }
+        },
+        "optie3": {
+          "type": "option",
+          "settings": {
+            "number": "3",
+            "title": "Wasstrips",
+            "text": "<p>De nieuwste route: een dun, voorgedoseerd velletje geconcentreerd wasmiddel. In de trommel gooien, lost volledig op, klaar. Geen fles, geen dop, geen water meesjouwen — een heel pak weegt minder dan een banaan en past door de brievenbus.</p><p><strong>Maar let op:</strong> niet elke wasstrip is hetzelfde. Veel strips (en wasmiddelpods) gebruiken <strong>PVA</strong> — polyvinylalcohol, een synthetisch, in water oplosbaar plastic — als dragermateriaal.</p>",
+            "verdict": "Het gemak van pods, zonder fles — mits je een strip zonder PVA kiest."
+          }
+        },
+        "bron_pva": {
+          "type": "source",
+          "settings": {
+            "text": "<p>Onderzoekers van Arizona State University schatten dat in de VS jaarlijks duizenden tonnen PVA uit waspods en -strips via het riool in het milieu terechtkomen, omdat een deel de waterzuivering onafgebroken passeert. Over hoe snel PVA daarna volledig afbreekt, zijn wetenschappers het nog altijd niet eens.</p>",
+            "source_name": "Rolsky & Kelkar, International Journal of Environmental Research and Public Health (2021)",
+            "url": "https://www.mdpi.com/1660-4601/18/11/6027"
+          }
+        },
+        "letop": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Wie voor wasstrips kiest, doet er dus goed aan om op twee dingen te letten: <strong>een dragermateriaal zonder PVA</strong> (bijvoorbeeld op zeewierbasis) en <strong>een papieren verpakking</strong> in plaats van een plastic zak.</p>"
+          }
+        },
+        "pivot": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>Zelf heb ik optie 1 en 2 allebei geprobeerd. De navulwinkel hield ik drie weken vol, het zelfmaakrecept precies één was. Via een vriendin kreeg ik de tip om wasstrips op zeewierbasis te proberen — en dat beviel zo goed dat ik dit artikel wilde schrijven.</em></p>"
+          }
+        },
+        "kop2": {
+          "type": "subheading",
+          "settings": {
+            "text": "De strip die het in Nederland goed doet"
+          }
+        },
+        "product_foto": {
+          "type": "image",
+          "settings": {
+            "caption": "Tabblie wasstrips: zeewierbasis, papieren verpakking, past door de brievenbus."
+          }
+        },
+        "product_intro": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Het Nederlandse merk <strong>Tabblie</strong> maakt wasstrips met een drager op zeewierbasis — dus zonder PVA — en verpakt ze in papier. Een pak bevat 32 strips met een middenperforatie: voor een normale was is een halve strip genoeg, dus je haalt er tot 64 wasbeurten uit. Omgerekend vanaf zo’n <strong>€0,34 per wasbeurt</strong> — vergelijkbaar met een A-merk fles, maar dan zonder de fles.</p><p>De strips bevatten dezelfde werkzame stoffen als vloeibaar wasmiddel, alleen zonder het water. Ze werken in koud én warm water, zijn dermatologisch getest en het pak valt gewoon op de deurmat.</p>"
+          }
+        },
+        "stat": {
+          "type": "stat",
+          "settings": {
+            "number": "94%",
+            "label": "van de klanten zou Tabblie aanraden aan vrienden en familie"
+          }
+        },
+        "bezwaar1": {
+          "type": "objection",
+          "settings": {
+            "question": "Wast zo’n dun strookje wel écht schoon?",
+            "answer": "<p>Ja — de strip bevat dezelfde werkzame stoffen als vloeibaar wasmiddel, alleen geconcentreerd. Hij lost volledig op, ook op de eco-stand, en laat geen resten achter. Het enige dat je mist, is het sjouwen.</p>"
+          }
+        },
+        "bezwaar2": {
+          "type": "objection",
+          "settings": {
+            "question": "En als het niks voor mij is?",
+            "answer": "<p>Tabblie geeft 30 dagen niet-goed-geld-terug. Je kunt dus letterlijk proefwassen.</p>"
+          }
+        },
+        "aanbod": {
+          "type": "offer",
+          "settings": {
+            "kicker": "Zo probeer je het zonder risico",
+            "title": "Het proefpakket: kennismaken voor €4,95",
+            "text": "<p>Tabblie maakt een kleine miniverpakking waarmee je de strips een paar wasbeurten test voordat je een heel pak koopt. Door de brievenbus, geen abonnement — en de 30-dagengarantie geldt ook hier.</p>",
+            "cta_label": "Probeer het proefpakket →",
+            "cta_url": "/products/tabblie-wasstrips-miniverpakking",
+            "note": "30 dagen niet-goed-geld-terug · Geen abonnement"
+          }
+        }
+      },
+      "block_order": [
+        "kop",
+        "meta",
+        "hero",
+        "intro",
+        "optie1",
+        "optie2",
+        "optie3",
+        "bron_pva",
+        "letop",
+        "pivot",
+        "kop2",
+        "product_foto",
+        "product_intro",
+        "stat",
+        "bezwaar1",
+        "bezwaar2",
+        "aanbod"
+      ],
+      "settings": {
+        "publisher": "Slim Huishouden",
+        "tagline": "Praktische tips voor een makkelijker huishouden",
+        "disclosure": "<p>Deze pagina is een advertorial. Het besproken product wordt aangeboden door Tabblie (tabblie.com). Vragen? support@tabblie.com.</p>"
+      }
+    }
+  },
+  "order": ["main"]
+}
