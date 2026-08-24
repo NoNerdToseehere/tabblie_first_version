@@ -32,9 +32,9 @@
           "type": "option",
           "settings": {
             "number": "1",
-            "title": "Navullen bij een verpakkingsvrije winkel",
-            "text": "<p>Steeds meer steden hebben een winkel waar je je eigen fles wasmiddel bijvult. Geen nieuw plastic, vaak lokale producten — een sympathieke optie die echt werkt.</p><p>Maar eerlijk is eerlijk: je moet er wél elke keer naartoe, mét je lege flessen. Buiten de grote steden is er vaak geen navulwinkel in de buurt, en goedkoop is navullen zelden.</p>",
-            "verdict": "Duurzaam, maar alleen praktisch als er een winkel om de hoek zit."
+            "title": "Wasmiddelpods",
+            "text": "<p>De overstap die veel huishoudens al gemaakt hebben: voorgedoseerde pods. Geen doseerdop, geen geklieder — gewoon één pod in de trommel. Qua gemak is er weinig op aan te merken.</p><p>Maar per wasbeurt zijn pods vaak de <strong>duurste keuze in het schap</strong>. En dat ‘oplosbare’ omhulsel? Dat is PVA: polyvinylalcohol, een synthetisch, in water oplosbaar plastic. Onzichtbaar na de was — maar niet per se weg.</p>",
+            "verdict": "Superhandig, maar prijzig — en het omhulsel is oplosbaar plastic."
           }
         },
         "optie2": {
@@ -51,8 +51,8 @@
           "settings": {
             "number": "3",
             "title": "Wasstrips",
-            "text": "<p>De nieuwste route: een dun, voorgedoseerd velletje geconcentreerd wasmiddel. In de trommel gooien, lost volledig op, klaar. Geen fles, geen dop, geen water meesjouwen — een heel pak weegt minder dan een banaan en past door de brievenbus.</p><p><strong>Maar let op:</strong> niet elke wasstrip is hetzelfde. Veel strips (en wasmiddelpods) gebruiken <strong>PVA</strong> — polyvinylalcohol, een synthetisch, in water oplosbaar plastic — als dragermateriaal.</p>",
-            "verdict": "Het gemak van pods, zonder fles — mits je een strip zonder PVA kiest."
+            "text": "<p>Hetzelfde gemak als pods — voorgedoseerd, in de trommel gooien, klaar — maar dan als dun velletje geconcentreerd wasmiddel, zonder water. Een heel pak weegt minder dan een banaan en past door de brievenbus.</p><p><strong>Maar let op:</strong> niet elke wasstrip is hetzelfde. Veel strips gebruiken als drager precies datzelfde <strong>PVA</strong> als de pods hierboven — dan verruil je de fles voor hetzelfde onzichtbare plastic.</p>",
+            "verdict": "Het gemak van pods, goedkoper per wasbeurt — mits je een strip zonder PVA kiest."
           }
         },
         "bron_pva": {
@@ -72,7 +72,7 @@
         "pivot": {
           "type": "text",
           "settings": {
-            "text": "<p><em>Zelf heb ik optie 1 en 2 allebei geprobeerd. De navulwinkel hield ik drie weken vol, het zelfmaakrecept precies één was. Via een vriendin kreeg ik de tip om wasstrips op zeewierbasis te proberen — en dat beviel zo goed dat ik dit artikel wilde schrijven.</em></p>"
+            "text": "<p><em>Zelf waste ik jaren met pods — tot ik las waar dat omhulsel van gemaakt is. Het zelfmaakrecept hield ik daarna precies één was vol. Via een vriendin kreeg ik de tip om wasstrips op zeewierbasis te proberen — en dat beviel zo goed dat ik dit artikel wilde schrijven.</em></p>"
           }
         },
         "kop2": {
@@ -132,9 +132,9 @@
         "hero",
         "intro",
         "optie1",
+        "bron_pva",
         "optie2",
         "optie3",
-        "bron_pva",
         "letop",
         "pivot",
         "kop2",
