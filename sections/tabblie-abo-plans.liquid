@@ -17,6 +17,19 @@
       <p class="tabblie-abo__sub">{{ section.settings.subtext }}</p>
     {%- endif -%}
 
+    {%- if section.settings.selling_plan_id_2 != blank -%}
+      <div class="tabblie-abo__freq" data-abo-freq>
+        <label class="tabblie-abo__freq-pill">
+          <input type="radio" name="abo-freq-{{ section.id }}" value="{{ section.settings.selling_plan_id }}" checked>
+          <span>{{ section.settings.plan_label | default: 'Elke 3 maanden' }}</span>
+        </label>
+        <label class="tabblie-abo__freq-pill">
+          <input type="radio" name="abo-freq-{{ section.id }}" value="{{ section.settings.selling_plan_id_2 }}">
+          <span>{{ section.settings.plan_label_2 | default: 'Maandelijks' }}</span>
+        </label>
+      </div>
+    {%- endif -%}
+
     <div class="tabblie-abo__grid">
       {%- for block in section.blocks -%}
         {%- liquid
@@ -99,12 +112,29 @@
 
 <script>
   (function() {
+    // Frequency toggle: rewrite the one-click CTA links when the customer
+    // switches interval, so every button sells the chosen selling plan.
+    var freq = document.querySelector('[data-abo-freq]');
+    function currentPlan() {
+      var checked = freq && freq.querySelector('input:checked');
+      if (checked) return checked.value;
+      var mixEl = document.querySelector('[data-abo-mix]');
+      return mixEl ? mixEl.getAttribute('data-selling-plan') : null;
+    }
+    if (freq) {
+      freq.addEventListener('change', function() {
+        var plan = currentPlan();
+        document.querySelectorAll('a.tabblie-abo__cta[href*="selling_plan="]').forEach(function(a) {
+          a.setAttribute('href', a.getAttribute('href').replace(/selling_plan=\d+/, 'selling_plan=' + plan));
+        });
+      });
+    }
+
     var wrap = document.querySelector('[data-abo-mix]');
     if (!wrap) return;
     var boxes = wrap.querySelectorAll('input[type="checkbox"]');
     var totalEl = document.querySelector('[data-abo-mix-total]');
     var btn = document.querySelector('[data-abo-mix-submit]');
-    var plan = wrap.getAttribute('data-selling-plan');
 
     function refresh() {
       var total = 0, count = 0;
@@ -119,6 +149,7 @@
 
     btn.addEventListener('click', function() {
       var items = [];
+      var plan = currentPlan();
       boxes.forEach(function(b) {
         if (b.checked) items.push({ id: parseInt(b.value, 10), quantity: 1, selling_plan: parseInt(plan, 10) });
       });
@@ -175,6 +206,35 @@
     color: #182D20;
     max-width: 560px;
     margin: 0 auto 28px;
+  }
+  .tabblie-abo__freq {
+    display: inline-flex;
+    gap: 6px;
+    background: #ffffff;
+    border: 2px solid #182D20;
+    border-radius: 999px;
+    padding: 5px;
+    margin: 0 auto 24px;
+  }
+  .tabblie-abo__freq-pill { cursor: pointer; }
+  .tabblie-abo__freq-pill input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .tabblie-abo__freq-pill span {
+    display: inline-block;
+    font-family: var(--font-body-family);
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #182D20;
+    border-radius: 999px;
+    padding: 9px 20px;
+    min-height: 40px;
+  }
+  .tabblie-abo__freq-pill:has(input:checked) span {
+    background: #E8622A;
+    color: #ffffff;
   }
   .tabblie-abo__grid {
     display: grid;
@@ -396,7 +456,10 @@
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "KIES JE ABONNEMENT" },
     { "type": "text", "id": "title", "label": "Titel", "default": "Vandaag geregeld, nooit meer zonder" },
     { "type": "textarea", "id": "subtext", "label": "Subtekst" },
-    { "type": "text", "id": "selling_plan_id", "label": "Selling plan ID (Kaching)", "default": "691533545821" },
+    { "type": "text", "id": "selling_plan_id", "label": "Selling plan ID optie 1", "default": "691533545821" },
+    { "type": "text", "id": "plan_label", "label": "Label optie 1", "default": "Elke 3 maanden" },
+    { "type": "text", "id": "selling_plan_id_2", "label": "Selling plan ID optie 2 (leeg = geen keuze)" },
+    { "type": "text", "id": "plan_label_2", "label": "Label optie 2", "default": "Maandelijks" },
     { "type": "checkbox", "id": "show_mix", "label": "Toon mix & match kaart", "default": true },
     { "type": "text", "id": "mix_title", "label": "Mix & match titel", "default": "Mix & match" },
     { "type": "textarea", "id": "mix_text", "label": "Mix & match tekst" },
