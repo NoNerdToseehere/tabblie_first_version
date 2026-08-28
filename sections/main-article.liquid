@@ -190,9 +190,14 @@
             <div class="header-with-sidebar{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
         {% endif %}
             {%- if show_page_title -%}
-                <h1 class="page-header text-{{ page_title_alignment }}">
+                {%- comment -%}
+                  The blog name is a label; the article title below is the
+                  page's single h1 (SEO: one h1 per page, and it should be
+                  the article's own title).
+                {%- endcomment -%}
+                <div class="page-header text-{{ page_title_alignment }}">
                     {{ blog.title | escape }}
-                </h1>
+                </div>
             {%- endif -%}
             {%- if has_sidebar -%}
                 <div class="sidebar-toogle" data-sidebar>
@@ -228,9 +233,9 @@
                 <div class="halo-article-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
                     <div class="article-header">
                         <div class="article-heading text-left">
-                            <h3 class="title">
+                            <h1 class="title">
                                 {{ article.title }}
-                            </h3>
+                            </h1>
                             {%- if show_author or show_date or blog.comments_enabled? -%}
                                 <div class="info">
                                     {%- if show_author -%}
