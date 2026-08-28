@@ -172,14 +172,14 @@
         "eyebrow": "KIES JE ABONNEMENT",
         "title": "Vandaag geregeld, nooit meer zonder",
         "subtext": "Kies je ritme en je product — het abonnement staat direct in je winkelwagen, inclusief 20% korting. Wisselen van ritme kan later altijd nog.",
-        "selling_plan_id": "691533545821",
+        "selling_plan_id": "691800965469",
         "footnote": "Liever eerst los proberen? Dat kan gewoon op de productpagina — met 30 dagen niet-goed-geld-terug.",
         "show_mix": true,
         "mix_title": "Mix & match: stel je eigen pakket samen",
         "mix_text": "Vink aan wat je wilt combineren — alles komt samen in één levering, elk product met 20% korting.",
-        "plan_label": "Elke 3 maanden",
-        "selling_plan_id_2": "691800965469",
-        "plan_label_2": "Maandelijks"
+        "plan_label": "Maandelijks",
+        "selling_plan_id_2": "691533545821",
+        "plan_label_2": "Elke 3 maanden"
       }
     }
   },
