@@ -1,0 +1,204 @@
+{%- comment -%}
+  Ingredient transparency cards — "Alles wat nodig is. Meer niet."
+  Grid of ingredient cards with a name, one-line function and an origin
+  badge (plantaardig / mineraal / microbieel / synthetisch). Reusable on
+  any page or product template via the theme editor.
+{%- endcomment -%}
+
+<section class="tabblie-ingc" style="--ingc-bg: {{ section.settings.bg_color }};">
+  <div class="tabblie-ingc__container">
+    <div class="tabblie-ingc__head">
+      <div>
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="tabblie-ingc__eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="tabblie-ingc__title">{{ section.settings.title }}</h2>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.intro != blank -%}
+        <p class="tabblie-ingc__intro">{{ section.settings.intro }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="tabblie-ingc__grid">
+      {%- for block in section.blocks -%}
+        <div class="tabblie-ingc__card" {{ block.shopify_attributes }}>
+          <h3 class="tabblie-ingc__name">{{ block.settings.name | escape }}</h3>
+          {%- if block.settings.description != blank -%}
+            <p class="tabblie-ingc__desc">{{ block.settings.description | escape }}</p>
+          {%- endif -%}
+          {%- if block.settings.badge_label != blank -%}
+            <span class="tabblie-ingc__badge tabblie-ingc__badge--{{ block.settings.badge_type }}">{{ block.settings.badge_label | escape }}</span>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.link_text != blank and section.settings.link_url != blank -%}
+      <a class="tabblie-ingc__link" href="{{ section.settings.link_url }}">
+        {{ section.settings.link_text | escape }}
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% style %}
+  .tabblie-ingc {
+    background: var(--ingc-bg, #FDF6EE);
+    padding: 48px 20px;
+  }
+  .tabblie-ingc__container {
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+  .tabblie-ingc__head {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 26px;
+  }
+  .tabblie-ingc__eyebrow {
+    font-family: var(--font-body-family);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin: 0 0 8px;
+  }
+  .tabblie-ingc__title {
+    font-family: var(--font-heading-family);
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+    color: #182D20;
+    margin: 0;
+    white-space: pre-line;
+  }
+  .tabblie-ingc__intro {
+    font-family: var(--font-body-family);
+    font-size: 16px;
+    line-height: 1.65;
+    color: #182D20;
+    margin: 0;
+    max-width: 440px;
+  }
+  .tabblie-ingc__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .tabblie-ingc__card {
+    background: #ffffff;
+    border: 1px solid rgba(24, 45, 32, 0.14);
+    border-radius: 14px;
+    padding: 18px 20px;
+  }
+  .tabblie-ingc__name {
+    font-family: var(--font-heading-family);
+    font-size: 16.5px;
+    font-weight: 800;
+    color: #182D20;
+    margin: 0 0 4px;
+  }
+  .tabblie-ingc__desc {
+    font-family: var(--font-body-family);
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: rgba(24, 45, 32, 0.8);
+    margin: 0 0 12px;
+  }
+  .tabblie-ingc__badge {
+    display: inline-block;
+    font-family: var(--font-body-family);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 6px;
+    padding: 4px 9px;
+  }
+  .tabblie-ingc__badge--plantaardig { background: #DCF2E4; color: #26523F; }
+  .tabblie-ingc__badge--mineraal { background: #E1ECFA; color: #2A5490; }
+  .tabblie-ingc__badge--microbieel { background: #FDF5DD; color: #7A5C00; }
+  .tabblie-ingc__badge--synthetisch { background: #EEEDE9; color: #4A4A44; }
+  .tabblie-ingc__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 22px;
+    font-family: var(--font-body-family);
+    font-size: 15px;
+    font-weight: 700;
+    color: #26523F;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .tabblie-ingc__link:hover { color: #E8622A; }
+  @media (min-width: 768px) {
+    .tabblie-ingc { padding: 64px 24px; }
+    .tabblie-ingc__head {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 40px;
+      margin-bottom: 32px;
+    }
+    .tabblie-ingc__title { font-size: 40px; }
+    .tabblie-ingc__grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Ingredienten kaarten",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Achtergrondkleur", "default": "#FDF6EE" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "WAT ZIT ERIN" },
+    { "type": "textarea", "id": "title", "label": "Titel", "default": "Alles wat nodig is.\nMeer niet." },
+    { "type": "textarea", "id": "intro", "label": "Introtekst" },
+    { "type": "text", "id": "link_text", "label": "Linktekst onderaan" },
+    { "type": "url", "id": "link_url", "label": "Link URL" }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Naam" },
+        { "type": "textarea", "id": "description", "label": "Functie (1 zin)" },
+        { "type": "text", "id": "badge_label", "label": "Badge tekst", "default": "PLANTAARDIG" },
+        {
+          "type": "select",
+          "id": "badge_type",
+          "label": "Badge type",
+          "default": "plantaardig",
+          "options": [
+            { "value": "plantaardig", "label": "Plantaardig (groen)" },
+            { "value": "mineraal", "label": "Mineraal (blauw)" },
+            { "value": "microbieel", "label": "Microbieel (geel)" },
+            { "value": "synthetisch", "label": "Synthetisch (grijs)" }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredienten kaarten",
+      "blocks": [
+        { "type": "ingredient", "settings": { "name": "Plantaardige surfactanten", "description": "Reinigers op basis van kokos- en palmolie die vet en vuil losmaken.", "badge_label": "PLANTAARDIG (KOKOS & PALM)", "badge_type": "plantaardig" } },
+        { "type": "ingredient", "settings": { "name": "Natuurlijke enzymen", "description": "Breken eiwit-, zetmeel- en vetvlekken af, ook bij lage temperaturen.", "badge_label": "MICROBIEEL", "badge_type": "microbieel" } },
+        { "type": "ingredient", "settings": { "name": "Natriumcarbonaat", "description": "Mineraalzout dat hard water zachter maakt voor een betere waswerking.", "badge_label": "MINERAAL", "badge_type": "mineraal" } },
+        { "type": "ingredient", "settings": { "name": "Citroenzuur", "description": "Houdt de pH-waarde in balans voor optimale reiniging.", "badge_label": "PLANTAARDIG", "badge_type": "plantaardig" } },
+        { "type": "ingredient", "settings": { "name": "Essentiële oliën", "description": "Een subtiele frisse geur, zonder kunstmatige geurstoffen of allergenen.", "badge_label": "PLANTAARDIG", "badge_type": "plantaardig" } },
+        { "type": "ingredient", "settings": { "name": "Drager op zeewierbasis", "description": "Het velletje zelf — lost volledig op, zonder PVA of microplastics.", "badge_label": "PLANTAARDIG (ZEEWIER)", "badge_type": "plantaardig" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

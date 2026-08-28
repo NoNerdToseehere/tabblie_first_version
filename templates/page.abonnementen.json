@@ -9,7 +9,7 @@
         "heading_accent": "Altijd 20% korting.",
         "subtext": "Zet je favoriete strips op herhaling: wij bezorgen automatisch op jouw ritme en jij bespaart 20% op elke levering. Aanpassen, pauzeren of stoppen kan altijd — zonder gedoe, zonder opzegtermijn.",
         "button_text": "Kies je strips",
-        "button_url": "/pages/alle-producten"
+        "button_url": "#kies-je-abonnement"
       }
     },
     "hiw": {
@@ -19,7 +19,7 @@
           "type": "step",
           "settings": {
             "title": "1. Kies je strips",
-            "description": "Wasstrips, vaatwasstrips of toiletstrips — vink op de productpagina ‘Abonneer & bespaar’ aan.",
+            "description": "Hierboven geregeld met één klik — los per product of mix & match.",
             "image_asset": ""
           }
         },
@@ -120,25 +120,71 @@
         "title": "Veelgestelde vragen"
       }
     },
-    "guarantee": {
+    "manage": {
       "type": "tabblie-guarantee",
       "settings": {
-        "eyebrow": "ONZE GARANTIE",
-        "heading": "Probeer het 30 dagen.",
-        "heading_accent": "Risicovrij!",
-        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
-        "button_text": "Bekijk alle producten",
-        "button_url": "/pages/alle-producten",
+        "eyebrow": "AL ABONNEE?",
+        "heading": "Wijzig je abonnement",
+        "heading_accent": "wanneer je wilt.",
+        "body": "<p>Product wisselen, een levering overslaan, pauzeren of opzeggen? Log in op je account en regel het zelf — in een paar klikken, zonder mailtje of telefoontje.</p><p><strong>Kom je er niet uit?</strong> Mail support@tabblie.com en we helpen je binnen 1 werkdag.</p>",
+        "button_text": "Log in & beheer je abonnement",
+        "button_url": "https://shopify.com/88961286493/account/pages/7c4a25d5-0da8-4259-bf5f-40ed6112e4d6",
         "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
-        "image_alt": "30 dagen proefwassen",
-        "badge_text": "30 dagen proef wassen"
+        "image_alt": "Beheer je Tabblie abonnement",
+        "badge_text": "20% korting, Altijd"
+      }
+    },
+    "plans": {
+      "type": "tabblie-abo-plans",
+      "blocks": {
+        "was": {
+          "type": "plan",
+          "settings": {
+            "product": "tabblie-wasstrips",
+            "accent": "#182D20",
+            "card_bg": "#FDEEE6"
+          }
+        },
+        "vaat": {
+          "type": "plan",
+          "settings": {
+            "product": "tabblie-vaatwasstrips",
+            "accent": "#182D20",
+            "card_bg": "#FDF5DD"
+          }
+        },
+        "toilet": {
+          "type": "plan",
+          "settings": {
+            "product": "tabblie-toiletstrips",
+            "accent": "#182D20",
+            "card_bg": "#E2F2ED"
+          }
+        }
+      },
+      "block_order": [
+        "was",
+        "vaat",
+        "toilet"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "eyebrow": "KIES JE ABONNEMENT",
+        "title": "Vandaag geregeld, nooit meer zonder",
+        "subtext": "Kies je product en klik — het abonnement staat direct in je winkelwagen, inclusief 20% korting. Levering elke 3 maanden; je ritme pas je daarna zelf aan.",
+        "selling_plan_id": "691533545821",
+        "footnote": "Liever eerst los proberen? Dat kan gewoon op de productpagina — met 30 dagen niet-goed-geld-terug.",
+        "show_mix": true,
+        "mix_title": "Mix & match: stel je eigen pakket samen",
+        "mix_text": "Vink aan wat je wilt combineren — alles komt samen in één levering, elk product met 20% korting."
       }
     }
   },
   "order": [
     "hero",
+    "plans",
     "hiw",
-    "faq",
-    "guarantee"
+    "manage",
+    "faq"
   ]
 }

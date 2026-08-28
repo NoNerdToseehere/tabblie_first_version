@@ -1,0 +1,418 @@
+{%- comment -%}
+  Subscription plan picker — one-click abonnement afsluiten.
+  Each card links to /cart/add with the product's first variant AND the
+  selling plan, so the subscription lands in the cart in one tap instead
+  of the customer having to find the subscribe toggle on the PDP.
+{%- endcomment -%}
+
+<section class="tabblie-abo" id="kies-je-abonnement" style="--abo-bg: {{ section.settings.bg_color }};">
+  <div class="tabblie-abo__container">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="tabblie-abo__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    {%- if section.settings.title != blank -%}
+      <h2 class="tabblie-abo__title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subtext != blank -%}
+      <p class="tabblie-abo__sub">{{ section.settings.subtext }}</p>
+    {%- endif -%}
+
+    <div class="tabblie-abo__grid">
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign product = block.settings.product
+          if product == blank
+            continue
+          endif
+          assign variant = product.selected_or_first_available_variant
+          assign abo_price = variant.price | times: 0.8
+        -%}
+        <div class="tabblie-abo__card" style="--abo-accent: {{ block.settings.accent }}; --abo-card-bg: {{ block.settings.card_bg }};" {{ block.shopify_attributes }}>
+          {%- if product.featured_image -%}
+            <img
+              class="tabblie-abo__img"
+              src="{{ product.featured_image | image_url: width: 480 }}"
+              alt="{{ product.title | escape }}"
+              width="240"
+              height="240"
+              loading="lazy"
+            >
+          {%- endif -%}
+          <h3 class="tabblie-abo__name">{{ product.title | escape }}</h3>
+          <p class="tabblie-abo__price">
+            <span class="tabblie-abo__price-now">{{ abo_price | money }}</span>
+            <s class="tabblie-abo__price-was">{{ variant.price | money }}</s>
+            <span class="tabblie-abo__price-per">per levering</span>
+          </p>
+          <ul class="tabblie-abo__usps">
+            <li>20% korting op elke levering</li>
+            <li>Pauzeren of stoppen wanneer je wilt</li>
+            <li>Door de brievenbus, automatisch</li>
+          </ul>
+          <a class="tabblie-abo__cta" href="/cart/add?id={{ variant.id }}&quantity=1&selling_plan={{ section.settings.selling_plan_id }}&return_to=/cart">
+            Start abonnement
+          </a>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.show_mix -%}
+      <div class="tabblie-abo__mix">
+        <div class="tabblie-abo__mix-head">
+          <h3 class="tabblie-abo__mix-title">{{ section.settings.mix_title | escape }}</h3>
+          {%- if section.settings.mix_text != blank -%}
+            <p class="tabblie-abo__mix-text">{{ section.settings.mix_text | escape }}</p>
+          {%- endif -%}
+        </div>
+        <div class="tabblie-abo__mix-chips" data-abo-mix data-selling-plan="{{ section.settings.selling_plan_id }}">
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign product = block.settings.product
+              if product == blank
+                continue
+              endif
+              assign variant = product.selected_or_first_available_variant
+              assign abo_price = variant.price | times: 0.8
+            -%}
+            <label class="tabblie-abo__chip">
+              <input type="checkbox" value="{{ variant.id }}" data-price="{{ abo_price }}">
+              {%- if product.featured_image -%}
+                <img src="{{ product.featured_image | image_url: width: 96 }}" alt="" width="48" height="48" loading="lazy">
+              {%- endif -%}
+              <span class="tabblie-abo__chip-name">{{ product.title | remove: 'Tabblie ' | escape }}</span>
+              <span class="tabblie-abo__chip-price">{{ abo_price | money }}</span>
+            </label>
+          {%- endfor -%}
+        </div>
+        <div class="tabblie-abo__mix-foot">
+          <p class="tabblie-abo__mix-total">Samen: <strong data-abo-mix-total>{{ 0 | money }}</strong> <span>per levering</span></p>
+          <button class="tabblie-abo__cta" type="button" data-abo-mix-submit disabled>Start abonnement</button>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.footnote != blank -%}
+      <p class="tabblie-abo__footnote">{{ section.settings.footnote }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  (function() {
+    var wrap = document.querySelector('[data-abo-mix]');
+    if (!wrap) return;
+    var boxes = wrap.querySelectorAll('input[type="checkbox"]');
+    var totalEl = document.querySelector('[data-abo-mix-total]');
+    var btn = document.querySelector('[data-abo-mix-submit]');
+    var plan = wrap.getAttribute('data-selling-plan');
+
+    function refresh() {
+      var total = 0, count = 0;
+      boxes.forEach(function(b) {
+        if (b.checked) { total += parseFloat(b.getAttribute('data-price')); count++; }
+      });
+      totalEl.textContent = '€' + (total / 100).toFixed(2).replace('.', ',');
+      btn.disabled = count === 0;
+    }
+    boxes.forEach(function(b) { b.addEventListener('change', refresh); });
+    refresh();
+
+    btn.addEventListener('click', function() {
+      var items = [];
+      boxes.forEach(function(b) {
+        if (b.checked) items.push({ id: parseInt(b.value, 10), quantity: 1, selling_plan: parseInt(plan, 10) });
+      });
+      if (!items.length) return;
+      btn.disabled = true;
+      btn.textContent = 'Even geduld…';
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items: items })
+      }).then(function(r) {
+        if (!r.ok) throw new Error('add failed');
+        window.location.href = '/cart';
+      }).catch(function() {
+        btn.disabled = false;
+        btn.textContent = 'Start abonnement';
+      });
+    });
+  })();
+</script>
+
+{% style %}
+  .tabblie-abo {
+    background: var(--abo-bg, #FDF6EE);
+    padding: 48px 20px;
+  }
+  .tabblie-abo__container {
+    max-width: 1170px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .tabblie-abo__eyebrow {
+    font-family: var(--font-body-family);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin: 0 0 10px;
+  }
+  .tabblie-abo__title {
+    font-family: var(--font-heading-family);
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    color: #182D20;
+    margin: 0 0 10px;
+  }
+  .tabblie-abo__sub {
+    font-family: var(--font-body-family);
+    font-size: 16px;
+    line-height: 1.6;
+    color: #182D20;
+    max-width: 560px;
+    margin: 0 auto 28px;
+  }
+  .tabblie-abo__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .tabblie-abo__card {
+    background: var(--abo-card-bg, #ffffff);
+    border: 2px solid #182D20;
+    border-radius: 16px;
+    box-shadow: 4px 4px 0 rgba(24, 45, 32, 0.9);
+    padding: 22px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tabblie-abo__img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+  .tabblie-abo__name {
+    font-family: var(--font-heading-family);
+    font-size: 19px;
+    font-weight: 800;
+    color: #182D20;
+    margin: 0 0 6px;
+  }
+  .tabblie-abo__price {
+    font-family: var(--font-body-family);
+    margin: 0 0 12px;
+    color: #182D20;
+  }
+  .tabblie-abo__price-now {
+    font-family: var(--font-heading-family);
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--abo-accent, #E8622A);
+  }
+  .tabblie-abo__price-was {
+    font-size: 15px;
+    color: rgba(24, 45, 32, 0.55);
+    margin-left: 6px;
+  }
+  .tabblie-abo__price-per {
+    display: block;
+    font-size: 12.5px;
+    color: rgba(24, 45, 32, 0.65);
+    margin-top: 2px;
+  }
+  .tabblie-abo__usps {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px;
+    font-family: var(--font-body-family);
+    font-size: 14px;
+    line-height: 1.7;
+    color: #182D20;
+  }
+  .tabblie-abo__usps li::before {
+    content: "";
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #38A169;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .tabblie-abo__cta {
+    display: inline-block;
+    background: #E8622A;
+    color: #ffffff;
+    font-family: var(--font-body-family);
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 13px 30px;
+    min-height: 48px;
+    margin-top: auto;
+  }
+  .tabblie-abo__cta:hover {
+    background: #d4551f;
+    color: #ffffff;
+  }
+  .tabblie-abo__mix {
+    border: 2px solid #182D20;
+    border-radius: 16px;
+    box-shadow: 4px 4px 0 rgba(24, 45, 32, 0.9);
+    background: #E1ECFA;
+    padding: 22px 18px;
+    margin-top: 18px;
+    text-align: left;
+  }
+  .tabblie-abo__mix-title {
+    font-family: var(--font-heading-family);
+    font-size: 21px;
+    font-weight: 800;
+    color: #182D20;
+    margin: 0 0 4px;
+  }
+  .tabblie-abo__mix-text {
+    font-family: var(--font-body-family);
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: #182D20;
+    margin: 0 0 16px;
+  }
+  .tabblie-abo__mix-chips {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .tabblie-abo__chip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 2px solid rgba(24, 45, 32, 0.25);
+    border-radius: 12px;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-family: var(--font-body-family);
+    min-height: 48px;
+  }
+  .tabblie-abo__chip:has(input:checked) {
+    border-color: #E8622A;
+    box-shadow: 0 0 0 1px #E8622A;
+  }
+  .tabblie-abo__chip input {
+    /* The theme hides bare checkbox inputs globally; restore them here. */
+    -webkit-appearance: checkbox !important;
+    appearance: auto !important;
+    opacity: 1 !important;
+    position: static !important;
+    display: inline-block !important;
+    accent-color: #E8622A;
+    width: 18px !important;
+    height: 18px !important;
+    margin: 0;
+    flex: 0 0 auto;
+  }
+  .tabblie-abo__chip img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  .tabblie-abo__chip-name {
+    font-weight: 700;
+    color: #182D20;
+    flex: 1 1 auto;
+  }
+  .tabblie-abo__chip-price {
+    font-weight: 800;
+    color: #182D20;
+  }
+  .tabblie-abo__mix-foot {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .tabblie-abo__mix-total {
+    font-family: var(--font-body-family);
+    font-size: 15px;
+    color: #182D20;
+    margin: 0;
+  }
+  .tabblie-abo__mix-total strong {
+    font-family: var(--font-heading-family);
+    font-size: 20px;
+    font-weight: 800;
+  }
+  .tabblie-abo__mix-total span {
+    color: rgba(24, 45, 32, 0.65);
+    font-size: 13px;
+  }
+  .tabblie-abo__cta:disabled,
+  .tabblie-abo__cta[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  button.tabblie-abo__cta {
+    border: 0;
+    cursor: pointer;
+  }
+  .tabblie-abo__footnote {
+    font-family: var(--font-body-family);
+    font-size: 13px;
+    color: rgba(24, 45, 32, 0.65);
+    margin: 20px 0 0;
+  }
+  @media (min-width: 768px) {
+    .tabblie-abo { padding: 64px 24px; }
+    .tabblie-abo__title { font-size: 34px; }
+    .tabblie-abo__grid { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .tabblie-abo__mix { margin-top: 22px; padding: 26px 28px; }
+    .tabblie-abo__mix-chips { flex-direction: row; }
+    .tabblie-abo__chip { flex: 1 1 0; }
+    .tabblie-abo__mix-foot {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Abonnement kiezen",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Achtergrondkleur", "default": "#FDF6EE" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "KIES JE ABONNEMENT" },
+    { "type": "text", "id": "title", "label": "Titel", "default": "Vandaag geregeld, nooit meer zonder" },
+    { "type": "textarea", "id": "subtext", "label": "Subtekst" },
+    { "type": "text", "id": "selling_plan_id", "label": "Selling plan ID (Kaching)", "default": "691533545821" },
+    { "type": "checkbox", "id": "show_mix", "label": "Toon mix & match kaart", "default": true },
+    { "type": "text", "id": "mix_title", "label": "Mix & match titel", "default": "Mix & match" },
+    { "type": "textarea", "id": "mix_text", "label": "Mix & match tekst" },
+    { "type": "text", "id": "footnote", "label": "Voetnoot" }
+  ],
+  "blocks": [
+    {
+      "type": "plan",
+      "name": "Product",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "color", "id": "accent", "label": "Accentkleur", "default": "#E8622A" },
+        { "type": "color", "id": "card_bg", "label": "Kaartkleur", "default": "#ffffff" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Abonnement kiezen" }]
+}
+{% endschema %}
