@@ -1,0 +1,144 @@
+{
+  "sections": {
+    "hero": {
+      "type": "tabblie-page-hero",
+      "settings": {
+        "bg_color": "#FDF6EE",
+        "eyebrow": "ABONNEMENT",
+        "heading": "Nooit meer zonder strips.",
+        "heading_accent": "Altijd 20% korting.",
+        "subtext": "Zet je favoriete strips op herhaling: wij bezorgen automatisch op jouw ritme en jij bespaart 20% op elke levering. Aanpassen, pauzeren of stoppen kan altijd — zonder gedoe, zonder opzegtermijn.",
+        "button_text": "Kies je strips",
+        "button_url": "/pages/alle-producten"
+      }
+    },
+    "hiw": {
+      "type": "tabblie-how-it-works-v2",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "1. Kies je strips",
+            "description": "Wasstrips, vaatwasstrips of toiletstrips — vink op de productpagina ‘Abonneer & bespaar’ aan.",
+            "image_asset": ""
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "2. Wij bezorgen automatisch",
+            "description": "Op jouw ritme, door de brievenbus — met 20% korting op elke levering.",
+            "image_asset": ""
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "3. Jij houdt de regie",
+            "description": "Aanpassen, overslaan, pauzeren of stoppen — altijd, gewoon in je account.",
+            "image_asset": ""
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "settings": {
+        "bg_color": "#F8BFD6",
+        "eyebrow": "ZO WERKT HET",
+        "title": "Abonnement in 3 stappen",
+        "cta_text": "",
+        "cta_url": ""
+      }
+    },
+    "faq": {
+      "type": "tabblie-faq",
+      "blocks": {
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoeveel korting krijg ik met een abonnement?",
+            "answer": "20% op elke levering — niet alleen de eerste. De korting wordt automatisch verrekend, en vanaf €30 is de verzending zoals altijd gratis."
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe pas ik mijn abonnement aan?",
+            "answer": "Alles regel je zelf in je account onder ‘Abonnementen’: producten wisselen, aantallen wijzigen of je leverfrequentie aanpassen. Wijzigingen gaan in vanaf je eerstvolgende levering."
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "Kan ik een levering overslaan of pauzeren?",
+            "answer": "Ja. Nog genoeg strips in de la, of even op vakantie? Sla een levering over of pauzeer je abonnement zo lang je wilt — je korting blijft gewoon staan."
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe zeg ik op?",
+            "answer": "Opzeggen kan op elk moment, zonder opzegtermijn en zonder kosten: met een paar klikken in je account, of via een mailtje naar support@tabblie.com. Geen belmenu, geen overtuig-gesprek."
+          }
+        },
+        "q5": {
+          "type": "faq",
+          "settings": {
+            "question": "Hoe werkt het betalen?",
+            "answer": "Je betaalt per levering, via de betaalmethode van je bestelling. Geen vooruitbetaling voor maanden tegelijk — stop je, dan betaal je ook niets meer."
+          }
+        },
+        "q6": {
+          "type": "faq",
+          "settings": {
+            "question": "Geldt de 30 dagen garantie ook voor abonnementen?",
+            "answer": "Ja. Op elke levering geldt onze niet-goed-geld-terug garantie: niet tevreden, geld terug — ook met een aangebroken pak."
+          }
+        },
+        "q7": {
+          "type": "faq",
+          "settings": {
+            "question": "Waar beheer ik mijn abonnement?",
+            "answer": "In je account: <a href=\"https://shopify.com/88961286493/account/pages/7c4a25d5-0da8-4259-bf5f-40ed6112e4d6\">klik hier om direct naar je abonnementen te gaan</a>. Daar wijzig, pauzeer of stop je alles zelf."
+          }
+        }
+      },
+      "block_order": [
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5",
+        "q6",
+        "q7"
+      ],
+      "settings": {
+        "eyebrow": "ALLES OVER JE ABONNEMENT",
+        "title": "Veelgestelde vragen"
+      }
+    },
+    "guarantee": {
+      "type": "tabblie-guarantee",
+      "settings": {
+        "eyebrow": "ONZE GARANTIE",
+        "heading": "Probeer het 30 dagen.",
+        "heading_accent": "Risicovrij!",
+        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
+        "button_text": "Bekijk alle producten",
+        "button_url": "/pages/alle-producten",
+        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
+        "image_alt": "30 dagen proefwassen",
+        "badge_text": "30 dagen proef wassen"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "hiw",
+    "faq",
+    "guarantee"
+  ]
+}
