@@ -168,6 +168,14 @@
     margin: 0 auto;
     padding: 12px clamp(16px, 3vw, 40px) 42px;
   }
+  /* closing rule: the newspaper ends the way it opens, so whatever
+     follows reads as sitting beneath the paper */
+  .tbn__paper::after {
+    content: '';
+    display: block;
+    border-top: 2px solid #26523F;
+    margin-top: 38px;
+  }
 
   /* category nav between thin rules */
   .tbn__tabs {
