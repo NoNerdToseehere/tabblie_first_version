@@ -103,6 +103,13 @@
             "article": "de-schone-was/toiletstrips-zonder-microplastics",
             "image_asset": "blognews-toilet.jpg"
           }
+        },
+        "img9": {
+          "type": "img",
+          "settings": {
+            "article": "de-schone-was/gezin-minder-ruimte-minder-afval",
+            "image_asset": "blognews-laundry-couple.jpg"
+          }
         }
       },
       "block_order": [
@@ -117,6 +124,7 @@
         "img5",
         "img6",
         "img8",
+        "img9",
         "top1",
         "top2",
         "top3",

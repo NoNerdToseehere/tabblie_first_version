@@ -421,7 +421,12 @@
   .tbn-card--side .tbn-card__title { font-size: 16.5px; }
   .tbn-card--side .tbn-card__body { padding: 12px 14px; }
 
-  .tbn-card--grid .tbn-card__media { aspect-ratio: 16 / 10; }
+  .tbn-card--grid .tbn-card__media {
+    aspect-ratio: 16 / 10;
+    width: 100%;
+    overflow: hidden;
+  }
+  .tbn-card--grid .tbn-card__media img { width: 100%; height: 100%; object-fit: cover; }
 
   @media (min-width: 990px) {
     .tbn-card--lead {

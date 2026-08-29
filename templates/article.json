@@ -124,11 +124,63 @@
         "button_text": "Bekijk alle verhalen",
         "button_url": "/blogs/de-schone-was"
       }
+    },
+    "plans": {
+      "type": "tabblie-abo-plans",
+      "blocks": {
+        "was": {
+          "type": "plan",
+          "settings": {
+            "product": "tabblie-wasstrips",
+            "accent": "#182D20",
+            "card_bg": "#FDEEE6",
+            "image_asset": "tabblie-pack-was.png"
+          }
+        },
+        "vaat": {
+          "type": "plan",
+          "settings": {
+            "product": "tabblie-vaatwasstrips",
+            "accent": "#182D20",
+            "card_bg": "#FDF5DD",
+            "image_asset": "tabblie-pack-vaat.png"
+          }
+        },
+        "toilet": {
+          "type": "plan",
+          "settings": {
+            "product": "tabblie-toiletstrips",
+            "accent": "#182D20",
+            "card_bg": "#E2F2ED",
+            "image_asset": "tabblie-pack-toilet.png"
+          }
+        }
+      },
+      "block_order": [
+        "was",
+        "vaat",
+        "toilet"
+      ],
+      "settings": {
+        "bg_color": "#ffffff",
+        "eyebrow": "KIES JE ABONNEMENT",
+        "title": "Vandaag geregeld, nooit meer zonder",
+        "subtext": "Kies je ritme en je product — het abonnement staat direct in je winkelwagen, inclusief 20% korting. Wisselen van ritme kan later altijd nog.",
+        "selling_plan_id": "691800965469",
+        "footnote": "Liever eerst los proberen? Dat kan gewoon op de productpagina — met 30 dagen niet-goed-geld-terug.",
+        "show_mix": true,
+        "mix_title": "Mix & match: stel je eigen pakket samen",
+        "mix_text": "Vink aan wat je wilt combineren — alles komt samen in één levering, elk product met 20% korting.",
+        "plan_label": "Maandelijks",
+        "selling_plan_id_2": "691533545821",
+        "plan_label_2": "Elke 3 maanden"
+      }
     }
   },
   "order": [
     "artcta",
     "main",
+    "plans",
     "artfaq",
     "artguarantee",
     "readmore"
