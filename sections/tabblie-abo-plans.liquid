@@ -279,6 +279,19 @@
     border-radius: 999px;
     padding: 9px 20px;
     min-height: 40px;
+    white-space: nowrap;
+  }
+  @media (max-width: 560px) {
+    .tabblie-abo__freq {
+      max-width: 100%;
+      gap: 2px;
+      padding: 4px;
+    }
+    .tabblie-abo__freq-pill span {
+      font-size: 12.5px;
+      padding: 8px 11px;
+      min-height: 36px;
+    }
   }
   .tabblie-abo__freq-pill:has(input:checked) span {
     background: #E8622A;
