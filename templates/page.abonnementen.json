@@ -142,7 +142,8 @@
           "settings": {
             "product": "tabblie-wasstrips",
             "accent": "#182D20",
-            "card_bg": "#FDEEE6"
+            "card_bg": "#FDEEE6",
+            "image_asset": "tabblie-pack-was.png"
           }
         },
         "vaat": {
@@ -150,7 +151,8 @@
           "settings": {
             "product": "tabblie-vaatwasstrips",
             "accent": "#182D20",
-            "card_bg": "#FDF5DD"
+            "card_bg": "#FDF5DD",
+            "image_asset": "tabblie-pack-vaat.png"
           }
         },
         "toilet": {
@@ -158,7 +160,8 @@
           "settings": {
             "product": "tabblie-toiletstrips",
             "accent": "#182D20",
-            "card_bg": "#E2F2ED"
+            "card_bg": "#E2F2ED",
+            "image_asset": "tabblie-pack-toilet.png"
           }
         }
       },

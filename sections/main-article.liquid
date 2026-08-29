@@ -819,6 +819,66 @@
     article: article
 %}
 
+{% style %}
+  /* Listicle article styling (Tabblie): every h2 in the article body gets
+     an auto-numbered kicker row and big bold heading, so all posts read
+     as numbered listicles without hand-numbering the content. */
+  .halo-article-content .article-content { counter-reset: artsec; }
+  .halo-article-content .article-content h2 {
+    counter-increment: artsec;
+    font-family: var(--font-heading-family);
+    font-size: 26px;
+    line-height: 1.15;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #26523F;
+    margin: 40px 0 14px;
+  }
+  .halo-article-content .article-content h2::before {
+    content: "0" counter(artsec);
+    display: block;
+    font-family: var(--font-body-family);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #E8622A;
+    border-top: 1px solid rgba(24, 45, 32, 0.2);
+    padding-top: 10px;
+    margin-bottom: 10px;
+  }
+  .halo-article-content .article-content h3 {
+    font-family: var(--font-heading-family);
+    font-size: 19px;
+    font-weight: 800;
+    color: #182D20;
+    margin: 26px 0 8px;
+  }
+  .halo-article-content .article-content p,
+  .halo-article-content .article-content li {
+    font-size: 16px;
+    line-height: 1.75;
+    color: #182D20;
+  }
+  .halo-article-content .article-content > p:first-of-type {
+    font-size: 18px;
+    line-height: 1.65;
+  }
+  .halo-article-content .article-content img {
+    border-radius: 16px;
+    margin: 20px 0;
+  }
+  .halo-article-content .article-content a { color: #E8622A; }
+  .halo-article-content .article-heading .title {
+    font-size: 30px;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  @media (min-width: 768px) {
+    .halo-article-content .article-heading .title { font-size: 38px; }
+    .halo-article-content .article-content h2 { font-size: 30px; }
+  }
+{% endstyle %}
+
 {% schema %}
 {
     "name": "t:sections.main-article.name",

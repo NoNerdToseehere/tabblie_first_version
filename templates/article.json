@@ -22,7 +22,7 @@
         "sidebar_heading_font_size": 14,
         "sidebar_heading_font_weight": "700",
         "sidebar_heading_text_transform": "uppercase",
-        "show_main_img": false,
+        "show_main_img": true,
         "show_author": true,
         "show_date": true,
         "show_tags": true,
@@ -51,9 +51,77 @@
         "mg_bottom_tablet": 0,
         "mg_bottom_mobile": 0
       }
+    },
+    "artcta": {
+      "type": "tabblie-article-cta",
+      "settings": {
+        "text": "Gratis verzending vanaf €30 · 30 dagen proefwassen",
+        "button_label": "Probeer risicovrij",
+        "button_url": "/pages/alle-producten"
+      }
+    },
+    "artfaq": {
+      "type": "tabblie-faq",
+      "blocks": {
+        "f1": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat zijn Tabblie strips precies?",
+            "answer": "Voorgedoseerde velletjes geconcentreerd was-, vaatwas- of toiletmiddel. In de trommel, het bestekmandje of de pot — ze lossen volledig op, zonder plastic fles en zonder PVA."
+          }
+        },
+        "f2": {
+          "type": "faq",
+          "settings": {
+            "question": "Wast het net zo schoon als vloeibaar wasmiddel?",
+            "answer": "Ja. De strips bevatten dezelfde werkzame stoffen, alleen zonder het water. Ze werken in koud én warm water en laten geen resten achter."
+          }
+        },
+        "f3": {
+          "type": "faq",
+          "settings": {
+            "question": "Wat kost het per wasbeurt?",
+            "answer": "Een los pak wasstrips komt neer op zo'n €0,34 per wasbeurt; met de voordeelbundel (4+2 gratis) zit je op €0,23 — en met een abonnement bespaar je 20% op elke levering."
+          }
+        },
+        "f4": {
+          "type": "faq",
+          "settings": {
+            "question": "En als het niks voor mij is?",
+            "answer": "Dan geldt onze 30 dagen niet-goed-geld-terug garantie — ook als het pak is aangebroken. Mail support@tabblie.com en we regelen het."
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "settings": {
+        "eyebrow": "GOED OM TE WETEN",
+        "title": "Veelgestelde vragen"
+      }
+    },
+    "artguarantee": {
+      "type": "tabblie-guarantee",
+      "settings": {
+        "eyebrow": "ONZE GARANTIE",
+        "heading": "Probeer het 30 dagen.",
+        "heading_accent": "Risicovrij!",
+        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
+        "button_text": "Bekijk alle producten",
+        "button_url": "/pages/alle-producten",
+        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
+        "image_alt": "30 dagen proefwassen",
+        "badge_text": "30 dagen proef wassen"
+      }
     }
   },
   "order": [
-    "main"
+    "artcta",
+    "main",
+    "artfaq",
+    "artguarantee"
   ]
 }

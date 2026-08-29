@@ -1,0 +1,100 @@
+{%- comment -%}
+  Sticky conversion bar for blog articles (listicle format). Appears at
+  the top of the viewport while the reader scrolls down (the Halo header
+  hides on scroll-down and reappears on scroll-up, so the bar uses the
+  same body classes to swap places with it instead of overlapping).
+{%- endcomment -%}
+
+<div class="tabblie-artcta" data-article-cta>
+  <p class="tabblie-artcta__text">
+    <span class="tabblie-artcta__dot" aria-hidden="true"></span>
+    {{ section.settings.text | escape }}
+  </p>
+  <a class="tabblie-artcta__btn" href="{{ section.settings.button_url | default: '/pages/alle-producten' }}">
+    {{ section.settings.button_label | escape }}
+  </a>
+</div>
+
+<script>
+  (function() {
+    var bar = document.querySelector('[data-article-cta]');
+    if (!bar) return;
+    var ticking = false;
+    function update() {
+      bar.classList.toggle('is-visible', window.scrollY > 480);
+      ticking = false;
+    }
+    window.addEventListener('scroll', function() {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    update();
+  })();
+</script>
+
+{% style %}
+  .tabblie-artcta {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 89;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: #FDF6EE;
+    border-bottom: 2px solid #182D20;
+    padding: 9px 14px;
+    transform: translateY(-110%);
+    transition: transform 0.25s ease;
+  }
+  .tabblie-artcta.is-visible { transform: translateY(0); }
+  .tabblie-artcta__text {
+    font-family: var(--font-body-family);
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #182D20;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+  }
+  .tabblie-artcta__dot {
+    flex: 0 0 auto;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #38A169;
+  }
+  .tabblie-artcta__btn {
+    flex: 0 0 auto;
+    background: #E8622A;
+    color: #ffffff;
+    font-family: var(--font-body-family);
+    font-size: 13.5px;
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 10px 18px;
+  }
+  .tabblie-artcta__btn:hover { background: #d4551f; color: #ffffff; }
+  @media (min-width: 768px) {
+    .tabblie-artcta { padding: 10px 28px; justify-content: center; gap: 22px; }
+    .tabblie-artcta__text { font-size: 14px; }
+    .tabblie-artcta__btn { font-size: 14.5px; }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Artikel CTA balk",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Tekst", "default": "Gratis verzending vanaf €30 · 30 dagen proefwassen" },
+    { "type": "text", "id": "button_label", "label": "Knoptekst", "default": "Probeer risicovrij" },
+    { "type": "url", "id": "button_url", "label": "Knop link" }
+  ],
+  "presets": [{ "name": "Artikel CTA balk" }]
+}
+{% endschema %}

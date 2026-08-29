@@ -41,7 +41,16 @@
           assign abo_price = variant.price | times: 0.8
         -%}
         <div class="tabblie-abo__card" style="--abo-accent: {{ block.settings.accent }}; --abo-card-bg: {{ block.settings.card_bg }};" {{ block.shopify_attributes }}>
-          {%- if product.featured_image -%}
+          {%- if block.settings.image_asset != blank -%}
+            <img
+              class="tabblie-abo__img tabblie-abo__img--pack"
+              src="{{ block.settings.image_asset | asset_url }}"
+              alt="{{ product.title | escape }}"
+              width="240"
+              height="240"
+              loading="lazy"
+            >
+          {%- elsif product.featured_image -%}
             <img
               class="tabblie-abo__img"
               src="{{ product.featured_image | image_url: width: 480 }}"
@@ -89,7 +98,9 @@
             -%}
             <label class="tabblie-abo__chip">
               <input type="checkbox" value="{{ variant.id }}" data-price="{{ abo_price }}">
-              {%- if product.featured_image -%}
+              {%- if block.settings.image_asset != blank -%}
+                <img src="{{ block.settings.image_asset | asset_url }}" alt="" width="48" height="48" loading="lazy" style="object-fit: contain;">
+              {%- elsif product.featured_image -%}
                 <img src="{{ product.featured_image | image_url: width: 96 }}" alt="" width="48" height="48" loading="lazy">
               {%- endif -%}
               <span class="tabblie-abo__chip-name">{{ product.title | remove: 'Tabblie ' | escape }}</span>
@@ -257,6 +268,12 @@
     object-fit: contain;
     border-radius: 12px;
     margin-bottom: 12px;
+  }
+  .tabblie-abo__img--pack {
+    width: auto;
+    height: 150px;
+    border-radius: 0;
+    filter: drop-shadow(0 6px 10px rgba(24, 45, 32, 0.18));
   }
   .tabblie-abo__name {
     font-family: var(--font-heading-family);
@@ -472,7 +489,8 @@
       "settings": [
         { "type": "product", "id": "product", "label": "Product" },
         { "type": "color", "id": "accent", "label": "Accentkleur", "default": "#E8622A" },
-        { "type": "color", "id": "card_bg", "label": "Kaartkleur", "default": "#ffffff" }
+        { "type": "color", "id": "card_bg", "label": "Kaartkleur", "default": "#ffffff" },
+        { "type": "text", "id": "image_asset", "label": "Verpakking (asset bestandsnaam, .png)" }
       ]
     }
   ],
