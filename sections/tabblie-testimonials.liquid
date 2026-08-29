@@ -127,6 +127,16 @@
     background-color: #ebe6e0;
   }
 
+  /* Packaging renders: show the whole pack on a cream backdrop instead of
+     cropping it into the 16:10 photo slot. */
+  .tabblie-testi__card-image--contain {
+    background-color: #FDF6EE;
+  }
+  .tabblie-testi__card-image--contain img {
+    object-fit: contain !important;
+    padding: 12px 0;
+    filter: drop-shadow(0 5px 8px rgba(24, 45, 32, 0.16));
+  }
   .tabblie-testi__card-image img {
     width: 100%;
     height: 100%;
@@ -320,12 +330,18 @@
             No image set = no image area at all. An empty placeholder box read
             as a broken image rather than a deliberate text-only card.
           {%- endcomment -%}
+          {%- liquid
+            assign img_class = 'tabblie-testi__card-image'
+            if block.settings.image_contain
+              assign img_class = img_class | append: ' tabblie-testi__card-image--contain'
+            endif
+          -%}
           {%- if block.settings.image != blank -%}
-            <div class="tabblie-testi__card-image">
+            <div class="{{ img_class }}">
               <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.name | escape }}" width="600" height="375" loading="lazy">
             </div>
           {%- elsif block.settings.image_asset != blank -%}
-            <div class="tabblie-testi__card-image">
+            <div class="{{ img_class }}">
               <img src="{{ block.settings.image_asset | asset_url }}" alt="{{ block.settings.name | escape }}" width="600" height="375" loading="lazy">
             </div>
           {%- endif -%}
@@ -457,6 +473,12 @@
           "id": "image_asset",
           "label": "Review afbeelding uit theme assets (bestandsnaam)",
           "info": "Fallback als er geen afbeelding is gekozen, bijv. tabblie-review-laundry.jpg"
+        },
+        {
+          "type": "checkbox",
+          "id": "image_contain",
+          "label": "Afbeelding niet bijsnijden (voor verpakkingen)",
+          "default": false
         }
       ]
     }

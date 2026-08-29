@@ -675,7 +675,8 @@
             "name": "Lisa B.",
             "location": "Amsterdam, NL",
             "avatar_asset": "tabblie-avatar-lisa.jpg",
-            "image_asset": "tabblie-review-laundry.jpg"
+            "image_asset": "tabblie-pack-was.png",
+            "image_contain": true
           }
         },
         "review_2": {
@@ -686,7 +687,8 @@
             "name": "Thomas V.",
             "location": "Rotterdam, NL",
             "avatar_asset": "tabblie-avatar-thomas.jpg",
-            "image_asset": "tabblie-review-dishes.jpg"
+            "image_asset": "tabblie-pack-vaat.png",
+            "image_contain": true
           }
         },
         "review_3": {
@@ -697,7 +699,8 @@
             "name": "Sophie M.",
             "location": "Antwerp, BE",
             "avatar_asset": "tabblie-avatar-sophie.jpg",
-            "image_asset": "tabblie-review-bathroom.jpg"
+            "image_asset": "tabblie-pack-toilet.png",
+            "image_contain": true
           }
         }
       },
