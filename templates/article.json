@@ -173,7 +173,9 @@
         "mix_text": "Vink aan wat je wilt combineren — alles komt samen in één levering, elk product met 20% korting.",
         "plan_label": "Maandelijks",
         "selling_plan_id_2": "691533545821",
-        "plan_label_2": "Elke 3 maanden"
+        "plan_label_2": "Elke 3 maanden",
+        "show_onetime": true,
+        "onetime_label": "Eenmalig"
       }
     }
   },

@@ -27,6 +27,12 @@
           <input type="radio" name="abo-freq-{{ section.id }}" value="{{ section.settings.selling_plan_id_2 }}">
           <span>{{ section.settings.plan_label_2 | default: 'Maandelijks' }}</span>
         </label>
+        {%- if section.settings.show_onetime -%}
+          <label class="tabblie-abo__freq-pill">
+            <input type="radio" name="abo-freq-{{ section.id }}" value="">
+            <span>{{ section.settings.onetime_label | default: 'Eenmalig' }}</span>
+          </label>
+        {%- endif -%}
       </div>
     {%- endif -%}
 
@@ -62,17 +68,22 @@
           {%- endif -%}
           <h3 class="tabblie-abo__name">{{ product.title | escape }}</h3>
           <p class="tabblie-abo__price">
-            <span class="tabblie-abo__price-now">{{ abo_price | money }}</span>
-            <s class="tabblie-abo__price-was">{{ variant.price | money }}</s>
-            <span class="tabblie-abo__price-per">per levering</span>
+            <span class="tabblie-abo__price-now"><span class="abo-abo">{{ abo_price | money }}</span><span class="abo-once">{{ variant.price | money }}</span></span>
+            <s class="tabblie-abo__price-was abo-abo">{{ variant.price | money }}</s>
+            <span class="tabblie-abo__price-per"><span class="abo-abo">per levering</span><span class="abo-once">eenmalig</span></span>
           </p>
-          <ul class="tabblie-abo__usps">
+          <ul class="tabblie-abo__usps abo-abo">
             <li>20% korting op elke levering</li>
             <li>Pauzeren of stoppen wanneer je wilt</li>
             <li>Door de brievenbus, automatisch</li>
           </ul>
-          <a class="tabblie-abo__cta" href="/cart/add?id={{ variant.id }}&quantity=1&selling_plan={{ section.settings.selling_plan_id }}&return_to=/cart">
-            Start abonnement
+          <ul class="tabblie-abo__usps abo-once">
+            <li>Eén levering, geen abonnement</li>
+            <li>30 dagen niet-goed-geld-terug</li>
+            <li>Door de brievenbus</li>
+          </ul>
+          <a class="tabblie-abo__cta" data-abo-base="/cart/add?id={{ variant.id }}&quantity=1" href="/cart/add?id={{ variant.id }}&quantity=1&selling_plan={{ section.settings.selling_plan_id }}&return_to=/cart">
+            <span class="abo-abo">Start abonnement</span><span class="abo-once">In winkelwagen</span>
           </a>
         </div>
       {%- endfor -%}
@@ -83,7 +94,7 @@
         <div class="tabblie-abo__mix-head">
           <h3 class="tabblie-abo__mix-title">{{ section.settings.mix_title | escape }}</h3>
           {%- if section.settings.mix_text != blank -%}
-            <p class="tabblie-abo__mix-text">{{ section.settings.mix_text | escape }}</p>
+            <p class="tabblie-abo__mix-text"><span class="abo-abo">{{ section.settings.mix_text | escape }}</span><span class="abo-once">Vink aan wat je wilt combineren — alles komt samen in één levering.</span></p>
           {%- endif -%}
         </div>
         <div class="tabblie-abo__mix-chips" data-abo-mix data-selling-plan="{{ section.settings.selling_plan_id }}">
@@ -97,20 +108,20 @@
               assign abo_price = variant.price | times: 0.8
             -%}
             <label class="tabblie-abo__chip">
-              <input type="checkbox" value="{{ variant.id }}" data-price="{{ abo_price }}">
+              <input type="checkbox" value="{{ variant.id }}" data-price="{{ abo_price }}" data-price-abo="{{ abo_price }}" data-price-once="{{ variant.price }}">
               {%- if block.settings.image_asset != blank -%}
                 <img src="{{ block.settings.image_asset | asset_url }}" alt="" width="48" height="48" loading="lazy" style="object-fit: contain;">
               {%- elsif product.featured_image -%}
                 <img src="{{ product.featured_image | image_url: width: 96 }}" alt="" width="48" height="48" loading="lazy">
               {%- endif -%}
               <span class="tabblie-abo__chip-name">{{ product.title | remove: 'Tabblie ' | escape }}</span>
-              <span class="tabblie-abo__chip-price">{{ abo_price | money }}</span>
+              <span class="tabblie-abo__chip-price"><span class="abo-abo">{{ abo_price | money }}</span><span class="abo-once">{{ variant.price | money }}</span></span>
             </label>
           {%- endfor -%}
         </div>
         <div class="tabblie-abo__mix-foot">
-          <p class="tabblie-abo__mix-total">Samen: <strong data-abo-mix-total>{{ 0 | money }}</strong> <span>per levering</span></p>
-          <button class="tabblie-abo__cta" type="button" data-abo-mix-submit disabled>Start abonnement</button>
+          <p class="tabblie-abo__mix-total">Samen: <strong data-abo-mix-total>{{ 0 | money }}</strong> <span><span class="abo-abo">per levering</span><span class="abo-once">eenmalig</span></span></p>
+          <button class="tabblie-abo__cta" type="button" data-abo-mix-submit disabled><span class="abo-abo">Start abonnement</span><span class="abo-once">In winkelwagen</span></button>
         </div>
       </div>
     {%- endif -%}
@@ -132,13 +143,31 @@
       var mixEl = document.querySelector('[data-abo-mix]');
       return mixEl ? mixEl.getAttribute('data-selling-plan') : null;
     }
+    function applyMode() {
+      var plan = currentPlan();
+      var root = document.querySelector('.tabblie-abo');
+      if (root) root.classList.toggle('tabblie-abo--onetime', !plan);
+      document.querySelectorAll('a.tabblie-abo__cta[data-abo-base]').forEach(function(a) {
+        var href = a.getAttribute('data-abo-base') + (plan ? '&selling_plan=' + plan : '') + '&return_to=/cart';
+        a.setAttribute('href', href);
+      });
+      document.querySelectorAll('[data-abo-mix] input[type="checkbox"]').forEach(function(b) {
+        b.setAttribute('data-price', plan ? b.getAttribute('data-price-abo') : b.getAttribute('data-price-once'));
+      });
+    }
     if (freq) {
       freq.addEventListener('change', function() {
-        var plan = currentPlan();
-        document.querySelectorAll('a.tabblie-abo__cta[href*="selling_plan="]').forEach(function(a) {
-          a.setAttribute('href', a.getAttribute('href').replace(/selling_plan=\d+/, 'selling_plan=' + plan));
-        });
+        applyMode();
+        var totalEl = document.querySelector('[data-abo-mix-total]');
+        if (totalEl) {
+          var total = 0;
+          document.querySelectorAll('[data-abo-mix] input:checked').forEach(function(b) {
+            total += parseFloat(b.getAttribute('data-price'));
+          });
+          totalEl.textContent = '€' + (total / 100).toFixed(2).replace('.', ',');
+        }
       });
+      applyMode();
     }
 
     var wrap = document.querySelector('[data-abo-mix]');
@@ -162,7 +191,10 @@
       var items = [];
       var plan = currentPlan();
       boxes.forEach(function(b) {
-        if (b.checked) items.push({ id: parseInt(b.value, 10), quantity: 1, selling_plan: parseInt(plan, 10) });
+        if (!b.checked) return;
+        var item = { id: parseInt(b.value, 10), quantity: 1 };
+        if (plan) item.selling_plan = parseInt(plan, 10);
+        items.push(item);
       });
       if (!items.length) return;
       btn.disabled = true;
@@ -218,6 +250,11 @@
     max-width: 560px;
     margin: 0 auto 28px;
   }
+  /* one-time vs abonnement content variants */
+  .abo-once { display: none !important; }
+  .tabblie-abo--onetime .abo-abo { display: none !important; }
+  .tabblie-abo--onetime .abo-once { display: revert !important; }
+
   .tabblie-abo__freq {
     display: inline-flex;
     gap: 6px;
@@ -477,6 +514,8 @@
     { "type": "text", "id": "plan_label", "label": "Label optie 1", "default": "Elke 3 maanden" },
     { "type": "text", "id": "selling_plan_id_2", "label": "Selling plan ID optie 2 (leeg = geen keuze)" },
     { "type": "text", "id": "plan_label_2", "label": "Label optie 2", "default": "Maandelijks" },
+    { "type": "checkbox", "id": "show_onetime", "label": "Toon eenmalige aankoop als optie", "default": false },
+    { "type": "text", "id": "onetime_label", "label": "Label eenmalig", "default": "Eenmalig" },
     { "type": "checkbox", "id": "show_mix", "label": "Toon mix & match kaart", "default": true },
     { "type": "text", "id": "mix_title", "label": "Mix & match titel", "default": "Mix & match" },
     { "type": "textarea", "id": "mix_text", "label": "Mix & match tekst" },
