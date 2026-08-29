@@ -1,140 +1,63 @@
 {%- comment -%}
-  "Lees meer" — newspaper-style grid of other blog articles, shown under
-  an article instead of the bare prev/next links. Skips the article the
-  reader is currently on.
+  "Lees meer" CTA banner under blog articles: one big button to the
+  De schone was blog index instead of an article grid or prev/next links.
 {%- endcomment -%}
 
 <section class="tabblie-rmore">
   <div class="tabblie-rmore__container">
-    <div class="tabblie-rmore__head">
-      <h2 class="tabblie-rmore__title">{{ section.settings.title | default: 'Lees meer van Tabblie' }}</h2>
-      <a class="tabblie-rmore__all" href="{{ section.settings.blog_url | default: '/blogs/blog' }}">
-        {{ section.settings.all_text | default: 'Alle artikelen' }}
-        <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-      </a>
-    </div>
-    <div class="tabblie-rmore__grid">
-      {%- liquid
-        assign shown = 0
-        assign max = section.settings.max_articles | default: 3
-        assign source_blog = blogs[section.settings.blog_handle] | default: blogs.blog
-      -%}
-      {%- for a in source_blog.articles limit: 12 -%}
-        {%- if a.handle == article.handle -%}{%- continue -%}{%- endif -%}
-        {%- if shown >= max -%}{%- break -%}{%- endif -%}
-        {%- assign shown = shown | plus: 1 -%}
-        <a class="tabblie-rmore__card" href="{{ a.url }}">
-          <p class="tabblie-rmore__kicker">{{ a.published_at | date: "%d %b %Y" }}{% if a.tags.first %} · {{ a.tags.first }}{% endif %}</p>
-          <h3 class="tabblie-rmore__card-title">{{ a.title | escape }}</h3>
-          <p class="tabblie-rmore__excerpt">{{ a.excerpt_or_content | strip_html | truncate: 120 }}</p>
-          <span class="tabblie-rmore__read">Lees verder
-            <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-          </span>
-        </a>
-      {%- endfor -%}
-    </div>
+    <h2 class="tabblie-rmore__title">{{ section.settings.title | default: 'Meer verhalen voor een schoner huis' | escape }}</h2>
+    <a class="tabblie-rmore__btn" href="{{ section.settings.button_url | default: '/blogs/de-schone-was' }}">
+      {{ section.settings.button_text | default: 'Bekijk alle verhalen' | escape }}
+      <svg width="15" height="15" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 16h20M18 9l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
   </div>
 </section>
 
 {% style %}
   .tabblie-rmore {
     background: #ffffff;
-    padding: 44px 20px;
+    padding: 44px 20px 56px;
     border-top: 3px double rgba(24, 45, 32, 0.35);
+    text-align: center;
   }
   .tabblie-rmore__container { max-width: 1170px; margin: 0 auto; }
-  .tabblie-rmore__head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 14px;
-    margin-bottom: 20px;
-  }
   .tabblie-rmore__title {
     font-family: var(--font-heading-family);
     font-size: 24px;
     font-weight: 800;
     letter-spacing: -0.01em;
     color: #182D20;
-    margin: 0;
+    margin: 0 0 18px;
   }
-  .tabblie-rmore__all {
-    flex: 0 0 auto;
+  .tabblie-rmore__btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 10px;
+    background: #E8622A;
+    color: #ffffff;
     font-family: var(--font-body-family);
-    font-size: 14px;
-    font-weight: 700;
-    color: #E8622A;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-  .tabblie-rmore__all:hover { text-decoration: underline; color: #E8622A; }
-  .tabblie-rmore__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .tabblie-rmore__card {
-    display: block;
-    padding: 18px 0;
-    border-top: 1px solid rgba(24, 45, 32, 0.18);
-    text-decoration: none;
-  }
-  .tabblie-rmore__kicker {
-    font-family: var(--font-body-family);
-    font-size: 11.5px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: rgba(24, 45, 32, 0.55);
-    margin: 0 0 6px;
-  }
-  .tabblie-rmore__card-title {
-    font-family: var(--font-heading-family);
-    font-size: 18px;
-    line-height: 1.25;
+    font-size: 17px;
     font-weight: 800;
-    color: #182D20;
-    margin: 0 0 6px;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 16px 36px;
+    min-height: 52px;
   }
-  .tabblie-rmore__card:hover .tabblie-rmore__card-title { color: #E8622A; }
-  .tabblie-rmore__excerpt {
-    font-family: var(--font-body-family);
-    font-size: 14px;
-    line-height: 1.55;
-    color: rgba(24, 45, 32, 0.75);
-    margin: 0 0 8px;
-  }
-  .tabblie-rmore__read {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    font-family: var(--font-body-family);
-    font-size: 13.5px;
-    font-weight: 800;
-    color: #26523F;
-  }
+  .tabblie-rmore__btn:hover { background: #D4531D; color: #ffffff; }
   @media (min-width: 768px) {
-    .tabblie-rmore { padding: 56px 24px; }
     .tabblie-rmore__title { font-size: 28px; }
-    .tabblie-rmore__grid { grid-template-columns: repeat(3, 1fr); gap: 26px; }
-    .tabblie-rmore__card { border-top: 2px solid #182D20; padding-top: 14px; }
   }
 {% endstyle %}
 
 {% schema %}
 {
-  "name": "Lees meer (artikelen)",
+  "name": "Lees meer (knop)",
   "tag": "section",
   "settings": [
-    { "type": "text", "id": "title", "label": "Titel", "default": "Lees meer van Tabblie" },
-    { "type": "text", "id": "all_text", "label": "Link alle artikelen", "default": "Alle artikelen" },
-    { "type": "url", "id": "blog_url", "label": "Blog overzicht URL" },
-    { "type": "text", "id": "blog_handle", "label": "Blog handle", "default": "blog" },
-    { "type": "range", "id": "max_articles", "label": "Aantal artikelen", "min": 2, "max": 6, "step": 1, "default": 3 }
+    { "type": "text", "id": "title", "label": "Titel", "default": "Meer verhalen voor een schoner huis" },
+    { "type": "text", "id": "button_text", "label": "Knoptekst", "default": "Bekijk alle verhalen" },
+    { "type": "url", "id": "button_url", "label": "Knop link" }
   ],
-  "presets": [{ "name": "Lees meer (artikelen)" }]
+  "presets": [{ "name": "Lees meer (knop)" }]
 }
 {% endschema %}

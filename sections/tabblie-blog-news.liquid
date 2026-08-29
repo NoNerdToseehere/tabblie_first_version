@@ -1,0 +1,503 @@
+{%- comment -%}
+  "De schone was" — newspaper-style blog index (build pack: USEFUL/build-pack 2).
+  Cream paper on the dark-green page shell, category nav from tags, dateline,
+  oversized title, lead story + two secondary stories, article grid, and a
+  sidebar with most-read and a newsletter card. All content is live articles;
+  per-article images can be overridden with block mappings.
+{%- endcomment -%}
+
+{%- liquid
+  assign articles_all = blog.articles
+
+  assign lead = nil
+  if section.settings.lead_article != blank and current_tags == blank
+    assign lead = section.settings.lead_article
+  endif
+  if lead == nil
+    assign lead = articles_all.first
+  endif
+-%}
+
+{%- capture dutch_date -%}
+  {%- assign wd = 'now' | date: '%u' | plus: 0 -%}
+  {%- assign mo = 'now' | date: '%-m' | plus: 0 -%}
+  {%- case wd -%}
+    {%- when 1 -%}Maandag{%- when 2 -%}Dinsdag{%- when 3 -%}Woensdag{%- when 4 -%}Donderdag{%- when 5 -%}Vrijdag{%- when 6 -%}Zaterdag{%- else -%}Zondag
+  {%- endcase %} {{ 'now' | date: '%-d' }} {% case mo -%}
+    {%- when 1 -%}januari{%- when 2 -%}februari{%- when 3 -%}maart{%- when 4 -%}april{%- when 5 -%}mei{%- when 6 -%}juni{%- when 7 -%}juli{%- when 8 -%}augustus{%- when 9 -%}september{%- when 10 -%}oktober{%- when 11 -%}november{%- else -%}december
+  {%- endcase %} {{ 'now' | date: '%Y' }}
+{%- endcapture -%}
+
+<section class="tbn">
+  <div class="tbn__paper">
+
+    <nav class="tbn__tabs" aria-label="Categorie">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'tab' -%}
+          {%- liquid
+            assign tab_url = blog.url
+            assign is_active = false
+            if block.settings.tag != blank
+              assign tag_handle = block.settings.tag | handleize
+              assign tab_url = blog.url | append: '/tagged/' | append: tag_handle
+              if current_tags contains block.settings.tag
+                assign is_active = true
+              endif
+            elsif current_tags == blank
+              assign is_active = true
+            endif
+          -%}
+          <a class="tbn__tab{% if is_active %} tbn__tab--active{% endif %}" href="{{ tab_url }}" {{ block.shopify_attributes }}>{{ block.settings.label | escape }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+    </nav>
+
+    <p class="tbn__dateline"><span></span>{{ dutch_date | strip | upcase }}<span></span></p>
+
+    <div class="tbn__masthead">
+      <svg class="tbn__doodle tbn__doodle--stripes" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#26523F" stroke-width="5" stroke-linecap="round"><path d="M14 44 4 51M22 32 8 30M35 24 31 9"/></g></svg>
+      <svg class="tbn__doodle tbn__doodle--star" viewBox="0 0 64 64" aria-hidden="true"><path d="m32 5 7 18 20 1-16 12 5 20-16-11-17 11 6-20L5 24l20-1Z" fill="none" stroke="#F5C842" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <h1 class="tbn__title">{{ section.settings.title | default: 'Verhalen voor een schoner huis' | escape }}</h1>
+      <svg class="tbn__doodle tbn__doodle--stripes tbn__doodle--flip" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#26523F" stroke-width="5" stroke-linecap="round"><path d="M14 44 4 51M22 32 8 30M35 24 31 9"/></g></svg>
+      <svg class="tbn__doodle tbn__doodle--bubbles" viewBox="0 0 96 96" aria-hidden="true"><circle cx="45" cy="52" r="24" fill="#9ADCCB" fill-opacity=".5" stroke="#5BB8A0" stroke-width="3"/><circle cx="72" cy="28" r="9" fill="#F5C842" fill-opacity=".6" stroke="#E8A928" stroke-width="2"/><circle cx="70" cy="66" r="5" fill="#5BB8A0" fill-opacity=".7"/></svg>
+    </div>
+
+    {%- if lead -%}
+      <div class="tbn__lead">
+        {%- render 'blog-news-card', article: lead, blocks: section.blocks, style: 'lead' -%}
+        <div class="tbn__side">
+          {%- liquid
+            assign side_count = 0
+            for a in articles_all
+              if a.handle == lead.handle
+                continue
+              endif
+              if side_count >= 2
+                break
+              endif
+              assign side_count = side_count | plus: 1
+              render 'blog-news-card', article: a, blocks: section.blocks, style: 'side'
+            endfor
+          -%}
+        </div>
+      </div>
+    {%- endif -%}
+
+    <div class="tbn__lower">
+      <div class="tbn__grid">
+        {%- liquid
+          assign skipped = 0
+          assign gi = 0
+          for a in articles_all
+            if a.handle == lead.handle
+              continue
+            endif
+            if skipped < 2
+              assign skipped = skipped | plus: 1
+              continue
+            endif
+            comment
+              Rows alternate: 3 image-top cards, then 3 horizontal cards.
+            endcomment
+            assign row_pos = gi | modulo: 6
+            if row_pos < 3
+              render 'blog-news-card', article: a, blocks: section.blocks, style: 'grid'
+            else
+              render 'blog-news-card', article: a, blocks: section.blocks, style: 'side'
+            endif
+            assign gi = gi | plus: 1
+          endfor
+        -%}
+      </div>
+
+      <aside class="tbn__sidebar">
+        <div class="tbn__mostread">
+          <p class="tbn__mostread-head">
+            {{ section.settings.mostread_title | default: 'Meest gelezen' | escape | upcase }}
+            <svg viewBox="0 0 64 64" aria-hidden="true"><path d="m32 5 7 18 20 1-16 12 5 20-16-11-17 11 6-20L5 24l20-1Z" fill="none" stroke="#F5C842" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </p>
+          <ol class="tbn__mostread-list">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'top' and block.settings.article != blank -%}
+                <li {{ block.shopify_attributes }}>
+                  <a href="{{ block.settings.article.url }}">{{ block.settings.article.title | escape }}</a>
+                  <span>{{ block.settings.article.published_at | date: '%d-%m-%Y' }}</span>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ol>
+        </div>
+
+        <div class="tbn__nl">
+          <img class="tbn__nl-img" src="{{ 'blognews-envelope.svg' | asset_url }}" alt="" width="120" height="90" loading="lazy">
+          <p class="tbn__nl-title">{{ section.settings.nl_title | default: 'Schone verhalen in je inbox' | escape }}</p>
+          <p class="tbn__nl-text">{{ section.settings.nl_text | escape }}</p>
+          <a class="tbn__nl-btn" href="{{ section.settings.nl_url | default: '#footer' }}" data-tbn-nl>
+            {{ section.settings.nl_button | default: 'Ik lees mee' | escape }}
+            <svg width="14" height="14" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 16h20M18 9l7 7-7 7" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    var btn = document.querySelector('[data-tbn-nl]');
+    if (!btn) return;
+    btn.addEventListener('click', function(e) {
+      var href = btn.getAttribute('href') || '';
+      if (href.charAt(0) !== '#') return;
+      e.preventDefault();
+      var target = document.querySelector(href) ||
+        document.querySelector('.footer-block--newsletter, .newsletter-form, footer form[action*="contact"]') ||
+        document.querySelector('footer');
+      target && target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  })();
+</script>
+
+{% style %}
+  .tbn {
+    background: #FDF6EE;
+    padding: 8px 0 24px;
+  }
+  .tbn__paper {
+    width: min(1536px, 100%);
+    margin: 0 auto;
+    padding: 12px clamp(16px, 3vw, 40px) 42px;
+  }
+
+  /* category nav between thin rules */
+  .tbn__tabs {
+    display: flex;
+    gap: clamp(14px, 2.6vw, 44px);
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+    border-top: 2px solid #26523F;
+    border-bottom: 2px solid #26523F;
+    padding: 10px 4px;
+  }
+  .tbn__tabs::-webkit-scrollbar { display: none; }
+  .tbn__tab {
+    font-family: var(--font-body-family);
+    font-size: 15px;
+    font-weight: 700;
+    color: #26523F;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .tbn__tab--active,
+  .tbn__tab:hover { color: #E8622A; }
+
+  .tbn__dateline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    font-family: var(--font-body-family);
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #26523F;
+    margin: 22px 0 6px;
+  }
+  .tbn__dateline span { flex: 0 1 220px; height: 1px; background: rgba(38, 82, 63, 0.4); }
+
+  .tbn__masthead {
+    position: relative;
+    text-align: center;
+    margin-bottom: clamp(18px, 3vw, 30px);
+  }
+  .tbn__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(34px, 6.4vw, 84px);
+    line-height: 1;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #26523F;
+    margin: 0;
+  }
+  .tbn__doodle { position: absolute; pointer-events: none; }
+  .tbn__doodle--stripes { width: 34px; height: 34px; left: 2%; top: -12px; }
+  .tbn__doodle--flip { left: auto; right: 2%; transform: scaleX(-1); }
+  .tbn__doodle--star { width: 30px; height: 30px; left: 6%; bottom: -8px; }
+  .tbn__doodle--bubbles { width: 44px; height: 44px; right: 5%; bottom: -16px; }
+
+  /* lead grid */
+  .tbn__lead {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .tbn__side { display: grid; gap: 14px; }
+
+  /* lower: articles + sidebar */
+  .tbn__lower {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .tbn__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    align-content: start;
+  }
+
+  /* sidebar */
+  .tbn__mostread {
+    border: 1px solid rgba(38, 82, 63, 0.28);
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+  }
+  .tbn__mostread-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #26523F;
+    color: #FDF6EE;
+    font-family: var(--font-body-family);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    padding: 12px 16px;
+    margin: 0;
+  }
+  .tbn__mostread-head svg { width: 22px; height: 22px; }
+  .tbn__mostread-list {
+    list-style: none;
+    margin: 0;
+    padding: 6px 16px 14px;
+    counter-reset: tbnmost;
+  }
+  .tbn__mostread-list li {
+    counter-increment: tbnmost;
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 4px 10px;
+    align-items: start;
+    padding: 11px 0;
+    border-bottom: 1px dashed rgba(38, 82, 63, 0.3);
+  }
+  .tbn__mostread-list li:last-child { border-bottom: 0; }
+  .tbn__mostread-list li::before {
+    content: "0" counter(tbnmost);
+    grid-row: span 2;
+    font-family: var(--font-heading-family);
+    font-size: 26px;
+    font-weight: 800;
+    color: #182D20;
+    line-height: 1;
+  }
+  .tbn__mostread-list a {
+    font-family: var(--font-body-family);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: #182D20;
+    text-decoration: none;
+  }
+  .tbn__mostread-list a:hover { color: #E8622A; }
+  .tbn__mostread-list span {
+    font-family: var(--font-body-family);
+    font-size: 11.5px;
+    color: rgba(24, 45, 32, 0.55);
+  }
+
+  .tbn__nl {
+    margin-top: 20px;
+    border: 1px solid rgba(38, 82, 63, 0.28);
+    border-radius: 12px;
+    background: #E2F2ED;
+    text-align: center;
+    padding: 22px 18px;
+  }
+  .tbn__nl-img { width: 110px; height: auto; margin: 0 auto 8px; }
+  .tbn__nl-title {
+    font-family: var(--font-heading-family);
+    font-size: 19px;
+    font-weight: 800;
+    color: #26523F;
+    margin: 0 0 6px;
+  }
+  .tbn__nl-text {
+    font-family: var(--font-body-family);
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #182D20;
+    margin: 0 0 14px;
+  }
+  .tbn__nl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 999px;
+    background: #E8622A;
+    color: #ffffff;
+    font-family: var(--font-body-family);
+    font-size: 14.5px;
+    font-weight: 800;
+    padding: 12px 22px;
+    text-decoration: none;
+    min-height: 44px;
+  }
+  .tbn__nl-btn:hover { background: #D4531D; color: #ffffff; }
+
+  /* ── story cards ── */
+  .tbn-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(38, 82, 63, 0.28);
+    border-radius: 12px;
+    background: #ffffff;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .tbn-card:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(24, 45, 32, 0.12); }
+  .tbn-card__media { background: #EFE8DE; }
+  .tbn-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .tbn-card__body { padding: 14px 16px 16px; display: flex; flex-direction: column; align-items: flex-start; gap: 7px; }
+  .tbn-card__chip {
+    font-family: var(--font-body-family);
+    font-size: 10.5px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #ffffff;
+    background: #E8622A;
+    border-radius: 5px;
+    padding: 3px 8px;
+  }
+  .tbn-card__chip--plasticpraat { background: #26523F; }
+  .tbn-card__chip--hacks { background: #F5C842; color: #182D20; }
+  .tbn-card__chip--schermen { background: #5BB8A0; }
+  .tbn-card__chip--producten { background: #3B7DD8; }
+  .tbn-card__title {
+    font-family: var(--font-heading-family);
+    font-size: 18px;
+    line-height: 1.22;
+    font-weight: 800;
+    color: #182D20;
+    margin: 0;
+  }
+  .tbn-card:hover .tbn-card__title { color: #E8622A; }
+  .tbn-card__excerpt {
+    font-family: var(--font-body-family);
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: rgba(24, 45, 32, 0.75);
+    margin: 0;
+  }
+  .tbn-card__meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-body-family);
+    font-size: 12px;
+    color: rgba(24, 45, 32, 0.6);
+    margin: 2px 0 0;
+  }
+  .tbn-card__meta svg { width: 14px; height: 14px; }
+
+  /* lead card: text left, image right */
+  .tbn-card--lead .tbn-card__media { aspect-ratio: 16 / 10; }
+  .tbn-card--lead .tbn-card__title { font-size: clamp(24px, 2.6vw, 36px); line-height: 1.1; }
+  .tbn-card--lead .tbn-card__excerpt { font-size: 15.5px; }
+  .tbn-card--lead .tbn-card__body { padding: 18px 20px 20px; }
+
+  /* side cards: thumb left */
+  .tbn-card--side { flex-direction: row; align-items: stretch; }
+  .tbn-card--side .tbn-card__media { flex: 0 0 42%; min-height: 128px; }
+  .tbn-card--side .tbn-card__title { font-size: 16.5px; }
+  .tbn-card--side .tbn-card__body { padding: 12px 14px; }
+
+  .tbn-card--grid .tbn-card__media { aspect-ratio: 16 / 10; }
+
+  @media (min-width: 990px) {
+    .tbn-card--lead {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      background: #FBF3E8;
+    }
+    .tbn-card--lead .tbn-card__media {
+      order: 2;
+      aspect-ratio: auto;
+      background: transparent;
+      margin-left: -22%;
+      position: relative;
+      z-index: 1;
+    }
+    .tbn-card--lead .tbn-card__media img {
+      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 34%);
+      mask-image: linear-gradient(to right, transparent 0, #000 34%);
+    }
+    .tbn-card--lead .tbn-card__body {
+      order: 1;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  @media (min-width: 750px) {
+    .tbn__grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 990px) {
+    .tbn__lead { grid-template-columns: minmax(0, 2fr) minmax(340px, 1fr); }
+    .tbn__lower { grid-template-columns: 3fr 1fr; }
+    .tbn__grid { grid-template-columns: repeat(3, 1fr); }
+    .tbn__tabs { justify-content: center; }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Blog krant",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Grote titel", "default": "Verhalen voor een schoner huis" },
+    { "type": "article", "id": "lead_article", "label": "Hoofdartikel (leeg = nieuwste)" },
+    { "type": "text", "id": "mostread_title", "label": "Titel meest gelezen", "default": "Meest gelezen" },
+    { "type": "text", "id": "nl_title", "label": "Nieuwsbrief titel", "default": "Schone verhalen in je inbox" },
+    { "type": "textarea", "id": "nl_text", "label": "Nieuwsbrief tekst", "default": "Ontvang nieuwe tips, verhalen en exclusieve acties in je mailbox." },
+    { "type": "text", "id": "nl_button", "label": "Nieuwsbrief knoptekst", "default": "Ik lees mee" },
+    { "type": "url", "id": "nl_url", "label": "Nieuwsbrief knop link (leeg = scroll naar footer)" }
+  ],
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Categorie tab",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "default": "Alles" },
+        { "type": "text", "id": "tag", "label": "Artikel-tag (leeg = alles)" }
+      ]
+    },
+    {
+      "type": "img",
+      "name": "Afbeelding voor artikel",
+      "settings": [
+        { "type": "article", "id": "article", "label": "Artikel" },
+        { "type": "text", "id": "image_asset", "label": "Asset bestandsnaam" }
+      ]
+    },
+    {
+      "type": "top",
+      "name": "Meest gelezen artikel",
+      "settings": [
+        { "type": "article", "id": "article", "label": "Artikel" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Blog krant" }]
+}
+{% endschema %}

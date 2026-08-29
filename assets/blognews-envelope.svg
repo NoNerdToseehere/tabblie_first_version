@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 280">
+  <g fill="#F5C842" stroke="#E8A928" stroke-width="2" stroke-linejoin="round">
+    <path d="m45 24 7 17 18 1-14 11 4 18-15-10-15 10 5-18-15-11 19-1Z"/>
+    <path d="m309 58 6 14 15 1-12 9 4 15-13-8-12 8 4-15-12-9 15-1Z"/>
+  </g>
+  <g fill="none" stroke="#E8622A" stroke-width="5" stroke-linecap="round">
+    <path d="M79 79v18M70 88h18M280 23v20M270 33h20"/>
+  </g>
+  <path d="M49 122h258v130H49z" fill="#DCEDE6" stroke="#5BB8A0" stroke-width="4" stroke-linejoin="round"/>
+  <path d="m49 122 129 95 129-95" fill="#C6E3D9" stroke="#5BB8A0" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="91" y="36" width="176" height="151" rx="8" fill="#FDF6EE" stroke="#26523F" stroke-width="4"/>
+  <path d="M112 68h134M112 137h92M112 155h116" stroke="#F2A0A0" stroke-width="4" stroke-linecap="round"/>
+  <text x="179" y="116" text-anchor="middle" font-family="Baloo 2, Helvetica, Arial, sans-serif" font-size="42" font-weight="700" fill="#E8622A">Tabblie</text>
+  <path d="m49 252 91-74 38 29 38-29 91 74Z" fill="#E2F2ED" stroke="#5BB8A0" stroke-width="4" stroke-linejoin="round"/>
+</svg>

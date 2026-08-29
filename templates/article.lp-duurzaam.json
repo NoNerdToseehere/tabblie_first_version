@@ -185,11 +185,9 @@
     "readmore": {
       "type": "tabblie-read-more",
       "settings": {
-        "title": "Lees meer van Tabblie",
-        "all_text": "Alle artikelen",
-        "blog_url": "/blogs/blog",
-        "blog_handle": "blog",
-        "max_articles": 3
+        "title": "Meer verhalen voor een schoner huis",
+        "button_text": "Bekijk alle verhalen",
+        "button_url": "/blogs/de-schone-was"
       }
     }
   },

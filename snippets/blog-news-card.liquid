@@ -1,0 +1,62 @@
+{%- comment -%}
+  One story card for the "De schone was" blog index.
+  style: 'lead' (big, text+image), 'side' (horizontal thumb) or 'grid'.
+  blocks: the section blocks — 'img' blocks override an article's image
+  with a theme asset.
+{%- endcomment -%}
+
+{%- liquid
+  assign card_img_asset = ''
+  for b in blocks
+    if b.type == 'img' and b.settings.article != blank and b.settings.article.handle == article.handle
+      assign card_img_asset = b.settings.image_asset
+      break
+    endif
+  endfor
+
+  assign cat = ''
+  if article.tags contains 'Waswijs'
+    assign cat = 'Waswijs'
+    assign cat_class = 'waswijs'
+  elsif article.tags contains 'Plasticpraat'
+    assign cat = 'Plasticpraat'
+    assign cat_class = 'plasticpraat'
+  elsif article.tags contains 'Huishoudhacks'
+    assign cat = 'Huishoudhacks'
+    assign cat_class = 'hacks'
+  elsif article.tags contains 'Achter de schermen'
+    assign cat = 'Achter de schermen'
+    assign cat_class = 'schermen'
+  elsif article.tags contains 'Onze producten'
+    assign cat = 'Onze producten'
+    assign cat_class = 'producten'
+  endif
+
+  assign chars = article.content | strip_html | size
+  assign minutes = chars | divided_by: 750 | at_least: 2
+-%}
+
+<a class="tbn-card tbn-card--{{ style }}" href="{{ article.url }}">
+  <div class="tbn-card__media">
+    {%- if card_img_asset != blank -%}
+      <img src="{{ card_img_asset | asset_url }}" alt="{{ article.title | escape }}" loading="lazy">
+    {%- elsif article.image -%}
+      <img src="{{ article.image | image_url: width: 720 }}" alt="{{ article.image.alt | default: article.title | escape }}" loading="lazy">
+    {%- endif -%}
+  </div>
+  <div class="tbn-card__body">
+    {%- if cat != blank -%}
+      <span class="tbn-card__chip tbn-card__chip--{{ cat_class }}">{{ cat | upcase }}</span>
+    {%- endif -%}
+    <h3 class="tbn-card__title">{{ article.title | escape }}</h3>
+    {%- unless style == 'side' -%}
+      <p class="tbn-card__excerpt">{{ article.excerpt_or_content | strip_html | truncate: 110 }}</p>
+    {%- endunless -%}
+    <p class="tbn-card__meta">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 9v8l5 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      {{ minutes }} min lezen
+      <span aria-hidden="true">·</span>
+      {{ article.published_at | date: '%d-%m-%Y' }}
+    </p>
+  </div>
+</a>

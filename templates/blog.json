@@ -1,30 +1,138 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "sections": {
-    "tabblie_blog": {
-      "type": "tabblie-blog-list",
+    "news": {
+      "type": "tabblie-blog-news",
+      "blocks": {
+        "tab_all": {
+          "type": "tab",
+          "settings": {
+            "label": "Alles",
+            "tag": ""
+          }
+        },
+        "tab_was": {
+          "type": "tab",
+          "settings": {
+            "label": "Waswijs",
+            "tag": "Waswijs"
+          }
+        },
+        "tab_plastic": {
+          "type": "tab",
+          "settings": {
+            "label": "Plasticpraat",
+            "tag": "Plasticpraat"
+          }
+        },
+        "tab_prod": {
+          "type": "tab",
+          "settings": {
+            "label": "Onze producten",
+            "tag": "Onze producten"
+          }
+        },
+        "img1": {
+          "type": "img",
+          "settings": {
+            "article": "de-schone-was/overstappen-op-wasstrips",
+            "image_asset": "blognews-hero-laundry.jpg"
+          }
+        },
+        "img2": {
+          "type": "img",
+          "settings": {
+            "article": "de-schone-was/wasstrips-duurzaam-huishouden",
+            "image_asset": "blognews-plastic-bottles.jpg"
+          }
+        },
+        "img3": {
+          "type": "img",
+          "settings": {
+            "article": "de-schone-was/bundels-besparen",
+            "image_asset": "blognews-dishwasher.jpg"
+          }
+        },
+        "img4": {
+          "type": "img",
+          "settings": {
+            "article": "de-schone-was/wasstrips-review-voor-en-nadelen",
+            "image_asset": "blognews-dose-strip.jpg"
+          }
+        },
+        "img5": {
+          "type": "img",
+          "settings": {
+            "article": "de-schone-was/toekomst-duurzaam-schoonmaken",
+            "image_asset": "blognews-plastic-bottle.jpg"
+          }
+        },
+        "img6": {
+          "type": "img",
+          "settings": {
+            "article": "de-schone-was/30-dagen-proefwassen",
+            "image_asset": "blognews-behind-scenes.jpg"
+          }
+        },
+        "top1": {
+          "type": "top",
+          "settings": {
+            "article": "de-schone-was/overstappen-op-wasstrips"
+          }
+        },
+        "top2": {
+          "type": "top",
+          "settings": {
+            "article": "de-schone-was/wasstrips-duurzaam-huishouden"
+          }
+        },
+        "top3": {
+          "type": "top",
+          "settings": {
+            "article": "de-schone-was/wasstrips-review-voor-en-nadelen"
+          }
+        },
+        "top4": {
+          "type": "top",
+          "settings": {
+            "article": "de-schone-was/30-dagen-proefwassen"
+          }
+        },
+        "img8": {
+          "type": "img",
+          "settings": {
+            "article": "de-schone-was/toiletstrips-zonder-microplastics",
+            "image_asset": "blognews-toilet.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "tab_all",
+        "tab_was",
+        "tab_plastic",
+        "tab_prod",
+        "img1",
+        "img2",
+        "img3",
+        "img4",
+        "img5",
+        "img6",
+        "img8",
+        "top1",
+        "top2",
+        "top3",
+        "top4"
+      ],
       "settings": {
-        "eyebrow": "INSPIRATIE",
-        "title": "Verhalen van Tabblie",
-        "subtitle": "Tips, achtergronden en verhalen over schoonmaken zonder plasticafval.",
-        "per_page": 12
+        "title": "Verhalen voor een schoner huis",
+        "lead_article": "de-schone-was/overstappen-op-wasstrips",
+        "mostread_title": "Meest gelezen",
+        "nl_title": "Schone verhalen in je inbox",
+        "nl_text": "Ontvang nieuwe tips, verhalen en exclusieve acties in je mailbox.",
+        "nl_button": "Ik lees mee"
       }
-    },
-    "tabblie_newsletter": {
-      "type": "tabblie-newsletter",
-      "settings": {}
     }
   },
   "order": [
-    "tabblie_blog",
-    "tabblie_newsletter"
+    "news"
   ]
 }
