@@ -1,5 +1,37 @@
 {
   "sections": {
+    "artcta": {
+      "type": "tabblie-article-cta",
+      "settings": {
+        "text": "Gratis verzending vanaf €30 · 30 dagen proefwassen",
+        "button_label": "Probeer risicovrij",
+        "button_url": "/products/tabblie-wasstrips"
+      }
+    },
+    "hero": {
+      "type": "tabblie-page-hero",
+      "settings": {
+        "bg_color": "#FCE8E8",
+        "eyebrow": "EVEN EERLIJK",
+        "heading": "De wasmiddelwereld zit vol troep.",
+        "heading_accent": "Letterlijk.",
+        "subtext": "Waarom steeds meer huishoudens de fles én de pod laten staan — en wat er dan wél in je trommel belandt."
+      }
+    },
+    "bottles": {
+      "type": "tabblie-bottle-grid",
+      "settings": {
+        "bg_color": "#FDF6EE",
+        "eyebrow": "WAAROM DIT BESTAAT",
+        "heading": "600 flessen in tien jaar.\nAlleen al aan schoonmaakmiddel.",
+        "body": "<p>Een gemiddeld huishouden werkt tot 60 plastic flessen per jaar weg aan was- en schoonmaakmiddel. Die flessen reizen van fabriek naar distributiecentrum naar de super in jouw stad. Daarna sjouw jij ze de trap op — en een paar weken later staan ze bij de container.</p><p>Het grootste deel van wat je tilt is water en plastic. De rest is wasmiddel.</p>",
+        "link_text": "Lees onze duurzaamheidskeuzes",
+        "link_url": "/pages/duurzaamheid",
+        "total": 600,
+        "caption": "Tot 60 flessen per jaar. Tien jaar lang.",
+        "source": "<p>Op basis van onze productclaim: één pak Tabblie wasstrips vervangt tot 60 plastic flessen per jaar.</p>"
+      }
+    },
     "main": {
       "type": "main-article",
       "settings": {
@@ -11,7 +43,7 @@
         "breadcrumb_gradient": "",
         "breadcrumb_bg_mb": "#f6f6f6",
         "breadcrumb_gradient_mb": "",
-        "show_page_title": true,
+        "show_page_title": false,
         "page_title_alignment": "left",
         "show_collapse": false,
         "enable_sticky": false,
@@ -22,7 +54,7 @@
         "sidebar_heading_font_size": 14,
         "sidebar_heading_font_weight": "700",
         "sidebar_heading_text_transform": "uppercase",
-        "show_main_img": true,
+        "show_main_img": false,
         "show_author": true,
         "show_date": true,
         "show_tags": true,
@@ -49,15 +81,48 @@
         "mg_top_mobile": 0,
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 0
+        "mg_bottom_mobile": 0,
+        "hide_article_title": true
       }
     },
-    "artcta": {
-      "type": "tabblie-article-cta",
+    "product": {
+      "type": "featured-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "buy": {
+          "type": "buy_buttons",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "buy"
+      ],
       "settings": {
-        "text": "Gratis verzending vanaf €30 · 30 dagen proefwassen",
-        "button_label": "Probeer risicovrij",
-        "button_url": "/pages/alle-producten"
+        "featured_product": "tabblie-wasstrips"
+      }
+    },
+    "founder": {
+      "type": "tabblie-blog-teaser",
+      "settings": {
+        "bg_color": "#FDF6EE",
+        "eyebrow": "VAN DE OPRICHTER",
+        "heading": "Wij doen dus niet mee.",
+        "body": "<p>Tabblie is begonnen met één simpele vraag: waarom verschepen we water in plastic, als het ook in een velletje kan? Geen fles, geen PVA, geen gesjouw — gewoon schone was uit de brievenbus.</p>",
+        "bold_line": "Kind kan de was doen.",
+        "button_text": "Bekijk de wasstrips",
+        "button_url": "/products/tabblie-wasstrips",
+        "image": "shopify://shop_images/Founder_image.png",
+        "image_alt": "De oprichter van Tabblie",
+        "facts_title": ""
       }
     },
     "artfaq": {
@@ -130,7 +195,11 @@
   },
   "order": [
     "artcta",
+    "hero",
+    "bottles",
     "main",
+    "product",
+    "founder",
     "artfaq",
     "artguarantee",
     "readmore"

@@ -1,0 +1,381 @@
+{%- comment -%}
+  Problem + proof section (homepage): editorial statement + CTA to the
+  cornerstone blog article, product cutout over a plastic-bottles photo,
+  and the "Wist je dit?" proof cards (design carried over from the old
+  tabblie-education section: count-up numbers, bubble clusters, Tabblie
+  wordmark on the positive card). Built per design_system BUILD-SPEC
+  "Tabblie-Problem-Proof-Section".
+{%- endcomment -%}
+
+<section class="tabblie-bteaser">
+  <div class="tabblie-bteaser__canvas" style="--bt-bg: {{ section.settings.bg_color }};">
+    <div class="tabblie-bteaser__top">
+      <div class="tabblie-bteaser__text">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="tabblie-bteaser__eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        <h2 class="tabblie-bteaser__heading">{{ section.settings.heading }}</h2>
+        <div class="tabblie-bteaser__body">{{ section.settings.body }}</div>
+        {%- if section.settings.bold_line != blank -%}
+          <p class="tabblie-bteaser__bold">{{ section.settings.bold_line | escape }}</p>
+        {%- endif -%}
+        {%- if section.settings.button_url != blank -%}
+          <a class="tabblie-bteaser__cta" href="{{ section.settings.button_url }}">
+            {{ section.settings.button_text | escape }}
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        {%- endif -%}
+      </div>
+
+      <div class="tabblie-bteaser__visual">
+        <span class="tabblie-bteaser__sun" aria-hidden="true"></span>
+        <svg class="tabblie-bteaser__rays" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#26523F" stroke-width="5" stroke-linecap="round"><path d="M16 35 5 38M21 23 13 14M35 18 38 6"/></g></svg>
+        {%- if section.settings.bg_image_asset != blank -%}
+          <div class="tabblie-bteaser__photo">
+            <img src="{{ section.settings.bg_image_asset | asset_url }}" alt="" loading="lazy">
+          </div>
+        {%- endif -%}
+        {%- if section.settings.image != blank -%}
+          <img class="tabblie-bteaser__cutout" src="{{ section.settings.image | image_url: width: 700 }}" alt="{{ section.settings.image_alt | escape }}" loading="lazy">
+        {%- elsif section.settings.image_asset != blank -%}
+          <img class="tabblie-bteaser__cutout" src="{{ section.settings.image_asset | asset_url }}" alt="{{ section.settings.image_alt | escape }}" loading="lazy">
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      {%- if section.settings.facts_title != blank -%}
+        <p class="tabblie-bteaser__facts-title">{{ section.settings.facts_title }}</p>
+      {%- endif -%}
+      <div class="tabblie-edu__grid tabblie-bteaser__grid">
+        {%- for block in section.blocks -%}
+          <div class="tabblie-edu__card{% if block.settings.is_positive %} tabblie-edu__card--positive{% endif %}" {{ block.shopify_attributes }}>
+            <span class="tabblie-edu__bubble" aria-hidden="true"></span>
+            <span class="tabblie-edu__card-mark" aria-hidden="true">
+              {%- if block.settings.is_positive -%}
+                <img src="{{ '2_9e3d8a68-d3a0-47fa-a5b2-6242d565b40e.png' | file_img_url: '100x' }}" alt="" width="26" height="26" loading="lazy">
+              {%- else -%}
+                <img src="{{ '3_96fadf1d-b746-4710-bac5-3447a9828883.png' | file_img_url: '100x' }}" alt="" width="26" height="26" loading="lazy">
+              {%- endif -%}
+            </span>
+            {%- if block.settings.number != blank -%}
+              <p class="tabblie-edu__card-number" data-count-target="{{ block.settings.number | escape }}">0</p>
+            {%- endif -%}
+            {%- if block.settings.is_positive -%}
+              <img class="tedu-block-logo" src="{{ 'tabblie-logo.svg' | asset_url }}" alt="Tabblie" loading="lazy">
+            {%- endif -%}
+            {%- if block.settings.description != blank -%}
+              <p class="tabblie-edu__card-desc">{{ block.settings.description | escape }}</p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+(function () {
+  var els = document.querySelectorAll('.tabblie-bteaser [data-count-target]');
+  if (!els.length) return;
+  function animate(el) {
+    var raw = el.getAttribute('data-count-target');
+    var suffix = raw.replace(/[\d.]/g, '');
+    var target = parseFloat(raw);
+    if (isNaN(target)) { el.textContent = raw; return; }
+    var duration = 1800, start = null;
+    function step(ts) {
+      if (!start) start = ts;
+      var t = Math.min((ts - start) / duration, 1);
+      var ease = 1 - Math.pow(1 - t, 3);
+      el.textContent = Math.round(ease * target) + suffix;
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { animate(entry.target); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.3 });
+  els.forEach(function (el) { observer.observe(el); });
+})();
+</script>
+
+{% style %}
+  .tabblie-bteaser { padding: 18px clamp(10px, 2vw, 24px); background: #FDF6EE; }
+  .tabblie-bteaser__canvas {
+    max-width: 1600px;
+    margin: 0 auto;
+    background: var(--bt-bg, #F8E6E8);
+    border-radius: 32px;
+    padding: clamp(34px, 5vw, 54px) clamp(20px, 6vw, 96px) 34px;
+  }
+  .tabblie-bteaser__top {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+  .tabblie-bteaser__eyebrow {
+    font-family: var(--font-body-family);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin: 0 0 14px;
+  }
+  .tabblie-bteaser__heading {
+    font-family: var(--font-heading-family);
+    font-size: clamp(30px, 4.6vw, 58px);
+    line-height: 1.02;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #26523F;
+    margin: 0 0 18px;
+    white-space: pre-line;
+  }
+  .tabblie-bteaser__body {
+    font-family: var(--font-body-family);
+    font-size: 16px;
+    line-height: 1.7;
+    color: #182D20;
+    max-width: 560px;
+  }
+  .tabblie-bteaser__body p { margin: 0 0 1em; }
+  .tabblie-bteaser__bold {
+    font-family: var(--font-body-family);
+    font-size: 17px;
+    font-weight: 800;
+    color: #182D20;
+    margin: 4px 0 20px;
+  }
+  .tabblie-bteaser__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: #E8622A;
+    color: #ffffff;
+    font-family: var(--font-body-family);
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 14px 28px;
+    min-height: 48px;
+  }
+  .tabblie-bteaser__cta:hover { background: #d4551f; color: #ffffff; }
+
+  /* Visual: bottles photo with product cutout on top */
+  .tabblie-bteaser__visual { position: relative; }
+  .tabblie-bteaser__rays {
+    position: absolute;
+    top: -46px;
+    left: -8%;
+    width: 38px;
+    height: 38px;
+    z-index: 3;
+    transform: rotate(-6deg);
+  }
+  .tabblie-bteaser__sun {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #F5C842;
+    top: -48px;
+    left: 30%;
+    z-index: 0;
+  }
+  .tabblie-bteaser__photo {
+    aspect-ratio: 4 / 3;
+    border-radius: 48px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  .tabblie-bteaser__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .tabblie-bteaser__cutout {
+    position: absolute;
+    width: 54%;
+    left: -7%;
+    bottom: 4%;
+    z-index: 2;
+    transform: rotate(4deg);
+    filter: drop-shadow(0 12px 18px rgba(24, 45, 32, 0.3));
+    transition: transform 0.3s ease;
+  }
+  .tabblie-bteaser__cutout:hover { transform: rotate(0deg) scale(1.03); }
+
+  /* Proof heading with pink dashes */
+  .tabblie-bteaser__facts-title {
+    font-family: var(--font-body-family);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #E8622A;
+    text-align: center;
+    margin: 40px 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .tabblie-bteaser__facts-title::before,
+  .tabblie-bteaser__facts-title::after {
+    content: "";
+    width: 22px;
+    height: 3px;
+    border-radius: 3px;
+    background: #F8BFD6;
+  }
+  .tabblie-bteaser__facts-title::before { transform: rotate(8deg); }
+  .tabblie-bteaser__facts-title::after { transform: rotate(-8deg); }
+
+  /* ── Proof cards: carried over from tabblie-education ── */
+  .tabblie-edu__grid.tabblie-bteaser__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(16px, 2.5vw, 28px);
+  }
+  .tabblie-bteaser .tabblie-edu__card {
+    position: relative;
+    background-color: #FDF6EE;
+    border: 3px solid #26523F;
+    border-radius: 18px;
+    box-shadow: 7px 8px 0 #183E2D;
+    min-width: 0;
+    min-height: 0;
+    overflow-wrap: break-word;
+    padding: clamp(22px, 2.8vw, 32px) clamp(18px, 2.3vw, 26px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+  }
+  .tabblie-bteaser .tabblie-edu__card:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 12px 0 #183E2D;
+  }
+  .tabblie-bteaser .tabblie-edu__bubble {
+    position: absolute;
+    z-index: 4;
+    width: 68px;
+    height: 68px;
+    pointer-events: none;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='40' cy='58' r='30' fill='%235BB8A0' opacity='0.5'/%3E%3Ccircle cx='40' cy='58' r='30' fill='none' stroke='%235BB8A0' stroke-width='3'/%3E%3Cpath d='M22 52 A 20 20 0 0 1 32 39' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' opacity='0.8'/%3E%3Ccircle cx='75' cy='30' r='12' fill='%23F5C842' opacity='0.6'/%3E%3Ccircle cx='75' cy='30' r='12' fill='none' stroke='%23F5C842' stroke-width='2.5'/%3E%3Ccircle cx='82' cy='64' r='6' fill='%235BB8A0' opacity='0.65'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+  .tabblie-bteaser .tabblie-edu__card:first-child .tabblie-edu__bubble { left: -22px; bottom: -22px; transform: rotate(-8deg); }
+  .tabblie-bteaser .tabblie-edu__card:last-child .tabblie-edu__bubble { right: -22px; bottom: -22px; transform: rotate(8deg) scaleX(-1); }
+  .tabblie-bteaser .tabblie-edu__card:not(:first-child):not(:last-child) .tabblie-edu__bubble { display: none; }
+  .tabblie-bteaser .tabblie-edu__card-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #E8622A;
+    transform: rotate(-7deg);
+    color: #FDF6EE;
+    margin-bottom: 14px;
+    flex-shrink: 0;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .tabblie-bteaser .tabblie-edu__card:hover .tabblie-edu__card-mark { transform: scale(1.15) rotate(6deg); }
+  .tabblie-bteaser .tabblie-edu__card-mark img { width: 26px; height: 26px; object-fit: contain; }
+  .tabblie-bteaser .tabblie-edu__card-number {
+    font-family: var(--font-heading-family);
+    font-size: clamp(3.2rem, 5vw, 4.6rem);
+    font-weight: 800;
+    color: #E8622A;
+    line-height: 1;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+  }
+  .tabblie-bteaser .tabblie-edu__card-desc {
+    font-family: var(--text-font-family);
+    font-size: 15.5px;
+    font-weight: 600;
+    color: rgba(24, 45, 32, 0.82);
+    line-height: 1.5;
+    margin: 0;
+    max-width: 220px;
+  }
+  .tabblie-bteaser .tabblie-edu__card--positive { background-color: #E2F2ED; }
+  .tabblie-bteaser .tabblie-edu__card--positive::after {
+    content: '';
+    position: absolute;
+    top: -22px;
+    right: -6px;
+    width: 26px;
+    height: 26px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23182D20' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M4 16 8 9'/%3E%3Cpath d='M11 17l2-9'/%3E%3Cpath d='M16 18l4-7'/%3E%3C/svg%3E") center / contain no-repeat;
+    transform: rotate(24deg);
+    pointer-events: none;
+  }
+  .tabblie-bteaser .tedu-block-logo {
+    display: block;
+    height: 30px;
+    width: auto;
+    margin: 0 auto 10px;
+  }
+  .tabblie-bteaser .tabblie-edu__card--positive .tabblie-edu__card-mark {
+    background: #26523F;
+    transform: rotate(7deg);
+  }
+  .tabblie-bteaser .tabblie-edu__card--positive .tabblie-edu__card-number { color: #26523F; }
+
+  @media (max-width: 749px) {
+    .tabblie-bteaser__grid.tabblie-edu__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .tabblie-bteaser .tabblie-edu__card-number { font-size: 2.6rem; }
+    .tabblie-bteaser .tabblie-edu__card-desc { font-size: 13.5px; }
+    .tabblie-bteaser__cutout { width: 46%; left: -3%; bottom: 3%; }
+    .tabblie-bteaser__visual { margin-top: 6px; }
+  }
+  @media (min-width: 900px) {
+    .tabblie-bteaser__top { grid-template-columns: 58fr 42fr; gap: 48px; }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Blog teaser",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Achtergrondkleur", "default": "#F8E6E8" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "EVEN EERLIJK" },
+    { "type": "textarea", "id": "heading", "label": "Kop" },
+    { "type": "richtext", "id": "body", "label": "Tekst" },
+    { "type": "text", "id": "bold_line", "label": "Vetgedrukte slotzin" },
+    { "type": "text", "id": "button_text", "label": "Knoptekst", "default": "Lees het verhaal" },
+    { "type": "url", "id": "button_url", "label": "Knop link" },
+    { "type": "text", "id": "bg_image_asset", "label": "Achtergrondfoto (asset bestandsnaam)" },
+    { "type": "image_picker", "id": "image", "label": "Product cutout (afbeelding)" },
+    { "type": "text", "id": "image_asset", "label": "Of cutout asset bestandsnaam" },
+    { "type": "text", "id": "image_alt", "label": "Alt-tekst afbeelding" },
+    { "type": "text", "id": "facts_title", "label": "Titel boven de kaarten", "default": "Wist je dit?" }
+  ],
+  "blocks": [
+    {
+      "type": "fact",
+      "name": "Wist-je-dit kaart",
+      "settings": [
+        { "type": "text", "id": "number", "label": "Getal", "default": "90%" },
+        { "type": "textarea", "id": "description", "label": "Omschrijving" },
+        { "type": "checkbox", "id": "is_positive", "label": "Positief (groen, met logo)", "default": false }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Blog teaser" }]
+}
+{% endschema %}

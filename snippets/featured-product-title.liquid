@@ -3,7 +3,7 @@
     assign fontsize_text_mb = block.settings.fontsize_text_mb
     assign color_title = block.settings.color_title
 -%}
-<h1 class="productView-title" style="--color-title: {{ color_title }};--fontsize-text: {{ fontsize_text | append: 'px' }};--fontsize-mb-text: {{ fontsize_text_mb | append: 'px' }};">
+<h2 class="productView-title" style="--color-title: {{ color_title }};--fontsize-text: {{ fontsize_text | append: 'px' }};--fontsize-mb-text: {{ fontsize_text_mb | append: 'px' }};">
 	<a href="{{product.url}}" class="featured-title">
 		<span>
 			{%- if product.title != blank -%}
@@ -13,4 +13,4 @@
 	        {%- endif -%}
 		</span>
 	</a>
-</h1>
+</h2>

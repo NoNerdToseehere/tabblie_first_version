@@ -474,54 +474,6 @@
       },
       "disabled": true
     },
-    "tabblie_education_main": {
-      "type": "tabblie-education",
-      "blocks": {
-        "stat_1": {
-          "type": "stat",
-          "settings": {
-            "number": "90%",
-            "description": "van de schoonmaakproducten bevatten  microplastics",
-            "is_positive": false
-          }
-        },
-        "stat_2": {
-          "type": "stat",
-          "settings": {
-            "number": "24",
-            "description": "kilo per persoon aan plastic afval van schoonmaakproducten",
-            "is_positive": false
-          }
-        },
-        "stat_3": {
-          "type": "stat",
-          "settings": {
-            "number": "91%",
-            "description": "van al het plastic wordt niet gerecycled",
-            "is_positive": false
-          }
-        },
-        "stat_4": {
-          "type": "stat",
-          "settings": {
-            "number": "100%",
-            "description": "100% plastic- & microplasticvrij",
-            "is_positive": true
-          }
-        }
-      },
-      "block_order": [
-        "stat_1",
-        "stat_2",
-        "stat_3",
-        "stat_4"
-      ],
-      "settings": {
-        "eyebrow": "WIST JE DIT?",
-        "heading": "Wat traditionele merken",
-        "heading_accent": "niet vertellen"
-      }
-    },
     "tabblie_pf_main": {
       "type": "tabblie-product-feature",
       "blocks": {
@@ -1495,6 +1447,62 @@
         "button_text": "In winkelwagen",
         "media_index": 2
       }
+    },
+    "tabblie_blog_teaser": {
+      "type": "tabblie-blog-teaser",
+      "settings": {
+        "bg_color": "#F8E6E8",
+        "eyebrow": "EVEN EERLIJK",
+        "heading": "De wasmiddelwereld zit vol troep.\nLetterlijk.",
+        "body": "<p>Grote plastic flessen vol water dat je thuis gewoon uit de kraan haalt, rondgereden in vrachtwagens vol diesel. En de ‘oplosbare’ pods en de meeste andere wasstrips? Die zitten vol PVA — een synthetisch, in water oplosbaar plastic. Wij gebruiken zeewier.</p>",
+        "bold_line": "Lees waarom wij niet meedoen.",
+        "button_text": "Ontdek de hele soap",
+        "button_url": "/blogs/blog/wasstrips-duurzaam-huishouden",
+        "bg_image_asset": "tabblie-bottles-bg.jpg",
+        "image_asset": "tabblie-pack-was.png",
+        "image_alt": "Tabblie wasstrips verpakking - 100% plasticvrij",
+        "facts_title": "Wist je dit?"
+      },
+      "blocks": {
+        "f1": {
+          "type": "fact",
+          "settings": {
+            "number": "90%",
+            "description": "van de schoonmaakproducten bevat microplastics",
+            "is_positive": false
+          }
+        },
+        "f2": {
+          "type": "fact",
+          "settings": {
+            "number": "24",
+            "description": "kilo per persoon aan plastic afval van schoonmaakproducten",
+            "is_positive": false
+          }
+        },
+        "f3": {
+          "type": "fact",
+          "settings": {
+            "number": "91%",
+            "description": "van al het plastic wordt niet gerecycled",
+            "is_positive": false
+          }
+        },
+        "f4": {
+          "type": "fact",
+          "settings": {
+            "number": "100%",
+            "description": "plastic- & microplasticvrij",
+            "is_positive": true
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
     }
   },
   "order": [
@@ -1502,7 +1510,7 @@
     "163247026462da6862",
     "tabblie_tierelier_main",
     "custom_service_block_4Nnayh",
-    "tabblie_education_main",
+    "tabblie_blog_teaser",
     "tabblie_pf_main",
     "tabblie_hiw2_main",
     "tabblie_buy_main",

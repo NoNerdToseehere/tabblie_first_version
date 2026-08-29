@@ -233,9 +233,11 @@
                 <div class="halo-article-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
                     <div class="article-header">
                         <div class="article-heading text-left">
+                            {%- unless section.settings.hide_article_title -%}
                             <h1 class="title">
                                 {{ article.title }}
                             </h1>
+                            {%- endunless -%}
                             {%- if show_author or show_date or blog.comments_enabled? -%}
                                 <div class="info">
                                     {%- if show_author -%}
@@ -1142,6 +1144,12 @@
         {
             "type": "header",
             "content": "t:sections.main-article.settings.header__2.content"
+        },
+        {
+            "type": "checkbox",
+            "id": "hide_article_title",
+            "label": "Verberg artikeltitel (h1 komt uit hero-sectie)",
+            "default": false
         },
         {
             "type": "checkbox",

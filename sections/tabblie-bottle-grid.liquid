@@ -1,0 +1,172 @@
+{%- comment -%}
+  Bottle-count visualization — text left, a grid of bottle icons right
+  that "fill up" one by one when scrolled into view. Each icon is one
+  plastic bottle; the total makes the yearly claim tangible.
+{%- endcomment -%}
+
+<section class="tabblie-bgrid" style="--bg-bg: {{ section.settings.bg_color }};">
+  <div class="tabblie-bgrid__container">
+    <div class="tabblie-bgrid__text">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tabblie-bgrid__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      <h2 class="tabblie-bgrid__heading">{{ section.settings.heading }}</h2>
+      <div class="tabblie-bgrid__body">{{ section.settings.body }}</div>
+      {%- if section.settings.link_url != blank -%}
+        <a class="tabblie-bgrid__link" href="{{ section.settings.link_url }}">
+          {{ section.settings.link_text | escape }}
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      {%- endif -%}
+    </div>
+    <div class="tabblie-bgrid__visual">
+      <div class="tabblie-bgrid__grid" data-bottle-grid aria-hidden="true">
+        {%- assign total = section.settings.total | default: 600 | at_most: 900 -%}
+        {%- for i in (1..total) -%}
+          <span class="tabblie-bgrid__bottle" style="--d: {{ forloop.index0 | times: 5 }}ms">
+            <svg viewBox="0 0 10 14" fill="currentColor"><path d="M3.5 0h3v1.4h-3zM3 1.8h4c.4 1 1.6 1.7 1.6 3.1V13a1 1 0 0 1-1 1H2.4a1 1 0 0 1-1-1V4.9c0-1.4 1.2-2.1 1.6-3.1z"/></svg>
+          </span>
+        {%- endfor -%}
+      </div>
+      {%- if section.settings.caption != blank -%}
+        <p class="tabblie-bgrid__caption">{{ section.settings.caption | escape }}</p>
+      {%- endif -%}
+      {%- if section.settings.source != blank -%}
+        <div class="tabblie-bgrid__source">{{ section.settings.source }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<script>
+  (function() {
+    var grid = document.querySelector('[data-bottle-grid]');
+    if (!grid || !('IntersectionObserver' in window)) {
+      grid && grid.classList.add('is-filled');
+      return;
+    }
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          grid.classList.add('is-filled');
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.25 });
+    io.observe(grid);
+  })();
+</script>
+
+{% style %}
+  .tabblie-bgrid {
+    background: var(--bg-bg, #FDF6EE);
+    padding: 52px 20px;
+  }
+  .tabblie-bgrid__container {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 34px;
+    align-items: start;
+  }
+  .tabblie-bgrid__eyebrow {
+    font-family: var(--font-body-family);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin: 0 0 12px;
+  }
+  .tabblie-bgrid__heading {
+    font-family: var(--font-heading-family);
+    font-size: 30px;
+    line-height: 1.08;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: #26523F;
+    margin: 0 0 16px;
+    white-space: pre-line;
+  }
+  .tabblie-bgrid__body {
+    font-family: var(--font-body-family);
+    font-size: 16px;
+    line-height: 1.7;
+    color: #182D20;
+  }
+  .tabblie-bgrid__body p { margin: 0 0 1em; }
+  .tabblie-bgrid__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-family: var(--font-body-family);
+    font-size: 15px;
+    font-weight: 700;
+    color: #26523F;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .tabblie-bgrid__link:hover { color: #E8622A; }
+  .tabblie-bgrid__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11px, 1fr));
+    gap: 5px;
+  }
+  .tabblie-bgrid__bottle {
+    display: block;
+    aspect-ratio: 10 / 14;
+    color: rgba(24, 45, 32, 0.13);
+  }
+  .tabblie-bgrid__bottle svg { width: 100%; height: 100%; display: block; }
+  .is-filled .tabblie-bgrid__bottle {
+    animation: tabblie-bottle-fill 0.25s ease forwards;
+    animation-delay: var(--d, 0ms);
+  }
+  @keyframes tabblie-bottle-fill {
+    to { color: #26523F; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .is-filled .tabblie-bgrid__bottle { animation: none; color: #26523F; }
+  }
+  .tabblie-bgrid__caption {
+    font-family: var(--font-body-family);
+    font-size: 15px;
+    font-weight: 800;
+    color: #182D20;
+    margin: 16px 0 4px;
+  }
+  .tabblie-bgrid__source,
+  .tabblie-bgrid__source p {
+    font-family: var(--font-body-family);
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: rgba(24, 45, 32, 0.6);
+    margin: 0;
+  }
+  .tabblie-bgrid__source a { color: rgba(24, 45, 32, 0.6); }
+  @media (min-width: 768px) {
+    .tabblie-bgrid { padding: 72px 24px; }
+    .tabblie-bgrid__container { grid-template-columns: 6fr 6fr; gap: 56px; }
+    .tabblie-bgrid__heading { font-size: 42px; }
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Flessen visualisatie",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Achtergrondkleur", "default": "#FDF6EE" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "WAAROM DIT BESTAAT" },
+    { "type": "textarea", "id": "heading", "label": "Kop" },
+    { "type": "richtext", "id": "body", "label": "Tekst" },
+    { "type": "text", "id": "link_text", "label": "Linktekst" },
+    { "type": "url", "id": "link_url", "label": "Link URL" },
+    { "type": "range", "id": "total", "label": "Aantal flesjes", "min": 100, "max": 900, "step": 50, "default": 600 },
+    { "type": "text", "id": "caption", "label": "Bijschrift (vet)" },
+    { "type": "richtext", "id": "source", "label": "Bronvermelding" }
+  ],
+  "presets": [{ "name": "Flessen visualisatie" }]
+}
+{% endschema %}
