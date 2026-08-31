@@ -143,18 +143,18 @@
                   .tabblie-nl-success svg { width: 18px; height: 18px; flex-shrink: 0; }
                 </style>
                 <script>
-                  document.addEventListener('DOMContentLoaded', function () {
+                  (function() {
                     var el = document.getElementById('NlSuccess-{{ section.id }}');
-                    if (el) el.scrollIntoView({ block: 'center' });
+                    if (el) el.scrollIntoView({ block: 'center', behavior: 'instant' });
                     history.replaceState(null, document.title, location.pathname);
-                  });
+                  })();
                 </script>
               {%- elsif form.errors -%}
                 <script>
-                  document.addEventListener('DOMContentLoaded', function () {
+                  (function() {
                     var el = document.getElementById('ContactFooter-error');
-                    if (el) el.scrollIntoView({ block: 'center' });
-                  });
+                    if (el) el.scrollIntoView({ block: 'center', behavior: 'instant' });
+                  })();
                 </script>
               {%- endif -%}
             {%- endform -%}
