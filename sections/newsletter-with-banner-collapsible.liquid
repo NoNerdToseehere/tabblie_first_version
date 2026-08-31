@@ -116,66 +116,44 @@
                   {{ form.errors.messages.email }}
                 </div>
               {%- endif -%}
+              {%- comment -%}
+                No success popup — inline confirmation in Tabblie style,
+                scrolled into view after the form reload.
+              {%- endcomment -%}
               {%- if form.posted_successfully? -%}
+                <div class="newsletter-form__message tabblie-nl-success" id="NlSuccess-{{ section.id }}" tabindex="-1">
+                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 8.5l3.5 3.5L13.5 4"/></svg>
+                  Gelukt! Je staat op de lijst.
+                </div>
+                <style>
+                  .tabblie-nl-success {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    background: #E9F5EE;
+                    border: 2.5px solid #26523F;
+                    border-radius: 14px;
+                    padding: 12px 16px;
+                    font-family: var(--font-body-family);
+                    font-size: 14.5px;
+                    font-weight: 700;
+                    color: #26523F;
+                    margin-top: 12px;
+                  }
+                  .tabblie-nl-success svg { width: 18px; height: 18px; flex-shrink: 0; }
+                </style>
                 <script>
-                  $(document).ready(function () {
-                    var newsletterSuccessPopup = (function () {
-                      var popup = $('.newsletter-success-modal');
-                      var close = popup.find('.close');
-                      var success = popup.find('.success');
-                      var error = popup.find('.error');
-                      var overlay = $('.background-overlay');
-                      popup.show();
-                      overlay.show();
-                      error.hide();
-                      success.show();
-                      $.cookie('emailSubcribeModal', 'closed', {
-                        expires: 1,
-                        path: '/',
-                      });
-                      close.off('click').on('click', function () {
-                        popup.fadeOut();
-                        overlay.hide();
-                      });
-                      overlay.off('click').on('click', function () {
-                        popup.fadeOut();
-                        overlay.hide();
-                      });
-                    })();
-                    var newURL = location.href.split('?')[0];
-                    window.history.pushState('object', document.title, newURL);
+                  document.addEventListener('DOMContentLoaded', function () {
+                    var el = document.getElementById('NlSuccess-{{ section.id }}');
+                    if (el) el.scrollIntoView({ block: 'center' });
+                    history.replaceState(null, document.title, location.pathname);
                   });
                 </script>
-              {% else %}
+              {%- elsif form.errors -%}
                 <script>
-                  $(document).ready(function () {
-                    if (window.location.href.indexOf('newsletter&form_type=customer') > -1) {
-                      var newsletterSuccessPopup = (function () {
-                        var popup = $('.newsletter-success-modal');
-                        var close = popup.find('.close');
-                        var success = popup.find('.success');
-                        var error = popup.find('.error');
-                        var overlay = $('.background-overlay');
-                        popup.show();
-                        overlay.show();
-                        error.show();
-                        success.hide();
-                        $.cookie('emailSubcribeModal', 'closed', {
-                          expires: 1,
-                          path: '/',
-                        });
-                        close.off('click').on('click', function () {
-                          popup.fadeOut();
-                          overlay.hide();
-                        });
-                        overlay.off('click').on('click', function () {
-                          popup.fadeOut();
-                          overlay.hide();
-                        });
-                      })();
-                      var newURL = location.href.split('?')[0];
-                      window.history.pushState('object', document.title, newURL);
-                    }
+                  document.addEventListener('DOMContentLoaded', function () {
+                    var el = document.getElementById('ContactFooter-error');
+                    if (el) el.scrollIntoView({ block: 'center' });
                   });
                 </script>
               {%- endif -%}
