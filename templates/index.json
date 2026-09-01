@@ -532,7 +532,7 @@
           "type": "step",
           "settings": {
             "title": "1. Pak een strip",
-            "description": "Simpel, schoon en zonder geknoei.",
+            "description": "Compact, voorgedoseerd en klaar voor gebruik.",
             "image_asset": "tabblie-stap-scheur-strip.png"
           }
         },
@@ -540,7 +540,7 @@
           "type": "step",
           "settings": {
             "title": "2. Gooi 'm erin",
-            "description": "In de wasmachine, de vaatwasser of de wc.",
+            "description": "In de wasmachine, vaatwasser of wc.",
             "image_asset": "tabblie-stap-strip-in-wasmachine.png"
           }
         },
@@ -548,7 +548,7 @@
           "type": "step",
           "settings": {
             "title": "3. Klaar. Echt waar.",
-            "description": "Schone was, vaat én toilet. Elke keer weer.",
+            "description": "Schoon resultaat, zonder gedoe.",
             "image_asset": "tabblie-stap-start-wasmachine.png"
           }
         }
@@ -563,7 +563,8 @@
         "eyebrow": "ZO WERKT HET",
         "title": "Kleine strips. Een groot verschil in je routine.",
         "cta_text": "Bekijk alle strips",
-        "cta_url": "#tabblie-strips"
+        "cta_url": "#tabblie-strips",
+        "intro": "Eén strip, drie stappen, nul gedoe."
       }
     },
     "tabblie_hiw_main": {

@@ -1,406 +1,104 @@
 {%- comment -%}
   tabblie-how-it-works-v2.liquid
-  "Zo werkt het" — sticker-card redesign (2026-07-28):
-  orange strip, cream heading sticker, 3 step cards with colored top bands +
-  ghost number + numbered badge + hand-drawn illustration, pill CTA.
-  Cards pop in on scroll (staggered). Text/anchor preserved.
+  "Zo werkt het" — cream panel on a patterned brand-colour field, three
+  step cards with a coloured illustration area, numbered copy row and a
+  dotted connector between them. Rebuilt 2026-09-01 from the approved
+  build pack (build-folder 2 / BUILD-SPEC.md).
+
+  Settings stay backwards compatible: every page that already uses this
+  section (homepage, toilet/vaat/laundry PDPs, abonnementen, affiliate)
+  keeps its own copy, background colour and step illustrations.
 {%- endcomment -%}
 
-{%- assign ink = '#182D20' -%}
-
-<style>
-  .tabblie-hiw2 {
-    background: {{ section.settings.bg_color | default: '#E8622A' }};
-    padding: clamp(38px, 4.5vw, 62px) clamp(16px, 3vw, 44px) clamp(42px, 5vw, 66px);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .tabblie-hiw2__inner {
-    max-width: 1180px;
-    margin: 0 auto;
-  }
-
-  .tabblie-hiw2 .tabblie-hiw2__eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    color: #FDF6EE;
-    font-family: var(--text-font-family);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin: 0 0 12px;
-  }
-
-  .tabblie-hiw2 .tabblie-hiw2__eyebrow::before,
-  .tabblie-hiw2 .tabblie-hiw2__eyebrow::after {
-    content: '';
-    width: 22px;
-    height: 3px;
-    border-radius: 3px;
-    background: #F5C0D3;
-    flex-shrink: 0;
-  }
-  .tabblie-hiw2 .tabblie-hiw2__eyebrow::before { transform: rotate(8deg); }
-  .tabblie-hiw2 .tabblie-hiw2__eyebrow::after { transform: rotate(-8deg); }
-
-  .tabblie-hiw2__head {
-    text-align: center;
-    margin: 0 0 clamp(24px, 3vw, 38px);
-  }
-
-  .tabblie-hiw2__heading {
-    font-family: var(--font-heading-family);
-    font-size: clamp(1.9rem, 3.8vw, 3rem);
-    font-weight: 800;
-    color: #FDF6EE;
-    line-height: 1.08;
-    letter-spacing: -0.02em;
-    margin: 0;
-    max-width: 720px;
-    margin-inline: auto;
-  }
-
-  .tabblie-hiw2__steps {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(18px, 2.4vw, 30px);
-  }
-
-  /* connector arrows between the cards — desktop too, centered in the gap */
-  @media (min-width: 900px) {
-    .tabblie-hiw2__card + .tabblie-hiw2__card::before {
-      content: '';
-      position: absolute;
-      left: calc(-1 * clamp(18px, 2.4vw, 30px) / 2 - 10px);
-      top: 50%;
-      margin-top: -10px;
-      width: 21px;
-      height: 21px;
-      z-index: 3;
-      pointer-events: none;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12h13'/%3E%3Cpath d='M11.5 6 18 12l-6.5 6'/%3E%3C/svg%3E") center / contain no-repeat;
-      animation: tabblie-hiw2-nudge 1.9s ease-in-out infinite;
-    }
-    .tabblie-hiw2__card:nth-child(3)::before { animation-delay: 0.28s; }
-  }
-
-  .tabblie-hiw2__card {
-    position: relative;
-    background: #FDF6EE;
-    border: 3px solid {{ ink }};
-    border-radius: 20px;
-    box-shadow: 6px 7px 0 {{ ink }};
-    opacity: 0;
-    transform: translateY(26px);
-    transition: opacity 0.5s ease, transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  .tabblie-hiw2__card.is-visible { opacity: 1; transform: translateY(0); }
-  .tabblie-hiw2__card:nth-child(2).is-visible { transition-delay: 0.12s; }
-  .tabblie-hiw2__card:nth-child(3).is-visible { transition-delay: 0.24s; }
-
-  .tabblie-hiw2__card.is-visible:hover {
-    transform: translateY(-6px);
-    box-shadow: 9px 12px 0 {{ ink }};
-    transition-delay: 0s;
-  }
-
-  .tabblie-hiw2__art,
-  .tabblie-hiw2__badge {
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  }
-
-  .tabblie-hiw2__card:hover .tabblie-hiw2__art { transform: scale(1.06) rotate(-3deg); }
-  .tabblie-hiw2__card:hover .tabblie-hiw2__badge { transform: rotate(-10deg) scale(1.08); }
-
-  .tabblie-hiw2__band {
-    position: relative;
-    height: clamp(128px, 12vw, 158px);
-    overflow: hidden;
-    border-radius: 17px 17px 0 0;
-  }
-
-  .tabblie-hiw2__card:nth-child(1) .tabblie-hiw2__band { background: #AFD3E8; }
-  .tabblie-hiw2__card:nth-child(2) .tabblie-hiw2__band { background: #F5C0D3; }
-  .tabblie-hiw2__card:nth-child(3) .tabblie-hiw2__band { background: #F5CB5C; }
-
-  .tabblie-hiw2__band::after {
-    content: '';
-    position: absolute;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    height: 26px;
-    background: #FDF6EE;
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 26' preserveAspectRatio='none'%3E%3Cpath d='M0 26 V10 C 20 0 35 20 55 12 C 72 5 84 18 100 8 V26 Z' fill='%23000'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
-    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 26' preserveAspectRatio='none'%3E%3Cpath d='M0 26 V10 C 20 0 35 20 55 12 C 72 5 84 18 100 8 V26 Z' fill='%23000'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
-  }
-
-  .tabblie-hiw2__ghost {
-    position: absolute;
-    top: 0;
-    left: 16px;
-    font-family: var(--font-heading-family);
-    font-size: 92px;
-    font-weight: 800;
-    line-height: 1;
-    color: rgba(24, 45, 32, 0.14);
-    pointer-events: none;
-  }
-
-  .tabblie-hiw2__art {
-    position: absolute;
-    right: 4px;
-    bottom: 2px;
-    width: clamp(120px, 13vw, 168px);
-    height: auto;
-    z-index: 1;
-  }
-
-  .tabblie-hiw2__art svg,
-  .tabblie-hiw2__art img { width: 100%; height: auto; display: block; }
-
-  .tabblie-hiw2__badge {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    z-index: 2;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    background: #FDF6EE;
-    border: 3px solid {{ ink }};
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-heading-family);
-    font-size: 22px;
-    font-weight: 800;
-    color: {{ ink }};
-  }
-
-  .tabblie-hiw2__body {
-    padding: 16px clamp(18px, 2vw, 26px) clamp(18px, 2vw, 24px);
-  }
-
-  .tabblie-hiw2__step-title {
-    font-family: var(--text-font-family);
-    font-size: clamp(17px, 1.5vw, 20px);
-    font-weight: 800;
-    color: {{ ink }};
-    margin: 0 0 6px;
-  }
-
-  .tabblie-hiw2__step-desc {
-    font-family: var(--text-font-family);
-    font-size: 14.5px;
-    font-weight: 500;
-    color: rgba(24, 45, 32, 0.7);
-    line-height: 1.5;
-    margin: 0;
-  }
-
-    /* soap-bubble cluster (same as newsletter section) */
-  .tabblie-hiw2__bubble {
-    position: absolute;
-    z-index: 4;
-    width: 74px;
-    height: 74px;
-    pointer-events: none;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='40' cy='58' r='30' fill='%235BB8A0' opacity='0.5'/%3E%3Ccircle cx='40' cy='58' r='30' fill='none' stroke='%235BB8A0' stroke-width='3'/%3E%3Cpath d='M22 52 A 20 20 0 0 1 32 39' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' opacity='0.8'/%3E%3Ccircle cx='75' cy='30' r='12' fill='%23F5C842' opacity='0.6'/%3E%3Ccircle cx='75' cy='30' r='12' fill='none' stroke='%23F5C842' stroke-width='2.5'/%3E%3Ccircle cx='82' cy='64' r='6' fill='%235BB8A0' opacity='0.65'/%3E%3C/svg%3E") center / contain no-repeat;
-  }
-  .tabblie-hiw2__bubble--b { display: none; }
-  .tabblie-hiw2__card:nth-child(2) .tabblie-hiw2__bubble { display: none; }
-  .tabblie-hiw2__card:nth-child(1) .tabblie-hiw2__bubble--a { left: -20px; bottom: -22px; transform: rotate(-8deg); }
-  .tabblie-hiw2__card:nth-child(3) .tabblie-hiw2__bubble--a { right: -20px; bottom: -22px; transform: rotate(8deg) scaleX(-1); }
-
-  .tabblie-hiw2__cta-wrap {
-    display: flex;
-    justify-content: center;
-    margin-top: clamp(24px, 3vw, 38px);
-  }
-
-  /* same outline treatment as .tabblie-impact__btn — both sit on orange, so
-     the site's solid-orange primary would have no contrast here */
-  .tabblie-hiw2__cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: transparent;
-    color: #FFFFFF !important;
-    font-family: var(--text-font-family);
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    padding: 14px 36px;
-    border: 2px solid #FFFFFF;
-    border-radius: 100px;
-    text-decoration: none !important;
-    transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-  }
-
-  /* the theme's global a:hover wins without !important, which would leave
-     white text on the white hover fill */
-  .tabblie-hiw2__cta:hover,
-  .tabblie-hiw2__cta:focus {
-    background-color: #FFFFFF;
-    color: #182D20 !important;
-    border-color: #FFFFFF;
-    transform: translateY(-2px);
-  }
-
-  .tabblie-hiw2__cta svg { width: 17px; height: 17px; flex-shrink: 0; }
-
-  /* the arrow nudges downward to say "keep scrolling" */
-  .tabblie-hiw2__cta svg { animation: tabblie-hiw2-cta-down 2.1s ease-in-out infinite; }
-
-  @keyframes tabblie-hiw2-cta-down {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(3px); }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .tabblie-hiw2__cta svg { animation: none; }
-  }
-
-  /* Phone/tablet: the three steps stay on one line and scroll left-to-right,
-     with an arrow in each gap so it reads as one continuous flow. */
-  @media (max-width: 899px) {
-    .tabblie-hiw2__steps {
-      display: flex;
-      grid-template-columns: none;
-      align-items: stretch;
-      gap: 34px;
-      max-width: none;
-      margin-inline: calc(-1 * clamp(16px, 3vw, 44px));
-      padding: 26px 26px 32px;
-      overflow-x: auto;
-      overscroll-behavior-x: contain;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x mandatory;
-      /* vertical swipes belong to the page, not this rail — without this a
-         downward drag that starts on a card slides the row sideways */
-      touch-action: pan-x pinch-zoom;
-      scroll-padding-left: 26px;
-      scrollbar-width: none;
-    }
-
-    .tabblie-hiw2__steps::-webkit-scrollbar { display: none; }
-
-    .tabblie-hiw2__card {
-      flex: 0 0 clamp(215px, 68vw, 280px);
-      scroll-snap-align: start;
-    }
-
-    /* no lift on touch — it fights the swipe */
-    .tabblie-hiw2__card.is-visible:hover {
-      transform: translateY(0);
-      box-shadow: 6px 7px 0 {{ ink }};
-    }
-
-    /* connector arrows, sitting in the gap left of cards 2 and 3 */
-    .tabblie-hiw2__card + .tabblie-hiw2__card::before {
-      content: '';
-      position: absolute;
-      left: -28px;
-      top: 64px;
-      width: 21px;
-      height: 21px;
-      z-index: 3;
-      pointer-events: none;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 12h13'/%3E%3Cpath d='M11.5 6 18 12l-6.5 6'/%3E%3C/svg%3E") center / contain no-repeat;
-      animation: tabblie-hiw2-nudge 1.9s ease-in-out infinite;
-    }
-
-    .tabblie-hiw2__card:nth-child(3)::before { animation-delay: 0.28s; }
-
-    /* narrower cards — keep the bubble accent off the description text */
-    .tabblie-hiw2__bubble { width: 58px; height: 58px; }
-    .tabblie-hiw2__card:nth-child(1) .tabblie-hiw2__bubble--a { left: -32px; bottom: -28px; }
-    .tabblie-hiw2__card:nth-child(3) .tabblie-hiw2__bubble--a { right: -32px; bottom: -28px; }
-
-    .tabblie-hiw2__cta-wrap { justify-content: center; }
-    .tabblie-hiw2__cta { width: 100%; max-width: 460px; justify-content: center; }
-    .tabblie-hiw2__band { height: 150px; }
-    .tabblie-hiw2__art { width: 150px; }
-  }
-
-  @keyframes tabblie-hiw2-nudge {
-    0%, 100% { transform: translateX(0); opacity: 0.8; }
-    50% { transform: translateX(5px); opacity: 1; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .tabblie-hiw2__card + .tabblie-hiw2__card::before { animation: none; opacity: 0.95; }
-  }
-</style>
+{%- liquid
+  assign ink = '#182D20'
+  assign ink_2 = '#26523F'
+  assign cream = '#FDF6EE'
+  assign bg = section.settings.bg_color | default: '#E8622A'
+  assign accents = 'AFD3E8,F5C0D3,F5CB5C' | split: ','
+-%}
 
 <div id="zo-werkt-het" aria-hidden="true" style="display:block !important;height:1px;margin-top:-1px;scroll-margin-top:90px"></div>
-<section class="tabblie-hiw2" id="tabblie-hiw2-{{ section.id }}">
-  <div class="tabblie-hiw2__inner">
+
+<section class="tabblie-hiw2" id="tabblie-hiw2-{{ section.id }}" style="--hiw-bg: {{ bg }};" aria-labelledby="tabblie-hiw2-title-{{ section.id }}">
+  <div class="tabblie-hiw2__panel">
 
     {%- if section.settings.eyebrow != blank or section.settings.title != blank -%}
-      <div class="tabblie-hiw2__head">
+      <header class="tabblie-hiw2__header">
         {%- if section.settings.eyebrow != blank -%}
-          <span class="tabblie-hiw2__eyebrow">{{ section.settings.eyebrow }}</span>
+          <p class="tabblie-hiw2__eyebrow"><span></span>{{ section.settings.eyebrow }}<span></span></p>
         {%- endif -%}
         {%- if section.settings.title != blank -%}
-          <h2 class="tabblie-hiw2__heading">{{ section.settings.title }}</h2>
+          <h2 class="tabblie-hiw2__heading" id="tabblie-hiw2-title-{{ section.id }}">{{ section.settings.title }}</h2>
         {%- endif -%}
-      </div>
+        {%- if section.settings.intro != blank -%}
+          <p class="tabblie-hiw2__intro">{{ section.settings.intro }}</p>
+        {%- endif -%}
+      </header>
     {%- endif -%}
 
     {%- if section.blocks.size > 0 -%}
-      <div class="tabblie-hiw2__steps" data-hiw2-steps>
+      <ol class="tabblie-hiw2__steps" data-hiw2-steps>
         {%- for block in section.blocks -%}
-          <div class="tabblie-hiw2__card" {{ block.shopify_attributes }}>
-            <div class="tabblie-hiw2__band">
-              <span class="tabblie-hiw2__ghost" aria-hidden="true">{{ forloop.index }}</span>
+          {%- liquid
+            assign idx = forloop.index0 | modulo: 3
+            assign accent = block.settings.accent
+            if accent == blank
+              assign accent = accents[idx] | prepend: '#'
+            endif
+            comment
+              Numbers used to be typed into the title ("1. Pak een strip").
+              They now live in the circle, so strip a leading "N. " to avoid
+              showing the number twice on pages that still have it.
+            endcomment
+            assign step_title = block.settings.title
+            assign title_parts = step_title | split: '. '
+            assign first_part = title_parts[0] | plus: 0
+            if first_part > 0 and title_parts.size > 1
+              assign step_title = step_title | remove_first: title_parts[0] | remove_first: '. '
+            endif
+            assign fallback_icon = 'tabblie-hiw-step' | append: forloop.index | append: '.svg'
+          -%}
+          <li class="tabblie-hiw2__card" style="--step-accent: {{ accent }};" {{ block.shopify_attributes }}>
+            <div class="tabblie-hiw2__visual">
+              <span class="tabblie-hiw2__disc" aria-hidden="true"></span>
               {%- if block.settings.image_asset != blank -%}
-                {%- comment -%}
-                  inline_asset_content only works for SVG — it dumps the raw
-                  file into the page. Raster illustrations (PNG) have to go
-                  through an <img> instead (2026-08-16). The alt is empty on
-                  purpose: the step title next to it already carries the
-                  meaning, so announcing the icon too would just repeat it.
-                {%- endcomment -%}
                 {%- if block.settings.image_asset contains '.svg' -%}
                   <span class="tabblie-hiw2__art">{{ block.settings.image_asset | inline_asset_content }}</span>
                 {%- else -%}
                   <span class="tabblie-hiw2__art">
-                    <img src="{{ block.settings.image_asset | asset_url }}" alt="" width="400" height="400" loading="lazy">
+                    <img src="{{ block.settings.image_asset | asset_url }}" alt="" width="300" height="300" loading="lazy">
                   </span>
                 {%- endif -%}
+              {%- else -%}
+                <span class="tabblie-hiw2__art">{{ fallback_icon | inline_asset_content }}</span>
               {%- endif -%}
             </div>
-            <span class="tabblie-hiw2__badge" aria-hidden="true">{{ forloop.index }}</span>
-            <span class="tabblie-hiw2__bubble tabblie-hiw2__bubble--a" aria-hidden="true"></span>
-            <span class="tabblie-hiw2__bubble tabblie-hiw2__bubble--b" aria-hidden="true"></span>
-            <div class="tabblie-hiw2__body">
-              {%- if block.settings.title != blank -%}
-                <h3 class="tabblie-hiw2__step-title">{{ block.settings.title }}</h3>
-              {%- endif -%}
-              {%- if block.settings.description != blank -%}
-                <p class="tabblie-hiw2__step-desc">{{ block.settings.description }}</p>
-              {%- endif -%}
+            <div class="tabblie-hiw2__copy">
+              <span class="tabblie-hiw2__number" aria-hidden="true">{{ forloop.index }}</span>
+              <div>
+                {%- if step_title != blank -%}
+                  <h3 class="tabblie-hiw2__step-title">{{ step_title }}</h3>
+                {%- endif -%}
+                {%- if block.settings.description != blank -%}
+                  <p class="tabblie-hiw2__step-desc">{{ block.settings.description }}</p>
+                {%- endif -%}
+              </div>
             </div>
-          </div>
+          </li>
         {%- endfor -%}
-      </div>
+      </ol>
     {%- endif -%}
 
     {%- if section.settings.cta_text != blank -%}
-      <div class="tabblie-hiw2__cta-wrap">
-        <a class="tabblie-hiw2__cta" href="{{ section.settings.cta_url | default: '/collections/all' }}">
-          {{ section.settings.cta_text }}
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v13"/><path d="M6 12.5 12 18.5l6-6"/></svg>
-        </a>
-      </div>
+      <a class="tabblie-hiw2__cta" href="{{ section.settings.cta_url | default: '/collections/all' }}">
+        {{ section.settings.cta_text }}
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h13"/><path d="M11.5 6 18 12l-6.5 6"/></svg>
+      </a>
     {%- endif -%}
 
+    <img class="tabblie-hiw2__bubbles tabblie-hiw2__bubbles--left" src="{{ 'tabblie-hiw-bubbles.svg' | asset_url }}" alt="" width="112" height="112" loading="lazy">
+    <img class="tabblie-hiw2__bubbles tabblie-hiw2__bubbles--right" src="{{ 'tabblie-hiw-bubbles.svg' | asset_url }}" alt="" width="112" height="112" loading="lazy">
   </div>
 
   <script>
@@ -417,6 +115,265 @@
   </script>
 </section>
 
+{% style %}
+  .tabblie-hiw2 {
+    background-color: var(--hiw-bg, #E8622A);
+    background-image: url({{ 'tabblie-hiw-pattern.svg' | asset_url }});
+    background-size: 320px 240px;
+    background-position: center;
+    background-repeat: repeat;
+    padding: clamp(30px, 5vw, 78px) clamp(10px, 2vw, 24px);
+    font-family: var(--font-body-family);
+    color: {{ ink }};
+  }
+
+  .tabblie-hiw2__panel {
+    position: relative;
+    /* same canvas width as the problem+proof (EVEN EERLIJK) section */
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: clamp(30px, 5vw, 68px) clamp(18px, 5vw, 70px) clamp(34px, 4vw, 48px);
+    overflow: hidden;
+    border-radius: clamp(22px, 2.4vw, 32px);
+    background: {{ cream }};
+    box-shadow: 0 18px 50px rgba(24, 45, 32, 0.14);
+  }
+
+  /* ── header ── */
+  .tabblie-hiw2__header {
+    max-width: 900px;
+    margin: 0 auto clamp(26px, 3vw, 38px);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  .tabblie-hiw2__eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 0 0 12px;
+    color: #E8622A;
+    font-family: var(--font-body-family);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .tabblie-hiw2__eyebrow span {
+    width: 30px;
+    height: 3px;
+    border-radius: 999px;
+    background: currentColor;
+    transform: rotate(7deg);
+  }
+  .tabblie-hiw2__eyebrow span:last-child { transform: rotate(-7deg); }
+  .tabblie-hiw2__heading {
+    margin: 0;
+    font-family: var(--font-heading-family);
+    font-size: clamp(28px, 4vw, 56px);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -0.01em;
+    color: {{ ink }};
+  }
+  .tabblie-hiw2__intro {
+    margin: 12px 0 0;
+    font-size: clamp(16px, 1.7vw, 23px);
+    line-height: 1.45;
+    color: rgba(24, 45, 32, 0.85);
+  }
+
+  /* ── steps ── */
+  .tabblie-hiw2__steps {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(34px, 5.5vw, 84px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 2;
+  }
+  /* dotted connector running behind the cards */
+  .tabblie-hiw2__steps::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 27%;
+    right: 27%;
+    border-top: 4px dotted {{ ink_2 }};
+    opacity: 0.85;
+  }
+  .tabblie-hiw2__card {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(38, 82, 63, 0.25);
+    border-radius: 24px;
+    background: {{ cream }};
+    box-shadow: 0 10px 24px rgba(24, 45, 32, 0.08);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow 0.25s ease;
+  }
+  .tabblie-hiw2__card.is-visible { opacity: 1; transform: translateY(0); }
+  .tabblie-hiw2__card:nth-child(2) { transition-delay: 0.09s; }
+  .tabblie-hiw2__card:nth-child(3) { transition-delay: 0.18s; }
+  .tabblie-hiw2__card:hover { box-shadow: 0 16px 32px rgba(24, 45, 32, 0.14); }
+
+  /* connector arrows in the gaps */
+  .tabblie-hiw2__card + .tabblie-hiw2__card::after {
+    content: '';
+    position: absolute;
+    z-index: 4;
+    top: calc(50% - 17px);
+    left: clamp(-52px, -3.4vw, -28px);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #E8622A url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h12'/%3E%3Cpath d='M12 6l6 6-6 6'/%3E%3C/svg%3E") center / 18px 18px no-repeat;
+    animation: tabblie-hiw2-nudge 1.9s ease-in-out infinite;
+  }
+  .tabblie-hiw2__card:nth-child(3)::after { animation-delay: 0.28s; }
+
+  .tabblie-hiw2__visual {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 215px;
+    padding: 22px;
+    background: var(--step-accent, #AFD3E8);
+  }
+  .tabblie-hiw2__disc {
+    position: absolute;
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.92);
+  }
+  .tabblie-hiw2__art {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: min(190px, 74%);
+  }
+  .tabblie-hiw2__art img,
+  .tabblie-hiw2__art svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .tabblie-hiw2__copy {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+    flex: 1 1 auto;
+    padding: 22px 22px 26px;
+    background: {{ cream }};
+  }
+  .tabblie-hiw2__number {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--step-accent, #AFD3E8);
+    font-family: var(--font-heading-family);
+    font-size: 22px;
+    font-weight: 800;
+    color: {{ ink }};
+  }
+  .tabblie-hiw2__step-title {
+    margin: 4px 0 7px;
+    font-family: var(--font-heading-family);
+    font-size: clamp(19px, 1.7vw, 24px);
+    font-weight: 800;
+    line-height: 1.12;
+    color: {{ ink }};
+  }
+  .tabblie-hiw2__step-desc {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.45;
+    color: rgba(24, 45, 32, 0.82);
+  }
+
+  /* ── CTA ── */
+  .tabblie-hiw2__cta {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    width: fit-content;
+    margin: clamp(26px, 3vw, 36px) auto 0;
+    align-items: center;
+    gap: 12px;
+    border-radius: 999px;
+    background: #E8622A;
+    color: #ffffff;
+    padding: 15px 32px;
+    min-height: 52px;
+    font-family: var(--font-body-family);
+    font-size: 17px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .tabblie-hiw2__cta:hover {
+    background: #d4551f;
+    color: #ffffff;
+    transform: translateY(-2px);
+  }
+
+  .tabblie-hiw2__bubbles {
+    position: absolute;
+    bottom: 14px;
+    width: 108px;
+    height: auto;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .tabblie-hiw2__bubbles--left { left: 16px; }
+  .tabblie-hiw2__bubbles--right { right: 16px; transform: scaleX(-1); }
+
+  @keyframes tabblie-hiw2-nudge {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(5px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tabblie-hiw2__card { opacity: 1; transform: none; transition: none; }
+    .tabblie-hiw2__card + .tabblie-hiw2__card::after { animation: none; }
+  }
+
+  /* ── tablet / mobile ── */
+  @media (max-width: 899px) {
+    .tabblie-hiw2__steps {
+      grid-template-columns: 1fr;
+      max-width: 560px;
+      margin-inline: auto;
+      gap: 22px;
+    }
+    .tabblie-hiw2__steps::before,
+    .tabblie-hiw2__card + .tabblie-hiw2__card::after { display: none; }
+    .tabblie-hiw2__visual { min-height: 190px; }
+    .tabblie-hiw2__disc { width: 148px; height: 148px; }
+    .tabblie-hiw2__bubbles { width: 76px; opacity: 0.72; }
+    .tabblie-hiw2__card { transition-delay: 0s !important; }
+  }
+  @media (max-width: 520px) {
+    .tabblie-hiw2__panel { padding-inline: 15px; }
+    .tabblie-hiw2__copy { grid-template-columns: 42px 1fr; padding: 18px 16px 22px; }
+    .tabblie-hiw2__number { width: 42px; height: 42px; font-size: 20px; }
+    .tabblie-hiw2__cta { width: 100%; max-width: 420px; justify-content: center; }
+    .tabblie-hiw2__bubbles { width: 62px; bottom: 8px; }
+  }
+{% endstyle %}
+
 {% schema %}
 {
   "name": "Tabblie How It Works v2",
@@ -425,7 +382,8 @@
     { "type": "color", "id": "bg_color", "label": "Achtergrondkleur", "default": "#E8622A" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "ZO WERKT HET" },
     { "type": "text", "id": "title", "label": "Titel", "default": "Kleine strips. Een groot verschil in je routine." },
-    { "type": "text", "id": "cta_text", "label": "Knop tekst", "default": "Bekijk alle strips" },
+    { "type": "text", "id": "intro", "label": "Ondertitel", "default": "Eén strip, drie stappen, nul gedoe." },
+    { "type": "text", "id": "cta_text", "label": "Knoptekst", "default": "Bekijk alle strips" },
     { "type": "url", "id": "cta_url", "label": "Knop link" }
   ],
   "blocks": [
@@ -435,7 +393,8 @@
       "settings": [
         { "type": "text", "id": "title", "label": "Titel" },
         { "type": "text", "id": "description", "label": "Beschrijving" },
-        { "type": "text", "id": "image_asset", "label": "Illustratie (asset bestandsnaam, .svg of .png)" }
+        { "type": "text", "id": "image_asset", "label": "Illustratie (asset bestandsnaam, .svg of .png)" },
+        { "type": "color", "id": "accent", "label": "Kaartkleur (leeg = blauw/roze/geel)" }
       ]
     }
   ],
@@ -443,9 +402,9 @@
     {
       "name": "Tabblie How It Works v2",
       "blocks": [
-        { "type": "step", "settings": { "title": "1. Pak een strip", "description": "Simpel, schoon en zonder geknoei.", "image_asset": "tabblie-stap-scheur-strip.png" } },
-        { "type": "step", "settings": { "title": "2. Gooi 'm erin", "description": "In de trommel bij je was.", "image_asset": "tabblie-stap-strip-in-wasmachine.png" } },
-        { "type": "step", "settings": { "title": "3. Klaar. Echt waar.", "description": "Frisse was, elke keer weer.", "image_asset": "tabblie-stap-start-wasmachine.png" } }
+        { "type": "step", "settings": { "title": "Pak een strip", "description": "Compact, voorgedoseerd en klaar voor gebruik.", "image_asset": "tabblie-stap-scheur-strip.png" } },
+        { "type": "step", "settings": { "title": "Gooi 'm erin", "description": "In de wasmachine, vaatwasser of wc.", "image_asset": "tabblie-stap-strip-in-wasmachine.png" } },
+        { "type": "step", "settings": { "title": "Klaar. Echt waar.", "description": "Schoon resultaat, zonder gedoe.", "image_asset": "tabblie-stap-start-wasmachine.png" } }
       ]
     }
   ]
