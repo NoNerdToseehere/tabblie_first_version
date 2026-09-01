@@ -193,16 +193,6 @@
     list-style: none;
     z-index: 2;
   }
-  /* dotted connector running behind the cards */
-  .tabblie-hiw2__steps::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 27%;
-    right: 27%;
-    border-top: 4px dotted {{ ink_2 }};
-    opacity: 0.85;
-  }
   .tabblie-hiw2__card {
     position: relative;
     z-index: 1;
@@ -214,7 +204,6 @@
     border-radius: 22px;
     background: {{ cream }};
     box-shadow: 7px 8px 0 {{ ink }};
-    overflow: hidden;
     opacity: 0;
     transform: translateY(14px);
     transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow 0.25s ease;
@@ -249,6 +238,8 @@
     min-height: 250px;
     padding: 22px 22px 34px;
     background: var(--step-accent, #AFD3E8);
+    border-radius: 19px 19px 0 0;
+    overflow: hidden;
   }
   /* wavy edge into the cream copy area, same curve as the previous section */
   .tabblie-hiw2__visual::after {
@@ -387,7 +378,6 @@
       margin-inline: auto;
       gap: 22px;
     }
-    .tabblie-hiw2__steps::before,
     .tabblie-hiw2__card + .tabblie-hiw2__card::after { display: none; }
     .tabblie-hiw2__visual { min-height: 220px; }
     .tabblie-hiw2__disc { width: 176px; height: 176px; }
