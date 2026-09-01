@@ -57,7 +57,6 @@
             if first_part > 0 and title_parts.size > 1
               assign step_title = step_title | remove_first: title_parts[0] | remove_first: '. '
             endif
-            assign fallback_icon = 'tabblie-hiw-step' | append: forloop.index | append: '.svg'
           -%}
           <li class="tabblie-hiw2__card" style="--step-accent: {{ accent }};" {{ block.shopify_attributes }}>
             <div class="tabblie-hiw2__visual">
@@ -70,8 +69,6 @@
                     <img src="{{ block.settings.image_asset | asset_url }}" alt="" width="300" height="300" loading="lazy">
                   </span>
                 {%- endif -%}
-              {%- else -%}
-                <span class="tabblie-hiw2__art">{{ fallback_icon | inline_asset_content }}</span>
               {%- endif -%}
             </div>
             <div class="tabblie-hiw2__copy">
@@ -123,7 +120,7 @@
     background-position: center;
     background-repeat: repeat;
     padding: clamp(30px, 5vw, 78px) clamp(10px, 2vw, 24px);
-    font-family: var(--font-body-family);
+    font-family: var(--text-font-family);
     color: {{ ink }};
   }
 
@@ -154,7 +151,7 @@
     gap: 14px;
     margin: 0 0 12px;
     color: #E8622A;
-    font-family: var(--font-body-family);
+    font-family: var(--text-font-family);
     font-size: 13px;
     font-weight: 800;
     letter-spacing: 0.1em;
@@ -175,13 +172,14 @@
     font-weight: 800;
     line-height: 1.06;
     letter-spacing: -0.01em;
-    color: {{ ink }};
+    color: {{ ink_2 }};
   }
   .tabblie-hiw2__intro {
     margin: 12px 0 0;
+    font-family: var(--text-font-family);
     font-size: clamp(16px, 1.7vw, 23px);
     line-height: 1.45;
-    color: rgba(24, 45, 32, 0.85);
+    color: {{ ink }};
   }
 
   /* ── steps ── */
@@ -244,14 +242,29 @@
     position: relative;
     display: grid;
     place-items: center;
-    min-height: 215px;
-    padding: 22px;
+    min-height: 250px;
+    padding: 22px 22px 34px;
     background: var(--step-accent, #AFD3E8);
+  }
+  /* wavy edge into the cream copy area, same curve as the previous section */
+  .tabblie-hiw2__visual::after {
+    content: '';
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    bottom: -1px;
+    height: 26px;
+    background: {{ cream }};
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 26' preserveAspectRatio='none'%3E%3Cpath d='M0 26 V10 C 20 0 35 20 55 12 C 72 5 84 18 100 8 V26 Z' fill='%23000'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 26' preserveAspectRatio='none'%3E%3Cpath d='M0 26 V10 C 20 0 35 20 55 12 C 72 5 84 18 100 8 V26 Z' fill='%23000'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
   }
   .tabblie-hiw2__disc {
     position: absolute;
-    width: 168px;
-    height: 168px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -58%);
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.92);
   }
@@ -260,7 +273,8 @@
     z-index: 1;
     display: grid;
     place-items: center;
-    width: min(190px, 74%);
+    width: min(230px, 84%);
+    margin-bottom: 14px;
   }
   .tabblie-hiw2__art img,
   .tabblie-hiw2__art svg {
@@ -291,7 +305,7 @@
   }
   .tabblie-hiw2__step-title {
     margin: 4px 0 7px;
-    font-family: var(--font-heading-family);
+    font-family: var(--text-font-family);
     font-size: clamp(19px, 1.7vw, 24px);
     font-weight: 800;
     line-height: 1.12;
@@ -299,9 +313,10 @@
   }
   .tabblie-hiw2__step-desc {
     margin: 0;
+    font-family: var(--text-font-family);
     font-size: 16px;
     line-height: 1.45;
-    color: rgba(24, 45, 32, 0.82);
+    color: {{ ink }};
   }
 
   /* ── CTA ── */
@@ -318,7 +333,7 @@
     color: #ffffff;
     padding: 15px 32px;
     min-height: 52px;
-    font-family: var(--font-body-family);
+    font-family: var(--text-font-family);
     font-size: 17px;
     font-weight: 800;
     text-decoration: none;
@@ -360,8 +375,8 @@
     }
     .tabblie-hiw2__steps::before,
     .tabblie-hiw2__card + .tabblie-hiw2__card::after { display: none; }
-    .tabblie-hiw2__visual { min-height: 190px; }
-    .tabblie-hiw2__disc { width: 148px; height: 148px; }
+    .tabblie-hiw2__visual { min-height: 220px; }
+    .tabblie-hiw2__disc { width: 176px; height: 176px; }
     .tabblie-hiw2__bubbles { width: 76px; opacity: 0.72; }
     .tabblie-hiw2__card { transition-delay: 0s !important; }
   }
