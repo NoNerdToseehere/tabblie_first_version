@@ -90,7 +90,7 @@
     {%- if section.settings.cta_text != blank -%}
       <a class="tabblie-hiw2__cta" href="{{ section.settings.cta_url | default: '/collections/all' }}">
         {{ section.settings.cta_text }}
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h13"/><path d="M11.5 6 18 12l-6.5 6"/></svg>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v13"/><path d="M6 12.5 12 18.5l6-6"/></svg>
       </a>
     {%- endif -%}
 
@@ -209,10 +209,11 @@
     min-width: 0;
     display: flex;
     flex-direction: column;
-    border: 1px solid rgba(38, 82, 63, 0.25);
-    border-radius: 24px;
+    /* sticker card, same treatment as the coming-soon frame */
+    border: 3px solid {{ ink }};
+    border-radius: 22px;
     background: {{ cream }};
-    box-shadow: 0 10px 24px rgba(24, 45, 32, 0.08);
+    box-shadow: 7px 8px 0 {{ ink }};
     overflow: hidden;
     opacity: 0;
     transform: translateY(14px);
@@ -221,7 +222,10 @@
   .tabblie-hiw2__card.is-visible { opacity: 1; transform: translateY(0); }
   .tabblie-hiw2__card:nth-child(2) { transition-delay: 0.09s; }
   .tabblie-hiw2__card:nth-child(3) { transition-delay: 0.18s; }
-  .tabblie-hiw2__card:hover { box-shadow: 0 16px 32px rgba(24, 45, 32, 0.14); }
+  .tabblie-hiw2__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 10px 12px 0 {{ ink }};
+  }
 
   /* connector arrows in the gaps */
   .tabblie-hiw2__card + .tabblie-hiw2__card::after {
@@ -250,8 +254,8 @@
   .tabblie-hiw2__visual::after {
     content: '';
     position: absolute;
-    left: -1px;
-    right: -1px;
+    left: -2px;
+    right: -2px;
     bottom: -1px;
     height: 26px;
     background: {{ cream }};
@@ -343,6 +347,16 @@
     background: #d4551f;
     color: #ffffff;
     transform: translateY(-2px);
+  }
+  .tabblie-hiw2__cta svg { flex-shrink: 0; }
+  /* the arrow nudges downward to say "keep scrolling", as before */
+  .tabblie-hiw2__cta svg { animation: tabblie-hiw2-cta-down 2.1s ease-in-out infinite; }
+  @keyframes tabblie-hiw2-cta-down {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(3px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tabblie-hiw2__cta svg { animation: none; }
   }
 
   .tabblie-hiw2__bubbles {
