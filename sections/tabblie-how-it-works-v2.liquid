@@ -285,6 +285,9 @@
     flex: 1 1 auto;
     padding: 22px 22px 26px;
     background: {{ cream }};
+    /* inner radius = card radius minus its 3px border, so the cream copy
+       area follows the rounded bottom instead of squaring it off */
+    border-radius: 0 0 19px 19px;
   }
   .tabblie-hiw2__number {
     display: grid;
