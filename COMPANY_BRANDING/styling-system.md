@@ -163,7 +163,7 @@ background: linear-gradient(135deg, #E8622A 0%, #F5C842 50%, #5BB8A0 100%);
 | Shield | Trust/safe | `#5BB8A0` | usp-strip |
 | Recycle | Sustainability | `#5BB8A0` | usp-strip |
 | Star (polygon) | Rating | `#F5C842` | usp-strip |
-| Star (unicode ★) | Review rating | `#E8622A` | testimonials |
+| Star (SVG path, 20px) | Review rating | `#E8622A` | testimonials, UGC pills |
 | Check-circle | NL flag substitute → replaced by tricolor band | — | usp-strip |
 | Globe | World/mission | `#E8622A` | faq (section icon) |
 | Turtle | Vegan/animal | `#E8622A` | faq (section icon) |
@@ -263,8 +263,8 @@ transform: scale(1.03);
 |---|---|
 | `100px` | Pill buttons, newsletter input, announcement-bar badges |
 | `50%` | Circular avatars, guarantee badge, icon circles |
-| `20px` | Large image containers (founder portrait, guarantee visual) |
-| `16px` | Cards, ingredient tiles, testimonial cards, comparison table |
+| `20px` | Large image containers (founder portrait, guarantee visual), testimonial sticker cards |
+| `16px` | Cards, ingredient tiles, comparison table |
 | `12px` | Form inputs, smaller cards |
 | `8px` | Tight UI chips |
 | `2px` | Divider bars, FAQ toggle bars |
@@ -312,7 +312,8 @@ transform: scale(1.03);
 | 860  | Carbon-offset |
 | 800  | Comparison table |
 | 780  | Page hero, stats header |
-| 720  | Impact, testimonials inner |
+| 720  | Impact |
+| 960  | Testimonial carousel card (`--testi-card-w`, neighbours peek in the gutters) |
 | 620  | Newsletter |
 | 560  | Body copy blocks under headings |
 
@@ -480,7 +481,8 @@ Rules:
 - **Use the ink outline sparingly — in the details** (updated 2026-07-26): badges, icon
   chips and circles (e.g. the "30 dagen proef wassen" badge, the stat-card icon chips, the "Een twee drie" stepper nodes:
   `border: 2px solid #1F1209; box-shadow: 2px 3px 0 rgba(31,18,9,0.25)`). Full-card
-  outlines only where the section carries it (e.g. the ingredient cards) — not on every grid
+  outlines only where the section carries it (e.g. the ingredient cards, the "Wat klanten
+  zeggen" review carousel — `tabblie-testimonials.liquid`, 2026-09-02) — not on every grid
 - Solid (non-blurred) offset shadow in an accent color — orange by default, **green
   (`rgba(56,161,105,0.9)`) when the card is the positive/Tabblie card**
 - Icon chips inside cards: 36px circle, brand gradient `linear-gradient(135deg, #E8622A,

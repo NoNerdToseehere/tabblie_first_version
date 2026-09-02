@@ -1,17 +1,22 @@
 {%- comment -%}
   tabblie-testimonials.liquid
-  Customer testimonial cards — warm cream background.
-  Brand: Tabblie — dark earth text, orange star/accent.
+  "Wat klanten zeggen" — a carousel of wide review cards. Each card shows the
+  media (UGC video, photo or pack render) on the left and the quote on the
+  right; neighbours peek in on both sides and the arrows go round (last card
+  → first). Sticker-card styling per styling-system.md §11: ink outline with
+  alternating pen-pressure, solid offset shadow in the product accent colour.
 {%- endcomment -%}
 
 <style>
   .tabblie-testi {
+    --testi-card-w: min(84vw, 360px);
     background-color: #FFFFFF;
-    padding: clamp(56px, 7vw, 96px) clamp(16px, 3vw, 40px);
+    padding: clamp(56px, 7vw, 96px) 0;
     position: relative;
     overflow: hidden;
   }
 
+  /* Decorative bubbles */
   .tabblie-testi__leaf {
     position: absolute;
     pointer-events: none;
@@ -46,16 +51,14 @@
     }
   }
 
-  .tabblie-testi__inner {
+  /* Header */
+  .tabblie-testi__header {
     position: relative;
     z-index: 1;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  .tabblie-testi__header {
     text-align: center;
-    margin-bottom: clamp(32px, 4vw, 56px);
+    max-width: 1100px;
+    margin: 0 auto clamp(28px, 4vw, 44px);
+    padding: 0 20px;
   }
 
   .tabblie-testi__eyebrow {
@@ -97,119 +100,220 @@
   .tabblie-testi__title::before { content: '\201C'; left: 0; }
   .tabblie-testi__title::after  { content: '\201D'; right: 0; }
 
-  /* Grid */
-  .tabblie-testi__grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: clamp(12px, 1.5vw, 24px);
+  /* Carousel */
+  .tabblie-testi__carousel {
+    position: relative;
+    z-index: 1;
   }
 
-  /* Card */
+  .tabblie-testi__track {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    /* symmetrical gutters so the first/last card can sit centred too */
+    padding: 6px calc((100% - var(--testi-card-w)) / 2) 16px;
+    scrollbar-width: none;
+  }
+
+  .tabblie-testi__track::-webkit-scrollbar { display: none; }
+
+  /* Card — sticker style (§11) */
   .tabblie-testi__card {
-    background-color: #F7F7F7;
-    border-radius: 16px;
-    overflow: hidden;
+    --testi-bg: #FDF6EE;
+    --testi-accent: #E8622A;
+    flex: 0 0 var(--testi-card-w);
+    scroll-snap-align: center;
     display: flex;
     flex-direction: column;
-    gap: 0;
-    transition: transform 0.2s ease;
+    background-color: var(--testi-bg);
+    border: solid #1F1209;
+    border-width: 2px 3.5px 3.5px 2px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 0 var(--testi-accent);
+    padding: 12px 12px 22px;
+    transition:
+      transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  .tabblie-testi__card:hover {
-    transform: translateY(-3px);
+  /* pen-pressure alternates per card */
+  .tabblie-testi__card--ink-b { border-width: 3.5px 2px 2px 3.5px; }
+
+  /* product identity colours (card bg + shadow accent) */
+  .tabblie-testi__card--wasstrips    { --testi-bg: #FDEEE6; --testi-accent: #E8622A; }
+  .tabblie-testi__card--vaatwas      { --testi-bg: #FDF5DD; --testi-accent: #F5C842; }
+  .tabblie-testi__card--toilet       { --testi-bg: #E2F2ED; --testi-accent: #5BB8A0; }
+  .tabblie-testi__card--allesreiniger{ --testi-bg: #FCE8E8; --testi-accent: #F2A0A0; }
+
+  @media (hover: hover) {
+    .tabblie-testi__card:hover {
+      transform: translate(-2px, -4px);
+      box-shadow: 8px 9px 0 var(--testi-accent);
+    }
   }
 
-  /* Card image */
-  .tabblie-testi__card-image {
+  /* Media (video / photo / pack render) */
+  .tabblie-testi__media {
+    position: relative;
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 4 / 5;
+    border-radius: 14px;
     overflow: hidden;
-    background-color: #ebe6e0;
+    background-color: rgba(255, 255, 255, 0.55);
+    isolation: isolate;
   }
 
-  /* Packaging renders: show the whole pack on a cream backdrop instead of
-     cropping it into the 16:10 photo slot. */
-  .tabblie-testi__card-image--contain {
-    background-color: #FDF6EE;
-  }
-  .tabblie-testi__card-image--contain img {
-    object-fit: contain !important;
-    padding: 12px 0;
-    filter: drop-shadow(0 5px 8px rgba(24, 45, 32, 0.16));
-  }
-  .tabblie-testi__card-image img {
+  .tabblie-testi__media img,
+  .tabblie-testi__media video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
   }
 
-  .tabblie-testi__card-image-placeholder {
+  /* Packaging renders: show the whole pack instead of cropping it */
+  .tabblie-testi__media--contain img {
+    object-fit: contain !important;
+    padding: 18px;
+    filter: drop-shadow(0 8px 12px rgba(24, 45, 32, 0.18));
+  }
+
+  .tabblie-testi__play {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
     width: 100%;
     height: 100%;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: rgba(24, 45, 32, 0.08);
+    box-shadow: none;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(24, 45, 32, 0.15);
-    font-size: 32px;
+    line-height: 0;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.2s ease;
   }
 
-  .tabblie-testi__card-body {
-    padding: clamp(20px, 2.5vw, 28px) clamp(16px, 2vw, 24px);
+  .tabblie-testi__play-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 2px solid #1F1209;
+    box-shadow: 2px 3px 0 rgba(31, 18, 9, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+      transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+      opacity 0.2s ease;
+  }
+
+  .tabblie-testi__play-icon svg {
+    width: 22px;
+    height: 22px;
+    margin-left: 3px;
+    fill: #182D20;
+  }
+
+  @media (hover: hover) {
+    .tabblie-testi__play:hover .tabblie-testi__play-icon {
+      transform: scale(1.08) rotate(-4deg);
+    }
+  }
+
+  .tabblie-testi__play:focus-visible {
+    outline: 3px solid #E8622A;
+    outline-offset: -3px;
+  }
+
+  .tabblie-testi__media.is-playing .tabblie-testi__play {
+    background: transparent;
+  }
+
+  .tabblie-testi__media.is-playing .tabblie-testi__play-icon {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  /* Text side */
+  .tabblie-testi__body {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    flex: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 22px 8px 0;
   }
 
-  /* Stars */
   .tabblie-testi__stars {
     display: flex;
-    align-items: center;
     gap: 3px;
-    margin-bottom: 20px;
+    margin-bottom: 14px;
   }
 
-  .tabblie-testi__star {
-    color: #E8622A;
-    font-size: 17px;
-    line-height: 1;
+  .tabblie-testi__stars svg {
+    width: 20px;
+    height: 20px;
+    fill: #E8622A;
+    flex-shrink: 0;
   }
 
-  /* Quote */
   .tabblie-testi__quote {
     font-family: var(--heading-font-family);
-    font-size: 1.15rem;
-    font-weight: 400;
-    font-style: italic;
-    color: #182D20;
-    line-height: 1.55;
-    margin: 0 0 24px;
-    flex: 1;
+    font-size: clamp(20px, 16px + 0.8vw, 28px);
+    font-weight: 800;
+    color: #26523F;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 0;
+    max-width: 30ch;
+    text-wrap: balance;
   }
 
-  /* Author */
   .tabblie-testi__author {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 12px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(24, 45, 32, 0.1);
-    margin-top: auto;
+    justify-content: center;
+    gap: 10px 16px;
+    margin-top: 22px;
+  }
+
+  .tabblie-testi__who {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
   .tabblie-testi__avatar {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background-color: rgba(232, 98, 42, 0.15);
-    flex-shrink: 0;
     overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid #1F1209;
+    box-shadow: 2px 3px 0 rgba(31, 18, 9, 0.25);
+    background-color: rgba(232, 98, 42, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--heading-font-family);
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 800;
     color: #E8622A;
   }
 
@@ -220,86 +324,164 @@
     display: block;
   }
 
-  .tabblie-testi__author-info {
+  .tabblie-testi__meta {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 2px;
+    line-height: 1.2;
+    text-align: left;
   }
 
   .tabblie-testi__name {
     font-family: var(--text-font-family);
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: 800;
     color: #182D20;
   }
 
   .tabblie-testi__location {
     font-family: var(--text-font-family);
     font-size: 13px;
-    color: rgba(24, 45, 32, 0.5);
+    font-weight: 500;
+    color: rgba(24, 45, 32, 0.6);
     white-space: nowrap;
   }
 
-  /* Verified badge */
   .tabblie-testi__verified {
-    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 700;
+    color: #26523F;
     white-space: nowrap;
-    flex-shrink: 0;
+  }
+
+  .tabblie-testi__verified-chip {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #26523F;
     display: flex;
     align-items: center;
-    gap: 4px;
-    font-family: var(--text-font-family);
-    font-size: 11px;
-    font-weight: 600;
-    color: #E8622A;
-    letter-spacing: 0.03em;
+    justify-content: center;
+    flex-shrink: 0;
   }
 
-  /* Mobile */
-  @media (max-width: 749px) {
+  .tabblie-testi__verified-chip svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  /* Arrows — below the track on mobile/tablet, in the side gutters on desktop */
+  .tabblie-testi__nav {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 16px;
+    padding: 0 20px;
+  }
+
+  .tabblie-testi__arrow {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    margin: 0;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #26523F;
+    color: #FFFFFF;
+    border: 2px solid #1F1209;
+    box-shadow: 2px 3px 0 rgba(31, 18, 9, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 0;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+      transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+      background-color 0.2s ease;
+  }
+
+  .tabblie-testi__arrow svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .tabblie-testi__arrow[hidden] { display: none; }
+
+  @media (hover: hover) {
+    .tabblie-testi__arrow:hover {
+      background-color: #E8622A;
+      color: #FFFFFF;
+      transform: translate(-1px, -2px);
+      box-shadow: 3px 5px 0 rgba(31, 18, 9, 0.25);
+    }
+  }
+
+  .tabblie-testi__arrow:focus-visible {
+    outline: 3px solid #E8622A;
+    outline-offset: 3px;
+  }
+
+  /* Tablet + desktop: media left, quote right */
+  @media (min-width: 750px) {
     .tabblie-testi {
-      padding: 64px 20px;
+      --testi-card-w: min(960px, calc(100vw - 96px));
     }
 
-    .tabblie-testi__header {
-      margin-bottom: 40px;
+    .tabblie-testi__track {
+      gap: 24px;
+      padding: 8px calc((100% - var(--testi-card-w)) / 2) 18px;
     }
-
-    /* one row, swipe left/right instead of three stacked cards */
-    .tabblie-testi__grid {
-      display: flex;
-      grid-template-columns: none;
-      align-items: stretch;
-      gap: 16px;
-      overflow-x: auto;
-      overscroll-behavior-x: contain;
-      -webkit-overflow-scrolling: touch;
-      scroll-snap-type: x mandatory;
-      /* vertical swipes belong to the page, not this rail — without this a
-         downward drag that starts on a card slides the row sideways */
-      touch-action: pan-x pinch-zoom;
-      scroll-padding-left: 20px;
-      margin-inline: -20px;
-      padding: 0 20px 6px;
-      scrollbar-width: none;
-    }
-
-    .tabblie-testi__grid::-webkit-scrollbar { display: none; }
 
     .tabblie-testi__card {
-      flex: 0 0 clamp(230px, 78vw, 300px);
-      scroll-snap-align: start;
-      padding: 24px 20px;
+      flex-direction: row;
+      align-items: stretch;
+      padding: 16px;
     }
 
-    /* no lift on touch — it fights the swipe */
-    .tabblie-testi__card:hover { transform: none; }
+    .tabblie-testi__media {
+      flex: 0 0 38%;
+      width: 38%;
+    }
+
+    .tabblie-testi__body {
+      padding: 24px clamp(20px, 4vw, 56px);
+    }
+
+    .tabblie-testi__card--no-media .tabblie-testi__body {
+      min-height: 340px;
+      padding: 40px clamp(24px, 6vw, 96px);
+    }
   }
 
-  /* Tablet */
-  @media (min-width: 750px) and (max-width: 1023px) {
-    .tabblie-testi__grid {
-      grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 1024px) {
+    .tabblie-testi__nav {
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      padding: 0 max(16px, calc((100% - var(--testi-card-w)) / 2 - 72px));
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+    }
+
+    .tabblie-testi__arrow {
+      pointer-events: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tabblie-testi__card,
+    .tabblie-testi__arrow,
+    .tabblie-testi__play-icon {
+      transition: none;
     }
   }
 </style>
@@ -311,96 +493,247 @@
   <svg class="tabblie-testi__leaf tabblie-testi__leaf--2" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
     <circle cx="42" cy="54" r="33" fill="currentColor" opacity="0.35"/><circle cx="42" cy="54" r="33" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 46 A 23 23 0 0 1 33 31" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" opacity="0.9"/><circle cx="79" cy="28" r="13" fill="currentColor" opacity="0.35"/><circle cx="79" cy="28" r="13" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M71 25 A 9 9 0 0 1 75 19" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.9"/><circle cx="86" cy="68" r="6" fill="currentColor" opacity="0.55"/>
   </svg>
-  <div class="tabblie-testi__inner">
 
-    <div class="tabblie-testi__header">
-      {%- if section.settings.eyebrow != blank -%}
-        <p class="tabblie-testi__eyebrow">{{ section.settings.eyebrow }}</p>
-      {%- endif -%}
-      {%- if section.settings.title != blank -%}
-        <p class="tabblie-testi__title">{{ section.settings.title }}</p>
-      {%- endif -%}
-    </div>
+  <div class="tabblie-testi__header">
+    {%- if section.settings.eyebrow != blank -%}
+      <p class="tabblie-testi__eyebrow">{{ section.settings.eyebrow }}</p>
+    {%- endif -%}
+    {%- if section.settings.title != blank -%}
+      <p class="tabblie-testi__title">{{ section.settings.title }}</p>
+    {%- endif -%}
+  </div>
 
-    <div class="tabblie-testi__grid">
+  <div class="tabblie-testi__carousel">
+    <div class="tabblie-testi__track" data-testi-track aria-roledescription="carousel" aria-label="Klantreviews">
       {%- for block in section.blocks -%}
-        <div class="tabblie-testi__card" {{ block.shopify_attributes }}>
+        {%- liquid
+          assign name = block.settings.name | default: 'Tabblie klant'
 
-          {%- comment -%}
-            No image set = no image area at all. An empty placeholder box read
-            as a broken image rather than a deliberate text-only card.
-          {%- endcomment -%}
-          {%- liquid
-            assign img_class = 'tabblie-testi__card-image'
-            if block.settings.image_contain
-              assign img_class = img_class | append: ' tabblie-testi__card-image--contain'
+          assign img_src = ''
+          if block.settings.image != blank
+            assign img_src = block.settings.image | image_url: width: 700
+          elsif block.settings.image_asset != blank
+            assign img_src = block.settings.image_asset | asset_url
+          endif
+
+          assign video_src = ''
+          assign poster = ''
+          if block.settings.video != blank
+            for source in block.settings.video.sources
+              if source.format == 'mp4' and video_src == ''
+                assign video_src = source.url
+              endif
+            endfor
+            if block.settings.video.preview_image
+              assign poster = block.settings.video.preview_image | image_url: width: 700
             endif
-          -%}
-          {%- if block.settings.image != blank -%}
-            <div class="{{ img_class }}">
-              <img src="{{ block.settings.image | image_url: width: 600 }}" alt="{{ block.settings.name | escape }}" width="600" height="375" loading="lazy">
+          elsif block.settings.video_asset != blank
+            assign video_src = block.settings.video_asset | asset_url
+          endif
+          if video_src != '' and img_src != ''
+            assign poster = img_src
+          endif
+
+          assign card_class = 'tabblie-testi__card'
+          assign ink = forloop.index | modulo: 2
+          if ink == 0
+            assign card_class = card_class | append: ' tabblie-testi__card--ink-b'
+          else
+            assign card_class = card_class | append: ' tabblie-testi__card--ink-a'
+          endif
+          if block.settings.card_color != blank and block.settings.card_color != 'cream'
+            assign card_class = card_class | append: ' tabblie-testi__card--' | append: block.settings.card_color
+          endif
+          if video_src == '' and img_src == ''
+            assign card_class = card_class | append: ' tabblie-testi__card--no-media'
+          endif
+
+          assign media_class = 'tabblie-testi__media'
+          if block.settings.image_contain and video_src == ''
+            assign media_class = media_class | append: ' tabblie-testi__media--contain'
+          endif
+        -%}
+
+        <article
+          class="{{ card_class }}"
+          data-testi-slide
+          role="group"
+          aria-roledescription="slide"
+          aria-label="Review {{ forloop.index }} van {{ forloop.length }}"
+          {{ block.shopify_attributes }}
+        >
+          {%- if video_src != '' -%}
+            <div
+              class="{{ media_class }}"
+              data-testi-video
+              data-muted="{% if block.settings.video_muted %}true{% else %}false{% endif %}"
+              data-play-label="Speel de video van {{ name | escape }} af"
+              data-pause-label="Pauzeer de video van {{ name | escape }}"
+            >
+              <video
+                src="{{ video_src }}#t=0.001"
+                {% if poster != '' %}poster="{{ poster }}"{% endif %}
+                playsinline
+                muted
+                loop
+                preload="metadata"
+                width="600"
+                height="750"
+                aria-label="Video van {{ name | escape }}, Tabblie klant"
+              ></video>
+              <button type="button" class="tabblie-testi__play" aria-label="Speel de video van {{ name | escape }} af">
+                <span class="tabblie-testi__play-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </span>
+              </button>
             </div>
-          {%- elsif block.settings.image_asset != blank -%}
-            <div class="{{ img_class }}">
-              <img src="{{ block.settings.image_asset | asset_url }}" alt="{{ block.settings.name | escape }}" width="600" height="375" loading="lazy">
+          {%- elsif img_src != '' -%}
+            <div class="{{ media_class }}">
+              {%- if block.settings.image != blank -%}
+                {{
+                  block.settings.image
+                  | image_url: width: 700
+                  | image_tag:
+                    widths: '400, 700, 1000',
+                    sizes: '(min-width: 750px) 365px, 84vw',
+                    loading: 'lazy',
+                    alt: name
+                }}
+              {%- else -%}
+                <img src="{{ img_src }}" alt="{{ name | escape }}" width="600" height="750" loading="lazy">
+              {%- endif -%}
             </div>
           {%- endif -%}
 
-          <div class="tabblie-testi__card-body">
-            <div class="tabblie-testi__stars" aria-label="{{ block.settings.rating }} out of 5 stars">
+          <div class="tabblie-testi__body">
+            <div class="tabblie-testi__stars" role="img" aria-label="{{ block.settings.rating }} van de 5 sterren">
               {%- for i in (1..block.settings.rating) -%}
-                <span class="tabblie-testi__star" aria-hidden="true">★</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2l-6.1 3.4 1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
               {%- endfor -%}
             </div>
 
             {%- if block.settings.quote != blank -%}
-              <p class="tabblie-testi__quote">"{{ block.settings.quote }}"</p>
+              <p class="tabblie-testi__quote">&ldquo;{{ block.settings.quote }}&rdquo;</p>
             {%- endif -%}
 
             <div class="tabblie-testi__author">
-            <div class="tabblie-testi__avatar">
-              {%- if block.settings.avatar != blank -%}
-                <img
-                  src="{{ block.settings.avatar | image_url: width: 80 }}"
-                  alt="{{ block.settings.name | escape }}"
-                  width="80"
-                  height="80"
-                  loading="lazy"
-                >
-              {%- elsif block.settings.avatar_asset != blank -%}
-                <img
-                  src="{{ block.settings.avatar_asset | asset_url }}"
-                  alt="{{ block.settings.name | escape }}"
-                  width="80"
-                  height="80"
-                  loading="lazy"
-                >
-              {%- else -%}
-                {{ block.settings.name | slice: 0 | upcase }}
-              {%- endif -%}
+              <div class="tabblie-testi__who">
+                <div class="tabblie-testi__avatar">
+                  {%- if block.settings.avatar != blank -%}
+                    <img src="{{ block.settings.avatar | image_url: width: 88 }}" alt="{{ name | escape }}" width="88" height="88" loading="lazy">
+                  {%- elsif block.settings.avatar_asset != blank -%}
+                    <img src="{{ block.settings.avatar_asset | asset_url }}" alt="{{ name | escape }}" width="88" height="88" loading="lazy">
+                  {%- else -%}
+                    {{ name | slice: 0 | upcase }}
+                  {%- endif -%}
+                </div>
+                <div class="tabblie-testi__meta">
+                  <span class="tabblie-testi__name">{{ name }}</span>
+                  {%- if block.settings.location != blank -%}
+                    <span class="tabblie-testi__location">{{ block.settings.location }}</span>
+                  {%- endif -%}
+                </div>
+              </div>
+              <span class="tabblie-testi__verified">
+                <span class="tabblie-testi__verified-chip" aria-hidden="true">
+                  <svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2L5 8.6l4.5-5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                Geverifieerd
+              </span>
             </div>
-            <div class="tabblie-testi__author-info">
-              {%- if block.settings.name != blank -%}
-                <span class="tabblie-testi__name">{{ block.settings.name }}</span>
-              {%- endif -%}
-              {%- if block.settings.location != blank -%}
-                <span class="tabblie-testi__location">{{ block.settings.location }}</span>
-              {%- endif -%}
-            </div>
-            <span class="tabblie-testi__verified" aria-label="Verified purchase">
-              <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
-                <path d="M2 5.5L4.5 8L9 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Geverifieerd
-            </span>
           </div>
-          </div>
-        </div>
+        </article>
       {%- endfor -%}
     </div>
 
+    <div class="tabblie-testi__nav">
+      <button type="button" class="tabblie-testi__arrow" data-testi-prev aria-label="Vorige review">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="tabblie-testi__arrow" data-testi-next aria-label="Volgende review">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
   </div>
 </section>
+
+<script>
+  (function () {
+    function init(root) {
+      if (!root || root.dataset.testiReady) return;
+      root.dataset.testiReady = 'true';
+
+      var track = root.querySelector('[data-testi-track]');
+      var slides = Array.prototype.slice.call(root.querySelectorAll('[data-testi-slide]'));
+      var prev = root.querySelector('[data-testi-prev]');
+      var next = root.querySelector('[data-testi-next]');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      /* Arrows: centre the neighbouring card; wrap around at both ends */
+      function nearest() {
+        var centre = track.scrollLeft + track.clientWidth / 2;
+        var best = 0, dist = Infinity;
+        slides.forEach(function (s, i) {
+          var d = Math.abs(s.offsetLeft + s.offsetWidth / 2 - centre);
+          if (d < dist) { dist = d; best = i; }
+        });
+        return best;
+      }
+      function goTo(i) {
+        var s = slides[(i + slides.length) % slides.length];
+        track.scrollTo({
+          left: s.offsetLeft - (track.clientWidth - s.offsetWidth) / 2,
+          behavior: reduce ? 'auto' : 'smooth'
+        });
+      }
+      if (prev && next) {
+        if (slides.length < 2) { prev.hidden = true; next.hidden = true; }
+        prev.addEventListener('click', function () { goTo(nearest() - 1); });
+        next.addEventListener('click', function () { goTo(nearest() + 1); });
+      }
+
+      /* Videos: tap to play (one at a time), pause when scrolled away */
+      var medias = Array.prototype.slice.call(root.querySelectorAll('[data-testi-video]'));
+      function stop(m) {
+        var v = m.querySelector('video');
+        v.pause();
+        v.muted = true;
+        m.classList.remove('is-playing');
+        m.querySelector('button').setAttribute('aria-label', m.dataset.playLabel);
+      }
+      medias.forEach(function (m) {
+        var v = m.querySelector('video');
+        var b = m.querySelector('button');
+        b.addEventListener('click', function () {
+          if (v.paused) {
+            medias.forEach(function (o) { if (o !== m) stop(o); });
+            v.muted = m.dataset.muted === 'true';
+            v.play();
+            m.classList.add('is-playing');
+            b.setAttribute('aria-label', m.dataset.pauseLabel);
+          } else {
+            stop(m);
+          }
+        });
+      });
+      if (medias.length && 'IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (!e.isIntersecting && e.target.classList.contains('is-playing')) stop(e.target);
+          });
+        }, { threshold: 0.3 });
+        medias.forEach(function (m) { io.observe(m); });
+      }
+    }
+
+    init(document.getElementById('tabblie-testi-{{ section.id }}'));
+
+    /* Theme editor re-renders the section without re-running inline scripts */
+    document.addEventListener('shopify:section:load', function (e) {
+      init(document.getElementById('tabblie-testi-' + e.detail.sectionId));
+    });
+  })();
+</script>
 
 {% schema %}
 {
@@ -411,13 +744,13 @@
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow label",
-      "default": "What customers say"
+      "default": "Wat klanten zeggen"
     },
     {
       "type": "text",
       "id": "title",
       "label": "Heading",
-      "default": "Real homes. Real results."
+      "default": "Eindelijk milieuvriendelijk schoonmaken — zonder in te leveren op kwaliteit, looks of prijs."
     }
   ],
   "blocks": [
@@ -428,7 +761,7 @@
         {
           "type": "range",
           "id": "rating",
-          "label": "Star rating",
+          "label": "Sterren",
           "min": 1,
           "max": 5,
           "step": 1,
@@ -437,48 +770,93 @@
         {
           "type": "textarea",
           "id": "quote",
-          "label": "Review text",
-          "default": "Switched from liquid detergent six months ago. My laundry is just as clean and I've stopped buying plastic bottles entirely."
+          "label": "Reviewtekst",
+          "default": "Zoveel goedkoper, en geen gemors of verspilling meer. Ik stap nooit meer terug over op vloeibaar wasmiddel."
         },
         {
           "type": "text",
           "id": "name",
-          "label": "Customer name",
+          "label": "Naam klant",
           "default": "Lisa B."
         },
         {
           "type": "text",
           "id": "location",
-          "label": "Location",
+          "label": "Woonplaats",
           "default": "Amsterdam, NL"
         },
         {
-          "type": "image_picker",
-          "id": "avatar",
-          "label": "Avatar photo (optional)"
+          "type": "select",
+          "id": "card_color",
+          "label": "Kaartkleur",
+          "options": [
+            { "value": "cream", "label": "Crème (standaard)" },
+            { "value": "wasstrips", "label": "Wasstrips — oranje" },
+            { "value": "vaatwas", "label": "Vaatwasstrips — geel" },
+            { "value": "toilet", "label": "Toiletstrips — teal" },
+            { "value": "allesreiniger", "label": "Allesreiniger — roze" }
+          ],
+          "default": "cream"
+        },
+        {
+          "type": "header",
+          "content": "Video (optioneel)"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Reviewvideo",
+          "info": "Staand (9:16 of 4:5) werkt het beste. Speelt af na een tik op de afspeelknop."
         },
         {
           "type": "text",
-          "id": "avatar_asset",
-          "label": "Avatar uit theme assets (bestandsnaam)",
-          "info": "Fallback als er geen avatar is gekozen, bijv. tabblie-avatar-thomas.jpg"
+          "id": "video_asset",
+          "label": "Video uit theme assets (bestandsnaam)",
+          "info": "Fallback als er geen video is gekozen, bijv. tabblie-ugc-lisa.mp4"
+        },
+        {
+          "type": "checkbox",
+          "id": "video_muted",
+          "label": "Video zonder geluid afspelen",
+          "info": "Aanvinken voor clips zonder audiospoor.",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Afbeelding"
         },
         {
           "type": "image_picker",
           "id": "image",
-          "label": "Review image (product in use)"
+          "label": "Reviewfoto",
+          "info": "Bij een video is dit de poster (het stilstaande beeld vóór het afspelen)."
         },
         {
           "type": "text",
           "id": "image_asset",
-          "label": "Review afbeelding uit theme assets (bestandsnaam)",
-          "info": "Fallback als er geen afbeelding is gekozen, bijv. tabblie-review-laundry.jpg"
+          "label": "Afbeelding uit theme assets (bestandsnaam)",
+          "info": "Fallback als er geen foto is gekozen, bijv. tabblie-ugc-lisa-poster.jpg"
         },
         {
           "type": "checkbox",
           "id": "image_contain",
           "label": "Afbeelding niet bijsnijden (voor verpakkingen)",
           "default": false
+        },
+        {
+          "type": "header",
+          "content": "Avatar"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatarfoto (optioneel)"
+        },
+        {
+          "type": "text",
+          "id": "avatar_asset",
+          "label": "Avatar uit theme assets (bestandsnaam)",
+          "info": "Fallback als er geen avatar is gekozen, bijv. tabblie-avatar-thomas.jpg"
         }
       ]
     }
@@ -491,32 +869,35 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "Switched from liquid detergent six months ago. My laundry is just as clean and I've stopped buying plastic bottles entirely.",
+            "quote": "Zoveel goedkoper, en geen gemors of verspilling meer. Ik stap nooit meer terug over op vloeibaar wasmiddel.",
             "name": "Lisa B.",
-            "location": "Amsterdam, NL"
+            "location": "Amsterdam, NL",
+            "card_color": "wasstrips"
           }
         },
         {
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "The dishwasher strips work even better than my old pods. No residue, no plastic, and my glasses actually look clean.",
+            "quote": "De vaatwasstrips werken zelfs beter dan mijn oude tabs. Geen residu, geen plastic, en mijn glazen zijn echt schoon.",
             "name": "Thomas V.",
-            "location": "Rotterdam, NL"
+            "location": "Rotterdam, NL",
+            "card_color": "vaatwas"
           }
         },
         {
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "I was skeptical — a strip that cleans toilets? But it genuinely works. Saved a ton of space under the sink too.",
+            "quote": "Een strip zónder chloor en bleek die de wc echt schoon krijgt? Dat geloofde ik dus niet. Maar het werkt.",
             "name": "Sophie M.",
-            "location": "Antwerp, BE"
+            "location": "Antwerpen, BE",
+            "card_color": "toilet"
           }
         }
       ]
     }
   ],
-  "max_blocks": 6
+  "max_blocks": 8
 }
 {% endschema %}

@@ -628,8 +628,11 @@
             "name": "Lisa B.",
             "location": "Amsterdam, NL",
             "avatar_asset": "tabblie-avatar-lisa.jpg",
-            "image_asset": "tabblie-pack-was.png",
-            "image_contain": true
+            "image_asset": "tabblie-ugc-lisa-poster.jpg",
+            "image_contain": false,
+            "video_asset": "tabblie-ugc-lisa.mp4",
+            "video_muted": false,
+            "card_color": "wasstrips"
           }
         },
         "review_2": {
@@ -641,7 +644,8 @@
             "location": "Rotterdam, NL",
             "avatar_asset": "tabblie-avatar-thomas.jpg",
             "image_asset": "tabblie-pack-vaat.png",
-            "image_contain": true
+            "image_contain": true,
+            "card_color": "vaatwas"
           }
         },
         "review_3": {
@@ -653,14 +657,31 @@
             "location": "Antwerp, BE",
             "avatar_asset": "tabblie-avatar-sophie.jpg",
             "image_asset": "tabblie-pack-toilet.png",
-            "image_contain": true
+            "image_contain": true,
+            "card_color": "toilet"
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Kind kan de was doen — letterlijk. Strip erin en klaar, zonder geknoei met doseerdoppen.",
+            "name": "Marieke B.",
+            "location": "Gent, BE",
+            "avatar_asset": "tabblie-avatar-marieke.jpg",
+            "image_asset": "tabblie-ugc-marieke-poster.jpg",
+            "image_contain": false,
+            "video_asset": "tabblie-ugc-marieke.mp4",
+            "video_muted": false,
+            "card_color": "cream"
           }
         }
       },
       "block_order": [
         "review_1",
         "review_2",
-        "review_3"
+        "review_3",
+        "review_4"
       ],
       "settings": {
         "eyebrow": "Wat klanten zeggen",
