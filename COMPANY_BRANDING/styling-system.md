@@ -163,7 +163,7 @@ background: linear-gradient(135deg, #E8622A 0%, #F5C842 50%, #5BB8A0 100%);
 | Shield | Trust/safe | `#5BB8A0` | usp-strip |
 | Recycle | Sustainability | `#5BB8A0` | usp-strip |
 | Star (polygon) | Rating | `#F5C842` | usp-strip |
-| Star (SVG path, 20px) | Review rating | `#E8622A` | testimonials, UGC pills |
+| Star (flat SVG, 19px — the `tabblie-review-score` shape) | Review rating | `#E8622A` | PDP score, product rows, testimonials |
 | Check-circle | NL flag substitute → replaced by tricolor band | — | usp-strip |
 | Globe | World/mission | `#E8622A` | faq (section icon) |
 | Turtle | Vegan/animal | `#E8622A` | faq (section icon) |
@@ -313,7 +313,7 @@ transform: scale(1.03);
 | 800  | Comparison table |
 | 780  | Page hero, stats header |
 | 720  | Impact |
-| 960  | Testimonial carousel card (`--testi-card-w`, neighbours peek in the gutters) |
+| 900  | Testimonial carousel card (`--testi-card-w`, ~1.66:1 like the reference, neighbours peek in the gutters) |
 | 620  | Newsletter |
 | 560  | Body copy blocks under headings |
 

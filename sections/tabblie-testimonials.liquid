@@ -1,10 +1,11 @@
 {%- comment -%}
   tabblie-testimonials.liquid
-  "Wat klanten zeggen" — a carousel of wide review cards. Each card shows the
-  media (UGC video, photo or pack render) on the left and the quote on the
-  right; neighbours peek in on both sides and the arrows go round (last card
-  → first). Sticker-card styling per styling-system.md §11: ink outline with
-  alternating pen-pressure, solid offset shadow in the product accent colour.
+  "Wat klanten zeggen" — an auto-scrolling carousel of wide review cards. Each
+  card shows the media (UGC video, photo or pack render) on the left and the
+  quote on the right; neighbours peek in on both sides and the arrows go round
+  (last card → first). Sticker-card styling per styling-system.md §11: ink
+  outline with alternating pen-pressure, solid offset shadow in the product
+  accent colour, soap-bubble cluster on alternating bottom corners.
 {%- endcomment -%}
 
 <style>
@@ -16,40 +17,17 @@
     overflow: hidden;
   }
 
-  /* Decorative bubbles */
-  .tabblie-testi__leaf {
+  /* Soap-bubble clusters in the top corners (same asset as "Zo werkt het") */
+  .tabblie-testi__bubbles {
     position: absolute;
+    top: 12px;
+    width: 52px;
+    height: auto;
     pointer-events: none;
     z-index: 0;
   }
-
-  .tabblie-testi__leaf--1 {
-    top: 10%;
-    left: -40px;
-    width: 130px;
-    height: 130px;
-    color: #F5C842;
-    opacity: 0.18;
-    transform: rotate(-40deg);
-  }
-
-  .tabblie-testi__leaf--2 {
-    bottom: 15%;
-    right: -50px;
-    width: 160px;
-    height: 160px;
-    color: #5BB8A0;
-    opacity: 0.15;
-    transform: rotate(150deg);
-  }
-
-  @media (max-width: 749px) {
-    .tabblie-testi__leaf--1,
-    .tabblie-testi__leaf--2 {
-      width: 80px;
-      height: 80px;
-    }
-  }
+  .tabblie-testi__bubbles--left  { left: 10px; }
+  .tabblie-testi__bubbles--right { right: 10px; transform: scaleX(-1); }
 
   /* Header */
   .tabblie-testi__header {
@@ -73,32 +51,74 @@
 
   .tabblie-testi__title {
     font-family: var(--heading-font-family);
-    font-size: clamp(1.2rem, 1.8vw, 1.7rem);
-    font-weight: 500;
-    font-style: italic;
-    color: #182D20;
-    letter-spacing: -0.01em;
-    line-height: 1.4;
-    margin: 0 auto;
-    max-width: 960px;
-    position: relative;
-    padding: 0 36px;
-  }
-
-  .tabblie-testi__title::before,
-  .tabblie-testi__title::after {
-    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(28px, 22px + 1.6vw, 44px);
+    font-weight: 700; /* brand rule: h2 is 700 (tabblie-brand.css !important) */
     font-style: normal;
-    font-size: 2.2em;
-    font-weight: 700;
-    color: #E8622A;
-    line-height: 1;
-    position: absolute;
-    top: -10px;
+    color: #26523F;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0 auto;
+    max-width: 820px;
+    text-transform: none;
+    text-wrap: balance;
   }
 
-  .tabblie-testi__title::before { content: '\201C'; left: 0; }
-  .tabblie-testi__title::after  { content: '\201D'; right: 0; }
+  /* Social proof under the heading: overlapping avatars + stars + count */
+  .tabblie-testi__proof {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 14px;
+    margin-top: 18px;
+  }
+
+  .tabblie-testi__proof-avatars {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .tabblie-testi__proof-avatars img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2.5px solid #FFFFFF;
+    box-shadow: 0 1px 4px rgba(24, 45, 32, 0.18);
+    margin-left: -10px;
+    display: block;
+  }
+
+  .tabblie-testi__proof-avatars img:first-child { margin-left: 0; }
+
+  .tabblie-testi__proof-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .tabblie-testi__proof-text {
+    font-family: var(--text-font-family);
+    font-size: 15px;
+    font-weight: 800;
+    color: #182D20;
+  }
+
+  /* Stars — same flat orange star as the PDP score + product rows */
+  .tabblie-testi__stars {
+    display: inline-flex;
+    gap: 2px;
+    color: #E8622A;
+  }
+
+  .tabblie-testi__stars svg {
+    width: 19px;
+    height: 19px;
+    fill: currentColor;
+    stroke: none;
+    display: block;
+    flex-shrink: 0;
+  }
 
   /* Carousel */
   .tabblie-testi__carousel {
@@ -115,8 +135,9 @@
     overscroll-behavior-x: contain;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
-    /* symmetrical gutters so the first/last card can sit centred too */
-    padding: 6px calc((100% - var(--testi-card-w)) / 2) 16px;
+    /* symmetrical gutters so the first/last card can sit centred too; the
+       bottom padding leaves room for the corner bubble + offset shadow */
+    padding: 8px calc((100% - var(--testi-card-w)) / 2) 34px;
     scrollbar-width: none;
   }
 
@@ -126,6 +147,7 @@
   .tabblie-testi__card {
     --testi-bg: #FDF6EE;
     --testi-accent: #E8622A;
+    position: relative;
     flex: 0 0 var(--testi-card-w);
     scroll-snap-align: center;
     display: flex;
@@ -155,6 +177,26 @@
       transform: translate(-2px, -4px);
       box-shadow: 8px 9px 0 var(--testi-accent);
     }
+  }
+
+  /* Soap-bubble cluster hanging off a bottom corner (same cluster as the
+     education cards / newsletter) — left on odd cards, right on even ones */
+  .tabblie-testi__bubble {
+    position: absolute;
+    z-index: 4;
+    width: 56px;
+    height: 56px;
+    bottom: -18px;
+    left: -16px;
+    pointer-events: none;
+    transform: rotate(-8deg);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='40' cy='58' r='30' fill='%235BB8A0' opacity='0.5'/%3E%3Ccircle cx='40' cy='58' r='30' fill='none' stroke='%235BB8A0' stroke-width='3'/%3E%3Cpath d='M22 52 A 20 20 0 0 1 32 39' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' opacity='0.8'/%3E%3Ccircle cx='75' cy='30' r='12' fill='%23F5C842' opacity='0.6'/%3E%3Ccircle cx='75' cy='30' r='12' fill='none' stroke='%23F5C842' stroke-width='2.5'/%3E%3Ccircle cx='82' cy='64' r='6' fill='%235BB8A0' opacity='0.65'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+
+  .tabblie-testi__card--ink-b .tabblie-testi__bubble {
+    left: auto;
+    right: -16px;
+    transform: rotate(8deg) scaleX(-1);
   }
 
   /* Media (video / photo / pack render) */
@@ -259,17 +301,8 @@
     padding: 22px 8px 0;
   }
 
-  .tabblie-testi__stars {
-    display: flex;
-    gap: 3px;
+  .tabblie-testi__body .tabblie-testi__stars {
     margin-bottom: 14px;
-  }
-
-  .tabblie-testi__stars svg {
-    width: 20px;
-    height: 20px;
-    fill: #E8622A;
-    flex-shrink: 0;
   }
 
   .tabblie-testi__quote {
@@ -348,31 +381,23 @@
     white-space: nowrap;
   }
 
+  /* "Geverifieerd" — same orange check + text as the homepage product rows */
   .tabblie-testi__verified {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     font-family: var(--text-font-family);
     font-size: 13px;
     font-weight: 700;
-    color: #26523F;
+    color: #E8622A;
     white-space: nowrap;
   }
 
-  .tabblie-testi__verified-chip {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #26523F;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .tabblie-testi__verified svg {
+    width: 13px;
+    height: 13px;
+    fill: none;
     flex-shrink: 0;
-  }
-
-  .tabblie-testi__verified-chip svg {
-    width: 11px;
-    height: 11px;
   }
 
   /* Arrows — below the track on mobile/tablet, in the side gutters on desktop */
@@ -380,7 +405,7 @@
     display: flex;
     justify-content: center;
     gap: 14px;
-    margin-top: 16px;
+    margin-top: 4px;
     padding: 0 20px;
   }
 
@@ -392,7 +417,7 @@
     margin: 0;
     padding: 0;
     border-radius: 50%;
-    background-color: #26523F;
+    background-color: #E8622A;
     color: #FFFFFF;
     border: 2px solid #1F1209;
     box-shadow: 2px 3px 0 rgba(31, 18, 9, 0.25);
@@ -417,7 +442,7 @@
 
   @media (hover: hover) {
     .tabblie-testi__arrow:hover {
-      background-color: #E8622A;
+      background-color: #26523F;
       color: #FFFFFF;
       transform: translate(-1px, -2px);
       box-shadow: 3px 5px 0 rgba(31, 18, 9, 0.25);
@@ -425,19 +450,26 @@
   }
 
   .tabblie-testi__arrow:focus-visible {
-    outline: 3px solid #E8622A;
+    outline: 3px solid #26523F;
     outline-offset: 3px;
   }
 
   /* Tablet + desktop: media left, quote right */
   @media (min-width: 750px) {
     .tabblie-testi {
-      --testi-card-w: min(960px, calc(100vw - 96px));
+      --testi-card-w: min(900px, calc(100vw - 96px));
     }
+
+    .tabblie-testi__bubbles {
+      top: 22px;
+      width: 108px;
+    }
+    .tabblie-testi__bubbles--left  { left: 18px; }
+    .tabblie-testi__bubbles--right { right: 18px; }
 
     .tabblie-testi__track {
       gap: 24px;
-      padding: 8px calc((100% - var(--testi-card-w)) / 2) 18px;
+      padding: 10px calc((100% - var(--testi-card-w)) / 2) 40px;
     }
 
     .tabblie-testi__card {
@@ -446,9 +478,20 @@
       padding: 16px;
     }
 
+    .tabblie-testi__bubble {
+      width: 68px;
+      height: 68px;
+      bottom: -22px;
+      left: -22px;
+    }
+
+    .tabblie-testi__card--ink-b .tabblie-testi__bubble { right: -22px; }
+
+    /* taller than wide-and-flat: a portrait 3:4 slot next to the quote */
     .tabblie-testi__media {
-      flex: 0 0 38%;
-      width: 38%;
+      flex: 0 0 44%;
+      width: 44%;
+      aspect-ratio: 3 / 4;
     }
 
     .tabblie-testi__body {
@@ -456,7 +499,7 @@
     }
 
     .tabblie-testi__card--no-media .tabblie-testi__body {
-      min-height: 340px;
+      min-height: 380px;
       padding: 40px clamp(24px, 6vw, 96px);
     }
   }
@@ -486,24 +529,51 @@
   }
 </style>
 
-<section class="tabblie-testi" id="tabblie-testi-{{ section.id }}">
-  <svg class="tabblie-testi__leaf tabblie-testi__leaf--1" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-    <circle cx="42" cy="54" r="33" fill="currentColor" opacity="0.35"/><circle cx="42" cy="54" r="33" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 46 A 23 23 0 0 1 33 31" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" opacity="0.9"/><circle cx="79" cy="28" r="13" fill="currentColor" opacity="0.35"/><circle cx="79" cy="28" r="13" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M71 25 A 9 9 0 0 1 75 19" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.9"/><circle cx="86" cy="68" r="6" fill="currentColor" opacity="0.55"/>
-  </svg>
-  <svg class="tabblie-testi__leaf tabblie-testi__leaf--2" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true">
-    <circle cx="42" cy="54" r="33" fill="currentColor" opacity="0.35"/><circle cx="42" cy="54" r="33" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 46 A 23 23 0 0 1 33 31" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" opacity="0.9"/><circle cx="79" cy="28" r="13" fill="currentColor" opacity="0.35"/><circle cx="79" cy="28" r="13" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M71 25 A 9 9 0 0 1 75 19" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.9"/><circle cx="86" cy="68" r="6" fill="currentColor" opacity="0.55"/>
-  </svg>
+<section
+  class="tabblie-testi"
+  id="tabblie-testi-{{ section.id }}"
+  data-autoplay="{% if section.settings.autoplay %}true{% else %}false{% endif %}"
+  data-autoplay-interval="{{ section.settings.autoplay_interval | default: 5 }}"
+>
+  <img class="tabblie-testi__bubbles tabblie-testi__bubbles--left" src="{{ 'tabblie-hiw-bubbles.svg' | asset_url }}" alt="" width="150" height="130" loading="lazy">
+  <img class="tabblie-testi__bubbles tabblie-testi__bubbles--right" src="{{ 'tabblie-hiw-bubbles.svg' | asset_url }}" alt="" width="150" height="130" loading="lazy">
 
   <div class="tabblie-testi__header">
     {%- if section.settings.eyebrow != blank -%}
       <p class="tabblie-testi__eyebrow">{{ section.settings.eyebrow }}</p>
     {%- endif -%}
     {%- if section.settings.title != blank -%}
-      <p class="tabblie-testi__title">{{ section.settings.title }}</p>
+      <h2 class="tabblie-testi__title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+    {%- if section.settings.proof_text != blank -%}
+      <div class="tabblie-testi__proof">
+        <span class="tabblie-testi__proof-avatars" aria-hidden="true">
+          {%- assign shown = 0 -%}
+          {%- for block in section.blocks -%}
+            {%- if shown < 4 -%}
+              {%- if block.settings.avatar != blank -%}
+                <img src="{{ block.settings.avatar | image_url: width: 72 }}" alt="" width="72" height="72" loading="lazy">
+                {%- assign shown = shown | plus: 1 -%}
+              {%- elsif block.settings.avatar_asset != blank -%}
+                <img src="{{ block.settings.avatar_asset | asset_url }}" alt="" width="72" height="72" loading="lazy">
+                {%- assign shown = shown | plus: 1 -%}
+              {%- endif -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </span>
+        <span class="tabblie-testi__proof-rating">
+          <span class="tabblie-testi__stars" role="img" aria-label="5 van de 5 sterren">
+            {%- for i in (1..5) -%}
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.35 6.19 20.4l1.11-6.47L2.6 9.35l6.5-.95z"/></svg>
+            {%- endfor -%}
+          </span>
+          <span class="tabblie-testi__proof-text">{{ section.settings.proof_text }}</span>
+        </span>
+      </div>
     {%- endif -%}
   </div>
 
-  <div class="tabblie-testi__carousel">
+  <div class="tabblie-testi__carousel" data-testi-carousel>
     <div class="tabblie-testi__track" data-testi-track aria-roledescription="carousel" aria-label="Klantreviews">
       {%- for block in section.blocks -%}
         {%- liquid
@@ -562,6 +632,8 @@
           aria-label="Review {{ forloop.index }} van {{ forloop.length }}"
           {{ block.shopify_attributes }}
         >
+          <span class="tabblie-testi__bubble" aria-hidden="true"></span>
+
           {%- if video_src != '' -%}
             <div
               class="{{ media_class }}"
@@ -578,7 +650,7 @@
                 loop
                 preload="metadata"
                 width="600"
-                height="750"
+                height="800"
                 aria-label="Video van {{ name | escape }}, Tabblie klant"
               ></video>
               <button type="button" class="tabblie-testi__play" aria-label="Speel de video van {{ name | escape }} af">
@@ -595,22 +667,22 @@
                   | image_url: width: 700
                   | image_tag:
                     widths: '400, 700, 1000',
-                    sizes: '(min-width: 750px) 365px, 84vw',
+                    sizes: '(min-width: 750px) 400px, 84vw',
                     loading: 'lazy',
                     alt: name
                 }}
               {%- else -%}
-                <img src="{{ img_src }}" alt="{{ name | escape }}" width="600" height="750" loading="lazy">
+                <img src="{{ img_src }}" alt="{{ name | escape }}" width="600" height="800" loading="lazy">
               {%- endif -%}
             </div>
           {%- endif -%}
 
           <div class="tabblie-testi__body">
-            <div class="tabblie-testi__stars" role="img" aria-label="{{ block.settings.rating }} van de 5 sterren">
+            <span class="tabblie-testi__stars" role="img" aria-label="{{ block.settings.rating }} van de 5 sterren">
               {%- for i in (1..block.settings.rating) -%}
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.2l-6.1 3.4 1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 5.9 6.5.95-4.7 4.58 1.11 6.47L12 17.35 6.19 20.4l1.11-6.47L2.6 9.35l6.5-.95z"/></svg>
               {%- endfor -%}
-            </div>
+            </span>
 
             {%- if block.settings.quote != blank -%}
               <p class="tabblie-testi__quote">&ldquo;{{ block.settings.quote }}&rdquo;</p>
@@ -635,9 +707,7 @@
                 </div>
               </div>
               <span class="tabblie-testi__verified">
-                <span class="tabblie-testi__verified-chip" aria-hidden="true">
-                  <svg viewBox="0 0 12 12" fill="none"><path d="M2.5 6.2L5 8.6l4.5-5" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5 9.5 18 20 6.5"/></svg>
                 Geverifieerd
               </span>
             </div>
@@ -663,6 +733,7 @@
       if (!root || root.dataset.testiReady) return;
       root.dataset.testiReady = 'true';
 
+      var carousel = root.querySelector('[data-testi-carousel]');
       var track = root.querySelector('[data-testi-track]');
       var slides = Array.prototype.slice.call(root.querySelectorAll('[data-testi-slide]'));
       var prev = root.querySelector('[data-testi-prev]');
@@ -686,10 +757,40 @@
           behavior: reduce ? 'auto' : 'smooth'
         });
       }
+
+      /* Autoplay: advances every N seconds while the section is on screen.
+         Pauses on hover / keyboard focus / while a clip plays, and backs off
+         for a few seconds after the visitor swipes or taps an arrow. */
+      var autoplay = root.dataset.autoplay === 'true' && !reduce && slides.length > 1;
+      var interval = (parseInt(root.dataset.autoplayInterval, 10) || 5) * 1000;
+      var inView = false, hovering = false, clipPlaying = false, holdUntil = 0, timer = null;
+      function hold(ms) { holdUntil = Date.now() + ms; }
+      function tick() {
+        if (!inView || hovering || clipPlaying || document.hidden || Date.now() < holdUntil) return;
+        goTo(nearest() + 1);
+      }
+      if (autoplay) {
+        timer = setInterval(tick, interval);
+        carousel.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse') hovering = true; });
+        carousel.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') hovering = false; });
+        carousel.addEventListener('focusin', function () { hovering = true; });
+        carousel.addEventListener('focusout', function () { hovering = false; });
+        track.addEventListener('pointerdown', function () { hold(8000); });
+        track.addEventListener('touchstart', function () { hold(8000); }, { passive: true });
+        track.addEventListener('wheel', function () { hold(8000); }, { passive: true });
+        if ('IntersectionObserver' in window) {
+          new IntersectionObserver(function (entries) {
+            inView = entries[0].isIntersecting;
+          }, { threshold: 0.35 }).observe(carousel);
+        } else {
+          inView = true;
+        }
+      }
+
       if (prev && next) {
         if (slides.length < 2) { prev.hidden = true; next.hidden = true; }
-        prev.addEventListener('click', function () { goTo(nearest() - 1); });
-        next.addEventListener('click', function () { goTo(nearest() + 1); });
+        prev.addEventListener('click', function () { hold(8000); goTo(nearest() - 1); });
+        next.addEventListener('click', function () { hold(8000); goTo(nearest() + 1); });
       }
 
       /* Videos: tap to play (one at a time), pause when scrolled away */
@@ -700,6 +801,7 @@
         v.muted = true;
         m.classList.remove('is-playing');
         m.querySelector('button').setAttribute('aria-label', m.dataset.playLabel);
+        clipPlaying = root.querySelector('.is-playing') !== null;
       }
       medias.forEach(function (m) {
         var v = m.querySelector('video');
@@ -711,6 +813,7 @@
             v.play();
             m.classList.add('is-playing');
             b.setAttribute('aria-label', m.dataset.pauseLabel);
+            clipPlaying = true;
           } else {
             stop(m);
           }
@@ -724,6 +827,11 @@
         }, { threshold: 0.3 });
         medias.forEach(function (m) { io.observe(m); });
       }
+
+      /* Theme editor: stop the timer when the section is removed/re-rendered */
+      document.addEventListener('shopify:section:unload', function (e) {
+        if (e.detail.sectionId === root.id.replace('tabblie-testi-', '') && timer) clearInterval(timer);
+      });
     }
 
     init(document.getElementById('tabblie-testi-{{ section.id }}'));
@@ -751,6 +859,34 @@
       "id": "title",
       "label": "Heading",
       "default": "Eindelijk milieuvriendelijk schoonmaken — zonder in te leveren op kwaliteit, looks of prijs."
+    },
+    {
+      "type": "text",
+      "id": "proof_text",
+      "label": "Social proof onder de kop",
+      "info": "Toont de avatars van de reviews + 5 sterren + deze tekst. Leeg laten om te verbergen.",
+      "default": "1.000+ tevreden klanten"
+    },
+    {
+      "type": "header",
+      "content": "Automatisch doorschuiven"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Automatisch doorschuiven",
+      "info": "Pauzeert bij hover, tijdens een video en even na een swipe of klik.",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "autoplay_interval",
+      "label": "Seconden per review",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 5
     }
   ],
   "blocks": [
@@ -806,7 +942,7 @@
           "type": "video",
           "id": "video",
           "label": "Reviewvideo",
-          "info": "Staand (9:16 of 4:5) werkt het beste. Speelt af na een tik op de afspeelknop."
+          "info": "Staand (9:16 of 3:4) werkt het beste. Speelt af na een tik op de afspeelknop."
         },
         {
           "type": "text",
