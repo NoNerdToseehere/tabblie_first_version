@@ -233,12 +233,32 @@
                 <div class="halo-article-content{% if settings.banner_animation == 'effect_fade_up' %} scroll-trigger animate--slide-in{% endif %}">
                     <div class="article-header">
                         <div class="article-heading text-left">
+                            {%- liquid
+                              assign cats = 'Waswijs,Plasticpraat,Onze producten,Hacks,Schermen' | split: ','
+                              assign cat = ''
+                              for tag in article.tags
+                                if cats contains tag and cat == ''
+                                  assign cat = tag
+                                endif
+                              endfor
+                              assign words = article.content | strip_html | split: ' ' | size
+                              assign minutes = words | divided_by: 200 | at_least: 1
+                            -%}
                             {%- unless section.settings.hide_article_title -%}
+                            <svg class="article-doodle article-doodle--stripes" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#26523F" stroke-width="5" stroke-linecap="round"><path d="M14 44 4 51M22 32 8 30M35 24 31 9"/></g></svg>
+                            <svg class="article-doodle article-doodle--star" viewBox="0 0 64 64" aria-hidden="true"><path d="m32 5 7 18 20 1-16 12 5 20-16-11-17 11 6-20L5 24l20-1Z" fill="none" stroke="#F5C842" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            <p class="article-dateline"><span></span>{{ blog.title | escape }} &middot; {{ article.published_at | date: '%d-%m-%Y' }}<span></span></p>
+                            {%- if cat != blank -%}
+                              <a class="article-chip article-chip--{{ cat | handleize }}" href="{{ blog.url }}/tagged/{{ cat | handleize }}">{{ cat }}</a>
+                            {%- endif -%}
                             <h1 class="title">
                                 {{ article.title }}
                             </h1>
+                            {%- if article.excerpt != blank -%}
+                              <p class="article-standfirst">{{ article.excerpt | strip_html }}</p>
+                            {%- endif -%}
                             {%- endunless -%}
-                            {%- if show_author or show_date or blog.comments_enabled? -%}
+                            {%- if section.settings.hide_article_title == false and show_author or show_date or blog.comments_enabled? -%}
                                 <div class="info">
                                     {%- if show_author -%}
                                         <span class="info-item author">
@@ -248,9 +268,10 @@
                                     {%- endif -%}
                                     {%- if show_date -%}
                                         <span class="info-item date">
-                                            {{ article.published_at | date: "%d %b %Y" }}
+                                            {{ article.published_at | date: "%d-%m-%Y" }}
                                         </span>
                                     {%- endif -%}
+                                    <span class="info-item reading">{{ minutes }} min leestijd</span>
                                     {%- if blog.comments_enabled? -%}
                                         <a class="info-item comment" href="{{ article.url }}#comments">
                                             {{ 'blogs.article.comments' | t: count: article.comments_count }}
@@ -822,62 +843,177 @@
 %}
 
 {% style %}
-  /* Listicle article styling (Tabblie): every h2 in the article body gets
-     an auto-numbered kicker row and big bold heading, so all posts read
-     as numbered listicles without hand-numbering the content. */
-  .halo-article-content .article-content { counter-reset: artsec; }
+  /* Magazine article styling (Tabblie, 2026-09-02): the article reads like a
+     page from the "De schone was" newspaper — green rules, dateline,
+     category chip, doodles around the headline, sticker-framed images,
+     pink-stroke headings, check-chip lists, comparison tables and callout
+     cards. Body classes (article-summary / -callout / -formula / -cta /
+     -figure) are written by the article importer; plain HTML still styles. */
+  .halo-article-content { max-width: 880px; margin: 0 auto; }
+
+  /* ── masthead ── */
+  .halo-article-content .article-heading { position: relative; text-align: center; padding-top: 4px; }
+  .halo-article-content .article-dateline {
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+    font-family: var(--font-body-family); font-size: 12.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+    color: #26523F; border-top: 2px solid #26523F; padding-top: 16px; margin: 0 0 16px;
+  }
+  .halo-article-content .article-dateline span { flex: 0 1 180px; height: 1px; background: rgba(38, 82, 63, 0.4); }
+  .halo-article-content .article-chip {
+    display: inline-block; margin-bottom: 14px; padding: 6px 11px; border-radius: 6px;
+    background: #E8622A; color: #FFFFFF; font-family: var(--font-body-family); font-size: 12px; font-weight: 800;
+    letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; transform: rotate(-2deg);
+  }
+  .halo-article-content .article-chip--plasticpraat { background: #26523F; }
+  .halo-article-content .article-chip--onze-producten { background: #3B7DD8; }
+  .halo-article-content .article-chip--hacks { background: #F5C842; color: #182D20; }
+  .halo-article-content .article-chip--schermen { background: #5BB8A0; }
+  .halo-article-content .article-heading .title {
+    font-family: var(--font-heading-family); font-size: clamp(32px, 5vw, 52px) !important; line-height: 1.05 !important; letter-spacing: -0.02em;
+    color: #26523F; max-width: 20ch; margin: 0 auto 14px; text-wrap: balance;
+  }
+  .halo-article-content .article-standfirst {
+    font-family: var(--font-body-family); font-size: 18px; line-height: 1.5; font-weight: 500; color: #182D20;
+    max-width: 60ch; margin: 0 auto 14px;
+  }
+  .halo-article-content .article-heading .info { justify-content: center; font-family: var(--font-body-family); font-size: 13px; font-weight: 700; color: #26523F; text-transform: uppercase; letter-spacing: 0.08em; }
+  .halo-article-content .article-heading .info .info-item { color: #26523F; }
+  .halo-article-content .article-doodle { position: absolute; top: 44px; width: 46px; height: 46px; display: none; }
+  .halo-article-content .article-doodle--stripes { left: -6px; }
+  .halo-article-content .article-doodle--star { right: -4px; top: 60px; transform: rotate(14deg); }
+
+  /* lead image as a sticker */
+  .halo-article-content .article-image { margin: 24px 0 8px; }
+  .halo-article-content .article-image .image { display: block; border-radius: 20px; overflow: hidden; border: 2px solid #1F1209; box-shadow: 6px 6px 0 #E8622A; }
+  .halo-article-content .article-image img { display: block; width: 100%; height: auto; }
+
+  /* ── body copy ── */
+  .halo-article-content .article-content p,
+  .halo-article-content .article-content li { font-size: 17px !important; line-height: 1.6 !important; color: #182D20 !important; }
+  .halo-article-content .article-content p { margin: 0 0 14px !important; }
+  .halo-article-content .article-content > p:first-of-type { font-size: 19.5px !important; line-height: 1.5 !important; font-weight: 600; color: #182D20 !important; }
+  .halo-article-content .article-content strong { color: #182D20; font-weight: 800; }
+  .halo-article-content .article-content a { color: #E8622A; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  .halo-article-content .article-content a:hover { color: #26523F; }
+
   .halo-article-content .article-content h2 {
-    counter-increment: artsec;
-    font-family: var(--font-heading-family);
-    font-size: 26px;
-    line-height: 1.15;
-    font-weight: 800;
-    letter-spacing: -0.01em;
-    color: #26523F;
-    margin: 40px 0 14px;
+    font-family: var(--font-heading-family); font-size: 27px; line-height: 1.12; font-weight: 800; letter-spacing: -0.015em;
+    color: #26523F; margin: 46px 0 14px; scroll-margin-top: 110px;
   }
   .halo-article-content .article-content h2::before {
-    content: "0" counter(artsec);
-    display: block;
-    font-family: var(--font-body-family);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    color: #E8622A;
-    border-top: 1px solid rgba(24, 45, 32, 0.2);
-    padding-top: 10px;
-    margin-bottom: 10px;
+    content: ''; display: block; width: 38px; height: 5px; border-radius: 5px; background: #F08CAE; transform: rotate(-6deg); margin: 0 0 14px 2px;
   }
   .halo-article-content .article-content h3 {
-    font-family: var(--font-heading-family);
-    font-size: 19px;
-    font-weight: 800;
-    color: #182D20;
-    margin: 26px 0 8px;
+    font-family: var(--font-heading-family); font-size: 20px; line-height: 1.2; font-weight: 800; color: #182D20; margin: 28px 0 8px;
+    padding-left: 18px; position: relative;
   }
-  .halo-article-content .article-content p,
-  .halo-article-content .article-content li {
-    font-size: 16px;
-    line-height: 1.75;
-    color: #182D20;
+  .halo-article-content .article-content h3::before {
+    content: ''; position: absolute; left: 0; top: 0.42em; width: 10px; height: 10px; border-radius: 50%; background: #E8622A; border: 2px solid #1F1209;
   }
-  .halo-article-content .article-content > p:first-of-type {
-    font-size: 18px;
-    line-height: 1.65;
+
+  /* lists: check chips + orange number discs */
+  .halo-article-content .article-content ul,
+  .halo-article-content .article-content ol { list-style: none; padding: 0; margin: 14px 0 20px; }
+  .halo-article-content .article-content ul li,
+  .halo-article-content .article-content ol li { position: relative; padding-left: 36px; margin: 0 0 8px !important; }
+  .halo-article-content .article-content ul li::before {
+    content: ''; position: absolute; left: 0; top: 0.2em; width: 22px; height: 22px; border-radius: 50%; background: #26523F;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2.5 6.2L5 8.6l4.5-5' stroke='%23FFFFFF' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size: 12px 12px; background-position: center; background-repeat: no-repeat;
   }
-  .halo-article-content .article-content img {
-    border-radius: 16px;
-    margin: 20px 0;
+  .halo-article-content .article-content ol { counter-reset: artol; }
+  .halo-article-content .article-content ol li { counter-increment: artol; }
+  .halo-article-content .article-content ol li::before {
+    content: counter(artol); position: absolute; left: 0; top: 0.1em; width: 24px; height: 24px; border-radius: 50%;
+    background: #E8622A; color: #FFFFFF; font-family: var(--font-heading-family); font-size: 13px; font-weight: 800; line-height: 24px; text-align: center;
+    border: 2px solid #1F1209; box-shadow: 2px 2px 0 rgba(31, 18, 9, 0.25);
   }
-  .halo-article-content .article-content a { color: #E8622A; }
-  .halo-article-content .article-heading .title {
-    font-size: 30px;
-    line-height: 1.15;
-    letter-spacing: -0.01em;
+
+  /* comparison tables */
+  .halo-article-content .article-content table {
+    display: block; width: 100%; overflow-x: auto; border-collapse: separate; border-spacing: 0; margin: 26px 0;
+    border: 2px solid #1F1209; border-radius: 16px; box-shadow: 5px 5px 0 #5BB8A0; background: #FFFFFF; -webkit-overflow-scrolling: touch;
   }
-  @media (min-width: 768px) {
-    .halo-article-content .article-heading .title { font-size: 38px; }
-    .halo-article-content .article-content h2 { font-size: 30px; }
+  .halo-article-content .article-content table thead th {
+    background: #26523F; color: #FFFFFF; font-family: var(--font-body-family); font-size: 12.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+    padding: 12px 14px; text-align: left; white-space: nowrap;
+  }
+  .halo-article-content .article-content table thead th strong { color: inherit; }
+  .halo-article-content .article-content table th,
+  .halo-article-content .article-content table td { padding: 12px 14px; min-width: 130px; font-size: 15.5px; line-height: 1.45; color: #182D20; vertical-align: top; border-top: 1px solid rgba(38, 82, 63, 0.16); }
+  .halo-article-content .article-content table tbody th { font-weight: 800; color: #26523F; text-align: left; background: #FDF6EE; }
+  .halo-article-content .article-content table tbody tr:nth-child(even) td { background: #FBF3E8; }
+
+  /* importer blocks */
+  .halo-article-content .article-summary {
+    background: #FFFFFF; border: 2px solid #1F1209; border-radius: 18px; box-shadow: 5px 5px 0 #E8622A; padding: 18px 22px 8px; margin: 28px 0;
+  }
+  .halo-article-content .article-summary__title {
+    display: inline-flex; align-items: center; gap: 10px; margin: 0 0 6px !important;
+    font-family: var(--font-body-family); font-size: 12px !important; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; color: #E8622A;
+  }
+  .halo-article-content .article-summary__title::before,
+  .halo-article-content .article-summary__title::after { content: ''; width: 20px; height: 3px; border-radius: 3px; background: #F08CAE; transform: rotate(8deg); }
+  .halo-article-content .article-summary__title::after { transform: rotate(-8deg); }
+  .halo-article-content .article-summary ul { margin: 6px 0 10px; }
+  .halo-article-content .article-summary li { font-size: 16px !important; line-height: 1.5 !important; color: #182D20 !important; }
+
+  .halo-article-content .article-callout {
+    background: #FFFFFF; border: 2px solid #1F1209; border-left: 8px solid #E8622A; border-radius: 6px 16px 16px 6px; padding: 14px 20px; margin: 18px 0 !important;
+    box-shadow: 4px 4px 0 rgba(31, 18, 9, 0.12);
+    font-family: var(--font-heading-family); font-size: 20px !important; line-height: 1.3 !important; font-weight: 800; color: #182D20 !important;
+  }
+  .halo-article-content .article-callout strong { color: #182D20; }
+  .halo-article-content .article-formula {
+    background: #E2F2ED; border: 2px dashed rgba(38, 82, 63, 0.45); border-radius: 16px; padding: 30px 20px 16px; margin: 22px 0; position: relative; text-align: center;
+    font-family: var(--font-heading-family); font-size: 18px !important; line-height: 1.35 !important; font-weight: 800; color: #182D20 !important;
+  }
+  .halo-article-content .article-formula::before {
+    content: 'Rekensom'; position: absolute; top: -12px; left: 18px; padding: 4px 10px; border-radius: 100px; background: #26523F; color: #FFFFFF;
+    font-family: var(--font-body-family); font-size: 11px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .halo-article-content .article-cta { text-align: center; margin: 28px 0 !important; }
+  .halo-article-content .article-content .article-btn {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 15px 32px; border-radius: 100px;
+    background: #E8622A; color: #FFFFFF; font-family: var(--font-body-family); font-size: 17px; font-weight: 800; text-decoration: none;
+    box-shadow: 0 6px 20px rgba(232, 98, 42, 0.22); transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  .halo-article-content .article-content .article-btn:hover { background: #d4551f; color: #FFFFFF; transform: translateY(-2px); }
+
+  .halo-article-content .article-figure { margin: 30px 0; }
+  .halo-article-content .article-figure img,
+  .halo-article-content .article-content img { display: block; width: 100%; height: auto; border-radius: 18px; border: 2px solid #1F1209; box-shadow: 5px 5px 0 #F5C842; margin: 0; }
+  .halo-article-content .article-figure figcaption { margin-top: 12px; text-align: center; font-family: var(--font-body-family); font-size: 13.5px; font-weight: 600; color: #26523F; }
+  /* second image sits beside the copy on desktop, magazine-style */
+  @media (min-width: 900px) {
+    .halo-article-content .article-figure--side { float: right; width: 44%; margin: 6px 0 18px 32px; }
+    .halo-article-content .article-figure--side img { transform: rotate(2deg); }
+    .halo-article-content .article-content h2 { clear: both; }
+    .halo-article-content .article-content table,
+    .halo-article-content .article-summary { clear: both; }
+  }
+
+  /* FAQ block: question marks in front of the questions */
+  .halo-article-content .article-content h2[id^="veelgestelde-vragen"] ~ h3 { padding-left: 34px; }
+  .halo-article-content .article-content h2[id^="veelgestelde-vragen"] ~ h3::before {
+    content: '?'; width: 24px; height: 24px; top: 0; border-radius: 50%; background: #26523F; border: 2px solid #1F1209;
+    color: #FFFFFF; font-size: 14px; line-height: 20px; text-align: center; font-family: var(--font-heading-family);
+  }
+
+  /* the paper closes the way the newspaper does */
+  .halo-article-content .article-content::after { content: ''; display: block; border-top: 2px solid #26523F; margin-top: 44px; }
+
+  @media (min-width: 900px) {
+    .halo-article-content .article-doodle { display: block; }
+    .halo-article-content .article-content h2 { font-size: 32px; }
+    .halo-article-content .article-content h3 { font-size: 21px; }
+  }
+  @media (max-width: 749px) {
+    .halo-article-content .article-dateline span { flex-basis: 60px; }
+    .halo-article-content .article-content h2 { font-size: 26px; margin-top: 38px; }
+    .halo-article-content .article-callout { font-size: 18px !important; }
+    .halo-article-content .article-content p,
+    .halo-article-content .article-content li { font-size: 17px !important; }
   }
 {% endstyle %}
 

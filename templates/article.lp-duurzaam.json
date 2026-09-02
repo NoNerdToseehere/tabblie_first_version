@@ -85,29 +85,37 @@
         "hide_article_title": true
       }
     },
+    "readmore": {
+      "type": "tabblie-read-more",
+      "settings": {
+        "title": "Meer verhalen voor een schoner huis",
+        "button_text": "Bekijk alle verhalen",
+        "button_url": "/blogs/de-schone-was"
+      }
+    },
     "product": {
-      "type": "featured-product",
+      "type": "tabblie-product-cards",
       "blocks": {
-        "title": {
-          "type": "title",
-          "settings": {}
-        },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "buy": {
-          "type": "buy_buttons",
-          "settings": {}
+        "was": {
+          "type": "product",
+          "settings": {
+            "product": "tabblie-wasstrips",
+            "media_index": 2,
+            "eyebrow": "Voor de was",
+            "badge": "Meest gekozen",
+            "card_color": "wasstrips",
+            "button_text": "In winkelwagen"
+          }
         }
       },
       "block_order": [
-        "title",
-        "price",
-        "buy"
+        "was"
       ],
       "settings": {
-        "featured_product": "tabblie-wasstrips"
+        "eyebrow": "Probeer het zelf",
+        "title": "Eén strip. De hele was.",
+        "intro": "",
+        "trust_items": "Gratis verzending vanaf €30|100% plastic- & microplasticvrij|30 dagen proef wassen"
       }
     },
     "founder": {
@@ -123,71 +131,6 @@
         "image": "shopify://shop_images/Founder_image.png",
         "image_alt": "De oprichter van Tabblie",
         "facts_title": ""
-      }
-    },
-    "artfaq": {
-      "type": "tabblie-faq",
-      "blocks": {
-        "f1": {
-          "type": "faq",
-          "settings": {
-            "question": "Wat zijn Tabblie strips precies?",
-            "answer": "Voorgedoseerde velletjes geconcentreerd was-, vaatwas- of toiletmiddel. In de trommel, het bestekmandje of de pot — ze lossen volledig op, zonder plastic fles en zonder PVA."
-          }
-        },
-        "f2": {
-          "type": "faq",
-          "settings": {
-            "question": "Wast het net zo schoon als vloeibaar wasmiddel?",
-            "answer": "Ja. De strips bevatten dezelfde werkzame stoffen, alleen zonder het water. Ze werken in koud én warm water en laten geen resten achter."
-          }
-        },
-        "f3": {
-          "type": "faq",
-          "settings": {
-            "question": "Wat kost het per wasbeurt?",
-            "answer": "Een los pak wasstrips komt neer op zo'n €0,34 per wasbeurt; met de voordeelbundel (4+2 gratis) zit je op €0,23 — en met een abonnement bespaar je 20% op elke levering."
-          }
-        },
-        "f4": {
-          "type": "faq",
-          "settings": {
-            "question": "En als het niks voor mij is?",
-            "answer": "Dan geldt onze 30 dagen niet-goed-geld-terug garantie — ook als het pak is aangebroken. Mail support@tabblie.com en we regelen het."
-          }
-        }
-      },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4"
-      ],
-      "settings": {
-        "eyebrow": "GOED OM TE WETEN",
-        "title": "Veelgestelde vragen"
-      }
-    },
-    "artguarantee": {
-      "type": "tabblie-guarantee",
-      "settings": {
-        "eyebrow": "ONZE GARANTIE",
-        "heading": "Probeer het 30 dagen.",
-        "heading_accent": "Risicovrij!",
-        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
-        "button_text": "Bekijk alle producten",
-        "button_url": "/pages/alle-producten",
-        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
-        "image_alt": "30 dagen proefwassen",
-        "badge_text": "30 dagen proef wassen"
-      }
-    },
-    "readmore": {
-      "type": "tabblie-read-more",
-      "settings": {
-        "title": "Meer verhalen voor een schoner huis",
-        "button_text": "Bekijk alle verhalen",
-        "button_url": "/blogs/de-schone-was"
       }
     },
     "plans": {
@@ -249,11 +192,9 @@
     "hero",
     "bottles",
     "main",
+    "readmore",
     "product",
     "founder",
-    "plans",
-    "artfaq",
-    "artguarantee",
-    "readmore"
+    "plans"
   ]
 }
