@@ -1,0 +1,22 @@
+{% doc %}
+  Bold rounded check / cross mark, drawn in currentColor. Used inside the
+  solid circle chips (dark green check, orange cross) per styling-system.md
+  §11/§12 so every mark on the site is the same stroke and weight.
+
+  @param kind - 'check' (default) or 'cross'
+  @param size - CSS size, default 24px
+
+  @example
+  {% render 'tabblie-mark', kind: 'cross', size: '22px' %}
+{% enddoc %}
+
+{%- assign mark_size = size | default: '24px' -%}
+{%- if kind == 'cross' -%}
+  <svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;width:{{ mark_size }};height:{{ mark_size }};fill:none">
+    <path d="M60 60 196 196M196 60 60 196"/>
+  </svg>
+{%- else -%}
+  <svg viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:block;width:{{ mark_size }};height:{{ mark_size }};fill:none">
+    <path d="M44 136 104 196 216 72"/>
+  </svg>
+{%- endif -%}
