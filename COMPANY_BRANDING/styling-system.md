@@ -543,8 +543,8 @@ Live implementations: `tabblie-tierelier.liquid`, `tabblie-education.liquid`,
   (announcement 13px, marquee uppercase ~14.5px), fat white icons (16-18px, SVG
   stroke-width 2.6-2.8) — thin/light text on orange strips is off-brand
 - **Brush-paint icons**: hand-painted white PNGs on colored backgrounds (flower, check, X,
-  smiley — uploaded as shop images 1..4). Still used in the footer icon strip only — the
-  stat-card check/X chips (EVEN EERLIJK, education) switched to the shared SVG mark
+  smiley — uploaded as shop images 1..4). Still used in the Tierelier icon strip and the
+  footer icon strip — the stat-card check/X chips (EVEN EERLIJK, education) switched to the shared SVG mark
   `{% render 'tabblie-mark', kind: 'check'|'cross' %}` in an ink-outlined circle (2026-09-02)
 - **White hairline dividers** between icon items (rgba(255,255,255,0.55), 1px)
 - **Eyebrow dashes**: short pink strokes (#F08CAE, 22×3px, ±8° rotated) flanking uppercase
