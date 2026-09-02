@@ -5,11 +5,25 @@
 
 <style>
   .tabblie-insta {
+    position: relative;
+    overflow: hidden;
     background-color: #FDF6EE;
     padding: clamp(48px, 6vw, 80px) clamp(16px, 3vw, 40px);
   }
 
+  /* Matisse plant cropped into the bottom-left corner (light section) */
+  .tabblie-insta__plant {
+    position: absolute;
+    left: -34px;
+    bottom: -16px;
+    z-index: 0;
+    pointer-events: none;
+    display: none;
+  }
+
   .tabblie-insta__inner {
+    position: relative;
+    z-index: 1;
     max-width: 900px;
     margin: 0 auto;
   }
@@ -19,22 +33,173 @@
     margin-bottom: clamp(28px, 4vw, 44px);
   }
 
+  /* small orange eyebrow — the pink dashes come from custom.css */
   .tabblie-insta__eyebrow {
-    font-family: var(--font-heading-family);
-    font-size: clamp(2.2rem, 4vw, 3.4rem);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: #26523F;
-    margin-bottom: 8px;
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #E8622A;
+    margin: 0 0 14px;
   }
 
+  /* big two-tone heading: orange handle + green rest, IG chip + sparkles */
   .tabblie-insta__title {
-    font-family: var(--text-font-family);
-    font-size: clamp(14px, 1.6vw, 17px);
-    font-weight: 500;
-    color: rgba(24, 45, 32, 0.5);
-    line-height: 1.4;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px 16px;
     margin: 0;
+    font-family: var(--heading-font-family);
+    font-size: clamp(30px, 24px + 1.8vw, 50px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #26523F;
+    text-transform: none;
+  }
+
+  .tabblie-insta__handle { color: #E8622A; }
+
+  .tabblie-insta__ig {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #E8622A, #F5934A);
+    border: 2px solid #1F1209;
+    box-shadow: 3px 4px 0 rgba(31, 18, 9, 0.25);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-6deg);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .tabblie-insta__ig svg { width: 28px; height: 28px; }
+
+  .tabblie-insta__title:hover .tabblie-insta__ig { transform: rotate(6deg) scale(1.08); }
+
+  .tabblie-insta__sparkle {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    transform: rotate(-18deg);
+  }
+
+  .tabblie-insta__sparkle--right { transform: rotate(18deg) scaleX(-1); }
+
+  .tabblie-insta__sparkle svg { width: 100%; height: 100%; display: block; }
+
+  /* dark-green pill sub-line with a white heart */
+  .tabblie-insta__pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0 0;
+    padding: 9px 18px;
+    border-radius: 100px;
+    background: #26523F;
+    color: #FFFFFF;
+    font-family: var(--text-font-family);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .tabblie-insta__pill svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  /* Stage around the device: floating reaction stickers + bubble cluster */
+  .tabblie-insta__stage {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .tabblie-insta__sticker {
+    --r: 0deg;
+    position: absolute;
+    z-index: 3;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid #1F1209;
+    box-shadow: 3px 4px 0 rgba(31, 18, 9, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transform: rotate(var(--r));
+    animation: tabblie-insta-float 3.6s ease-in-out infinite;
+  }
+
+  .tabblie-insta__sticker svg { width: 22px; height: 22px; }
+
+  .tabblie-insta__sticker--heart {
+    top: -16px;
+    left: -8px;
+    --r: -10deg;
+    background: linear-gradient(135deg, #E8622A, #F5934A);
+    color: #FFFFFF;
+  }
+
+  .tabblie-insta__sticker--comment {
+    top: 34%;
+    right: -8px;
+    --r: 8deg;
+    background: #5BB8A0;
+    color: #FFFFFF;
+    animation-delay: 0.9s;
+  }
+
+  .tabblie-insta__sticker--camera {
+    bottom: 22%;
+    left: -8px;
+    --r: -6deg;
+    background: #F5C842;
+    color: #182D20;
+    animation-delay: 1.7s;
+  }
+
+  @keyframes tabblie-insta-float {
+    0%, 100% { transform: rotate(var(--r)) translateY(0); }
+    50%      { transform: rotate(var(--r)) translateY(-7px); }
+  }
+
+  /* soap-bubble cluster off the device's bottom-right corner */
+  .tabblie-insta__bubble {
+    position: absolute;
+    z-index: 3;
+    right: -14px;
+    bottom: -18px;
+    width: 58px;
+    height: 58px;
+    pointer-events: none;
+    transform: rotate(8deg) scaleX(-1);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='40' cy='58' r='30' fill='%235BB8A0' opacity='0.5'/%3E%3Ccircle cx='40' cy='58' r='30' fill='none' stroke='%235BB8A0' stroke-width='3'/%3E%3Cpath d='M22 52 A 20 20 0 0 1 32 39' fill='none' stroke='%23ffffff' stroke-width='4' stroke-linecap='round' opacity='0.8'/%3E%3Ccircle cx='75' cy='30' r='12' fill='%23F5C842' opacity='0.6'/%3E%3Ccircle cx='75' cy='30' r='12' fill='none' stroke='%23F5C842' stroke-width='2.5'/%3E%3Ccircle cx='82' cy='64' r='6' fill='%235BB8A0' opacity='0.65'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+
+  @media (min-width: 750px) {
+    .tabblie-insta__plant { display: block; }
+    .tabblie-insta__sticker { width: 58px; height: 58px; }
+    .tabblie-insta__sticker svg { width: 27px; height: 27px; }
+    .tabblie-insta__sticker--heart   { top: -22px; left: -26px; }
+    .tabblie-insta__sticker--comment { right: -28px; }
+    .tabblie-insta__sticker--camera  { left: -30px; }
+    .tabblie-insta__bubble { right: -24px; bottom: -24px; width: 76px; height: 76px; }
+  }
+
+  @media (max-width: 520px) {
+    .tabblie-insta__sparkle { display: none; }
+    .tabblie-insta__ig { width: 44px; height: 44px; border-radius: 13px; }
+    .tabblie-insta__ig svg { width: 24px; height: 24px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tabblie-insta__sticker { animation: none; }
+    .tabblie-insta__ig { transition: none; }
   }
 
   /* Device frame */
@@ -297,6 +462,7 @@
 </style>
 
 <section class="tabblie-insta" id="tabblie-insta-{{ section.id }}">
+  <span class="tabblie-insta__plant" aria-hidden="true">{% render 'tabblie-plant', color: '#2C6B4E', width: '170px', flip: false %}</span>
   <div class="tabblie-insta__inner">
 
     <div class="tabblie-insta__header">
@@ -304,9 +470,51 @@
         <p class="tabblie-insta__eyebrow">{{ section.settings.eyebrow }}</p>
       {%- endif -%}
       {%- if section.settings.title != blank -%}
-        <h2 class="tabblie-insta__title">{{ section.settings.title }}</h2>
+        {%- liquid
+          comment
+            An "@handle" first word is coloured orange like the wordmark; the rest stays green.
+          endcomment
+          assign title_words = section.settings.title | split: ' '
+          assign title_handle = ''
+          assign title_rest = section.settings.title
+          if title_words[0] contains '@' and title_words.size > 1
+            assign title_handle = title_words[0]
+            assign title_rest = section.settings.title | remove_first: title_words[0]
+          endif
+        -%}
+        <h2 class="tabblie-insta__title">
+          <span class="tabblie-insta__sparkle" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="#182D20" stroke-width="2.5" stroke-linecap="round"><path d="M16 4v9"/><path d="M6 9l6 6"/><path d="M26 9l-6 6"/></svg>
+          </span>
+          <span class="tabblie-insta__ig" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1.2" fill="#FFFFFF" stroke="none"/></svg>
+          </span>
+          <span class="tabblie-insta__title-text">
+            {%- if title_handle != blank -%}<span class="tabblie-insta__handle">{{ title_handle }}</span>{%- endif -%}{{ title_rest }}
+          </span>
+          <span class="tabblie-insta__sparkle tabblie-insta__sparkle--right" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" stroke="#182D20" stroke-width="2.5" stroke-linecap="round"><path d="M16 4v9"/><path d="M6 9l6 6"/><path d="M26 9l-6 6"/></svg>
+          </span>
+        </h2>
+      {%- endif -%}
+      {%- if section.settings.pill_text != blank -%}
+        <p class="tabblie-insta__pill">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
+          {{ section.settings.pill_text }}
+        </p>
       {%- endif -%}
     </div>
+
+    <div class="tabblie-insta__stage">
+      <span class="tabblie-insta__sticker tabblie-insta__sticker--heart" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
+      </span>
+      <span class="tabblie-insta__sticker tabblie-insta__sticker--comment" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </span>
+      <span class="tabblie-insta__sticker tabblie-insta__sticker--camera" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 011 1v9a1 1 0 01-1 1H4a1 1 0 01-1-1V9a1 1 0 011-1z"/><circle cx="12" cy="13" r="3.5"/></svg>
+      </span>
 
     <div class="tabblie-insta__device">
       <div class="tabblie-insta__screen">
@@ -369,6 +577,8 @@
 
       </div>
     </div>
+      <span class="tabblie-insta__bubble" aria-hidden="true"></span>
+    </div>
 
     {%- if section.settings.cta_text != blank -%}
       <div class="tabblie-insta__cta">
@@ -385,7 +595,8 @@
   "tag": "section",
   "settings": [
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "VOLG ONS" },
-    { "type": "text", "id": "title", "label": "Heading", "default": "@tabblie op Instagram" },
+    { "type": "text", "id": "title", "label": "Heading", "info": "Begint de kop met een @handle? Dan kleurt dat woord oranje.", "default": "@Tabblie op Instagram" },
+    { "type": "text", "id": "pill_text", "label": "Pill onder de kop", "info": "Donkergroene pill met hartje. Leeg laten om te verbergen.", "default": "Tag @Tabblie in je post" },
     { "type": "text", "id": "username", "label": "Username", "default": "tabblie" },
     { "type": "url", "id": "instagram_url", "label": "Instagram URL" },
     { "type": "text", "id": "posts_count", "label": "Posts count", "default": "42" },
