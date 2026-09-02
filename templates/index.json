@@ -206,6 +206,55 @@
         "mg_bottom_mobile": 40
       }
     },
+    "tabblie_tierelier_main": {
+      "type": "tabblie-tierelier",
+      "blocks": {
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/1_2979738d-9656-43ce-8efa-19856c3ee753.png",
+            "label": "Natuurlijke formule",
+            "sublabel": "Zacht voor jou, hard voor vuil."
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/2_9e3d8a68-d3a0-47fa-a5b2-6242d565b40e.png",
+            "label": "Biologisch afbreekbaar",
+            "sublabel": "Keer terug naar de natuur."
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/3_96fadf1d-b746-4710-bac5-3447a9828883.png",
+            "label": "Geen plastic, nooit",
+            "sublabel": "Geen microplastics. Nooit."
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/4_7889bf7b-2673-4d52-bde0-f37fa754b3e7.png",
+            "label": "Super effectief",
+            "sublabel": "Schitterend schoon, elke keer."
+          }
+        }
+      },
+      "block_order": [
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4"
+      ],
+      "settings": {
+        "bg_color": "#F08CAE",
+        "heading_line1": "Werkt als een",
+        "heading_line2": "tierelier.",
+        "pill_text": "Beter voor de planeet."
+      }
+    },
     "custom_service_block_4Nnayh": {
       "type": "custom-service-block",
       "blocks": {
@@ -474,6 +523,62 @@
       },
       "disabled": true
     },
+    "tabblie_blog_teaser": {
+      "type": "tabblie-blog-teaser",
+      "settings": {
+        "bg_color": "#F8E6E8",
+        "eyebrow": "EVEN EERLIJK",
+        "heading": "De wasmiddelwereld zit vol troep.\nLetterlijk.",
+        "body": "<p>Grote plastic flessen vol water dat je thuis gewoon uit de kraan haalt, rondgereden in vrachtwagens vol diesel. En de ‘oplosbare’ pods en de meeste andere wasstrips? Die zitten vol PVA — een synthetisch, in water oplosbaar plastic. Wij gebruiken zeewier.</p>",
+        "bold_line": "Lees waarom wij niet meedoen.",
+        "button_text": "Ontdek de hele soap",
+        "button_url": "/blogs/de-schone-was",
+        "bg_image_asset": "tabblie-bottles-bg.jpg",
+        "image_asset": "tabblie-pack-was.png",
+        "image_alt": "Tabblie wasstrips verpakking - 100% plasticvrij",
+        "facts_title": "Wist je dit?"
+      },
+      "blocks": {
+        "f1": {
+          "type": "fact",
+          "settings": {
+            "number": "90%",
+            "description": "van de schoonmaakproducten bevat microplastics",
+            "is_positive": false
+          }
+        },
+        "f2": {
+          "type": "fact",
+          "settings": {
+            "number": "24",
+            "description": "kilo per persoon aan plastic afval van schoonmaakproducten",
+            "is_positive": false
+          }
+        },
+        "f3": {
+          "type": "fact",
+          "settings": {
+            "number": "91%",
+            "description": "van al het plastic wordt niet gerecycled",
+            "is_positive": false
+          }
+        },
+        "f4": {
+          "type": "fact",
+          "settings": {
+            "number": "100%",
+            "description": "plastic- & microplasticvrij",
+            "is_positive": true
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
     "tabblie_pf_main": {
       "type": "tabblie-product-feature",
       "blocks": {
@@ -567,6 +672,119 @@
         "intro": "Eén strip, drie stappen, nul gedoe."
       }
     },
+    "tabblie_products_main": {
+      "type": "tabblie-product-cards",
+      "blocks": {
+        "was": {
+          "type": "product",
+          "settings": {
+            "product": "tabblie-wasstrips",
+            "media_index": 2,
+            "eyebrow": "Voor de was",
+            "badge": "Meest gekozen",
+            "card_color": "wasstrips",
+            "button_text": "In winkelwagen"
+          }
+        },
+        "vaat": {
+          "type": "product",
+          "settings": {
+            "product": "tabblie-vaatwasstrips",
+            "media_index": 2,
+            "eyebrow": "Voor de vaatwasser",
+            "badge": "",
+            "card_color": "vaatwas",
+            "button_text": "In winkelwagen"
+          }
+        },
+        "toilet": {
+          "type": "product",
+          "settings": {
+            "product": "tabblie-toiletstrips",
+            "media_index": 2,
+            "eyebrow": "Voor het toilet",
+            "badge": "",
+            "card_color": "toilet",
+            "button_text": "In winkelwagen"
+          }
+        }
+      },
+      "block_order": [
+        "was",
+        "vaat",
+        "toilet"
+      ],
+      "settings": {
+        "anchor_id": "tabblie-strips",
+        "eyebrow": "Kies je strip",
+        "title": "Welke strip mag het zijn?",
+        "intro": "",
+        "trust_items": "Gratis verzending vanaf €30|100% plastic- & microplasticvrij|30 dagen proef wassen"
+      }
+    },
+    "tabblie_cs_home": {
+      "type": "tabblie-coming-soon",
+      "blocks": {
+        "p1": {
+          "type": "promise",
+          "settings": {
+            "text": "100% plastic- & microplasticvrij"
+          }
+        },
+        "p2": {
+          "type": "promise",
+          "settings": {
+            "text": "Biologisch afbreekbaar"
+          }
+        },
+        "p3": {
+          "type": "promise",
+          "settings": {
+            "text": "Gewoon weer een strip — geen fles, geen gedoe"
+          }
+        },
+        "p4": {
+          "type": "promise",
+          "settings": {
+            "text": "Duurzaam gemaakt, eerlijk geprijsd"
+          }
+        },
+        "p5": {
+          "type": "promise",
+          "settings": {
+            "text": "30 dagen proberen — niet goed, geld terug"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
+      ],
+      "settings": {
+        "bg_color": "#E1ECFA",
+        "compact": true,
+        "image_side": "right",
+        "heading_tag": "h2",
+        "product": "tabblie-binnenkort",
+        "stamp_text": "Binnenkort",
+        "eyebrow": "NOG HEEL EVEN GEDULD",
+        "heading": "En er komt nog iets aan.",
+        "heading_accent": "Wat? Dat verklappen we nog niet.",
+        "intro": "We werken aan het volgende Tabblie-product. Wát het wordt houden we nog even voor onszelf — maar waar het aan moet voldoen, dat staat al vast.",
+        "image_alt": "Het volgende Tabblie-product, nog niet onthuld",
+        "link_label": "Bekijk wat eraan komt",
+        "signup_title": "Wil je 'm als eerste proberen?",
+        "signup_sub": "Schrijf je in en je krijgt bij de lancering gratis samples in de bus. Geen kosten, geen verplichting.",
+        "placeholder": "Je e-mailadres",
+        "button_text": "Ja, ik wil gratis samples",
+        "signup_tag": "sample-launch",
+        "success_text": "Gelukt! Je staat op de lijst voor gratis samples.",
+        "terms": "Gratis samples bij de lancering, zolang de voorraad strekt. Geen spam — uitschrijven kan altijd."
+      }
+    },
     "tabblie_hiw_main": {
       "type": "tabblie-how-it-works",
       "blocks": {
@@ -601,20 +819,6 @@
       "settings": {
         "eyebrow": "Zo werkt het",
         "title": "Drie stappen naar een schoner huis."
-      }
-    },
-    "tabblie_guarantee_main": {
-      "type": "tabblie-guarantee",
-      "settings": {
-        "eyebrow": "ONZE GARANTIE",
-        "heading": "Probeer het 30 dagen.",
-        "heading_accent": "Risicovrij!",
-        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
-        "button_text": "Bestel nu & bespaar",
-        "button_url": "",
-        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
-        "image_alt": "30 dagen proefwassen",
-        "badge_text": "30 dagen proef wassen"
       }
     },
     "tabblie_testi_main": {
@@ -688,165 +892,18 @@
         "title": "Eindelijk milieuvriendelijk schoonmaken — zonder in te leveren op kwaliteit, looks of prijs."
       }
     },
-    "tabblie_buy_vaatwas": {
-      "type": "tabblie-buy-feature",
-      "blocks": {
-        "b1": {
-          "type": "benefit",
-          "settings": {
-            "text": "Geen half opgeloste blokjes"
-          }
-        },
-        "b2": {
-          "type": "benefit",
-          "settings": {
-            "text": "Biologisch afbreekbaar"
-          }
-        },
-        "b3": {
-          "type": "benefit",
-          "settings": {
-            "text": "100% plastic- & microplasticvrij"
-          }
-        },
-        "b4": {
-          "type": "benefit",
-          "settings": {
-            "text": "Gratis verzending vanaf €30, morgen verstuurd"
-          }
-        }
-      },
-      "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4"
-      ],
+    "tabblie_guarantee_main": {
+      "type": "tabblie-guarantee",
       "settings": {
-        "product": "tabblie-vaatwasstrips",
-        "bg_color": "#FDF6EE",
-        "compact": true,
-        "image_side": "right",
-        "eyebrow": "VOOR DE VAATWASSER",
-        "title": "Tabblie Vaatwasstrips",
-        "rating": "4.5",
-        "review_quote": "De vaatwasstrips werken zelfs beter dan mijn oude tabs. Geen residu, geen plastic, en mijn glazen zijn echt schoon.",
-        "review_author": "Thomas V. — Rotterdam",
-        "review_avatar_asset": "tabblie-avatar-thomas.jpg",
-        "button_text": "In winkelwagen",
-        "media_index": 2
-      }
-    },
-    "tabblie_buy_toilet": {
-      "type": "tabblie-buy-feature",
-      "blocks": {
-        "b1": {
-          "type": "benefit",
-          "settings": {
-            "text": "Frisse pot zonder plastic fles"
-          }
-        },
-        "b2": {
-          "type": "benefit",
-          "settings": {
-            "text": "Biologisch afbreekbaar"
-          }
-        },
-        "b3": {
-          "type": "benefit",
-          "settings": {
-            "text": "100% plastic- & microplasticvrij"
-          }
-        },
-        "b4": {
-          "type": "benefit",
-          "settings": {
-            "text": "Gratis verzending vanaf €30, morgen verstuurd"
-          }
-        }
-      },
-      "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4"
-      ],
-      "settings": {
-        "product": "tabblie-toiletstrips",
-        "bg_color": "#FDF6EE",
-        "compact": true,
-        "image_side": "left",
-        "eyebrow": "VOOR HET TOILET",
-        "title": "Tabblie Toiletstrips",
-        "rating": "4.5",
-        "review_quote": "Een strip zónder chloor en bleek die de wc echt schoon krijgt? Dat geloofde ik dus niet. Maar het werkt — en het scheelt enorm veel ruimte onder de gootsteen.",
-        "review_author": "Sophie M. — Antwerpen",
-        "review_avatar_asset": "tabblie-avatar-sophie.jpg",
-        "button_text": "In winkelwagen",
-        "media_index": 2
-      }
-    },
-    "tabblie_cs_home": {
-      "type": "tabblie-coming-soon",
-      "blocks": {
-        "p1": {
-          "type": "promise",
-          "settings": {
-            "text": "100% plastic- & microplasticvrij"
-          }
-        },
-        "p2": {
-          "type": "promise",
-          "settings": {
-            "text": "Biologisch afbreekbaar"
-          }
-        },
-        "p3": {
-          "type": "promise",
-          "settings": {
-            "text": "Gewoon weer een strip — geen fles, geen gedoe"
-          }
-        },
-        "p4": {
-          "type": "promise",
-          "settings": {
-            "text": "Duurzaam gemaakt, eerlijk geprijsd"
-          }
-        },
-        "p5": {
-          "type": "promise",
-          "settings": {
-            "text": "30 dagen proberen — niet goed, geld terug"
-          }
-        }
-      },
-      "block_order": [
-        "p1",
-        "p2",
-        "p3",
-        "p4",
-        "p5"
-      ],
-      "settings": {
-        "bg_color": "#E1ECFA",
-        "compact": true,
-        "image_side": "right",
-        "heading_tag": "h2",
-        "product": "tabblie-binnenkort",
-        "stamp_text": "Binnenkort",
-        "eyebrow": "NOG HEEL EVEN GEDULD",
-        "heading": "Er komt iets aan.",
-        "heading_accent": "Wat? Dat verklappen we nog niet.",
-        "intro": "We werken aan het volgende Tabblie-product. Wát het wordt houden we nog even voor onszelf — maar waar het aan moet voldoen, dat staat al vast.",
-        "image_alt": "Het volgende Tabblie-product, nog niet onthuld",
-        "link_label": "Bekijk wat eraan komt",
-        "signup_title": "Wil je 'm als eerste proberen?",
-        "signup_sub": "Schrijf je in en je krijgt bij de lancering gratis samples in de bus. Geen kosten, geen verplichting.",
-        "placeholder": "Je e-mailadres",
-        "button_text": "Ja, ik wil gratis samples",
-        "signup_tag": "sample-launch",
-        "success_text": "Gelukt! Je staat op de lijst voor gratis samples.",
-        "terms": "Gratis samples bij de lancering, zolang de voorraad strekt. Geen spam — uitschrijven kan altijd."
+        "eyebrow": "ONZE GARANTIE",
+        "heading": "Probeer het 30 dagen.",
+        "heading_accent": "Risicovrij!",
+        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
+        "button_text": "Bestel nu & bespaar",
+        "button_url": "",
+        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
+        "image_alt": "30 dagen proefwassen",
+        "badge_text": "30 dagen proef wassen"
       }
     },
     "tabblie_impact_main": {
@@ -1370,161 +1427,6 @@
         "button_text": "Ik wil 15% korting",
         "terms": "Geen spam, alleen schone deals. Je kunt je altijd uitschrijven."
       }
-    },
-    "tabblie_tierelier_main": {
-      "type": "tabblie-tierelier",
-      "blocks": {
-        "item_1": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/1_2979738d-9656-43ce-8efa-19856c3ee753.png",
-            "label": "Natuurlijke formule",
-            "sublabel": "Zacht voor jou, hard voor vuil."
-          }
-        },
-        "item_2": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/2_9e3d8a68-d3a0-47fa-a5b2-6242d565b40e.png",
-            "label": "Biologisch afbreekbaar",
-            "sublabel": "Keer terug naar de natuur."
-          }
-        },
-        "item_3": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/3_96fadf1d-b746-4710-bac5-3447a9828883.png",
-            "label": "Geen plastic, nooit",
-            "sublabel": "Geen microplastics. Nooit."
-          }
-        },
-        "item_4": {
-          "type": "item",
-          "settings": {
-            "image": "shopify://shop_images/4_7889bf7b-2673-4d52-bde0-f37fa754b3e7.png",
-            "label": "Super effectief",
-            "sublabel": "Schitterend schoon, elke keer."
-          }
-        }
-      },
-      "block_order": [
-        "item_1",
-        "item_2",
-        "item_3",
-        "item_4"
-      ],
-      "settings": {
-        "bg_color": "#F08CAE",
-        "heading_line1": "Werkt als een",
-        "heading_line2": "tierelier.",
-        "pill_text": "Beter voor de planeet."
-      }
-    },
-    "tabblie_buy_main": {
-      "type": "tabblie-buy-feature",
-      "blocks": {
-        "b1": {
-          "type": "benefit",
-          "settings": {
-            "text": "32 strips — goed voor 64 wasbeurten"
-          }
-        },
-        "b2": {
-          "type": "benefit",
-          "settings": {
-            "text": "Biologisch afbreekbaar"
-          }
-        },
-        "b3": {
-          "type": "benefit",
-          "settings": {
-            "text": "100% plastic- & microplasticvrij"
-          }
-        },
-        "b4": {
-          "type": "benefit",
-          "settings": {
-            "text": "Gratis verzending vanaf €30, morgen verstuurd"
-          }
-        }
-      },
-      "block_order": [
-        "b1",
-        "b2",
-        "b3",
-        "b4"
-      ],
-      "settings": {
-        "product": "tabblie-wasstrips",
-        "bg_color": "#FDF6EE",
-        "compact": true,
-        "image_side": "left",
-        "anchor_id": "tabblie-strips",
-        "eyebrow": "MEEST GEKOZEN",
-        "title": "Tabblie Wasstrips",
-        "rating": "4.5",
-        "review_quote": "Zoveel goedkoper, en geen gemors of verspilling meer. Ook geen zware flessen meer sjouwen. Ik stap nooit meer terug over op vloeibaar wasmiddel.",
-        "review_author": "Lisa B. — Amsterdam",
-        "review_avatar_asset": "tabblie-avatar-lisa.jpg",
-        "button_text": "In winkelwagen",
-        "media_index": 2
-      }
-    },
-    "tabblie_blog_teaser": {
-      "type": "tabblie-blog-teaser",
-      "settings": {
-        "bg_color": "#F8E6E8",
-        "eyebrow": "EVEN EERLIJK",
-        "heading": "De wasmiddelwereld zit vol troep.\nLetterlijk.",
-        "body": "<p>Grote plastic flessen vol water dat je thuis gewoon uit de kraan haalt, rondgereden in vrachtwagens vol diesel. En de ‘oplosbare’ pods en de meeste andere wasstrips? Die zitten vol PVA — een synthetisch, in water oplosbaar plastic. Wij gebruiken zeewier.</p>",
-        "bold_line": "Lees waarom wij niet meedoen.",
-        "button_text": "Ontdek de hele soap",
-        "button_url": "/blogs/de-schone-was",
-        "bg_image_asset": "tabblie-bottles-bg.jpg",
-        "image_asset": "tabblie-pack-was.png",
-        "image_alt": "Tabblie wasstrips verpakking - 100% plasticvrij",
-        "facts_title": "Wist je dit?"
-      },
-      "blocks": {
-        "f1": {
-          "type": "fact",
-          "settings": {
-            "number": "90%",
-            "description": "van de schoonmaakproducten bevat microplastics",
-            "is_positive": false
-          }
-        },
-        "f2": {
-          "type": "fact",
-          "settings": {
-            "number": "24",
-            "description": "kilo per persoon aan plastic afval van schoonmaakproducten",
-            "is_positive": false
-          }
-        },
-        "f3": {
-          "type": "fact",
-          "settings": {
-            "number": "91%",
-            "description": "van al het plastic wordt niet gerecycled",
-            "is_positive": false
-          }
-        },
-        "f4": {
-          "type": "fact",
-          "settings": {
-            "number": "100%",
-            "description": "plastic- & microplasticvrij",
-            "is_positive": true
-          }
-        }
-      },
-      "block_order": [
-        "f1",
-        "f2",
-        "f3",
-        "f4"
-      ]
     }
   },
   "order": [
@@ -1535,13 +1437,11 @@
     "tabblie_blog_teaser",
     "tabblie_pf_main",
     "tabblie_hiw2_main",
-    "tabblie_buy_main",
-    "tabblie_buy_vaatwas",
-    "tabblie_buy_toilet",
+    "tabblie_products_main",
     "tabblie_cs_home",
     "tabblie_hiw_main",
-    "tabblie_guarantee_main",
     "tabblie_testi_main",
+    "tabblie_guarantee_main",
     "tabblie_impact_main",
     "tabblie_insta_main",
     "rich_text_PNctxc",
