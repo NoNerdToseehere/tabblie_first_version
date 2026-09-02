@@ -175,10 +175,10 @@
       {%- endif -%}
       <p class="tabblie-ahero__meta">
         {%- if section.settings.show_author -%}
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>{{ article.author | escape }}</span>
+          <span><svg viewBox="0 0 24 24" fill="none" style="fill:none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>{{ article.author | escape }}</span>
         {%- endif -%}
         {%- if section.settings.show_reading_time -%}
-          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>{{ minutes }} min leestijd</span>
+          <span><svg viewBox="0 0 24 24" fill="none" style="fill:none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>{{ minutes }} min leestijd</span>
         {%- endif -%}
       </p>
     </div>
