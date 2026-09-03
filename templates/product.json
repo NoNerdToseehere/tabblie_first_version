@@ -1169,7 +1169,8 @@
       "settings": {
         "icon": "none",
         "eyebrow": "",
-        "title": ""
+        "title": "",
+        "open_first": true
       }
     }
   },

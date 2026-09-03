@@ -859,7 +859,8 @@
       "settings": {
         "icon": "question",
         "eyebrow": "VEELGESTELDE VRAGEN",
-        "title": "Alles wat je wilt weten"
+        "title": "Alles wat je wilt weten",
+        "open_first": true
       }
     }
   },
