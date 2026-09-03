@@ -3,8 +3,9 @@
   Simple opener for every blog article (founder reference 2026-09-03: the
   "Even eerlijk" page hero). A pastel band, everything centred: the
   category as dashed eyebrow, the article title with the part after the
-  colon in orange on its own line, the excerpt as subline. No photo, no
-  date, no author, no chip. Carries the page's single h1 — keep "Hide
+  colon in orange on its own line, the excerpt as subline, a small meta
+  line (author, date, reading time) and the newspaper doodles on desktop.
+  No photo, no chip. Carries the page's single h1 — keep "Hide
   article title" on in the main article section.
 {%- endcomment -%}
 
@@ -37,6 +38,9 @@
     endcase
   endif
 
+  assign words = article.content | strip_html | split: ' ' | size
+  assign minutes = words | divided_by: 200 | at_least: 1
+
   assign parts = article.title | split: ': '
   assign title_main = article.title
   assign title_accent = ''
@@ -53,7 +57,30 @@
     padding: clamp(48px, 6vw, 88px) clamp(16px, 3vw, 40px) clamp(60px, 8vw, 116px);
     text-align: center;
   }
-  .tabblie-ahero__inner { max-width: 780px; margin: 0 auto; }
+  .tabblie-ahero__inner { position: relative; max-width: 780px; margin: 0 auto; }
+
+  /* newspaper masthead doodles flanking the headline (desktop only) */
+  .tabblie-ahero__doodle { position: absolute; display: none; pointer-events: none; }
+  .tabblie-ahero__doodle--stripes { left: -70px; top: 34px; width: 52px; height: 52px; }
+  .tabblie-ahero__doodle--star { right: -66px; top: 22px; width: 46px; height: 46px; transform: rotate(14deg); }
+  @media (min-width: 1024px) { .tabblie-ahero__doodle { display: block; } }
+
+  /* small meta line: author, date, reading time */
+  .tabblie-ahero__meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px 18px;
+    margin: 22px 0 0;
+    font-family: var(--text-font-family);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #26523F;
+  }
+  .tabblie-ahero__meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .tabblie-ahero__meta svg { width: 15px; height: 15px; flex-shrink: 0; }
   .tabblie-ahero__eyebrow {
     font-family: var(--text-font-family);
     font-size: 13px;
@@ -97,6 +124,17 @@
     {%- if article.excerpt != blank -%}
       <p class="tabblie-ahero__sub">{{ article.excerpt | strip_html }}</p>
     {%- endif -%}
+    {%- if section.settings.show_meta -%}
+      <p class="tabblie-ahero__meta">
+        <span><svg viewBox="0 0 24 24" fill="none" style="fill:none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>{{ article.author | escape }}</span>
+        <span><svg viewBox="0 0 24 24" fill="none" style="fill:none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>{{ article.published_at | date: '%d-%m-%Y' }}</span>
+        <span><svg viewBox="0 0 24 24" fill="none" style="fill:none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>{{ minutes }} min leestijd</span>
+      </p>
+    {%- endif -%}
+    {%- if section.settings.show_doodles -%}
+      <svg class="tabblie-ahero__doodle tabblie-ahero__doodle--stripes" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#26523F" stroke-width="5" stroke-linecap="round"><path d="M14 44 4 51M22 32 8 30M35 24 31 9"/></g></svg>
+      <svg class="tabblie-ahero__doodle tabblie-ahero__doodle--star" viewBox="0 0 64 64" aria-hidden="true"><path d="m32 5 7 18 20 1-16 12 5 20-16-11-17 11 6-20L5 24l20-1Z" fill="none" stroke="#F5C842" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    {%- endif -%}
   </div>
 </section>
 
@@ -109,7 +147,9 @@
     { "type": "paragraph", "content": "Categorie, titel en intro komen uit het artikel zelf. Zet bij de sectie 'Blog post' de titel en hoofdfoto uit, zodat de pagina één h1 houdt." },
     { "type": "checkbox", "id": "color_by_category", "label": "Achtergrond op basis van categorie", "info": "Waswijs oranje, Plasticpraat teal, Onze producten geel, Hacks roze, Schermen blauw.", "default": true },
     { "type": "color", "id": "bg_color", "label": "Achtergrond (als categoriekleur uit staat of geen categorie)", "default": "#FDEEE6" },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow (leeg = categorie)" }
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow (leeg = categorie)" },
+    { "type": "checkbox", "id": "show_meta", "label": "Toon auteur, datum en leestijd", "default": true },
+    { "type": "checkbox", "id": "show_doodles", "label": "Toon de krantendoodles naast de kop (desktop)", "default": true }
   ],
   "presets": [{ "name": "Artikel hero" }]
 }
