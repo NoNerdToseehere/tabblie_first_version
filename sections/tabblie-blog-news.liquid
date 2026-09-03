@@ -6,15 +6,18 @@
   per-article images can be overridden with block mappings.
 {%- endcomment -%}
 
+{%- paginate blog.articles by section.settings.per_page -%}
 {%- liquid
   assign articles_all = blog.articles
 
   assign lead = nil
-  if section.settings.lead_article != blank and current_tags == blank
-    assign lead = section.settings.lead_article
-  endif
-  if lead == nil
-    assign lead = articles_all.first
+  if paginate.current_page == 1
+    if section.settings.lead_article != blank and current_tags == blank
+      assign lead = section.settings.lead_article
+    endif
+    if lead == nil
+      assign lead = articles_all.first
+    endif
   endif
 -%}
 
@@ -59,7 +62,7 @@
           {%- liquid
             assign side_count = 0
             for a in articles_all
-              if a.handle == lead.handle
+              if lead and a.handle == lead.handle
                 continue
               endif
               if side_count >= 2
@@ -79,10 +82,10 @@
           assign skipped = 0
           assign gi = 0
           for a in articles_all
-            if a.handle == lead.handle
+            if lead and a.handle == lead.handle
               continue
             endif
-            if skipped < 2
+            if lead and skipped < 2
               assign skipped = skipped | plus: 1
               continue
             endif
@@ -129,8 +132,30 @@
         </div>
       </aside>
     </div>
+    {%- if paginate.pages > 1 -%}
+      <nav class="tbn__pager" aria-label="Pagina's">
+        {%- if paginate.previous -%}
+          <a class="tbn__pager-btn" href="{{ paginate.previous.url }}"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M27 16H7M14 9l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Vorige</a>
+        {%- endif -%}
+        <span class="tbn__pager-pages">
+          {%- for part in paginate.parts -%}
+            {%- if part.is_link -%}
+              <a class="tbn__pager-page" href="{{ part.url }}">{{ part.title }}</a>
+            {%- elsif part.title == paginate.current_page -%}
+              <span class="tbn__pager-page tbn__pager-page--current" aria-current="page">{{ part.title }}</span>
+            {%- else -%}
+              <span class="tbn__pager-gap">{{ part.title }}</span>
+            {%- endif -%}
+          {%- endfor -%}
+        </span>
+        {%- if paginate.next -%}
+          <a class="tbn__pager-btn tbn__pager-btn--next" href="{{ paginate.next.url }}">Volgende<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 16h20M18 9l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        {%- endif -%}
+      </nav>
+    {%- endif -%}
   </div>
 </section>
+{%- endpaginate -%}
 
 <script>
   (function() {
@@ -346,6 +371,27 @@
   }
   .tbn__nl-btn:hover { background: #D4531D; color: #ffffff; }
 
+  /* pager: newspaper page numbers between the rules */
+  .tbn__pager {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 16px;
+    margin-top: 34px; padding-top: 22px; border-top: 2px solid #26523F;
+  }
+  .tbn__pager-pages { display: inline-flex; gap: 8px; }
+  .tbn__pager-page {
+    display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%;
+    border: 2px solid #1F1209; background: #FFFFFF; color: #26523F; font-family: var(--font-heading-family); font-size: 16px; font-weight: 800;
+    text-decoration: none; box-shadow: 2px 3px 0 rgba(31, 18, 9, 0.2); transition: transform 0.2s ease;
+  }
+  .tbn__pager-page:hover { transform: translateY(-2px); color: #E8622A; }
+  .tbn__pager-page--current { background: #26523F; color: #FFFFFF; }
+  .tbn__pager-gap { align-self: center; color: #26523F; font-weight: 800; }
+  .tbn__pager-btn {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 20px; border-radius: 999px;
+    background: #E8622A; color: #FFFFFF; font-family: var(--font-body-family); font-size: 15px; font-weight: 800; text-decoration: none;
+  }
+  .tbn__pager-btn svg { width: 15px; height: 15px; fill: none; }
+  .tbn__pager-btn:hover { background: #D4531D; color: #FFFFFF; }
+
   /* ── story cards ── */
   .tbn-card {
     display: flex;
@@ -474,39 +520,107 @@
   "name": "Blog krant",
   "tag": "section",
   "settings": [
-    { "type": "text", "id": "title", "label": "Grote titel", "default": "Verhalen voor een schoner huis" },
-    { "type": "article", "id": "lead_article", "label": "Hoofdartikel (leeg = nieuwste)" },
-    { "type": "text", "id": "mostread_title", "label": "Titel meest gelezen", "default": "Meest gelezen" },
-    { "type": "text", "id": "nl_title", "label": "Nieuwsbrief titel", "default": "Schone verhalen in je inbox" },
-    { "type": "textarea", "id": "nl_text", "label": "Nieuwsbrief tekst", "default": "Ontvang nieuwe tips, verhalen en exclusieve acties in je mailbox." },
-    { "type": "text", "id": "nl_button", "label": "Nieuwsbrief knoptekst", "default": "Ik lees mee" },
-    { "type": "url", "id": "nl_url", "label": "Nieuwsbrief knop link (leeg = scroll naar footer)" }
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Grote titel",
+      "default": "Verhalen voor een schoner huis"
+    },
+    {
+      "type": "range",
+      "id": "per_page",
+      "label": "Artikelen per pagina",
+      "min": 6,
+      "max": 24,
+      "step": 1,
+      "default": 12,
+      "info": "Voorpagina: 1 hoofdverhaal + 2 kleine + de rest in het raster. Daarna paginanummers en Volgende."
+    },
+    {
+      "type": "article",
+      "id": "lead_article",
+      "label": "Hoofdartikel (leeg = nieuwste)"
+    },
+    {
+      "type": "text",
+      "id": "mostread_title",
+      "label": "Titel meest gelezen",
+      "default": "Meest gelezen"
+    },
+    {
+      "type": "text",
+      "id": "nl_title",
+      "label": "Nieuwsbrief titel",
+      "default": "Schone verhalen in je inbox"
+    },
+    {
+      "type": "textarea",
+      "id": "nl_text",
+      "label": "Nieuwsbrief tekst",
+      "default": "Ontvang nieuwe tips, verhalen en exclusieve acties in je mailbox."
+    },
+    {
+      "type": "text",
+      "id": "nl_button",
+      "label": "Nieuwsbrief knoptekst",
+      "default": "Ik lees mee"
+    },
+    {
+      "type": "url",
+      "id": "nl_url",
+      "label": "Nieuwsbrief knop link (leeg = scroll naar footer)"
+    }
   ],
   "blocks": [
     {
       "type": "tab",
       "name": "Categorie tab",
       "settings": [
-        { "type": "text", "id": "label", "label": "Label", "default": "Alles" },
-        { "type": "text", "id": "tag", "label": "Artikel-tag (leeg = alles)" }
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Alles"
+        },
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Artikel-tag (leeg = alles)"
+        }
       ]
     },
     {
       "type": "img",
       "name": "Afbeelding voor artikel",
       "settings": [
-        { "type": "article", "id": "article", "label": "Artikel" },
-        { "type": "text", "id": "image_asset", "label": "Asset bestandsnaam" }
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Artikel"
+        },
+        {
+          "type": "text",
+          "id": "image_asset",
+          "label": "Asset bestandsnaam"
+        }
       ]
     },
     {
       "type": "top",
       "name": "Meest gelezen artikel",
       "settings": [
-        { "type": "article", "id": "article", "label": "Artikel" }
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Artikel"
+        }
       ]
     }
   ],
-  "presets": [{ "name": "Blog krant" }]
+  "presets": [
+    {
+      "name": "Blog krant"
+    }
+  ]
 }
 {% endschema %}
