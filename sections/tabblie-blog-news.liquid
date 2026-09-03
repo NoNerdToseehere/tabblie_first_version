@@ -10,14 +10,26 @@
 {%- liquid
   assign articles_all = blog.articles
 
+  comment
+    The pinned lead story counts toward the page budget and is skipped in
+    the loops on every page, so a page never shows more than per_page.
+  endcomment
+  assign pinned = nil
+  if section.settings.lead_article != blank and current_tags == blank
+    assign pinned = section.settings.lead_article
+  endif
   assign lead = nil
   if paginate.current_page == 1
-    if section.settings.lead_article != blank and current_tags == blank
-      assign lead = section.settings.lead_article
-    endif
-    if lead == nil
+    if pinned
+      assign lead = pinned
+    else
       assign lead = articles_all.first
     endif
+  endif
+  assign budget = section.settings.per_page
+  assign shown = 0
+  if lead
+    assign shown = 1
   endif
 -%}
 
@@ -69,6 +81,7 @@
                 break
               endif
               assign side_count = side_count | plus: 1
+              assign shown = shown | plus: 1
               render 'blog-news-card', article: a, blocks: section.blocks, style: 'side'
             endfor
           -%}
@@ -85,10 +98,17 @@
             if lead and a.handle == lead.handle
               continue
             endif
+            if pinned and a.handle == pinned.handle
+              continue
+            endif
             if lead and skipped < 2
               assign skipped = skipped | plus: 1
               continue
             endif
+            if shown >= budget
+              break
+            endif
+            assign shown = shown | plus: 1
             comment
               Rows alternate: 3 image-top cards, then 3 horizontal cards.
             endcomment
