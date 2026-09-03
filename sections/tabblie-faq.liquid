@@ -49,7 +49,7 @@
 
   .tabblie-faq__title {
     font-family: var(--font-heading-family);
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(26px, 4vw, 32px);
     font-weight: 800;
     color: #26523F;
     letter-spacing: -0.02em;
@@ -81,7 +81,7 @@
     cursor: pointer;
     list-style: none;
     font-family: var(--heading-font-family);
-    font-size: clamp(1.15rem, 1.35vw, 1.35rem);
+    font-size: 18px;
     font-weight: 700;
     color: #182D20;
     line-height: 1.35;
@@ -139,9 +139,9 @@
   .tabblie-faq__answer {
     padding: 0 0 24px;
     font-family: var(--text-font-family);
-    font-size: clamp(0.95rem, 1vw, 1.05rem);
-    color: rgba(24, 45, 32, 0.7);
-    line-height: 1.7;
+    font-size: 17px;
+    color: rgba(24, 45, 32, 0.88);
+    line-height: 1.6;
     max-width: 640px;
   }
 
@@ -183,12 +183,12 @@
 
     .tabblie-faq__item summary {
       padding: 18px 0;
-      font-size: 1.05rem;
+      font-size: 17px;
     }
 
     .tabblie-faq__answer {
       padding-bottom: 20px;
-      font-size: 0.95rem;
+      font-size: 16px;
     }
   }
 </style>
@@ -228,7 +228,7 @@
     {%- if section.blocks.size > 0 -%}
       <div class="tabblie-faq__list">
         {%- for block in section.blocks -%}
-          <details class="tabblie-faq__item" {{ block.shopify_attributes }}>
+          <details class="tabblie-faq__item"{% if section.settings.open_first and forloop.first %} open{% endif %} {{ block.shopify_attributes }}>
             <summary>
               <span>{{ block.settings.question }}</span>
               <span class="tabblie-faq__icon" aria-hidden="true"></span>
@@ -265,6 +265,7 @@
         { "value": "turtle", "label": "Turtle (vegan/animal)" }
       ]
     },
+    { "type": "checkbox", "id": "open_first", "label": "Eerste vraag standaard open", "default": false },
     {
       "type": "text",
       "id": "eyebrow",

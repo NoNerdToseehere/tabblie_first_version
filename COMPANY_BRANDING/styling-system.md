@@ -70,7 +70,7 @@ background: linear-gradient(135deg, #E8622A 0%, #F5C842 50%, #5BB8A0 100%);
 |---|---|
 | tabblie-page-hero (default) | `#FDF6EE` |
 | tabblie-collection-hero | Blue gradient (above) |
-| tabblie-product-feature | `#FFFFFF` |
+| tabblie-product-feature | `#FFFFFF` — corner doodle is a per-instance choice (streepjes / ster / bubbels / geen); when several cards stack, vary them and leave some empty instead of stripes on every card (vaatwas PDP, 2026-09-03) |
 | tabblie-product-cards | `#FDF6EE` — three product tiles in their identity pastels; the `tabblie-coming-soon` blue canvas tucks under it at the same 1100px width when it follows directly (2026-09-02) |
 | tabblie-testimonials | `#FFFFFF` |
 | tabblie-ingredients | `#FFFFFF` |

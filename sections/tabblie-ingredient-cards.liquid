@@ -54,7 +54,7 @@
       {%- endif -%}
 
       {%- if ingredients.size > 0 -%}
-      <div class="tabblie-ingc__grid">
+      <div class="tabblie-ingc__grid" data-count="{{ ingredients.size }}">
         {%- for block in ingredients -%}
           <div class="tabblie-ingc__card" {{ block.shopify_attributes }}>
             <h3 class="tabblie-ingc__name">{{ block.settings.name | escape }}</h3>
@@ -254,7 +254,12 @@
   @media (min-width: 768px) {
     .tabblie-ingc__head { margin-bottom: 32px; }
     .tabblie-ingc__grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .tabblie-ingc__grid[data-count="4"] { grid-template-columns: repeat(2, 1fr); }
     .tabblie-ingc__promise { font-size: 15px; }
+  }
+  @media (min-width: 900px) {
+    .tabblie-ingc__grid[data-count="4"] { grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .tabblie-ingc__grid[data-count="4"] .tabblie-ingc__card { padding: 14px 14px; }
   }
 {% endstyle %}
 

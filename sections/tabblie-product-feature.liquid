@@ -191,8 +191,22 @@
   }
 </style>
 
+<style>
+  .tabblie-pf__doodle { position: absolute; height: auto; pointer-events: none; }
+  @media (max-width: 749px) { .tabblie-pf__doodle { display: none; } }
+</style>
 <section class="tabblie-pf" id="tabblie-pf-{{ section.id }}" style="position:relative;overflow:hidden;--pf-media-ratio:{{ section.settings.image_ratio | default: '4 / 5' }}">
-  <svg style="position:absolute;bottom:42px;right:5%;width:clamp(56px,7vw,92px);height:auto;color:#26523F;transform:rotate(20deg) scaleX(-1);pointer-events:none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
+  {%- liquid
+    assign doodle = section.settings.doodle | default: 'stripes'
+  -%}
+  {%- case doodle -%}
+    {%- when 'stripes' -%}
+      <svg class="tabblie-pf__doodle" style="bottom:42px;right:5%;width:clamp(56px,7vw,92px);color:#26523F;transform:rotate(20deg) scaleX(-1)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M4 14 8 8"/><path d="M10 16l2-8"/><path d="M15 17l4-6"/></svg>
+    {%- when 'star' -%}
+      <svg class="tabblie-pf__doodle" style="top:38px;right:6%;width:clamp(40px,4.5vw,58px);transform:rotate(14deg)" viewBox="0 0 64 64" aria-hidden="true"><path d="m32 5 7 18 20 1-16 12 5 20-16-11-17 11 6-20L5 24l20-1Z" fill="none" stroke="#F5C842" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    {%- when 'bubbles' -%}
+      <svg class="tabblie-pf__doodle" style="bottom:28px;{% if section.settings.image_side == 'left' %}right:4%{% else %}left:4%{% endif %};width:clamp(64px,8vw,110px);color:#5BB8A0;opacity:0.35" viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><circle cx="42" cy="54" r="33" opacity="0.35"/><circle cx="42" cy="54" r="33" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 46 A 23 23 0 0 1 33 31" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="79" cy="28" r="13" opacity="0.35"/><circle cx="79" cy="28" r="13" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="86" cy="68" r="6" opacity="0.55"/></svg>
+  {%- endcase -%}
   <div class="tabblie-pf__inner{% if section.settings.image_side == 'right' %} tabblie-pf__inner--reversed{% endif %}">
 
     <div class="tabblie-pf__media">
@@ -290,6 +304,18 @@
         { "value": "right", "label": "Right" }
       ],
       "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "doodle",
+      "label": "Doodle",
+      "default": "stripes",
+      "options": [
+        { "value": "stripes", "label": "Streepjes (rechtsonder)" },
+        { "value": "star", "label": "Ster (rechtsboven)" },
+        { "value": "bubbles", "label": "Bubbels (linksonder)" },
+        { "value": "none", "label": "Geen" }
+      ]
     },
     {
       "type": "image_picker",

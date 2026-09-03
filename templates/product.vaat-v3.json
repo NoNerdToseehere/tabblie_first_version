@@ -501,13 +501,13 @@
         "b1": {
           "type": "benefit",
           "settings": {
-            "text": "Geen plastic wikkels of PVA-folie"
+            "text": "Geen plastic wikkel, geen PVA-folie"
           }
         },
         "b2": {
           "type": "benefit",
           "settings": {
-            "text": "Biologisch afbreekbaar"
+            "text": "Lost volledig op, biologisch afbreekbaar"
           }
         },
         "b3": {
@@ -526,11 +526,12 @@
         "image_ratio": "4 / 5",
         "image_side": "left",
         "image": "shopify://shop_images/Tabblie-26.jpg",
-        "eyebrow": "",
-        "title": "Stop plasticvervuiling",
-        "description": "Elke vaatwasbeurt met Tabblie is er één zonder plastic.",
+        "eyebrow": "NUL PLASTIC",
+        "title": "Stop plasticvervuiling.",
+        "description": "Elke vaatwasbeurt met Tabblie is er één zonder plastic bak, zonder wikkel, zonder folie.",
         "button_text": "",
-        "button_url": "#"
+        "button_url": "",
+        "doodle": "star"
       }
     },
     "tabblie_benefit_card_2": {
@@ -539,13 +540,13 @@
         "b1": {
           "type": "benefit",
           "settings": {
-            "text": "Reinigt, ontvet en beschermt tegen kalk in één"
+            "text": "64 vaatwasbeurten per pak, voorgedoseerd"
           }
         },
         "b2": {
           "type": "benefit",
           "settings": {
-            "text": "Halve strip voor een halfvolle machine — makkelijk doseren"
+            "text": "Halve strip voor een halfvolle machine"
           }
         },
         "b3": {
@@ -564,11 +565,12 @@
         "image_ratio": "1 / 1",
         "image_side": "right",
         "image": "shopify://shop_images/1_732b5100-dd14-47e2-8089-925275b3b445.jpg",
-        "eyebrow": "",
-        "title": "Betaalbaar en effectief",
-        "description": "Alles wat een tablet doet, zonder de nadelen.",
+        "eyebrow": "64 BEURTEN PER PAK",
+        "title": "Alles wat een tablet doet. Zonder de nadelen.",
+        "description": "Reinigt, ontvet en beschermt tegen kalk, in één flinterdunne strip. Vanaf €0,18 per vaatwasbeurt.",
         "button_text": "",
-        "button_url": "#"
+        "button_url": "",
+        "doodle": "none"
       }
     },
     "tabblie_benefit_card_3": {
@@ -583,13 +585,13 @@
         "b2": {
           "type": "benefit",
           "settings": {
-            "text": "Glanzende glazen zonder doffe waas"
+            "text": "Glanzende glazen, geen doffe waas"
           }
         },
         "b3": {
           "type": "benefit",
           "settings": {
-            "text": "Lost restloos op — geen residu op je vaat"
+            "text": "Lost restloos op, geen residu op je vaat"
           }
         }
       },
@@ -602,11 +604,12 @@
         "image_ratio": "4 / 5",
         "image_side": "left",
         "image": "shopify://shop_images/Tabblie-23_b909ed55-aed6-4487-a91a-d3c7206368fa.jpg",
-        "eyebrow": "",
-        "title": "Krachtige reiniging",
-        "description": "Natuurlijke enzymen breken vet en aangekoekt vuil af.",
+        "eyebrow": "STREEPLOOS",
+        "title": "Krachtige reiniging.",
+        "description": "Natuurlijke enzymen breken vet en aangekoekt vuil af, citroenzuur houdt de kalk van je glazen.",
         "button_text": "",
-        "button_url": "#"
+        "button_url": "",
+        "doodle": "stripes"
       }
     },
     "tabblie_benefit_card_4": {
@@ -615,19 +618,19 @@
         "b1": {
           "type": "benefit",
           "settings": {
-            "text": "Zonder chloor en fosfaten"
+            "text": "100% vegan en dierproefvrij"
           }
         },
         "b2": {
           "type": "benefit",
           "settings": {
-            "text": "Geen kunstmatige kleurstoffen"
+            "text": "Geen microplastics, geen PVA-folie"
           }
         },
         "b3": {
           "type": "benefit",
           "settings": {
-            "text": "Vegan en dierproefvrij"
+            "text": "Biologisch afbreekbaar, lost volledig op"
           }
         }
       },
@@ -640,11 +643,12 @@
         "image_ratio": "1 / 1",
         "image_side": "right",
         "image": "shopify://shop_images/5_7c9b3263-5343-4926-858b-5812367850e7.jpg",
-        "eyebrow": "",
-        "title": "Veilig voor je gezin",
-        "description": "Schone vaat zonder agressieve chemicaliën.",
+        "eyebrow": "VEGAN",
+        "title": "Veilig voor je gezin.",
+        "description": "Plantaardige reinigers en natuurlijke enzymen doen het werk. Geen microplastics, geen PVA.",
         "button_text": "",
-        "button_url": "#"
+        "button_url": "",
+        "doodle": "none"
       }
     },
     "tabblie_benefit_card_5": {
@@ -653,19 +657,19 @@
         "b1": {
           "type": "benefit",
           "settings": {
-            "text": "Past door de brievenbus"
+            "text": "Past door de brievenbus, geen bezorgafspraak"
           }
         },
         "b2": {
           "type": "benefit",
           "settings": {
-            "text": "Neemt nauwelijks ruimte in je keukenkast in"
+            "text": "Neemt bijna geen ruimte in je keukenkast"
           }
         },
         "b3": {
           "type": "benefit",
           "settings": {
-            "text": "Licht genoeg voor iedereen"
+            "text": "Licht genoeg voor iedereen, ook zonder auto"
           }
         }
       },
@@ -678,11 +682,12 @@
         "image_ratio": "4 / 5",
         "image_side": "left",
         "image": "shopify://shop_images/Tabblie-35_8bcc47e1-fcc8-43be-8675-dac7a194caea.jpg",
-        "eyebrow": "",
-        "title": "Compact en licht",
-        "description": "Nooit meer zware pakken tabletten sjouwen.",
+        "eyebrow": "BRIEVENBUSPAKKET",
+        "title": "Compact en licht.",
+        "description": "Een pak van 64 beurten weegt bijna niets. Nooit meer sjouwen met dozen tabletten.",
         "button_text": "",
-        "button_url": "#"
+        "button_url": "",
+        "doodle": "bubbles"
       }
     },
     "tabblie_hiw": {
@@ -721,7 +726,7 @@
       "settings": {
         "bg_color": "#e8622a",
         "eyebrow": "ZO WERKT HET",
-        "title": "Een, twee, drie - alles is schoon",
+        "title": "Een, twee, drie. Alles schoon.",
         "cta_text": "",
         "cta_url": ""
       }
@@ -796,8 +801,8 @@
         "eyebrow": "ONZE BELOFTE",
         "heading": "Samen met jou steunen we milieu-initiatieven voor een groenere planeet",
         "description": "Bij elke bestelling draag je bij aan milieuprojecten. Samen maken we het verschil — strip voor strip.",
-        "button_text": "Meer over onze missie",
-        "button_url": ""
+        "button_text": "Lees waarom we dit doen",
+        "button_url": "/blogs/de-schone-was/toekomst-duurzaam-schoonmaken"
       }
     },
     "tabblie_faq": {
@@ -854,8 +859,8 @@
         }
       },
       "block_order": [
-        "q1",
         "q2",
+        "q1",
         "q3",
         "q4",
         "q5",
@@ -863,12 +868,13 @@
         "q7"
       ],
       "settings": {
-        "icon": "question",
-        "eyebrow": "VEELGESTELDE VRAGEN",
-        "title": "Alles wat je wilt weten"
+        "icon": "none",
+        "eyebrow": "",
+        "title": "",
+        "open_first": true
       }
     },
-    "tabblie_promises": {
+    "tabblie_ingredients": {
       "type": "tabblie-ingredient-cards",
       "blocks": {
         "p1": {
@@ -910,6 +916,42 @@
             "icon": "noplastic",
             "accent": "#FDEEE6"
           }
+        },
+        "ing1": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Natuurlijke enzymen",
+            "description": "Breken vet, zetmeel en aangekoekte etensresten af, ook op lage temperaturen.",
+            "badge_label": "MICROBIEEL",
+            "badge_type": "microbieel"
+          }
+        },
+        "ing2": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Citroenzuur",
+            "description": "Beschermt tegen kalk en zorgt voor streeploze glazen.",
+            "badge_label": "PLANTAARDIG",
+            "badge_type": "plantaardig"
+          }
+        },
+        "ing3": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Natriumcarbonaat",
+            "description": "Maakt het water zachter en versterkt de reinigende werking.",
+            "badge_label": "MINERAAL",
+            "badge_type": "mineraal"
+          }
+        },
+        "ing4": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Plantaardige surfactanten",
+            "description": "Biologisch afbreekbare reinigers op plantbasis die vet losmaken.",
+            "badge_label": "PLANTAARDIG",
+            "badge_type": "plantaardig"
+          }
         }
       },
       "block_order": [
@@ -917,15 +959,19 @@
         "p2",
         "p3",
         "p4",
-        "p5"
+        "p5",
+        "ing1",
+        "ing2",
+        "ing3",
+        "ing4"
       ],
       "settings": {
         "bg_color": "#FDF6EE",
-        "eyebrow": "ALTIJD INBEGREPEN",
-        "title": "Vijf beloftes. Elke strip.",
-        "intro": "",
-        "link_text": "",
-        "link_url": ""
+        "eyebrow": "WAT ZIT ERIN?",
+        "title": "De kracht van elke strip",
+        "intro": "Vier ingrediënten die vet, kalk en aangekoekt vuil aanpakken. Dit zit er in een Tabblie vaatwasstrip.",
+        "link_text": "Lees: waarom onze strips biologisch afbreekbaar en vegan zijn",
+        "link_url": "/blogs/de-schone-was/biologisch-afbreekbaar-en-vegan"
       }
     }
   },
@@ -940,9 +986,9 @@
     "tabblie_benefit_card_5",
     "tabblie_hiw",
     "tabblie_testimonials",
+    "tabblie_ingredients",
     "tabblie_guarantee",
     "tabblie_impact",
-    "tabblie_promises",
     "tabblie_faq"
   ]
 }
