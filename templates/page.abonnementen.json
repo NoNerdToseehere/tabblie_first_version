@@ -20,7 +20,7 @@
           "settings": {
             "title": "1. Kies je strips",
             "description": "Hierboven geregeld met één klik — los per product of mix & match.",
-            "image_asset": ""
+            "image_asset": "tabblie-abo-stap-kies.svg"
           }
         },
         "s2": {
@@ -28,7 +28,7 @@
           "settings": {
             "title": "2. Wij bezorgen automatisch",
             "description": "Op jouw ritme, door de brievenbus — met 20% korting op elke levering.",
-            "image_asset": ""
+            "image_asset": "tabblie-abo-stap-bezorgen.svg"
           }
         },
         "s3": {
@@ -36,7 +36,7 @@
           "settings": {
             "title": "3. Jij houdt de regie",
             "description": "Aanpassen, overslaan, pauzeren of stoppen — altijd, gewoon in je account.",
-            "image_asset": ""
+            "image_asset": "tabblie-abo-stap-regie.svg"
           }
         }
       },
