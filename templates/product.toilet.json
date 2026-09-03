@@ -857,9 +857,9 @@
         "q7"
       ],
       "settings": {
-        "icon": "question",
-        "eyebrow": "VEELGESTELDE VRAGEN",
-        "title": "Alles wat je wilt weten",
+        "icon": "none",
+        "eyebrow": "",
+        "title": "",
         "open_first": true
       }
     }
