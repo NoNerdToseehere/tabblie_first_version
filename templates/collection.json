@@ -9,152 +9,189 @@
  */
 {
   "sections": {
-    "banner": {
-      "type": "main-collection-banner",
-      "disabled": true,
+    "hero": {
+      "type": "tabblie-page-hero",
       "settings": {
-        "container": "container",
-        "padding_full_width": 0,
-        "layout": "1",
-        "show_breadcrumb": true,
-        "breadcrumb_alignment": "left",
-        "breadcrumb_color": "",
-        "breadcrumb_bg": "",
-        "breadcrumb_gradient": "",
-        "breadcrumb_color_mb": "",
-        "breadcrumb_bg_mb": "#f6f6f6",
-        "breadcrumb_gradient_mb": "",
-        "show_page_title": false,
-        "page_title_alignment": "left",
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 0,
-        "mg_top_mobile": 0,
-        "mg_bottom_desktop": 0,
-        "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 0
+        "bg_color": "#E1ECFA",
+        "eyebrow": "Alle producten",
+        "heading": "Kies je strip.",
+        "heading_accent": "Was, vaat of toilet.",
+        "subtext": "Eén strip per beurt, geen fles, geen gedoe. Gratis verzending vanaf €30 en 30 dagen proefwassen: niet goed, geld terug.",
+        "button_text": "",
+        "button_url": ""
       }
     },
-    "shop_grid": {
-      "type": "tabblie-shop-grid",
+    "tiles": {
+      "type": "tabblie-product-cards",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "anchor_id": "",
+        "eyebrow": "Onze strips",
+        "title": "Welke strip mag het zijn?",
+        "intro": "",
+        "trust_items": "Gratis verzending vanaf €30|100% plastic- & microplasticvrij|30 dagen proef wassen",
+        "use_collection": true,
+        "skip_handles": "tabblie-binnenkort",
+        "first_badge": "Meest gekozen",
+        "collection_media_index": 2,
+        "collection_button_text": "In winkelwagen"
+      }
+    },
+    "teaser": {
+      "type": "tabblie-coming-soon",
       "blocks": {
-        "card_1": {
-          "type": "product_card",
+        "p1": {
+          "type": "promise",
           "settings": {
-            "product": "tabblie-wasstrips",
-            "name": "Wasstrips",
-            "description": "Plantaardig wasmiddel, wasverzachter en vlekverwijderaar in één strip. Geschikt voor alle wasmachines en temperaturen.",
-            "url": "",
-            "image": "shopify://shop_images/Tabblie-34.jpg",
-            "bg_color": "#fdeee6",
-            "coming_soon": false
+            "text": "100% plastic- & microplasticvrij"
           }
         },
-        "card_2": {
-          "type": "product_card",
+        "p2": {
+          "type": "promise",
           "settings": {
-            "product": "tabblie-vaatwasstrips",
-            "name": "Vaatwasstrips",
-            "description": "Plantaardige vaatwasstrips zonder schadelijke chemicaliën. Laat je vaat stralend schoon achter, zonder plastic fles.",
-            "url": "",
-            "image": "shopify://shop_images/Tabblie-38.jpg",
-            "bg_color": "#fdf5dd",
-            "coming_soon": false
+            "text": "Biologisch afbreekbaar"
           }
         },
-        "card_3": {
-          "type": "product_card",
+        "p3": {
+          "type": "promise",
           "settings": {
-            "product": "tabblie-toiletstrips",
-            "name": "Toiletstrips",
-            "description": "Krachtige reiniging voor je toilet, volledig biologisch afbreekbaar. Gooi een strip in de pot en laat het zijn werk doen.",
-            "url": "",
-            "image": "shopify://shop_images/Tabblie-44.jpg",
-            "bg_color": "#e2f2ed",
-            "coming_soon": false
+            "text": "Gewoon weer een strip — geen fles, geen gedoe"
           }
         },
-        "card_4": {
-          "type": "product_card",
+        "p4": {
+          "type": "promise",
           "settings": {
-            "product": "tabblie-binnenkort",
-            "name": "Binnenkort meer..",
-            "description": "We werken aan iets nieuws voor je huis. Schrijf je in voor de nieuwsbrief en hoor het als eerste.",
-            "url": "",
-            "bg_color": "#fce8e8",
-            "coming_soon": true
+            "text": "Duurzaam gemaakt, eerlijk geprijsd"
+          }
+        },
+        "p5": {
+          "type": "promise",
+          "settings": {
+            "text": "30 dagen proberen — niet goed, geld terug"
           }
         }
       },
       "block_order": [
-        "card_1",
-        "card_2",
-        "card_3",
-        "card_4"
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5"
       ],
       "settings": {
-        "title": "Onze producten",
-        "show_price": false
+        "bg_color": "#E1ECFA",
+        "compact": true,
+        "image_side": "right",
+        "heading_tag": "h2",
+        "product": "tabblie-binnenkort",
+        "stamp_text": "Binnenkort",
+        "eyebrow": "NOG HEEL EVEN GEDULD",
+        "heading": "En er komt nog iets aan.",
+        "heading_accent": "Wat? Dat verklappen we nog niet.",
+        "intro": "We werken aan het volgende Tabblie-product. Wát het wordt houden we nog even voor onszelf — maar waar het aan moet voldoen, dat staat al vast.",
+        "image_alt": "Het volgende Tabblie-product, nog niet onthuld",
+        "link_label": "Bekijk wat eraan komt",
+        "signup_title": "Wil je 'm als eerste proberen?",
+        "signup_sub": "Schrijf je in en je krijgt bij de lancering gratis samples in de bus. Geen kosten, geen verplichting.",
+        "placeholder": "Je e-mailadres",
+        "button_text": "Ja, ik wil gratis samples",
+        "signup_tag": "sample-launch",
+        "success_text": "Gelukt! Je staat op de lijst voor gratis samples.",
+        "terms": "Gratis samples bij de lancering, zolang de voorraad strekt. Geen spam — uitschrijven kan altijd."
       }
     },
-    "product-grid": {
-      "type": "main-collection-product-grid",
+    "reviews": {
+      "type": "tabblie-testimonials",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Zoveel goedkoper, en geen gemors of verspilling meer. Ook geen zware flessen meer sjouwen. Ik stap nooit meer terug over op vloeibaar wasmiddel.",
+            "name": "Lisa B.",
+            "location": "Amsterdam, NL",
+            "avatar_asset": "tabblie-avatar-lisa.jpg",
+            "image_asset": "tabblie-ugc-lisa-poster.jpg",
+            "image_contain": false,
+            "video_asset": "tabblie-ugc-lisa.mp4",
+            "video_muted": false,
+            "card_color": "wasstrips"
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "De vaatwasstrips werken zelfs beter dan mijn oude tabs. Geen residu, geen plastic, en mijn glazen zijn echt schoon.",
+            "name": "Thomas V.",
+            "location": "Rotterdam, NL",
+            "avatar_asset": "tabblie-avatar-thomas.jpg",
+            "image_asset": "tabblie-pack-vaat.png",
+            "image_contain": true,
+            "card_color": "vaatwas"
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Een strip zónder chloor en bleek die de wc echt schoon krijgt? Dat geloofde ik dus niet. Maar het werkt — en het scheelt enorm veel ruimte onder de gootsteen.",
+            "name": "Sophie M.",
+            "location": "Antwerp, BE",
+            "avatar_asset": "tabblie-avatar-sophie.jpg",
+            "image_asset": "tabblie-pack-toilet.png",
+            "image_contain": true,
+            "card_color": "toilet"
+          }
+        },
+        "review_4": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Kind kan de was doen — letterlijk. Strip erin en klaar, zonder geknoei met doseerdoppen.",
+            "name": "Marieke B.",
+            "location": "Gent, BE",
+            "avatar_asset": "tabblie-avatar-marieke.jpg",
+            "image_asset": "tabblie-ugc-marieke-poster.jpg",
+            "image_contain": false,
+            "video_asset": "tabblie-ugc-marieke.mp4",
+            "video_muted": false,
+            "card_color": "cream"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3",
+        "review_4"
+      ],
       "settings": {
-        "container": "1170",
-        "padding_full_width": 0,
-        "colors_bg": "rgba(0,0,0,0)",
-        "colors_bg_gradient": "",
-        "sidebar_collapse": "collapse",
-        "enable_sticky": false,
-        "sidebar_layout": "layout_1",
-        "sidebar_collapse_default": "expand",
-        "sidebar_type": "vertical",
-        "sidebar_position": "left",
-        "sidebar_heading_font": "font_1",
-        "sidebar_heading_font_size": 14,
-        "sidebar_heading_font_weight": "700",
-        "sidebar_heading_text_transform": "uppercase",
-        "show_filter": false,
-        "filter_swatch": "Color",
-        "filter_swatch_type": "png",
-        "filter_swatch_layout": "color",
-        "filter_rectangle": "Size",
-        "filter_display_type": "show-more",
-        "max_item_per_filter": 10,
-        "filter_label_all": "",
-        "filter_hidden_tag_list": "",
-        "show_toolbar": false,
-        "show_sorting": false,
-        "show_item_per_page": false,
-        "show_view_as": false,
-        "products_per_page": "20",
-        "layout": "4",
-        "show_infinite_scrolling": "show_more",
-        "show_banner": false,
-        "show_banner_1": true,
-        "banner_position_1": "4",
-        "link_banner_1": "",
-        "show_banner_2": true,
-        "banner_position_2": "5",
-        "link_banner_2": "",
-        "show_banner_3": true,
-        "banner_position_3": "12",
-        "link_banner_3": "",
-        "product_space_between_vert_desk": 30,
-        "product_space_between_vert_mb": 16,
-        "product_space_between_horiz_desk": 30,
-        "product_space_between_horiz_mb": 16,
-        "mg_top_desktop": 0,
-        "mg_top_tablet": 0,
-        "mg_top_mobile": 0,
-        "mg_bottom_desktop": 50,
-        "mg_bottom_tablet": 50,
-        "mg_bottom_mobile": 50
+        "eyebrow": "Wat klanten zeggen",
+        "title": "Eindelijk milieuvriendelijk schoonmaken — zonder in te leveren op kwaliteit, looks of prijs."
+      }
+    },
+    "guarantee": {
+      "type": "tabblie-guarantee",
+      "settings": {
+        "eyebrow": "ONZE GARANTIE",
+        "heading": "Probeer het 30 dagen.",
+        "heading_accent": "Risicovrij!",
+        "body": "<p>We zijn zo overtuigd van onze strips dat je ze 30 dagen risicovrij kunt proberen. Niet tevreden? Dan krijg je je geld volledig terug. Geen vragen, geen gedoe.</p><p><strong>Daarom bieden we een proefperiode van 30 dagen.</strong></p><p>Probeer onze strips in je wasmachine, vaatwasser of in de toilet. Merk je geen verschil met je oude schoonmaakmiddel? Stuur ze terug voor een volledige terugbetaling.</p>",
+        "button_text": "Bestel nu & bespaar",
+        "button_url": "",
+        "image": "shopify://shop_images/foto_s_start_website_homepage_2.jpg",
+        "image_alt": "30 dagen proefwassen",
+        "badge_text": "30 dagen proef wassen"
       }
     }
   },
   "order": [
-    "banner",
-    "shop_grid",
-    "product-grid"
+    "hero",
+    "tiles",
+    "teaser",
+    "reviews",
+    "guarantee"
   ]
 }
