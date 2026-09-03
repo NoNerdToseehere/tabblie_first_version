@@ -13,10 +13,7 @@
       "settings": {
         "color_by_category": true,
         "bg_color": "#FDEEE6",
-        "eyebrow": "",
-        "show_image": true,
-        "show_author": true,
-        "show_reading_time": true
+        "eyebrow": ""
       }
     },
     "main": {

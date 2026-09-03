@@ -843,9 +843,10 @@
 %}
 
 {% style %}
-  /* Magazine article styling (Tabblie, 2026-09-02): the article reads like a
-     page from the "De schone was" newspaper — green rules, dateline,
-     category chip, sticker-framed images, chapter h2s with a pink stripe, check-chip lists, comparison tables and callout
+  /* Magazine article styling (Tabblie, 2026-09-02/03): the article reads like
+     a page from the "De schone was" newspaper — centred masthead (rules,
+     dateline, category chip, one-colour title, standfirst, author + reading
+     time, small doodles), clean lead photo, chapter h2s with a pink stripe, check-chip lists, comparison tables and callout
      cards. Body classes (article-summary / -callout / -formula / -cta /
      -figure) are written by the article importer; plain HTML still styles. */
   .halo-article-content { max-width: 880px; margin: 0 auto; }
@@ -869,7 +870,7 @@
   .halo-article-content .article-chip--schermen { background: #5BB8A0; }
   .halo-article-content .article-heading .title {
     font-family: var(--font-heading-family); font-size: clamp(32px, 5vw, 52px) !important; line-height: 1.05 !important; letter-spacing: -0.02em;
-    color: #26523F; max-width: 20ch; margin: 0 auto 14px; text-wrap: balance;
+    color: #26523F !important; text-transform: none !important; max-width: 20ch; margin: 0 auto 14px; text-wrap: balance;
   }
   .halo-article-content .article-standfirst {
     font-family: var(--font-body-family); font-size: 18px; line-height: 1.5; font-weight: 500; color: #182D20;
@@ -883,7 +884,7 @@
 
   /* lead image as a sticker */
   .halo-article-content .article-image { margin: 24px 0 8px; }
-  .halo-article-content .article-image .image { display: block; border-radius: 20px; overflow: hidden; border: 2px solid #1F1209; box-shadow: 6px 6px 0 #E8622A; }
+  .halo-article-content .article-image .image { display: block; border-radius: 22px; overflow: hidden; box-shadow: 0 14px 34px rgba(24, 45, 32, 0.14); }
   .halo-article-content .article-image img { display: block; width: 100%; height: auto; }
 
   /* ── body copy ── */

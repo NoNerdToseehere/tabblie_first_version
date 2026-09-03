@@ -1,12 +1,11 @@
 {%- comment -%}
   tabblie-article-hero.liquid
-  Magazine opener for every blog article (2026-09-02): the "Even eerlijk"
-  hero band mixed with the newspaper masthead. Pastel band coloured by the
-  article's category, dateline with reading time, dashed eyebrow (category
-  or override), the title with the part after the colon in orange, the
-  excerpt as standfirst, and the article image clean on the right, no tilt,
-  no doodles (founder feedback 2026-09-02). Carries the page's single h1 — set
-  "Hide article title" on the main article section.
+  Simple opener for every blog article (founder reference 2026-09-03: the
+  "Even eerlijk" page hero). A pastel band, everything centred: the
+  category as dashed eyebrow, the article title with the part after the
+  colon in orange on its own line, the excerpt as subline. No photo, no
+  date, no author, no chip. Carries the page's single h1 — keep "Hide
+  article title" on in the main article section.
 {%- endcomment -%}
 
 {%- liquid
@@ -38,9 +37,6 @@
     endcase
   endif
 
-  assign words = article.content | strip_html | split: ' ' | size
-  assign minutes = words | divided_by: 200 | at_least: 1
-
   assign parts = article.title | split: ': '
   assign title_main = article.title
   assign title_accent = ''
@@ -53,38 +49,11 @@
 <style>
   .tabblie-ahero {
     background-color: var(--ahero-bg, #FDEEE6);
-    padding: clamp(28px, 4vw, 56px) clamp(16px, 3vw, 40px) clamp(36px, 5vw, 64px);
-    position: relative;
-    overflow: hidden;
+    /* same air as the "Even eerlijk" page hero: roomy above the eyebrow, roomier below the subline */
+    padding: clamp(48px, 6vw, 88px) clamp(16px, 3vw, 40px) clamp(60px, 8vw, 116px);
+    text-align: center;
   }
-
-  .tabblie-ahero__inner {
-    max-width: 1180px;
-    margin: 0 auto;
-    display: grid;
-    gap: 28px;
-    align-items: center;
-  }
-
-  .tabblie-ahero__copy { text-align: center; }
-
-  .tabblie-ahero__dateline {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    margin: 0 0 18px;
-    font-family: var(--text-font-family);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: #26523F;
-    border-top: 2px solid #26523F;
-    padding-top: 14px;
-  }
-  .tabblie-ahero__dateline span { flex: 0 1 60px; height: 1px; background: rgba(38, 82, 63, 0.4); }
-
+  .tabblie-ahero__inner { max-width: 780px; margin: 0 auto; }
   .tabblie-ahero__eyebrow {
     font-family: var(--text-font-family);
     font-size: 13px;
@@ -92,103 +61,41 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #E8622A;
-    margin: 0 0 14px;
+    margin: 0 0 18px;
   }
-
   .tabblie-ahero__title {
     font-family: var(--heading-font-family);
-    font-size: clamp(32px, 5.2vw, 56px) !important;
+    font-size: clamp(30px, 5.4vw, 52px) !important;
     font-weight: 700;
-    line-height: 1.04 !important;
+    line-height: 1.08 !important;
     letter-spacing: -0.02em;
     color: #26523F;
-    margin: 0 0 16px;
+    margin: 0 0 22px;
     text-transform: none;
     text-wrap: balance;
   }
-  .tabblie-ahero__accent { color: #E8622A; }
-
+  .tabblie-ahero__accent { display: block; color: #E8622A; }
   .tabblie-ahero__sub {
     font-family: var(--text-font-family);
-    font-size: clamp(16px, 1.6vw, 18.5px);
-    line-height: 1.55;
-    font-weight: 500;
-    color: #182D20;
+    font-size: clamp(15px, 1.8vw, 18px);
+    line-height: 1.7;
+    color: rgba(24, 45, 32, 0.6);
     margin: 0 auto;
-    max-width: 58ch;
-  }
-
-  .tabblie-ahero__meta {
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px 18px;
-    margin: 18px 0 0;
-    font-family: var(--text-font-family);
-    font-size: 13px;
-    font-weight: 700;
-    color: #26523F;
-  }
-  .tabblie-ahero__meta span { display: inline-flex; align-items: center; gap: 6px; }
-  .tabblie-ahero__meta svg { width: 15px; height: 15px; flex-shrink: 0; }
-
-  /* sticker photo + doodles */
-  .tabblie-ahero__visual {
-    position: relative;
-    max-width: 520px;
-    margin: 8px auto 0;
-  }
-  .tabblie-ahero__frame {
-    display: block;
-    border-radius: 22px;
-    overflow: hidden;
-    background: #FFFFFF;
-    box-shadow: 0 14px 34px rgba(24, 45, 32, 0.14);
-  }
-  .tabblie-ahero__frame img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
-
-  @media (min-width: 900px) {
-    .tabblie-ahero__inner { grid-template-columns: 1.1fr 0.9fr; gap: 48px; }
-    .tabblie-ahero__copy { text-align: left; }
-    .tabblie-ahero__dateline { justify-content: flex-start; }
-    .tabblie-ahero__dateline span:first-child { display: none; }
-    .tabblie-ahero__dateline span { flex-basis: 120px; }
-    .tabblie-ahero__sub { margin: 0; }
-    .tabblie-ahero__meta { justify-content: flex-start; }
-    .tabblie-ahero__visual { margin: 0 0 0 auto; }
+    max-width: 600px;
   }
 </style>
 
 <section class="tabblie-ahero" style="--ahero-bg: {{ bg }};">
   <div class="tabblie-ahero__inner">
-    <div class="tabblie-ahero__copy">
-      <p class="tabblie-ahero__dateline"><span></span>{{ blog.title | escape }} &middot; {{ article.published_at | date: '%d-%m-%Y' }}<span></span></p>
-      {%- if eyebrow != blank -%}
-        <p class="tabblie-ahero__eyebrow">{{ eyebrow | escape }}</p>
-      {%- endif -%}
-      <h1 class="tabblie-ahero__title">
-        {{- title_main | escape -}}
-        {%- if title_accent != blank %} <span class="tabblie-ahero__accent">{{ title_accent | escape }}</span>{% endif -%}
-      </h1>
-      {%- if article.excerpt != blank -%}
-        <p class="tabblie-ahero__sub">{{ article.excerpt | strip_html }}</p>
-      {%- endif -%}
-      <p class="tabblie-ahero__meta">
-        {%- if section.settings.show_author -%}
-          <span><svg viewBox="0 0 24 24" fill="none" style="fill:none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>{{ article.author | escape }}</span>
-        {%- endif -%}
-        {%- if section.settings.show_reading_time -%}
-          <span><svg viewBox="0 0 24 24" fill="none" style="fill:none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>{{ minutes }} min leestijd</span>
-        {%- endif -%}
-      </p>
-    </div>
-
-    {%- if section.settings.show_image and article.image -%}
-      <div class="tabblie-ahero__visual">
-        <span class="tabblie-ahero__frame">
-          {{ article.image | image_url: width: 1100 | image_tag: widths: '520, 800, 1100', sizes: '(min-width: 900px) 520px, 92vw', loading: 'eager', fetchpriority: 'high', alt: article.image.alt }}
-        </span>
-      </div>
+    {%- if eyebrow != blank -%}
+      <p class="tabblie-ahero__eyebrow">{{ eyebrow | escape }}</p>
+    {%- endif -%}
+    <h1 class="tabblie-ahero__title">
+      {{- title_main | escape -}}
+      {%- if title_accent != blank %} <span class="tabblie-ahero__accent">{{ title_accent | escape }}</span>{%- endif -%}
+    </h1>
+    {%- if article.excerpt != blank -%}
+      <p class="tabblie-ahero__sub">{{ article.excerpt | strip_html }}</p>
     {%- endif -%}
   </div>
 </section>
@@ -199,13 +106,10 @@
   "tag": "section",
   "enabled_on": { "templates": ["article"] },
   "settings": [
-    { "type": "paragraph", "content": "Titel, intro, categorie en foto komen uit het artikel zelf. Zet bij de sectie 'Blog post' de titel en hoofdfoto uit, zodat de pagina één h1 houdt." },
-    { "type": "checkbox", "id": "color_by_category", "label": "Achtergrond op basis van categorie", "info": "Waswijs oranje, Plasticpraat teal, Onze producten geel.", "default": true },
+    { "type": "paragraph", "content": "Categorie, titel en intro komen uit het artikel zelf. Zet bij de sectie 'Blog post' de titel en hoofdfoto uit, zodat de pagina één h1 houdt." },
+    { "type": "checkbox", "id": "color_by_category", "label": "Achtergrond op basis van categorie", "info": "Waswijs oranje, Plasticpraat teal, Onze producten geel, Hacks roze, Schermen blauw.", "default": true },
     { "type": "color", "id": "bg_color", "label": "Achtergrond (als categoriekleur uit staat of geen categorie)", "default": "#FDEEE6" },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow (leeg = categorie)" },
-    { "type": "checkbox", "id": "show_image", "label": "Toon de artikelfoto rechts", "default": true },
-    { "type": "checkbox", "id": "show_author", "label": "Toon auteur", "default": true },
-    { "type": "checkbox", "id": "show_reading_time", "label": "Toon leestijd", "default": true }
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow (leeg = categorie)" }
   ],
   "presets": [{ "name": "Artikel hero" }]
 }
