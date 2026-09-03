@@ -15,6 +15,10 @@
     <rect x="106" y="100" width="50" height="8" rx="4" fill="#E8622A" opacity=".6"/>
     <path d="M112 152c20-13 40-13 60 0" stroke="#E8622A" stroke-width="4" stroke-linecap="round"/>
   </g>
+  <g transform="rotate(-10 150 52)">
+    <rect x="122" y="30" width="60" height="30" rx="5" fill="#FFFFFF" stroke="#1F1209" stroke-width="4"/>
+    <path d="M152 33v24" stroke="#1F1209" stroke-width="3" stroke-dasharray="4 4" stroke-linecap="round"/>
+  </g>
   <circle cx="198" cy="56" r="24" fill="#26523F" stroke="#1F1209" stroke-width="4"/>
   <path d="M186 57l8 8 16-18" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

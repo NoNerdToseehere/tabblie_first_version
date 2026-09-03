@@ -13,5 +13,5 @@
   <rect x="84" y="146" width="72" height="26" rx="13" fill="#26523F"/>
   <rect x="112" y="153" width="5" height="12" rx="2" fill="#FFFFFF"/>
   <rect x="123" y="153" width="5" height="12" rx="2" fill="#FFFFFF"/>
-  <path d="M192 44l4.5 11 11 4.5-11 4.5-4.5 11-4.5-11-11-4.5 11-4.5z" fill="#F5C842" stroke="#1F1209" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M44 54l4.5 11 11 4.5-11 4.5-4.5 11-4.5-11-11-4.5 11-4.5z" fill="#F5C842" stroke="#1F1209" stroke-width="3" stroke-linejoin="round"/>
 </svg>
