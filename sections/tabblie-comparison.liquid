@@ -120,10 +120,16 @@
     line-height: 1.6;
   }
 
-  /* ── Matrix grid ── */
+  /* ── Matrix grid — on a white sticker panel (§11) so it stands out on the cream ── */
   .tabblie-compare__matrix {
     display: grid;
     grid-template-columns: minmax(0, 1.9fr) minmax(0, 1.1fr) repeat(3, minmax(0, 1fr));
+    background-color: #FFFFFF;
+    border: solid #182D20;
+    border-width: 2px 3.5px 3.5px 2px;
+    border-radius: 22px;
+    box-shadow: 7px 8px 0 rgba(24, 45, 32, 0.92);
+    padding: clamp(10px, 1.6vw, 18px);
   }
 
   .tabblie-compare__mrow {

@@ -1,64 +1,103 @@
 {%- comment -%}
-  Ingredient transparency cards — "Alles wat nodig is. Meer niet."
-  Grid of ingredient cards with a name, one-line function and an origin
-  badge (plantaardig / mineraal / microbieel / synthetisch). Reusable on
-  any page or product template via the theme editor.
+  Ingredient transparency cards — "Wat zit erin?"
+  A white sticker panel (same frame as the comparison matrix above it on
+  the PDP): a row of promise chips (100% natuurlijk, vegan, ...) on top,
+  the ingredient cards below, each with a name, one-line function and an
+  origin badge (plantaardig / mineraal / microbieel / synthetisch).
+  Blocks: "promise" (chip) and "ingredient" (card).
 {%- endcomment -%}
 
 <section class="tabblie-ingc" style="--ingc-bg: {{ section.settings.bg_color }};">
   <div class="tabblie-ingc__container">
     <div class="tabblie-ingc__head">
-      <div>
-        {%- if section.settings.eyebrow != blank -%}
-          <p class="tabblie-ingc__eyebrow">{{ section.settings.eyebrow }}</p>
-        {%- endif -%}
-        {%- if section.settings.title != blank -%}
-          <h2 class="tabblie-ingc__title">{{ section.settings.title }}</h2>
-        {%- endif -%}
-      </div>
+      <svg class="tabblie-ingc__doodle tabblie-ingc__doodle--star" viewBox="0 0 64 64" aria-hidden="true"><path d="m32 5 7 18 20 1-16 12 5 20-16-11-17 11 6-20L5 24l20-1Z" fill="none" stroke="#F5C842" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg class="tabblie-ingc__doodle tabblie-ingc__doodle--stripes" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#26523F" stroke-width="5" stroke-linecap="round"><path d="M14 44 4 51M22 32 8 30M35 24 31 9"/></g></svg>
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tabblie-ingc__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+      {%- if section.settings.title != blank -%}
+        <h2 class="tabblie-ingc__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
       {%- if section.settings.intro != blank -%}
         <p class="tabblie-ingc__intro">{{ section.settings.intro }}</p>
       {%- endif -%}
     </div>
 
-    <div class="tabblie-ingc__grid">
-      {%- for block in section.blocks -%}
-        <div class="tabblie-ingc__card" {{ block.shopify_attributes }}>
-          <h3 class="tabblie-ingc__name">{{ block.settings.name | escape }}</h3>
-          {%- if block.settings.description != blank -%}
-            <p class="tabblie-ingc__desc">{{ block.settings.description | escape }}</p>
-          {%- endif -%}
-          {%- if block.settings.badge_label != blank -%}
-            <span class="tabblie-ingc__badge tabblie-ingc__badge--{{ block.settings.badge_type }}">{{ block.settings.badge_label | escape }}</span>
-          {%- endif -%}
-        </div>
-      {%- endfor -%}
-    </div>
+    <div class="tabblie-ingc__panel">
+      {%- liquid
+        assign promises = section.blocks | where: 'type', 'promise'
+        assign ingredients = section.blocks | where: 'type', 'ingredient'
+      -%}
 
-    {%- if section.settings.link_text != blank and section.settings.link_url != blank -%}
-      <a class="tabblie-ingc__link" href="{{ section.settings.link_url }}">
-        {{ section.settings.link_text | escape }}
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-      </a>
-    {%- endif -%}
+      {%- if promises.size > 0 -%}
+        <ul class="tabblie-ingc__promises" aria-label="Beloftes">
+          {%- for block in promises -%}
+            <li class="tabblie-ingc__promise" style="--chip-accent: {{ block.settings.accent | default: '#E2F2ED' }};" {{ block.shopify_attributes }}>
+              <span class="tabblie-ingc__promise-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#182D20" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  {%- case block.settings.icon -%}
+                    {%- when 'heart' -%}<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>
+                    {%- when 'bolt' -%}<path d="M13 3 5 14h6l-1 7 8-11h-6l1-7z"/>
+                    {%- when 'cycle' -%}<path d="M20 12a8 8 0 0 1-14 5.3M4 12a8 8 0 0 1 14-5.3"/><path d="M4 8v4h4M20 16v-4h-4"/>
+                    {%- when 'noplastic' -%}<path d="M10 3h4v3l2 3v10a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V9l2-3V3z"/><path d="M5 5l14 14"/>
+                    {%- when 'sun' -%}<circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/>
+                    {%- else -%}<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>
+                  {%- endcase -%}
+                </svg>
+              </span>
+              <span class="tabblie-ingc__promise-label">{{ block.settings.label | escape }}</span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+      <div class="tabblie-ingc__grid">
+        {%- for block in ingredients -%}
+          <div class="tabblie-ingc__card" {{ block.shopify_attributes }}>
+            <h3 class="tabblie-ingc__name">{{ block.settings.name | escape }}</h3>
+            {%- if block.settings.description != blank -%}
+              <p class="tabblie-ingc__desc">{{ block.settings.description | escape }}</p>
+            {%- endif -%}
+            {%- if block.settings.badge_label != blank -%}
+              <span class="tabblie-ingc__badge tabblie-ingc__badge--{{ block.settings.badge_type }}">{{ block.settings.badge_label | escape }}</span>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {%- if section.settings.link_text != blank and section.settings.link_url != blank -%}
+        <p class="tabblie-ingc__foot">
+          <a class="tabblie-ingc__link" href="{{ section.settings.link_url }}">
+            {{ section.settings.link_text | escape }}
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </a>
+        </p>
+      {%- endif -%}
+    </div>
   </div>
 </section>
 
 {% style %}
   .tabblie-ingc {
     background: var(--ingc-bg, #FDF6EE);
-    padding: 48px 20px;
+    padding: clamp(48px, 6vw, 88px) clamp(12px, 3vw, 40px);
   }
+  /* straight after the comparison table: one flow, not two sections */
+  .shopify-section:has(> .tabblie-compare) + .shopify-section .tabblie-ingc { padding-top: 0; }
   .tabblie-ingc__container {
-    max-width: 1170px;
+    max-width: 980px;
     margin: 0 auto;
   }
   .tabblie-ingc__head {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 26px;
+    position: relative;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 26px;
   }
+  .tabblie-ingc__doodle { position: absolute; display: none; pointer-events: none; }
+  .tabblie-ingc__doodle--star { left: -64px; top: 2px; width: 46px; height: 46px; transform: rotate(-12deg); }
+  .tabblie-ingc__doodle--stripes { right: -66px; top: 22px; width: 52px; height: 52px; transform: scaleX(-1); }
+  @media (min-width: 1024px) { .tabblie-ingc__doodle { display: block; } }
   .tabblie-ingc__eyebrow {
     font-family: var(--font-body-family);
     font-size: 12px;
@@ -66,36 +105,82 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: #E8622A;
-    margin: 0 0 8px;
+    margin: 0 0 10px;
   }
   .tabblie-ingc__title {
     font-family: var(--font-heading-family);
-    font-size: 30px;
+    font-size: clamp(26px, 4.2vw, 32px);
     font-weight: 800;
-    letter-spacing: -0.01em;
-    line-height: 1.1;
+    letter-spacing: -0.02em;
+    line-height: 1.12;
     color: #182D20;
-    margin: 0;
+    margin: 0 0 10px;
     white-space: pre-line;
   }
   .tabblie-ingc__intro {
     font-family: var(--font-body-family);
     font-size: 16px;
-    line-height: 1.65;
-    color: #182D20;
-    margin: 0;
-    max-width: 440px;
+    line-height: 1.6;
+    color: rgba(24, 45, 32, 0.72);
+    margin: 0 auto;
+    max-width: 520px;
   }
+  .tabblie-ingc__panel {
+    background: #FFFFFF;
+    border: solid #182D20;
+    border-width: 2px 3.5px 3.5px 2px;
+    border-radius: 22px;
+    box-shadow: 7px 8px 0 rgba(24, 45, 32, 0.92);
+    padding: clamp(14px, 2vw, 22px);
+  }
+  .tabblie-ingc__promises {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0 0 clamp(14px, 2vw, 20px);
+    padding: 0 0 clamp(14px, 2vw, 20px);
+    border-bottom: 2px dashed rgba(24, 45, 32, 0.18);
+  }
+  .tabblie-ingc__promise {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 4px 14px 4px 5px;
+    border-radius: 999px;
+    background: var(--chip-accent, #E2F2ED);
+    border: 2px solid #182D20;
+    box-shadow: 2px 3px 0 #182D20;
+    font-family: var(--font-body-family);
+    font-size: 14px;
+    font-weight: 700;
+    color: #182D20;
+    white-space: nowrap;
+  }
+  .tabblie-ingc__promise-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 2px solid #182D20;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+  .tabblie-ingc__promise-icon svg { width: 15px; height: 15px; }
   .tabblie-ingc__grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 12px;
   }
   .tabblie-ingc__card {
-    background: #ffffff;
-    border: 1px solid rgba(24, 45, 32, 0.14);
+    background: #FDF6EE;
+    border: 2px solid #182D20;
     border-radius: 14px;
-    padding: 18px 20px;
+    padding: 16px 18px;
   }
   .tabblie-ingc__name {
     font-family: var(--font-heading-family);
@@ -125,11 +210,12 @@
   .tabblie-ingc__badge--mineraal { background: #E1ECFA; color: #2A5490; }
   .tabblie-ingc__badge--microbieel { background: #FDF5DD; color: #7A5C00; }
   .tabblie-ingc__badge--synthetisch { background: #EEEDE9; color: #4A4A44; }
+  .tabblie-ingc__foot { margin: clamp(14px, 2vw, 20px) 0 4px; text-align: center; }
   .tabblie-ingc__link {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    margin-top: 22px;
+    min-height: 44px;
     font-family: var(--font-body-family);
     font-size: 15px;
     font-weight: 700;
@@ -138,17 +224,32 @@
     text-underline-offset: 4px;
   }
   .tabblie-ingc__link:hover { color: #E8622A; }
-  @media (min-width: 768px) {
-    .tabblie-ingc { padding: 64px 24px; }
-    .tabblie-ingc__head {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 40px;
-      margin-bottom: 32px;
+  @media (max-width: 749px) {
+    .tabblie-ingc { padding-left: 10px; padding-right: 10px; }
+    .tabblie-ingc__promise { font-size: 13px; padding-right: 12px; }
+  }
+  /* phone: one row that swipes sideways, so the social proof below stays close */
+  @media (max-width: 767px) {
+    .tabblie-ingc__grid {
+      display: flex;
+      align-items: stretch;
+      gap: 10px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      margin: 0 calc(-1 * clamp(14px, 2vw, 22px));
+      padding: 0 clamp(14px, 2vw, 22px) 4px;
+      scroll-padding-inline: clamp(14px, 2vw, 22px);
     }
-    .tabblie-ingc__title { font-size: 40px; }
-    .tabblie-ingc__grid { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .tabblie-ingc__grid::-webkit-scrollbar { display: none; }
+    .tabblie-ingc__card { flex: 0 0 min(70vw, 260px); scroll-snap-align: start; }
+  }
+  @media (min-width: 768px) {
+    .tabblie-ingc__head { margin-bottom: 32px; }
+    .tabblie-ingc__grid { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .tabblie-ingc__promise { font-size: 15px; }
   }
 {% endstyle %}
 
@@ -158,13 +259,35 @@
   "tag": "section",
   "settings": [
     { "type": "color", "id": "bg_color", "label": "Achtergrondkleur", "default": "#FDF6EE" },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "WAT ZIT ERIN" },
-    { "type": "textarea", "id": "title", "label": "Titel", "default": "Alles wat nodig is.\nMeer niet." },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "WAT ZIT ERIN?" },
+    { "type": "textarea", "id": "title", "label": "Titel", "default": "De kracht van elke strip" },
     { "type": "textarea", "id": "intro", "label": "Introtekst" },
     { "type": "text", "id": "link_text", "label": "Linktekst onderaan" },
     { "type": "url", "id": "link_url", "label": "Link URL" }
   ],
   "blocks": [
+    {
+      "type": "promise",
+      "name": "Belofte (chip)",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Tekst", "default": "100% natuurlijk" },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icoon",
+          "default": "drop",
+          "options": [
+            { "value": "drop", "label": "Druppel" },
+            { "value": "heart", "label": "Hart" },
+            { "value": "bolt", "label": "Bliksem" },
+            { "value": "cycle", "label": "Kringloop" },
+            { "value": "noplastic", "label": "Geen plastic" },
+            { "value": "sun", "label": "Zon" }
+          ]
+        },
+        { "type": "color", "id": "accent", "label": "Chipkleur", "default": "#E2F2ED" }
+      ]
+    },
     {
       "type": "ingredient",
       "name": "Ingredient",
@@ -191,6 +314,11 @@
     {
       "name": "Ingredienten kaarten",
       "blocks": [
+        { "type": "promise", "settings": { "label": "100% natuurlijk", "icon": "drop", "accent": "#E2F2ED" } },
+        { "type": "promise", "settings": { "label": "Vegan", "icon": "heart", "accent": "#FCE8E8" } },
+        { "type": "promise", "settings": { "label": "Super effectief", "icon": "bolt", "accent": "#FDF5DD" } },
+        { "type": "promise", "settings": { "label": "Duurzaam", "icon": "cycle", "accent": "#E1ECFA" } },
+        { "type": "promise", "settings": { "label": "100% plasticvrij", "icon": "noplastic", "accent": "#FDEEE6" } },
         { "type": "ingredient", "settings": { "name": "Plantaardige surfactanten", "description": "Reinigers op basis van kokos- en palmolie die vet en vuil losmaken.", "badge_label": "PLANTAARDIG (KOKOS & PALM)", "badge_type": "plantaardig" } },
         { "type": "ingredient", "settings": { "name": "Natuurlijke enzymen", "description": "Breken eiwit-, zetmeel- en vetvlekken af, ook bij lage temperaturen.", "badge_label": "MICROBIEEL", "badge_type": "microbieel" } },
         { "type": "ingredient", "settings": { "name": "Natriumcarbonaat", "description": "Mineraalzout dat hard water zachter maakt voor een betere waswerking.", "badge_label": "MINERAAL", "badge_type": "mineraal" } },

@@ -74,6 +74,9 @@ background: linear-gradient(135deg, #E8622A 0%, #F5C842 50%, #5BB8A0 100%);
 | tabblie-product-cards | `#FDF6EE` — three product tiles in their identity pastels; the `tabblie-coming-soon` blue canvas tucks under it at the same 1100px width when it follows directly (2026-09-02) |
 | tabblie-testimonials | `#FFFFFF` |
 | tabblie-ingredients | `#FFFFFF` |
+| tabblie-ingredient-cards | `#FDF6EE` — one white sticker panel (same ink frame + offset shadow as the comparison matrix) holding the promise chips (100% natuurlijk / Vegan / Super effectief / Duurzaam / 100% plasticvrij) above the six ingredient cards; on phone the cards become one swipe row (wasstrips PDP, 2026-09-03) |
+| tabblie-video-steps | `#FDF6EE` — "Scheur, gooi, klaar." as three numbered sticker cards, each a short silent looping clip (`tabblie-step-*.mp4` + poster); swipe rail on phone (2026-09-03) |
+| tabblie-insta-stories | `#FDF6EE` — three iPhone-style story frames with silent clips (`tabblie-story-*.mp4`); on phone one big card at a time in an auto-advancing swipe rail; handles masked to first letter + *** (2026-09-03) |
 | tabblie-education | `#FFFFFF` |
 | tabblie-faq | `#FFFFFF` |
 | tabblie-guarantee | `#FDF6EE` |

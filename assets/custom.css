@@ -23,7 +23,7 @@ body .quickview-button.button.button:hover {
 .tabblie-pf__eyebrow, .tabblie-guarantee__eyebrow,
 .tabblie-hiw2__eyebrow, .tabblie-hiw__eyebrow,
 .tabblie-ingredients__eyebrow, .tabblie-phero__eyebrow,
-.tabblie-stats__eyebrow, .tabblie-stories__eyebrow, .tabblie-testi__eyebrow, .tabblie-insta__eyebrow, .tabblie-pc__eyebrow, .tabblie-ahero__eyebrow,
+.tabblie-stats__eyebrow, .tabblie-stories__eyebrow, .tabblie-testi__eyebrow, .tabblie-insta__eyebrow, .tabblie-pc__eyebrow, .tabblie-vsteps__eyebrow, .tabblie-ingc__eyebrow, .tabblie-ahero__eyebrow,
 .tabblie-vt__eyebrow, .tbl-eyebrow, .tcl__eyebrow, .tdg__eyebrow,
 .tmf-panel__eyebrow, .tmf-promo__eyebrow, .tns__eyebrow, .tabblie-founder__eyebrow {
   display: inline-flex !important;
@@ -34,13 +34,13 @@ body .quickview-button.button.button:hover {
 .tabblie-pf__eyebrow::before, .tabblie-guarantee__eyebrow::before,
 .tabblie-hiw2__eyebrow::before, .tabblie-hiw__eyebrow::before,
 .tabblie-ingredients__eyebrow::before, .tabblie-phero__eyebrow::before,
-.tabblie-stats__eyebrow::before, .tabblie-stories__eyebrow::before, .tabblie-testi__eyebrow::before, .tabblie-insta__eyebrow::before, .tabblie-pc__eyebrow::before, .tabblie-ahero__eyebrow::before,
+.tabblie-stats__eyebrow::before, .tabblie-stories__eyebrow::before, .tabblie-testi__eyebrow::before, .tabblie-insta__eyebrow::before, .tabblie-pc__eyebrow::before, .tabblie-vsteps__eyebrow::before, .tabblie-ingc__eyebrow::before, .tabblie-ahero__eyebrow::before,
 .tabblie-vt__eyebrow::before, .tbl-eyebrow::before, .tcl__eyebrow::before, .tdg__eyebrow::before,
 .tmf-panel__eyebrow::before, .tmf-promo__eyebrow::before, .tns__eyebrow::before, .tabblie-founder__eyebrow::before,
 .tabblie-pf__eyebrow::after, .tabblie-guarantee__eyebrow::after,
 .tabblie-hiw2__eyebrow::after, .tabblie-hiw__eyebrow::after,
 .tabblie-ingredients__eyebrow::after, .tabblie-phero__eyebrow::after,
-.tabblie-stats__eyebrow::after, .tabblie-stories__eyebrow::after, .tabblie-testi__eyebrow::after, .tabblie-insta__eyebrow::after, .tabblie-pc__eyebrow::after, .tabblie-ahero__eyebrow::after,
+.tabblie-stats__eyebrow::after, .tabblie-stories__eyebrow::after, .tabblie-testi__eyebrow::after, .tabblie-insta__eyebrow::after, .tabblie-pc__eyebrow::after, .tabblie-vsteps__eyebrow::after, .tabblie-ingc__eyebrow::after, .tabblie-ahero__eyebrow::after,
 .tabblie-vt__eyebrow::after, .tbl-eyebrow::after, .tcl__eyebrow::after, .tdg__eyebrow::after,
 .tmf-panel__eyebrow::after, .tmf-promo__eyebrow::after, .tns__eyebrow::after, .tabblie-founder__eyebrow::after {
   content: '';
@@ -54,7 +54,7 @@ body .quickview-button.button.button:hover {
 .tabblie-pf__eyebrow::before, .tabblie-guarantee__eyebrow::before,
 .tabblie-hiw2__eyebrow::before, .tabblie-hiw__eyebrow::before,
 .tabblie-ingredients__eyebrow::before, .tabblie-phero__eyebrow::before,
-.tabblie-stats__eyebrow::before, .tabblie-stories__eyebrow::before, .tabblie-testi__eyebrow::before, .tabblie-insta__eyebrow::before, .tabblie-pc__eyebrow::before, .tabblie-ahero__eyebrow::before,
+.tabblie-stats__eyebrow::before, .tabblie-stories__eyebrow::before, .tabblie-testi__eyebrow::before, .tabblie-insta__eyebrow::before, .tabblie-pc__eyebrow::before, .tabblie-vsteps__eyebrow::before, .tabblie-ingc__eyebrow::before, .tabblie-ahero__eyebrow::before,
 .tabblie-vt__eyebrow::before, .tbl-eyebrow::before, .tcl__eyebrow::before, .tdg__eyebrow::before,
 .tmf-panel__eyebrow::before, .tmf-promo__eyebrow::before, .tns__eyebrow::before, .tabblie-founder__eyebrow::before {
   transform: rotate(8deg);
@@ -63,7 +63,7 @@ body .quickview-button.button.button:hover {
 .tabblie-pf__eyebrow::after, .tabblie-guarantee__eyebrow::after,
 .tabblie-hiw2__eyebrow::after, .tabblie-hiw__eyebrow::after,
 .tabblie-ingredients__eyebrow::after, .tabblie-phero__eyebrow::after,
-.tabblie-stats__eyebrow::after, .tabblie-stories__eyebrow::after, .tabblie-testi__eyebrow::after, .tabblie-insta__eyebrow::after, .tabblie-pc__eyebrow::after, .tabblie-ahero__eyebrow::after,
+.tabblie-stats__eyebrow::after, .tabblie-stories__eyebrow::after, .tabblie-testi__eyebrow::after, .tabblie-insta__eyebrow::after, .tabblie-pc__eyebrow::after, .tabblie-vsteps__eyebrow::after, .tabblie-ingc__eyebrow::after, .tabblie-ahero__eyebrow::after,
 .tabblie-vt__eyebrow::after, .tbl-eyebrow::after, .tcl__eyebrow::after, .tdg__eyebrow::after,
 .tmf-panel__eyebrow::after, .tmf-promo__eyebrow::after, .tns__eyebrow::after, .tabblie-founder__eyebrow::after {
   transform: rotate(-8deg);

@@ -14,7 +14,12 @@
     margin: 0 auto;
   }
 
+  .tabblie-stories__doodle { position: absolute; display: none; pointer-events: none; }
+  .tabblie-stories__doodle--stripes { left: 0; top: 34px; width: 50px; height: 50px; }
+  .tabblie-stories__doodle--star { right: 0; top: 22px; width: 44px; height: 44px; transform: rotate(14deg); }
+  @media (min-width: 1024px) { .tabblie-stories__doodle { display: block; } }
   .tabblie-stories__header {
+    position: relative;
     text-align: center;
     margin-bottom: clamp(32px, 4vw, 48px);
   }
@@ -220,58 +225,38 @@
     color: #ffffff;
   }
 
+  /* Phone: one big story at a time, the rest swipe in from the right (auto-advances) */
   @media (max-width: 749px) {
     .tabblie-stories__grid {
-      gap: 8px;
+      display: flex;
+      align-items: stretch;
+      gap: 14px;
+      max-width: none;
+      width: 100vw;
+      margin: 0 0 0 calc(50% - 50vw);
+      padding: 6px 20px 12px;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 20px;
+      scrollbar-width: none;
+      position: relative;
     }
-
+    .tabblie-stories__grid::-webkit-scrollbar { display: none; }
     .tabblie-stories__phone {
-      border-radius: 18px;
-      padding: 5px;
-    }
-
-    .tabblie-stories__screen {
-      border-radius: 14px;
-    }
-
-    .tabblie-stories__profile {
-      top: 16px;
-      left: 8px;
-      right: 8px;
-      gap: 6px;
-    }
-
-    .tabblie-stories__avatar {
-      width: 22px;
-      height: 22px;
-      font-size: 10px;
-    }
-
-    .tabblie-stories__username {
-      font-size: 10px;
-    }
-
-    .tabblie-stories__time {
-      font-size: 9px;
-    }
-
-    .tabblie-stories__caption {
-      bottom: 12px;
-      left: 8px;
-      right: 8px;
-    }
-
-    .tabblie-stories__caption p {
-      font-size: 10px;
-      padding: 6px 8px;
+      flex: 0 0 min(78vw, 310px);
+      scroll-snap-align: start;
     }
   }
 </style>
 
-<section class="tabblie-stories">
+<section class="tabblie-stories" id="tabblie-stories-{{ section.id }}">
   <div class="tabblie-stories__inner">
     {%- if section.settings.eyebrow != blank or section.settings.title != blank -%}
       <div class="tabblie-stories__header">
+        <svg class="tabblie-stories__doodle tabblie-stories__doodle--stripes" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#26523F" stroke-width="5" stroke-linecap="round"><path d="M14 44 4 51M22 32 8 30M35 24 31 9"/></g></svg>
+        <svg class="tabblie-stories__doodle tabblie-stories__doodle--star" viewBox="0 0 64 64" aria-hidden="true"><path d="m32 5 7 18 20 1-16 12 5 20-16-11-17 11 6-20L5 24l20-1Z" fill="none" stroke="#F5C842" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         {%- if section.settings.eyebrow != blank -%}
           <p class="tabblie-stories__eyebrow">{{ section.settings.eyebrow }}</p>
         {%- endif -%}
@@ -281,14 +266,25 @@
       </div>
     {%- endif -%}
 
-    <div class="tabblie-stories__grid">
+    <div class="tabblie-stories__grid" data-stories-rail>
       {%- for block in section.blocks -%}
         <div class="tabblie-stories__phone" {{ block.shopify_attributes }}>
           <div class="tabblie-stories__screen">
             {%- if block.settings.image != blank -%}
-              <img src="{{ block.settings.image | image_url: width: 500 }}" alt="@tabblie story" loading="lazy">
-            {%- elsif block.settings.video_url != blank -%}
-              <video src="{{ block.settings.video_url }}" autoplay muted loop playsinline></video>
+              <img src="{{ block.settings.image | image_url: width: 500 }}" alt="Instagram story van een Tabblie klant" width="500" height="889" loading="lazy">
+            {%- elsif block.settings.video_asset != blank or block.settings.video_url != blank -%}
+              {%- liquid
+                if block.settings.video_asset != blank
+                  assign story_src = block.settings.video_asset | asset_url
+                else
+                  assign story_src = block.settings.video_url
+                endif
+                assign story_poster = ''
+                if block.settings.poster_asset != blank
+                  assign story_poster = block.settings.poster_asset | asset_url
+                endif
+              -%}
+              <video src="{{ story_src }}#t=0.001" {% if story_poster != blank %}poster="{{ story_poster }}"{% endif %} muted loop playsinline preload="metadata" width="540" height="960" aria-label="Instagram story van een Tabblie klant" data-stories-video></video>
             {%- else -%}
               <div class="tabblie-stories__placeholder">
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
@@ -299,7 +295,14 @@
 
             <div class="tabblie-stories__profile">
               <div class="tabblie-stories__avatar">{{ block.settings.username | default: 't' | slice: 0 | upcase }}</div>
-              <span class="tabblie-stories__username">{{ block.settings.username | default: '@tabblie' }}</span>
+              {%- liquid
+                comment
+                  Customers stay private: only the first letter of the handle shows, the rest is starred.
+                endcomment
+                assign handle_raw = block.settings.username | default: '@tabblie' | remove: '@'
+                assign handle_first = handle_raw | slice: 0, 1
+              -%}
+              <span class="tabblie-stories__username">@{{ handle_first }}***</span>
               <span class="tabblie-stories__time">{{ block.settings.time_ago | default: '2u' }}</span>
             </div>
 
@@ -322,6 +325,53 @@
   </div>
 </section>
 
+<script>
+  (function () {
+    var root = document.querySelector('#tabblie-stories-{{ section.id }}');
+    if (!root) return;
+    var vids = root.querySelectorAll('[data-stories-video]');
+    vids.forEach(function (v) {
+      v.muted = true; v.defaultMuted = true; v.volume = 0;
+      v.addEventListener('volumechange', function () { if (!v.muted || v.volume > 0) { v.muted = true; v.volume = 0; } });
+    });
+    if (vids.length) {
+      if ('IntersectionObserver' in window) {
+        var vio = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { e.isIntersecting ? e.target.play().catch(function () {}) : e.target.pause(); });
+        }, { threshold: 0.3 });
+        vids.forEach(function (v) { vio.observe(v); });
+      } else { vids.forEach(function (v) { v.play().catch(function () {}); }); }
+    }
+    var rail = root.querySelector('[data-stories-rail]');
+    if (!rail || rail.children.length < 2) return;
+    var mq = window.matchMedia('(max-width: 749px)');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var timer = null, inView = false, holdUntil = 0;
+    function padLeft() { return parseFloat(getComputedStyle(rail).paddingLeft) || 0; }
+    function step() {
+      if (!inView || !mq.matches || Date.now() < holdUntil) return;
+      var cards = rail.children, pad = padLeft(), idx = 0, best = Infinity;
+      for (var i = 0; i < cards.length; i++) {
+        var d = Math.abs(cards[i].offsetLeft - pad - rail.scrollLeft);
+        if (d < best) { best = d; idx = i; }
+      }
+      var next = cards[(idx + 1) % cards.length];
+      rail.scrollTo({ left: next.offsetLeft - pad, behavior: 'smooth' });
+    }
+    function start() { if (timer || reduce.matches) return; timer = setInterval(step, 4200); }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    ['pointerdown', 'touchstart', 'wheel'].forEach(function (ev) {
+      rail.addEventListener(ev, function () { holdUntil = Date.now() + 9000; }, { passive: true });
+    });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        inView = entries[0].isIntersecting;
+        inView ? start() : stop();
+      }, { threshold: 0.4 }).observe(rail);
+    } else { inView = true; start(); }
+  })();
+</script>
+
 {% schema %}
 {
   "name": "Instagram Stories",
@@ -340,6 +390,8 @@
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Story image" },
         { "type": "url", "id": "video_url", "label": "Story video URL (MP4)" },
+        { "type": "text", "id": "video_asset", "label": "Video uit theme assets", "info": "Bestandsnaam, bijv. tabblie-story-lisa.mp4. Gaat voor de URL hierboven." },
+        { "type": "text", "id": "poster_asset", "label": "Poster uit theme assets", "info": "Bijv. tabblie-story-lisa-poster.jpg" },
         { "type": "text", "id": "username", "label": "Username", "default": "@lisabeun" },
         { "type": "text", "id": "time_ago", "label": "Time ago", "default": "2u" },
         { "type": "textarea", "id": "caption", "label": "Caption", "default": "Sinds ik overgestapt ben op tabblie bespaar ik 12 plastic flessen per jaar ✨" }
@@ -350,9 +402,9 @@
     {
       "name": "Instagram Stories",
       "blocks": [
-        { "type": "story", "settings": { "username": "@lisabeun", "time_ago": "2u", "caption": "Sinds ik tabblie gebruik bespaar ik maandelijks 3+ plastic flessen ✨" } },
-        { "type": "story", "settings": { "username": "@mariekevh", "time_ago": "5u", "caption": "Was eerst sceptisch maar deze strips werken echt 🙌" } },
-        { "type": "story", "settings": { "username": "@sophiedebeer", "time_ago": "1d", "caption": "Geen zware flessen meer sjouwen naar huis 🎉" } }
+        { "type": "story", "settings": { "username": "@lisabeun", "time_ago": "2u", "caption": "Sinds ik Tabblie gebruik bespaar ik maandelijks 3+ plastic flessen" } },
+        { "type": "story", "settings": { "username": "@mariekevh", "time_ago": "5u", "caption": "Was eerst sceptisch maar deze strips werken echt" } },
+        { "type": "story", "settings": { "username": "@sophiedebeer", "time_ago": "1d", "caption": "Geen zware flessen meer sjouwen naar huis" } }
       ]
     }
   ],

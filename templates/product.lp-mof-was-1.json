@@ -612,7 +612,9 @@
             "video_url": "",
             "username": "@lisabeun",
             "time_ago": "2u",
-            "caption": "Sinds ik tabblie gebruik bespaar ik maandelijks 3+ plastic flessen"
+            "caption": "Sinds ik Tabblie gebruik bespaar ik maandelijks 3+ plastic flessen",
+            "video_asset": "tabblie-story-lisa.mp4",
+            "poster_asset": "tabblie-story-lisa-poster.jpg"
           }
         },
         "s2": {
@@ -621,7 +623,9 @@
             "video_url": "",
             "username": "@mariekevh",
             "time_ago": "5u",
-            "caption": "Was eerst sceptisch maar deze strips werken echt"
+            "caption": "Was eerst sceptisch maar deze strips werken echt",
+            "video_asset": "tabblie-story-marieke.mp4",
+            "poster_asset": "tabblie-story-marieke-poster.jpg"
           }
         },
         "s3": {
@@ -630,7 +634,9 @@
             "video_url": "",
             "username": "@sophiedebeer",
             "time_ago": "1d",
-            "caption": "Geen zware flessen meer sjouwen naar huis"
+            "caption": "Geen zware flessen meer sjouwen naar huis",
+            "video_asset": "tabblie-story-sophie.mp4",
+            "poster_asset": "tabblie-story-sophie-poster.jpg"
           }
         }
       },

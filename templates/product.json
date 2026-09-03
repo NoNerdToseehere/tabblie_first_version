@@ -417,352 +417,124 @@
         "gallery_start_photo": 6
       }
     },
-    "custom_service_block_8Gzkxn": {
-      "type": "custom-service-block",
-      "blocks": {
-        "text_e3hFFf": {
-          "type": "Text",
-          "settings": {
-            "bg_color_block": "rgba(0,0,0,0)",
-            "border_block": "rgba(0,0,0,0)",
-            "icon_type": "image",
-            "image": "shopify://shop_images/icon-usp-plant_200x_367c0d41-038f-426f-bd28-a86d2df83c35.png",
-            "icon": "",
-            "width_icon": 100,
-            "height_icon": 100,
-            "mg_bottom_icon": 20,
-            "color_icon": "#3c3c3c",
-            "text": "100% natuurlijk",
-            "type_tab_font": "font_1",
-            "fontsize_title_block": 20,
-            "fontsize_title_block_mb": 20,
-            "title_block_font_weight": "400",
-            "mg_bottom_title": 14,
-            "mg_bottom_title_mb": 0,
-            "color_block": "#5bb8a0",
-            "description": "",
-            "fontsize_des_block": 16,
-            "fontsize_des_block_mb": 14,
-            "lineheight_des_block": 22,
-            "mg_bottom_des": 0,
-            "color_des_block": "#3c3c3c",
-            "button": "",
-            "link": "",
-            "button_style": "style1",
-            "fontsize_button": 14,
-            "button_width": 235,
-            "fontweight_button": "500",
-            "enable_underline_button": false,
-            "color_button": "#ba7a2d",
-            "button_border": "",
-            "button_background": "",
-            "button_background_gradient": "",
-            "button_color_hover": "#ba7a2d",
-            "button_border_hover": "",
-            "button_background_hover": "",
-            "button_background_gradient_hover": ""
-          }
-        },
-        "text_xGqxge": {
-          "type": "Text",
-          "settings": {
-            "bg_color_block": "rgba(0,0,0,0)",
-            "border_block": "rgba(0,0,0,0)",
-            "icon_type": "image",
-            "image": "shopify://shop_images/icon-usp-sustainable_200x_351df314-87fc-4509-ae33-1cb02ea136d9.png",
-            "icon": "",
-            "width_icon": 100,
-            "height_icon": 100,
-            "mg_bottom_icon": 20,
-            "color_icon": "#3c3c3c",
-            "text": "vegan",
-            "type_tab_font": "font_1",
-            "fontsize_title_block": 20,
-            "fontsize_title_block_mb": 20,
-            "title_block_font_weight": "400",
-            "mg_bottom_title": 15,
-            "mg_bottom_title_mb": 0,
-            "color_block": "#e85b7a",
-            "description": "",
-            "fontsize_des_block": 16,
-            "fontsize_des_block_mb": 14,
-            "lineheight_des_block": 22,
-            "mg_bottom_des": 0,
-            "color_des_block": "#3c3c3c",
-            "button": "",
-            "link": "",
-            "button_style": "style1",
-            "fontsize_button": 14,
-            "button_width": 235,
-            "fontweight_button": "500",
-            "enable_underline_button": false,
-            "color_button": "#ba7a2d",
-            "button_border": "",
-            "button_background": "",
-            "button_background_gradient": "",
-            "button_color_hover": "#ba7a2d",
-            "button_border_hover": "",
-            "button_background_hover": "",
-            "button_background_gradient_hover": ""
-          }
-        },
-        "text_yAtGjQ": {
-          "type": "Text",
-          "settings": {
-            "bg_color_block": "rgba(0,0,0,0)",
-            "border_block": "rgba(0,0,0,0)",
-            "icon_type": "image",
-            "image": "shopify://shop_images/icon-usp-effective_200x_0ec970a2-b8e4-4d4a-bdef-8443fa1d8526.png",
-            "icon": "",
-            "width_icon": 100,
-            "height_icon": 100,
-            "mg_bottom_icon": 20,
-            "color_icon": "#3c3c3c",
-            "text": "super effectief",
-            "type_tab_font": "font_1",
-            "fontsize_title_block": 20,
-            "fontsize_title_block_mb": 20,
-            "title_block_font_weight": "400",
-            "mg_bottom_title": 15,
-            "mg_bottom_title_mb": 0,
-            "color_block": "#f5c842",
-            "description": "",
-            "fontsize_des_block": 16,
-            "fontsize_des_block_mb": 14,
-            "lineheight_des_block": 22,
-            "mg_bottom_des": 0,
-            "color_des_block": "#3c3c3c",
-            "button": "",
-            "link": "",
-            "button_style": "style1",
-            "fontsize_button": 14,
-            "button_width": 235,
-            "fontweight_button": "500",
-            "enable_underline_button": false,
-            "color_button": "#ba7a2d",
-            "button_border": "",
-            "button_background": "",
-            "button_background_gradient": "",
-            "button_color_hover": "#ba7a2d",
-            "button_border_hover": "",
-            "button_background_hover": "",
-            "button_background_gradient_hover": ""
-          }
-        },
-        "text_DmtwAH": {
-          "type": "Text",
-          "settings": {
-            "bg_color_block": "rgba(0,0,0,0)",
-            "border_block": "rgba(0,0,0,0)",
-            "icon_type": "image",
-            "image": "shopify://shop_images/icon-usp-sustainable_200x_3aee02bf-aad3-41e0-ba35-c258b0868ba8.png",
-            "icon": "",
-            "width_icon": 100,
-            "height_icon": 100,
-            "mg_bottom_icon": 20,
-            "color_icon": "#3c3c3c",
-            "text": "duurzaam",
-            "type_tab_font": "font_1",
-            "fontsize_title_block": 20,
-            "fontsize_title_block_mb": 20,
-            "title_block_font_weight": "400",
-            "mg_bottom_title": 15,
-            "mg_bottom_title_mb": 0,
-            "color_block": "#3b7dd8",
-            "description": "",
-            "fontsize_des_block": 16,
-            "fontsize_des_block_mb": 14,
-            "lineheight_des_block": 22,
-            "mg_bottom_des": 0,
-            "color_des_block": "#3c3c3c",
-            "button": "",
-            "link": "",
-            "button_style": "style1",
-            "fontsize_button": 14,
-            "button_width": 235,
-            "fontweight_button": "500",
-            "enable_underline_button": false,
-            "color_button": "#ba7a2d",
-            "button_border": "",
-            "button_background": "",
-            "button_background_gradient": "",
-            "button_color_hover": "#ba7a2d",
-            "button_border_hover": "",
-            "button_background_hover": "",
-            "button_background_gradient_hover": ""
-          }
-        },
-        "text_wVUEm7": {
-          "type": "Text",
-          "settings": {
-            "bg_color_block": "rgba(0,0,0,0)",
-            "border_block": "rgba(0,0,0,0)",
-            "icon_type": "image",
-            "image": "shopify://shop_images/icon-usp-certified_200x_cc3346f8-da36-4c52-a8c6-e3f52909d020.png",
-            "icon": "",
-            "width_icon": 100,
-            "height_icon": 100,
-            "mg_bottom_icon": 20,
-            "color_icon": "#3c3c3c",
-            "text": "Geen plasticafval",
-            "type_tab_font": "font_1",
-            "fontsize_title_block": 20,
-            "fontsize_title_block_mb": 20,
-            "title_block_font_weight": "400",
-            "mg_bottom_title": 15,
-            "mg_bottom_title_mb": 0,
-            "color_block": "#5bb8a0",
-            "description": "",
-            "fontsize_des_block": 16,
-            "fontsize_des_block_mb": 14,
-            "lineheight_des_block": 22,
-            "mg_bottom_des": 0,
-            "color_des_block": "#3c3c3c",
-            "button": "",
-            "link": "",
-            "button_style": "style1",
-            "fontsize_button": 14,
-            "button_width": 235,
-            "fontweight_button": "500",
-            "enable_underline_button": false,
-            "color_button": "#ba7a2d",
-            "button_border": "",
-            "button_background": "",
-            "button_background_gradient": "",
-            "button_color_hover": "#ba7a2d",
-            "button_border_hover": "",
-            "button_background_hover": "",
-            "button_background_gradient_hover": ""
-          }
-        }
-      },
-      "block_order": [
-        "text_e3hFFf",
-        "text_xGqxge",
-        "text_yAtGjQ",
-        "text_DmtwAH",
-        "text_wVUEm7"
-      ],
-      "custom_css": [
-        ".policies-content {line-height: 34px; letter-spacing: -1px; font-weight: 500;}",
-        "@media (max-width: 768px) {.halo-row {display: grid; grid-template-columns: repeat(2, 1fr); }}"
-      ],
-      "name": "t:sections.custom_service_block.name",
-      "settings": {
-        "id_section": "",
-        "container": "container",
-        "padding_full_width": 0,
-        "display_border_top": false,
-        "display_border_bottom": false,
-        "border_color": "rgba(0,0,0,0)",
-        "service_block_swipe_on_mobile": "list",
-        "color_icon_slider": "#212121",
-        "service_block_style": "style_1",
-        "policies_bg": "#f9f5f1",
-        "policies_bg_gradient": "",
-        "service_block_title": "",
-        "enable_border_title": false,
-        "color_title": "#ffffff",
-        "fontsize_title": 40,
-        "fontsize_title_mb": 40,
-        "mg_bottom_title_service_block": 45,
-        "mg_bottom_title_service_block_mb": 45,
-        "service_block_des": "",
-        "service_block_des_pos": "bottom",
-        "color_des": "#000000",
-        "fontsize_des": 16,
-        "mg_top_service_block_des": 50,
-        "mg_bottom_service_block_des": 50,
-        "view_all": "",
-        "view_all_align": "center",
-        "font_weight_view_all": "400",
-        "mg_top_view": 0,
-        "mg_bottom_view": 30,
-        "enable_border_view_all": true,
-        "link_view_all": "",
-        "color_view_all": "#3c3c3c",
-        "icon_view_all": "",
-        "color_view_all_icon": "#eb492f",
-        "title_align": "center",
-        "item_width": "full_width",
-        "border_item": "none",
-        "enable_item_distance": true,
-        "enable_hover_box_shadow": false,
-        "enable_hover_effects_top": false,
-        "item_padding_top": 13,
-        "item_padding_bottom": 13,
-        "item_padding_left_right": 40,
-        "item_radius": 4,
-        "grid_gap": 30,
-        "item_align": "center",
-        "enable_block_bottom": false,
-        "bg_block_bottom": "#000000",
-        "btn_text_block_bottom": "Shop Now",
-        "button_link_block_bottom": "",
-        "button_1_width_block_bottom": 235,
-        "button_color_block_bottom": "#ffffff",
-        "button_border_block_bottom": "#232323",
-        "button_background_block_bottom": "#232323",
-        "button_background_gradient_block_bottom": "",
-        "button_color_hover_block_bottom": "#ffffff",
-        "button_border_hover_block_bottom": "#232323",
-        "button_background_hover_block_bottom": "#232323",
-        "button_background_gradient_hover_block_bottom": "",
-        "btn_2_text_block_bottom": "Shop Now",
-        "button_link_2_block_bottom": "",
-        "button_2_width_block_bottom": 235,
-        "button_2_color_block_bottom": "#ffffff",
-        "button_2_border_block_bottom": "#232323",
-        "button_2_background_block_bottom": "#232323",
-        "button_2_background_gradient_block_bottom": "",
-        "button_2_color_hover_block_bottom": "#ffffff",
-        "button_2_border_hover_block_bottom": "#232323",
-        "button_2_background_hover_block_bottom": "#232323",
-        "button_2_background_gradient_hover_block_bottom": "",
-        "mg_top_desktop": 50,
-        "mg_top_tablet": 50,
-        "mg_top_mobile": 50,
-        "mg_bottom_desktop": 50,
-        "mg_bottom_tablet": 50,
-        "mg_bottom_mobile": 50
-      }
-    },
     "tabblie_ingredients": {
-      "type": "tabblie-ingredients",
+      "type": "tabblie-ingredient-cards",
       "blocks": {
-        "ing_1": {
-          "type": "ingredient",
+        "p1": {
+          "type": "promise",
           "settings": {
-            "title": "Plantaardige surfactanten",
-            "description": "Krachtige, biologisch afbreekbare reinigingsmiddelen op plantbasis. Net zo effectief als chemische alternatieven, maar volledig veilig voor het milieu.",
-            "image_asset": "tabblie-ingredient-surfactanten.jpg"
+            "label": "100% natuurlijk",
+            "icon": "drop",
+            "accent": "#E2F2ED"
           }
         },
-        "ing_2": {
-          "type": "ingredient",
+        "p2": {
+          "type": "promise",
           "settings": {
-            "title": "Natuurlijke enzymen",
-            "description": "Breken hardnekkig vuil en vlekken af op natuurlijke wijze. Werken bij lage en hoge temperaturen voor een grondige reiniging.",
-            "image_asset": "tabblie-ingredient-enzymen.jpg"
+            "label": "Vegan",
+            "icon": "heart",
+            "accent": "#FCE8E8"
           }
         },
-        "ing_3": {
+        "p3": {
+          "type": "promise",
+          "settings": {
+            "label": "Super effectief",
+            "icon": "bolt",
+            "accent": "#FDF5DD"
+          }
+        },
+        "p4": {
+          "type": "promise",
+          "settings": {
+            "label": "Duurzaam",
+            "icon": "cycle",
+            "accent": "#E1ECFA"
+          }
+        },
+        "p5": {
+          "type": "promise",
+          "settings": {
+            "label": "100% plasticvrij",
+            "icon": "noplastic",
+            "accent": "#FDEEE6"
+          }
+        },
+        "ing1": {
           "type": "ingredient",
           "settings": {
-            "title": "Essentiele olien",
-            "description": "Een subtiele, frisse geur zonder kunstmatige geurstoffen. Volledig natuurlijk en vrij van allergenen.",
-            "image_asset": "tabblie-ingredient-olien.jpg"
+            "name": "Plantaardige surfactanten",
+            "description": "Reinigers op basis van kokos- en palmolie die vet en vuil losmaken.",
+            "badge_label": "PLANTAARDIG (KOKOS & PALM)",
+            "badge_type": "plantaardig"
+          }
+        },
+        "ing2": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Natuurlijke enzymen",
+            "description": "Breken eiwit-, zetmeel- en vetvlekken af, ook bij lage temperaturen.",
+            "badge_label": "MICROBIEEL",
+            "badge_type": "microbieel"
+          }
+        },
+        "ing3": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Natriumcarbonaat",
+            "description": "Mineraalzout dat hard water zachter maakt voor een betere waswerking.",
+            "badge_label": "MINERAAL",
+            "badge_type": "mineraal"
+          }
+        },
+        "ing4": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Citroenzuur",
+            "description": "Houdt de pH-waarde in balans voor optimale reiniging.",
+            "badge_label": "PLANTAARDIG",
+            "badge_type": "plantaardig"
+          }
+        },
+        "ing5": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Essentiële oliën",
+            "description": "Een subtiele frisse geur, zonder kunstmatige geurstoffen of allergenen.",
+            "badge_label": "PLANTAARDIG",
+            "badge_type": "plantaardig"
+          }
+        },
+        "ing6": {
+          "type": "ingredient",
+          "settings": {
+            "name": "Drager op zeewierbasis",
+            "description": "Het velletje zelf — lost volledig op, zonder PVA of microplastics.",
+            "badge_label": "PLANTAARDIG (ZEEWIER)",
+            "badge_type": "plantaardig"
           }
         }
       },
       "block_order": [
-        "ing_1",
-        "ing_2",
-        "ing_3"
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "ing1",
+        "ing2",
+        "ing3",
+        "ing4",
+        "ing5",
+        "ing6"
       ],
       "settings": {
+        "bg_color": "#FDF6EE",
         "eyebrow": "WAT ZIT ERIN?",
-        "heading": "De kracht van elke strip"
+        "title": "De kracht van elke strip",
+        "intro": "Zes ingrediënten, geen vulstoffen, geen PVA. Dit is alles wat er in een Tabblie wasstrip zit.",
+        "link_text": "Lees de strip onder de loep",
+        "link_url": "/blogs/de-schone-was/tabblie-wasstrips-onder-de-loep"
       }
     },
     "tabblie_comparison": {
@@ -869,18 +641,49 @@
       }
     },
     "tabblie_vt_pdp": {
-      "type": "tabblie-video-text",
+      "type": "tabblie-video-steps",
+      "blocks": {
+        "s1": {
+          "type": "step",
+          "settings": {
+            "title": "Scheur",
+            "description": "Scheur een strip af langs de perforatie. Halve strip voor een kleine was.",
+            "video_asset": "tabblie-step-scheur.mp4",
+            "poster_asset": "tabblie-step-scheur-poster.jpg"
+          }
+        },
+        "s2": {
+          "type": "step",
+          "settings": {
+            "title": "Gooi",
+            "description": "Direct bij het wasgoed in de trommel. Geen bakje, geen dop, geen geknoei.",
+            "video_asset": "tabblie-step-gooi.mp4",
+            "poster_asset": "tabblie-step-gooi-poster.jpg"
+          }
+        },
+        "s3": {
+          "type": "step",
+          "settings": {
+            "title": "Klaar",
+            "description": "Start je programma. De strip lost volledig op, in koud én warm water.",
+            "video_asset": "tabblie-step-klaar.mp4",
+            "poster_asset": "tabblie-step-klaar-poster.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3"
+      ],
       "settings": {
-        "bg_color": "#fdf6ee",
-        "video_side": "right",
+        "bg_color": "#FDF6EE",
         "eyebrow": "ZO WERKT HET",
         "title": "Scheur, gooi,",
         "title_accent": "klaar.",
-        "body": "<p>Eén strip vervangt één plastic fles. Scheur hem af, gooi hem in je wasmachine of vaatwasser, en je bent klaar. Geen afmeten, geen rommel, geen plastic afval.</p><p>Werkt in koud en warm water. Dermatologisch getest en veilig voor het hele gezin.</p>",
-        "button_text": "Bestel nu",
-        "button_url": "",
-        "video_url": "",
-        "video_asset": "tabblie-ugc-marieke.mp4"
+        "intro": "Een strip in de trommel en klaar. Geen afmeten, geen geknoei en nooit meer een plastic fles in huis.",
+        "button_text": "",
+        "button_url": ""
       }
     },
     "tabblie_stories_pdp": {
@@ -892,7 +695,9 @@
             "video_url": "",
             "username": "@lisabeun",
             "time_ago": "2u",
-            "caption": "Sinds ik tabblie gebruik bespaar ik maandelijks 3+ plastic flessen"
+            "caption": "Sinds ik Tabblie gebruik bespaar ik maandelijks 3+ plastic flessen",
+            "video_asset": "tabblie-story-lisa.mp4",
+            "poster_asset": "tabblie-story-lisa-poster.jpg"
           }
         },
         "s2": {
@@ -901,7 +706,9 @@
             "video_url": "",
             "username": "@mariekevh",
             "time_ago": "5u",
-            "caption": "Was eerst sceptisch maar deze strips werken echt"
+            "caption": "Was eerst sceptisch maar deze strips werken echt",
+            "video_asset": "tabblie-story-marieke.mp4",
+            "poster_asset": "tabblie-story-marieke-poster.jpg"
           }
         },
         "s3": {
@@ -910,7 +717,9 @@
             "video_url": "",
             "username": "@sophiedebeer",
             "time_ago": "1d",
-            "caption": "Geen zware flessen meer sjouwen naar huis"
+            "caption": "Geen zware flessen meer sjouwen naar huis",
+            "video_asset": "tabblie-story-sophie.mp4",
+            "poster_asset": "tabblie-story-sophie-poster.jpg"
           }
         }
       },
@@ -1021,7 +830,8 @@
       ],
       "settings": {
         "include_margins": false
-      }
+      },
+      "disabled": true
     },
     "product-recently-viewed": {
       "type": "product-recently-viewed",
@@ -1367,9 +1177,8 @@
     "tabblie_product_usps",
     "main",
     "tabblie_comparison",
-    "custom_service_block_8Gzkxn",
-    "tabblie_ingredients",
     "tabblie_vt_pdp",
+    "tabblie_ingredients",
     "tabblie_stories_pdp",
     "tabblie_guarantee_pdp",
     "product-recommendations",

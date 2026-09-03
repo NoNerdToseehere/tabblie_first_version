@@ -1,0 +1,231 @@
+{%- comment -%}
+  tabblie-video-steps.liquid
+  "Zo werkt het" as 1-2-3 with a short clip per step (scheur, gooi, klaar).
+  Sticker cards like the how-it-works steps, each with a muted looping
+  clip that only plays while on screen. Newspaper doodles flank the
+  heading. Below 900px the cards form a swipe rail.
+{%- endcomment -%}
+
+{%- liquid
+  assign ink = '#182D20'
+  assign accents = 'AFD3E8,F5C0D3,F5CB5C' | split: ','
+-%}
+
+<style>
+  .tabblie-vsteps {
+    background-color: {{ section.settings.bg_color | default: '#FDF6EE' }};
+    padding: clamp(48px, 6vw, 88px) clamp(16px, 3vw, 40px);
+    position: relative;
+    overflow: hidden;
+  }
+  .tabblie-vsteps__inner { max-width: 1100px; margin: 0 auto; }
+  .tabblie-vsteps__header { position: relative; text-align: center; max-width: 720px; margin: 0 auto clamp(28px, 4vw, 44px); }
+  .tabblie-vsteps__eyebrow {
+    font-family: var(--text-font-family); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #E8622A; margin: 0 0 14px;
+  }
+  .tabblie-vsteps__title {
+    font-family: var(--heading-font-family); font-size: clamp(30px, 4.6vw, 48px) !important; line-height: 1.06 !important; letter-spacing: -0.02em;
+    color: #26523F; margin: 0 0 14px; text-transform: none;
+  }
+  .tabblie-vsteps__accent { color: #E8622A; }
+  .tabblie-vsteps__intro { font-family: var(--text-font-family); font-size: clamp(15px, 1.7vw, 17px); line-height: 1.6; color: rgba(24, 45, 32, 0.7); margin: 0 auto; max-width: 560px; }
+  .tabblie-vsteps__doodle { position: absolute; display: none; pointer-events: none; }
+  .tabblie-vsteps__doodle--stripes { left: -70px; top: 30px; width: 52px; height: 52px; }
+  .tabblie-vsteps__doodle--star { right: -66px; top: 18px; width: 46px; height: 46px; transform: rotate(14deg); }
+  @media (min-width: 1024px) { .tabblie-vsteps__doodle { display: block; } }
+
+  .tabblie-vsteps__steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(28px, 4.5vw, 64px);
+    margin: 0; padding: 0; list-style: none; position: relative;
+  }
+  .tabblie-vsteps__card {
+    position: relative; z-index: 1; min-width: 0;
+    display: flex; flex-direction: column;
+    background: #FFFFFF; border: 3px solid {{ ink }}; border-radius: 22px; box-shadow: 7px 8px 0 {{ ink }};
+    padding: 12px 12px 20px;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+  }
+  @media (hover: hover) {
+    .tabblie-vsteps__card:hover { transform: translateY(-4px); box-shadow: 10px 12px 0 {{ ink }}; }
+  }
+  /* connector arrows between the cards */
+  .tabblie-vsteps__card + .tabblie-vsteps__card::after {
+    content: ''; position: absolute; z-index: 4; top: 38%; left: clamp(-46px, -3vw, -26px); width: 34px; height: 34px; border-radius: 50%;
+    background: #E8622A url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h12'/%3E%3Cpath d='M12 6l6 6-6 6'/%3E%3C/svg%3E") center / 18px 18px no-repeat;
+    border: 2px solid {{ ink }}; box-shadow: 2px 3px 0 rgba(31, 18, 9, 0.25);
+  }
+  .tabblie-vsteps__media {
+    position: relative; aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; background: var(--step-accent, #AFD3E8);
+  }
+  .tabblie-vsteps__media video,
+  .tabblie-vsteps__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .tabblie-vsteps__media video::-webkit-media-controls { display: none !important; }
+  .tabblie-vsteps__badge {
+    position: absolute; z-index: 2; top: 10px; left: 10px; width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--step-accent, #AFD3E8); border: 2px solid {{ ink }}; box-shadow: 2px 3px 0 rgba(31, 18, 9, 0.25);
+    font-family: var(--font-heading-family); font-size: 20px; font-weight: 800; color: {{ ink }};
+  }
+  .tabblie-vsteps__copy { padding: 16px 8px 0; }
+  .tabblie-vsteps__step-title {
+    margin: 0 0 6px; font-family: var(--heading-font-family); font-size: clamp(20px, 1.8vw, 24px); font-weight: 800; line-height: 1.12; color: #26523F;
+  }
+  .tabblie-vsteps__step-desc { margin: 0; font-family: var(--text-font-family); font-size: 15.5px; line-height: 1.5; color: {{ ink }}; }
+  .tabblie-vsteps__cta {
+    display: inline-flex; align-items: center; gap: 10px; margin: clamp(26px, 3vw, 36px) auto 0; padding: 15px 32px; min-height: 52px; border-radius: 999px;
+    background: #E8622A; color: #FFFFFF; font-family: var(--text-font-family); font-size: 17px; font-weight: 800; text-decoration: none;
+    box-shadow: 0 6px 20px rgba(232, 98, 42, 0.22); transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .tabblie-vsteps__cta:hover { background: #d4551f; color: #FFFFFF; transform: translateY(-2px); }
+  .tabblie-vsteps__cta-wrap { text-align: center; }
+
+  @media (max-width: 899px) {
+    .tabblie-vsteps { padding-left: 0; padding-right: 0; }
+    .tabblie-vsteps__header { padding: 0 20px; }
+    .tabblie-vsteps__steps {
+      display: flex; align-items: stretch; gap: 26px;
+      overflow-x: auto; overscroll-behavior-x: contain; -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; scrollbar-width: none;
+      padding: 6px 20px 16px; scroll-padding-inline: 20px;
+    }
+    .tabblie-vsteps__steps::-webkit-scrollbar { display: none; }
+    .tabblie-vsteps__card { flex: 0 0 min(78vw, 340px); scroll-snap-align: start; }
+    .tabblie-vsteps__card:hover { transform: none; box-shadow: 7px 8px 0 {{ ink }}; }
+    .tabblie-vsteps__card + .tabblie-vsteps__card::after { left: -30px; }
+    .tabblie-vsteps__cta-wrap { padding: 0 20px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tabblie-vsteps__card { transition: none; }
+  }
+</style>
+
+<section class="tabblie-vsteps" id="tabblie-vsteps-{{ section.id }}">
+  <div class="tabblie-vsteps__inner">
+    <div class="tabblie-vsteps__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="tabblie-vsteps__eyebrow">{{ section.settings.eyebrow | escape }}</p>
+      {%- endif -%}
+      <h2 class="tabblie-vsteps__title">
+        {{- section.settings.title | escape -}}
+        {%- if section.settings.title_accent != blank %} <span class="tabblie-vsteps__accent">{{ section.settings.title_accent | escape }}</span>{% endif -%}
+      </h2>
+      {%- if section.settings.intro != blank -%}
+        <p class="tabblie-vsteps__intro">{{ section.settings.intro | escape }}</p>
+      {%- endif -%}
+      <svg class="tabblie-vsteps__doodle tabblie-vsteps__doodle--stripes" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="#26523F" stroke-width="5" stroke-linecap="round"><path d="M14 44 4 51M22 32 8 30M35 24 31 9"/></g></svg>
+      <svg class="tabblie-vsteps__doodle tabblie-vsteps__doodle--star" viewBox="0 0 64 64" aria-hidden="true"><path d="m32 5 7 18 20 1-16 12 5 20-16-11-17 11 6-20L5 24l20-1Z" fill="none" stroke="#F5C842" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <ol class="tabblie-vsteps__steps" data-vsteps>
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign idx = forloop.index0 | modulo: 3
+            assign accent = block.settings.accent
+            if accent == blank
+              assign accent = accents[idx] | prepend: '#'
+            endif
+            assign src = ''
+            if block.settings.video_url != blank
+              assign src = block.settings.video_url
+            elsif block.settings.video_asset != blank
+              assign src = block.settings.video_asset | asset_url
+            endif
+            assign poster = ''
+            if block.settings.poster != blank
+              assign poster = block.settings.poster | image_url: width: 600
+            elsif block.settings.poster_asset != blank
+              assign poster = block.settings.poster_asset | asset_url
+            endif
+          -%}
+          <li class="tabblie-vsteps__card" style="--step-accent: {{ accent }};" {{ block.shopify_attributes }}>
+            <div class="tabblie-vsteps__media">
+              <span class="tabblie-vsteps__badge" aria-hidden="true">{{ forloop.index }}</span>
+              {%- if src != blank -%}
+                <video src="{{ src }}#t=0.001" {% if poster != blank %}poster="{{ poster }}"{% endif %} muted loop playsinline preload="metadata" width="600" height="750" aria-label="{{ block.settings.title | escape }}" data-vsteps-video></video>
+              {%- elsif poster != blank -%}
+                <img src="{{ poster }}" alt="{{ block.settings.title | escape }}" width="600" height="750" loading="lazy">
+              {%- endif -%}
+            </div>
+            <div class="tabblie-vsteps__copy">
+              {%- if block.settings.title != blank -%}
+                <h3 class="tabblie-vsteps__step-title">{{ block.settings.title | escape }}</h3>
+              {%- endif -%}
+              {%- if block.settings.description != blank -%}
+                <p class="tabblie-vsteps__step-desc">{{ block.settings.description | escape }}</p>
+              {%- endif -%}
+            </div>
+          </li>
+        {%- endfor -%}
+      </ol>
+    {%- endif -%}
+
+    {%- if section.settings.button_text != blank -%}
+      <div class="tabblie-vsteps__cta-wrap">
+        <a class="tabblie-vsteps__cta" href="{{ section.settings.button_url | default: '/collections/all' }}">{{ section.settings.button_text | escape }}</a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  (function () {
+    var videos = document.querySelectorAll('#tabblie-vsteps-{{ section.id }} [data-vsteps-video]');
+    if (!videos.length) return;
+    videos.forEach(function (v) {
+      v.muted = true; v.defaultMuted = true; v.volume = 0;
+      v.addEventListener('volumechange', function () { if (!v.muted || v.volume > 0) { v.muted = true; v.volume = 0; } });
+    });
+    if (!('IntersectionObserver' in window)) { videos.forEach(function (v) { v.play().catch(function () {}); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) { v.play().catch(function () {}); } else { v.pause(); }
+      });
+    }, { threshold: 0.35 });
+    videos.forEach(function (v) { io.observe(v); });
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Zo werkt het (video's)",
+  "tag": "section",
+  "settings": [
+    { "type": "color", "id": "bg_color", "label": "Achtergrond", "default": "#FDF6EE" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "ZO WERKT HET" },
+    { "type": "text", "id": "title", "label": "Kop", "default": "Scheur, gooi," },
+    { "type": "text", "id": "title_accent", "label": "Kop accent (oranje)", "default": "klaar." },
+    { "type": "text", "id": "intro", "label": "Intro" },
+    { "type": "text", "id": "button_text", "label": "Knoptekst (leeg = geen knop)" },
+    { "type": "url", "id": "button_url", "label": "Knop link" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Stap",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Titel", "default": "Scheur" },
+        { "type": "text", "id": "description", "label": "Tekst" },
+        { "type": "url", "id": "video_url", "label": "Video URL (MP4)" },
+        { "type": "text", "id": "video_asset", "label": "Video uit theme assets", "info": "Bestandsnaam, bijv. tabblie-step-scheur.mp4. Alleen gebruikt als hierboven geen URL staat." },
+        { "type": "image_picker", "id": "poster", "label": "Poster (stilstaand beeld)" },
+        { "type": "text", "id": "poster_asset", "label": "Poster uit theme assets", "info": "Bijv. tabblie-step-scheur-poster.jpg" },
+        { "type": "color", "id": "accent", "label": "Accentkleur (leeg = blauw/roze/geel om de beurt)" }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Zo werkt het (video's)",
+      "blocks": [
+        { "type": "step", "settings": { "title": "Scheur", "description": "Scheur een strip af langs de perforatie. Halve strip voor een kleine was.", "video_asset": "tabblie-step-scheur.mp4", "poster_asset": "tabblie-step-scheur-poster.jpg" } },
+        { "type": "step", "settings": { "title": "Gooi", "description": "Direct bij het wasgoed in de trommel. Geen bakje, geen dop.", "video_asset": "tabblie-step-gooi.mp4", "poster_asset": "tabblie-step-gooi-poster.jpg" } },
+        { "type": "step", "settings": { "title": "Klaar", "description": "Start je programma. De strip lost volledig op, in koud én warm water.", "video_asset": "tabblie-step-klaar.mp4", "poster_asset": "tabblie-step-klaar-poster.jpg" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
