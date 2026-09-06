@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "artcta": {
@@ -11,25 +20,27 @@
     "hero": {
       "type": "tabblie-page-hero",
       "settings": {
-        "bg_color": "#FCE8E8",
+        "bg_color": "#fce8e8",
         "eyebrow": "EVEN EERLIJK",
         "heading": "De wasmiddelwereld zit vol troep.",
         "heading_accent": "Letterlijk.",
-        "subtext": "Waarom steeds meer huishoudens de fles én de pod laten staan — en wat er dan wél in je trommel belandt."
+        "subtext": "Waarom steeds meer huishoudens de flessen én de pods laten staan — en wat er dan wél in je trommel belandt.",
+        "button_text": "",
+        "button_url": ""
       }
     },
     "bottles": {
       "type": "tabblie-bottle-grid",
       "settings": {
-        "bg_color": "#FDF6EE",
+        "bg_color": "#fdf6ee",
         "eyebrow": "WAAROM DIT BESTAAT",
-        "heading": "600 flessen in tien jaar.\nAlleen al aan schoonmaakmiddel.",
-        "body": "<p>Een gemiddeld huishouden werkt tot 60 plastic flessen per jaar weg aan was- en schoonmaakmiddel. Die flessen reizen van fabriek naar distributiecentrum naar de super in jouw stad. Daarna sjouw jij ze de trap op — en een paar weken later staan ze bij de container.</p><p>Het grootste deel van wat je tilt is water en plastic. De rest is wasmiddel.</p>",
+        "heading": "500 flessen in tien jaar.\nAlleen al aan schoonmaakmiddel.",
+        "body": "<p>Een gemiddeld huishouden werkt tot 50 plastic flessen per jaar weg aan was- en schoonmaakmiddel. Die flessen reizen van fabriek naar distributiecentrum naar de super in jouw stad. Daarna sjouw jij ze de trap op — en een paar weken later staan ze bij de container.</p><p>Het grootste deel van wat je tilt is water en plastic. De rest is wasmiddel.</p>",
         "link_text": "Lees onze duurzaamheidskeuzes",
         "link_url": "/pages/duurzaamheid",
         "total": 600,
-        "caption": "Tot 60 flessen per jaar. Tien jaar lang.",
-        "source": "<p>Op basis van onze productclaim: één pak Tabblie wasstrips vervangt tot 60 plastic flessen per jaar.</p>"
+        "caption": "Tot 50 flessen per jaar. Tien jaar lang.",
+        "source": "<p>Op basis van onze productclaim: één pak Tabblie wasstrips vervangt tot 50 plastic flessen per jaar.</p>"
       }
     },
     "main": {
@@ -54,6 +65,7 @@
         "sidebar_heading_font_size": 14,
         "sidebar_heading_font_weight": "700",
         "sidebar_heading_text_transform": "uppercase",
+        "hide_article_title": true,
         "show_main_img": false,
         "show_author": true,
         "show_date": true,
@@ -81,8 +93,7 @@
         "mg_top_mobile": 0,
         "mg_bottom_desktop": 0,
         "mg_bottom_tablet": 0,
-        "mg_bottom_mobile": 0,
-        "hide_article_title": true
+        "mg_bottom_mobile": 0
       }
     },
     "readmore": {
@@ -103,8 +114,11 @@
             "media_index": 2,
             "eyebrow": "Voor de was",
             "badge": "Meest gekozen",
+            "title": "",
+            "tagline": "",
             "card_color": "wasstrips",
-            "button_text": "In winkelwagen"
+            "button_text": "In winkelwagen",
+            "button_url": ""
           }
         }
       },
@@ -112,23 +126,31 @@
         "was"
       ],
       "settings": {
+        "anchor_id": "",
         "eyebrow": "Probeer het zelf",
         "title": "Eén strip. De hele was.",
         "intro": "",
-        "trust_items": "Gratis verzending vanaf €30|100% plastic- & microplasticvrij|30 dagen proef wassen"
+        "trust_items": "Gratis verzending vanaf €30|100% plastic- & microplasticvrij|30 dagen proef wassen",
+        "use_collection": false,
+        "skip_handles": "tabblie-binnenkort",
+        "first_badge": "Meest gekozen",
+        "collection_media_index": 2,
+        "collection_button_text": "In winkelwagen"
       }
     },
     "founder": {
       "type": "tabblie-blog-teaser",
       "settings": {
-        "bg_color": "#FDF6EE",
+        "bg_color": "#fdf6ee",
         "eyebrow": "VAN DE OPRICHTER",
         "heading": "Wij doen dus niet mee.",
         "body": "<p>Tabblie is begonnen met één simpele vraag: waarom verschepen we water in plastic, als het ook in een velletje kan? Geen fles, geen PVA, geen gesjouw — gewoon schone was uit de brievenbus.</p>",
         "bold_line": "Kind kan de was doen.",
         "button_text": "Bekijk de wasstrips",
         "button_url": "/products/tabblie-wasstrips",
+        "bg_image_asset": "",
         "image": "shopify://shop_images/Founder_image.png",
+        "image_asset": "",
         "image_alt": "De oprichter van Tabblie",
         "facts_title": ""
       }
@@ -140,8 +162,8 @@
           "type": "plan",
           "settings": {
             "product": "tabblie-wasstrips",
-            "accent": "#182D20",
-            "card_bg": "#FDEEE6",
+            "accent": "#182d20",
+            "card_bg": "#fdeee6",
             "image_asset": "tabblie-pack-was.png"
           }
         },
@@ -149,8 +171,8 @@
           "type": "plan",
           "settings": {
             "product": "tabblie-vaatwasstrips",
-            "accent": "#182D20",
-            "card_bg": "#FDF5DD",
+            "accent": "#182d20",
+            "card_bg": "#fdf5dd",
             "image_asset": "tabblie-pack-vaat.png"
           }
         },
@@ -158,8 +180,8 @@
           "type": "plan",
           "settings": {
             "product": "tabblie-toiletstrips",
-            "accent": "#182D20",
-            "card_bg": "#E2F2ED",
+            "accent": "#182d20",
+            "card_bg": "#e2f2ed",
             "image_asset": "tabblie-pack-toilet.png"
           }
         }
@@ -175,15 +197,15 @@
         "title": "Vandaag geregeld, nooit meer zonder",
         "subtext": "Kies je ritme en je product — het abonnement staat direct in je winkelwagen, inclusief 20% korting. Wisselen van ritme kan later altijd nog.",
         "selling_plan_id": "691800965469",
-        "footnote": "Liever eerst los proberen? Dat kan gewoon op de productpagina — met 30 dagen niet-goed-geld-terug.",
-        "show_mix": true,
-        "mix_title": "Mix & match: stel je eigen pakket samen",
-        "mix_text": "Vink aan wat je wilt combineren — alles komt samen in één levering, elk product met 20% korting.",
         "plan_label": "Maandelijks",
         "selling_plan_id_2": "691533545821",
         "plan_label_2": "Elke 3 maanden",
         "show_onetime": true,
-        "onetime_label": "Eenmalig"
+        "onetime_label": "Eenmalig",
+        "show_mix": true,
+        "mix_title": "Mix & match: stel je eigen pakket samen",
+        "mix_text": "Vink aan wat je wilt combineren — alles komt samen in één levering, elk product met 20% korting.",
+        "footnote": "Liever eerst los proberen? Dat kan gewoon op de productpagina — met 30 dagen niet-goed-geld-terug."
       }
     }
   },
