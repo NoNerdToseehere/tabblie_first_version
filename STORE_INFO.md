@@ -34,7 +34,8 @@ Update this file whenever any of these facts change.
 ## Notification e-mails (order confirmation)
 
 - Shopify Basic cannot switch off the order-confirmation notification (Plus only). Since 2026-09-13 the Shopify template is a Liquid port of the Klaviyo "[Bestelling] Bevestiging" e-mail (flow "Bestelbevestiging v2 (txn)", template `Ryb69C`), kept in `notifications/order-confirmation.liquid`. That folder is **not** a theme folder: the GitHub integration ignores it, it only versions the file. To apply a change: paste the whole file into Shopify admin → Settings → Notifications → Customer notifications → Order confirmation → Edit code, and keep the subject line in sync with Klaviyo ("Bedankt voor je bestelling {{ name }}").
-- While both Shopify and the Klaviyo flow are live, customers get two confirmations; the Klaviyo flow is the one to pause once the Shopify template is in place.
+- Same for the shipping e-mail: `notifications/shipping-confirmation.liquid` is the port of Klaviyo's "[Bestelling] Onderweg" (flow "Onderweg v2 (txn)", template `RtKgP9`), pasted into Customer notifications → Shipping confirmation, subject "Je pakketje is onderweg". It uses `fulfillment.tracking_company / tracking_number / tracking_url` and `fulfillment.fulfillment_line_items`; the Sendcloud fulfilment must trigger Shopify's notification for it to send.
+- While both Shopify and the Klaviyo flows are live, customers get two confirmations; the Klaviyo flows are the ones to pause once the Shopify templates are in place.
 
 ## Shopify ↔ GitHub Integration
 
