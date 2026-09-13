@@ -31,6 +31,11 @@ Update this file whenever any of these facts change.
 | Git user | NoNerdToseehere |
 | Local path | `/Users/projects/Desktop/shopify_build_ai/shopifytheme2` |
 
+## Notification e-mails (order confirmation)
+
+- Shopify Basic cannot switch off the order-confirmation notification (Plus only). Since 2026-09-13 the Shopify template is a Liquid port of the Klaviyo "[Bestelling] Bevestiging" e-mail (flow "Bestelbevestiging v2 (txn)", template `Ryb69C`), kept in `notifications/order-confirmation.liquid`. That folder is **not** a theme folder: the GitHub integration ignores it, it only versions the file. To apply a change: paste the whole file into Shopify admin → Settings → Notifications → Customer notifications → Order confirmation → Edit code, and keep the subject line in sync with Klaviyo ("Bedankt voor je bestelling {{ name }}").
+- While both Shopify and the Klaviyo flow are live, customers get two confirmations; the Klaviyo flow is the one to pause once the Shopify template is in place.
+
 ## Shopify ↔ GitHub Integration
 
 - The theme named **`tabblie_first_version/main`** in the Shopify admin is connected to this repo via Shopify's GitHub integration — pushes to `main` auto-deploy to that theme, and edits made in the Shopify theme editor on that theme are auto-committed back to `main` (commits titled "Update from Shopify for theme tabblie_first_version/main").
