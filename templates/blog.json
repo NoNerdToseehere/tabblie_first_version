@@ -38,41 +38,6 @@
             "image_asset": "blognews-hero-laundry.jpg"
           }
         },
-        "img2": {
-          "type": "img",
-          "settings": {
-            "article": "de-schone-was/wasstrips-duurzaam-huishouden",
-            "image_asset": "blognews-plastic-bottles.jpg"
-          }
-        },
-        "img3": {
-          "type": "img",
-          "settings": {
-            "article": "de-schone-was/bundels-besparen",
-            "image_asset": "blognews-dishwasher.jpg"
-          }
-        },
-        "img4": {
-          "type": "img",
-          "settings": {
-            "article": "de-schone-was/wasstrips-review-voor-en-nadelen",
-            "image_asset": "blognews-dose-strip.jpg"
-          }
-        },
-        "img5": {
-          "type": "img",
-          "settings": {
-            "article": "de-schone-was/toekomst-duurzaam-schoonmaken",
-            "image_asset": "blognews-plastic-bottle.jpg"
-          }
-        },
-        "img6": {
-          "type": "img",
-          "settings": {
-            "article": "de-schone-was/30-dagen-proefwassen",
-            "image_asset": "blognews-behind-scenes.jpg"
-          }
-        },
         "top1": {
           "type": "top",
           "settings": {
@@ -96,20 +61,6 @@
           "settings": {
             "article": "de-schone-was/30-dagen-proefwassen"
           }
-        },
-        "img8": {
-          "type": "img",
-          "settings": {
-            "article": "de-schone-was/toiletstrips-zonder-microplastics",
-            "image_asset": "blognews-toilet.jpg"
-          }
-        },
-        "img9": {
-          "type": "img",
-          "settings": {
-            "article": "de-schone-was/gezin-minder-ruimte-minder-afval",
-            "image_asset": "blognews-laundry-couple.jpg"
-          }
         }
       },
       "block_order": [
@@ -118,13 +69,6 @@
         "tab_plastic",
         "tab_prod",
         "img1",
-        "img2",
-        "img3",
-        "img4",
-        "img5",
-        "img6",
-        "img8",
-        "img9",
         "top1",
         "top2",
         "top3",
