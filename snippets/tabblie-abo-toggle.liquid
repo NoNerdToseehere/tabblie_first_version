@@ -1,0 +1,231 @@
+{%- comment -%}
+  tabblie-abo-toggle.liquid
+  Daps-style "Abonneer & bespaar / Eenmalig" toggle as the first row of the
+  buy box. It does not add its own cart logic: it drives the Kaching Bundles
+  subscription control (hidden with CSS), so selling plans, bar prices and
+  the selling_plan field in the form keep coming from Kaching.
+  Rendered through product-custom-information with the marker
+  'tabblie-abo-toggle'. Only shows when the product has selling plans.
+{%- endcomment -%}
+{%- if product.selling_plan_groups.size > 0 -%}
+<div class="tabblie-abo" data-abo-toggle data-product-id="{{ product.id }}">
+  <div class="tabblie-abo__seg" role="radiogroup" aria-label="Bestelwijze">
+    <button type="button" class="tabblie-abo__opt is-active" data-abo-mode="subscribe" role="radio" aria-checked="true">
+      <span class="tabblie-abo__opt-label tabblie-abo__opt-label--long">Abonneer &amp; bespaar</span>
+      <span class="tabblie-abo__opt-label tabblie-abo__opt-label--short">Abonneren</span>
+      <span class="tabblie-abo__badge">20% korting</span>
+    </button>
+    <button type="button" class="tabblie-abo__opt" data-abo-mode="onetime" role="radio" aria-checked="false">
+      <span class="tabblie-abo__opt-label">Eenmalig</span>
+    </button>
+  </div>
+  <div class="tabblie-abo__panel" data-abo-panel="subscribe">
+    <div class="tabblie-abo__freq">
+      <label class="tabblie-abo__freq-label" for="tabblie-abo-freq-{{ product.id }}">Bezorgen</label>
+      <span class="tabblie-abo__select-wrap">
+        <select id="tabblie-abo-freq-{{ product.id }}" class="tabblie-abo__select" data-abo-freq aria-label="Bezorgfrequentie"></select>
+        <svg class="tabblie-abo__chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </span>
+      <span class="tabblie-abo__info-wrap">
+        <button type="button" class="tabblie-abo__info" data-abo-info aria-expanded="false" aria-controls="tabblie-abo-tip-{{ product.id }}" aria-label="Meer over het abonnement">i</button>
+        <div class="tabblie-abo__tip" id="tabblie-abo-tip-{{ product.id }}" role="tooltip" hidden>
+          <strong>20% korting op elke levering.</strong> Geen contract: pauzeren, wijzigen of opzeggen wanneer je wilt.
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .tabblie-abo { margin: 4px 0 18px; font-family: var(--text-font-family); color: #182D20; }
+  .tabblie-abo__seg {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    background: #FFFFFF; border: 2px solid #182D20; border-radius: 999px; padding: 4px;
+    box-shadow: 3px 3px 0 #182D20;
+  }
+  .tabblie-abo__opt {
+    appearance: none; -webkit-appearance: none; border: 0; background: transparent; cursor: pointer;
+    min-height: 46px; padding: 8px 12px; border-radius: 999px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
+    font-family: var(--text-font-family); font-size: 15px; font-weight: 800; line-height: 1.1; color: #182D20;
+    transition: background 0.18s ease, color 0.18s ease;
+  }
+  .tabblie-abo__opt.is-active { background: #E8622A; color: #FFFFFF; }
+  .tabblie-abo__opt:focus-visible { outline: 3px solid #F5C842; outline-offset: 2px; }
+  .tabblie-abo__badge {
+    display: inline-block; padding: 3px 8px; border-radius: 999px;
+    background: #F5C842; color: #182D20; border: 1.5px solid #182D20;
+    font-size: 11px; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2; white-space: nowrap;
+  }
+  .tabblie-abo__opt-label--short { display: none; }
+  .tabblie-abo__panel { padding: 14px 4px 0; }
+  .tabblie-abo__freq { display: flex; align-items: center; gap: 10px; margin: 0; }
+  .tabblie-abo__freq-label { font-size: 14px; font-weight: 800; color: #26523F; white-space: nowrap; }
+  .tabblie-abo__select-wrap { position: relative; flex: 1 1 auto; max-width: 320px; }
+  .tabblie-abo__select {
+    width: 100%; appearance: none; -webkit-appearance: none; cursor: pointer;
+    min-height: 44px; padding: 10px 40px 10px 14px; border-radius: 12px;
+    border: 2px solid #182D20; background: #FFFFFF; color: #182D20;
+    font-family: var(--text-font-family); font-size: 16px; font-weight: 700; line-height: 1.2;
+  }
+  .tabblie-abo__select:focus-visible { outline: 3px solid #F5C842; outline-offset: 2px; }
+  .tabblie-abo__chev { position: absolute; right: 12px; top: 50%; width: 18px; height: 18px; margin-top: -9px; color: #182D20; pointer-events: none; }
+  .tabblie-abo__info-wrap { position: relative; flex: 0 0 auto; display: inline-flex; }
+  .tabblie-abo__info {
+    appearance: none; -webkit-appearance: none; cursor: pointer; width: 26px; height: 26px; padding: 0; border-radius: 50%;
+    border: 2px solid #182D20; background: #FFFFFF; color: #182D20;
+    font-family: var(--heading-font-family); font-size: 14px; font-weight: 800; line-height: 1; display: inline-flex; align-items: center; justify-content: center;
+  }
+  .tabblie-abo__info:hover, .tabblie-abo__info[aria-expanded="true"] { background: #F5C842; }
+  .tabblie-abo__info:focus-visible { outline: 3px solid #F5C842; outline-offset: 2px; }
+  .tabblie-abo__tip {
+    position: absolute; z-index: 5; top: calc(100% + 8px); right: 0; width: 280px; max-width: calc(100vw - 40px);
+    background: #FFFFFF; border: 2px solid #182D20; border-radius: 12px; box-shadow: 3px 3px 0 #182D20; padding: 10px 12px;
+    font-size: 13.5px; line-height: 1.45; font-weight: 500; color: #182D20;
+  }
+  .tabblie-abo__tip strong { font-weight: 800; }
+  .tabblie-abo__freq { position: relative; }
+  @media (hover: hover) { .tabblie-abo__info-wrap:hover .tabblie-abo__tip { display: block; } }
+  /* the Kaching subscription card is driven by this toggle, so it stays out of sight */
+  html.tabblie-abo-on .kaching-bundles__bar[role="checkbox"] { display: none !important; }
+  @media (max-width: 749px) {
+    .tabblie-abo__opt { font-size: 14px; padding: 8px 6px; gap: 6px; flex-wrap: nowrap; }
+    .tabblie-abo__opt-label--long { display: none; }
+    .tabblie-abo__opt-label--short { display: inline; }
+    .tabblie-abo__badge { font-size: 10px; padding: 2px 6px; }
+    .tabblie-abo__freq { flex-wrap: wrap; gap: 8px; }
+    .tabblie-abo__freq-label { flex: 0 0 100%; }
+    .tabblie-abo__select-wrap { flex: 1 1 auto; max-width: none; }
+    .tabblie-abo__info-wrap { position: static; }
+    .tabblie-abo__tip { left: 0; right: 0; width: auto; max-width: none; }
+  }
+</style>
+
+<script>
+  (function () {
+    var root = document.querySelector('[data-abo-toggle]');
+    if (!root) return;
+    var pid = root.getAttribute('data-product-id');
+    var mode = 'subscribe'; /* every visit starts on subscribe, like the Daps pattern */
+    document.documentElement.classList.add('tabblie-abo-on');
+    var freqSel = root.querySelector('[data-abo-freq]');
+    var SUB_LABEL = 'Abonneer & bespaar 20%';
+    var busy = false;
+
+    function widget() { return document.querySelector('.kaching-bundles__block--loaded') || document.querySelector('.kaching-bundles'); }
+    function wcb() { var w = widget(); return w && w.querySelector('.kaching-bundles__bar[role="checkbox"]'); }
+    function wsel() { var c = wcb(); return c && c.querySelector('select.kaching-bundles__selling-plan-select'); }
+    function isChecked() { var c = wcb(); return !!c && c.getAttribute('aria-checked') === 'true'; }
+
+    function labels() {
+      var sub = mode === 'subscribe';
+      document.querySelectorAll('form[action*="/cart/add"] button[type="submit"][name="add"], #show-sticky-product').forEach(function (b) {
+        var cur = (b.textContent || '').trim();
+        if (!b.dataset.aboOrig) b.dataset.aboOrig = cur;
+        var orig = b.dataset.aboOrig;
+        var isOurs = cur === SUB_LABEL || cur === orig;
+        if (!isOurs) return; /* sold out / loading text set by the theme: leave it */
+        var want = sub ? SUB_LABEL : orig;
+        if (cur !== want) b.textContent = want;
+      });
+    }
+
+    function syncFreqOptions() {
+      var s = wsel();
+      if (!s || !freqSel) return;
+      var sig = Array.prototype.map.call(s.options, function (o) { return o.value + '|' + o.text; }).join(';');
+      if (freqSel.getAttribute('data-sig') !== sig) {
+        freqSel.innerHTML = '';
+        Array.prototype.forEach.call(s.options, function (o) { var op = document.createElement('option'); op.value = o.value; op.textContent = o.text; freqSel.appendChild(op); });
+        freqSel.setAttribute('data-sig', sig);
+      }
+      if (freqSel.value !== s.value) freqSel.value = s.value;
+    }
+
+    function perWash() {
+      var w = widget(); if (!w) return;
+      w.querySelectorAll('.kaching-bundles__bar').forEach(function (bar) {
+        if (bar.getAttribute('role') === 'checkbox') return;
+        var sub = bar.querySelector('.kaching-bundles__bar-subtitle');
+        var priceEl = bar.querySelector('.kaching-bundles__bar-price');
+        if (!sub || !priceEl) return;
+        var m = /^(\d+)\s+wasbeurten\s*·\s*€\s*\d+,\d{2}\s*per wasbeurt$/.exec((sub.textContent || '').trim());
+        var pm = /€\s*(\d+(?:\.\d{3})*),(\d{2})/.exec(priceEl.textContent || '');
+        if (!m || !pm) return;
+        var n = parseInt(m[1], 10); var price = parseInt(pm[1].replace(/\./g, ''), 10) + parseInt(pm[2], 10) / 100;
+        if (!n || !price) return;
+        var per = (Math.round(price / n * 100) / 100).toFixed(2).replace('.', ',');
+        var want = n + ' wasbeurten · €' + per + ' per wasbeurt';
+        if ((sub.textContent || '').trim() !== want) sub.textContent = want;
+      });
+    }
+
+    function paint() {
+      root.querySelectorAll('[data-abo-panel]').forEach(function (p) { p.hidden = p.getAttribute('data-abo-panel') !== mode; });
+      root.querySelectorAll('[data-abo-mode]').forEach(function (b) {
+        var on = b.getAttribute('data-abo-mode') === mode;
+        b.classList.toggle('is-active', on); b.setAttribute('aria-checked', on ? 'true' : 'false');
+      });
+    }
+
+    function apply() {
+      paint();
+      var c = wcb();
+      if (!c) return false;
+      var want = mode === 'subscribe';
+      if (isChecked() !== want && !busy) {
+        busy = true; c.click();
+        setTimeout(function () { busy = false; if (mode === 'subscribe') syncFreqOptions(); labels(); perWash(); }, 250);
+      } else if (want) { syncFreqOptions(); }
+      labels(); perWash();
+      return true;
+    }
+
+    var info = root.querySelector('[data-abo-info]');
+    var tip = info && document.getElementById(info.getAttribute('aria-controls'));
+    if (info && tip) {
+      info.addEventListener('click', function (e) { e.stopPropagation(); var open = tip.hidden; tip.hidden = !open; info.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+      document.addEventListener('click', function () { if (!tip.hidden) { tip.hidden = true; info.setAttribute('aria-expanded', 'false'); } });
+      tip.addEventListener('click', function (e) { e.stopPropagation(); });
+    }
+
+    if (freqSel) freqSel.addEventListener('change', function () {
+      var s = wsel(); if (!s) return;
+      s.value = freqSel.value;
+      s.dispatchEvent(new Event('input', { bubbles: true }));
+      s.dispatchEvent(new Event('change', { bubbles: true }));
+    });
+
+    root.querySelectorAll('[data-abo-mode]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        mode = b.getAttribute('data-abo-mode');
+        apply();
+      });
+    });
+
+    /* wait for the Kaching widget, then keep following its re-renders (deal changes) */
+    var tries = 0;
+    var t = setInterval(function () { tries++; if (apply() || tries > 100) clearInterval(t); }, 150);
+    var host = document.getElementById('product-form-' + pid);
+    host = host ? host.parentElement : document.body;
+    new MutationObserver(function () {
+      if (!wcb() || busy) return;
+      if (isChecked() !== (mode === 'subscribe')) apply();
+      else { if (mode === 'subscribe') syncFreqOptions(); labels(); perWash(); }
+    }).observe(host, { childList: true, subtree: true, attributes: true, attributeFilter: ['aria-checked'] });
+
+    /* the sticky bar has its own form (rendered after this script): give it the same selling plan when subscribing */
+    document.addEventListener('submit', function (e) {
+      var f = e.target;
+      if (!f || f.tagName !== 'FORM' || !/sticky/.test(f.getAttribute('id') || '')) return;
+      var main = document.getElementById('product-form-' + pid);
+      var sp = main && main.querySelector('input[name="selling_plan"]');
+      var mine = f.querySelector('input[name="selling_plan"][data-abo]');
+      if (mode === 'subscribe' && sp && sp.value) {
+        if (!mine) { mine = document.createElement('input'); mine.type = 'hidden'; mine.name = 'selling_plan'; mine.setAttribute('data-abo', '1'); f.appendChild(mine); }
+        mine.value = sp.value;
+      } else if (mine) { mine.remove(); }
+    }, true);
+  })();
+</script>
+{%- endif -%}

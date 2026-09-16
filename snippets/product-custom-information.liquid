@@ -21,7 +21,7 @@
             Tabblie snippet markers: when the block text matches a snippet name,
             render that snippet instead of showing the marker as a title.
         endcomment
-        assign tabblie_markers = 'tabblie-review-score,tabblie-payment-icons,tabblie-trust-badges-pdp,tabblie-social-delivery,tabblie-social-delivery-toilet,tabblie-ugc-videos,tabblie-benefit-checks,tabblie-benefit-checks-eab,tabblie-benefit-checks-mea,tabblie-benefit-checks-toilet,tabblie-benefit-checks-vaat,tabblie-social-delivery-vaat' | split: ','
+        assign tabblie_markers = 'tabblie-abo-toggle,tabblie-review-score,tabblie-payment-icons,tabblie-trust-badges-pdp,tabblie-social-delivery,tabblie-social-delivery-toilet,tabblie-ugc-videos,tabblie-benefit-checks,tabblie-benefit-checks-eab,tabblie-benefit-checks-mea,tabblie-benefit-checks-toilet,tabblie-benefit-checks-vaat,tabblie-social-delivery-vaat' | split: ','
         assign is_marker = false
         if tabblie_markers contains text
             assign is_marker = true
@@ -35,6 +35,8 @@
                     --color-des: {{ color_des }}"
                 >
                     {%- case text -%}
+                        {%- when 'tabblie-abo-toggle' -%}
+                            {% render 'tabblie-abo-toggle', product: product %}
                         {%- when 'tabblie-review-score' -%}
                             {% render 'tabblie-review-score' %}
                         {%- when 'tabblie-payment-icons' -%}
