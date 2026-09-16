@@ -110,6 +110,7 @@
     document.documentElement.classList.add('tabblie-abo-on');
     var freqSel = root.querySelector('[data-abo-freq]');
     var SUB_LABEL = 'Abonneer & bespaar 20%';
+    var ONE_LABEL = 'Eenmalige aankoop';
     var busy = false;
 
     function widget() { return document.querySelector('.kaching-bundles__block--loaded') || document.querySelector('.kaching-bundles'); }
@@ -123,9 +124,9 @@
         var cur = (b.textContent || '').trim();
         if (!b.dataset.aboOrig) b.dataset.aboOrig = cur;
         var orig = b.dataset.aboOrig;
-        var isOurs = cur === SUB_LABEL || cur === orig;
+        var isOurs = cur === SUB_LABEL || cur === ONE_LABEL || cur === orig;
         if (!isOurs) return; /* sold out / loading text set by the theme: leave it */
-        var want = sub ? SUB_LABEL : orig;
+        var want = sub ? SUB_LABEL : ONE_LABEL;
         if (cur !== want) b.textContent = want;
       });
     }
