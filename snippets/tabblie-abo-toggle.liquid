@@ -150,13 +150,13 @@
         var sub = bar.querySelector('.kaching-bundles__bar-subtitle');
         var priceEl = bar.querySelector('.kaching-bundles__bar-price');
         if (!sub || !priceEl) return;
-        var m = /^(\d+)\s+wasbeurten\s*·\s*€\s*\d+,\d{2}\s*per wasbeurt$/.exec((sub.textContent || '').trim());
+        var m = /^(\d+)\s+(\S+)\s*·\s*€\s*\d+,\d{2}\s*per\s+(\S+)$/.exec((sub.textContent || '').trim());
         var pm = /€\s*(\d+(?:\.\d{3})*),(\d{2})/.exec(priceEl.textContent || '');
         if (!m || !pm) return;
         var n = parseInt(m[1], 10); var price = parseInt(pm[1].replace(/\./g, ''), 10) + parseInt(pm[2], 10) / 100;
         if (!n || !price) return;
         var per = (Math.round(price / n * 100) / 100).toFixed(2).replace('.', ',');
-        var want = n + ' wasbeurten · €' + per + ' per wasbeurt';
+        var want = n + ' ' + m[2] + ' · €' + per + ' per ' + m[3];
         if ((sub.textContent || '').trim() !== want) sub.textContent = want;
       });
     }

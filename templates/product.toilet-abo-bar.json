@@ -292,21 +292,6 @@
             "enable_btn_show_more": false,
             "maximum_des_to_show": 300
           }
-        },
-        "abo_toggle": {
-          "type": "custom_information",
-          "settings": {
-            "icon": "",
-            "color_icon": "#e8622a",
-            "text": "tabblie-abo-toggle",
-            "color_title": "#e8622a",
-            "text_description": "tabblie-abo-toggle",
-            "color_des": "#182D20",
-            "fontsize_text": 12,
-            "content_popup": "",
-            "spacing_top": 0,
-            "spacing_bottom": 0
-          }
         }
       },
       "block_order": [
@@ -319,7 +304,6 @@
         "d98e243b-3682-495a-965a-1c7f7d460880",
         "d97e417a-941b-4a5d-bef3-a651adb918d8",
         "trust_badges",
-        "abo_toggle",
         "f1b31d90-1e43-4948-9fe3-97ba43f6fb34",
         "social_delivery",
         "short_description_eciCw3",
